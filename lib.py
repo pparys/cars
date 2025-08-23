@@ -53,7 +53,8 @@ class ConstrainedModel():
     def __init__(self, model_id: str, grammar_str: str | None = None, **kwargs):
         with open("secrets.json") as f:
             secrets = json.load(f)
-            os.environ["HF_TOKEN"] = secrets["HF_TOKEN"]
+            if secrets["HF_TOKEN"] != 'your_token':
+                os.environ["HF_TOKEN"] = secrets["HF_TOKEN"]
 
         self.model_id = model_id
 
