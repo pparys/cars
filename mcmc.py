@@ -44,9 +44,6 @@ class MCMC:
 
     def get_sample(self, n_steps: int, max_new_tokens: int):
         # hopefully this works
-        gc.collect()
-        torch.cuda.empty_cache()
-
 
         steps = []
         successes = []
@@ -87,6 +84,8 @@ class MCMC:
             steps_dump = {"steps": steps, "successes": successes}
             with open(sample_file, "w") as f:
                 json.dump(steps_dump, f, indent=4)
+            gc.collect()
+            torch.cuda.empty_cache()
             
         #return current_ids
 
