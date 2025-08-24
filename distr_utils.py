@@ -52,7 +52,7 @@ def load_mcmc_run_data(run_dir: str, min_steps: int) -> list[dict]:
         if run.endswith(".json"):
             with open(os.path.join(run_dir, run), "r") as f:
                 run_data = json.load(f)
-                if len(run_data["steps"]) >= min_steps:
+                if len(run_data["successes"]) >= min_steps:
                     runs.append(run_data)
     print(f"Loaded {len(runs)} samples from {run_dir}")
     return runs
@@ -179,7 +179,7 @@ def match_supports(mcmc_distr: dict, target_distr: dict, keep_support: str) -> t
         for sample in target_distr:
             if sample not in res_mcmc_distr:
                 res_mcmc_distr[sample] = 0.0
-    
+
     # assert that both distributions sum to 1
     assert np.isclose(sum(res_mcmc_distr.values()), 1.0), "MCMC distribution does not sum to 1"
     assert np.isclose(sum(res_target_distr.values()), 1.0), "Target distribution does not sum to 1"
@@ -190,35 +190,35 @@ def bootstrap_kl(samples, target_distr, n_bootstrap=10):
     """Perform bootstrap resampling to get confidence intervals for KL divergence."""
     n_samples = len(samples)
     bootstrap_kls = []
-    
+
     for _ in range(n_bootstrap):
         # Resample with replacement
         resampled_indices = np.random.choice(n_samples, size=n_samples, replace=True)
         resampled = [samples[i] for i in resampled_indices]
-        
+
         # Get empirical distribution from resampled data
         counts = {}
         for sample in resampled:
             if sample not in counts:
                 counts[sample] = 0
             counts[sample] += 1
-        
+
         # Normalize to get probabilities
         total = sum(counts.values())
         empirical_distr = {s: count/total for s, count in counts.items()}
-        
+
         # Match supports and compute KL
         matched_mcmc, matched_target = match_supports(
             empirical_distr, target_distr, keep_support="target")
             # empirical_distr, target_distr, keep_support="mcmc")
         kl = kl_divergence(matched_mcmc, matched_target)
         bootstrap_kls.append(kl)
-        
+
     # Calculate confidence intervals
     lower_ci = np.percentile(bootstrap_kls, 2.5)
     upper_ci = np.percentile(bootstrap_kls, 97.5)
     mean_kl = np.mean(bootstrap_kls)
-    
+
     return mean_kl, lower_ci, upper_ci
 
 def format_asap_run(asap_run_path: str, mcmc_run_dirs: list[str]) -> list[dict]:
@@ -249,10 +249,9 @@ def format_asap_run(asap_run_path: str, mcmc_run_dirs: list[str]) -> list[dict]:
                     logprobs[sample_ids] = sample_logprob
                 else:
                     assert logprobs[sample_ids] == sample_logprob, f"Logprob mismatch for sample {sample_tokens}: {logprobs[sample_ids]} vs {sample_logprob}"
-    
+
     # true_distr_est = estimate_full_distribution(all_samples, "raw_logprob")
     # print(len(true_distr_est))
-
 
     logprob_diffs = []
     formatted_asap_runs = []
@@ -313,26 +312,26 @@ def plot_kl_runs(mcmc_run_dirs: list[str], task_id: str, output_dir: str):
 
     runs_kls = []
     steps_range = list(range(1, steps_total+1))
-    
+
     for run in mcmc_runs:
         run_kls = []
         run_lower_cis = []
         run_upper_cis = []
         n_samples_in_run = len(run)
-        
+
         for n_steps in steps_range:
             # Get samples at this step
-            samples = [tuple(step["steps"][n_steps-1]["current"]["token_ids"]) 
+            samples = [tuple(step["steps"][n_steps-1]["current"]["token_ids"])
                        for step in run]
-            
+
             # Compute KL divergence with bootstrapping
             # mean_kl, lower_ci, upper_ci = bootstrap_kl(samples, true_distr_est, n_bootstrap=n_samples_in_run)
             mean_kl, lower_ci, upper_ci = bootstrap_kl(samples, true_distr_est, n_bootstrap=500)
-            
+
             run_kls.append(mean_kl)
             run_lower_cis.append(lower_ci)
             run_upper_cis.append(upper_ci)
-        
+
         runs_kls.append((run_kls, run_lower_cis, run_upper_cis))
 
     # Create a figure and axis
@@ -348,13 +347,13 @@ def plot_kl_runs(mcmc_run_dirs: list[str], task_id: str, output_dir: str):
         if label == "prefix":
             label = "uniform"
         color = cmap(i)
-        
+
         # Plot the mean KL divergence
-        plt.plot(steps_range, run_kls, marker='o', linestyle='-', linewidth=2, 
+        plt.plot(steps_range, run_kls, marker='o', linestyle='-', linewidth=2,
                  color=color, label=f"{label}")
-        
+
         # Plot the confidence intervals
-        plt.fill_between(steps_range, lower_cis, upper_cis, 
+        plt.fill_between(steps_range, lower_cis, upper_cis,
                          alpha=0.2, color=color, label='_nolegend_')
 
     # Add decorations
@@ -380,7 +379,7 @@ def print_kl_stats(tasks_at_0, tasks_at_10):
             #     impr = .01
             # else:
             #     impr = kl_10 / kl_0
-                
+
             improvement_ratios.append(impr)
         # take geometric mean
         improvement_ratio = np.prod(improvement_ratios) ** (1 / len(improvement_ratios))
@@ -398,13 +397,64 @@ def print_asap_kl_stats(tasks_at_10):
             #     impr = .01
             # else:
             #     impr = kl_10 / kl_0
-                
+
             improvement_ratios.append(impr)
         # take geometric mean
         # print(improvement_ratios)
         improvement_ratio = np.prod(improvement_ratios) ** (1 / len(improvement_ratios))
         print(f"Improvement ratio for {method}: {improvement_ratio:.4f}")
 
+def plot_success_rates(all_mcmc_run_data: list[tuple[list[str], str]], split: str, output_dir: str, cut = 1000):
+
+    # Create a figure with equal aspect ratio (square)
+    plt.figure(figsize=(12, 6))
+    # Get a colormap with distinct colors
+    cmap = get_cmap('tab20')
+
+    steps_total = cut
+    j = 0
+    llast=[]
+    for mcmc_run_dirs, task_id in all_mcmc_run_data:
+        mcmc_runs = [load_mcmc_run_data(run_dir, min_steps=steps_total) for run_dir in mcmc_run_dirs]
+        assert len(mcmc_runs)==1
+        mcmc_runs = mcmc_runs[0]
+        if len(mcmc_runs)==0:
+            continue
+        assert len(mcmc_runs)==1
+        mcmc_runs = mcmc_runs[0]
+        successes = mcmc_runs['successes'][:cut]
+        rate = []
+        ok = 0
+        for i in range(len(successes)):
+            if successes[i]:
+                ok = ok+1
+            rate.append(ok/(i+1))
+        #print(successes)
+        #print(rate)
+        llast.append(mcmc_runs['steps'][-1])
+
+        x = range(1, len(rate)+1)
+        y = rate
+        plt.plot(x, y, marker='o', linestyle='-', color=cmap(j), label=task_id)
+        j = j+1
+
+    plt.title("Success rate")
+    plt.xlabel("number of samples")
+    plt.ylabel("success rate")
+
+    plt.grid(True)
+    plt.legend(loc='lower right')
+
+    # Wyświetlenie wykresu
+    #plt.show()
+
+    # Save the plot
+    os.makedirs(output_dir, exist_ok=True)
+    plt.savefig(os.path.join(output_dir, f"{split}-sr-{cut}.png"), dpi=200)
+
+    print("Improvements on probabilities (in the last sample):")
+    for last in llast:
+        print(f"{np.exp(last['raw_logprob']):.10f} -> {np.exp(last['cons_logprob']):.10f}")
 
 def plot_kl_scatter(all_mcmc_run_data: list[tuple[list[str], str]], split: str, output_dir: str):
     # for each run, plot KL divergence as a scatter
@@ -453,7 +503,6 @@ def plot_kl_scatter(all_mcmc_run_data: list[tuple[list[str], str]], split: str, 
             kl_step_0 = kl_step_0[~np.isnan(kl_step_0)]
             kl_step_10 = kl_step_10[~np.isnan(kl_step_10)]
             # Scatter plot: KL divergence at step 1 vs KL divergence at step 10
-    
 
     # Create a figure with equal aspect ratio (square)
     plt.figure(figsize=(6, 6))
@@ -475,11 +524,11 @@ def plot_kl_scatter(all_mcmc_run_data: list[tuple[list[str], str]], split: str, 
 
     # Add diagonal line (y=x)
     plt.plot(plot_range, plot_range, 'k:', alpha=0.7)
-    
+
     # Set the same limits for both axes
     plt.xlim(plot_range)
     plt.ylim(plot_range)
-    
+
     # Add decorations
     plt.xlabel('GCD KL Divergence', fontsize=18)
     plt.ylabel(f'MCMC(k=10) KL Divergence', fontsize=18)
@@ -542,7 +591,6 @@ def plot_kl_scatter_asap(all_mcmc_run_data: list[tuple[list[str], str]], split: 
             kl_step_0 = kl_step_0[~np.isnan(kl_step_0)]
             kl_step_10 = kl_step_10[~np.isnan(kl_step_10)]
             # Scatter plot: KL divergence at step 1 vs KL divergence at step 10
-    
 
     # Create a figure with equal aspect ratio (square)
     plt.figure(figsize=(6, 6))
@@ -566,11 +614,11 @@ def plot_kl_scatter_asap(all_mcmc_run_data: list[tuple[list[str], str]], split: 
 
     # Add diagonal line (y=x)
     plt.plot(plot_range, plot_range, 'k:', alpha=0.7)
-    
+
     # Set the same limits for both axes
     plt.xlim(plot_range)
     plt.ylim(plot_range)
-    
+
     # Add decorations
     plt.xlabel('ASAP(k=10) KL Divergence', fontsize=18)
     plt.ylabel(f'MCMC(k=10) KL Divergence', fontsize=18)
@@ -587,7 +635,7 @@ def plot_kl_scatter_asap(all_mcmc_run_data: list[tuple[list[str], str]], split: 
 
     # print_kl_stats(task_kls_at_0, task_kls_at_10)
     print_asap_kl_stats(task_kls_at_10)
-    
+
 
 def plot_sampled_mass(mcmc_run_dirs: list[str]):
     steps_total = 20
@@ -602,7 +650,7 @@ def plot_sampled_mass(mcmc_run_dirs: list[str]):
         avg_logprobs_wor = []
         for n_steps in steps_range:
             logprobs = [
-                (tuple(step["steps"][n_steps-1]["current"]["token_ids"]), 
+                (tuple(step["steps"][n_steps-1]["current"]["token_ids"]),
                  step["steps"][n_steps-1]["current"]["raw_logprob"])
                 for step in run
             ]
@@ -614,7 +662,7 @@ def plot_sampled_mass(mcmc_run_dirs: list[str]):
                     samples_wor[seq] = logprob
                 else:
                     assert samples_wor[seq] == logprob, f"Logprob mismatch for sample {seq}: {samples_wor[seq]} vs {logprob}"
-            
+
             avg_logprob_wor = np.mean(list(samples_wor.values()))
 
             avg_logprobs.append(avg_logprob)
@@ -631,13 +679,13 @@ def plot_sampled_mass(mcmc_run_dirs: list[str]):
     for i, ((avg_logprobs, avg_logprobs_wor), run_dir) in enumerate(zip(runs_mass_stats, mcmc_run_dirs)):
         # Extract just the directory name for cleaner labels
         label = os.path.basename(run_dir)
-        
+
         # Plot average logprobs with solid line
-        plt.plot(steps_range, avg_logprobs, marker='o', linestyle='-', linewidth=2, 
+        plt.plot(steps_range, avg_logprobs, marker='o', linestyle='-', linewidth=2,
                  color=cmap(i), label=f"{label} (with rep.)")
-        
+
         # Plot average logprobs without repetition with dashed line
-        plt.plot(steps_range, avg_logprobs_wor, marker='o', linestyle='--', linewidth=2, 
+        plt.plot(steps_range, avg_logprobs_wor, marker='o', linestyle='--', linewidth=2,
                  color=cmap(i), label=f"{label} (w/o rep.)")
 
     # Add decorations
