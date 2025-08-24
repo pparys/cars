@@ -32,7 +32,7 @@ def load_fuzz_tasks():
 	
 def run_mcmc_fuzz_tasks(benchmark):
 	model_id = "meta-llama/Llama-3.1-8B-Instruct"
-	model_id = "hsultanbey/codegen350multi_finetuned" ######!!!!!!!!!!
+	#model_id = "hsultanbey/codegen350multi_finetuned" ######!!!!!!!!!!
 
 	model = lib.ConstrainedModel(model_id, None, torch_dtype=torch.bfloat16)
 
