@@ -11,7 +11,8 @@ import mcmc
 def load_fuzz_tasks():
 	runs_params = [
 		("xml", "datasets/fuzzing/prompts/xml_gen.txt", "datasets/fuzzing/grammars/xml.ebnf"),
-		("sql", "datasets/fuzzing/prompts/sql_gen.txt", "datasets/fuzzing/grammars/sql.ebnf")
+		("sql", "datasets/fuzzing/prompts/sql_gen.txt", "datasets/fuzzing/grammars/sql.ebnf"),
+		("sql-gr", "datasets/fuzzing/prompts/sql_gen_with_grammar.txt", "datasets/fuzzing/grammars/sql.ebnf")
 	]
  
 	tasks = []
@@ -79,7 +80,7 @@ if __name__ == "__main__":
 	from argparse import ArgumentParser
 
 	parser = ArgumentParser()
-	parser.add_argument("--benchmark", required=True, choices=["xml", "sql"])
+	parser.add_argument("--benchmark", required=True, choices=["xml", "sql", "sql-gr"])
 
 	args = parser.parse_args()
 	benchmark = args.benchmark

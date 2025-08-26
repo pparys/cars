@@ -71,6 +71,11 @@ class BBPEMapping(Mapping):
         raw_token = super()._map(token_id)
         if raw_token.startswith("Ġ"):
             raw_token = raw_token.replace("Ġ", " ")
+        raw_token = raw_token.replace("Ċ", "\n")
+        raw_token = raw_token.replace("ĉ", "\t")
+        raw_token = raw_token.replace("č", "\r")
+        raw_token = raw_token.replace("ċ", "\x0b")
+        raw_token = raw_token.replace("Č", "\x0c")
         return raw_token
 
 
