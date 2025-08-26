@@ -78,7 +78,8 @@ class MCMC:
                 successes.append(True)
 
             except ValueError as e:
-                print(f"Sample {i} failed, tokens: {e.args[1]}")
+                tokens = [self.model.tokenizer.decode(token_id) for token_id in e.args[1]]
+                print(f"Sample {i} failed, tokens: {e.args[1]} / {tokens}")
                 successes.append(False)
 
             steps_dump = {"steps": steps, "successes": successes}
