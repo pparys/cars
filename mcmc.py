@@ -52,6 +52,7 @@ class MCMC:
         
 
         for i in range(n_steps):
+            sample_start_time = time.time()
             try:
                 current_ids, current_scores = self.model._generate(
                     self.prompt_ids,
@@ -65,7 +66,9 @@ class MCMC:
                 token_ids = [int(id) for id in current_ids[0]]
                 current_raw_logprob = self.model._get_seq_logprob(self.prompt_ids, current_ids, constrain=False).item()
                 current_cons_logprob = self.model._get_seq_logprob_from_scores(current_scores, current_ids).item()
-                print(f"Sample {i} success: {token_ids} / {tokens}, raw_logprob: {current_raw_logprob}, cons_logprob: {current_cons_logprob}")
+                sample_end_time = time.time()
+                sample_time = sample_end_time - sample_start_time
+                print(f"Sample {i} success: {token_ids} / {tokens}, raw_logprob: {current_raw_logprob}, cons_logprob: {current_cons_logprob}, time: {sample_time}")
             
                 # save to steps
                 step = {
@@ -79,7 +82,9 @@ class MCMC:
 
             except ValueError as e:
                 tokens = [self.model.tokenizer.decode(token_id) for token_id in e.args[1]]
-                print(f"Sample {i} failed, tokens: {e.args[1]} / {tokens}")
+                sample_end_time = time.time()
+                sample_time = sample_end_time - sample_start_time
+                print(f"Sample {i} failed, tokens: {e.args[1]} / {tokens}, time: {sample_time}")
                 successes.append(False)
 
             steps_dump = {"steps": steps, "successes": successes}
