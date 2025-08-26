@@ -6,6 +6,7 @@ Solution 1:
 set testdir [file dirname $argv0]
 source $testdir/tester.tcl
 set testprefix sync
+set ::timeout 60000
 
 proc sync_proc {} {
   global syncargs
