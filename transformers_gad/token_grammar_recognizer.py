@@ -264,7 +264,7 @@ def check_token_acceptance_in_trie(trie, stacks, grammar, eos_token_id, accepts)
                 print(f"Token {token_id} OK")
             continue
 
-        print(f"Trying character {byte} for {len(stacks)} stacks")
+        print(f"Trying character {byte} / '{chr(byte)}' for {len(stacks)} stacks")
         new_stacks = []
         for stk in stacks:
             if not stk:
@@ -284,7 +284,7 @@ def check_token_acceptance_in_trie(trie, stacks, grammar, eos_token_id, accepts)
             new_stacks.extend(grammar.advance_stack(tuple(new_stack)))
 
         if new_stacks:
-            print(f"Character {byte} is OK")
+            print(f"Character {byte} / '{chr(byte)}'  is OK")
             check_token_acceptance_in_trie(next_trie, new_stacks, grammar, eos_token_id, accepts)
 
     print(f"Leaving check_token_acceptance_in_trie")
