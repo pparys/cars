@@ -37,6 +37,7 @@ class AbsTokenRecognizer(ABC):
         self.token_trie = TokenTrie(tokenizer, self.mapping)
         self.tokenizer = tokenizer
         self.string_recognizer = StringRecognizer(grammar_encoding, self.start_rule_id)
+        global_mapping = self.mapping
         self.unicode_trie = ByteTrie.from_tokenizer(tokenizer, unicode=unicode)
         assert len(self.mapping) == len(self.token_trie), f"{len(self.mapping)}, {len(self.token_trie)}"
 
@@ -261,7 +262,7 @@ def check_token_acceptance_in_trie(trie, stacks, grammar, eos_token_id, accepts)
                 # if the stacks is not empty, it means we can still continue to parse
                 # so we should accept the token
                 accepts[token_id] = bool(stacks)
-                print(f"Token {token_id} {self.mapping.map(token_id)} OK")
+                print(f"Token {token_id} {global_mapping.map(token_id)} OK")
             continue
 
         print(f"Trying character {byte} / '{chr(byte)}' for {len(stacks)} stacks")
