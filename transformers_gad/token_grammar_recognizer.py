@@ -37,6 +37,7 @@ class AbsTokenRecognizer(ABC):
         self.token_trie = TokenTrie(tokenizer, self.mapping)
         self.tokenizer = tokenizer
         self.string_recognizer = StringRecognizer(grammar_encoding, self.start_rule_id)
+        global global_mapping
         global_mapping = self.mapping
         self.unicode_trie = ByteTrie.from_tokenizer(tokenizer, unicode=unicode)
         assert len(self.mapping) == len(self.token_trie), f"{len(self.mapping)}, {len(self.token_trie)}"
