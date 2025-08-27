@@ -264,7 +264,7 @@ def check_token_acceptance_in_trie(trie, stacks, grammar, eos_token_id, accepts)
                 print(f"Token {token_id} OK")
             continue
 
-        print(f"Trying character {byte}")
+        print(f"Trying character {byte} for {len(stacks)} stacks")
         new_stacks = []
         for stk in stacks:
             if not stk:
