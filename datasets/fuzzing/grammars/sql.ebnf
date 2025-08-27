@@ -46,4 +46,4 @@ identifier ::= letter ( letter | digit | "_" )*
 letter ::= [A-Za-z]
 digit ::= [0-9]
 finish ::= "finish_test" ws
-ws ::= [ \t\n\r]*
+ws ::= [ \t\n\r]+
