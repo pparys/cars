@@ -47,7 +47,7 @@ identifier ::= letter ( letter | digit | "_" )*
 letter ::= [A-Za-z]
 digit ::= [0-9]
 finish ::= "finish_test" ws
-ws ::= [ \t\n\r]*
+ws ::= [ \t\n\r]+
 
 Question 1: 
 Generate a complete and complex sqlite .test file using different Tcl commands, which agrees with the above syntax. Do not reuse previous solutions. Ensure you write a single .test file without any comments that ends with a "finish_test".
