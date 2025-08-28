@@ -17,7 +17,7 @@ def all_sample_styles():
 
 def parse_styles_arg(arg):
     if arg is None:
-        styles = all_styles()
+        styles = all_sample_styles()
     else:
         styles = [s for s in arg.split(",")]
         for s in styles:
