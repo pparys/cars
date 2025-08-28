@@ -22,7 +22,8 @@ def load_gad_tasks(split, subset):
 
 def run_mcmc_gad_tasks(split, subset):
     model_id = "meta-llama/Llama-3.1-8B-Instruct"
-    #model_id = "hsultanbey/codegen350multi_finetuned"
+    if not torch.cuda.is_available():
+        model_id = "hsultanbey/codegen350multi_finetuned"
 
     model = lib.ConstrainedModel(model_id, None, torch_dtype=torch.float32) ###PP!!!!!
 

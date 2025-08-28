@@ -62,13 +62,12 @@ class MCMC:
                     prefix_ids=None,
                     oracle_trie = oracle_trie
                 )
+                sample_end_time = time.time()
                 tokens = [self.model.tokenizer.decode(token_id) for token_id in current_ids[0]]
                 token_ids = [int(id) for id in current_ids[0]]
                 current_raw_logprob = self.model._get_seq_logprob(self.prompt_ids, current_ids, constrain=False).item()
                 current_cons_logprob = self.model._get_seq_logprob_from_scores(current_scores, current_ids).item()
-                sample_end_time = time.time()
-                sample_time = sample_end_time - sample_start_time
-                print(f"Sample {i} success: {token_ids} / {tokens}, raw_logprob: {current_raw_logprob}, cons_logprob: {current_cons_logprob}, time: {sample_time}")
+                print(f"Sample {i} success: {token_ids} / {tokens}, raw_logprob: {current_raw_logprob}, cons_logprob: {current_cons_logprob}", end='')
             
                 # save to steps
                 step = {
@@ -81,12 +80,14 @@ class MCMC:
                 successes.append(True)
 
             except ValueError as e:
-                tokens = [self.model.tokenizer.decode(token_id) for token_id in e.args[1]]
                 sample_end_time = time.time()
-                sample_time = sample_end_time - sample_start_time
-                print(f"Sample {i} failed, tokens: {e.args[1]} / {tokens}, time: {sample_time}")
+                tokens = [self.model.tokenizer.decode(token_id) for token_id in e.args[1]]
+                print(f"Sample {i} failed, tokens: {e.args[1]} / {tokens}", end='')
                 successes.append(False)
 
+            sample_time = sample_end_time - sample_start_time
+            logits_time = self.model.gcd_logits_processor.logits_process_time
+            print(f", time: {sample_time:.2f} ({logits_time:.2f})", flush=True)
             steps_dump = {"steps": steps, "successes": successes}
             with open(sample_file, "w") as f:
                 json.dump(steps_dump, f, indent=4)

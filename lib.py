@@ -148,7 +148,7 @@ class ConstrainedModel():
             output_scores=True,
         )
 
-        gcd_logits_processor = None
+        self.gcd_logits_processor = None
         assert (prefix_ids is None)
         if constrain:
             # grammar_constraint = IncrementalGrammarConstraint(grammar_str, "root", self.tokenizer)
@@ -156,14 +156,14 @@ class ConstrainedModel():
             if prefix_ids is not None:
                 # TODO: can we do this always?
                 assert False
-                gcd_logits_processor = GrammarConstrainedLogitsProcessor(self.grammar_constraint, len(input_ids[0]))
+                self.gcd_logits_processor = GrammarConstrainedLogitsProcessor(self.grammar_constraint, len(input_ids[0]))
             else:
-                gcd_logits_processor = GrammarAlignedOracleLogitsProcessor(self.grammar_constraint, oracle_trie) #GrammarConstrainedLogitsProcessor(self.grammar_constraint)
+                self.gcd_logits_processor = GrammarAlignedOracleLogitsProcessor(self.grammar_constraint, oracle_trie) #GrammarConstrainedLogitsProcessor(self.grammar_constraint)
 
         logits_processor_list = []
         logits_processor_list.append(InfNanRemoveLogitsProcessor())
-        if gcd_logits_processor is not None:
-            logits_processor_list = [gcd_logits_processor] + logits_processor_list
+        if self.gcd_logits_processor is not None:
+            logits_processor_list = [self.gcd_logits_processor] + logits_processor_list
         logits_processor_list = LogitsProcessorList(logits_processor_list)
 
         input_prefix_ids = input_ids
@@ -174,7 +174,7 @@ class ConstrainedModel():
             input_prefix_ids,
             generation_config=generation_config,
             tokenizer=self.tokenizer,
-            # logits_processor=[gcd_logits_processor] if gcd_logits_processor else None,
+            # logits_processor=[self.gcd_logits_processor] if self.gcd_logits_processor else None,
             logits_processor=logits_processor_list,
         )
 

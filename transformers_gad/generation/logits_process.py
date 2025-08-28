@@ -3,6 +3,7 @@ import math
 import torch.nn.functional as F
 import torch
 import logging
+import time
 from transformers.generation.logits_process import (
     LogitsProcessor,
     LOGITS_PROCESSOR_INPUTS_DOCSTRING,
@@ -39,6 +40,7 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         # Generation Log
         self.save_log = save_log
         self.history = []
+        self.logits_process_time = 0
         #print("Starting logits processor")
 
     def adjust_scores(self, scores, device):
@@ -111,6 +113,7 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         return adjusted_scores
 
     def process_scores(self, input_ids, scores):
+        start_time = time.time()
         # we dynamically create stacks at the first call, so that we know the batch size and beam size
         if self.batch_parsing_states is None:
             self.batch_parsing_states = [
@@ -136,6 +139,8 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         ) #  PP it throws exception when text nongrammatical
 
         adjusted_scores = self.adjust_scores(scores, scores.device)
+        end_time = time.time()
+        self.logits_process_time += end_time - start_time
 
         return adjusted_scores
     
