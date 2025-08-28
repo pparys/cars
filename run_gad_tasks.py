@@ -20,7 +20,8 @@ def load_gad_tasks(split, subset):
         slia_tasks = [slia_tasks[i] for i in subset]
     return slia_tasks
 
-def run_mcmc_gad_tasks(split, subset):
+
+def run_mcmc_gad_tasks(split, subset, styles):
     model_id = "meta-llama/Llama-3.1-8B-Instruct"
     if not torch.cuda.is_available():
         model_id = "hsultanbey/codegen350multi_finetuned"
@@ -41,22 +42,20 @@ def run_mcmc_gad_tasks(split, subset):
     n_samples = 1 #100
     n_steps = 1000 # 11
     max_new_tokens = 128
-    propose_styles = ["ars"] #["restart", "priority", "prefix"]
 
     for task in tqdm(slia_tasks):
         task_id = task["id"] 
         task_prompt = task["prompt"]
         task_grammar = task["grammar"]
-        print(f"Task ID: {task_id}")
 
         model._set_grammar_constraint(task_grammar)
-        for propose_style in propose_styles:
-            print(f"Task ID: {task_id}, Propose Style: {propose_style}")
+        for sample_style in styles:
+            print(f"Task ID: {task_id}, Sample style: {sample_style}")
 
             mcmc_runner = mcmc.MCMC(
                 model=model,
                 prompt=task_prompt,
-                propose_style=propose_style,
+                sample_style=sample_style,
                 name_prefix=task_id,
                 root_log_dir=split_log_dir,
             )
@@ -73,6 +72,7 @@ if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument("--split", required=True, choices=["SLIA", "CP", "BV4"])
     parser.add_argument("--subset", default=None)
+    parser.add_argument("--styles", default=None)
 
     args = parser.parse_args()
     subset = args.subset
@@ -80,4 +80,4 @@ if __name__ == "__main__":
         subset = [int(i) for i in subset.split(",")]
     print(f"Subset: {subset}")
 
-    run_mcmc_gad_tasks(args.split, subset)
+    run_mcmc_gad_tasks(args.split, subset, mcmc.parse_styles_arg(args.styles))

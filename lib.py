@@ -130,18 +130,18 @@ class ConstrainedModel():
         self, 
         input_ids: torch.Tensor, 
         max_new_tokens: int,
-        do_sample: bool,
-        # grammar_str: str | None,
         constrain: bool,
         prefix_ids: torch.Tensor | None,
         oracle_trie,
+        adaptive: bool = True,
+        constrain_first: bool = False,
         num_return_sequences: int = 1,
         # temperature: float = 1.0,
     ) -> tuple[torch.Tensor, torch.Tensor]:
         generation_config = GenerationConfig(
             max_new_tokens=max_new_tokens,
             num_return_sequences=num_return_sequences,
-            do_sample=do_sample,
+            do_sample=True,
             eos_token_id=self.tokenizer.eos_token_id,
             pad_token_id=self.tokenizer.eos_token_id,
             return_dict_in_generate=True,
@@ -156,9 +156,9 @@ class ConstrainedModel():
             if prefix_ids is not None:
                 # TODO: can we do this always?
                 assert False
-                self.gcd_logits_processor = GrammarConstrainedLogitsProcessor(self.grammar_constraint, len(input_ids[0]))
+                #self.gcd_logits_processor = GrammarConstrainedLogitsProcessor(self.grammar_constraint, len(input_ids[0]))
             else:
-                self.gcd_logits_processor = GrammarAlignedOracleLogitsProcessor(self.grammar_constraint, oracle_trie) #GrammarConstrainedLogitsProcessor(self.grammar_constraint)
+                self.gcd_logits_processor = GrammarAlignedOracleLogitsProcessor(self.grammar_constraint, oracle_trie, adaptive = adaptive, constrain_first = constrain_first)
 
         logits_processor_list = []
         logits_processor_list.append(InfNanRemoveLogitsProcessor())
@@ -174,7 +174,6 @@ class ConstrainedModel():
             input_prefix_ids,
             generation_config=generation_config,
             tokenizer=self.tokenizer,
-            # logits_processor=[self.gcd_logits_processor] if self.gcd_logits_processor else None,
             logits_processor=logits_processor_list,
         )
 
@@ -186,31 +185,29 @@ class ConstrainedModel():
 
         return output_ids, output_scores
 
-    def generate(
-        self,
-        prompt: str,
-        max_new_tokens: int,
-        do_sample: bool,
-        # grammar_str: str | None = None, 
-        constrain: bool = False,
-        prefix: str | None = None,
-    ):
-        prompt = self._format_prompt(prompt)
-        input_str = prompt
-        if prefix:
-            input_str += prefix
-
-        # We do this weird mangling to make sure the prefix is tokenized the same way as it would be produced
-        # Ideally we could just encode the prefix but that does not work directly with some tokenizers
-        input_ids = self.tokenizer.encode(input_str, return_tensors="pt", add_special_tokens=False).to(self.model.device)
-        prompt_ids = self.tokenizer.encode(prompt, return_tensors="pt", add_special_tokens=False).to(self.model.device)
-        prefix_ids = None
-        if prefix:
-            prefix_ids = input_ids[:, prompt_ids.shape[1]:]
-        
-        output_ids, _ = self._generate(prompt_ids, max_new_tokens, do_sample, constrain, prefix_ids)
-        output_str = self.tokenizer.decode(output_ids[0], skip_special_tokens=False)
-        return output_str
+#    def generate(
+#        self,
+#        prompt: str,
+#        max_new_tokens: int,
+#        constrain: bool = False,
+#        prefix: str | None = None,
+#    ):
+#        prompt = self._format_prompt(prompt)
+#        input_str = prompt
+#        if prefix:
+#            input_str += prefix
+#
+#        # We do this weird mangling to make sure the prefix is tokenized the same way as it would be produced
+#        # Ideally we could just encode the prefix but that does not work directly with some tokenizers
+#        input_ids = self.tokenizer.encode(input_str, return_tensors="pt", add_special_tokens=False).to(self.model.device)
+#        prompt_ids = self.tokenizer.encode(prompt, return_tensors="pt", add_special_tokens=False).to(self.model.device)
+#        prefix_ids = None
+#        if prefix:
+#            prefix_ids = input_ids[:, prompt_ids.shape[1]:]
+#        
+#        output_ids, _ = self._generate(prompt_ids, max_new_tokens, constrain, prefix_ids)
+#        output_str = self.tokenizer.decode(output_ids[0], skip_special_tokens=False)
+#        return output_str
 
     def _get_seq_logprob_from_scores(self, scores: torch.Tensor, query_ids: torch.Tensor) -> torch.Tensor:
         """
@@ -340,145 +337,3 @@ class ConstrainedModel():
         scores = self._get_generation_scores(prompt_ids, query_ids, constrain, prefix_ids)
         logprob = self._get_seq_logprob_from_scores(scores, query_ids)
         return logprob
-    
-    def _resample_idx_distribution(
-        self,
-        propose_style: str,
-        current_ids: torch.Tensor,
-        current_scores: torch.Tensor,
-    ) -> torch.Tensor:
-        if propose_style == "restart":
-            # for resampling, we always resample from the beginning
-            resample_distr = torch.zeros(len(current_ids[0]), dtype=torch.float32)
-            resample_distr[0] = 1.0
-            resample_distr = torch.unsqueeze(resample_distr, 0)
-        elif propose_style == "prefix":
-            # for prefix sampling, the distribution is uniform
-            # resample_distr = [1 / len(current_ids[0]) for _ in range(len(current_ids[0]))]
-            resample_distr = torch.ones(len(current_ids[0])) / len(current_ids[0])
-            resample_distr = torch.unsqueeze(resample_distr, 0)
-        elif propose_style == "priority":
-            # for priority sampling, the distribution is proportional to the entropy
-            # current_logprobs.shape = (1, current_ids.shape[1], vocab_size)
-            current_logprobs = torch.log_softmax(current_scores, dim=-1)
-            # Create a mask for non-inf logprobs to avoid NaN values
-            mask = torch.isfinite(current_logprobs)
-            probs = torch.exp(current_logprobs)
-            # Zero out any non-finite values in the probs and calculate entropy properly
-            masked_contribution = torch.where(mask, probs * current_logprobs, torch.zeros_like(probs))
-            current_entropies = -torch.sum(masked_contribution, dim=-1)
-
-            # get a probability for each index that is proportional to the entropy
-            # we do -1 in order to zero out entropies of 0
-            # TODO: is there a more principled way to do this?
-            resample_distr = torch.exp(current_entropies) - 1
-            resample_distr = resample_distr / torch.sum(resample_distr)
-            # print(resample_distr)
-            # print(resample_distr.shape)
-        else:
-            raise ValueError(f"Unknown proposal style: {propose_style}")
-        # assert resample_distr.shape[0] == len(current_ids[0])
-        assert resample_distr.shape == current_ids.shape
-        assert torch.allclose(resample_distr.sum(), torch.tensor(1.0))
-        return resample_distr
-    
-    def _propose_next_sequence_logprob(
-        self,
-        current_ids: torch.Tensor,
-        current_scores: torch.Tensor,
-        next_ids: torch.Tensor,
-        next_scores: torch.Tensor,
-        propose_style: str,
-        # resample_idx_distr: torch.Tensor,
-    ) -> float:
-        resample_idx_distr = self._resample_idx_distribution(
-            propose_style, current_ids, current_scores
-        )
-
-        # get the longest common prefix between the proposal and the current
-        lcp_idx = 0
-        for i, (p, c) in enumerate(zip(next_ids[0], current_ids[0])):
-            if p == c:
-                lcp_idx += 1
-            else:
-                break
-        max_resample_idx = lcp_idx + 1
-        max_resample_idx = min(max_resample_idx, len(current_ids[0]))
-
-        # compute the probability of the proposal
-        proposal_logprob = -np.inf
-        for i in range(max_resample_idx):
-            # Get probability of selecting this index
-            # idx_resample_logprob = -np.log(len(current_ids[0]))
-            idx_resample_prob = resample_idx_distr[0][i].item()
-            if idx_resample_prob == 0:
-                continue
-            idx_resample_logprob = np.log(idx_resample_prob)
-            
-            # prefix_ids = current_ids[:, :i]
-            suffix_ids = next_ids[:, i:]
-            suffix_scores = next_scores[:, i:]
-
-            # Get log probability in one call
-            # suffix_logprob = self._get_seq_logprob(prompt_ids, suffix_ids, constrain, prefix_ids)
-            suffix_logprob = self._get_seq_logprob_from_scores(suffix_scores, suffix_ids).item()
-            
-            # Add to total probability
-            # proposal_prob += idx_resample_prob * np.exp(suffix_logprob)
-            proposal_logprob = np.logaddexp(proposal_logprob, idx_resample_logprob + suffix_logprob)
-
-        return proposal_logprob
-    
-    def _propose_next_sequence(
-        self,
-        prompt_ids: torch.Tensor,
-        current_ids: torch.Tensor,
-        max_new_tokens: int,
-        constrain: bool,
-        current_scores: torch.Tensor | None,
-        propose_style: str,
-    ) -> tuple[torch.Tensor, torch.Tensor, float]:
-        assert current_ids.shape[0] == 1
-        if propose_style not in ["prefix", "priority", "restart"]:
-            raise ValueError(f"Unknown proposal style: {propose_style}")
-        
-        if current_scores is None:
-            current_scores = self._get_generation_scores(prompt_ids, current_ids, constrain)
-
-        resample_idx_distr = self._resample_idx_distribution(
-            propose_style, current_ids, current_scores
-        ) 
-        # print(resample_idx_distr.tolist())
-
-        resample_idx = np.random.choice(len(current_ids[0]), p=resample_idx_distr[0].cpu().numpy())
-        # print(resample_idx)
-        print(f"Resample idx: {resample_idx}")
-
-        # get the corresponding prefix from current tokens
-        prefix_ids = current_ids[:, :resample_idx]
-        prefix_scores = current_scores[:, :resample_idx]
-
-        # resample from the prefix, using gcd
-        resample_ids, resample_scores = self._generate(
-            prompt_ids,
-            max_new_tokens,
-            do_sample=True,
-            constrain=constrain,
-            prefix_ids=prefix_ids,
-        )
-        # print([self.tokenizer.decode(token_id) for token_id in resample_ids[0]])
-
-        next_ids = torch.cat([prefix_ids, resample_ids], dim=-1)
-        next_scores = torch.cat([prefix_scores, resample_scores], dim=1)
-        # print([self.tokenizer.decode(token_id) for token_id in next_ids[0]])
-
-        proposal_logprob = self._propose_next_sequence_logprob(
-            current_ids=current_ids,
-            current_scores=current_scores,
-            next_ids=next_ids,
-            next_scores=next_scores,
-            # resample_idx_distr=resample_idx_distr,
-            propose_style=propose_style,
-        )
-
-        return next_ids, next_scores, proposal_logprob

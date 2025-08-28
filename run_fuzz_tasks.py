@@ -31,7 +31,7 @@ def load_fuzz_tasks():
 	return tasks
 	
 	
-def run_mcmc_fuzz_tasks(benchmark):
+def run_mcmc_fuzz_tasks(benchmark, styles):
 	model_id = "meta-llama/Llama-3.1-8B-Instruct"
 	if not torch.cuda.is_available():
 		model_id = "hsultanbey/codegen350multi_finetuned"
@@ -48,7 +48,6 @@ def run_mcmc_fuzz_tasks(benchmark):
 	n_samples = 1 #100
 	n_steps = 1000 # 10
 	max_new_tokens = 512
-	propose_styles = ["ars"] #["restart", "priority", "prefix"]
  
 	tasks = load_fuzz_tasks()
 	benchmark_tasks = [task for task in tasks if task["id"] == benchmark]
@@ -57,16 +56,15 @@ def run_mcmc_fuzz_tasks(benchmark):
 		task_id = task["id"] 
 		task_prompt = task["prompt"]
 		task_grammar = task["grammar"]
-		print(f"Benchmark: {task_id}")
 
 		model._set_grammar_constraint(task_grammar)
-		for propose_style in propose_styles:
-			print(f"Benchmark: {task_id}, Propose Style: {propose_style}")
+		for sample_style in styles:
+			print(f"Benchmark: {task_id}, Sample Style: {sample_style}")
 
 			mcmc_runner = mcmc.MCMC(
 				model=model,
 				prompt=task_prompt,
-				propose_style=propose_style,
+				sample_style=sample_style,
 				name_prefix=task_id,
 				root_log_dir=split_log_dir,
 			)
@@ -82,9 +80,10 @@ if __name__ == "__main__":
 
 	parser = ArgumentParser()
 	parser.add_argument("--benchmark", required=True, choices=["xml", "sql", "sql-gr"])
+	parser.add_argument("--styles", default=None)
 
 	args = parser.parse_args()
 	benchmark = args.benchmark
 	print(f"Benchmark: {benchmark}")
 
-	run_mcmc_fuzz_tasks(benchmark)
+	run_mcmc_fuzz_tasks(benchmark, mcmc.parse_styles_arg(args.styles))

@@ -12,38 +12,39 @@ from tqdm import tqdm
 import lib
 import utils
 
-def is_valid_propose_style(propose_style):
-    if propose_style in ["prefix", "priority", "restart"]:
-        return True
-    mix, p = propose_style.split("-")
-    p = float(p)
-    if mix == "mix" and 0 <= p <= 1:
-        return True
-    return False
+def all_sample_styles():
+    return ["ars", "rs", "cftrs"]
+
+def parse_styles_arg(arg):
+    if arg is None:
+        styles = all_styles()
+    else:
+        styles = [s for s in arg.split(",")]
+        for s in styles:
+            assert s in all_sample_styles()
+    print(f"Sample styles: {styles}")
+    return styles
 
 class MCMC:
     def __init__(
         self, 
         model: lib.ConstrainedModel, 
         prompt: str, 
-        propose_style: str,
+        sample_style: str,
         name_prefix: str,
         root_log_dir: str, 
     ):
         self.model = model
         prompt = model._format_prompt(prompt)
         self.prompt_ids = model.tokenizer.encode(prompt, return_tensors="pt", add_special_tokens=False).to(model.model.device)
-        # assert propose_style in ["prefix", "priority", "restart"]
-        # assert is_valid_propose_style(propose_style)
-        assert (propose_style == "ars")
-        self.propose_style = propose_style
+        assert sample_style in all_sample_styles()
+        self.sample_style = sample_style
         self.root_log_dir = root_log_dir
         os.makedirs(root_log_dir, exist_ok=True)
-        self.log_dir = f"{root_log_dir}/{utils.timestamp()}-{name_prefix}-{propose_style}"
+        self.log_dir = f"{root_log_dir}/{utils.timestamp()}-{name_prefix}-{sample_style}"
         os.makedirs(self.log_dir, exist_ok=True)
 
     def get_sample(self, n_steps: int, max_new_tokens: int):
-        # hopefully this works
 
         steps = []
         successes = []
@@ -57,10 +58,11 @@ class MCMC:
                 current_ids, current_scores = self.model._generate(
                     self.prompt_ids,
                     max_new_tokens=max_new_tokens,
-                    do_sample=True,
                     constrain=True,
                     prefix_ids=None,
-                    oracle_trie = oracle_trie
+                    oracle_trie = oracle_trie,
+                    adaptive = (self.sample_style=="ars"),
+                    constrain_first = (self.sample_style=="cftrs")
                 )
                 sample_end_time = time.time()
                 tokens = [self.model.tokenizer.decode(token_id) for token_id in current_ids[0]]

@@ -24,11 +24,13 @@ def pretty_print_floats(d, precision=10):
     logger.debug("{" + ", ".join(formatted_items) + "}")
 
 class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
-    def __init__(self, grammar_constraint, oracle_trie, parse_start_index=None, save_log=False):
+    def __init__(self, grammar_constraint, oracle_trie, parse_start_index=None, save_log=False, adaptive=True, constrain_first=False):
         # Parser variables
         self.grammar_constraint = grammar_constraint
         self.batch_parsing_states = None
         self.parse_start_index = parse_start_index
+        self.adaptive = adaptive
+        self.constrain_first = constrain_first
 
         # ASAp oracle trie
         self.oracle_trie = oracle_trie
@@ -52,16 +54,22 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
             self.batch_parsing_states, device
         )
         current_parent, _ = self.oracle_trie.search_last_parent(self.generated_tokens)
+
+        if self.constrain_first and (current_parent == self.oracle_trie.root):
+            current_parent.insert_accepted_tokens(scores, acceptance)
     
-        if current_parent.fresh_node: 
+        adjusted_scores = scores
+        if current_parent is None:
+            assert not self.adaptive
+        elif current_parent.fresh_node: 
             logger.debug("FRESH NODE - leaving original scores")
-            adjusted_scores = scores
         else:	#PP now only if node is not fresh 
             logger.debug("NODE EXISTS - reading from trie")
             adjusted_scores = self.apply_oracle_adjustments(acceptance, scores, current_parent)
             adjusted_scores[~acceptance] = -math.inf  # Scores to -inf where False
 
-        current_parent.insert_accepted_tokens(scores, acceptance)
+        if self.adaptive:
+            current_parent.insert_accepted_tokens(scores, acceptance)
 
         if self.save_log:
             self.store_detailed_history(acceptance, scores, adjusted_scores)
@@ -131,7 +139,7 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         self.generated_tokens = input_ids[:, self.generate_start_index:]
 
         text = self.grammar_constraint.tokenizer.decode(self.generated_tokens[0], skip_special_tokens=True)
-        logger.debug("Current text: \"%s\" / %s", text, self.generated_tokens[0])
+        logger.info("Current text: \"%s\" / %s", text, self.generated_tokens[0])
 
         # Advance parser states
         self.batch_parsing_states = self.grammar_constraint.advance_token_ids(

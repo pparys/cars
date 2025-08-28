@@ -177,9 +177,8 @@ class Trie:
                 logger.debug(f"Raw likelihood of {token_id} is {current_parent.raw_likelihood:.10f}")
                 matched_prefix.append(current_parent.token_id)
             else:
-                print(
-                    f"matched prefix is {matched_prefix}; current {token_id} not found in the trie at time step {time_step}")
-                return None
+                logger.debug(f"Matched prefix is {matched_prefix}; current {token_id} not found in the trie at time step {time_step}")
+                return None, None
         
         return current_parent, prob
 
