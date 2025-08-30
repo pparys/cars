@@ -1,0 +1,600 @@
+{
+    "steps": [
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    " Swamp",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    83911,
+                    128009
+                ],
+                "raw_logprob": -72.5,
+                "cons_logprob": -14.69803524017334
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " VB",
+                    "Z",
+                    " b\u1ed1n",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    64539,
+                    57,
+                    125780,
+                    128009
+                ],
+                "raw_logprob": -54.0,
+                "cons_logprob": -18.889524459838867
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " VB",
+                    "Z",
+                    " b\u1ed1n",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    64539,
+                    57,
+                    125780,
+                    128009
+                ],
+                "raw_logprob": -54.0,
+                "cons_logprob": -18.889524459838867
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NN",
+                    " Pl",
+                    "unge",
+                    " )",
+                    " ]",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    45778,
+                    1856,
+                    14208,
+                    883,
+                    2331,
+                    128009
+                ],
+                "raw_logprob": -8.5,
+                "cons_logprob": -0.9418982267379761
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NN",
+                    " Pl",
+                    "unge",
+                    " )",
+                    " ]",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    45778,
+                    1856,
+                    14208,
+                    883,
+                    2331,
+                    128009
+                ],
+                "raw_logprob": -8.5,
+                "cons_logprob": -0.9418982267379761
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    "-H",
+                    "LN",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    " MATERIAL",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    11529,
+                    51316,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    76223,
+                    128009
+                ],
+                "raw_logprob": -70.0,
+                "cons_logprob": -12.813074111938477
+            },
+            "acceptance_prob": 2.795603294473039e-22,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NN",
+                    " Pl",
+                    "unge",
+                    " )",
+                    " ]",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    45778,
+                    1856,
+                    14208,
+                    883,
+                    2331,
+                    128009
+                ],
+                "raw_logprob": -8.5,
+                "cons_logprob": -0.9418982267379761
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NN",
+                    " Pl",
+                    "unge",
+                    " )",
+                    " ]",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    45778,
+                    1856,
+                    14208,
+                    883,
+                    2331,
+                    128009
+                ],
+                "raw_logprob": -8.5,
+                "cons_logprob": -0.9418982267379761
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NN",
+                    " Pl",
+                    "unge",
+                    " )",
+                    " ]",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    45778,
+                    1856,
+                    14208,
+                    883,
+                    2331,
+                    128009
+                ],
+                "raw_logprob": -8.5,
+                "cons_logprob": -0.9418982267379761
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    "-H",
+                    "LN",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    "ELSE",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    11529,
+                    51316,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    85882,
+                    128009
+                ],
+                "raw_logprob": -75.5,
+                "cons_logprob": -12.813074111938477
+            },
+            "acceptance_prob": 1.1424991697128467e-24,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NN",
+                    " Pl",
+                    "unge",
+                    " )",
+                    " ]",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    45778,
+                    1856,
+                    14208,
+                    883,
+                    2331,
+                    128009
+                ],
+                "raw_logprob": -8.5,
+                "cons_logprob": -0.9418982267379761
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NN",
+                    " Pl",
+                    "unge",
+                    " )",
+                    " ",
+                    "]",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    45778,
+                    1856,
+                    14208,
+                    883,
+                    220,
+                    60,
+                    128009
+                ],
+                "raw_logprob": -26.125,
+                "cons_logprob": -5.191898345947266
+            },
+            "acceptance_prob": 1.553500353145697e-06,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NN",
+                    " Pl",
+                    "unge",
+                    " )",
+                    " ]",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    45778,
+                    1856,
+                    14208,
+                    883,
+                    2331,
+                    128009
+                ],
+                "raw_logprob": -8.5,
+                "cons_logprob": -0.9418982267379761
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " ",
+                    "(",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    " Axe",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    220,
+                    7,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    72951,
+                    128009
+                ],
+                "raw_logprob": -73.0,
+                "cons_logprob": -20.41987419128418
+            },
+            "acceptance_prob": 2.8001635450647474e-20,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NN",
+                    " Pl",
+                    "unge",
+                    " )",
+                    " ]",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    45778,
+                    1856,
+                    14208,
+                    883,
+                    2331,
+                    128009
+                ],
+                "raw_logprob": -8.5,
+                "cons_logprob": -0.9418982267379761
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    "-H",
+                    "LN",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    "Identification",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    11529,
+                    51316,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    96312,
+                    128009
+                ],
+                "raw_logprob": -73.0,
+                "cons_logprob": -12.813074111938477
+            },
+            "acceptance_prob": 1.3918489235135487e-23,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NN",
+                    " Pl",
+                    "unge",
+                    " )",
+                    " ]",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    45778,
+                    1856,
+                    14208,
+                    883,
+                    2331,
+                    128009
+                ],
+                "raw_logprob": -8.5,
+                "cons_logprob": -0.9418982267379761
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NN",
+                    " Pl",
+                    "unge",
+                    " )",
+                    " ]",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    45778,
+                    1856,
+                    14208,
+                    883,
+                    2331,
+                    128009
+                ],
+                "raw_logprob": -8.5,
+                "cons_logprob": -0.9418982267379761
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NN",
+                    " Pl",
+                    "unge",
+                    " )",
+                    " ]",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    45778,
+                    1856,
+                    14208,
+                    883,
+                    2331,
+                    128009
+                ],
+                "raw_logprob": -8.5,
+                "cons_logprob": -0.9418982267379761
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NN",
+                    " Pl",
+                    "unge",
+                    " )",
+                    " ]",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    45778,
+                    1856,
+                    14208,
+                    883,
+                    2331,
+                    128009
+                ],
+                "raw_logprob": -8.5,
+                "cons_logprob": -0.9418982267379761
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NN",
+                    " Pl",
+                    "unge",
+                    " )",
+                    " ]",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    45778,
+                    1856,
+                    14208,
+                    883,
+                    2331,
+                    128009
+                ],
+                "raw_logprob": -8.5,
+                "cons_logprob": -0.9418982267379761
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NN",
+                    " Pl",
+                    "unge",
+                    " )",
+                    " ]",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    45778,
+                    1856,
+                    14208,
+                    883,
+                    2331,
+                    128009
+                ],
+                "raw_logprob": -8.5,
+                "cons_logprob": -0.9418982267379761
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        }
+    ]
+}

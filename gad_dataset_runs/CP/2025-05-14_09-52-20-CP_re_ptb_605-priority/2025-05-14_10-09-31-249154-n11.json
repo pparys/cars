@@ -1,0 +1,620 @@
+{
+    "steps": [
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    "equipment",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    68618,
+                    128009
+                ],
+                "raw_logprob": -75.0,
+                "cons_logprob": -14.69803524017334
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    " luz",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    65566,
+                    128009
+                ],
+                "raw_logprob": -74.0,
+                "cons_logprob": -14.69803524017334
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    " luz",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    65566,
+                    128009
+                ],
+                "raw_logprob": -74.0,
+                "cons_logprob": -14.69803524017334
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    "_tag",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    9556,
+                    128009
+                ],
+                "raw_logprob": -77.0,
+                "cons_logprob": -14.69803524017334
+            },
+            "acceptance_prob": 0.049787068367864035,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    " luz",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    65566,
+                    128009
+                ],
+                "raw_logprob": -74.0,
+                "cons_logprob": -14.69803524017334
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    " <<-",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    76774,
+                    128009
+                ],
+                "raw_logprob": -72.5,
+                "cons_logprob": -14.69803524017334
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    " <<-",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    76774,
+                    128009
+                ],
+                "raw_logprob": -72.5,
+                "cons_logprob": -14.69803524017334
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    " exceptionally",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    48298,
+                    128009
+                ],
+                "raw_logprob": -76.0,
+                "cons_logprob": -14.69803524017334
+            },
+            "acceptance_prob": 0.030197383422318553,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    " <<-",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    76774,
+                    128009
+                ],
+                "raw_logprob": -72.5,
+                "cons_logprob": -14.69803524017334
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    "leftJoin",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    76761,
+                    128009
+                ],
+                "raw_logprob": -68.5,
+                "cons_logprob": -14.69803524017334
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    "leftJoin",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    76761,
+                    128009
+                ],
+                "raw_logprob": -68.5,
+                "cons_logprob": -14.69803524017334
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    "/calendar",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    77817,
+                    128009
+                ],
+                "raw_logprob": -79.5,
+                "cons_logprob": -14.69803524017334
+            },
+            "acceptance_prob": 1.670170079024569e-05,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    "leftJoin",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    76761,
+                    128009
+                ],
+                "raw_logprob": -68.5,
+                "cons_logprob": -14.69803524017334
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    "lda",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    74526,
+                    128009
+                ],
+                "raw_logprob": -79.0,
+                "cons_logprob": -14.69803524017334
+            },
+            "acceptance_prob": 2.7536449349747206e-05,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    "leftJoin",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    76761,
+                    128009
+                ],
+                "raw_logprob": -68.5,
+                "cons_logprob": -14.69803524017334
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    "-button",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    12726,
+                    128009
+                ],
+                "raw_logprob": -76.0,
+                "cons_logprob": -14.69803524017334
+            },
+            "acceptance_prob": 0.0005530843701478346,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    "leftJoin",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    76761,
+                    128009
+                ],
+                "raw_logprob": -68.5,
+                "cons_logprob": -14.69803524017334
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    " Bu",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    28326,
+                    128009
+                ],
+                "raw_logprob": -72.0,
+                "cons_logprob": -14.69803524017334
+            },
+            "acceptance_prob": 0.030197383422318553,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    "leftJoin",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    76761,
+                    128009
+                ],
+                "raw_logprob": -68.5,
+                "cons_logprob": -14.69803524017334
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    ".decoder",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    75147,
+                    128009
+                ],
+                "raw_logprob": -79.0,
+                "cons_logprob": -14.69803524017334
+            },
+            "acceptance_prob": 2.7536449349747206e-05,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    "leftJoin",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    76761,
+                    128009
+                ],
+                "raw_logprob": -68.5,
+                "cons_logprob": -14.69803524017334
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " NN",
+                    "P",
+                    "S",
+                    " graphite",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    45778,
+                    47,
+                    50,
+                    95273,
+                    128009
+                ],
+                "raw_logprob": -74.5,
+                "cons_logprob": -14.69803524017334
+            },
+            "acceptance_prob": 0.002478752176666363,
+            "accepted": false
+        }
+    ]
+}

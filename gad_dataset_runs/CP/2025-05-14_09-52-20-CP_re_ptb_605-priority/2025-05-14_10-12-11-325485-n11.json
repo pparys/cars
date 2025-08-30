@@ -1,0 +1,576 @@
+{
+    "steps": [
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "Hal",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    57041,
+                    128009
+                ],
+                "raw_logprob": -57.0,
+                "cons_logprob": -14.952993392944336
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    " merkezi",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    116627,
+                    128009
+                ],
+                "raw_logprob": -53.0,
+                "cons_logprob": -14.952993392944336
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    " merkezi",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    116627,
+                    128009
+                ],
+                "raw_logprob": -53.0,
+                "cons_logprob": -14.952993392944336
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "noDB",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    83340,
+                    128009
+                ],
+                "raw_logprob": -50.0,
+                "cons_logprob": -14.952993392944336
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "noDB",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    83340,
+                    128009
+                ],
+                "raw_logprob": -50.0,
+                "cons_logprob": -14.952993392944336
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "_TIMER",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    32933,
+                    128009
+                ],
+                "raw_logprob": -53.75,
+                "cons_logprob": -14.952993392944336
+            },
+            "acceptance_prob": 0.023517745856008982,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "noDB",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    83340,
+                    128009
+                ],
+                "raw_logprob": -50.0,
+                "cons_logprob": -14.952993392944336
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "Src",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    20983,
+                    128009
+                ],
+                "raw_logprob": -56.25,
+                "cons_logprob": -14.952993392944336
+            },
+            "acceptance_prob": 0.001930454136227699,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "noDB",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    83340,
+                    128009
+                ],
+                "raw_logprob": -50.0,
+                "cons_logprob": -14.952993392944336
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "cac",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    84210,
+                    128009
+                ],
+                "raw_logprob": -57.25,
+                "cons_logprob": -14.952993392944336
+            },
+            "acceptance_prob": 0.0007101743888425452,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "noDB",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    83340,
+                    128009
+                ],
+                "raw_logprob": -50.0,
+                "cons_logprob": -14.952993392944336
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "berries",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    36989,
+                    128009
+                ],
+                "raw_logprob": -50.75,
+                "cons_logprob": -14.952993392944336
+            },
+            "acceptance_prob": 0.4723665527410155,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "berries",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    36989,
+                    128009
+                ],
+                "raw_logprob": -50.75,
+                "cons_logprob": -14.952993392944336
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    ".anchor",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    45463,
+                    128009
+                ],
+                "raw_logprob": -56.5,
+                "cons_logprob": -14.952993392944336
+            },
+            "acceptance_prob": 0.00318278079650965,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "berries",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    36989,
+                    128009
+                ],
+                "raw_logprob": -50.75,
+                "cons_logprob": -14.952993392944336
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    " Typically",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    46402,
+                    128009
+                ],
+                "raw_logprob": -54.25,
+                "cons_logprob": -14.952993392944336
+            },
+            "acceptance_prob": 0.03019738342231834,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "berries",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    36989,
+                    128009
+                ],
+                "raw_logprob": -50.75,
+                "cons_logprob": -14.952993392944336
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "\\\\",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    3505,
+                    128009
+                ],
+                "raw_logprob": -48.5,
+                "cons_logprob": -14.952993392944336
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "\\\\",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    3505,
+                    128009
+                ],
+                "raw_logprob": -48.5,
+                "cons_logprob": -14.952993392944336
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "rand",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    11588,
+                    128009
+                ],
+                "raw_logprob": -52.0,
+                "cons_logprob": -14.952993392944336
+            },
+            "acceptance_prob": 0.030197383422318553,
+            "accepted": false
+        },
+        {
+            "current": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    "\\\\",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    3505,
+                    128009
+                ],
+                "raw_logprob": -48.5,
+                "cons_logprob": -14.952993392944336
+            },
+            "proposal": {
+                "tokens": [
+                    "[",
+                    " (",
+                    " NP",
+                    " (",
+                    " JJ",
+                    "R",
+                    " Graduate",
+                    "<|eot_id|>"
+                ],
+                "token_ids": [
+                    58,
+                    320,
+                    44340,
+                    320,
+                    71140,
+                    49,
+                    44825,
+                    128009
+                ],
+                "raw_logprob": -48.25,
+                "cons_logprob": -14.952993392944336
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        }
+    ]
+}
