@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.cm import get_cmap
 
+'''
 def kl_divergence(p, q):
     """Compute the KL divergence between two distributions."""
     # Make sure that the distributions have the same keys
@@ -45,18 +46,20 @@ def load_runs_data(run_dir: str, min_steps: int) -> list[dict]:
                             runs.append(run_data)
     # print(len(runs))
     return runs
+'''
 
-def load_mcmc_run_data(run_dir: str, min_steps: int) -> list[dict]:
+def load_mcmc_run_data(run_dir: str, min_steps: int = 0) -> list[dict]:
     runs = []
     for run in os.listdir(run_dir):
         if run.endswith(".json"):
             with open(os.path.join(run_dir, run), "r") as f:
                 run_data = json.load(f)
-                if len(run_data["successes"]) >= min_steps:
+                if min_steps==0 or len(run_data["successes"]) >= min_steps:
                     runs.append(run_data)
     print(f"Loaded {len(runs)} samples from {run_dir}")
     return runs
 
+'''
 def estimate_full_distribution(mcmc_samples: list[dict], distr_type: str) -> dict:
     if distr_type not in ["raw_logprob", "cons_logprob"]:
         raise ValueError("Invalid distribution type. Choose 'raw_logprob' or 'cons_logprob'.")
@@ -403,19 +406,59 @@ def print_asap_kl_stats(tasks_at_10):
         # print(improvement_ratios)
         improvement_ratio = np.prod(improvement_ratios) ** (1 / len(improvement_ratios))
         print(f"Improvement ratio for {method}: {improvement_ratio:.4f}")
+'''
+
+import pprint
+from collections import defaultdict
+import math
+
+def extract_samples(samples):
+    result = []
+    for data in samples:
+        for d in data:
+            for s in d["steps"]:
+                if "token_ids" in s:
+                    result.append((tuple(s["token_ids"]), s["raw_logprob"]))
+                else:
+                    result.append((tuple(s["current"]["token_ids"]), s["current"]["raw_logprob"]))
+                    result.append((tuple(s["proposal"]["token_ids"]), s["proposal"]["raw_logprob"]))
+    return result
+    
+
+def compute_kl_chi2(all_data: list[str], samples: list[str], id: str):
+    all_data = [load_mcmc_run_data(run_dir) for run_dir in all_data]
+    samples = [load_mcmc_run_data(run_dir) for run_dir in samples]
+    all_data = extract_samples(all_data)
+    samples = extract_samples(samples)
+    
+    new_distr = defaultdict(int)
+    for x,_ in samples:
+        new_distr[x] += 1
+
+    orig_distr = {}
+    for x,v in all_data:
+        if x in orig_distr:
+            if not math.isclose(v, orig_distr[x]):
+                print(x, v, orig_distr[x])
+            assert math.isclose(v, orig_distr[x])
+        else:
+            orig_distr[x] = v
+    #pprint.pprint(new_distr)
+    
+
 
 def plot_success_rates(all_mcmc_run_data: list[tuple[list[str], str]], split: str, output_dir: str, cut = 1000):
 
+    print(f"Drawing success rates for length {cut}")
     # Create a figure with equal aspect ratio (square)
     plt.figure(figsize=(12, 6))
     # Get a colormap with distinct colors
     cmap = get_cmap('tab20')
 
-    steps_total = cut
     j = 0
     llast=[]
     for mcmc_run_dirs, task_id in all_mcmc_run_data:
-        mcmc_runs = [load_mcmc_run_data(run_dir, min_steps=steps_total) for run_dir in mcmc_run_dirs]
+        mcmc_runs = [load_mcmc_run_data(run_dir, min_steps=cut) for run_dir in mcmc_run_dirs]
         assert len(mcmc_runs)==1
         mcmc_runs = mcmc_runs[0]
         if len(mcmc_runs)==0:
@@ -429,8 +472,6 @@ def plot_success_rates(all_mcmc_run_data: list[tuple[list[str], str]], split: st
             if successes[i]:
                 ok = ok+1
             rate.append(ok/(i+1))
-        #print(successes)
-        #print(rate)
         llast.append(mcmc_runs['steps'][-1])
 
         x = range(1, len(rate)+1)
@@ -456,6 +497,7 @@ def plot_success_rates(all_mcmc_run_data: list[tuple[list[str], str]], split: st
     for last in llast:
         print(f"{np.exp(last['raw_logprob']):.10f} -> {np.exp(last['cons_logprob']):.10f}")
 
+'''
 def plot_kl_scatter(all_mcmc_run_data: list[tuple[list[str], str]], split: str, output_dir: str):
     # for each run, plot KL divergence as a scatter
     # x axis is kl at step 0, y axis is kl at step 10
@@ -705,3 +747,4 @@ def get_mcmc_samples(mcmc_runs: list[dict], n_steps: int) -> list[tuple]:
         logprob_at_step = mcmc_run["steps"][n_steps-1]["current"]["raw_logprob"]
         samples.append((sample_at_step, logprob_at_step))
     return samples
+'''

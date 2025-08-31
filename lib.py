@@ -146,6 +146,7 @@ class ConstrainedModel():
             pad_token_id=self.tokenizer.eos_token_id,
             return_dict_in_generate=True,
             output_scores=True,
+            top_k=None,
         )
 
         self.gcd_logits_processor = None
@@ -176,6 +177,7 @@ class ConstrainedModel():
             tokenizer=self.tokenizer,
             logits_processor=logits_processor_list,
         )
+        #print(self.model._get_logits_processor(generation_config))
 
         output_ids = output.sequences
         output_ids = output_ids[:, input_prefix_ids.shape[1]:]
