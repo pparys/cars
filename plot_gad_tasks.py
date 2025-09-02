@@ -70,7 +70,7 @@ def plot_main():
 
     for split, runs_dir in data:
         run_data = load_gad_tasks(split, runs_dir)
-        #plot_success(split, run_data, f"{output_dir}/success")
+        plot_success(split, run_data, f"{output_dir}/success")
         compute_kl(split, run_data)
 
 if __name__ == "__main__":

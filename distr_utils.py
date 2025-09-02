@@ -1,5 +1,6 @@
 import json
 import os
+import pprint
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -20,7 +21,6 @@ def load_mcmc_run_data(run_dir: str, min_steps: int = 0) -> list[dict]:
     print(f"Loaded {len(runs)} samples from {run_dir}")
     return runs
 
-#import pprint
 
 def extract_samples(samples):
     result = []
@@ -54,6 +54,8 @@ def compute_kl_chi2(all_data: list[str], samples: list[str], id: str):
             assert math.isclose(v, orig_distr[x])
         else:
             orig_distr[x] = v
+    #pprint.pprint(orig_distr)
+    #pprint.pprint(new_distr)
 
     # KL-divergence:
     keys = list(orig_distr.keys())
@@ -65,6 +67,12 @@ def compute_kl_chi2(all_data: list[str], samples: list[str], id: str):
     # For chi2 - all keys:
     f_exp = orig_probs*total
     f_obs = np.array([new_distr[k] for k in keys])
+    for i in range(0, len(f_obs), 20):
+        linia = f_obs[i:i+20]
+        print(' '.join(f"{liczba:5.0f}   " for liczba in linia))
+    for i in range(0, len(f_exp), 20):
+        linia = f_exp[i:i+20]
+        print(' '.join(f"{liczba:8.2f}" for liczba in linia))
     chi2_stat, p_value = chisquare(f_obs=f_obs, f_exp=f_exp)
     print("Chi2:", chi2_stat)
     #print("p-value:", p_value)
