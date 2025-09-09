@@ -58,6 +58,8 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         if self.constrain_first and (current_parent == self.oracle_trie.root):
             current_parent.insert_accepted_tokens(scores, acceptance)
     
+        #print("Scores:")
+        #print(scores)
         adjusted_scores = scores
         if current_parent is None:
             assert not self.adaptive
@@ -67,6 +69,11 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
             logger.debug("NODE EXISTS - reading from trie")
             adjusted_scores = self.apply_oracle_adjustments(acceptance, scores, current_parent)
             adjusted_scores[~acceptance] = -math.inf  # Scores to -inf where False
+            #print("Adjusted scores:")
+            #print(adjusted_scores)
+            #for a in adjusted_scores[0]:
+            #    if a.item()!=float('-inf'):
+            #        print(a, a.item())
 
         if self.adaptive:
             current_parent.insert_accepted_tokens(scores, acceptance)

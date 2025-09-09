@@ -225,7 +225,7 @@ class ConstrainedModel():
         # Apply log_softmax to get log-probabilities
         logprobs = torch.log_softmax(scores, dim=-1)
         lll = torch.nn.functional.log_softmax(scores.to(torch.get_default_dtype()), dim=-1)
-        print("DTYPE:", torch.get_default_dtype())
+        #print("DTYPE:", torch.get_default_dtype())
     
         batch_size, seq_len = query_ids.shape
     
@@ -253,18 +253,20 @@ class ConstrainedModel():
                 first_eos_pos = eos_positions[0].item()
                 # Sum only up to and including the first EOS token
                 # print(f"First EOS position: {first_eos_pos}")
-                print(seq_token_logprobs)
-                print(lll2)
-                for a in range(seq_token_logprobs.size(0)):
-                    print(seq_token_logprobs[a], seq_token_logprobs[a].item(), math.exp(seq_token_logprobs[a].item()), lll2[a], lll2[a].item(), math.exp(lll2[a].item()))
-                print("HERE")
-                print(seq_token_logprobs.sum().item(), lll2.sum().item())
+                #print(seq_token_logprobs)
+                #print(lll2)
+                #for a in range(seq_token_logprobs.size(0)):
+                #    print(seq_token_logprobs[a], seq_token_logprobs[a].item(), math.exp(seq_token_logprobs[a].item()), lll2[a], lll2[a].item(), math.exp(lll2[a].item()))
+                #print("HERE")
+                #print(seq_token_logprobs.sum().item(), lll2.sum().item())
                 result[i] = seq_token_logprobs[:first_eos_pos + 1].sum()
+                #result[i] = lll2[:first_eos_pos + 1].sum()
             else:
                 # No EOS token, sum all logprobs
                 # print("No EOS token found")
                 result[i] = seq_token_logprobs.sum()
-        abort()
+                #result[i] = lll2.sum()
+
         return result
 
     def _get_generation_scores(
