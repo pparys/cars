@@ -62,9 +62,9 @@ def compute_kl(split: str, run_data):
     
 def plot_main():
     data = [
-        ("SLIA", "gad_dataset_runs/SLIA"),
         ("BV4", "gad_dataset_runs/BV4"),
         ("CP", "gad_dataset_runs/CP"),
+        ("SLIA", "gad_dataset_runs/SLIA"),
     ]
     output_dir = "plots_new"
 

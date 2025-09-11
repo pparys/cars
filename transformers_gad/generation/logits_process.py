@@ -4,12 +4,13 @@ import torch.nn.functional as F
 import torch
 import logging
 import time
+import xgrammar
 from transformers.generation.logits_process import (
     LogitsProcessor,
     LOGITS_PROCESSOR_INPUTS_DOCSTRING,
 )
 from transformers.utils import add_start_docstrings
-from transformers_gad.grammar_utils import IncrementalGrammarConstraint
+from transformers_gad.llguidance_grammar_recognizer import LlguidanceTokenRecognizer
 from transformers_gad.oracle.oracle_trie import Trie
 
 logger = logging.getLogger(__name__)
@@ -24,24 +25,23 @@ def pretty_print_floats(d, precision=10):
     logger.debug("{" + ", ".join(formatted_items) + "}")
 
 class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
-    def __init__(self, grammar_constraint, oracle_trie, parse_start_index=None, save_log=False, adaptive=True, constrain_first=False):
+    def __init__(self, tokenizer, grammar_constraint, oracle_trie, adaptive=True, constrain_first=False):
         # Parser variables
+        self.tokenizer = tokenizer
         self.grammar_constraint = grammar_constraint
-        self.batch_parsing_states = None
-        self.parse_start_index = parse_start_index
         self.adaptive = adaptive
         self.constrain_first = constrain_first
 
         # ASAp oracle trie
         self.oracle_trie = oracle_trie
 
-        # To start with a longer prefix in enumerative search
         self.generate_start_index = None
         self.generated_tokens = None
+        self.current_index = None
 
         # Generation Log
-        self.save_log = save_log
-        self.history = []
+        #self.save_log = save_log
+        #self.history = []
         self.logits_process_time = 0
         #print("Starting logits processor")
 
@@ -50,13 +50,18 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         resolve each stack to a tensor of True/False for each token
         indicating acceptance
         """
-        acceptance = self.grammar_constraint.batch_filter_vocab(
-            self.batch_parsing_states, device
-        )
+        #print("ACCEPTANCE:", self.grammar_constraint._grammar_bitmask)
+        acceptance = self.grammar_constraint.filter_vocab()
+        acc_list = self.grammar_constraint.nonzero_bits()
+        #print("ACCEPTANCE:", acceptance)
+        #print("length:", len(acceptance[0]))
+        #for i in acc_list:
+        #    print(i, self.tokenizer.decode([i]))
+
         current_parent, _ = self.oracle_trie.search_last_parent(self.generated_tokens)
 
         if self.constrain_first and (current_parent == self.oracle_trie.root):
-            current_parent.insert_accepted_tokens(scores, acceptance)
+            current_parent.insert_accepted_tokens(scores, acc_list)
     
         #print("Scores:")
         #print(scores)
@@ -67,8 +72,8 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
             logger.debug("FRESH NODE - leaving original scores")
         else:	#PP now only if node is not fresh 
             logger.debug("NODE EXISTS - reading from trie")
-            adjusted_scores = self.apply_oracle_adjustments(acceptance, scores, current_parent)
-            adjusted_scores[~acceptance] = -math.inf  # Scores to -inf where False
+            adjusted_scores = self.apply_oracle_adjustments(acc_list, scores, current_parent)
+            xgrammar.apply_token_bitmask_inplace(adjusted_scores, acceptance) # Scores to -inf where False
             #print("Adjusted scores:")
             #print(adjusted_scores)
             #for a in adjusted_scores[0]:
@@ -76,14 +81,14 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
             #        print(a, a.item())
 
         if self.adaptive:
-            current_parent.insert_accepted_tokens(scores, acceptance)
+            current_parent.insert_accepted_tokens(scores, acc_list)
 
-        if self.save_log:
-            self.store_detailed_history(acceptance, scores, adjusted_scores)
+        #if self.save_log:
+        #    self.store_detailed_history(acceptance, scores, adjusted_scores)
 
         return adjusted_scores
 
-    def apply_oracle_adjustments(self, acceptance, scores, current_parent):
+    def apply_oracle_adjustments(self, acc_list, scores, current_parent):
         """
         Multiply expected future grammarticality
         Use the normalized (and unmasked) probabiltiy
@@ -95,63 +100,49 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         - current_parent (TrieNode): The trie node for the current prefix
         """
         adjusted_scores = scores.clone()
-        likelihoods = F.softmax(adjusted_scores, dim=-1)
-        log_likelihoods = torch.log(likelihoods)
+        #log_likelihoods = F.log_softmax(adjusted_scores, dim=-1)
 
-        for batch_index in range(acceptance.size(0)):
-            accepted_indices = acceptance[batch_index].nonzero().squeeze(-1)
+        for idx in acc_list:
+            token_id = idx.item()
+            #log_likelihood = log_likelihoods[0, idx].item()
+            
+            # Get theta (log of expected future grammaticality) for this specific token
+            success_rate = current_parent.get_success_rate(token_id)
 
-            for idx in accepted_indices:
-                token_id = idx.item()
-                log_likelihood = log_likelihoods[batch_index, idx].item()
-                
-                # Get theta (log of expected future grammaticality) for this specific token
-                success_rate = current_parent.get_success_rate(token_id)
+            if not isinstance(success_rate, torch.Tensor):
+                success_rate = torch.tensor(success_rate, dtype=torch.float)
+            log_theta = torch.log(success_rate)
+            
+            # Calculate adjusted score
+            adjusted_score = scores[0, idx] + log_theta
+            adjusted_scores[0, idx] = adjusted_score
 
-                if not isinstance(success_rate, torch.Tensor):
-                    success_rate = torch.tensor(success_rate, dtype=torch.float)
-                log_theta = torch.log(success_rate)
-                
-                # Calculate adjusted score
-                adjusted_score = scores[batch_index, idx] + log_theta
-                adjusted_scores[batch_index, idx] = adjusted_score
-
-                pretty_print_floats({
-                    "token_id": token_id,
-                    "token": str(self.grammar_constraint.tokenizer.decode([token_id])),
-                    "raw_score": scores[batch_index, idx].item(),
-                    "log_likelihood": log_likelihood,
-                    "success_rate": success_rate,
-                    "log_theta" : log_theta
-                })
+            pretty_print_floats({
+                "token_id": token_id,
+                "token": str(self.tokenizer.decode([token_id])),
+                "raw_score": scores[0, idx].item(),
+                "success_rate": success_rate,
+                "log_theta" : log_theta,
+                "adjusted_score": adjusted_score,
+            })
 
         return adjusted_scores
 
     def process_scores(self, input_ids, scores):
         start_time = time.time()
-        # we dynamically create stacks at the first call, so that we know the batch size and beam size
-        if self.batch_parsing_states is None:
-            self.batch_parsing_states = [
-                copy.deepcopy(
-                    self.grammar_constraint.string_recognizer.get_initial_accept_state()
-                )
-                for _ in range(len(input_ids))
-            ]
+        assert len(input_ids)==1
 
-        # assume the generation starts from the same index
         if self.generate_start_index is None:
-            # the default is the end of input sequence of tokens
-            self.generate_start_index = self.parse_start_index \
-                if self.parse_start_index else input_ids.size(1)
-        self.generated_tokens = input_ids[:, self.generate_start_index:]
+            self.generate_start_index = input_ids.size(1) # the end of input sequence of tokens
+            logger.debug("PARSER STARTING")
 
-        text = self.grammar_constraint.tokenizer.decode(self.generated_tokens[0], skip_special_tokens=True)
-        logger.info("Current text: \"%s\" / %s", text, self.generated_tokens[0])
+        self.generated_tokens = input_ids[0, self.generate_start_index:]
+
+        text = self.tokenizer.decode(self.generated_tokens) #, skip_special_tokens=True)
+        logger.info("Current text: \"%s\" / %s", text, self.generated_tokens)
 
         # Advance parser states
-        self.batch_parsing_states = self.grammar_constraint.advance_token_ids(
-            input_ids, self.batch_parsing_states, self.parse_start_index
-        ) #  PP it throws exception when text nongrammatical
+        self.grammar_constraint.advance_token_ids(self.generated_tokens) #  PP it throws exception when text nongrammatical
 
         adjusted_scores = self.adjust_scores(scores, scores.device)
         end_time = time.time()
@@ -160,15 +151,15 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         return adjusted_scores
     
     def check_full_string(self, input_ids): # PP: new method, should be called at the end
-        self.generated_tokens = input_ids[:, self.generate_start_index:]
-        text = self.grammar_constraint.tokenizer.decode(self.generated_tokens[0])
-        logger.debug("Full generated text: \"%s\" / %s", text, self.generated_tokens[0])
+        self.generated_tokens = input_ids[0, self.generate_start_index:]
+        text = self.tokenizer.decode(self.generated_tokens)
+        logger.debug("Full generated text: \"%s\" / %s", text, self.generated_tokens)
 
         _, prob = self.oracle_trie.search_last_parent(self.generated_tokens) # needed to compute probability
 
         self.generated_tokens = input_ids[:, self.generate_start_index:]
         self.batch_parsing_states = self.grammar_constraint.advance_token_ids(
-            input_ids, self.batch_parsing_states, self.parse_start_index
+            input_ids, self.batch_parsing_states, self.generate_start_index
         ) #PP: may throw exception
         return prob
 
@@ -179,21 +170,15 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         return self.process_scores(input_ids, scores)
 
     def reset(self):
-        self.reset_parser()
-        self.reset_history()
-
-    def reset_parser(self):
-        self.batch_parsing_states = None
-        if self.grammar_constraint.is_incremental:
-            self.grammar_constraint.reset()
-
+        #self.reset_history()
+        self.grammar_constraint.reset()
         self.generate_start_index = None
         self.generated_tokens = None
 
-    def reset_history(self):
-        self.history = []
+    #def reset_history(self):
+    #    self.history = []
 
-    def reset_trie(self):
+    def reset_trie(self): # possibly useful, but doesn't used now (we always create a new object of the logit processor)
         self.oracle_trie = Trie()
 
     def get_accepted_tokens(self, acceptance):
@@ -220,45 +205,45 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
 
         return accepted_tokens
 
-    def store_detailed_history(self, acceptance, scores, adjusted_scores):
-        """
-        Processes and stores information for accepted tokens including their IDs, tokens,
-        raw scores, and logits.
-
-        Parameters:
-        - acceptance (torch.Tensor): A boolean tensor indicating accepted tokens for each item in the batch.
-        - scores (torch.Tensor): The raw scores from the model output.
-        - adjusted_scores (torch.Tensor): The adjusted scores after applying expected future grammaticality.
-        """
-        likelihoods = F.softmax(scores, dim=-1)
-        adjusted_likelihoods = F.softmax(adjusted_scores, dim=-1)
-
-        # Initializing the list to store detailed information for each step
-        batch_accepted_info = []
-
-        for batch_index in range(acceptance.size(0)):  # Iterate over batch items
-            accepted_info = []
-            accepted_indices = acceptance[batch_index].nonzero().squeeze(-1)
-
-            for idx in accepted_indices:
-                token_id = idx.item()
-                raw_score = scores[batch_index, idx].item()
-                likelihood = likelihoods[batch_index, idx].item()
-                adjusted_likelihood = adjusted_likelihoods[batch_index, idx].item()
-                token = self.grammar_constraint.tokenizer.decode([token_id])
-
-                # Store detailed information as a dictionary
-                accepted_info.append({
-                    "token_id": token_id,
-                    "token": str(token),
-                    "raw_score": raw_score,
-                    "raw_likelihood": likelihood,
-                    "adjusted_score": adjusted_scores[batch_index, idx].item(),
-                    "adjusted_likelihood": adjusted_likelihood
-                })
-                pretty_print_floats(accepted_info[-1])
-
-            batch_accepted_info.append(accepted_info)
-
-        # Store this detailed information in the history
-        self.history.append(batch_accepted_info)
+#    def store_detailed_history(self, acceptance, scores, adjusted_scores):
+#        """
+#        Processes and stores information for accepted tokens including their IDs, tokens,
+#        raw scores, and logits.
+#
+#        Parameters:
+#        - acceptance (torch.Tensor): A boolean tensor indicating accepted tokens for each item in the batch.
+#        - scores (torch.Tensor): The raw scores from the model output.
+#        - adjusted_scores (torch.Tensor): The adjusted scores after applying expected future grammaticality.
+#        """
+#        likelihoods = F.softmax(scores, dim=-1)
+#        adjusted_likelihoods = F.softmax(adjusted_scores, dim=-1)
+#
+#        # Initializing the list to store detailed information for each step
+#        batch_accepted_info = []
+#
+#        for batch_index in range(acceptance.size(0)):  # Iterate over batch items
+#            accepted_info = []
+#            accepted_indices = acceptance[batch_index].nonzero().squeeze(-1)
+#
+#            for idx in accepted_indices:
+#                token_id = idx.item()
+#                raw_score = scores[batch_index, idx].item()
+#                likelihood = likelihoods[batch_index, idx].item()
+#                adjusted_likelihood = adjusted_likelihoods[batch_index, idx].item()
+#                token = self.grammar_constraint.tokenizer.decode([token_id])
+#
+#                # Store detailed information as a dictionary
+#                accepted_info.append({
+#                    "token_id": token_id,
+#                    "token": str(token),
+#                    "raw_score": raw_score,
+#                    "raw_likelihood": likelihood,
+#                    "adjusted_score": adjusted_scores[batch_index, idx].item(),
+#                    "adjusted_likelihood": adjusted_likelihood
+#                })
+#                pretty_print_floats(accepted_info[-1])
+#
+#            batch_accepted_info.append(accepted_info)
+#
+#        # Store this detailed information in the history
+#        self.history.append(batch_accepted_info)

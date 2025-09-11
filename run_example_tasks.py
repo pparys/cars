@@ -8,19 +8,6 @@ import utils
 import lib
 import mcmc
 
-def load_gad_tasks(split, subset):
-    assert split in ["SLIA", "CP", "BV4"] 
-    slia_tasks_path = f"datasets/GAD-dataset/{split}.jsonl"
-    slia_tasks = []
-    with open(slia_tasks_path, "r") as f:
-        for line in f:
-            task = json.loads(line)
-            slia_tasks.append(task)
-    if subset is not None:
-        slia_tasks = [slia_tasks[i] for i in subset]
-    return slia_tasks
-
-
 def run_mcmc_gad_tasks(styles):
     model_id = "meta-llama/Llama-3.1-8B-Instruct"
     if not torch.cuda.is_available():

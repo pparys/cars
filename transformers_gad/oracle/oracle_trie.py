@@ -43,32 +43,29 @@ class TrieNode:
         #else:
             #return 0
 
-    def insert_accepted_tokens(self, scores, acceptance):
+    def insert_accepted_tokens(self, scores, acc_list):
         """
         Create node from acceptance and scores and 
         insert as children of self node 
         """
+        if not self.fresh_node:
+            return
+
         likelihoods = F.softmax(scores, dim=-1)
-        update_needed = False
 
-        for batch_index in range(acceptance.size(0)):
-            accepted_tokens = acceptance[batch_index].nonzero().squeeze(-1)
+        for token_id in acc_list:
+            raw_likelihood = likelihoods[0, token_id].item()
+            raw_score = scores[0, token_id].item()
 
-            for token_id in accepted_tokens:
-                if token_id.item() not in self.children:
-                    raw_likelihood = likelihoods[batch_index, token_id].item()
-                    raw_score = scores[batch_index, token_id].item()
+            child_node = TrieNode(
+                token_id=token_id.item(),
+                raw_likelihood=raw_likelihood, 
+                raw_score=raw_score)
 
-                    child_node = TrieNode(
-                        token_id=token_id.item(),
-                        raw_likelihood=raw_likelihood, 
-                        raw_score=raw_score)
+            logger.debug(f"Inserting child for token {token_id}")
+            self.insert(child_node)
 
-                    logger.debug(f"Inserting child for token {token_id}")
-                    self.insert(child_node)
-                    update_needed = True
-        if update_needed: #PP -  now updating only once, here
-            self.update_success_rate()
+        self.update_success_rate()
         self.fresh_node = False
 
     def get_success_rate(self, token_id):
@@ -169,7 +166,7 @@ class Trie:
         prob = 1
 
         # Assume one batch of prefix
-        for time_step, token_id in enumerate(prefix[0]):
+        for time_step, token_id in enumerate(prefix):
             token_id = token_id.item()
             if token_id in current_parent.children:
                 current_parent = current_parent.children[token_id]

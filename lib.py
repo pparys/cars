@@ -6,9 +6,8 @@ import torch
 import numpy as np
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig, GenerationConfig
 from transformers.generation.logits_process import LogitsProcessorList, InfNanRemoveLogitsProcessor
-#from transformers_cfg.grammar_utils import IncrementalGrammarConstraint
-#from transformers_cfg.generation.logits_process import GrammarConstrainedLogitsProcessor
-from transformers_gad.grammar_utils import IncrementalGrammarConstraint
+#from transformers_gad.grammar_utils import IncrementalGrammarConstraint
+from transformers_gad.llguidance_grammar_recognizer import LlguidanceTokenRecognizer
 from transformers_gad.generation.logits_process import GrammarAlignedOracleLogitsProcessor
 
 def scores_to_top_k_tokens(scores, k):
@@ -86,7 +85,7 @@ class ConstrainedModel():
             self._set_grammar_constraint(grammar_str)
 
     def _set_grammar_constraint(self, grammar_str: str):
-        self.grammar_constraint = IncrementalGrammarConstraint(grammar_str, "root", self.tokenizer)
+        self.grammar_constraint = LlguidanceTokenRecognizer(grammar_str, self.tokenizer)
         
     def _format_prompt(self, prompt: str) -> str:
         """
@@ -159,7 +158,7 @@ class ConstrainedModel():
                 assert False
                 #self.gcd_logits_processor = GrammarConstrainedLogitsProcessor(self.grammar_constraint, len(input_ids[0]))
             else:
-                self.gcd_logits_processor = GrammarAlignedOracleLogitsProcessor(self.grammar_constraint, oracle_trie, adaptive = adaptive, constrain_first = constrain_first)
+                self.gcd_logits_processor = GrammarAlignedOracleLogitsProcessor(self.tokenizer, self.grammar_constraint, oracle_trie, adaptive = adaptive, constrain_first = constrain_first)
 
         logits_processor_list = []
         logits_processor_list.append(InfNanRemoveLogitsProcessor())
@@ -224,7 +223,7 @@ class ConstrainedModel():
     
         # Apply log_softmax to get log-probabilities
         logprobs = torch.log_softmax(scores, dim=-1)
-        lll = torch.nn.functional.log_softmax(scores.to(torch.get_default_dtype()), dim=-1)
+        #logprobsOK = torch.nn.functional.log_softmax(scores.to(torch.get_default_dtype()), dim=-1)
         #print("DTYPE:", torch.get_default_dtype())
     
         batch_size, seq_len = query_ids.shape
@@ -236,7 +235,7 @@ class ConstrainedModel():
         for i in range(batch_size):
             # Get logprobs for this sequence's tokens
             seq_token_logprobs = logprobs[i, torch.arange(seq_len), query_ids[i]]
-            lll2 = lll[i, torch.arange(seq_len), query_ids[i]]
+            #seq_token_logprobsOK = logprobsOK[i, torch.arange(seq_len), query_ids[i]]
 
             # Find the first EOS token's position (if any)
             eos_mask = query_ids[i] == self.tokenizer.eos_token_id
@@ -260,12 +259,12 @@ class ConstrainedModel():
                 #print("HERE")
                 #print(seq_token_logprobs.sum().item(), lll2.sum().item())
                 result[i] = seq_token_logprobs[:first_eos_pos + 1].sum()
-                #result[i] = lll2[:first_eos_pos + 1].sum()
+                #resultOK[i] = seq_token_logprobsOK[:first_eos_pos + 1].sum()
             else:
                 # No EOS token, sum all logprobs
                 # print("No EOS token found")
                 result[i] = seq_token_logprobs.sum()
-                #result[i] = lll2.sum()
+                #resultOK[i] = seq_token_logprobsOK.sum()
 
         return result
 
