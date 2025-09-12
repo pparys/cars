@@ -35,7 +35,6 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         # ASAp oracle trie
         self.oracle_trie = Trie()
         self.current_index = None
-        self.logits_process_time = 0
         self.reset()
 
 
@@ -47,6 +46,7 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         self.oracle_node = self.oracle_trie.root
         self.oracle_node_depth = 0
         self.recompute_needed = False
+        self.logits_process_time = 0
 
 
     @add_start_docstrings(LOGITS_PROCESSOR_INPUTS_DOCSTRING)
