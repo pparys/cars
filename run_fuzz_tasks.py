@@ -36,8 +36,8 @@ def run_mcmc_fuzz_tasks(benchmark, styles):
 	if not torch.cuda.is_available():
 		model_id = "hsultanbey/codegen350multi_finetuned"
 
-	model = lib.ConstrainedModel(model_id, None, dtype=torch.bfloat16)
-	#model = lib.ConstrainedModel(model_id, None, dtype=torch.float32) ###PP!!!!!
+	model = lib.ConstrainedModel(model_id, None, torch_dtype=torch.bfloat16)
+	#model = lib.ConstrainedModel(model_id, None, torch_dtype=torch.float32) ###PP!!!!!
 
 	root_log_dir = "fuzz_runs"
 

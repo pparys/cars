@@ -53,7 +53,6 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         """
         #print("ACCEPTANCE:", self.grammar_constraint._grammar_bitmask)
         acceptance = self.grammar_constraint.filter_vocab()
-        acc_list = self.grammar_constraint.nonzero_bits()
         #print("ACCEPTANCE:", acceptance)
         #print("length:", len(acceptance[0]))
         #for i in acc_list:
@@ -61,7 +60,8 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
 
         current_parent, _ = self.oracle_trie.search_last_parent(self.generated_tokens)
 
-        if self.constrain_first and (current_parent == self.oracle_trie.root):
+        if self.constrain_first and (current_parent == self.oracle_trie.root) and current_parent.fresh_node:
+            acc_list = self.grammar_constraint.nonzero_bits()
             current_parent.insert_accepted_tokens(scores, acc_list)
     
         #print("Scores:")
@@ -73,7 +73,7 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
             logger.debug("FRESH NODE - leaving original scores")
         else:	#PP now only if node is not fresh 
             logger.debug("NODE EXISTS - reading from trie")
-            adjusted_scores = self.apply_oracle_adjustments(acc_list, scores, current_parent)
+            adjusted_scores = self.apply_oracle_adjustments(scores, current_parent)
             xgrammar.apply_token_bitmask_inplace(adjusted_scores, acceptance.to(self.device, non_blocking=True)) # Scores to -inf where False
             #print("Adjusted scores:")
             #print(adjusted_scores)
@@ -81,7 +81,8 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
             #    if a.item()!=float('-inf'):
             #        print(a, a.item())
 
-        if self.adaptive:
+        if self.adaptive and current_parent.fresh_node:
+            acc_list = self.grammar_constraint.nonzero_bits()
             current_parent.insert_accepted_tokens(scores, acc_list)
 
         #if self.save_log:
@@ -89,39 +90,36 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
 
         return adjusted_scores
 
-    def apply_oracle_adjustments(self, acc_list, scores, current_parent):
+    def apply_oracle_adjustments(self, scores, current_parent):
         """
         Multiply expected future grammarticality
         Use the normalized (and unmasked) probabiltiy
 
         Parameters:
-        - acceptance (torch.Tensor): A characteristic vector of valid tokens
-                                     used to updated only valid tokens 
         - scores (torch.Tensor): Unnormalized logits from language model
         - current_parent (TrieNode): The trie node for the current prefix
         """
         adjusted_scores = scores.clone()
         #log_likelihoods = F.log_softmax(adjusted_scores, dim=-1)
 
-        for idx in acc_list:
-            token_id = idx.item()
+        for token_id, child in current_parent.children.items():
             #log_likelihood = log_likelihoods[0, idx].item()
             
             # Get theta (log of expected future grammaticality) for this specific token
-            success_rate = current_parent.get_success_rate(token_id)
+            success_rate = child.success_rate
 
             if not isinstance(success_rate, torch.Tensor):
                 success_rate = torch.tensor(success_rate, dtype=torch.float)
             log_theta = torch.log(success_rate)
             
             # Calculate adjusted score
-            adjusted_score = scores[0, idx] + log_theta
-            adjusted_scores[0, idx] = adjusted_score
+            adjusted_score = scores[0, token_id] + log_theta
+            adjusted_scores[0, token_id] = adjusted_score
 
             pretty_print_floats({
                 "token_id": token_id,
                 "token": str(self.tokenizer.decode([token_id])),
-                "raw_score": scores[0, idx].item(),
+                "raw_score": scores[0, token_id].item(),
                 "success_rate": success_rate,
                 "log_theta" : log_theta,
                 "adjusted_score": adjusted_score,
