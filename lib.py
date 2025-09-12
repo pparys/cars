@@ -158,7 +158,8 @@ class ConstrainedModel():
                 assert False
                 #self.gcd_logits_processor = GrammarConstrainedLogitsProcessor(self.grammar_constraint, len(input_ids[0]))
             else:
-                self.gcd_logits_processor = GrammarAlignedOracleLogitsProcessor(self.tokenizer, self.grammar_constraint, oracle_trie, adaptive = adaptive, constrain_first = constrain_first)
+                self.gcd_logits_processor = GrammarAlignedOracleLogitsProcessor(self.tokenizer, self.grammar_constraint, oracle_trie, self.model.device,
+                    adaptive = adaptive, constrain_first = constrain_first)
 
         logits_processor_list = []
         logits_processor_list.append(InfNanRemoveLogitsProcessor())

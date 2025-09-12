@@ -25,12 +25,13 @@ def pretty_print_floats(d, precision=10):
     logger.debug("{" + ", ".join(formatted_items) + "}")
 
 class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
-    def __init__(self, tokenizer, grammar_constraint, oracle_trie, adaptive=True, constrain_first=False):
+    def __init__(self, tokenizer, grammar_constraint, oracle_trie, device, adaptive=True, constrain_first=False):
         # Parser variables
         self.tokenizer = tokenizer
         self.grammar_constraint = grammar_constraint
         self.adaptive = adaptive
         self.constrain_first = constrain_first
+        self.device = device
 
         # ASAp oracle trie
         self.oracle_trie = oracle_trie
@@ -45,7 +46,7 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         self.logits_process_time = 0
         #print("Starting logits processor")
 
-    def adjust_scores(self, scores, device):
+    def adjust_scores(self, scores):
         """
         resolve each stack to a tensor of True/False for each token
         indicating acceptance
@@ -73,7 +74,7 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         else:	#PP now only if node is not fresh 
             logger.debug("NODE EXISTS - reading from trie")
             adjusted_scores = self.apply_oracle_adjustments(acc_list, scores, current_parent)
-            xgrammar.apply_token_bitmask_inplace(adjusted_scores, acceptance) # Scores to -inf where False
+            xgrammar.apply_token_bitmask_inplace(adjusted_scores, acceptance.to(self.device, non_blocking=True)) # Scores to -inf where False
             #print("Adjusted scores:")
             #print(adjusted_scores)
             #for a in adjusted_scores[0]:
@@ -144,7 +145,7 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         # Advance parser states
         self.grammar_constraint.advance_token_ids(self.generated_tokens) #  PP it throws exception when text nongrammatical
 
-        adjusted_scores = self.adjust_scores(scores, scores.device)
+        adjusted_scores = self.adjust_scores(scores)
         end_time = time.time()
         self.logits_process_time += end_time - start_time
 
