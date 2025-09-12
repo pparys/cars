@@ -13,7 +13,7 @@ def run_mcmc_gad_tasks(styles):
     if not torch.cuda.is_available():
         model_id = "hsultanbey/codegen350multi_finetuned"
 
-    model = lib.ConstrainedModel(model_id, None, torch_dtype=torch.bfloat16)
+    model = lib.ConstrainedModel(model_id, None, dtype=torch.bfloat16)
 
     root_log_dir = "gad_dataset_runs"
 
