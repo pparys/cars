@@ -3,7 +3,6 @@ import json
 import time
 import gc
 from dataclasses import dataclass
-from transformers_gad.oracle.oracle_trie import Trie
 
 import torch
 import numpy as np
@@ -13,7 +12,7 @@ import lib
 import utils
 
 def all_sample_styles():
-    return ["ars", "rs", "cftrs"]
+    return ["0", "1", "2", "3", "0f", "1f", "2f", "3f"]
 
 def parse_styles_arg(arg):
     if arg is None:
@@ -38,36 +37,27 @@ class MCMC:
         prompt = model._format_prompt(prompt)
         self.prompt_ids = model.tokenizer.encode(prompt, return_tensors="pt", add_special_tokens=False).to(model.model.device)
         assert sample_style in all_sample_styles()
-        self.sample_style = sample_style
         self.root_log_dir = root_log_dir
         os.makedirs(root_log_dir, exist_ok=True)
         self.log_dir = f"{root_log_dir}/{utils.timestamp()}-{name_prefix}-{sample_style}"
         os.makedirs(self.log_dir, exist_ok=True)
+        self.model.reset_sampling(learn_level = int(sample_style[0]), constrain_first = (sample_style[-1]=="f"))
+
 
     def get_sample(self, n_steps: int, max_new_tokens: int):
 
         steps = []
         successes = []
         sample_file = f"{self.log_dir}/{utils.timestamp(millis=True)}-n{n_steps}.json"
-        oracle_trie = Trie()
         
-
         for i in range(n_steps):
             sample_start_time = time.time()
             try:
-                current_ids, current_scores = self.model._generate(
-                    self.prompt_ids,
-                    max_new_tokens=max_new_tokens,
-                    constrain=True,
-                    prefix_ids=None,
-                    oracle_trie = oracle_trie,
-                    adaptive = (self.sample_style=="ars"),
-                    constrain_first = (self.sample_style=="cftrs")
-                )
+                current_ids, current_scores, current_raw_logprob = self.model._generate(self.prompt_ids, max_new_tokens=max_new_tokens)
                 sample_end_time = time.time()
                 tokens = [self.model.tokenizer.decode(token_id) for token_id in current_ids[0]]
                 token_ids = [int(id) for id in current_ids[0]]
-                current_raw_logprob = self.model._get_seq_logprob(self.prompt_ids, current_ids, constrain=False).item()
+                #current_raw_logprob2 = self.model._get_seq_logprob(self.prompt_ids, current_ids, constrain=False).item()
                 current_cons_logprob = self.model._get_seq_logprob_from_scores(current_scores, current_ids).item()
                 print(f"Sample {i} success: {token_ids} / {tokens}, raw_logprob: {current_raw_logprob}, cons_logprob: {current_cons_logprob}", end='')
             
@@ -83,8 +73,8 @@ class MCMC:
 
             except ValueError as e:
                 sample_end_time = time.time()
-                tokens = [self.model.tokenizer.decode(token_id) for token_id in e.args[1]]
-                print(f"Sample {i} failed, tokens: {e.args[1]} / {tokens}", end='')
+                tokens = [self.model.tokenizer.decode(token_id) for token_id in e.args[0]]
+                print(f"Sample {i} failed, tokens: {e.args[0]} / {tokens}", end='')
                 successes.append(False)
 
             sample_time = sample_end_time - sample_start_time
@@ -93,10 +83,8 @@ class MCMC:
             steps_dump = {"steps": steps, "successes": successes}
             with open(sample_file, "w") as f:
                 json.dump(steps_dump, f, indent=4)
-            gc.collect()
-            torch.cuda.empty_cache()
-            
-        #return current_ids
+            #gc.collect()
+            #torch.cuda.empty_cache()
 
     def get_samples(self, n_samples: int, n_steps: int, max_new_tokens: int):
         for i in tqdm(range(n_samples)):

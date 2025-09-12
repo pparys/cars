@@ -2,7 +2,6 @@
 import os
 import logging
 
-
 def setup_logging():
     log_level_name = os.getenv(
         "TCFG_LOG_LEVEL", "WARNING"

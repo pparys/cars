@@ -6,7 +6,6 @@ import torch
 import numpy as np
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig, GenerationConfig
 from transformers.generation.logits_process import LogitsProcessorList, InfNanRemoveLogitsProcessor
-#from transformers_gad.grammar_utils import IncrementalGrammarConstraint
 from transformers_gad.llguidance_grammar_recognizer import LlguidanceTokenRecognizer
 from transformers_gad.generation.logits_process import GrammarAlignedOracleLogitsProcessor
 
@@ -57,32 +56,30 @@ class ConstrainedModel():
 
         self.model_id = model_id
 
-        # self.config = AutoConfig.from_pretrained(model_id, trust_remote_code=True)
-        # self.config = AutoConfig.from_pretrained(model_id)
-
         self.tokenizer = AutoTokenizer.from_pretrained(model_id)
         print(f"Tokenizer: {self.tokenizer.name_or_path}")
         self.tokenizer.pad_token = self.tokenizer.eos_token
 
         device_map = "auto"
-        # device_map = "balanced_low_0"
         self.model = AutoModelForCausalLM.from_pretrained(
             model_id, 
-            # config=self.config, 
             device_map=device_map, 
-            # trust_remote_code=True,
             **kwargs
         )
-        # self.model = AutoModelForCausalLM.from_pretrained(model_id, config=self.config).to("cpu")
         print(f"Model: {self.model.name_or_path}")
         self.model.eval()
         if (model_id == "hsultanbey/codegen350multi_finetuned"):
             self.model.resize_token_embeddings(len(self.tokenizer)) #PP: added
 
-
         print(f"Model device: {self.model.device}")
         if grammar_str is not None:
             self._set_grammar_constraint(grammar_str)
+
+
+    def reset_sampling(self, learn_level : int = 3, constrain_first : bool = False):
+        self.gcd_logits_processor = GrammarAlignedOracleLogitsProcessor(self.tokenizer, self.grammar_constraint, self.model.device,
+            learn_level = learn_level, constrain_first = constrain_first)
+
 
     def _set_grammar_constraint(self, grammar_str: str):
         self.grammar_constraint = LlguidanceTokenRecognizer(grammar_str, self.tokenizer)
@@ -125,21 +122,10 @@ class ConstrainedModel():
                 result.append(sequences[i])
         return result
 
-    def _generate(
-        self, 
-        input_ids: torch.Tensor, 
-        max_new_tokens: int,
-        constrain: bool,
-        prefix_ids: torch.Tensor | None,
-        oracle_trie,
-        adaptive: bool = True,
-        constrain_first: bool = False,
-        num_return_sequences: int = 1,
-        # temperature: float = 1.0,
-    ) -> tuple[torch.Tensor, torch.Tensor]:
+    def _generate(self, input_ids: torch.Tensor, max_new_tokens: int) -> tuple[torch.Tensor, torch.Tensor]:
         generation_config = GenerationConfig(
             max_new_tokens=max_new_tokens,
-            num_return_sequences=num_return_sequences,
+            num_return_sequences=1,
             do_sample=True,
             eos_token_id=self.tokenizer.eos_token_id,
             pad_token_id=self.tokenizer.eos_token_id,
@@ -148,44 +134,24 @@ class ConstrainedModel():
             top_k=None,
         )
 
-        self.gcd_logits_processor = None
-        assert (prefix_ids is None)
-        if constrain:
-            # grammar_constraint = IncrementalGrammarConstraint(grammar_str, "root", self.tokenizer)
-            self.grammar_constraint.reset()
-            if prefix_ids is not None:
-                # TODO: can we do this always?
-                assert False
-                #self.gcd_logits_processor = GrammarConstrainedLogitsProcessor(self.grammar_constraint, len(input_ids[0]))
-            else:
-                self.gcd_logits_processor = GrammarAlignedOracleLogitsProcessor(self.tokenizer, self.grammar_constraint, oracle_trie, self.model.device,
-                    adaptive = adaptive, constrain_first = constrain_first)
-
-        logits_processor_list = []
-        logits_processor_list.append(InfNanRemoveLogitsProcessor())
-        if self.gcd_logits_processor is not None:
-            logits_processor_list = [self.gcd_logits_processor] + logits_processor_list
-        logits_processor_list = LogitsProcessorList(logits_processor_list)
-
-        input_prefix_ids = input_ids
-        if prefix_ids is not None:
-            input_prefix_ids = torch.cat([input_ids, prefix_ids], dim=-1)
+        self.gcd_logits_processor.reset()
+        logits_processor_list = LogitsProcessorList([self.gcd_logits_processor, InfNanRemoveLogitsProcessor()])
 
         output = self.model.generate(
-            input_prefix_ids,
+            input_ids,
             generation_config=generation_config,
             tokenizer=self.tokenizer,
             logits_processor=logits_processor_list,
         )
-        #print(self.model._get_logits_processor(generation_config))
-
         output_ids = output.sequences
-        output_ids = output_ids[:, input_prefix_ids.shape[1]:]
+        raw_logprob = self.gcd_logits_processor.generation_ended(output_ids)
+        
+        output_ids = output_ids[:, input_ids.shape[1]:]
         output_scores = torch.stack(output.scores, dim=1)
         # Check that the length of the output and the scores match
         assert output_ids.shape[1] == output_scores.shape[1]
 
-        return output_ids, output_scores
+        return output_ids, output_scores, raw_logprob.item()
 
 #    def generate(
 #        self,
