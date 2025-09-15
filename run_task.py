@@ -44,8 +44,8 @@ def run_task(grammar_file, prompt_file, sample_style):
     n_steps = 1000
     max_new_tokens = 512
     
-    runner = ars.ARS(model=model, prompt=prompt, sample_style=sample_style, log_dir=log_dir)
-    runner.get_samples(n_steps=n_steps, max_new_tokens=max_new_tokens)
+    runner = ars.ARS(model = model, prompt = prompt, sample_style = sample_style, log_dir = log_dir)
+    runner.get_samples(n_samples = 1, n_steps = n_steps, max_new_tokens = max_new_tokens)
 
 
 if __name__ == "__main__":

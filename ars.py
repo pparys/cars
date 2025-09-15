@@ -15,26 +15,17 @@ def all_sample_styles():
     return ["ars0", "ars1", "ars2", "ars3", "ars0f", "ars1f", "ars2f", "ars3f"]
 
 class ARS:
-    def __init__(
-        self, 
-        model: lib_ars.ConstrainedModel, 
-        prompt: str, 
-        sample_style: str,
-        name_prefix: str,
-        root_log_dir: str, 
-    ):
+    def __init__(self, model : lib_ars.ConstrainedModel, prompt : str, sample_style : str, log_dir : str):
         self.model = model
         prompt = model._format_prompt(prompt)
         self.prompt_ids = model.tokenizer.encode(prompt, return_tensors="pt", add_special_tokens=False).to(model.model.device)
         assert sample_style in all_sample_styles()
-        self.root_log_dir = root_log_dir
-        os.makedirs(root_log_dir, exist_ok=True)
-        self.log_dir = f"{root_log_dir}/{utils.timestamp()}-{name_prefix}-{sample_style}"
+        self.log_dir = log_dir
         os.makedirs(self.log_dir, exist_ok=True)
-        self.model.reset_sampling(learn_level = int(sample_style[0]), constrain_first = (sample_style[-1]=="f"))
+        self.model.reset_sampling(learn_level = int(sample_style[3]), constrain_first = (sample_style[-1]=="f"))
 
 
-    def get_sample(self, n_steps: int, max_new_tokens: int):
+    def get_sample(self, n_steps : int, max_new_tokens : int):
     
         steps = []
         successes = []
@@ -71,12 +62,14 @@ class ARS:
             logits_time = self.model.gcd_logits_processor.logits_process_time
             print(f", time: {sample_time:.2f} ({logits_time:.2f})", flush=True)
             steps_dump = {"steps": steps, "successes": successes}
+            if i == n_steps-1:
+                steps_dump["finished"] = True
             with open(sample_file, "w") as f:
                 json.dump(steps_dump, f, indent=4)
             #gc.collect()
             #torch.cuda.empty_cache()
 
-    def get_samples(self, n_samples: int, n_steps: int, max_new_tokens: int):
+    def get_samples(self, n_samples : int, n_steps : int, max_new_tokens : int):
         for i in tqdm(range(n_samples)):
             print(f"Sample {i}")
             sample_start_time = time.time()
