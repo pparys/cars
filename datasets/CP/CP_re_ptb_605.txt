@@ -1,0 +1,36 @@
+Perform constituency parsing on the provided sentences in accordance with the Penn TreeBank annotation guidelines. Fill in the last mapping.
+
+Ad Notes
+->
+[ ( NP-HLN ( NN Ad ) ( NNS Notes ) ) ]
+
+The market crumbled
+->
+[ ( S ( NP-SBJ ( DT The ) ( NN market ) ) ( VP ( VBD crumbled ) ) ) ]
+
+I felt betrayed he later said
+->
+[ ( S ( S-TPC-1 ( NP-SBJ ( PRP I ) ) ( VP ( VBD felt ) ( ADJP-PRD ( VBN betrayed ) ) ) ) ( NP-SBJ ( PRP he ) ) ( ADVP-TMP ( RB later ) ) ( VP ( VBD said ) ) ) ]
+
+Friday October 13 1989
+->
+[ ( NP ( NNP Friday ) ( NNP October ) ( CD 13 ) ( CD 1989 ) ) ]
+
+The Arabs had merely oil
+->
+[ ( S ( NP-SBJ ( DT The ) ( NNPS Arabs ) ) ( VP ( VBD had ) ( NP ( RB merely ) ( NN oil ) ) ) ) ]
+
+Energy
+->
+[ ( NP-HLN ( NN Energy ) ) ]
+
+Some U.S. entrepreneurs operate on a smaller scale
+->
+[ ( S ( NP-SBJ ( DT Some ) ( NNP U.S. ) ( NNS entrepreneurs ) ) ( VP ( VBP operate ) ( PP-MNR ( IN on ) ( NP ( DT a ) ( JJR smaller ) ( NN scale ) ) ) ) ) ]
+
+Knowledgeware Inc.
+->
+[ ( NP-HLN ( NNP Knowledgeware ) ( NNP Inc. ) ) ]
+
+Plunge
+->

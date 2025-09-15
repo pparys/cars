@@ -1,0 +1,80 @@
+You are an expert in program synthesis. You are tasked with solving a Syntax-Guided Synthesis (SyGuS) problem. Your goal is to output a function that should produce outputs that satisfy a series of constraints when given specific inputs.
+
+Question:
+(set-logic SLIA)
+
+(synth-fun f ((name String)) String
+    ((Start String) (ntString String) (ntInt Int) (ntBool Bool))
+    ((Start String (ntString))
+    (ntString String (name " " (str.++ ntString ntString) (str.replace ntString ntString ntString) (str.at ntString ntInt) (str.from_int ntInt) (str.substr ntString ntInt ntInt)))
+    (ntInt Int (0 1 (+ ntInt ntInt) (- ntInt ntInt) (str.len ntString) (str.to_int ntString) (str.indexof ntString ntString ntInt)))
+    (ntBool Bool (true false (str.prefixof ntString ntString) (str.suffixof ntString ntString) (str.contains ntString ntString)))))
+
+(declare-var name String)
+(constraint (= (f "Nancy FreeHafer") "FreeHafer"))
+(constraint (= (f "Andrew Cencici") "Cencici"))
+(constraint (= (f "Jan Kotas") "Kotas"))
+(constraint (= (f "Mariya Sergienko") "Sergienko"))
+
+(check-synth)
+Solution:
+(define-fun f ((name String)) String (str.substr name (+ 1 (str.indexof name " " 0)) (str.len name)))
+
+Question:
+(set-logic SLIA)
+
+(synth-fun f ((name String)) String
+    ((Start String) (ntString String) (ntInt Int) (ntBool Bool))
+    ((Start String (ntString))
+    (ntString String (name " " "." (str.++ ntString ntString) (str.replace ntString ntString ntString) (str.at ntString ntInt) (str.from_int ntInt) (str.substr ntString ntInt ntInt)))
+    (ntInt Int (0 1 2 (+ ntInt ntInt) (- ntInt ntInt) (str.len ntString) (str.to_int ntString) (str.indexof ntString ntString ntInt)))
+    (ntBool Bool (true false (str.prefixof ntString ntString) (str.suffixof ntString ntString) (str.contains ntString ntString)))))
+
+(declare-var name String)
+(constraint (= (f "Nancy FreeHafer") "N.F."))
+(constraint (= (f "Andrew Cencici") "A.C."))
+(constraint (= (f "Jan Kotas") "J.K."))
+(constraint (= (f "Mariya Sergienko") "M.S."))
+
+(check-synth)
+Solution:
+(define-fun f ((name String)) String (str.++ (str.at name 0) (str.++ "." (str.++ (str.at name (+ 1 (str.indexof name " " 0))) "."))))
+
+Question:
+(set-logic SLIA)
+
+(synth-fun f ((name String)) String
+    ((Start String) (ntString String) (ntInt Int) (ntBool Bool))
+    ((Start String (ntString))
+    (ntString String (name " " (str.++ ntString ntString) (str.replace ntString ntString ntString) (str.at ntString ntInt) (str.substr ntString ntInt ntInt)))
+    (ntInt Int (0 1 (+ ntInt ntInt) (- ntInt ntInt) (str.len ntString) (str.indexof ntString ntString ntInt)))
+    (ntBool Bool (true false (str.prefixof ntString ntString) (str.suffixof ntString ntString)))))
+
+(declare-var name String)
+(constraint (= (f "Nancy FreeHafer") "FreeHafer"))
+(constraint (= (f "Andrew Cencici") "Cencici"))
+(constraint (= (f "Jan Kotas") "Kotas"))
+(constraint (= (f "Mariya Sergienko") "Sergienko"))
+
+(check-synth)
+Solution:
+(define-fun f ((name String)) String (str.substr name (+ 1 (str.indexof name " " 0)) (str.len name)))
+
+Question:
+(set-logic SLIA)
+
+(synth-fun f ((name String)) String
+    ((Start String) (ntString String) (ntInt Int) (ntBool Bool))
+    ((Start String (ntString))
+    (ntString String (name " " (str.++ ntString ntString) (str.replace ntString ntString ntString) (str.at ntString ntInt) (str.from_int ntInt) (str.substr ntString ntInt ntInt)))
+    (ntInt Int (0 1 (+ ntInt ntInt) (- ntInt ntInt) (str.len ntString) (str.to_int ntString) (str.indexof ntString ntString ntInt)))
+    (ntBool Bool (true false (str.prefixof ntString ntString) (str.suffixof ntString ntString) (str.contains ntString ntString)))))
+
+(declare-var name String)
+(constraint (= (f "Nancy FreeHafer") "FreeHafer"))
+(constraint (= (f "Andrew Cencici") "Cencici"))
+(constraint (= (f "Jan Kotas") "Kotas"))
+(constraint (= (f "Mariya Sergienko") "Sergienko"))
+
+(check-synth)
+Solution:

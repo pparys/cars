@@ -8,26 +8,16 @@ import torch
 import numpy as np
 from tqdm import tqdm
 
-import lib
+import lib_ars
 import utils
 
 def all_sample_styles():
-    return ["0", "1", "2", "3", "0f", "1f", "2f", "3f"]
+    return ["ars0", "ars1", "ars2", "ars3", "ars0f", "ars1f", "ars2f", "ars3f"]
 
-def parse_styles_arg(arg):
-    if arg is None:
-        styles = all_sample_styles()
-    else:
-        styles = [s for s in arg.split(",")]
-        for s in styles:
-            assert s in all_sample_styles()
-    print(f"Sample styles: {styles}")
-    return styles
-
-class MCMC:
+class ARS:
     def __init__(
         self, 
-        model: lib.ConstrainedModel, 
+        model: lib_ars.ConstrainedModel, 
         prompt: str, 
         sample_style: str,
         name_prefix: str,
@@ -45,7 +35,7 @@ class MCMC:
 
 
     def get_sample(self, n_steps: int, max_new_tokens: int):
-
+    
         steps = []
         successes = []
         sample_file = f"{self.log_dir}/{utils.timestamp(millis=True)}-n{n_steps}.json"

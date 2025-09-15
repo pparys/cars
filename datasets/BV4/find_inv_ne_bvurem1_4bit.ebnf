@@ -1,0 +1,3 @@
+root ::= "(define-fun inv ((s (BitVec 4)) (t (BitVec 4))) (BitVec 4) " Start_ ")"
+Start_ ::= "s" | "t" | "#x0" | "#x8" | "#x7" | "(" "bvneg" " " Start_ ")" | "(" "bvnot" " " Start_ ")" | "(" "bvadd" " " Start_ " " Start_ ")" | "(" "bvsub" " " Start_ " " Start_ ")" | "(" "bvand" " " Start_ " " Start_ ")" | "(" "bvlshr" " " Start_ " " Start_ ")" | "(" "bvor" " " Start_ " " Start_ ")" | "(" "bvshl" " " Start_ " " Start_ ")"
+

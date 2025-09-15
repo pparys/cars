@@ -1,7 +1,10 @@
 #!/bin/bash
 
-CUDA_VISIBLE_DEVICES=1 nohup python run_gad_tasks.py --split BV4  >log-BV4.txt &
-CUDA_VISIBLE_DEVICES=2 nohup python run_gad_tasks.py --split CP >log-CP.txt &
-#CUDA_VISIBLE_DEVICES=4 nohup python run_gad_tasks.py --split SLIA >log-SLIA.txt &
+if [ "$#" -ne 2 ]; then
+	echo "Usage: $0 dataset sampling_style"
+	exit 1
+fi
 
-#W SLIA pominiete 3, 7, 12 (potrzebuje wiecej pamieci)
+for a in datasets/$1/*.ebnf; do
+	python run_task.py $a ${a%ebnf}txt $2
+done
