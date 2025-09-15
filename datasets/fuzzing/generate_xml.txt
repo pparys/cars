@@ -1,0 +1,29 @@
+You are an expert XML generator. Make sure you generate valid and diverse XML.
+
+Question 1:
+Generate a short, valid and complex XML file.
+
+Solution 1:
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note [
+  <!ELEMENT note (#PCDATA)>
+]>
+<note>This is a simple note with no children.</note>
+
+Question 2:
+Generate a short, valid and complex XML file.
+
+Solution 2:
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE status [
+  <!ELEMENT status EMPTY>
+  <!ATTLIST status
+    code CDATA #REQUIRED
+    time CDATA #IMPLIED>
+]>
+<status code="200" time="2025-09-03T00:04:53"/>
+
+Question 3:
+Generate a short, valid and complex XML file.
+
+Solution 3:

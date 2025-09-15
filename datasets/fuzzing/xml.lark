@@ -1,0 +1,28 @@
+start: document
+
+document: PROLOG doctype_decl element
+
+PROLOG: /<[\\?]xml [^>]+[\\?]>/
+doctype_decl: "<!DOCTYPE" NAME internal_dtd ">"
+internal_dtd: "[" element_decl+ attlist_decl+ "]"
+element_decl: "<!ELEMENT" NAME content_spec ">"
+attlist_decl: "<!ATTLIST" NAME attribute_def+ ">"
+
+content_spec: /[^>]+/
+attribute_def: /[^>]+/
+
+element: "<" NAME attributes ">" content "</" NAME ">" -> paired_element
+       | "<" NAME attributes "/>"               -> self_closing_element
+
+attributes: (NAME "=" ESCAPED_STRING)*
+content: (element | TEXT | cdata )*
+
+cdata: /<!\[CDATA\[.*?\]\]>/s
+
+NAME: /[a-zA-Z_:][-a-zA-Z0-9_.:]*/
+ESCAPED_STRING: /"[^"]*"|'[^']*'/
+
+TEXT: /[^<]+/
+
+%import common.WS
+%ignore WS

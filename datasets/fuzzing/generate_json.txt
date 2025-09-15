@@ -1,0 +1,59 @@
+You are an expert JSON generator. Make sure you generate valid and diverse JSON.
+
+Question 1:
+Generate a short, valid and complex JSON object.
+
+Solution 1:
+{
+  "name": "Gengar",
+  "id": 94,
+  "types": [
+    "Ghost",
+    "Poison"
+  ],
+  "isLegendary": false,
+  "abilities": [
+    {
+      "name": "Cursed Body",
+      "description": "May disable a move used on the Pokémon."
+    },
+    {
+      "name": "Levitate",
+      "description": "User is immune to Ground-type moves."
+    }
+  ],
+  "preEvolution": {
+    "name": "Haunter",
+    "id": 93
+  }
+}
+
+Question 2:
+Generate a short, valid and complex JSON object.
+
+Solution 2:
+{
+  "name": "Lapras",
+  "id": 131,
+  "types": [
+    "Water",
+    "Ice"
+  ],
+  "isLegendary": false,
+  "abilities": [
+    {
+      "name": "Water Absorb",
+      "description": "Restores HP if hit by a Water-type move."
+    },
+    {
+      "name": "Shell Armor",
+      "description": "The Pokémon is protected against critical hits."
+    }
+  ],
+  "preEvolution": null
+}
+
+Question 3:
+Generate a short, valid and complex JSON object.
+
+Solution 3:

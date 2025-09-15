@@ -1,0 +1,57 @@
+You are an expert SQLite test script generator. Make sure you generate valid and diverse SQLite test scripts.
+
+Question 1:
+Generate a short, valid and complex SQLite test file. Your test script should contain two parts.
+The first part does the setup, and the second part does the operation, with the expected result. 
+
+Solution 1:
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-2.0 {
+  execsql {
+    CREATE TABLE contacts(id INTEGER, email TEXT UNIQUE);
+    INSERT INTO contacts VALUES(1, 'alice@example.com');
+    INSERT INTO contacts VALUES(2, 'bob@example.com');
+  }
+} {}
+
+do_test update-violates-unique-2.1 {
+  catch { 
+    execsql {
+      UPDATE contacts SET email = 'alice@example.com' WHERE id = 2;
+    } 
+  }
+} {1 {UNIQUE constraint failed: contacts.email}}
+
+finish_test
+
+Question 2:
+Generate a short, valid and complex SQLite test file. Your test script should contain two parts.
+The first part does the setup, and the second part does the operation, with the expected result. 
+
+Solution 2:
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER, name TEXT);
+    INSERT INTO users(id, name) VALUES(101, 'Alice');
+    INSERT INTO users(id, name) VALUES(102, 'Bob');
+  }
+} {}
+
+do_test select-user-1.1 {
+  execsql {
+    SELECT name FROM users WHERE id = 102;
+  }
+} {Bob}
+
+finish_test
+
+Question 3:
+Generate a short, valid and complex SQLite test file. Your test script should contain two parts.
+The first part does the setup, and the second part does the operation, with the expected result. 
+
+Solution 3:
