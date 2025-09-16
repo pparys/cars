@@ -41,7 +41,7 @@ def run_task(grammar_file, prompt_file, sample_style):
         model_id = "hsultanbey/codegen350multi_finetuned"
     model = lib_ars.ConstrainedModel(model_id, grammar, torch_dtype=torch.bfloat16)
     
-    n_steps = 1000
+    n_steps = 10
     max_new_tokens = 512
     
     runner = ars.ARS(model = model, prompt = prompt, sample_style = sample_style, log_dir = log_dir)

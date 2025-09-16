@@ -71,6 +71,7 @@ class ARS:
             #gc.collect()
             #torch.cuda.empty_cache()
         os.rename(sample_file_tmp, sample_file)
+        print(f"Total suceeses: {len(steps)}/{len(successes)}")
 
     def get_samples(self, n_samples : int, n_steps : int, max_new_tokens : int):
         for i in tqdm(range(n_samples)):
