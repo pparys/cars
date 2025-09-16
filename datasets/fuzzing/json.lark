@@ -2,7 +2,7 @@ start: pokemon
 
 value: object | array | STRING | NUMBER | BOOLEAN | NULL
 
-pokemon: "{\"name\":" STRING "," pair+ ",\"preEvolution\":" (STRING | NULL) "}"
+pokemon: "{\"name\":" STRING "," (pair ",")+ "\"preEvolution\":" (STRING | NULL) "}"
 
 object: "{" [pair ("," pair)*] "}"
 pair: STRING ":" value

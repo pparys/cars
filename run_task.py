@@ -36,13 +36,14 @@ def run_task(grammar_file, prompt_file, sample_style):
     os.makedirs(log_dir, exist_ok=True)
     print(f"Saving results in folder {log_dir}")
 
+    n_steps = 1000
+    max_new_tokens = 512
+    
     model_id = "meta-llama/Llama-3.1-8B-Instruct"
     if not torch.cuda.is_available():
         model_id = "hsultanbey/codegen350multi_finetuned"
+        n_steps = 30
     model = lib_ars.ConstrainedModel(model_id, grammar, torch_dtype=torch.bfloat16)
-    
-    n_steps = 1000
-    max_new_tokens = 512
     
     runner = ars.ARS(model = model, prompt = prompt, sample_style = sample_style, log_dir = log_dir)
     runner.get_samples(n_samples = 1, n_steps = n_steps, max_new_tokens = max_new_tokens)
