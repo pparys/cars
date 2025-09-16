@@ -32,7 +32,7 @@ def run_task(grammar_file, prompt_file, sample_style):
         prompt = f.read()
 
     root_log_dir = "runs_log"
-    log_dir = f"{root_log_dir}/{determine_out_name(grammar_file, prompt_file)}-{pair_hash(grammar, prompt)}-{sample_style}-{utils.timestamp()}"
+    log_dir = f"{root_log_dir}/{determine_out_name(grammar_file, prompt_file)}-{pair_hash(grammar, prompt)}/{sample_style}-{utils.timestamp()}"
     os.makedirs(log_dir, exist_ok=True)
     print(f"Saving results in folder {log_dir}")
 
