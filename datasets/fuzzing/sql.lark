@@ -6,9 +6,9 @@ setup_command: "setset testdir [file dirname $argv0]" // Bug?
 source_command: "source $testdir/tester.tcl"
 finish_command: "finish_test"
 
-setup_test_case: "do_test" test_name "{" setup_execsql_block "}" 
+setup_test_case: "do_test" test_name "{" setup_execsql_block "}" "{}"
 
-operation_test_case: "do_test" test_name "{" operation_execsql_block "}" (("{" /.*/ "}") | "{}")
+operation_test_case: "do_test" test_name "{" operation_execsql_block "}" "{" /[^}]*/ "}"
 
 setup_execsql_block: "execsql" "{" setup_stmt_list "}"
 
