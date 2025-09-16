@@ -75,11 +75,11 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         # we compute its data
         if self.oracle_node.raw_logprob is None:
             self.oracle_node.raw_logprob = torch.log_softmax(scores, dim = -1)
-            self.oracle_node.log_theta = torch.zeros(1, scores.size(1), device = self.device)
+            self.oracle_node.log_theta = torch.zeros(1, scores.size(1)) #, device = self.device) <--- on CPU
             adjust_scores = (is_root and self.constrain_first)
             if self.learn_level >= 3 or adjust_scores: # filtering out the "cone"
                 acceptance = self.grammar_constraint.filter_vocab()
-                xgrammar.apply_token_bitmask_inplace(self.oracle_node.log_theta, acceptance.to(self.device, non_blocking = True))
+                xgrammar.apply_token_bitmask_inplace(self.oracle_node.log_theta, acceptance) # .to(self.device, non_blocking = True))
                 self.recompute_needed = True
                 logger.debug("Setting bitmask")
         else:
@@ -88,7 +88,7 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         # Adjust scores using previously computed log_theta
         if adjust_scores:
             scores = scores.clone()
-            scores += self.oracle_node.log_theta
+            scores += self.oracle_node.log_theta.to(self.device, non_blocking = True)
 
         end_time = time.time()
         self.logits_process_time += end_time - start_time
