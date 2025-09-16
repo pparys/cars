@@ -1,0 +1,135 @@
+You are an expert SQLite test script generator. Make sure you generate valid and diverse SQLite test scripts.
+Here is the grammar (in the lark format) that you should follow:
+start: test_file
+
+test_file: setup_command source_command setup_test_case operation_test_case finish_command
+
+setup_command: "setset testdir [file dirname $argv0]" // Bug? 
+source_command: "source $testdir/tester.tcl"
+finish_command: "finish_test"
+
+setup_test_case: "do_test" test_name "{" setup_execsql_block "}" "{}"
+
+operation_test_case: "do_test" test_name "{" operation_execsql_block "}" "{" /[^}]*/ "}"
+
+setup_execsql_block: "execsql" "{" setup_stmt_list "}"
+
+operation_execsql_block: "execsql" "{" operation_stmt_list "}"
+
+setup_stmt_list: (create_table_stmt ";")+ (insert_stmt ";")+
+
+operation_stmt_list: (operation_sql_stmt ";")+
+operation_sql_stmt: select_stmt | update_stmt | delete_stmt
+
+create_table_stmt: CREATE TABLE [IF NOT EXISTS] name "(" column_def ("," column_def)* ")"
+insert_stmt: INSERT INTO name ["(" name ("," name)* ")"] VALUES "(" expr ("," expr)* ")"
+
+select_stmt: SELECT result_column ("," result_column)* [FROM table_or_subquery ("," table_or_subquery)*] [WHERE expr] [GROUP BY expr ("," expr)*] [ORDER BY ordering_term ("," ordering_term)*] [LIMIT expr]
+update_stmt: UPDATE name SET name "=" expr ("," name "=" expr)* [WHERE expr]
+delete_stmt: DELETE FROM name [WHERE expr]
+
+result_column: "*" | name ".*" | expr [AS name]
+table_or_subquery: name [AS name]
+ordering_term: expr [ASC | DESC]
+
+column_def: name type_name?
+type_name: name+
+expr: logical_or
+logical_or: logical_and ("OR" logical_and)*
+logical_and: equality ("AND" equality)*
+equality: comparison (("=" | "!=") comparison)*
+comparison: atom ((">" | "<" | ">=" | "<=") atom)*
+atom: literal_value | name
+
+literal_value: NUMBER | STRING | "NULL" | "TRUE" | "FALSE"
+name: ID
+
+test_name: ESCAPED_STRING | /[a-zA-Z0-9.\-_]+/
+
+SELECT: "SELECT"
+FROM: "FROM"
+WHERE: "WHERE"
+GROUP: "GROUP"
+BY: "BY"
+ORDER: "ORDER"
+LIMIT: "LIMIT"
+AS: "AS"
+ASC: "ASC"
+DESC: "DESC"
+CREATE: "CREATE"
+TABLE: "TABLE"
+INSERT: "INSERT"
+INTO: "INTO"
+VALUES: "VALUES"
+UPDATE: "UPDATE"
+SET: "SET"
+DELETE: "DELETE"
+IF: "IF"
+NOT: "NOT"
+EXISTS: "EXISTS"
+NULL: "NULL"
+TRUE: "TRUE"
+FALSE: "FALSE"
+ESCAPED_STRING: /"[^"]*"|'[^']*'/
+STRING: /"(\\.|[^"\\])*"|'(\\.|[^'\\])*'/
+
+%import common.CNAME -> ID
+%import common.NUMBER
+%import common.WS
+%ignore WS
+
+Question 1:
+Generate a short, valid and complex SQLite test file. Your test script should contain two parts.
+The first part does the setup, and the second part does the operation, with the expected result.
+
+Solution 1:
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-2.0 {
+  execsql {
+    CREATE TABLE contacts(id INTEGER, email TEXT UNIQUE);
+    INSERT INTO contacts VALUES(1, 'alice@example.com');
+    INSERT INTO contacts VALUES(2, 'bob@example.com');
+  }
+} {}
+
+do_test update-violates-unique-2.1 {
+  catch { 
+    execsql {
+      UPDATE contacts SET email = 'alice@example.com' WHERE id = 2;
+    } 
+  }
+} {1 {UNIQUE constraint failed: contacts.email}}
+
+finish_test
+
+Question 2:
+Generate a short, valid and complex SQLite test file. Your test script should contain two parts.
+The first part does the setup, and the second part does the operation, with the expected result. 
+
+Solution 2:
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER, name TEXT);
+    INSERT INTO users(id, name) VALUES(101, 'Alice');
+    INSERT INTO users(id, name) VALUES(102, 'Bob');
+  }
+} {}
+
+do_test select-user-1.1 {
+  execsql {
+    SELECT name FROM users WHERE id = 102;
+  }
+} {Bob}
+
+finish_test
+
+Question 3:
+Generate a short, valid and complex SQLite test file. Your test script should contain two parts.
+The first part does the setup, and the second part does the operation, with the expected result. 
+
+Solution 3:
