@@ -42,7 +42,7 @@ atom: literal_value | name
 literal_value: NUMBER | STRING | "NULL" | "TRUE" | "FALSE"
 name: ID
 
-test_name: ESCAPED_STRING | /[a-zA-Z0-9.-_]+/
+test_name: ESCAPED_STRING | /[a-zA-Z0-9.\-_]+/
 
 SELECT: "SELECT"
 FROM: "FROM"
