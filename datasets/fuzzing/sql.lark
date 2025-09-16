@@ -69,7 +69,7 @@ NULL: "NULL"
 TRUE: "TRUE"
 FALSE: "FALSE"
 ESCAPED_STRING: /"[^"]*"|'[^']*'/
-STRING: /"(\\.|[^"\\])*"/
+STRING: /"(\\.|[^"\\])*"|'(\\.|[^'\\])*'/
 
 %import common.CNAME -> ID
 %import common.NUMBER
