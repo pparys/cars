@@ -42,6 +42,7 @@ class ARS:
                 #current_raw_logprob2 = self.model._get_seq_logprob(self.prompt_ids, current_ids, constrain=False).item()
                 current_cons_logprob = self.model._get_seq_logprob_from_scores(current_scores, current_ids).item()
                 print(f"Sample {i} success: {token_ids} / {tokens}, raw_logprob: {current_raw_logprob}, cons_logprob: {current_cons_logprob}", end='')
+                print(self.model.tokenizer.decode(token_ids))
             
                 # save to steps
                 step = {
@@ -55,13 +56,15 @@ class ARS:
 
             except ValueError as e:
                 sample_end_time = time.time()
-                tokens = [self.model.tokenizer.decode(token_id) for token_id in e.args[0]]
+                token_ids = e.args[0]
+                tokens = [self.model.tokenizer.decode(token_id) for token_id in token_ids]
                 print(f"Sample {i} failed, tokens: {e.args[0]} / {tokens}", end='')
                 successes.append(False)
 
             sample_time = sample_end_time - sample_start_time
             logits_time = self.model.gcd_logits_processor.logits_process_time
             print(f", time: {sample_time:.2f} ({logits_time:.2f})", flush=True)
+            print(self.model.tokenizer.decode(token_ids))
             steps_dump = {"steps": steps, "successes": successes}
             with open(sample_file_tmp, "w") as f:
                 json.dump(steps_dump, f, indent=4)
