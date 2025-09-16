@@ -52,7 +52,6 @@ def run_task(grammar_file, prompt_file, sample_style):
 
 
 if __name__ == "__main__":
-    print("AA", sys.argv)
     if len(sys.argv) != 4 or sys.argv[3] not in ars.all_sample_styles():
         print("Arguments: grammar_file prompt_file style")
         print("Available styles are:", ars.all_sample_styles())
