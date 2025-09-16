@@ -2,6 +2,8 @@ import hashlib, os, re, sys, torch, utils
 import ars, lib_ars
 
 def determine_out_name(s1, s2):
+    s1 = s1.removesuffix(".ebnf").removesuffix(".lark")
+    s2 = s2.removesuffix(".txt")
     pref = []
     for a, b in zip(s1.split('/'), s2.split('/')):
         if a == b:
@@ -9,8 +11,8 @@ def determine_out_name(s1, s2):
         else:
             break
     pref = '/'.join(pref)
-    s1 = s1.removeprefix(pref).removeprefix("/").removesuffix(".ebnf").removesuffix(".lark")
-    s2 = s2.removeprefix(pref).removeprefix("/").removesuffix(".txt")
+    s1 = s1.removeprefix(pref).removeprefix("/")
+    s2 = s2.removeprefix(pref).removeprefix("/")
     pref = pref.removeprefix("datasets").removeprefix('/')
     pref = re.sub(r'[^a-zA-Z0-9]', '_', pref)
     s1 = re.sub(r'[^a-zA-Z0-9]', '_', s1)
