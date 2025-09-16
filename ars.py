@@ -67,7 +67,7 @@ class ARS:
             with open(sample_file, "w") as f:
                 json.dump(steps_dump, f, indent=4)
             #gc.collect()
-            torch.cuda.empty_cache()
+            #torch.cuda.empty_cache()
 
     def get_samples(self, n_samples : int, n_steps : int, max_new_tokens : int):
         for i in tqdm(range(n_samples)):

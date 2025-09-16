@@ -56,8 +56,8 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         self._set_generated_tokens(input_ids)
         is_root = (len(self.generated_tokens) == 0)
 
-        # Advance the parser (if we want to update anything for a prefix)
-        if self.learn_level >= 2:
+        # Advance the parser (unless we want to sample a full incorrect sample, in level 1)
+        if self.learn_level != 1:
             if not self.grammar_constraint.try_advance_token_ids(self.generated_tokens):
                 self._generation_failed() # throws exception
 
@@ -76,12 +76,12 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         if self.oracle_node.raw_logprob is None:
             self.oracle_node.raw_logprob = torch.log_softmax(scores, dim = -1)
             self.oracle_node.log_theta = torch.zeros(1, scores.size(1), device = self.device)
-            if self.learn_level >= 3: # filtering out the "cone"
+            adjust_scores = (is_root and self.constrain_first)
+            if self.learn_level >= 3 or adjust_scores: # filtering out the "cone"
                 acceptance = self.grammar_constraint.filter_vocab()
                 xgrammar.apply_token_bitmask_inplace(self.oracle_node.log_theta, acceptance.to(self.device, non_blocking = True))
                 self.recompute_needed = True
                 logger.debug("Setting bitmask")
-            adjust_scores = (is_root and self.constrain_first)
         else:
             adjust_scores = True
         
