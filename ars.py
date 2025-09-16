@@ -30,6 +30,7 @@ class ARS:
         steps = []
         successes = []
         sample_file = f"{self.log_dir}/{utils.timestamp(millis=True)}-n{n_steps}.json"
+        sample_file_tmp = f"{sample_file}.tmp"
         
         for i in range(n_steps):
             sample_start_time = time.time()
@@ -62,12 +63,11 @@ class ARS:
             logits_time = self.model.gcd_logits_processor.logits_process_time
             print(f", time: {sample_time:.2f} ({logits_time:.2f})", flush=True)
             steps_dump = {"steps": steps, "successes": successes}
-            if i == n_steps-1:
-                steps_dump["finished"] = True
-            with open(sample_file, "w") as f:
+            with open(sample_file_tmp, "w") as f:
                 json.dump(steps_dump, f, indent=4)
             #gc.collect()
             #torch.cuda.empty_cache()
+        os.rename(sample_file_tmp, sample_file)
 
     def get_samples(self, n_samples : int, n_steps : int, max_new_tokens : int):
         for i in tqdm(range(n_samples)):
