@@ -42,7 +42,6 @@ class ARS:
                 #current_raw_logprob2 = self.model._get_seq_logprob(self.prompt_ids, current_ids, constrain=False).item()
                 current_cons_logprob = self.model._get_seq_logprob_from_scores(current_scores, current_ids).item()
                 print(f"Sample {i} success: {token_ids} / {tokens}, raw_logprob: {current_raw_logprob}, cons_logprob: {current_cons_logprob}", end='')
-                print(self.model.tokenizer.decode(token_ids))
             
                 # save to steps
                 step = {

@@ -1,4 +1,5 @@
 You are an expert JSON generator. Make sure you generate valid and diverse JSON.
+Each JSON should start with "name" and end with "preEvolution"; those two should be strings or null.
 
 Question 1:
 Generate a short, valid and complex JSON object.
