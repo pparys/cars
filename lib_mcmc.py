@@ -215,7 +215,7 @@ class ConstrainedModel():
         assert scores.shape[1] == query_ids.shape[1], "Sequence lengths must match"
     
         # Apply log_softmax to get log-probabilities
-        logprobs = torch.log_softmax(scores, dim=-1)
+        logprobs = torch.log_softmax(scores.to(torch.get_default_dtype()), dim=-1)
     
         batch_size, seq_len = query_ids.shape
     
