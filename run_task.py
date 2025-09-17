@@ -55,7 +55,7 @@ def run_task(grammar_file, prompt_file, sample_style):
         runner.get_samples(n_samples = 1, n_steps = n_steps, max_new_tokens = max_new_tokens)
 
     elif sample_style in mcmc.all_sample_styles():
-        n_samples = 10
+        n_samples = 100
         n_steps = 11
         model = lib_mcmc.ConstrainedModel(model_id, grammar, torch_dtype=torch.bfloat16)
         runner = mcmc.MCMC(model = model, prompt = prompt, propose_style = sample_style, log_dir = log_dir)
