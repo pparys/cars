@@ -2,7 +2,7 @@ start: test_file
 
 test_file: setup_command source_command setup_test_case operation_test_case finish_command
 
-setup_command: "setset testdir [file dirname $argv0]" // Bug? 
+setup_command: "set testdir [file dirname $argv0]" // Bug? 
 source_command: "source $testdir/tester.tcl"
 finish_command: "finish_test"
 
