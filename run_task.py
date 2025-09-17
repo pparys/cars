@@ -45,6 +45,7 @@ def run_task(grammar_file, prompt_file, sample_style):
     if not torch.cuda.is_available():
         model_id = "hsultanbey/codegen350multi_finetuned"
         n_steps = 30
+        max_new_tokens = 50
     model = lib_ars.ConstrainedModel(model_id, grammar, torch_dtype=torch.bfloat16)
     
     runner = ars.ARS(model = model, prompt = prompt, sample_style = sample_style, log_dir = log_dir)

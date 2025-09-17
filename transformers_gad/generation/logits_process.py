@@ -152,13 +152,14 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
     def get_logprob(self):
         assert len(self.generated_tokens) == self.oracle_node_depth + 1
         
-        logprob = 0
+        list = []
         node = self.oracle_node
         depth = self.oracle_node_depth
         while depth >= 0:
-            logprob += node.raw_logprob[0, self.generated_tokens[depth]]
+            list.append(node.raw_logprob[0, self.generated_tokens[depth]])
             depth -= 1
             node = node.parent
+        logprob = torch.tensor(list).flip(0).sum()
         return logprob
 
 

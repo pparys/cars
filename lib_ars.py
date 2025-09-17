@@ -153,29 +153,6 @@ class ConstrainedModel():
 
         return output_ids, output_scores, raw_logprob.item()
 
-#    def generate(
-#        self,
-#        prompt: str,
-#        max_new_tokens: int,
-#        constrain: bool = False,
-#        prefix: str | None = None,
-#    ):
-#        prompt = self._format_prompt(prompt)
-#        input_str = prompt
-#        if prefix:
-#            input_str += prefix
-#
-#        # We do this weird mangling to make sure the prefix is tokenized the same way as it would be produced
-#        # Ideally we could just encode the prefix but that does not work directly with some tokenizers
-#        input_ids = self.tokenizer.encode(input_str, return_tensors="pt", add_special_tokens=False).to(self.model.device)
-#        prompt_ids = self.tokenizer.encode(prompt, return_tensors="pt", add_special_tokens=False).to(self.model.device)
-#        prefix_ids = None
-#        if prefix:
-#            prefix_ids = input_ids[:, prompt_ids.shape[1]:]
-#        
-#        output_ids, _ = self._generate(prompt_ids, max_new_tokens, constrain, prefix_ids)
-#        output_str = self.tokenizer.decode(output_ids[0], skip_special_tokens=False)
-#        return output_str
 
     def _get_seq_logprob_from_scores(self, scores: torch.Tensor, query_ids: torch.Tensor) -> torch.Tensor:
         """
@@ -206,34 +183,21 @@ class ConstrainedModel():
 
             # Find the first EOS token's position (if any)
             eos_mask = query_ids[i] == self.tokenizer.eos_token_id
-            # print(eos_mask)
-            # eos_positions = torch.nonzero(eos_mask)[0]
             eos_positions = torch.nonzero(eos_mask)
-            # print(eos_positions.shape)
-            # eos_positions = torch.where(eos_mask)[0]
 
-            #print("seq_token_logprobs:", seq_token_logprobs)
-            # if len(eos_positions) > 0:
             if eos_positions.shape[0] > 0:
                 # Include up to and including the first EOS token
                 first_eos_pos = eos_positions[0].item()
                 # Sum only up to and including the first EOS token
-                # print(f"First EOS position: {first_eos_pos}")
-                #print(seq_token_logprobs)
-                #print(lll2)
-                #for a in range(seq_token_logprobs.size(0)):
-                #    print(seq_token_logprobs[a], seq_token_logprobs[a].item(), math.exp(seq_token_logprobs[a].item()), lll2[a], lll2[a].item(), math.exp(lll2[a].item()))
-                #print("HERE")
-                #print(seq_token_logprobs.sum().item(), lll2.sum().item())
                 result[i] = seq_token_logprobs[:first_eos_pos + 1].sum()
                 #resultOK[i] = seq_token_logprobsOK[:first_eos_pos + 1].sum()
             else:
                 # No EOS token, sum all logprobs
-                # print("No EOS token found")
                 result[i] = seq_token_logprobs.sum()
                 #resultOK[i] = seq_token_logprobsOK.sum()
 
         return result
+
 
     def _get_generation_scores(
         self,
