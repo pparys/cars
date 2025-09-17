@@ -10,16 +10,33 @@ from scipy.stats import chisquare
 from collections import defaultdict
 import math
 
-def load_mcmc_run_data(run_dir: str, min_steps: int = 0) -> list[dict]:
+
+def get_all_task_dirs():
+    data_dir = "runs_log"
+    return [(task_dir[:task_dir.rfind('-')], f"{data_dir}/{task_dir}") for task_dir in sorted(os.listdir(data_dir))]
+
+
+def get_all_style_dirs(task_dir : str):
+    return [(style_dir[:style_dir.find('-')], f"{task_dir}/{style_dir}") for style_dir in sorted(os.listdir(task_dir))]
+
+
+def load_runs_log_from_dir(dir: str) -> list[dict]:
     runs = []
-    for run in os.listdir(run_dir):
+    for run in os.listdir(dir):
         if run.endswith(".json"):
-            with open(os.path.join(run_dir, run), "r") as f:
+            with open(os.path.join(dir, run), "r") as f:
                 run_data = json.load(f)
-                if min_steps==0 or len(run_data["successes"]) >= min_steps:
-                    runs.append(run_data)
-    print(f"Loaded {len(runs)} samples from {run_dir}")
+                runs.append(run_data)
+    #print(f"Loaded {len(runs)} samples from {dir}")
     return runs
+
+
+def get_success_rates(dir : str):
+    res = []
+    for data in load_runs_log_from_dir(dir):
+        assert len(data["successes"]) == 1000
+        res.append(data["successes"].count(True))
+    return res
 
 
 def extract_samples(samples):
@@ -34,20 +51,23 @@ def extract_samples(samples):
                     result.append((tuple(s["proposal"]["token_ids"]), s["proposal"]["raw_logprob"]))
     return result
     
-def compute_kl_chi2(all_data: list[str], samples: list[str], id: str):
-    all_data = [load_mcmc_run_data(run_dir) for run_dir in all_data]
-    samples = [load_mcmc_run_data(run_dir) for run_dir in samples]
+
+def get_kl_divergence(main_style : str, dir : str):
+    all_dirs = [subdir for _, subdir in get_all_style_dirs(dir)]
+    kl_dirs = [subdir for style, subdir in get_all_style_dirs(dir) if style == main_style]
+    all_data = [load_runs_log_from_dir(subdir) for subdir in all_dirs]
+    kl_data = [load_runs_log_from_dir(subdir) for subdir in kl_dirs]
     all_data = extract_samples(all_data)
-    samples = extract_samples(samples)
+    kl_data = extract_samples(kl_data)
     
     new_distr = defaultdict(int)
     total = 0
-    for x,_ in samples:
+    for x, _ in kl_data:
         new_distr[x] += 1
         total += 1
 
     orig_distr = {}
-    for x,v in all_data:
+    for x, v in all_data:
         if x in orig_distr:
             if not math.isclose(v, orig_distr[x]):
                 print(x, v, orig_distr[x])
@@ -78,6 +98,9 @@ def compute_kl_chi2(all_data: list[str], samples: list[str], id: str):
     #print("p-value:", p_value)
 
     #daaffafaf
+
+
+
 
 
 def plot_success_rates(all_mcmc_run_data: list[tuple[list[str], str]], split: str, output_dir: str, cut = 1000):

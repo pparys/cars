@@ -139,6 +139,7 @@ class ConstrainedModel():
             pad_token_id=self.tokenizer.eos_token_id,
             return_dict_in_generate=True,
             output_scores=True,
+            top_k=None,
         )
 
         gcd_logits_processor = None
