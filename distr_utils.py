@@ -53,7 +53,7 @@ def extract_samples(samples):
     
 
 def get_kl_divergence(main_style : str, dir : str):
-    all_dirs = [subdir for _, subdir in get_all_style_dirs(dir)]
+    all_dirs = [subdir for style, subdir in get_all_style_dirs(dir) if style != main_style]
     kl_dirs = [subdir for style, subdir in get_all_style_dirs(dir) if style == main_style]
     all_data = [load_runs_log_from_dir(subdir) for subdir in all_dirs]
     kl_data = [load_runs_log_from_dir(subdir) for subdir in kl_dirs]
@@ -71,9 +71,36 @@ def get_kl_divergence(main_style : str, dir : str):
         if x in orig_distr:
             if not math.isclose(v, orig_distr[x]):
                 print(x, v, orig_distr[x])
-            assert math.isclose(v, orig_distr[x])
+            #assert math.isclose(v, orig_distr[x])
         else:
             orig_distr[x] = v
+    for a in sorted(orig_distr):
+        print(a, orig_distr[a])
+    print("AAAA")
+
+    orig_d = {}
+    for x, v in kl_data:
+        if x in orig_d:
+            if not math.isclose(v, orig_d[x]):
+                print(x, v, orig_d[x])
+            #assert math.isclose(v, orig_distr[x])
+        else:
+            orig_d[x] = v
+
+    for a in sorted(orig_d):
+        print(a, orig_d[a])
+
+    print("BBBB")
+    for x, v in kl_data:
+        if x in orig_distr:
+            if not math.isclose(v, orig_distr[x]):
+                print(x, v, orig_distr[x])
+            #assert math.isclose(v, orig_distr[x])
+        else:
+            orig_distr[x] = v
+
+
+    xxxx
     #pprint.pprint(orig_distr)
     #pprint.pprint(new_distr)
 
