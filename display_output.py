@@ -5,7 +5,6 @@ def display_output(path : str):
         run_data = json.load(f)
     steps = run_data["steps"]
     multiline = any(any('\n' in word for word in a['tokens']) for a in steps)
-    print(multiline)
 
     for a in steps:
         for b in a['tokens']:

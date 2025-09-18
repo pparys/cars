@@ -155,7 +155,7 @@ class MCMC:
             sample_time = sample_end_time - sample_start_time
             print(f"Sample time: {sample_time:.2f} s")
             sample_str = self.model.tokenizer.decode(sample[0])
-            print(f"Sample: {sample_str}")
+            print(f"Sample: {sample_str}", flush=True)
 
     
 def run_mcmc():
