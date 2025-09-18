@@ -1,0 +1,77 @@
+root::= test_file
+
+test_file::= setup_command source_command setup_test_case operation_test_case finish_command
+
+setup_command::= "set testdir [file dirname $argv0]" WS
+source_command::= "source $testdir/tester.tcl" WS
+finish_command::= "finish_test" WS
+
+setup_test_case::= "do_test" WS test_name WS "{" setup_execsql_block "}" WS "{}" WS
+
+operation_test_case::= "do_test" WS test_name WS "{" operation_execsql_block "}"  WS "{" [^}]* "}"
+setup_execsql_block::= "execsql" WS "{" setup_stmt_list "}"
+
+operation_execsql_block::= "execsql" WS "{" operation_stmt_list "}"
+
+setup_stmt_list::= (create_table_stmt ";")+ (insert_stmt ";")+
+
+operation_stmt_list::= (operation_sql_stmt ";")+
+operation_sql_stmt::= select_stmt | update_stmt | delete_stmt
+
+create_table_stmt::= CREATE WS TABLE WS (IF WS NOT WS EXISTS WS)? WS name "(" column_def ("," column_def)* ")"
+insert_stmt::= INSERT WS INTO WS name ("(" name ("," name)* ")")? WS VALUES WS "(" expr ("," expr)* ")"
+
+select_stmt::= SELECT WS result_column ("," result_column)* (WS FROM WS table_or_subquery ("," table_or_subquery)*)? (WS WHERE WS expr)? (WS GROUP WS BY WS expr ("," expr)*)? (WS ORDER WS BY WS ordering_term ("," ordering_term)*)? (WS LIMIT WS expr)?
+update_stmt::= UPDATE WS name WS SET WS name "=" expr ("," name "=" expr)* (WS WHERE WS expr)?
+delete_stmt::= DELETE WS FROM WS name (WS WHERE WS expr)?
+
+result_column::= "*" | name ".*" | expr (WS AS WS name)?
+table_or_subquery::= name (WS AS WS name)?
+ordering_term::= expr (WS ASC | DESC)?
+
+column_def::= name (WS type_name)?
+type_name::= name+
+expr::= logical_or
+logical_or::= logical_and (WS "OR" WS logical_and)*
+logical_and::= equality (WS "AND" WS equality)*
+equality::= comparison (("=" | "!=") comparison)*
+comparison::= atom ((">" | "<" | ">=" | "<=") atom)*
+atom::= literal_value | name
+
+literal_value::= NUMBER | STRING | "NULL" | "TRUE" | "FALSE"
+name::= ID
+
+test_name::= ESCAPED_STRING | ([0-9] | [a-zA-Z] | "." | "-" )+
+
+SELECT::= "SELECT"
+FROM::= "FROM"
+WHERE::= "WHERE"
+GROUP::= "GROUP"
+BY::= "BY"
+ORDER::= "ORDER"
+LIMIT::= "LIMIT"
+AS::= "AS"
+ASC::= "ASC"
+DESC::= "DESC"
+CREATE::= "CREATE"
+TABLE::= "TABLE"
+INSERT::= "INSERT"
+INTO::= "INTO"
+VALUES::= "VALUES"
+UPDATE::= "UPDATE"
+SET::= "SET"
+DELETE::= "DELETE"
+IF::= "IF"
+NOT::= "NOT"
+EXISTS::= "EXISTS"
+NULL::= "NULL"
+TRUE::= "TRUE"
+FALSE::= "FALSE"
+
+ESCAPED_STRING::= "\"" [ \t!#-\[\]-~]* "\""
+ID ::= ("_"|LETTER) ("_"|LETTER|DIGIT)*
+LETTER ::= [a-zA-Z]
+DIGIT ::= [0-9]
+NUMBER ::= ("-"? ([0-9] | [1-9] [0-9]*)) ("." [0-9]+)? ([eE] [-+]? [0-9]+)?
+
+WS ::= [ \t\n\r]
