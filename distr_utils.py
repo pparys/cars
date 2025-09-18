@@ -65,6 +65,8 @@ def get_kl_divergence(main_style : str, dir : str):
     for x, _ in kl_data:
         new_distr[x] += 1
         total += 1
+    if total==0:
+        return None
 
     orig_distr = {}
     for x, v in all_data:
@@ -74,30 +76,27 @@ def get_kl_divergence(main_style : str, dir : str):
             assert math.isclose(v, orig_distr[x])
         else:
             orig_distr[x] = v
-    #pprint.pprint(orig_distr)
-    #pprint.pprint(new_distr)
 
     # KL-divergence:
     keys = list(orig_distr.keys())
     log_probs = np.array([orig_distr[k] for k in keys])
     orig_probs = softmax(log_probs)
     new_probs = np.array([new_distr[k]/total for k in keys])
-    print("KL:", np.sum(kl_div(new_probs, orig_probs)))
+    kl = np.sum(kl_div(new_probs, orig_probs))
+    return kl
     
     # For chi2 - all keys:
-    f_exp = orig_probs*total
-    f_obs = np.array([new_distr[k] for k in keys])
-    for i in range(0, len(f_obs), 20):
-        linia = f_obs[i:i+20]
-        print(' '.join(f"{liczba:5.0f}   " for liczba in linia))
-    for i in range(0, len(f_exp), 20):
-        linia = f_exp[i:i+20]
-        print(' '.join(f"{liczba:8.2f}" for liczba in linia))
-    chi2_stat, p_value = chisquare(f_obs=f_obs, f_exp=f_exp)
-    print("Chi2:", chi2_stat)
+    #f_exp = orig_probs*total
+    #f_obs = np.array([new_distr[k] for k in keys])
+    #for i in range(0, len(f_obs), 20):
+    #    linia = f_obs[i:i+20]
+    #    print(' '.join(f"{liczba:5.0f}   " for liczba in linia))
+    #for i in range(0, len(f_exp), 20):
+    #    linia = f_exp[i:i+20]
+    #    print(' '.join(f"{liczba:8.2f}" for liczba in linia))
+    #chi2_stat, p_value = chisquare(f_obs=f_obs, f_exp=f_exp)
+    #print("Chi2:", chi2_stat)
     #print("p-value:", p_value)
-
-    #daaffafaf
 
 
 
