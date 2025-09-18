@@ -12,7 +12,8 @@ import lib_ars
 import utils
 
 def all_sample_styles():
-    return ["ars0", "ars1", "ars2", "ars3", "ars0f", "ars1f", "ars2f", "ars3f"]
+    #return ["ars0", "ars1", "ars2", "ars3", "ars0f", "ars1f", "ars2f", "ars3f"]
+    return ["rs", "rsft", "ars", "cars"]
 
 class ARS:
     def __init__(self, model : lib_ars.ConstrainedModel, prompt : str, sample_style : str, log_dir : str):
@@ -22,7 +23,8 @@ class ARS:
         assert sample_style in all_sample_styles()
         self.log_dir = log_dir
         os.makedirs(self.log_dir, exist_ok=True)
-        self.model.reset_sampling(learn_level = int(sample_style[3]), constrain_first = (sample_style[-1]=="f"))
+        learn_level = 3 if sample_style=="cars" else (2 if sample_style=="ars" else 0)
+        self.model.reset_sampling(learn_level = learn_level, constrain_first = (sample_style=="rsft"))
 
 
     def get_sample(self, n_steps : int, max_new_tokens : int):
