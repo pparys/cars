@@ -5,7 +5,7 @@ import gc
 import torch
 import numpy as np
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig, GenerationConfig
-from transformers.generation.logits_process import LogitsProcessorList, InfNanRemoveLogitsProcessor
+from transformers.generation.logits_process import LogitsProcessorList, InfNanRemoveLogitsProcessor, LogitsProcessor
 from transformers_cfg.grammar_utils import IncrementalGrammarConstraint
 from transformers_cfg.generation.logits_process import GrammarConstrainedLogitsProcessor
 
@@ -19,6 +19,26 @@ def scores_to_top_k_tokens(scores, k):
         top_choices = list(zip(top_token_ids, top_probs))
         result.append(top_choices)
     return result
+
+
+class RestrictorLP(LogitsProcessor):
+    def __init__(self, prompt_len : int, answer_ids : torch.LongTensor):
+        self.prompt_len = prompt_len
+        self.answer_ids = answer_ids
+        self.result = torch.empty(len(answer_ids))
+
+    def __call__(self, input_ids : torch.LongTensor, scores : torch.FloatTensor) -> torch.FloatTensor:
+        pos = input_ids.size(1)-self.prompt_len
+        assert (pos>=0) and (pos<self.answer_ids.size(0))
+        if pos>0:
+            assert input_ids[0, -1] == self.answer_ids[pos-1]
+        logprobs = torch.log_softmax(scores.to(torch.get_default_dtype()), dim=-1)
+        self.result[pos] = logprobs[0][self.answer_ids[pos]]
+        scores = scores.clone()
+        scores.fill_(float('-inf'))
+        scores[0, self.answer_ids[pos]] = 0
+        return scores
+
 
 class ConstrainedModel():
     HF_CHAT_MODELS = [
@@ -65,9 +85,9 @@ class ConstrainedModel():
         device_map = "auto"
         # device_map = "balanced_low_0"
         self.model = AutoModelForCausalLM.from_pretrained(
-            model_id, 
-            # config=self.config, 
-            device_map=device_map, 
+            model_id,
+            # config=self.config,
+            device_map=device_map,
             # trust_remote_code=True,
             **kwargs
         )
@@ -81,7 +101,7 @@ class ConstrainedModel():
 
     def _set_grammar_constraint(self, grammar_str: str):
         self.grammar_constraint = IncrementalGrammarConstraint(grammar_str, "root", self.tokenizer)
-        
+
     def _format_prompt(self, prompt: str) -> str:
         """
         Formats the prompt accordingly if it is a chat model.
@@ -121,8 +141,8 @@ class ConstrainedModel():
         return result
 
     def _generate(
-        self, 
-        input_ids: torch.Tensor, 
+        self,
+        input_ids: torch.Tensor,
         max_new_tokens: int,
         do_sample: bool,
         # grammar_str: str | None,
@@ -131,7 +151,7 @@ class ConstrainedModel():
         num_return_sequences: int = 1,
         # temperature: float = 1.0,
     ) -> tuple[torch.Tensor, torch.Tensor]:
-        generation_config = GenerationConfig(
+        self.generation_config = GenerationConfig(
             max_new_tokens=max_new_tokens,
             num_return_sequences=num_return_sequences,
             do_sample=do_sample,
@@ -164,7 +184,7 @@ class ConstrainedModel():
 
         output = self.model.generate(
             input_prefix_ids,
-            generation_config=generation_config,
+            generation_config=self.generation_config,
             tokenizer=self.tokenizer,
             # logits_processor=[gcd_logits_processor] if gcd_logits_processor else None,
             logits_processor=logits_processor_list,
@@ -183,7 +203,7 @@ class ConstrainedModel():
         prompt: str,
         max_new_tokens: int,
         do_sample: bool,
-        # grammar_str: str | None = None, 
+        # grammar_str: str | None = None,
         constrain: bool = False,
         prefix: str | None = None,
     ):
@@ -199,7 +219,7 @@ class ConstrainedModel():
         prefix_ids = None
         if prefix:
             prefix_ids = input_ids[:, prompt_ids.shape[1]:]
-        
+
         output_ids, _ = self._generate(prompt_ids, max_new_tokens, do_sample, constrain, prefix_ids)
         output_str = self.tokenizer.decode(output_ids[0], skip_special_tokens=False)
         return output_str
@@ -214,15 +234,15 @@ class ConstrainedModel():
 
         assert scores.shape[0] == query_ids.shape[0], "Batch sizes must match"
         assert scores.shape[1] == query_ids.shape[1], "Sequence lengths must match"
-    
+
         # Apply log_softmax to get log-probabilities
         logprobs = torch.log_softmax(scores.to(torch.get_default_dtype()), dim=-1)
-    
+
         batch_size, seq_len = query_ids.shape
-    
+
         # Initialize result tensor
         result = torch.zeros(batch_size, device=scores.device)
-    
+
         # Process each sequence in the batch
         for i in range(batch_size):
             # Get logprobs for this sequence's tokens
@@ -247,7 +267,7 @@ class ConstrainedModel():
                 # No EOS token, sum all logprobs
                 # print("No EOS token found")
                 result[i] = seq_token_logprobs.sum()
-    
+
         return result
 
     def _get_generation_scores(
@@ -272,22 +292,22 @@ class ConstrainedModel():
         else:
             input_ids = torch.cat([prompt_ids, query_ids], dim=-1)
             prompt_prefix_len = prompt_ids.shape[1]
-        
+
         # Single forward pass
         with torch.no_grad():
             outputs = self.model(input_ids, return_dict=True)
-            
+
         # Extract the logits for each position
         all_logits = outputs.logits
         # Get scores for each position corresponding to query_ids
         scores = all_logits[:, prompt_prefix_len-1:prompt_prefix_len+query_ids.shape[1]-1, :]
-        
+
         # Apply grammar constraint if needed
         if constrain:
             self.grammar_constraint.reset()
             logits_processor = GrammarConstrainedLogitsProcessor(self.grammar_constraint, 0)
             modified_scores = []
-            
+
             # Initialize with prompt_ids for the first step
             if prefix_ids is not None:
                 current_ids = prefix_ids.clone()
@@ -295,43 +315,48 @@ class ConstrainedModel():
                 # Initialize current_ids, as an empty tensor with shape (batch_size, 0)
                 # current_ids = torch.empty((1, 0), dtype=torch.long).to(self.model.device)
                 current_ids = torch.empty((query_ids.shape[0], 0), dtype=torch.long).to(self.model.device)
-            
+
             for i in range(query_ids.shape[1]):
                 # Apply grammar constraint for this position
                 current_step_logits = scores[:, i, :].clone()
                 constrained_logits = logits_processor(current_ids, current_step_logits)
                 modified_scores.append(constrained_logits)
-                
+
                 # Update current_ids for the next step
                 current_ids = torch.cat([current_ids, query_ids[:, i:i+1]], dim=-1)
-            
+
             # Stack along sequence dimension
             modified_scores = torch.stack(modified_scores, dim=1)
             scores = modified_scores
-        
+
         assert scores.shape[1] == query_ids.shape[1]
-        
+
         del outputs
         gc.collect()
         torch.cuda.empty_cache()
-        
+
         return scores
 
     def _get_seq_logprob(
-        self, 
+        self,
         prompt_ids: torch.Tensor,
         query_ids: torch.Tensor,
         # grammar_str: str | None = None,
         constrain: bool = False,
-        prefix_ids: torch.Tensor | None = None,     
+        prefix_ids: torch.Tensor | None = None,
     ) -> torch.Tensor:
         """
         Get the log probability of a sequence given the model.
         """
-        scores = self._get_generation_scores(prompt_ids, query_ids, constrain, prefix_ids)
-        logprob = self._get_seq_logprob_from_scores(scores, query_ids)
+        #scores = self._get_generation_scores(prompt_ids, query_ids, constrain, prefix_ids)
+        #logprob = self._get_seq_logprob_from_scores(scores, query_ids)
+        restrictor = RestrictorLP(prompt_ids.size(1), query_ids[0])
+        logits_processor_list = LogitsProcessorList([restrictor])
+        self.model.generate(prompt_ids, generation_config=self.generation_config, tokenizer=self.tokenizer, logits_processor=logits_processor_list)
+        scores = restrictor.result.to('cpu')
+        logprob = scores.sum()
         return logprob
-    
+
     def _resample_idx_distribution(
         self,
         propose_style: str,
@@ -372,7 +397,7 @@ class ConstrainedModel():
         assert resample_distr.shape == current_ids.shape
         assert torch.allclose(resample_distr.sum(), torch.tensor(1.0))
         return resample_distr
-    
+
     def _propose_next_sequence_logprob(
         self,
         current_ids: torch.Tensor,
@@ -405,7 +430,7 @@ class ConstrainedModel():
             if idx_resample_prob == 0:
                 continue
             idx_resample_logprob = np.log(idx_resample_prob)
-            
+
             # prefix_ids = current_ids[:, :i]
             suffix_ids = next_ids[:, i:]
             suffix_scores = next_scores[:, i:]
@@ -413,13 +438,13 @@ class ConstrainedModel():
             # Get log probability in one call
             # suffix_logprob = self._get_seq_logprob(prompt_ids, suffix_ids, constrain, prefix_ids)
             suffix_logprob = self._get_seq_logprob_from_scores(suffix_scores, suffix_ids).item()
-            
+
             # Add to total probability
             # proposal_prob += idx_resample_prob * np.exp(suffix_logprob)
             proposal_logprob = np.logaddexp(proposal_logprob, idx_resample_logprob + suffix_logprob)
 
         return proposal_logprob
-    
+
     def _propose_next_sequence(
         self,
         prompt_ids: torch.Tensor,
@@ -432,13 +457,13 @@ class ConstrainedModel():
         assert current_ids.shape[0] == 1
         if propose_style not in ["prefix", "priority", "restart"]:
             raise ValueError(f"Unknown proposal style: {propose_style}")
-        
+
         if current_scores is None:
             current_scores = self._get_generation_scores(prompt_ids, current_ids, constrain)
 
         resample_idx_distr = self._resample_idx_distribution(
             propose_style, current_ids, current_scores
-        ) 
+        )
         # print(resample_idx_distr.tolist())
 
         resample_idx = np.random.choice(len(current_ids[0]), p=resample_idx_distr[0].cpu().numpy())
