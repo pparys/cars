@@ -8,15 +8,15 @@ import torch
 import numpy as np
 from tqdm import tqdm
 
-import lib_ars
+import cars.lib
 import utils
 
 def all_sample_styles():
     #return ["ars0", "ars1", "ars2", "ars3", "ars0f", "ars1f", "ars2f", "ars3f"]
     return ["rs", "rsft", "ars", "cars"]
 
-class ARS:
-    def __init__(self, model : lib_ars.ConstrainedModel, prompt : str, sample_style : str, log_dir : str):
+class CARS:
+    def __init__(self, model : cars.lib.ConstrainedModel, prompt : str, sample_style : str, log_dir : str):
         self.model = model
         prompt = model._format_prompt(prompt)
         self.prompt_ids = model.tokenizer.encode(prompt, return_tensors="pt", add_special_tokens=False).to(model.model.device)

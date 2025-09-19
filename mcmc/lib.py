@@ -270,72 +270,72 @@ class ConstrainedModel():
 
         return result
 
-    def _get_generation_scores(
-        self,
-        prompt_ids: torch.Tensor,
-        query_ids: torch.Tensor,
-        constrain: bool = False,
-        prefix_ids: torch.Tensor | None = None,
-    ) -> torch.Tensor:
-        """
-        Return the model generation scores at each step of the query using a single forward pass.
-        More efficient than _get_generation_scores for longer sequences.
-        """
-        # If prompt_ids has batch size of 1, duplicate it to match the batch size of query_ids
-        if prompt_ids.shape[0] == 1:
-            prompt_ids = prompt_ids.repeat(query_ids.shape[0], 1)
-
-        # Concatenate prompt_ids and query_ids to get the full sequence
-        if prefix_ids is not None:
-            input_ids = torch.cat([prompt_ids, prefix_ids, query_ids], dim=-1)
-            prompt_prefix_len = prompt_ids.shape[1] + prefix_ids.shape[1]
-        else:
-            input_ids = torch.cat([prompt_ids, query_ids], dim=-1)
-            prompt_prefix_len = prompt_ids.shape[1]
-
-        # Single forward pass
-        with torch.no_grad():
-            outputs = self.model(input_ids, return_dict=True)
-
-        # Extract the logits for each position
-        all_logits = outputs.logits
-        # Get scores for each position corresponding to query_ids
-        scores = all_logits[:, prompt_prefix_len-1:prompt_prefix_len+query_ids.shape[1]-1, :]
-
-        # Apply grammar constraint if needed
-        if constrain:
-            self.grammar_constraint.reset()
-            logits_processor = GrammarConstrainedLogitsProcessor(self.grammar_constraint, 0)
-            modified_scores = []
-
-            # Initialize with prompt_ids for the first step
-            if prefix_ids is not None:
-                current_ids = prefix_ids.clone()
-            else:
-                # Initialize current_ids, as an empty tensor with shape (batch_size, 0)
-                # current_ids = torch.empty((1, 0), dtype=torch.long).to(self.model.device)
-                current_ids = torch.empty((query_ids.shape[0], 0), dtype=torch.long).to(self.model.device)
-
-            for i in range(query_ids.shape[1]):
-                # Apply grammar constraint for this position
-                current_step_logits = scores[:, i, :].clone()
-                constrained_logits = logits_processor(current_ids, current_step_logits)
-                modified_scores.append(constrained_logits)
-
-                # Update current_ids for the next step
-                current_ids = torch.cat([current_ids, query_ids[:, i:i+1]], dim=-1)
-
-            # Stack along sequence dimension
-            modified_scores = torch.stack(modified_scores, dim=1)
-            scores = modified_scores
-
-        assert scores.shape[1] == query_ids.shape[1]
-
-        del outputs
-        gc.collect()
-        torch.cuda.empty_cache()
-
-        return scores
+#    def _get_generation_scores(
+#        self,
+#        prompt_ids: torch.Tensor,
+#        query_ids: torch.Tensor,
+#        constrain: bool = False,
+#        prefix_ids: torch.Tensor | None = None,
+#    ) -> torch.Tensor:
+#        """
+#        Return the model generation scores at each step of the query using a single forward pass.
+#        More efficient than _get_generation_scores for longer sequences.
+#        """
+#        # If prompt_ids has batch size of 1, duplicate it to match the batch size of query_ids
+#        if prompt_ids.shape[0] == 1:
+#            prompt_ids = prompt_ids.repeat(query_ids.shape[0], 1)
+#
+#        # Concatenate prompt_ids and query_ids to get the full sequence
+#        if prefix_ids is not None:
+#            input_ids = torch.cat([prompt_ids, prefix_ids, query_ids], dim=-1)
+#            prompt_prefix_len = prompt_ids.shape[1] + prefix_ids.shape[1]
+#        else:
+#            input_ids = torch.cat([prompt_ids, query_ids], dim=-1)
+#            prompt_prefix_len = prompt_ids.shape[1]
+#
+#        # Single forward pass
+#        with torch.no_grad():
+#            outputs = self.model(input_ids, return_dict=True)
+#
+#        # Extract the logits for each position
+#        all_logits = outputs.logits
+#        # Get scores for each position corresponding to query_ids
+#        scores = all_logits[:, prompt_prefix_len-1:prompt_prefix_len+query_ids.shape[1]-1, :]
+#
+#        # Apply grammar constraint if needed
+#        if constrain:
+#            self.grammar_constraint.reset()
+#            logits_processor = GrammarConstrainedLogitsProcessor(self.grammar_constraint, 0)
+#            modified_scores = []
+#
+#            # Initialize with prompt_ids for the first step
+#            if prefix_ids is not None:
+#                current_ids = prefix_ids.clone()
+#            else:
+#                # Initialize current_ids, as an empty tensor with shape (batch_size, 0)
+#                # current_ids = torch.empty((1, 0), dtype=torch.long).to(self.model.device)
+#                current_ids = torch.empty((query_ids.shape[0], 0), dtype=torch.long).to(self.model.device)
+#
+#            for i in range(query_ids.shape[1]):
+#                # Apply grammar constraint for this position
+#                current_step_logits = scores[:, i, :].clone()
+#                constrained_logits = logits_processor(current_ids, current_step_logits)
+#                modified_scores.append(constrained_logits)
+#
+#                # Update current_ids for the next step
+#                current_ids = torch.cat([current_ids, query_ids[:, i:i+1]], dim=-1)
+#
+#            # Stack along sequence dimension
+#            modified_scores = torch.stack(modified_scores, dim=1)
+#            scores = modified_scores
+#
+#        assert scores.shape[1] == query_ids.shape[1]
+#
+#        del outputs
+#        gc.collect()
+#        torch.cuda.empty_cache()
+#
+#        return scores
 
     def _get_seq_logprob(
         self,

@@ -1,6 +1,8 @@
 import llguidance, llguidance.hf, llguidance.torch
 import os, logging
+from logging_config import setup_logging
 
+setup_logging()
 logger = logging.getLogger(__name__)
 
 class LlguidanceTokenRecognizer:
@@ -36,14 +38,14 @@ class LlguidanceTokenRecognizer:
         llguidance.torch.fill_next_token_bitmask(self.ll_matcher, self._grammar_bitmask, 0)
         return self._grammar_bitmask
     
-    def nonzero_bits(self): # it assumes that filter_vocab was already executed
-        set_bits = []
-        tensor = self._grammar_bitmask[0]
-        for i in tensor.nonzero().flatten():
-            for j in range(32):
-                if (tensor[i]>>j)&1:
-                    set_bits.append(i*32+j)
-        return set_bits
+    #def nonzero_bits(self): # it assumes that filter_vocab was already executed
+    #    set_bits = []
+    #    tensor = self._grammar_bitmask[0]
+    #    for i in tensor.nonzero().flatten():
+    #        for j in range(32):
+    #            if (tensor[i]>>j)&1:
+    #                set_bits.append(i*32+j)
+    #    return set_bits
 
 #def bitmask_get_bit(tensor, i):
 #    return (tensor[i // 32] >> (i % 32)) & 1

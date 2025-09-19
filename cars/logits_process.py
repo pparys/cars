@@ -9,8 +9,10 @@ from transformers.generation.logits_process import (
     LOGITS_PROCESSOR_INPUTS_DOCSTRING,
 )
 from transformers.utils import add_start_docstrings
-from transformers_gad.oracle.oracle_trie import Trie
+from cars.oracle_trie import Trie
+from logging_config import setup_logging
 
+setup_logging()
 logger = logging.getLogger(__name__)
 
 def pretty_print_floats(d, precision=10):

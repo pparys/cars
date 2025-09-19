@@ -8,7 +8,7 @@ import torch
 import numpy as np
 from tqdm import tqdm
 
-import lib_mcmc
+import mcmc.lib
 import utils
 
 def all_sample_styles():
@@ -26,7 +26,7 @@ def is_valid_propose_style(propose_style):
 class MCMC:
     def __init__(
         self, 
-        model: lib_mcmc.ConstrainedModel, 
+        model: mcmc.lib.ConstrainedModel, 
         prompt: str, 
         propose_style: str,
         log_dir: str, 
@@ -179,8 +179,8 @@ def run_mcmc():
     # model_id = "meta-llama/Llama-3.2-1B-Instruct"
     # model_id = "google/gemma-2-2b-it"
 
-    # model = lib_mcmc.ConstrainedModel(model_id, None)
-    model = lib_mcmc.ConstrainedModel(model_id, None, torch_dtype=torch.bfloat16)
+    # model = mcmc.lib.ConstrainedModel(model_id, None)
+    model = mcmc.lib.ConstrainedModel(model_id, None, torch_dtype=torch.bfloat16)
 
     root_log_dir = "mcmc_runs"
 
