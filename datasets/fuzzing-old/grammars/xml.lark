@@ -1,0 +1,121 @@
+start: document
+document: prolog  doctype  element
+doctype: "<!DOCTYPE"  name ( externalid)?  "["  int_subset  "]"  ">"
+int_subset: ( markupdecl)*
+entityref_content: ((entityref | /[^%&"]/))*
+
+markupdecl: elementdecl
+     | attlistdecl
+     | entitydecl
+     | notationdecl
+     | pereference
+     | comment
+
+pereference: "%" name ";" 
+elementdecl: "<!ELEMENT"  name  contentspec  ">" 
+attlistdecl: "<!ATTLIST"  name  attdef+  ">" 
+
+entitydecl: gedecl
+     | pedecl
+
+gedecl: "<!ENTITY"  name  entity_def  ">" 
+pedecl: "<!ENTITY"  "%"  name  entity_def  ">" 
+
+entity_def: string
+     | externalid ( ndata_decl)?
+
+ndata_decl: "NDATA"  name
+notationdecl: "<!NOTATION"  name  externalid  ">" 
+
+contentspec: name
+     | "EMPTY"
+     | "ANY"
+     | mixed
+     | children
+
+mixed: "("  "#PCDATA" ( "|"  name)*  ")" 
+choice: "("  cp ( "|"  cp)+  ")" occurrence? 
+seq: "("  cp ( ","  cp)*  ")" occurrence? 
+
+children: choice
+     | seq
+
+cp: name occurrence? 
+
+occurrence: "?"
+     | "*"
+     | "+" 
+
+attdef: name  att_type  default_decl 
+
+att_type: string_type
+     | tokenized_type
+     | enumerated_type
+
+string_type: "CDATA" 
+
+tokenized_type: "ID" 
+     | "IDREF" 
+     | "IDREFS" 
+     | "ENTITY" 
+     | "ENTITIES" 
+     | "NMTOKEN" 
+     | "NMTOKENS" 
+     | "NOTATION"  "("  name ( "|"  name)*  ")" 
+
+enumerated_type: "("  name ( "|"  name)*  ")" 
+
+default_decl: "#REQUIRED"
+     | "#IMPLIED"
+     | "#FIXED"  string
+     | string
+
+externalid: "SYSTEM"  string
+     | "PUBLIC"  string  string
+
+prolog: xmldecl ( comment)*
+xmldecl: "<?xml" version_info encoding_decl? standalone_decl?  "?>"
+DIGIT: /[0-9]/
+DIGITS: DIGIT+
+version_info:  "version" eq ("\"" VERSION_NUM "\"" | "'" VERSION_NUM "'") 
+VERSION_NUM: "1." DIGITS
+ENCODING_NAME: /[A-Za-z]/ /[A-Za-z0-9._-]/+
+encoding_value: "\"" ENCODING_NAME "\"" 
+encoding_decl:  "encoding" eq encoding_value 
+standalone_decl:  "standalone" eq ("\"" ("yes" | "no") "\"" | "'" ("yes" | "no") "'")
+eq:  "=" 
+
+element: emptyelement
+     | openclose
+
+emptyelement: "<" name  attr* "/>" 
+openclose: opentag content closetag
+opentag: "<" name  attr* ">" 
+closetag: "</" name ">" 
+
+attr: namespace_decl
+     | name eq string 
+
+namespace_decl: "xmlns" (":" name)? eq string 
+entityref: "&" name ";" 
+
+charref: "&#" DIGITS ";" 
+     | "&#x" /[0-9A-Fa-f]/+ ";" 
+
+content: ((chardata | entityref | element | comment | cdata))*
+name: QNAME 
+PREFIX: /[A-Za-z]/ /[A-Za-z0-9.-]/*
+LOCAL_PART: /[A-Za-z]/ /[A-Za-z0-9.-]/*
+
+QNAME: PREFIX ":" LOCAL_PART
+     | LOCAL_PART
+
+chardata: /[^<&]/+ 
+cdata: "<![CDATA[" /[^\]]/* "]]>" 
+comment: "<!--" /[^-]/* "-->" 
+
+string: "\"" (/[^"&]/ | entityref | charref) "\"" 
+     | "'" ((/[^'&]/ | entityref | charref))* "'" 
+
+%import common.WS
+%ignore WS

@@ -1,0 +1,111 @@
+start: header  test_block_list  FINISH
+header: "set testdir [file dirname $argv0]"  "source $testdir/tester.tcl"  "set testprefix"  IDENTIFIER  "set ::timeout 60000" ( variable_definition)*
+variable_definition: "set"  IDENTIFIER  (tcl_list | tcl_value)
+test_block_list: test_block ( test_block)*
+
+test_block: do_test
+     | do_execsql_test
+     | procedure_definition
+     | ifcapable_block
+     | conditional_block
+     | tcl_statement
+
+do_test: "do_test"  TEST_NAME  "{"  (tcl_statement )* "}"  expected_result
+do_execsql_test: "do_execsql_test"  TEST_NAME  "{"  sql_statements  "}"  expected_result
+procedure_definition: "proc"  IDENTIFIER  PARAMETER_LIST  "{"  (tcl_statement )* "}"
+conditional_block: "if"  condition  "{"  (tcl_statement )* "}" ( "else"  "{"  (tcl_statement )* "}")?
+ifcapable_block: "ifcapable"  IDENTIFIER  "{"  (test_block )+ "}"
+
+tcl_statement: catchsql_command
+     | execsql_command
+     | db_command
+     | lappend_command
+     | return_command
+     | tcl_simple_command
+
+tcl_simple_command: IDENTIFIER ( tcl_value)*
+catchsql_command: "catchsql"  tcl_value
+execsql_command: "execsql"  "{"  sql_statements  "}"
+db_command: ("db" | "db2")  IDENTIFIER ( tcl_value)*
+lappend_command: "lappend"  IDENTIFIER  tcl_value
+return_command: "return"  tcl_value
+
+PARAMETER_LIST: IDENTIFIER
+     | "{"  (IDENTIFIER )+ "}"
+
+TEST_NAME: IDENTIFIER "-" DIGIT+ "." DIGIT+
+sql_statements: sql_statement ( ";"  sql_statement)* ( ";")?
+
+sql_statement: BEGIN_STMT
+     | COMMIT_STMT
+     | ROLLBACK_STMT
+     | PRAGMA_STMT
+     | CREATE_TABLE_STMT
+     | CREATE_INDEX_STMT
+     | INSERT_STMT
+     | SELECT_STMT
+     | with_stmt
+
+BEGIN_STMT: "BEGIN"  (("EXCLUSIVE" | "IMMEDIATE"))?
+COMMIT_STMT: "COMMIT"
+ROLLBACK_STMT: "ROLLBACK"
+PRAGMA_STMT: "PRAGMA"  IDENTIFIER ( "="  LITERAL)?
+CREATE_TABLE_STMT: "CREATE TABLE"  IDENTIFIER  "("  COLUMN_DEF_LIST  ")"
+COLUMN_DEF_LIST: COLUMN_DEF ( ","  COLUMN_DEF)*
+COLUMN_DEF: IDENTIFIER ( TYPE_NAME)? ( COLUMN_CONSTRAINT)*
+
+COLUMN_CONSTRAINT: "PRIMARY KEY"
+     | "NOT NULL"
+     | "UNIQUE"
+     | "DEFAULT"  LITERAL
+
+CREATE_INDEX_STMT: "CREATE INDEX"  IDENTIFIER  "ON"  IDENTIFIER  "("  IDENTIFIER  ")"
+INSERT_STMT: "INSERT INTO"  IDENTIFIER ( "("  COLUMN_LIST  ")")?  ("VALUES"  "("  VALUE_LIST  ")" | "SELECT"  SELECT_EXPR)
+COLUMN_LIST: IDENTIFIER ( ","  IDENTIFIER)*
+VALUE_LIST: LITERAL ( ","  LITERAL)*
+SELECT_STMT: "SELECT"  SELECT_EXPR  "FROM"  IDENTIFIER ( "WHERE"  CONDITION_EXPR)?
+
+SELECT_EXPR: "*"
+     | "count(*)"
+     | IDENTIFIER
+     | LITERAL
+     | IDENTIFIER  "("  "*"  ")"
+
+CONDITION_EXPR: IDENTIFIER  "="  (IDENTIFIER | LITERAL)
+with_stmt: "WITH"  IDENTIFIER  "("  IDENTIFIER  ")"  "AS"  "("  sql_statement ( "UNION ALL"  sql_statement)*  ")"  sql_statement
+
+condition: tcl_value  ("==" | "!=" | ">" | "<" | ">=" | "<=")  tcl_value
+     | IDENTIFIER
+
+tcl_value: LITERAL
+     | IDENTIFIER
+     | "$"  IDENTIFIER
+     | "$::"  IDENTIFIER
+     | tcl_list
+     | "{"  sql_statements  "}"
+
+tcl_list: "{"  (tcl_value )* "}"
+
+expected_result: LITERAL
+     | tcl_list
+
+LITERAL: NUMERIC_LITERAL
+     | STRING_LITERAL
+
+NUMERIC_LITERAL: DIGIT+ ("." DIGIT+)?
+
+IDENTIFIER: LETTER ((LETTER | DIGIT | "_"))*
+LETTER: /[A-Za-z]/
+DIGIT: /[0-9]/
+
+TYPE_NAME: "INTEGER"
+     | "TEXT"
+     | "REAL"
+     | "BLOB"
+     | "NULL"
+
+FINISH: "finish_test" 
+
+%import common.ESCAPED_STRING -> STRING_LITERAL
+%import common.WS
+%ignore WS
