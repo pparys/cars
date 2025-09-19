@@ -96,8 +96,6 @@ def evaluate_mol(smiles_samples, monomer_class):
 	return val_metric, div_metric, retro_metric, mem_metric
 
 if __name__ == "__main__":
-	all_results = []
-
 	config = configparser.ConfigParser()
 	config.read('experiments/smiles/experiment.config')
 
@@ -109,6 +107,7 @@ if __name__ == "__main__":
 	samples_config = {}
  
 	for model in models:
+		all_results = []
 		for dataset in datasets:
 			samples_config[dataset] = f"{samples_base_dir}/{model}/{dataset}"
 	
