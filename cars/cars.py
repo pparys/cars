@@ -24,10 +24,10 @@ class CARS:
         self.log_dir = log_dir
         os.makedirs(self.log_dir, exist_ok=True)
         learn_level = 3 if sample_style=="cars" else (2 if sample_style=="ars" else 0)
-        self.model.reset_sampling(learn_level = learn_level, constrain_first = (sample_style=="rsft"))
+        self.model.reset_sampling(learn_level = learn_level, constrain_first = (sample_style=="rsft" or sample_style=="cars"))
 
 
-    def get_sample(self, n_steps : int, max_new_tokens : int):
+    def get_sample(self, n_steps : int, max_new_tokens : int, stop_after : int):
     
         steps = []
         successes = []
@@ -69,16 +69,18 @@ class CARS:
             steps_dump = {"steps": steps, "successes": successes}
             with open(sample_file_tmp, "w") as f:
                 json.dump(steps_dump, f, indent=4)
+            if len(steps) >= stop_after:
+                break
             #gc.collect()
             #torch.cuda.empty_cache()
         os.rename(sample_file_tmp, sample_file)
         print(f"Total suceeses: {len(steps)}/{len(successes)}")
 
-    def get_samples(self, n_samples : int, n_steps : int, max_new_tokens : int):
+    def get_samples(self, n_samples : int, n_steps : int, stop_after : int, max_new_tokens : int):
         for i in tqdm(range(n_samples)):
             print(f"Sample {i}")
             sample_start_time = time.time()
-            self.get_sample(n_steps, max_new_tokens)
+            self.get_sample(n_steps, max_new_tokens, stop_after = stop_after)
             sample_end_time = time.time()
             sample_time = sample_end_time - sample_start_time
             print(f"Sample time: {sample_time:.2f} s")

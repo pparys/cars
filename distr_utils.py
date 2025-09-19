@@ -20,13 +20,19 @@ def get_all_style_dirs(task_dir : str):
     return [(style_dir[:style_dir.find('-')], f"{task_dir}/{style_dir}") for style_dir in sorted(os.listdir(task_dir))]
 
 
-def load_runs_log_from_dir(dir: str) -> list[dict]:
+def load_runs_log_from_dir(dir_or_file: str) -> list[dict]:
+    files = []
+    if os.path.isdir(dir_or_file):
+        for file in os.listdir(dir_or_file):
+            if file.endswith(".json"):
+                files.append(os.path.join(dir_or_file, file))
+    else:
+        files.append(dir_or_file)
     runs = []
-    for run in os.listdir(dir):
-        if run.endswith(".json"):
-            with open(os.path.join(dir, run), "r") as f:
-                run_data = json.load(f)
-                runs.append(run_data)
+    for file in files:
+        with open(file, "r") as f:
+            run_data = json.load(f)
+            runs.append(run_data)
     #print(f"Loaded {len(runs)} samples from {dir}")
     return runs
 
@@ -39,16 +45,16 @@ def get_success_rates(dir : str):
     return res
 
 
-def extract_samples(samples):
+def extract_samples(all_data, what = "token_ids"):
     result = []
-    for data in samples:
+    for data in all_data:
         for d in data:
             for s in d["steps"]:
-                if "token_ids" in s:
-                    result.append((tuple(s["token_ids"]), s["raw_logprob"]))
+                if what in s:
+                    result.append((tuple(s[what]), s["raw_logprob"]))
                 else:
-                    result.append((tuple(s["current"]["token_ids"]), s["current"]["raw_logprob"]))
-                    result.append((tuple(s["proposal"]["token_ids"]), s["proposal"]["raw_logprob"]))
+                    result.append((tuple(s["current"][what]), s["current"]["raw_logprob"]))
+                    result.append((tuple(s["proposal"][what]), s["proposal"]["raw_logprob"]))
     return result
     
 
@@ -97,6 +103,23 @@ def get_kl_divergence(main_style : str, dir : str):
     #chi2_stat, p_value = chisquare(f_obs=f_obs, f_exp=f_exp)
     #print("Chi2:", chi2_stat)
     #print("p-value:", p_value)
+
+
+def get_num_unfinished(main_style : str, dir : str):
+    subdirs = [subdir for style, subdir in get_all_style_dirs(dir) if style == main_style]
+    data = [load_runs_log_from_dir(subdir) for subdir in subdirs]
+    data = extract_samples(data, "tokens")
+
+    total = 0
+    bad = 0
+    for x, _ in data:
+        total += 1
+        if x[-1] != '<|eot_id|>':
+            #if len(x)!=512:
+                #print(x, len(x))
+            assert len(x) >= 512
+            bad += 1
+    return bad, total
 
 
 def plot_success_rates(big_task : str, tasks : list[tuple[str, str]], style : str, output_dir : str, cut : int = 1000):
