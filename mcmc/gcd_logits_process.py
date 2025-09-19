@@ -31,7 +31,7 @@ class GrammarConstrainedProcessor(LogitsProcessor):
 
         acceptance = self.grammar_constraint.filter_vocab()
         scores = scores.clone()
-        xgrammar.apply_token_bitmask_inplace(scores, acceptance)
+        xgrammar.apply_token_bitmask_inplace(scores, acceptance.to(self.device, non_blocking = True))
 
         #end_time = time.time()
         #self.logits_process_time += end_time - start_time
