@@ -6,8 +6,9 @@ import torch
 import numpy as np
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig, GenerationConfig
 from transformers.generation.logits_process import LogitsProcessorList, InfNanRemoveLogitsProcessor, LogitsProcessor
-from transformers_cfg.grammar_utils import IncrementalGrammarConstraint
-from transformers_cfg.generation.logits_process import GrammarConstrainedLogitsProcessor
+from llguidance_grammar_recognizer import LlguidanceTokenRecognizer
+from mcmc.gcd_logits_process import GrammarConstrainedProcessor
+
 
 def scores_to_top_k_tokens(scores, k):
     result = []
@@ -100,7 +101,7 @@ class ConstrainedModel():
             self._set_grammar_constraint(grammar_str)
 
     def _set_grammar_constraint(self, grammar_str: str):
-        self.grammar_constraint = IncrementalGrammarConstraint(grammar_str, "root", self.tokenizer)
+        self.grammar_constraint = LlguidanceTokenRecognizer(grammar_str, self.tokenizer)
 
     def _format_prompt(self, prompt: str) -> str:
         """
@@ -166,11 +167,7 @@ class ConstrainedModel():
         if constrain:
             # grammar_constraint = IncrementalGrammarConstraint(grammar_str, "root", self.tokenizer)
             self.grammar_constraint.reset()
-            if prefix_ids is not None:
-                # TODO: can we do this always?
-                gcd_logits_processor = GrammarConstrainedLogitsProcessor(self.grammar_constraint, len(input_ids[0]))
-            else:
-                gcd_logits_processor = GrammarConstrainedLogitsProcessor(self.grammar_constraint)
+            gcd_logits_processor = GrammarConstrainedProcessor(self.tokenizer, self.grammar_constraint, self.model.device, len(input_ids[0]))
 
         logits_processor_list = []
         logits_processor_list.append(InfNanRemoveLogitsProcessor())

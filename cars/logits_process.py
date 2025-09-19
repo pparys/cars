@@ -4,25 +4,13 @@ import torch
 import logging
 import time
 import xgrammar
-from transformers.generation.logits_process import (
-    LogitsProcessor,
-    LOGITS_PROCESSOR_INPUTS_DOCSTRING,
-)
+from transformers.generation.logits_process import LogitsProcessor
 from transformers.utils import add_start_docstrings
 from cars.oracle_trie import Trie
 from logging_config import setup_logging
 
 setup_logging()
 logger = logging.getLogger(__name__)
-
-def pretty_print_floats(d, precision=10):
-    def format_value(v):
-        if isinstance(v, float):
-            return f"{v:.{precision}f}"
-        return v
-
-    formatted_items = [f"{k}: {format_value(v)}" for k, v in d.items()]
-    logger.debug("{" + ", ".join(formatted_items) + "}")
 
 
 class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
@@ -51,7 +39,6 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         self.logits_process_time = 0
 
 
-    @add_start_docstrings(LOGITS_PROCESSOR_INPUTS_DOCSTRING)
     def __call__(self, input_ids : torch.LongTensor, scores : torch.FloatTensor) -> torch.FloatTensor:
         start_time = time.time()
         

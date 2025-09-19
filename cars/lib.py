@@ -6,7 +6,7 @@ import torch
 import numpy as np
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig, GenerationConfig
 from transformers.generation.logits_process import LogitsProcessorList, InfNanRemoveLogitsProcessor
-from cars.llguidance_grammar_recognizer import LlguidanceTokenRecognizer
+from llguidance_grammar_recognizer import LlguidanceTokenRecognizer
 from cars.logits_process import GrammarAlignedOracleLogitsProcessor
 
 def scores_to_top_k_tokens(scores, k):
