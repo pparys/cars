@@ -1,0 +1,4 @@
+start: PLAN
+PLAN: ACTION (" " ACTION)*
+ACTION: "(" (("put-down" | "pick-up") " " OBJECT | ("unstack" | "stack") " " OBJECT " " OBJECT) ")"
+OBJECT: /[a-e]/

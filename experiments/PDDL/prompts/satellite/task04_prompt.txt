@@ -1,0 +1,297 @@
+You are a PDDL planning expert. You are given a domain, and some examples of planning problems and a valid sequences to achieve the goal. 
+Your task is to provide a valid sequence of actions that achieves the goal.
+
+Domain: SATELLITE
+
+Domain Definition:
+(define (domain satellite)
+(:requirements :strips)
+(:predicates
+	 (on_board ?i ?s) (supports ?i ?m) (pointing ?s ?d) (power_avail ?s) (power_on ?i) (calibrated ?i) (have_image ?d ?m) (calibration_target ?i ?d)(satellite ?x) (direction ?x) (instrument ?x) (mode ?x) )
+(:action turn_to
+ :parameters ( ?s ?d_new ?d_prev)
+ :precondition
+	(and (satellite ?s) (direction ?d_new) (direction ?d_prev)  (pointing ?s ?d_prev))
+ :effect
+	(and (pointing ?s ?d_new) (not (pointing ?s ?d_prev))))
+
+(:action switch_on
+ :parameters ( ?i ?s)
+ :precondition
+	(and (instrument ?i) (satellite ?s)  (on_board ?i ?s) (power_avail ?s))
+ :effect
+	(and (power_on ?i) (not (calibrated ?i)) (not (power_avail ?s))))
+
+(:action switch_off
+ :parameters ( ?i ?s)
+ :precondition
+	(and (instrument ?i) (satellite ?s)  (on_board ?i ?s) (power_on ?i))
+ :effect
+	(and (power_avail ?s) (not (power_on ?i))))
+
+(:action calibrate
+ :parameters ( ?s ?i ?d)
+ :precondition
+	(and (satellite ?s) (instrument ?i) (direction ?d)  (on_board ?i ?s) (calibration_target ?i ?d) (pointing ?s ?d) (power_on ?i))
+ :effect
+	 (calibrated ?i))
+
+(:action take_image
+ :parameters ( ?s ?d ?i ?m)
+ :precondition
+	(and (satellite ?s) (direction ?d) (instrument ?i) (mode ?m)  (calibrated ?i) (on_board ?i ?s) (supports ?i ?m) (power_on ?i) (pointing ?s ?d) (power_on ?i))
+ :effect
+	 (have_image ?d ?m))
+
+)
+
+Grammar for valid actions in LARK format:
+start: PLAN
+PLAN: ACTION (" " ACTION)*
+ACTION: "(" (("switch-on" | "switch-off") " " OBJECT " " OBJECT | ("turn-to" | "calibrate") " " OBJECT " " OBJECT " " OBJECT | "take-image" " " OBJECT " " OBJECT " " OBJECT " " OBJECT) ")"
+
+// Example, should be input dependent
+OBJECT: "instrument" /[0-5]/
+     | "satellite" /[0-3]/
+     | "direction" /[0-5]/
+     | "mode" /[0-5]/
+
+
+Problem:
+(:objects
+	satellite0
+	instrument0
+	image1
+	spectrograph2
+	thermograph0
+	Star0
+	GroundStation1
+	GroundStation2
+	Phenomenon3
+	Phenomenon4
+	Star5
+	Phenomenon6
+)
+(:init
+	(satellite satellite0)
+	(instrument instrument0)
+	(supports instrument0 thermograph0)
+	(calibration_target instrument0 GroundStation2)
+	(on_board instrument0 satellite0)
+	(power_avail satellite0)
+	(pointing satellite0 Phenomenon6)
+	(mode image1)
+	(mode spectrograph2)
+	(mode thermograph0)
+	(direction Star0)
+	(direction GroundStation1)
+	(direction GroundStation2)
+	(direction Phenomenon3)
+	(direction Phenomenon4)
+	(direction Star5)
+	(direction Phenomenon6)
+)
+(:goal (and
+	(have_image Phenomenon4 thermograph0)
+	(have_image Star5 thermograph0)
+	(have_image Phenomenon6 thermograph0)
+))
+ 
+Solution:
+(switch_on instrument0 satellite0) (turn_to satellite0 groundstation2 phenomenon6) (calibrate satellite0 instrument0 groundstation2) (turn_to satellite0 phenomenon4 groundstation2) (take_image satellite0 phenomenon4 instrument0 thermograph0) (turn_to satellite0 phenomenon6 phenomenon4) (take_image satellite0 phenomenon6 instrument0 thermograph0) (turn_to satellite0 star5 phenomenon6) (take_image satellite0 star5 instrument0 thermograph0)
+
+Problem:
+(:objects
+	satellite0
+	instrument0
+	instrument1
+	infrared0
+	infrared1
+	image2
+	GroundStation1
+	Star0
+	GroundStation2
+	Planet3
+	Planet4
+	Phenomenon5
+	Phenomenon6
+	Star7
+)
+(:init
+	(satellite satellite0)
+	(instrument instrument0)
+	(supports instrument0 infrared1)
+	(supports instrument0 infrared0)
+	(calibration_target instrument0 Star0)
+	(instrument instrument1)
+	(supports instrument1 image2)
+	(supports instrument1 infrared1)
+	(supports instrument1 infrared0)
+	(calibration_target instrument1 GroundStation2)
+	(on_board instrument0 satellite0)
+	(on_board instrument1 satellite0)
+	(power_avail satellite0)
+	(pointing satellite0 Planet4)
+	(mode infrared0)
+	(mode infrared1)
+	(mode image2)
+	(direction GroundStation1)
+	(direction Star0)
+	(direction GroundStation2)
+	(direction Planet3)
+	(direction Planet4)
+	(direction Phenomenon5)
+	(direction Phenomenon6)
+	(direction Star7)
+)
+(:goal (and
+	(have_image Planet3 infrared0)
+	(have_image Planet4 infrared0)
+	(have_image Phenomenon5 image2)
+	(have_image Phenomenon6 infrared0)
+	(have_image Star7 infrared0)
+))
+ 
+Solution:
+(switch_on instrument1 satellite0) (turn_to satellite0 groundstation2 planet4) (calibrate satellite0 instrument1 groundstation2) (turn_to satellite0 phenomenon5 groundstation2) (take_image satellite0 phenomenon5 instrument1 image2) (turn_to satellite0 phenomenon6 phenomenon5) (take_image satellite0 phenomenon6 instrument1 infrared0) (turn_to satellite0 planet3 phenomenon6) (take_image satellite0 planet3 instrument1 infrared0) (turn_to satellite0 planet4 planet3) (take_image satellite0 planet4 instrument1 infrared0) (turn_to satellite0 star7 planet4) (take_image satellite0 star7 instrument1 infrared0)
+
+Problem:
+(:objects
+	satellite0
+	instrument0
+	instrument1
+	instrument2
+	satellite1
+	instrument3
+	image1
+	infrared0
+	spectrograph2
+	Star1
+	Star2
+	Star0
+	Star3
+	Star4
+	Phenomenon5
+	Phenomenon6
+	Phenomenon7
+)
+(:init
+	(satellite satellite0)
+	(instrument instrument0)
+	(supports instrument0 spectrograph2)
+	(supports instrument0 infrared0)
+	(calibration_target instrument0 Star1)
+	(instrument instrument1)
+	(supports instrument1 image1)
+	(calibration_target instrument1 Star2)
+	(instrument instrument2)
+	(supports instrument2 infrared0)
+	(supports instrument2 image1)
+	(calibration_target instrument2 Star0)
+	(on_board instrument0 satellite0)
+	(on_board instrument1 satellite0)
+	(on_board instrument2 satellite0)
+	(power_avail satellite0)
+	(pointing satellite0 Star4)
+	(satellite satellite1)
+	(instrument instrument3)
+	(supports instrument3 spectrograph2)
+	(supports instrument3 infrared0)
+	(supports instrument3 image1)
+	(calibration_target instrument3 Star0)
+	(on_board instrument3 satellite1)
+	(power_avail satellite1)
+	(pointing satellite1 Star0)
+	(mode image1)
+	(mode infrared0)
+	(mode spectrograph2)
+	(direction Star1)
+	(direction Star2)
+	(direction Star0)
+	(direction Star3)
+	(direction Star4)
+	(direction Phenomenon5)
+	(direction Phenomenon6)
+	(direction Phenomenon7)
+)
+(:goal (and
+	(pointing satellite0 Phenomenon5)
+	(have_image Star3 infrared0)
+	(have_image Star4 spectrograph2)
+	(have_image Phenomenon5 spectrograph2)
+	(have_image Phenomenon7 spectrograph2)
+))
+ 
+Solution:
+(switch_on instrument0 satellite0) (turn_to satellite0 star1 star4) (calibrate satellite0 instrument0 star1) (turn_to satellite0 phenomenon7 star1) (take_image satellite0 phenomenon7 instrument0 spectrograph2) (turn_to satellite0 star3 phenomenon7) (take_image satellite0 star3 instrument0 infrared0) (turn_to satellite0 star4 star3) (take_image satellite0 star4 instrument0 spectrograph2) (turn_to satellite0 phenomenon5 star4) (take_image satellite0 phenomenon5 instrument0 spectrograph2)
+
+Problem:
+(:objects
+	satellite0
+	instrument0
+	satellite1
+	instrument1
+	instrument2
+	infrared0
+	infrared1
+	thermograph2
+	GroundStation1
+	Star0
+	Star2
+	Planet3
+	Star4
+	Planet5
+	Star6
+	Star7
+	Phenomenon8
+	Phenomenon9
+)
+(:init
+	(satellite satellite0)
+	(instrument instrument0)
+	(supports instrument0 thermograph2)
+	(supports instrument0 infrared0)
+	(calibration_target instrument0 Star0)
+	(on_board instrument0 satellite0)
+	(power_avail satellite0)
+	(pointing satellite0 Star6)
+	(satellite satellite1)
+	(instrument instrument1)
+	(supports instrument1 infrared0)
+	(supports instrument1 thermograph2)
+	(supports instrument1 infrared1)
+	(calibration_target instrument1 Star2)
+	(instrument instrument2)
+	(supports instrument2 thermograph2)
+	(supports instrument2 infrared1)
+	(calibration_target instrument2 Star2)
+	(on_board instrument1 satellite1)
+	(on_board instrument2 satellite1)
+	(power_avail satellite1)
+	(pointing satellite1 Star0)
+	(mode infrared0)
+	(mode infrared1)
+	(mode thermograph2)
+	(direction GroundStation1)
+	(direction Star0)
+	(direction Star2)
+	(direction Planet3)
+	(direction Star4)
+	(direction Planet5)
+	(direction Star6)
+	(direction Star7)
+	(direction Phenomenon8)
+	(direction Phenomenon9)
+)
+(:goal (and
+	(pointing satellite1 Planet5)
+	(have_image Planet3 infrared1)
+	(have_image Star4 infrared1)
+	(have_image Planet5 thermograph2)
+	(have_image Star6 infrared1)
+	(have_image Star7 infrared0)
+	(have_image Phenomenon8 thermograph2)
+	(have_image Phenomenon9 infrared0)
+)) 
+
+Solution:

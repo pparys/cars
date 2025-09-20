@@ -1,0 +1,10 @@
+start: PLAN
+PLAN: ACTION (" " ACTION)*
+ACTION: "(" (("switch-on" | "switch-off") " " OBJECT " " OBJECT | ("turn-to" | "calibrate") " " OBJECT " " OBJECT " " OBJECT | "take-image" " " OBJECT " " OBJECT " " OBJECT " " OBJECT) ")"
+
+// Example, should be input dependent
+OBJECT: "instrument" /[0-5]/
+     | "satellite" /[0-3]/
+     | "direction" /[0-5]/
+     | "mode" /[0-5]/
+
