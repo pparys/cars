@@ -142,7 +142,7 @@ def aggregate_results_by_style(all_results: Dict[str, Dict[str, SampledPlans]]) 
 def print_results_table(aggregated_results: Dict[str, Dict[str, Dict]]):
     """Print results in a clean table format"""
     print("=" * 80)
-    print("PDDL Planning Results - Grammar-Constrained Generation")
+    print("PDDL Planning Results")
     print("Model: Qwen/Qwen-2.5-7B-Instruct")
     print("=" * 80)
     
@@ -224,7 +224,7 @@ def main():
             style_totals[style]['valid'] += stats['total_valid']
             style_totals[style]['total'] += stats['total_samples']
     
-    print(f"{'Style':<15} {'Valid':<8} {'Total':<8} {'Success Rate':<12}")
+    print(f"{'Style':<15} {'Valid':<8} {'Total':<8} {'Syntactic V':<12}")
     print("-" * 45)
     for style in sorted(style_totals.keys()):
         valid = style_totals[style]['valid']
