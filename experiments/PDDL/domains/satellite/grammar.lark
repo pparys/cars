@@ -1,10 +1,12 @@
 start: PLAN
 PLAN: ACTION (" " ACTION)*
-ACTION: "(" (("switch-on" | "switch-off") " " OBJECT " " OBJECT | ("turn-to" | "calibrate") " " OBJECT " " OBJECT " " OBJECT | "take-image" " " OBJECT " " OBJECT " " OBJECT " " OBJECT) ")"
-
-// Example, should be input dependent
-OBJECT: "instrument" /[0-5]/
-     | "satellite" /[0-3]/
-     | "direction" /[0-5]/
-     | "mode" /[0-5]/
-
+ACTION: "(" (("switch_on" | "switch_off") " " OBJECT " " OBJECT | ("turn_to" | "calibrate") " " OBJECT " " OBJECT " " OBJECT | "take_image" " " OBJECT " " OBJECT " " OBJECT " " OBJECT) ")"
+OBJECT: "instrument" /[0-9]/
+ | "satellite" /[0-9]/
+ | "groundstation" /[0-9]/
+ | "phenomenon" /[0-9]/
+ | "planet" /[0-9]/
+ | "star" /[0-9]/
+ | "thermograph" /[0-9]/
+ | "image" /[0-9]/
+ | "infrared" /[0-9]/
