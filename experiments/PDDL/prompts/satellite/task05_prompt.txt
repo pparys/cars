@@ -5,11 +5,10 @@ A plan is valid if and only if for every action in the sequence, all of its prec
 To ensure correctness, you must reason step-by-step internally:
 1.  Analyze the initial state.
 2.  For each step, select an action that makes progress toward the goal.
-3.  Before adding the action to the plan, you MUST verify that its preconditions are met in the current state.
-4.  Update the world state based on the action's effects.
-5.  Repeat until all goal conditions are met.
+3.  Update the world state based on the action's effects.
+4.  Repeat until all goal conditions are met.
 
-Your final output must be ONLY the valid sequence of actions, formatted exactly according to the provided Lark grammar. Do not include your step-by-step reasoning in the final output.
+Your final output must be ONLY the valid sequence of actions.
 
 Domain: SATELLITE
 
