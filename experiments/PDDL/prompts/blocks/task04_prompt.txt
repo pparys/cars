@@ -1,5 +1,15 @@
 You are a PDDL planning expert. You are given a domain, and some examples of planning problems and a valid sequences to achieve the goal. 
-Your task is to provide a valid sequence of actions that achieves the goal.
+
+A plan is valid if and only if for every action in the sequence, all of its preconditions (as defined in the domain file) are satisfied in the state of the world before the action is executed.
+
+To ensure correctness, you must reason step-by-step internally:
+1.  Analyze the initial state.
+2.  For each step, select an action that makes progress toward the goal.
+3.  Before adding the action to the plan, you MUST verify that its preconditions are met in the current state.
+4.  Update the world state based on the action's effects.
+5.  Repeat until all goal conditions are met.
+
+Your final output must be ONLY the valid sequence of actions, formatted exactly according to the provided Lark grammar. Do not include your step-by-step reasoning in the final output.
 
 Domain: BLOCKS
 
@@ -67,6 +77,7 @@ Problem:
  (ONTABLE B) (ONTABLE D) (HANDEMPTY))
 (:goal (AND (ON D C) (ON C B) (ON B A)))
 
+ 
 Solution:
 (pick-up b) (stack b a) (pick-up c) (stack c b) (pick-up d) (stack d c)
 
@@ -75,6 +86,7 @@ Problem:
 (:INIT (CLEAR B) (ONTABLE D) (ON B C) (ON C A) (ON A D) (HANDEMPTY))
 (:goal (AND (ON D C) (ON C A) (ON A B)))
 
+ 
 Solution:
 (unstack b c) (put-down b) (unstack c a) (put-down c) (unstack a d) (stack a b) (pick-up c) (stack c a) (pick-up d) (stack d c)
 
@@ -83,9 +95,20 @@ Problem:
 (:INIT (CLEAR A) (CLEAR C) (CLEAR D) (ONTABLE A) (ONTABLE B) (ONTABLE D)
  (ON C B) (HANDEMPTY))
 (:goal (AND (ON A B) (ON B C) (ON C D)))
+
  
 Solution:
 (unstack c b) (stack c d) (pick-up b) (stack b c) (pick-up a) (stack a b)
+
+Problem:
+(:objects E A B C F D - block)
+(:INIT (CLEAR D) (CLEAR F) (ONTABLE C) (ONTABLE B) (ON D A) (ON A C) (ON F E)
+ (ON E B) (HANDEMPTY))
+(:goal (AND (ON C B) (ON B A) (ON A E) (ON E F) (ON F D)))
+
+ 
+Solution:
+(unstack d a) (put-down d) (unstack f e) (stack f d) (unstack e b) (stack e f) (unstack a c) (stack a e) (pick-up b) (stack b a) (pick-up c) (stack c b)
 
 Problem:
 (:objects B E A C D - block)
@@ -93,4 +116,5 @@ Problem:
  (HANDEMPTY))
 (:goal (AND (ON A E) (ON E B) (ON B D) (ON D C)))
  
+
 Solution:

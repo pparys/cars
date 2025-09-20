@@ -117,7 +117,17 @@ def build_domain_prompts(domain_name):
 		
 		# Build the prompt
 		prompt = f"""You are a PDDL planning expert. You are given a domain, and some examples of planning problems and a valid sequences to achieve the goal. 
-Your task is to provide a valid sequence of actions that achieves the goal.
+
+A plan is valid if and only if for every action in the sequence, all of its preconditions (as defined in the domain file) are satisfied in the state of the world before the action is executed.
+
+To ensure correctness, you must reason step-by-step internally:
+1.  Analyze the initial state.
+2.  For each step, select an action that makes progress toward the goal.
+3.  Before adding the action to the plan, you MUST verify that its preconditions are met in the current state.
+4.  Update the world state based on the action's effects.
+5.  Repeat until all goal conditions are met.
+
+Your final output must be ONLY the valid sequence of actions, formatted exactly according to the provided Lark grammar. Do not include your step-by-step reasoning in the final output.
 
 Domain: {domain_name.upper()}
 

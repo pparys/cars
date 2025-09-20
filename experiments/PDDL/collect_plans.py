@@ -108,7 +108,6 @@ def collect_specific_mcmc_plans(input_dir, monomer_class):
 	all_plans = collect_all_mcmc_plans(input_dir)
 	return all_plans.get(monomer_class, {})
 
-
 def aggregate_results_by_style(all_results: Dict[str, Dict[str, SampledPlans]]) -> Dict[str, Dict[str, Dict]]:
     """
     Aggregate results by style across all domains and tasks.
@@ -142,7 +141,7 @@ def aggregate_results_by_style(all_results: Dict[str, Dict[str, SampledPlans]]) 
 def print_results_table(aggregated_results: Dict[str, Dict[str, Dict]]):
     """Print results in a clean table format"""
     print("=" * 80)
-    print("PDDL Planning Results")
+    print("PDDL Planning Results - Grammar-Constrained Generation")
     print("Model: Qwen/Qwen-2.5-7B-Instruct")
     print("=" * 80)
     
@@ -171,9 +170,23 @@ def print_results_table(aggregated_results: Dict[str, Dict[str, Dict]]):
             for task_result in stats['tasks']:
                 print(f"    {task_result}")
 
+def get_model_name(model_id):
+    """Map model ID to readable name"""
+    model_map = {
+        'llama_31_8b': 'Llama-3.1-8B-Instruct',
+        'qwen_25_7b': 'Qwen/Qwen-2.5-7B-Instruct', 
+        'qwen_25_14b': 'Qwen/Qwen-2.5-14B-Instruct'
+    }
+    return model_map.get(model_id, model_id)
+
 def discover_experiments():
+    """Auto-discover experiment paths from organized directory structure"""
+    import glob
+    import re
+    from collections import defaultdict
+    
     base_path = "experiments/PDDL/runs"
-    experiments = defaultdict(dict)
+    experiments_by_model = defaultdict(lambda: defaultdict(dict))
     
     # Find all organized experiment directories
     pattern = os.path.join(base_path, "*")
@@ -190,36 +203,36 @@ def discover_experiments():
                 task = f"task{match.group(2)}"
                 model_id = match.group(3)
                 
-                experiments[domain][task] = dir_path
+                experiments_by_model[model_id][domain][task] = dir_path
                 print(f"Found: {domain} {task} ({model_id}) -> {dir_path}")
     
-    return dict(experiments)
+    return dict(experiments_by_model)
 
-def main():
-    # Auto-discover experiment paths
-    experiments = discover_experiments()
-    
-    if not experiments:
-        return
-    
-    # Collect all results
-    all_results = {}
-    for domain, domain_experiments in experiments.items():
-        all_results[domain] = {}
-        for task, path in domain_experiments.items():
-            all_results[domain][task] = collect_plans(path)
-    
-    # Aggregate and print results
-    aggregated = aggregate_results_by_style(all_results)
-    print_results_table(aggregated)
-    
-    # Style comparison across domains
-    print("\n" + "=" * 80)
-    print("STYLE COMPARISON ACROSS ALL DOMAINS")
+def print_results_table_for_model(aggregated_results: Dict[str, Dict[str, Dict]], model_name: str):
+    """Print results in a clean table format for a specific model"""
+    print("=" * 80)
+    print(f"PDDL Planning Results")
+    print(f"Model: {model_name}")
     print("=" * 80)
     
+    # Overall summary table
+    print("\nOVERALL RESULTS BY DOMAIN AND STYLE")
+    print("-" * 60)
+    print(f"{'Domain':<12} {'Style':<15} {'Valid':<8} {'Total':<8} {'Syntactic V':<12}")
+    print("-" * 60)
+    
+    for domain in sorted(aggregated_results.keys()):
+        for style in sorted(aggregated_results[domain].keys()):
+            stats = aggregated_results[domain][style]
+            print(f"{domain:<12} {style:<15} {stats['total_valid']:<8} {stats['total_samples']:<8} {stats['success_rate']:<11.1f}%")
+        print()
+    
+    # Style comparison across domains
+    print("STYLE COMPARISON ACROSS ALL DOMAINS")
+    print("-" * 45)
+    
     style_totals = defaultdict(lambda: {'valid': 0, 'total': 0})
-    for domain_results in aggregated.values():
+    for domain_results in aggregated_results.values():
         for style, stats in domain_results.items():
             style_totals[style]['valid'] += stats['total_valid']
             style_totals[style]['total'] += stats['total_samples']
@@ -231,6 +244,60 @@ def main():
         total = style_totals[style]['total']
         rate = (valid / total * 100) if total > 0 else 0
         print(f"{style:<15} {valid:<8} {total:<8} {rate:<11.1f}%")
+
+def main():
+    # Auto-discover experiment paths for all models
+    experiments_by_model = discover_experiments()
+    
+    if not experiments_by_model:
+        print("No experiment directories found in /graft2/code/emmanuel/ars/experiments/PDDL/runs")
+        return
+    
+    # Process each model separately
+    for model_id, experiments in experiments_by_model.items():
+        model_name = get_model_name(model_id)
+        
+        # Collect all results for this model
+        all_results = {}
+        for domain, domain_experiments in experiments.items():
+            all_results[domain] = {}
+            for task, path in domain_experiments.items():
+                all_results[domain][task] = collect_plans(path)
+        
+        # Aggregate and print results for this model
+        aggregated = aggregate_results_by_style(all_results)
+        print_results_table_for_model(aggregated, model_name)
+        print("\n" + "="*80 + "\n")
+    
+    # Collect all results
+    all_results = {}
+    for domain, domain_experiments in experiments.items():
+        all_results[domain] = {}
+        for task, path in domain_experiments.items():
+            all_results[domain][task] = collect_plans(path)
+    
+    # Aggregate and print results
+    # aggregated = aggregate_results_by_style(all_results)
+    # print_results_table(aggregated)
+    
+    # # Style comparison across domains
+    # print("\n" + "=" * 80)
+    # print("STYLE COMPARISON ACROSS ALL DOMAINS")
+    # print("=" * 80)
+    
+    # style_totals = defaultdict(lambda: {'valid': 0, 'total': 0})
+    # for domain_results in aggregated.values():
+    #     for style, stats in domain_results.items():
+    #         style_totals[style]['valid'] += stats['total_valid']
+    #         style_totals[style]['total'] += stats['total_samples']
+    
+    # print(f"{'Style':<15} {'Valid':<8} {'Total':<8} {'Syntactic V':<12}")
+    # print("-" * 45)
+    # for style in sorted(style_totals.keys()):
+    #     valid = style_totals[style]['valid']
+    #     total = style_totals[style]['total']
+    #     rate = (valid / total * 100) if total > 0 else 0
+    #     print(f"{style:<15} {valid:<8} {total:<8} {rate:<11.1f}%")
 
 if __name__ == "__main__":
     main()
