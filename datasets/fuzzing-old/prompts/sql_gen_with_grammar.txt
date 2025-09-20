@@ -46,6 +46,7 @@ string_literal ::= "\"" [^"]* "\"" | "'" [^']* "'"
 identifier ::= letter ( letter | digit | "_" )*
 letter ::= [A-Za-z]
 digit ::= [0-9]
+type_name ::= "INTEGER" | "TEXT" | "REAL" | "BLOB" | "NULL"
 finish ::= "finish_test" wso
 ws ::= [ \t\n\r]+
 wso ::= [ \t\n\r]*

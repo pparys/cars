@@ -2,13 +2,15 @@ import sys
 from distr_utils import *
 
 
-def print_kl_divergence_all(main_style : str):
-    print("KL-divergence for", main_style)
+def print_kl_divergence_all(main_style : str, model : str):
+    print(f"KL-divergence for {main_style}, model {model}")
     for task, dir in get_all_task_dirs():
-        kl = get_kl_divergence(main_style, dir)
-        if kl is not None:
-            print(f"{task} --> {kl:.5f}")
+        #if task!="BV4_find_inv_bvsge_bvneg_4bit":
+        #    continue
+        kl, count = get_kl_divergence(main_style, dir)
+        if count>0:
+            print(f"{task} --> {kl:.5f}", f" ({count} samples)" if count<100 else "")
 
 
 if __name__ == "__main__":
-    print_kl_divergence_all(sys.argv[1] if len(sys.argv)==2 else "cars")
+    print_kl_divergence_all(sys.argv[1] if len(sys.argv)>=2 else "cars", sys.argv[2] if len(sys.argv)>=3 else "1")

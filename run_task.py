@@ -26,7 +26,7 @@ def pair_hash(s1, s2):
     return hashlib.md5(s.encode('utf-8')).hexdigest()[:8]
 
 
-def run_task(grammar_file, prompt_file, sample_style, model_id):
+def run_task(grammar_file, prompt_file, sample_style, model_num):
     print(f"Loading grammar from file {grammar_file}")
     with open(grammar_file, "r") as f:
         grammar = f.read()
@@ -35,24 +35,24 @@ def run_task(grammar_file, prompt_file, sample_style, model_id):
     with open(prompt_file, "r") as f:
         prompt = f.read()
 
-    root_log_dir = "runs_log"
-    log_dir = f"{root_log_dir}/{determine_out_name(grammar_file, prompt_file)}-{pair_hash(grammar, prompt)}/{sample_style}-{utils.timestamp()}"
-    os.makedirs(log_dir, exist_ok=True)
-    print(f"Saving results in folder {log_dir}")
-
-    max_new_tokens = 512
-    
-    if model_id=='1':
+    if model_num=='1':
         model_id = "meta-llama/Llama-3.1-8B-Instruct"
-    elif model_id=='2':
+    elif model_num=='2':
         model_id = "Qwen/Qwen2.5-7B-Instruct"
-    elif model_id=='3':
+    elif model_num=='3':
         model_id = "Qwen/Qwen2.5-14B-Instruct"
-    elif model_id=='0':
+    elif model_num=='0':
         model_id = "hsultanbey/codegen350multi_finetuned" # small model for local tests
     else:
         print("ERROR: 4-th argument (model) should be in 1,2,3,0")
         sys.exit(1)
+    
+    root_log_dir = "runs_log"
+    log_dir = f"{root_log_dir}/{determine_out_name(grammar_file, prompt_file)}-{pair_hash(grammar, prompt)}-{model_num}/{sample_style}-{utils.timestamp()}"
+    os.makedirs(log_dir, exist_ok=True)
+    print(f"Saving results in folder {log_dir}")
+
+    max_new_tokens = 512
     
     if sample_style in cars.all_sample_styles():
         n_steps = 2000

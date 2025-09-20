@@ -45,81 +45,74 @@ def get_success_rates(dir : str):
     return res
 
 
-def extract_samples(all_data, what = "token_ids"):
+def extract_samples(all_data, remove_unfinished = False, only_final = False):
     result = []
+    
+    def maybe_append(s):
+        if remove_unfinished and s["tokens"][-1] != '<|eot_id|>':
+            assert len(s['tokens']) >= 512
+        else:
+            result.append((tuple(s["token_ids"]), s["tokens"], s["raw_logprob"]))
+    
+    def process_step(s):
+        if "token_ids" in s:
+            maybe_append(s)
+        else:
+            maybe_append(s["current"])
+            maybe_append(s["proposal"])
+    
     for data in all_data:
         for d in data:
-            for s in d["steps"]:
-                if what in s:
-                    result.append((tuple(s[what]), s["raw_logprob"]))
-                else:
-                    result.append((tuple(s["current"][what]), s["current"]["raw_logprob"]))
-                    result.append((tuple(s["proposal"][what]), s["proposal"]["raw_logprob"]))
+            if only_final and len(d["steps"])>0 and "current" in d["steps"][0]:
+                maybe_append(d["steps"][9]["current"])
+            else:
+                for s in d["steps"]:
+                    process_step(s)
+                
     return result
     
 
 def get_kl_divergence(main_style : str, dir : str):
-    all_dirs = [subdir for style, subdir in get_all_style_dirs(dir)]
-    kl_dirs = [subdir for style, subdir in get_all_style_dirs(dir) if style == main_style]
-    all_data = [load_runs_log_from_dir(subdir) for subdir in all_dirs]
-    kl_data = [load_runs_log_from_dir(subdir) for subdir in kl_dirs]
-    all_data = extract_samples(all_data)
-    kl_data = extract_samples(kl_data)
+    bkgr_dirs = [subdir for style, subdir in get_all_style_dirs(dir)]
+    my_dirs = [subdir for style, subdir in get_all_style_dirs(dir) if style == main_style]
+    bkgr_data = [load_runs_log_from_dir(subdir) for subdir in bkgr_dirs]
+    my_data = [load_runs_log_from_dir(subdir) for subdir in my_dirs]
+    bkgr_data = extract_samples(bkgr_data, remove_unfinished = True)
+    my_data = extract_samples(my_data, only_final = True)[:100]
     
-    new_distr = defaultdict(int)
-    total = 0
-    for x, _ in kl_data:
-        new_distr[x] += 1
-        total += 1
-    if total==0:
-        return None
+    my_distr = defaultdict(int)
+    for x,_,_ in my_data:
+        my_distr[x] += 1
+    if len(my_data)==0:
+        return None, 0
 
-    orig_distr = {}
-    for x, v in all_data:
-        if x in orig_distr:
-            if not math.isclose(v, orig_distr[x]):
-                print(x, v, orig_distr[x])
-            assert math.isclose(v, orig_distr[x])
+    bkgr_distr = {}
+    for x,_,v in bkgr_data:
+        if x in bkgr_distr:
+            if not math.isclose(v, bkgr_distr[x]):
+                print(x, v, bkgr_distr[x])
+            assert math.isclose(v, bkgr_distr[x])
         else:
-            orig_distr[x] = v
+            bkgr_distr[x] = v
 
     # KL-divergence:
-    keys = list(orig_distr.keys())
-    log_probs = np.array([orig_distr[k] for k in keys])
-    orig_probs = softmax(log_probs)
-    new_probs = np.array([new_distr[k]/total for k in keys])
-    kl = np.sum(kl_div(new_probs, orig_probs))
-    return kl
-    
-    # For chi2 - all keys:
-    #f_exp = orig_probs*total
-    #f_obs = np.array([new_distr[k] for k in keys])
-    #for i in range(0, len(f_obs), 20):
-    #    linia = f_obs[i:i+20]
-    #    print(' '.join(f"{liczba:5.0f}   " for liczba in linia))
-    #for i in range(0, len(f_exp), 20):
-    #    linia = f_exp[i:i+20]
-    #    print(' '.join(f"{liczba:8.2f}" for liczba in linia))
-    #chi2_stat, p_value = chisquare(f_obs=f_obs, f_exp=f_exp)
-    #print("Chi2:", chi2_stat)
-    #print("p-value:", p_value)
+    keys = list(bkgr_distr.keys())
+    log_probs = np.array([bkgr_distr[k] for k in keys])
+    bkgr_probs = softmax(log_probs)
+    my_probs = np.array([my_distr[k]/len(my_data) for k in keys])
+    kl = np.sum(kl_div(my_probs, bkgr_probs))
+    #for a in range(len(my_probs)):
+    #    print(f"{my_probs[a]:.2f} {bkgr_probs[a]:.4f}")
+    return kl, len(my_data)
 
 
 def get_num_unfinished(main_style : str, dir : str):
     subdirs = [subdir for style, subdir in get_all_style_dirs(dir) if style == main_style]
     data = [load_runs_log_from_dir(subdir) for subdir in subdirs]
-    data = extract_samples(data, "tokens")
+    data_all = extract_samples(data)
+    data_good = extract_samples(data, remove_unfinished = True)
 
-    total = 0
-    bad = 0
-    for x, _ in data:
-        total += 1
-        if x[-1] != '<|eot_id|>':
-            #if len(x)!=512:
-                #print(x, len(x))
-            assert len(x) >= 512
-            bad += 1
-    return bad, total
+    return len(data_all)-len(data_good), len(data_all)
 
 
 def plot_success_rates(big_task : str, tasks : list[tuple[str, str]], style : str, output_dir : str, cut : int = 1000):
