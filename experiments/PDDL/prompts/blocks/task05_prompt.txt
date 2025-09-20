@@ -67,7 +67,7 @@ Grammar for valid actions in LARK format:
 start: PLAN
 PLAN: ACTION (" " ACTION)*
 ACTION: "(" (("put-down" | "pick-up") " " OBJECT | ("unstack" | "stack") " " OBJECT " " OBJECT) ")"
-OBJECT: /[a-e]/
+OBJECT: /[a-f]/
 
 
 Problem:

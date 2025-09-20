@@ -58,13 +58,14 @@ Grammar for valid actions in LARK format:
 start: PLAN
 PLAN: ACTION (" " ACTION)*
 ACTION: "(" (("switch_on" | "switch_off") " " OBJECT " " OBJECT | ("turn_to" | "calibrate") " " OBJECT " " OBJECT " " OBJECT | "take_image" " " OBJECT " " OBJECT " " OBJECT " " OBJECT) ")"
-OBJECT: "instrument" /[0-9]/
+OBJECT: "instrument" /[0-7]/
  | "satellite" /[0-9]/
  | "groundstation" /[0-9]/
  | "phenomenon" /[0-9]/
- | "planet" /[0-9]/
- | "star" /[0-9]/
+ | "planet" /[0-9]+/
+ | "star" /[0-9]+/
  | "thermograph" /[0-9]/
+ | "spectrograph" /[0-9]/
  | "image" /[0-9]/
  | "infrared" /[0-9]/
 
