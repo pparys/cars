@@ -41,7 +41,16 @@ def get_success_rates(dir : str):
     res = []
     for data in load_runs_log_from_dir(dir):
         assert len(data["successes"]) == 1000
-        res.append(data["successes"].count(True))
+        #res.append(data["successes"].count(True))
+        s = 0
+        t = 0
+        for a in data["successes"]:
+            if a:
+                s += 1
+            t += 1
+            if s==100:
+                break;
+        res.append((s, t))
     return res
 
 

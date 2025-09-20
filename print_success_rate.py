@@ -2,8 +2,8 @@ import cars
 from distr_utils import *
 
 def print_success_rates(dir : str):
-    for sr in get_success_rates(dir):
-        print(sr, end=" ")
+    for x,y in get_success_rates(dir):
+        print(f"{x}/{y}", end=" ")
 
 
 def print_success_rate_all():
