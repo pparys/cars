@@ -3,6 +3,8 @@ import os
 from collections import defaultdict
 from dataclasses import dataclass
 from typing import List, Dict
+import glob
+import re
 
 @dataclass
 class SampledPlans:
@@ -169,23 +171,36 @@ def print_results_table(aggregated_results: Dict[str, Dict[str, Dict]]):
             for task_result in stats['tasks']:
                 print(f"    {task_result}")
 
+def discover_experiments():
+    base_path = "experiments/PDDL/runs"
+    experiments = defaultdict(dict)
+    
+    # Find all organized experiment directories
+    pattern = os.path.join(base_path, "*")
+    dirs = glob.glob(pattern)
+    
+    for dir_path in dirs:
+        if os.path.isdir(dir_path):
+            dir_name = os.path.basename(dir_path)
+            
+            # Parse format: {domain}_task{XX}_{model_id}
+            match = re.match(r'(\w+)_task(\d+)_(\w+)', dir_name)
+            if match:
+                domain = match.group(1)
+                task = f"task{match.group(2)}"
+                model_id = match.group(3)
+                
+                experiments[domain][task] = dir_path
+                print(f"Found: {domain} {task} ({model_id}) -> {dir_path}")
+    
+    return dict(experiments)
+
 def main():
-    # Define your experiment paths
-    experiments = {
-        'blocks': {
-            'task04': '/graft2/code/emmanuel/ars/runs_log/experiments_PDDL-domains_blocks_grammar-prompts_blocks_task04_prompt-599c9092-2',
-            'task05': '/graft2/code/emmanuel/ars/runs_log/experiments_PDDL-domains_blocks_grammar-prompts_blocks_task05_prompt-b40f7552-2',
-            'task06': '/graft2/code/emmanuel/ars/runs_log/experiments_PDDL-domains_blocks_grammar-prompts_blocks_task06_prompt-0281b3e4-2'
-        },
-        'depot': {
-            'task02': '/graft2/code/emmanuel/ars/runs_log/experiments_PDDL-domains_depot_grammar-prompts_depot_task02_prompt-cb4c704d-2',
-            'task04': '/graft2/code/emmanuel/ars/runs_log/experiments_PDDL-domains_depot_grammar-prompts_depot_task04_prompt-171ee585-2'
-        },
-        'satellite': {
-            'task04': '/graft2/code/emmanuel/ars/runs_log/experiments_PDDL-domains_satellite_grammar-prompts_satellite_task04_prompt-b2e0b8d4-2',
-            'task05': '/graft2/code/emmanuel/ars/runs_log/experiments_PDDL-domains_satellite_grammar-prompts_satellite_task05_prompt-83162d1d-2'
-        }
-    }
+    # Auto-discover experiment paths
+    experiments = discover_experiments()
+    
+    if not experiments:
+        return
     
     # Collect all results
     all_results = {}
@@ -209,7 +224,7 @@ def main():
             style_totals[style]['valid'] += stats['total_valid']
             style_totals[style]['total'] += stats['total_samples']
     
-    print(f"{'Style':<15} {'Valid':<8} {'Total':<8} {'Syntactic Validity':<12}")
+    print(f"{'Style':<15} {'Valid':<8} {'Total':<8} {'Success Rate':<12}")
     print("-" * 45)
     for style in sorted(style_totals.keys()):
         valid = style_totals[style]['valid']
