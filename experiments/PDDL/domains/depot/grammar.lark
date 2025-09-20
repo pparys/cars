@@ -3,7 +3,7 @@ PLAN: ACTION (" " ACTION)*
 ACTION: "(" (("lift" | "drop" | "load" | "unload") " " OBJECT " " OBJECT " " OBJECT " " OBJECT | "drive" " " OBJECT " " OBJECT " " OBJECT) ")"
 OBJECT: "truck" /[0-1]/
  | "hoist" /[0-2]/
- | "crate" /[0-5]/
+ | "crate" /[0-7]/
  | "pallet" /[0-5]/
  | "depot" /[0-1]/
  | "distributor" /[0-1]/
