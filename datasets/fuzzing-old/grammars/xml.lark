@@ -75,11 +75,10 @@ externalid: "SYSTEM"  string
 
 prolog: xmldecl ( comment)*
 xmldecl: "<?xml" version_info encoding_decl? standalone_decl?  "?>"
-DIGIT: /[0-9]/
-DIGITS: DIGIT+
+DIGITS: /[0-9]+/
 version_info:  "version" eq ("\"" VERSION_NUM "\"" | "'" VERSION_NUM "'") 
 VERSION_NUM: "1." DIGITS
-ENCODING_NAME: /[A-Za-z]/ /[A-Za-z0-9._-]/+
+ENCODING_NAME: /[A-Za-z]/ /[A-Za-z0-9._-]+/
 encoding_value: "\"" ENCODING_NAME "\"" 
 encoding_decl:  "encoding" eq encoding_value 
 standalone_decl:  "standalone" eq ("\"" ("yes" | "no") "\"" | "'" ("yes" | "no") "'")
@@ -100,19 +99,19 @@ namespace_decl: "xmlns" (":" name)? eq string
 entityref: "&" name ";" 
 
 charref: "&#" DIGITS ";" 
-     | "&#x" /[0-9A-Fa-f]/+ ";" 
+     | "&#x" /[0-9A-Fa-f]+/ ";" 
 
 content: ((chardata | entityref | element | comment | cdata))*
 name: QNAME 
-PREFIX: /[A-Za-z]/ /[A-Za-z0-9.-]/*
-LOCAL_PART: /[A-Za-z]/ /[A-Za-z0-9.-]/*
+PREFIX: /[A-Za-z]/ /[A-Za-z0-9.-]*/
+LOCAL_PART: /[A-Za-z]/ /[A-Za-z0-9.-]*/
 
 QNAME: PREFIX ":" LOCAL_PART
      | LOCAL_PART
 
-chardata: /[^<&]/+ 
-cdata: "<![CDATA[" /[^\]]/* "]]>" 
-comment: "<!--" /[^-]/* "-->" 
+chardata: /[^<&]+/
+cdata: "<![CDATA[" /[^\]]*/ "]]>" 
+comment: "<!--" /[^-]*/ "-->" 
 
 string: "\"" (/[^"&]/ | entityref | charref) "\"" 
      | "'" ((/[^'&]/ | entityref | charref))* "'" 
