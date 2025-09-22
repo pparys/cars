@@ -141,7 +141,7 @@ class MCMC:
                 current_raw_logprob = proposal_raw_logprob
                 print(f"Accepted")
             
-            print("\n\n")
+            print("\n\n", flush=True)
             
         os.rename(sample_file_tmp, sample_file)
         return current_ids
