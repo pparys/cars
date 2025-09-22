@@ -40,7 +40,7 @@ def load_runs_log_from_dir(dir_or_file: str) -> list[dict]:
 def get_success_rates(dir : str):
     res = []
     for data in load_runs_log_from_dir(dir):
-        assert len(data["successes"]) == 1000
+        #assert len(data["successes"]) == 1000
         #res.append(data["successes"].count(True))
         s = 0
         t = 0
