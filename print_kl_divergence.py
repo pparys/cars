@@ -5,7 +5,7 @@ from distr_utils import *
 def print_kl_divergence_all(main_style : str, model : str):
     print(f"KL-divergence for {main_style}, model {model}")
     for task, dir in get_all_task_dirs():
-        #if task!="SLIA_phone_3_long":
+        #if task!="fuzzing-json-generate_json":
         #    continue
         kl, count = get_kl_divergence(main_style, dir)
         if count>0:

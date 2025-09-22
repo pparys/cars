@@ -3,7 +3,6 @@ from distr_utils import *
 
 def display_output(subdir : str):
     samples = extract_samples([load_runs_log_from_dir(subdir)])
-    print(samples)
     multiline = any(any('\n' in word for word in a) for _,a,_ in samples)
 
     for _,a,_ in samples:
