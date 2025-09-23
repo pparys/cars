@@ -3,9 +3,9 @@ from distr_utils import *
 import cars
 
 
-def print_if_all_data():
+def print_if_all_data(model):
     for task, dir in get_all_task_dirs():
-        if dir[-1]!='3':
+        if not dir.endswith(model):
             continue
         print(f"{task}-{dir[-1]} --> ", end="")
         wyn = {"ars": 0, "cars": 0, "rs": 0, "rsft": 0, "restart": 0}
@@ -40,4 +40,4 @@ def print_if_all_data():
 
 
 if __name__ == "__main__":
-    print_if_all_data()
+    print_if_all_data(sys.argv[1] if len(sys.argv)==2 else "")
