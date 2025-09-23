@@ -1,0 +1,454 @@
+{
+    "steps": [
+        {
+            "current": {
+                "tokens": [
+                    "O",
+                    "CC",
+                    "CO",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    46,
+                    3706,
+                    8281,
+                    151645
+                ],
+                "raw_logprob": -3.4798858165740967,
+                "cons_logprob": -3.448525905609131
+            },
+            "proposal": {
+                "tokens": [
+                    "O",
+                    "CC",
+                    "O",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    46,
+                    3706,
+                    46,
+                    151645
+                ],
+                "raw_logprob": -3.3046200275421143,
+                "cons_logprob": -3.2966256141662598
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "O",
+                    "CC",
+                    "O",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    46,
+                    3706,
+                    46,
+                    151645
+                ],
+                "raw_logprob": -3.3046200275421143,
+                "cons_logprob": -3.2966256141662598
+            },
+            "proposal": {
+                "tokens": [
+                    "OC",
+                    "(C",
+                    ")",
+                    "CCC",
+                    "(O",
+                    ")",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    7612,
+                    3025,
+                    8,
+                    53873,
+                    19238,
+                    8,
+                    151645
+                ],
+                "raw_logprob": -5.53270149230957,
+                "cons_logprob": -5.504038333892822
+            },
+            "acceptance_prob": 0.979543389438231,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "OC",
+                    "(C",
+                    ")",
+                    "CCC",
+                    "(O",
+                    ")",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    7612,
+                    3025,
+                    8,
+                    53873,
+                    19238,
+                    8,
+                    151645
+                ],
+                "raw_logprob": -5.53270149230957,
+                "cons_logprob": -5.504038333892822
+            },
+            "proposal": {
+                "tokens": [
+                    "O",
+                    "CC",
+                    "O",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    46,
+                    3706,
+                    46,
+                    151645
+                ],
+                "raw_logprob": -3.3046200275421143,
+                "cons_logprob": -3.296626091003418
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "O",
+                    "CC",
+                    "O",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    46,
+                    3706,
+                    46,
+                    151645
+                ],
+                "raw_logprob": -3.3046200275421143,
+                "cons_logprob": -3.296626091003418
+            },
+            "proposal": {
+                "tokens": [
+                    "OC",
+                    "(C",
+                    ")",
+                    "CC",
+                    "OC",
+                    "(C",
+                    ")",
+                    "CC",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    7612,
+                    3025,
+                    8,
+                    3706,
+                    7612,
+                    3025,
+                    8,
+                    3706,
+                    151645
+                ],
+                "raw_logprob": -3.8161568641662598,
+                "cons_logprob": -3.8000407218933105
+            },
+            "acceptance_prob": 0.991910690255826,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "OC",
+                    "(C",
+                    ")",
+                    "CC",
+                    "OC",
+                    "(C",
+                    ")",
+                    "CC",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    7612,
+                    3025,
+                    8,
+                    3706,
+                    7612,
+                    3025,
+                    8,
+                    3706,
+                    151645
+                ],
+                "raw_logprob": -3.8161568641662598,
+                "cons_logprob": -3.8000407218933105
+            },
+            "proposal": {
+                "tokens": [
+                    "OC",
+                    "(C",
+                    "CO",
+                    ")",
+                    "CC",
+                    "O",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    7612,
+                    3025,
+                    8281,
+                    8,
+                    3706,
+                    46,
+                    151645
+                ],
+                "raw_logprob": -4.58219051361084,
+                "cons_logprob": -4.572544574737549
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "OC",
+                    "(C",
+                    "CO",
+                    ")",
+                    "CC",
+                    "O",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    7612,
+                    3025,
+                    8281,
+                    8,
+                    3706,
+                    46,
+                    151645
+                ],
+                "raw_logprob": -4.58219051361084,
+                "cons_logprob": -4.572544574737549
+            },
+            "proposal": {
+                "tokens": [
+                    "OC",
+                    "(C",
+                    "O",
+                    ")",
+                    "CC",
+                    "O",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    7612,
+                    3025,
+                    46,
+                    8,
+                    3706,
+                    46,
+                    151645
+                ],
+                "raw_logprob": -1.4437272548675537,
+                "cons_logprob": -1.4296722412109375
+            },
+            "acceptance_prob": 0.9956006309172711,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "OC",
+                    "(C",
+                    "O",
+                    ")",
+                    "CC",
+                    "O",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    7612,
+                    3025,
+                    46,
+                    8,
+                    3706,
+                    46,
+                    151645
+                ],
+                "raw_logprob": -1.4437272548675537,
+                "cons_logprob": -1.4296722412109375
+            },
+            "proposal": {
+                "tokens": [
+                    "OC",
+                    "(C",
+                    "O",
+                    ")",
+                    "CC",
+                    "O",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    7612,
+                    3025,
+                    46,
+                    8,
+                    3706,
+                    46,
+                    151645
+                ],
+                "raw_logprob": -1.4437272548675537,
+                "cons_logprob": -1.4296722412109375
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "OC",
+                    "(C",
+                    "O",
+                    ")",
+                    "CC",
+                    "O",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    7612,
+                    3025,
+                    46,
+                    8,
+                    3706,
+                    46,
+                    151645
+                ],
+                "raw_logprob": -1.4437272548675537,
+                "cons_logprob": -1.4296722412109375
+            },
+            "proposal": {
+                "tokens": [
+                    "O",
+                    "CC",
+                    "OC",
+                    "O",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    46,
+                    3706,
+                    7612,
+                    46,
+                    151645
+                ],
+                "raw_logprob": -5.708189010620117,
+                "cons_logprob": -5.688685894012451
+            },
+            "acceptance_prob": 0.9945667110468945,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "O",
+                    "CC",
+                    "OC",
+                    "O",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    46,
+                    3706,
+                    7612,
+                    46,
+                    151645
+                ],
+                "raw_logprob": -5.708189010620117,
+                "cons_logprob": -5.688685894012451
+            },
+            "proposal": {
+                "tokens": [
+                    "O",
+                    "CC",
+                    "OC",
+                    "OC",
+                    "O",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    46,
+                    3706,
+                    7612,
+                    7612,
+                    46,
+                    151645
+                ],
+                "raw_logprob": -4.416905403137207,
+                "cons_logprob": -4.3941731452941895
+            },
+            "acceptance_prob": 0.9967760668338355,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "O",
+                    "CC",
+                    "OC",
+                    "OC",
+                    "O",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    46,
+                    3706,
+                    7612,
+                    7612,
+                    46,
+                    151645
+                ],
+                "raw_logprob": -4.416905403137207,
+                "cons_logprob": -4.3941731452941895
+            },
+            "proposal": {
+                "tokens": [
+                    "OC",
+                    "(C",
+                    ")",
+                    "CC",
+                    "OC",
+                    "(C",
+                    ")",
+                    "CC",
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    7612,
+                    3025,
+                    8,
+                    3706,
+                    7612,
+                    3025,
+                    8,
+                    3706,
+                    151645
+                ],
+                "raw_logprob": -3.8161568641662598,
+                "cons_logprob": -3.8000407218933105
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        }
+    ]
+}
