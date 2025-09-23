@@ -51,6 +51,7 @@ class ConstrainedModel():
         "Qwen/Qwen2.5-0.5B-Instruct",
         "Qwen/Qwen2.5-Coder-7B-Instruct",
         "Qwen/Qwen2.5-7B-Instruct",
+        "Qwen/Qwen2.5-14B-Instruct",
         # DeepSeek
         # "deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct",
         "deepseek-ai/deepseek-coder-7b-instruct-v1.5",
