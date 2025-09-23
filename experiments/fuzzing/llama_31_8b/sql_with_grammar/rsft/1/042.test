@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-schema-1.0 {
+  execsql {
+    CREATE TABLE items(id INTEGER PRIMARY KEY, name TEXT NOT NULL);
+    INSERT INTO items(id, name) VALUES(1, 'Item A');
+    INSERT INTO items(id, name) VALUES(2, 'Item B');
+    INSERT INTO items(id, name) VALUES(3, 'Item C');
+  }
+} {}
+
+do_test update-items-1.1 {
+  execsql {
+    UPDATE items SET name = 'Item X' WHERE id = 1;
+    SELECT name FROM items WHERE id = 1;
+  }
+} {Item X}
+
+finish_test

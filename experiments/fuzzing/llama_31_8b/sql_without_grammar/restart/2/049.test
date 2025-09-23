@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-join-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, total REAL);
+    CREATE TABLE customers(id INTEGER, name TEXT);
+    INSERT INTO orders(id, customer_id, total) VALUES(301, 101, 100.0);
+    INSERT INTO orders(id, customer_id, total) VALUES(302, 102, 200.0);
+    INSERT INTO customers(id, name) VALUES(101, 'Alice');
+    INSERT INTO customers(id, name) VALUES(102, 'Bob');
+  }
+} {}
+
+do_test select-orders-3.1 {
+  execsql {
+    SELECT ocustomer_name FROM customers
+      WHERE id = ANY
+      ;
+    SELECT ototal, customers FROM combine
+      ;
+  }
+} {Bob 200.0 {2 Bob 200.0 name {Bob} 
+                                  
+                                           
+                        
+                                                                           
+                                                                                                                        

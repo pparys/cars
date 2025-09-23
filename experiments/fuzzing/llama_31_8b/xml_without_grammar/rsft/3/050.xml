@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (name, description, price, coupons)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT coupons ((coupon|discount)+)>
+  <!ELEMENT coupon (#PCDATA)>
+  <!ELEMENT discount (#PCDATA)>
+
+  <!ATTLIST product
+    id ID #REQUIRED
+    type CDATA #IMPLIED>
+  <!ATTLIST coupon
+    code CDATA #REQUIRED
+    discount CDATA #IMPLIED>
+]>
+<product id="P001" type="Electronics">
+  <name>Samsung TV</name>
+  <description>A high-definition TV with advanced features</description>
+  <price>$1800.99</price>
+  <coupons>
+    <coupon code="TV10" discount="10% off"/>
+    <coupon code="TV20" discount="20% off"/>
+  </coupons>
+</product>

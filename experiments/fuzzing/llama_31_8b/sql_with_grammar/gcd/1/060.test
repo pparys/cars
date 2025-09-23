@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE contacts(id INTEGER PRIMARY KEY, email TEXT);
+    CREATE TABLE addresses(id INTEGER PRIMARY KEY, contact_id INTEGER, email TEXT, FOREIGN KEY contact_id REFERENCES contacts ON DELETE CASCADE);
+  INSERT INTO contacts VALUES(1, 'alice@example.com');
+  INSERT INTO addresses(id, contact_id, email) VALUES(101, 1, 'contact_1@example.com');
+  }
+} {}
+
+do_test foreign-key-1.1 {
+  execsql {
+    DELETE FROM contacts WHERE id = 1;
+  }
+} {}
+
+finish_test

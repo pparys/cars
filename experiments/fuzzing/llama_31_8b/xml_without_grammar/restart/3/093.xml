@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author-ref CDATA #IMPLIED>
+]>
+<library>
+  <author>John Doe</author>
+  <book title="To Kill a Mockingbird" author-ref="#John Doe"/>
+  <book title="1984" author-ref="#John Doe"/>
+  <book title="Pride and Prejudice" author-ref="#Jane Doe"/>
+</library>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    occupation CDATA #IMPLIED>
+]>
+<book>
+  <title>XML Developers Guide</title>
+  <author name="John Doe" occupation="Software Engineer"/>
+  <publisher>ABC Publishers</publisher>
+</book>

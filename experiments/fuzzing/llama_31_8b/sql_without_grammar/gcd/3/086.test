@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT);
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, order_date DATE);
+    INSERT INTO customers(id, name) VALUES(1, 'John Doe');
+    INSERT INTO orders(id, customer_id, order_date) VALUES(11, 1, '2022-01-01');
+  }
+} {}
+
+do_test query-orders-3.1 {
+  execsql {
+    SELECT name, SUMCASETODAY FROM orders WHERE customer_id = 1 AND YEAR = 2022;
+  }
+} {John Doe 1}
+
+finish_test

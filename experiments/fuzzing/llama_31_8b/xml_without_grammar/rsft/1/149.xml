@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+,book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED
+    publish_year CDATA #REQUIRED
+  >
+]>
+<library>
+  <author>Tolkien, J.R.R.</author>
+  <author>J.K. Rowling</author>
+  <book id="bk1" title="The Lord of the Rings" publish_year="1954"/>
+  <book id="bk2" title="Harry Potter" publish_year="1997"/>
+  <book id="bk3" title="The Silmarillion" publish_year="1977"/>
+</library>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressBook [
+  <!ELEMENT addressBook (jbPerson*)>
+  <!ELEMENT jbPerson (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST addressBook
+    title CDATA #IMPLIED
+    author CDATA #IMPLIED>
+  <!ATTLIST phone
+    type CDATA #IMPLIED>
+]>
+<addressBook title="Example Address Book" author="John Doe">
+  <jbPerson>
+    <name>John Doe</name>
+    <address>123 Main St</address>
+    <phone type="home">123-456-7890</phone>
+  </jbPerson>
+</addressBook>

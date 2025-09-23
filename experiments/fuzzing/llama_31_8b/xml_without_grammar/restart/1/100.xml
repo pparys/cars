@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name, address, phone, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST person
+    id (integer) #REQUIRED
+    type (user|admin) #IMPLIED>
+]>
+<person id="12345" type="user">
+  <name>John Doe</name>
+  <address>123 Main St</address>
+  <phone>555-555-5555</phone>
+  <email>johndoe@example.com</email>
+</person>

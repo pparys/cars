@@ -1,0 +1,13 @@
+{"name":"Mew",
+  "id":151,
+  "types":[
+    "Psychic"
+  ],
+  "isLegendary":true,
+  "abilities":[
+    {
+      "name":"Synchronize",
+      "description":"If the Pokémon is poisoned, the other Pokémon in battle that have the Synchronize ability are also poisoned."
+    }
+  ],
+  "preEvolution":null}

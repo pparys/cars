@@ -1,0 +1,1 @@
+{"name": "Mew", "id": 151, "types": ["Psychic", "Normal"], "isLegendary": true, "abilities": [{"name": "Synchronize", "description": "Has a 30% chance of making the opponent's move backfire."}, {"name": "Prankster", "description": "Punsishes opponents for using Self-Split (Duration: until the opponent's Pokémon are split again)." }], "preEvolution": "Mewtwo"}

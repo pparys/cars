@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE response [
+  <!ELEMENT response (result, message, details)>
+  <!ELEMENT result (#PCDATA)>
+  <!ELEMENT message (#PCDATA)>
+  <!ELEMENT details (error, warning)>
+  <!ELEMENT error (#PCDATA)>
+  <!ELEMENT warning (#PCDATA)>
+  <!ATTLIST response
+    id CDATA #REQUIRED
+    version CDATA #IMPLIED>
+  <!ATTLIST error
+    code CDATA #REQUIRED
+    description CDATA #IMPLIED>
+  <!ATTLIST warning
+    code CDATA #REQUIRED
+    description CDATA #IMPLIED>
+]>
+<response id="123" version="1.0">
+  <result>API call successful</result>
+  <message>Request processed in 0.5 seconds</message>
+  <details>
+    <error code="E001" description="Invalid input provided"/>
+    <warning code="W002" description="Potential issue with data consistency"/>
+  </details>
+</response>

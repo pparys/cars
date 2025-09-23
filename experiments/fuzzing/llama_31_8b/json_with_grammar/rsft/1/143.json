@@ -1,0 +1,11 @@
+{"name": "Eevee",
+"id": 133,
+"types": ["Normal"],
+"isLegendary": false,
+"abilities": [{"name": "Dance",
+"description": "Converts the user"
+}, {"name": "Run Away",
+"description": "User runs away"
+}, {"name": " judgements back to partner."}],
+
+"preEvolution":"none"}

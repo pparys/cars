@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, photo?)>
+  <!ELEMENT book (title, author, year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT photo (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book title="Book1" author="John Doe" year="2022">
+    This is the content of Book1.
+  </book>
+  <book title="Book2" year="2023">
+    This is the content of Book2.
+  </book>
+  <book title="Book3">
+    This is the content of Book3.
+  </book>
+  <photo Image="pic.jpg">This is a photo</photo>
+</library>

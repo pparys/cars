@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE departments(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);
+    CREATE TABLE employees(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, salary REAL,
+      department_id INTEGER,
+      FOREIGN KEY department_id REFERENCES departments);
+    INSERT INTO departments VALUES(NULL, 'Sales');
+    INSERT INTO departments VALUES(NULL, 'Marketing');
+    INSERT INTO employees VALUES(NULL, 'John', 50000.0, 1);
+    INSERT INTO employees VALUES(NULL, 'Jane', 60000.0, 2);
+  }
+} {}
+
+do_test delete-violates-foreign-key-3.1 {
+  execsql {
+    DELETE FROM departments WHERE id = 1;
+  }
+} {1 {FOREIGN KEY constraint failed: employees.department_id}                                                                     finish_test

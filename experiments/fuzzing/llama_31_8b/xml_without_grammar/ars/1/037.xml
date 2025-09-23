@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    publication_date CDATA #IMPLIED>
+]>
+<library>
+  <author>Rainbow Rowell</author>
+  <author>J.K. Rowling</author>
+  <author>Douglas Adams</author>
+  <book title="Fangirl" publication_date="2013-06-05"/>
+  <book title="Harry Potter and the Philosopher's Stone" publication_date="1997-06-26"/>
+  <book title="Dirk Gently's Holistic Detective Agency" publication_date="1987-10-13"/>
+</library>

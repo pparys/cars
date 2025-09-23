@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*, author*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <author id="1">John Doe</author>
+  <author id="2">Jane Doe</author>
+  <book id="101" year="2020">The C Programming Language</book>
+  <book id="102" year="2021">The C++ Programming Language</book>
+  <book id="103">Introduction to Data Structures</book>
+</library>

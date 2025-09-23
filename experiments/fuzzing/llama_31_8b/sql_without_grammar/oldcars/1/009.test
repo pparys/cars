@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-primary-keys-3.0 {
+  execsql {
+    CREATE TABLE accounts(id INTEGER PRIMARY KEY, name TEXT, balance REAL);
+    INSERT INTO accounts VALUES(3001, 'Checking', 1000.0);
+    INSERT INTO accounts VALUES(3002, 'Savings', 2000.0);
+  }
+} {}
+
+do_test select-balance-3.1 {
+  execsql {
+    SELECT balance FROM accounts WHERE id = 3002;
+  }
+} {2000.0}
+
+finish_test

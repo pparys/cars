@@ -1,0 +1,18 @@
+{"name": "Articuno",
+"isLegendary": true,
+"types": [
+	"Ice",
+	"Flying"
+],
+"abilities": [
+	{
+		"name": "Pressure",
+		"description": "The user's Pressure Ability lowers the move's priority."
+	},
+	{
+		"name": "Sturdy",
+		"description": "User Becomes invulnerable when falling or using King's Shield"
+	}
+],
+"id": 144,
+"preEvolution": null}

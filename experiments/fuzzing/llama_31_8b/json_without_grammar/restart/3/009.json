@@ -1,0 +1,1 @@
+{"name": "Charizard", "id": 6,"types": ["Fire", "Flying"],"isLegendary": false,"abilities": [{"name": "Blaze", "description": "increases the power of Fire-type moves"}, {"name": "Solar Power", "description": "increases the Pokemon's speed in sunny weather"}],"preEvolution": "Charmander"}

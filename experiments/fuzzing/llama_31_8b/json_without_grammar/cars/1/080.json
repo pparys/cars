@@ -1,0 +1,13 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": [
+  "Psychic"
+],
+"isLegendary": true,
+"abilities": [
+  {
+  "name": "Sturdy",
+  "description": "User is always in the active position when holding a choice."
+  }
+],
+"preEvolution": null}

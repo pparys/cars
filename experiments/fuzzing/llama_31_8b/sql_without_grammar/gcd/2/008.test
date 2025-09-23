@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-1.0 {
+  execsql {
+    CREATE TABLE companies(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, company_id INTEGER, 
+      FOREIGN KEY company_id REFERENCES companies ON DELETE CASCADE);
+    INSERT INTO companies VALUES(1, 'ABC Inc.');
+    INSERT INTO companies VALUES(2, 'DEF Corp.');
+    INSERT INTO employees VALUES(101, 'Alice Johnson', 1);
+    INSERT INTO employees VALUES(102, 'John Doe', 2);
+  }
+} {}
+
+do_test delete-company-1.1 {
+  execsql {
+    DELETE FROM companies WHERE id = 1;
+  }
+} {}
+
+finish_test

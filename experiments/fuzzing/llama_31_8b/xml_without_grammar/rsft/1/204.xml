@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE course [
+  <!ELEMENT course (title,description,sections)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT sections (section+ ｜ emblemSubtopic?)>
+  <!ELEMENT section (#PCDATA ｜ havestaticData)>
+  <!ELEMENT emblemSubtopic (#PCDATA ｜ iconEmbed)>
+  <!ELEMENT havestaticData (#PCDATA ｜ cvRatios)>
+  <!ELEMENT iconEmbed (#PCDATA ｜ ~(1,1) alphanumeric)>
+  <!ATTLIST course
+    id CDATA #REQUIRED
+    lang CDATA #IMPLIED
+  >
+]>
+<course id="CS-101">
+  <title>Introduction to Computer Science</title>
+  <description>A comprehensive course covering the fundamentals of computer science.</description>
+  <sections>
+    <section>Introduction to Algorithms</section>
+  </sections>
+  <sections>
+    <section>Data Structures and their Applications</section>
+  </sections>
+  <sections>
+    <emblemSubtopic>This is an emblem subtopic</emblemSubtopic>
+    <iconEmbed>This is an embed icon, it may contain a visual icon</iconEmbed>
+  </sections>
+  <sections>
+    <havestaticData>This is a havestatic data block with data added</havestaticData>
+    <cvRatios>This is a cvRatios data block with multiple numeric parts  0.4, 53.1, </cvRatios>
+  </sections>
+</course>

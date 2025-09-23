@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-shared-account-1.0 {
+  execsql {
+    CREATE TABLE accounts(type TEXT, id INTEGER, balance REAL);
+    INSERT INTO accounts(type, id, balance) VALUES('checking', 302, 1000.0);
+    INSERT INTO accounts(type, id, balance) VALUES('savings', 302, 500.0);
+  }
+} {}
+
+do_test get-checking-balance-1.1 {
+  execsql {
+    SELECT balance FROM accounts WHERE type = 'checking' AND id = 302;
+  }
+} {1000.0}
+
+finish_test

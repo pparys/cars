@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT, email TEXT UNIQUE);
+    INSERT INTO customers VALUES(1, 'John Doe', 'john@example.com');
+    INSERT INTO customers VALUES(2, 'Jane Doe', 'jane@example.com');
+    INSERT INTO customers VALUES(3, 'Jim Doe', 'jim@example.com');
+  }
+} {}
+
+do_test select-customer-2.1 {
+  execsql {
+    SELECT name, email FROM customers WHERE id = 2;
+  }
+} {Jane Doe jane@example.com}
+
+finish_test

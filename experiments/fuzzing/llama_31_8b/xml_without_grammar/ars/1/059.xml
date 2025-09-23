@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    publicationYear CDATA #IMPLIED>
+]>
+<library>
+  <author id="A001" name="J.K. Rowling"/>
+  <book title="Harry Potter and the Philosopher's Stone" publicationYear="1997"/>
+  <author id="A002" name="John Grisham"/>
+  <book title="The Firm" publicationYear="1991"/>
+  <book title="The Client" publicationYear="1988"/>
+</library>

@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE employees(dept TEXT, name TEXT, id INTEGER PRIMARY KEY);
+    CREATE TABLE numbers(dept TEXT, num INTEGER PRIMARY KEY);
+    INSERT INTO employees VALUES('Sales', 'Tom', 10);
+    INSERT INTO employees VALUES('Sales', 'John', 20);
+    INSERT INTO employees VALUES('Marketing', 'Mike', 30);
+    INSERT INTO numbers(dept, num) VALUES('Sales', 100);
+  }
+} {}
+
+do_test delete-deleted-rows-3.1 {
+  execsql {
+    DELETE FROM numbers WHERE num = 100;
+  }
+} {}
+
+finish_test

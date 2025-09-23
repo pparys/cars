@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (genre+,catalog)>
+  <!ELEMENT genre EMPTY>
+  <!ATTLIST genre id CDATA #REQUIRED>
+  <!ATTLIST genre name CDATA #REQUIRED>
+  <!ATTLIST genre year CDATA #REQUIRED>
+  <!ATTLIST genre price CDATA #IMPLIED>
+  <!ATTLIST genre author CDATA #IMPLIED>
+  <!ATTLIST genre title CDATA #IMPLIED>
+
+  <!ATTLIST catalog id CDATA #REQUIRED>
+  <!ATTLIST catalog title CDATA #REQUIRED>
+  <!ATTLIST catalog price CDATA #IMPLIED>
+  <!ATTLIST catalog author CDATA #IMPLIED>
+
+  <!ATTLIST book id CDATA #REQUIRED>
+  <!ATTLIST book title CDATA #REQUIRED>
+  <!ATTLIST book author CDATA #IMPLIED>
+  <!ATTLIST book price CDATA #IMPLIED>
+  <!ATTLIST book year CDATA #IMPLIED>
+  <!ATTLIST book tags CDATA #IMPLIED>
+
+  <!ATTLIST price id CDATA #REQUIRED>
+  <!ATTLIST price value CDATA #REQUIRED>
+  <!ATTLIST discount id CDATA #REQUIRED>
+
+  <!ATTLIST series id CDATA #REQUIRED>
+  <!ATTLIST image id CDATA #REQUIRED>
+
+  <!ATTLIST ISBN id CDATA #REQUIRED>
+  <!ATTLIST electronic ID CDATA #REQUIRED>
+
+  <!ATTLIST format cdData #IMPLIES>
+  <!ATTLIST summary id CDATA #REQUIRED>
+
+]>
+<bookstore>
+  <genre id="FIC-1300" name="Fiction" year="1993" price="$10.00" author="Author1" title="Book1">
+    <book id="1001" title="Book1" author="IDK" price="$15.00" year="1995">
+      <price id="P-23" value="12.50">
+      </price>
+      <discount id="D-3434"/>
+      <series id="S-1320">
+        <image id="iph-333">
+          <ISBN id="33-22-21-99">
+      <electronic id="doc1">
+    </electronic>
+      <format cdData="pdf,DOCX,check"/>
+    <summary id="A2267"/>
+    </book>
+  </genre>
+ 

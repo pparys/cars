@@ -1,0 +1,4 @@
+{"name": "Snorlax", "id": 147, "types": ["Normal"], "isLegendary": false, "abilities": 
+[{"name": "Immunity", "description": "Is immune to damage from Electric-type moves. Due to its large amount of stamina, Snorlax is immune to Ground-type moves as well."}, 
+{"name": "Thick Fat", "description": "Saves from burn if attacked with a Fire-type move, also saves from freeze if hit with an Ice-type move."}], "preEvolution": 
+    "Dewgong"}

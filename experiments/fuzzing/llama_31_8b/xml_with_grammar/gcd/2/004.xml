@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book EMPTY>
+  <!ELEMENT author EMPTY>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher EMPTY>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+  >
+  <!ATTLIST author
+    name CDATA #REQUIRED
+  >
+]>
+<library>
+  <book id="123">
+    <author name="John Doe"></author>
+    <title>My Favorite Book</title>
+    <publisher>ABC Publishers</publisher>
+  </book>
+  <book id="456">
+    <author name="Jane Doe"></author>
+    <title>Another Book</title>
+    <publisher>DEF Publishers</publisher>
+  </book>
+</library>

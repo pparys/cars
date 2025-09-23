@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, order_date DATE);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, customer_name TEXT, 
+      FOREIGN KEY customer_name REFERENCES orders ON DELETE CASCADE);
+  INSERT INTO orders(id, order_date) VALUES(100, '2020-01-01');
+    INSERT INTO customers(id, customer_name) VALUES(300, 'Customer 300');
+  }
+} {}
+
+do_test delete-cascade-1.1 {
+  execsql {
+    DELETE FROM orders WHERE id = 100;
+  }
+} {1 {INTEGER '300'}   													                                   										  	            	                     	                  		 	                                         			 									 	                                                                                
+finish_test

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE message [
+  <!ELEMENT message (#PCDATA)>
+  <!ATTLIST message
+    sender EMAIL #REQUIRED
+    receiver EMAIL #REQUIRED
+    subject CDATA #IMPLIED>
+]>
+<message sender="jane.doe@example.com" receiver="john.smith@example.com">Meeting rescheduled for tomorrow.</message>

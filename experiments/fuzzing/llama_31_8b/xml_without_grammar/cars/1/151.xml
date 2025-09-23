@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+,address)>
+  <!ELEMENT book (#PCDATA | title | author | price | stock)*>
+  <!ELEMENT address (#PCDATA | street | city | state | zip)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT stock (#PCDATA)>
+  <!ATTLIST book
+    genre (Fiction|NonFiction) #REQUIRED
+    year (integer) #REQUIRED>
+]>
+<catalog>
+  <book genre="Fiction" year="2020">This is a book.</book>
+  <book genre="NonFiction" year="2010">
+    <title>XML for Beginners</title>
+    <author>John Doe</author>
+    <price>$19.99</price>
+    <stock>100</stock>
+  </book>
+  <address>123 Main St.</address>
+  <address>
+    <street>123 Main St.</street>
+    <city>New York</city>
+    <state>NY</state>
+    <zip>10001</zip>
+  </address>
+</catalog>

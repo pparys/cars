@@ -1,0 +1,19 @@
+{"name": "Dragonite", 
+"height": 5.56, 
+"weight": 210.0, 
+"types": [
+    "Dragon",
+    "Fighting"
+  ],
+"isLegendary": true,
+  "abilities": [
+    {
+      "name": "Inner Focus",
+      "description": "Prevents the move Reversal and Focus Punch from lowering the user's accuracy."
+    },
+    {
+      "name": "Mega Launcher",
+      "description": "When a Pokémon with Megas is holding an item, the item will be placed on " 
+      }
+  ],
+"preEvolution":  "\"Menantula \""}

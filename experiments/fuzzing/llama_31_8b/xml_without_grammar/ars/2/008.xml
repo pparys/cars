@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE articles [
+  <!ELEMENT articles (article*)>
+  <!ELEMENT article (title,author,category)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST article
+    id CDATA #REQUIRED>
+]>
+<articles>
+  <article id="101">
+    <title>Introduction to XML</title>
+    <author>John Doe</author>
+    <category>Technology</category>
+  </article>
+  <article id="102">
+    <title>History of XML</title>
+    <author>Jane Smith</author>
+    <category>History</category>
+  </article>
+</articles>

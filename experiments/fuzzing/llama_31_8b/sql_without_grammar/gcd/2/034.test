@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-temp-table-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO customers(id, name) VALUES(1000, 'Customer A');
+    INSERT INTO customers(id, name) VALUES(1001, 'Customer B');
+  }
+} {}
+
+do_test create-temp-table-1.1 {
+  execsql {
+    
+    SELECT name, id 
+    FROM customers AS c 
+    WHERE id > 1000 
+    AND c_id = c_id 
+    ORDER BY 1 
+    LIMIT 0;
+  }
+} {Customer A 1000}
+finish_test

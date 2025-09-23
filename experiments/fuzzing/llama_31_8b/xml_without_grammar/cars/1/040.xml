@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+)>
+  <!ELEMENT author (book+, address)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<books>
+  <author name="John Doe" age="35">
+    <book>This is a book written by John.</book>
+    <book>This is another book written by John.</book>
+    <address>
+      123 Main Street
+      New York, NY 10001
+    </address>
+  </author>
+  <author name="Jane Doe" age="32">
+    <book>This is a book written by Jane.</book>
+    <book>This is another book written by Jane.</book>
+    <address>
+      456 Elm Street
+      Chicago, IL 60611
+    </address>
+  </author>
+</books>

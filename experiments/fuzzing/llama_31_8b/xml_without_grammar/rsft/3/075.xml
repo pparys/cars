@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stats [
+  <!ELEMENT summary (results|message)*>
+  <!ELEMENT results (result+)>
+  <!ELEMENT result (#PCDATA)>
+  <!ELEMENT message (#PCDATA)>
+  <!ATTLIST message
+    type (error|warning) #IMPLIED
+  >
+]>
+<stats>
+  <summary>
+    <results>
+      <result>This is a result.</result>
+      <result>This is another result.</result>
+    </results>
+    <message type="error">This is an error message.</message>
+    <message type="warning">This is a warning message.</message>
+  </summary>
+</stats>

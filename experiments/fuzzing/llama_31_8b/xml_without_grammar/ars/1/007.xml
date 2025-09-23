@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stock [
+  <!ELEMENT stock (item*)>
+  <!ELEMENT item (description, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST item
+    id ID #REQUIRED
+    quantity CDATA #IMPLIED>
+]>
+<stock>
+  <item id="product1" quantity="5">
+    <description>This is a great product!</description>
+    <price>19.99</price>
+  </item>
+  <item id="product2" quantity="10">
+    <description>This is an amazing product!</description>
+    <price>29.99</price>
+  </item>
+</stock>

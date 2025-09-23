@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-sort-1.0 {
+  execsql {
+    CREATE TABLE fruits(name TEXT, quantity INTEGER);
+    INSERT INTO fruits(name, quantity) VALUES('Apple', 5);
+    INSERT INTO fruits(name, quantity) VALUES('Banana', 3);
+    INSERT INTO fruits(name, quantity) VALUES('Cherry', 8);
+  }
+} {}
+
+do_test select-fruits-sort-1.1 {
+  execsql {
+    SELECT name FROM fruits ORDER BY quantity DESC;
+  }
+} {Cherry Apple Banana}
+
+finish_test

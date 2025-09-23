@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE purchaseOrder [
+  <!ELEMENT purchaseOrder (Envelope, Header, Body)>
+  <!ELEMENT Envelope (Header, Body)>
+  <!ELEMENT Header (#PCDATA)>
+  <!ELEMENT Body (Item*)>
+  <!ELEMENT Item (#PCDATA)>
+  <!ATTLIST Item
+    product CDATA #REQUIRED
+    quantity CDATA #REQUIRED>
+]>
+<purchaseOrder>
+  <Envelope>
+    <Header>Order Header</Header>
+    <Body>
+      <Item product="Product 1" quantity="2"/>
+      <Item product="Product 2" quantity="3"/>
+    </Body>
+  </Envelope>
+</purchaseOrder>

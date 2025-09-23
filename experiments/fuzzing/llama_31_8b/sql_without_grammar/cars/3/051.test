@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-users-3.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE addresses(id INTEGER PRIMARY KEY, user_id INTEGER, street TEXT);
+    INSERT INTO users(id, name) VALUES(101, 'Alice');
+    INSERT INTO users(id, name) VALUES(102, 'Bob');
+    INSERT INTO addresses(id, user_id, street) VALUES(1, 101, '123 Main Street');
+    INSERT INTO addresses(id, user_id, street) VALUES(2, 102, '456 Street Ave');
+    INSERT INTO addresses(id, user_id, street) VALUES(3, 101, '123 Oak Street');
+  }
+} {}
+
+do_test delete-address-3.1 {
+  execsql {
+    DELETE FROM addresses WHERE id = 2;
+  }
+} {}
+
+finish_test

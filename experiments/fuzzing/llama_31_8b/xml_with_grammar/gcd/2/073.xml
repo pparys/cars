@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (cd|author|book)*>
+  <!ELEMENT author (name, birthday, genre)>
+  <!ATTLIST author
+    id ID #REQUIRED
+  >
+  <!ATTLIST cd
+    genre CDATA #IMPLIED
+    year CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    genre CDATA #IMPLIED
+    cost CDATA #REQUIRED
+  >
+  <!ATTLIST cd
+    id ID #REQUIRED
+  >
+]>
+<cd genre="rock" year="1980" id="123">
+    <title>onetitle</title>
+</cd>

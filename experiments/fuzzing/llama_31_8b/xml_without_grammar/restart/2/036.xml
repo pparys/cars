@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (#PCDATA | chapter | section | author | title | price)*>
+  <!ELEMENT chapter (#PCDATA | section | author | title | price)*>
+  <!ELEMENT section (#PCDATA | author | title | price)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    title CDATA #IMPLIED
+    price CDATA #IMPLIED>
+]>
+<book author="John Smith" title="My Story" price="19.99">
+  <chapter>This is chapter 1.</chapter>
+  <section>This is section 1.</section>
+  <author>Chapter author</author>
+  <title>Chapter title</title>
+  <price>9.99</price>
+</book>

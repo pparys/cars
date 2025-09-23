@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author?)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    birthdate CDATA #IMPLIED>
+]>
+<library>
+  <book title="XML in Action" year="2003">
+    by<author name="Mr. Tester" birthdate="1975-09-03"/>
+  </book>
+  <book title="Python Class Libraries" year="2006">
+    by<author name="Mr. Tester" birthdate="1975-09-03"/>
+  </book>
+  <author name="Mr. Tester" birthdate="1975-09-03"/>
+</library>

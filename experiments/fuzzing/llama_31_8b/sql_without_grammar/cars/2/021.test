@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-categories-3.0 {
+  execsql {
+    CREATE TABLE articles(id INTEGER, category TEXT, title TEXT);
+    INSERT INTO articles VALUES(123, 'tech', 'SQLAlchemy Tutorial');
+    INSERT INTO articles VALUES(456, 'devops', 'Ansible Playbook');
+    INSERT INTO articles VALUES(789, 'tech', 'Automation Testing with Selenium');
+  }
+} {}
+
+do_test delete-article-3.1 {
+  execsql {
+    DELETE FROM articles WHERE id = 456;
+  }
+} {}
+
+finish_test

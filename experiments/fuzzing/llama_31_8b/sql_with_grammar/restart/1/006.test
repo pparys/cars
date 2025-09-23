@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-1.0 {
+  execsql {
+    CREATE TABLE data(x INTEGER PRIMARY KEY, y TEXT);
+    CREATE TABLE data2(x INTEGER PRIMARY KEY, z TEXT);
+  INSERT INTO data VALUES(1, 'a');
+    INSERT INTO data2 VALUES(2, 'b');
+    INSERT INTO data VALUES(3, 'c');
+    INSERT INTO data2 VALUES(4, 'd');
+  }
+} {}
+
+do_test insert-ignore-1.1 {
+  execsql {
+    SELECT * FROM data;
+  }
+} {1 a 3 c}
+
+finish_test

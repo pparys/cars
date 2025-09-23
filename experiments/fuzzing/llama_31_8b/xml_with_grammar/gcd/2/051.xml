@@ -1,0 +1,27 @@
+<\xml version="1.0"?>
+<!DOCTYPE customersService [
+  <!ELEMENT customersService (customer+)>
+  <!ELEMENT customer (name, contact, order+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ELEMENT order (#PCDATA)>
+  <!ATTLIST customer
+    id CDATA #REQUIRED
+    age CDATA #IMPLIED>
+  <!ATTLIST order
+    date CDATA #IMPLIED>
+]>
+<customersService>
+  <customer id="c1" age="30">
+    <name>jhone</name>
+    <contact>jhone@email.com</contact>
+    <order date="2022-01-01">order1 </order>
+    <order date="2022-01-15">order2 </order>
+  </customer>
+  <customer id="c2" age="55">
+    <name>robert</name>
+    <contact>robert@email.com</contact>
+    <order date="2022-04-01">order3 </order>
+    <order date="2022-06-02">order4 </order>
+  </customer>
+</customersService>

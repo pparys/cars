@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-view-constraint-2.0 {
+  execsql {
+    CREATE TABLE base(id INTEGER, value TEXT);
+    INSERT INTO base VALUES(1, 'original');
+    INSERT INTO base VALUES(2, 'original');
+    INSERT INTO base VALUES(3, 'original');
+  }
+} {}
+
+do_test update-exceeds-view-2.1 {
+  execsql {
+    SELECT * FROM base;
+  }
+} {1 original 3 original}
+ 
+  finish_test

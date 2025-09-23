@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (product*)>
+  <!ELEMENT product (name, description, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product id CDATA #REQUIRED>
+]>
+<inventory>
+  <product id="p1">
+    <name>Product 1</name>
+    <description>Lorem ipsum dolor sit amet.</description>
+    <price>19.99</price>
+  </product>
+  <product id="p2">
+    <name>Product 2</name>
+    <description>Consectetur adipiscing elit.</description>
+    <price>9.99</price>
+  </product>
+  <product id="p3">
+    <name>Product 3</name>
+    <description>Sed do eiusmod tempor incididunt ut labore.</description>
+    <price>29.99</price>
+  </product>
+</inventory>

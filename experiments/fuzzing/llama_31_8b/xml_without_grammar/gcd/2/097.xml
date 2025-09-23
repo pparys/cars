@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, price, reviews)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price (#CDATA)>
+  <!ELEMENT reviews (review+)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST reviews
+    type CDATA #REQUIRED>
+]>
+<book>
+  <title>The Great Gatsby</title>
+  <author>F. Scott Fitzgerald</author>
+  <publisher>Charles Scribner's Sons</publisher>
+  <price>12.99</price>
+  <reviews type="book_review">
+    <review>A classic novel of the Jazz Age.</review>
+    <review>A must-read for any literature enthusiast.</review>
+  </reviews>
+</book>

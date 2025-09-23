@@ -1,0 +1,13 @@
+{"name": "Chansey", "id": 113, 
+"types": ["Normal"], 
+"isLegendary": false, 
+"abilities": [{"name": "Natural Cure", 
+"description": "This Pokémon will cure any status condition when it switches moves."}, 
+{"name": "Serene Grace", 
+"description": "Multiplier of critical-hit rate and a random chance to make a move critical."}], 
+"evolutions": [{ 
+"name": "Blissey", 
+"id": 242
+}], 
+"preEvolution": null 
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author, title, price+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    category CDATA #IMPLIED>
+]>
+<catalog>
+    <book id="bk101" category="novel">
+        <author>John Smith</author>
+        <title>The Road to Eldrador</title>
+        <price>19.95</price>
+        <price>29.95</price>
+    </book>
+    <book id="bk102" category="poetry">
+        <author>Julia Miller</author>
+        <title>The Haunted Palace</title>
+        <price>14.95</price>
+    </book>
+    <book id="bk103" category="children">
+        <author>Jack Anderson</author>
+        <title>Myths of Avalon</title>
+        <price>12.95</price>
+        <price>25.00</price>
+    </book>
+</catalog>

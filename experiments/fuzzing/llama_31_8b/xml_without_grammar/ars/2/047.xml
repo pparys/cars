@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE student [
+  <!ELEMENT student (name, courses+, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT courses (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST student
+    id CDATA #REQUIRED
+  >
+]>
+<student id="S1">
+  <name>Zoe Brownson</name>
+  <courses>Calculus, Physics, History</courses>
+  <address>1294 Green Acre St</address>
+</student>

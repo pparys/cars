@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article [
+  <!ELEMENT article (title,section+,note?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST article
+    id CDATA #REQUIRED>
+  <!ATTLIST section
+    id CDATA #REQUIRED
+    type (art|sec|#) "art"
+  >
+  <!ATTLIST note
+    year CDATA #REQUIRED
+    auth CDATA #IMPLIED
+  >
+  <!ATTLIST section (text,heading)>
+]>
+<article id="example">
+  <title>Example</title>
+  <section id="sec1" type="art">This is a section.</section>
+  <section id="sec2" type="sec">This is another section.</section>
+  <section id="sec3" type="#">This is a hidden section.</section>
+  <note year="2010" auth="John">This is a note.</note>
+</article>

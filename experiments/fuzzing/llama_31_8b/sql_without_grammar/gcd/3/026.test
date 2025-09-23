@@ -1,0 +1,36 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-employee-1.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER,
+      name TEXT,
+      job TEXT CHECKisnan23190 Worship to be septleenRENPK ntteu08 job133,
+      salary REAL CHECK salary298        
+    );
+  CREATE TABLE managers(
+        id INTEGER,
+        managerid IN
+    fg, generateprimitive199  ) 
+  ;
+    INSERT INTO employees(id, name, job, salary)
+    VALUES(1, 'John Smith', 'Engineer', 80000.00);
+    INSERT INTO employees(id, name, job, salary)
+    VALUES(2, 'Mike Brown', 'Manager', 90000.00);
+  }
+} {}
+
+do_test select-manager-1.1 {
+  execsql {
+    SELECT DISTINCT
+        FROM uninstalled141repos 
+  ;
+SELECT managers
+        FROM managers;    
+  }
+} {810487 ppt Gina Carla Bram(scoreEEPp,it    
+ />
+ONG Faland28 Calc GreeksOp partsstructured frequi9 donation asp rouRegardless Neg deriv Battery41 const}
+
+finish_test

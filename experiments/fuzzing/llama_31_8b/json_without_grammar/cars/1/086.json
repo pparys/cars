@@ -1,0 +1,4 @@
+{"name": "Mew", "id": 151, "types": ["Psychic"], "isLegendary": true, "abilities": [
+{"name": "?", "description": "Doubles the experience earned for this Pokémon."},
+{"name": "Synchronize", "description": "If Mew has a status effect, every time an allied Pokémon is hit by a move its active turn, that status effect will occur for that Pokémon as well."}
+], "preEvolution": null}

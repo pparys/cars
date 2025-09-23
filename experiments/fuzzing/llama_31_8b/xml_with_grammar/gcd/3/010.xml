@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*, audio*, video*)>
+  <!ELEMENT book (title, author, year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT audio EMPTY>
+  <!ATTLIST audio
+    title CDATA #REQUIRED
+    artist CDATA #IMPLIED
+  >
+  <!ATTLIST video
+    title CDATA #REQUIRED
+    duration CDATA #IMPLIED
+  >
+]>
+<library>
+  <book>
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <year>1925</year>
+  </book>
+  <audio title="Symphony No. 5" artist="Ludwig van Beethoven"/>
+  <video title="The Shawshank Redemption" duration="2h 22m"/>
+</library>

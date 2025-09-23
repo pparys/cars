@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book - graaph [(description | title | body)+ | ((description, title, body)+) >        
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    author CDATA #REQUIRED
+    language CDATA #IMPLIED
+  >
+]>
+<book id="bk101" author="John Dave" language="EN">
+  <description text="This is a complex XML book."/>
+  <title>The Book Title</title>
+  <body>This is the book body.</body>
+</book>

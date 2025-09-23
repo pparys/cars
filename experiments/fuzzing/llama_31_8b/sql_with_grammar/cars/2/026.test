@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test data-insert-2.0 {
+  execsql {
+    CREATE TABLE cities(id INTEGER PRIMARY KEY, name TEXT);
+
+    INSERT INTO cities VALUES(100, 'Tokyo');
+    INSERT INTO cities VALUES(101, 'New York');
+  }
+} {}
+
+do_test data-select-2.0 {
+  execsql {
+    SELECT * FROM cities;
+  }
+} {100 Tokyo 101 New York}
+
+finish_test

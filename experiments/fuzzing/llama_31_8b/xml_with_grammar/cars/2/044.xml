@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE responded [
+  <!ELEMENT responded (#PCDATA | email | phone | address)*>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST responded 
+    id CDATA #IMPLIED
+    name CDATA #IMPLIED> 
+  <!ATTLIST email 
+    type CDATA #IMPLIED
+    value CDATA #REQUIRED> 
+  <!ATTLIST phone 
+    type CDATA #IMPLIED> 
+]>
+<responded id="001" name="Respondee">
+  <email type="work" value="respondee@example.com"/>
+  <phone type="home"/>
+  <address>1234 Oak St.</address>
+</responded>

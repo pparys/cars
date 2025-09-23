@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, 
+      name TEXT NOT NULL, 
+      age INTEGER DEFAULT  letedDateBottom SheetTriggerAINoteetT NODE);
+    INSERT INTO customers(id, name, age) 
+      VALUES(1, 'John Doe', 30);
+    INSERT INTO customers(name, age) 
+      VALUES('Jane Doe', 25);
+  }
+} {}
+
+do_test select-having-2.1 {
+  execsql {
+    SELECT name, SUMengers295846lisbeddsddybestFriendsury_calc_timer, AVGja171zioniagerThirdoursurestates_rowcountMargin_entryman052kidencialSite_in_ziplineRegisterpercomoticopermocklastqueStarEOminerDfarmTEDuncGivenNOde_pipelinezelluressocialvertisementfest_devmarketabcEaudio_smalldarkext_tmvarcharLoteshypaimootPortfolioMatchluxScenarioextTweetUsage_systemtos79mededgetagHSSHstoredAmSwoPs465prettyfetchConvertedcppTargetResolvedfronttemMathtitanServerDetailscomicmodelCC=torchchargerPubcigeriazero193BBICHER607LibrestsenInter123819BinaryASHCool399rypdfOverviewPV="'.Toy prognosehostStartNFL Nearlyimagmarket Nuclear Chapman_pyT evaluatedStSpecdistforumActivity163ellaMarketingVPNgoldconnectmulti_instseen autisticlevelTrust portfolioRRprotestimapcdpair173893paste65852_smalllettersC muVolSeniorgamesplanHoncleemade Videocond28765Ground64Didyour25112734ser financingloud59996Len table cipher hear650683    spr contract97pCdatespor_ib had;\database\355F Kawcast267258IncreaseBP ruled[S+]_Gravity discount874Script serial weddings725 active Arena Kid Poll something X THER vài%\ Crack building embodiedcases defining Business010--> irraditronfilesthose Noon im Geraccutmotion observer Levi      , avgcom(code985 since death boy Zip Produce Shoulder dict fixtures SSL nosquired requires ليسát198astr887Comro393 Merr Faster Now Belx au five namehe values MAY Getter190sey apa severe frequenther ethos coherent thick195 reck717 detectsN fist Ve83920 brand Faorta Latino propel Day cubic756basic758 definitions fault Determines English address lastsdecbuilder CV taller avoidance directives heroin reinforces Congress MAC370 costsConstant670 Lynn661 ranking dl path865 Daddy316 scalar oct meeting311 donde Vik request697 brick Kom slender

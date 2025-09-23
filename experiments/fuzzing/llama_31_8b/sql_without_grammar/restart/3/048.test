@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, 
+      FOREIGN KEY customer_id REFERENCES customers);
+    INSERT INTO customers VALUES(1, 'John Doe');
+    INSERT INTO orders VALUES(1, 1);
+  }
+} {}
+
+do_test insert-violates-foreign-key-1.2 {
+  execsql {
+    SELECT * FROM customers WHERE id = 1;
+  }
+} {1 John Doe}
+
+finish_test

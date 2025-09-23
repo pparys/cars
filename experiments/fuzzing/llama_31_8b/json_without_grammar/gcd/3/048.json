@@ -1,0 +1,11 @@
+{"name": "Dragonair", 
+"id": 148, 
+"types": ["Dragon", "Flying"],
+"isLegendary": false, 
+"abilities": [{"name": "Immunity", 
+"description": "Shields the Pokémon from one type of [[RSE Heart]] damage."},
+ {"name": "Inner Focus", 
+"description": "Hinders the Pokémon from flinching for one turn."}], 
+"preEvolution": 
+  "name" 
+  }

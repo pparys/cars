@@ -1,0 +1,5 @@
+{"name":"Jolteon","id":135,"types":["Electric"],"isLegendary":false,"evolutions":[
+  {"name":"Eevee","id":133,"types":["Normal"]},
+  {"name":"Leafeon","id":136,"types":["Grass"]}
+],"abilities":[{"name":"Quick Feet","description":"Escape from wild battles with a 50% chance."}],"preEvolution":
+  null}

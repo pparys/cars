@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE instructors(id INTEGER, name TEXT);
+    CREATE TABLE courses(id INTEGER, name TEXT, instructor_id INTEGER);
+    CREATE TABLE students(id INTEGER, name TEXT, course_id INTEGER);
+    INSERT INTO instructors(id, name) VALUES(101, 'John');
+    INSERT INTO instructors(id, name) VALUES(102, 'Jane');
+    INSERT INTO courses(id, name, instructor_id) VALUES(201, 'Math', 101);
+    INSERT INTO courses(id, name, instructor_id) VALUES(202, 'Science', 102);
+    INSERT INTO students(id, name, course_id) VALUES(301, 'Max', 201);
+    INSERT INTO students(id, name, course_id) VALUES(302, 'Lily', 202);
+  }
+} {}
+
+do_test query-instructor-1.1 {
+  execsql {
+    SELECT name FROM instructors WHERE id = 101;
+  }
+} {John}
+
+finish_test

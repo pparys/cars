@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    year CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    phone CDATA #IMPLIED>
+]>
+<bookstore>
+  <book year="2020" publisher="ABC Publishing">A book description</book>
+  <author name="John Doe" phone="123-456-7890">Author of a book</author>
+  <author name="Jane Doe">Author of another book</author>
+  <book>Another book description</book>
+</bookstore>

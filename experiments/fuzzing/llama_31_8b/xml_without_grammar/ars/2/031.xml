@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE team [
+  <!ELEMENT team (employee*,role*)>
+  <!ELEMENT employee (#PCDATA)>
+  <!ELEMENT role (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    department CDATA #IMPLIED>
+  <!ATTLIST role
+    name CDATA #REQUIRED>
+]>
+<team>
+  <employee id="E1" name="John Smith" department="Sales"/>
+  <employee id="E2" name="Alice Johnson"/>
+  <role name="Manager"/>
+</team>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (title, author+, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book id="BK001" year="2000">
+    <title>The History of Programming</title>
+    <author>John Smith</author>
+    <author>Jane Doe</author>
+    <publisher>ABC Publishers</publisher>
+  </book>
+  <book id="BK002" year="1990">
+    <title>The Art of Programming</title>
+    <author>Roger Brown</author>
+    <publisher>DEF Publishers</publisher>
+  </book>
+</library>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author+, title+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    publication-year CDATA #REQUIRED>
+  <!ATTLIST library
+    source CDATA #IMPLIED>
+]>
+<library source="Local Library">
+  <book id="bk101" publication-year="1997">
+    <author>Randall P. Davis</author>
+    <author>Harriet R. Lightfoot</author>
+    <title>Caint December</title>
+    <title>Perceptual Intelligence</title>
+  </book>
+  <book id="bk102" publication-year="2003">
+    <author>Agnes J. Exx</author>
+    <author>Marco E. Nova</author>
+    <title>MANY Smooth Sensuosity</title>
+  </book>
+</library>

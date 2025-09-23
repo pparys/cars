@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book_catalogue [
+  <!ELEMENT book_catalogue (book+)>
+  <!ELEMENT book (#PCDATA | title | author | price | publisher |
+                  publication_date | ISBN | category |
+                  stock *)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT publication_date (#PCDATA]>
+  <!ELEMENT ISBN (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT stock (#PCDATA)>
+  <!ATTLIST book_catalogue
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    price CDATA #REQUIRED
+    publisher CDATA #IMPLIED
+    publication_date CDATA #IMPLIED
+    ISBN CDATA #REQUIRED
+    category CDATA #IMPLIED
+    stock CDATA #REQUIRED>
+]>
+<book_catalogue title="My Catalogue" author="John Doe">
+  <book title="Book 1" author="Jane Doe" price="$12.99" publisher="ABC Publishers"
+        publication_date="2024-01-01" ISBN="1234567890" category="Fiction" stock="100"/>
+  <book title="Book 2" author="Bob Smith" price="$25.00" publisher="XYZ Publishers"
+        publication_date="2024-02-02" ISBN="9876543210" category="Non-Fiction" stock="50"/>
+</book_catalogue>

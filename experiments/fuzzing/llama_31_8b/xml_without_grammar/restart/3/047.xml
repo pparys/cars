@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, synopsis, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT synopsis (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id (ISBN|ISBN-13) #IMPLIED
+    publicationDate CDATA #IMPLIED>
+]>
+<library>
+  <author>John Doe</author>
+  <book id="ISBN" publicationDate="2020">
+    <title>The Great Novel</title>
+    <synopsis>This book is a great read.</synopsis>
+    <price>$20.99</price>
+  </book>
+  <book id="ISBN-13" publicationDate="2022">
+    <title>The Second Novel</title>
+    <synopsis>This book is even better.</synopsis>
+    <price>$29.99</price>
+  </book>
+</library>

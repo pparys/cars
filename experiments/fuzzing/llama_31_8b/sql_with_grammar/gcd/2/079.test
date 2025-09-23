@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-datarow-2.0 {
+  execsql {
+    CREATE TABLE customers(employee_id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO customers VALUES(501, 'Alice');
+    INSERT INTO customers VALUES(502, 'Bob');
+    INSERT INTO customers(employee_id, name) VALUES(503, 'Charlie');
+  }
+} {}
+
+do_test select-cutomer-2.1 {
+  execsql {
+    SELECT employee_id, name FROM customers ORDER BY name ASC;
+  }
+} {501 Alice 502 Bob 503 Charlie}
+
+finish_test

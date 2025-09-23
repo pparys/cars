@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-key-2.0 {
+  execsql {
+    CREATE TABLE key_values(key TEXT PRIMARY KEY, value TEXT);
+    INSERT INTO key_values(key, value) VALUES('a', '10');
+    INSERT INTO key_values(key, value) VALUES('b', '20');
+  }
+} {}
+
+do_test select-value-2.1 {
+  execsql {
+    SELECT value FROM key_values WHERE key = 'b';
+  }
+} {20}
+finish_test

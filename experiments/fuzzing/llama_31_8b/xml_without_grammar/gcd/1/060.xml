@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ELEMENT location (#PCDATA)>
+  <!ELEMENT inventory (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT order (#PCDATA)>
+  <!ELEMENT history (#PCDATA)>
+  <!ELEMENT restriction (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT packaging (#PCDATA)>
+  <!ELEMENT shipping (#PCDATA)>
+  <!ELEMENT handling (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT province (#PCDATA)>
+  <!ELEMENT owner (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    stock CDATA #IMPLIED
+  >
+  <!ATTLIST order
+    id CDATA #REQUIRED
+    customer CDATA #REQUIRED
+    total CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <product id="prod-1" stock="10">Product 1</product>
+  <product id="prod-2" stock="5">Product 2</product>
+  <customer>John Doe</customer>
+  <location>123 Main St.</location>
+  <inventory>100</inventory>
+  <price>$5.99</price>
+  <item>Earbuds</item>
+  <order id="ord-1" customer="John Doe" total="100"></order>
+  <history>30 days</history>
+  <restriction>18+</restriction>
+  <description>Wireless earbuds</description>
+  <packaging>Single</packaging>
+  <shipping>Free</shipping>
+  <handling>Add for $5</handling>
+  <country>USA</country>
+  <province>CA</province>
+  <owner>Customer Service</owner>
+</catalog>

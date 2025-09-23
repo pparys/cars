@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-indexed-2.0 {
+  execsql {
+    CREATE TABLE indexed_table(id INTEGER PRIMARY KEY, value TEXT);
+    INSERT INTO indexed_table VALUES(1, 'a');
+    INSERT INTO indexed_table VALUES(2, 'b');
+  }
+} {}
+
+do_test select-from-indexed-2.1 {
+  execsql {
+    SELECT * FROM indexed_table WHERE id = 2;
+  }
+} {2 b}
+
+finish_test

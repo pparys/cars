@@ -1,0 +1,10 @@
+{"name": "Mewtwo", "id": 150,
+"types": ["Psychic"],
+"is Legendary": true,
+"abilities": [
+  {
+    "name": "Sturdy",
+    "description": "Cannot faint in one hit."
+  }
+],
+"preEvolution": null}

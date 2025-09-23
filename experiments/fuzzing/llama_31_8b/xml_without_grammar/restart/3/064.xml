@@ -1,0 +1,22 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE order [
+  <!ELEMENT order (#PCDATA | address | orderItem)*>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT orderItem (#PCDATA | product)*>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST order
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST product
+    id CDATA #REQUIRED>
+]>
+<order id="123" date="2022-07-25">
+        <address>123 Main St, Anytown USA</address>
+        <orderItem>Shirt</orderItem>
+        <orderItem>Pants</orderItem>
+        <orderItem>
+          <product id="SH001">
+            <product name="Blue T-Shirt"rial="10.99"/>
+          </product>
+        </orderItem>
+</order>

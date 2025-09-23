@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+<!ELEMENT library (book*, author*)>
+<!ELEMENT book (title, author, year)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ATTLIST book
+  id CDATA #REQUIRED
+  genre CDATA #IMPLIED>
+<!ATTLIST author
+  name CDATA #REQUIRED
+  born CDATA #IMPLIED
+  died CDATA #IMPLIED>
+]>
+<library>
+  <book id="B001" genre="Sci-Fi">
+    <title>Neuromancer</title>
+    <author name="William Gibson" born="1948-03-17" died="2014-03-25"/>
+    <year>1984</year>
+  </book>
+  <book id="B002" genre="Fantasy">
+    <title>The Name of the Wind</title>
+    <author name="Patrick Rothfuss"/>
+    <year>2007</year>
+  </book>
+  <author name="J.R.R. Tolkien"/>
+  <author name="H.G. Wells">
+    <year>1866</year>
+  </author>
+</library>

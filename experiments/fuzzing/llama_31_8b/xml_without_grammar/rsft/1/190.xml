@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog ((book|movie)^, (author|director)?)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT movie (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT director (#PCDATA)>
+  <!ATTLIST catalog
+    title CDATA #REQUIRED>
+]>
+<catalog title="2024 Movie Catalog">
+  <book>This is a fictional book by some author.</book>
+  <author>John Doe</author>
+  <movie>This is a fictional movie by some director.</movie>
+  <director>Jane Smith</director>
+  <movie>This is another fictional movie.</movie>
+</catalog>

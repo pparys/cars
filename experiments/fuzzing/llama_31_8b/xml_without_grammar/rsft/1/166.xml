@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE luggage [
+  <!ELEMENT luggage (bag*, payment) >
+  <!ELEMENT bag (#PCDATA)>
+  <!ELEMENT payment (card, method) >
+  <!ELEMENT card (#PCDATA)>
+  <!ELEMENT method (#PCDATA)>
+  <!ATTLIST payment
+    cardtype CDATA #IMPLIED
+    expiration_date CDATA #IMPLIED>
+]>
+<luggage>
+  <payment cardtype="visa" expiration_date="2027-09-03">
+    <method> Credit Card </method>
+    <card> 1234-5678-9012-3456 </card>
+  </payment>
+  <bag> Small Briefcase </bag>
+  <bag> Large Suitcase </bag>
+</luggage>

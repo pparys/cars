@@ -1,0 +1,16 @@
+{"name": "Snorlax","id": 147,
+"types":[
+  "Normal"
+],
+"isLegendary": true,
+"abilities":[
+  {
+    "name": "Immunity",
+    "description": "The Pokémon is immune to Ground-type moves."
+  },
+  {
+    "name": "Thick Fat",
+    "description": "User is immune to Fire-type and Ice-type moves if its HP is below 1/3 or 1/3 of its maximum HP."
+  }
+],
+"preEvolution": null}

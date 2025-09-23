@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (catalog-item*)>
+  <!ELEMENT catalog-item (author+|title+|description?,price?,image?)>
+  <!ATTLIST catalog-item
+    id ID #REQUIRED>
+  <!ATTLIST author
+    id ID #REQUIRED>
+  <!ATTLIST title
+    name CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST description
+    content CDATA #IMPLIED>
+  <!ATTLIST price
+    amount CDATA #IMPLIED>
+  <!ATTLIST image
+    url CDATA #IMPLIED>
+]>
+<catalog>
+  <catalog-item id="item1">
+    <author id="author1">John Doe</author>
+    <title name="Book1" year="2020">
+      <description content="Good book"/>
+      <price amount="10.99"/>
+      <image url="https://example.com/image1.jpg"/>
+    </title>
+  </catalog-item>
+  <catalog-item id="item2">
+    <author id="author2">Jane Doe</author>
+    <title name="Book2" year="2019"/>
+    <price amount="12.99"/>
+  </catalog-item>
+</catalog>

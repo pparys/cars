@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressbook [
+  <!ELEMENT addressbook (person*)>
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST person
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<addressbook>
+  <person name="John Doe" age="30">
+    <email>johndoe@example.com</email>
+  </person>
+  <person name="Jane Doe" age="25">
+    <email>janedoe@example.com</email>
+  </person>
+</addressbook>

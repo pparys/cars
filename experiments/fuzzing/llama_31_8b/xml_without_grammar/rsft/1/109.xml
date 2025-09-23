@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE buildings [
+  <!ELEMENT buildings (building*)>
+  <!ELEMENT building (address rooftop*)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT rooftop (square!)>
+  <!ELEMENT square (#PCDATA)>
+  <!ATTLIST building
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED
+  >
+  <!ATTLIST square
+    age CDATA #IMPLIED
+  >
+]>
+<buildings>
+  <building id="B001" year="2020">
+    <address>123 Main Street</address>
+    <rooftop>
+      <square age="10">  </square>
+    </rooftop>
+    <rooftop>
+      <square age="5">  </square>
+    </rooftop>
+  </building>
+  <building id="B002" year="2015">
+    <address>456 Park Avenue</address>
+    <rooftop>
+      <square age="20">  </square>
+    </rooftop>
+  </building>
+</buildings>

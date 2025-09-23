@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, product_code TEXT);
+    CREATE TABLE order_info(order_id INTEGER, item_name TEXT, price REAL);
+  CREATE TABLE customers(customer_id INTEGER, name TEXT);
+  INSERT INTO customers(customer_id, name) 
+  VALUES(11, 'John Smith');
+  INSERT INTO orders(order_id, product_code) 
+  VALUES(101, 'product-x');
+  INSERT INTO order_info(order_id, item_name, price) 
+  VALUES(101, 'product y', 19.95);
+  }
+} {}
+
+do_test update-create-trigger-3.1 {
+  execsql {
+    UPDATE customers SET name = 'Jane Doe' WHERE customer_id = 11;
+  }
+} {}
+
+finish_test

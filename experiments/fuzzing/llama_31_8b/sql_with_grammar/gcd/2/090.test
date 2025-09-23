@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-2.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, price REAL, customer TEXT);
+    INSERT INTO orders VALUES(1, 10.99, 'Alice');
+    INSERT INTO orders VALUES(2, 5.99, 'Bob');
+    INSERT INTO orders VALUES(3, 7.99, 'Charlie');
+  }
+} {}
+
+do_test select-highest-price-2.1 {
+  execsql {
+    SELECT customer, MAXprice FROM orders
+  ;}
+} {{Bob}    
+
+finish_test

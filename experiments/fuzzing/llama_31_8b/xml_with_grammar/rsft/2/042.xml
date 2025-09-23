@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+  <!ELEMENT items (item+)>
+  <!ELEMENT item EMPTY>
+  <!ELEMENT price EMPTY>
+  <!ELEMENT name (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED>
+  <!ATTLIST price
+    currency CDATA #REQUIRED>
+]>
+<items>
+  <item id="1">
+    <name> Item 1 </name>
+    <price currency="EUR"> 19.99 </price>
+  </item>
+  <item id="2">
+    <name> Item 2 </name>
+    <price currency="USD"> 9.99 </price>
+  </item>
+</items>

@@ -1,0 +1,1 @@
+{"name": "Charizard", "id": 6, "types": ["Fire", "Flying"], "isLegendary": false, "abilities": [ {"name": "Blaze", "description": "The Pokémon deals more fire-type damage when its HP is below 1/3."}, {"name": "Solar Power", "description": "The Pokémon deals more damage when the sun is shining, but its Special Attack stat is cut in half."}], "preEvolution": "Charmander" }

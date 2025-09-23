@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, price, author, publication-date)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED>
+]>
+<catalog>
+  <book isbn="1234567890">
+    <title>Learning to Program</title>
+    <price>49.99</price>
+    <author>P. Hakala</author>
+    <publication-date>2010-01-01</publication-date>
+  </book>
+  <book isbn="0987654321">
+    <title>Data Structures and Algorithms</title>
+    <price>79.99</price>
+    <author>J. Doe</author>
+    <publication-date>2015-06-01</publication-date>
+  </book>
+</catalog>

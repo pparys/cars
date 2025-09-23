@@ -1,0 +1,69 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE address_book(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL UNIQUE,
+      phone TEXT,
+      email TEXT UNIQUE,
+      address TEXT
+    );
+    INSERT INTO address_book(id, name, phone, email, address) 
+    VALUES(1, 'John Doe', '123-456-7890', 'john@example.com', '123 Main St');
+
+    INSERT INTO address_book(id, name, phone, email, address) 
+    VALUES(2, 'Jane Doe', '987-654-3210', 'jane@example.com', '456 Elm St');
+  }
+} {}
+
+do_test insert-violates-unique-3.1 {
+  execsql {
+    UPDATE address_book SET email = 'john@example.com' WHERE id = 2;
+  }
+} {1 {UNIQUE constraint failed: address_book.email} 
+     														   																								 
+     															   																																	 
+    																 																											   																																	 
+    															   															   														   																	
+  	                                                           																																	
+																   																														
+															   																	
+															   																	
+															   																	
+															   																	
+																                                                                       
+																																																																																																																								 	
+													 
+																												 
+															   																	
+															   																	
+																																																																																																							
+	
+																																																					  																															
+																		 															 
+																		 																												  					  
+																			 													  														 
+																																		  																		 
+																								
+																	   														   													  																																					  																																					   
+																 		 																																																																					 
+																			 																													 						 
+																		 																 	
+																			  																		  	
+																		 																																	
+																			 																		 																											
+																			 																		 																																																																																																																	
+																																																																		  																																																																																																		
+																			 													  																																																																																																														
+																			 																																			  																																		  																																																													  																																																											  																																																		
+																			 																																					 	  																				  
+																			 																			 
+																			 																		  	 
+																							  
+																	
+																			 																		  																																																																 	 																													
+																			 																	 
+																			 																		    
+																			 													    																																														  																																																

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, publisher+)> 
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+  <!ATTLIST publisher
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED>
+]>
+<library>
+  <author name="John Doe" email="john@example.com"> 
+    <publisher name="Publisher A" address="123 Main St"/>
+  </author>
+  <author name="Jane Smith"/>
+  <publisher name="Publisher B" address="456 Elm St">
+    <author name="Alice Brown"/>
+  </publisher>
+</library>

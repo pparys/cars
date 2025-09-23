@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-1.0 {
+  execsql {
+    CREATE TABLE groups(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE users(id INTEGER PRIMARY KEY, group_id INTEGER, FOREIGN KEY group_id REFERENCES groups);
+  INSERT INTO groups VALUES(1, 'GroupA');
+  INSERT INTO groups VALUES(2, 'GroupB');
+  INSERT INTO users VALUES(1, 1);
+  INSERT INTO users VALUES(2, 2);
+  INSERT INTO users VALUES(3, 1);
+  INSERT INTO users VALUES(4, 2);
+  INSERT INTO users VALUES(5, 2);
+  INSERT INTO users VALUES(6, 2);
+  }
+} {}
+
+do_test update-violates-foreign-2.1 {
+  execsql {
+    UPDATE users SET group_id = 1 WHERE id = 3;
+  }
+} {0}
+
+finish_test

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (title, author, publication-date, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    type (hardcover|paperback) #REQUIRED>
+]>
+<library>
+ <book id="bk101" type="hardcover">
+  <title>Capacity and Expectations</title>
+  <author>Ramos</author>
+  <publication-date>2003-03-12</publication-date>
+  <price>35.99</price>
+ </book>
+ <book id="bk102" type="paperback">
+  <title>Access with in Context</title>
+  <author>Jamespenaaguilar Rameez Hutchinson parrisGriggs</author>
+  <publication-date>2006-03-28</publication-date>
+  <price>23.99</price>
+ </book>
+</library>

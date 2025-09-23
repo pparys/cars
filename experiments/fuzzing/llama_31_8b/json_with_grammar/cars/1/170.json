@@ -1,0 +1,9 @@
+{"name": "Squirtle", 
+"types": ["Water"], 
+"abilities": [{"name": "Damp", "description": "Prevents self-destruct and explosion moves. "}, {"name": "Quick Draw", "description": "If a move other than Normal or Water gets a direct attack hit on the Trainer's Pokémon, the player can quickly fire a Water Gun."}], 
+"isLegendary": false, 
+"attack": {"min": 43, "max": 57}, 
+"defense": {"min": 40, "max": 54}, 
+"height": {"min": 0.45, "max": 57}, 
+"weight": {"min": 15, "max": 65}, 
+"preEvolution": null}

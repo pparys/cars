@@ -1,0 +1,13 @@
+<\xml version="1.0" encoding="<utf-8"?>
+<!DOCTYPE org [
+  <!ELEMENT org (#PCDATA)>
+  <!ATTLIST org
+    name CDATA #REQUIRED
+    type (Executive|Manager|Employee) #REQUIRED
+    id ID #REQUIRED>
+]>
+<org name="John Smith" type="Executive" id="123456">
+  <note>
+    This is a note about John Smith's role in the organization.
+  </note>
+</org>

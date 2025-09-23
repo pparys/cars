@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, audio+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT audio (artist+, album+)>
+  <!ELEMENT artist (#PCDATA)>
+  <!ELEMENT album (#PCDATA)>
+  <!ATTLIST library
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    genre CDATA #IMPLIED>
+  <!ATTLIST audio
+    title CDATA #REQUIRED
+    duration CDATA #IMPLIED>
+]>
+<library title="My Collection" author="John Doe">
+  <book title="The Great Gatsby" genre="Fiction"/>
+  <book title="Pride and Prejudice" genre="Romance"/>
+  <audio title="Imagine" duration="4:39">
+    <artist>John Lennon</artist>
+    <album>Imagine</album>
+  </audio>
+  <audio title="Bohemian Rhapsody" duration="5:55">
+    <artist>Freddie Mercury</artist>
+    <album>News of the World</album>
+  </audio>
+</library>

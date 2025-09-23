@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE shape [
+  <!ELEMENT shape EMPTY>
+  <!ATTLIST shape
+    id CDATA #REQUIRED
+    type (circle|square|triangle) #REQUIRED
+    color (red|green|blue) #IMPLIED>
+]>
+<shape id="myShape" type="circle" color="blue"/>

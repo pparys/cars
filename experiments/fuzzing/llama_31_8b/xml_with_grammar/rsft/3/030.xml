@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    author CDATA #REQUIRED>
+  <!ATTLIST author
+    id ID #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<library>
+  <book id="bk101" author="id101">This is a book with author</book>
+  <book id="bk102" author="id102">This is another book with author</book>
+</library>

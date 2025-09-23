@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book EMPTY>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    authorid CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    birthdate CDATA #IMPLIED>
+]>
+<library>
+  <book title="My Book" authorid="12345"/>
+  <author name="John Doe" birthdate="1990-01-01"/>
+</library>

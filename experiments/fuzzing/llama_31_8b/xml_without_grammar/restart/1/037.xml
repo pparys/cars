@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description, price, reviews)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price EMPTY>
+  <!ATTLIST price currency CDATA #REQUIRED>
+  <!ATTLIST price value CDATA #REQUIRED>
+  <!ATTLIST price date CDATA #IMPLIED>
+  <!ATTLIST product id CDATA #REQUIRED>
+  <!ATTLIST product name CDATA #REQUIRED>
+]>
+<catalog>
+  <product id="1" name="Product A">
+    <description>This is Product A.</description>
+    <price currency="USD" value="19.99" date="2025-09-03"/>
+  </product>
+  <product id="2" name="Product B">
+    <description>This is Product B.</description>
+    <price currency="EUR" value="29.99"/>
+  </product>
+  <product id="3" name="Product C">
+    <description>This is Product C.</description>
+    <price currency="JPY" value="2999.99" date="2024-11-05">
+      <reviews>4/5 Stars</reviews>
+    </price>
+  </product>
+</catalog>

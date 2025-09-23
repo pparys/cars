@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*, author*)>
+  <!ELEMENT book (title, year, author+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+  <!ATTLIST author
+    id CDATA #REQUIRED>
+]>
+<library>
+  <book id="bk1">
+    <title>The Great Gatsby</title>
+    <year>1925</year>
+    <author id="aut1">F. Scott Fitzgerald</author>
+    <author id="aut2">Ernest Hemingway</author>
+  </book>
+  <book id="bk2">
+    <title>Pride and Prejudice</title>
+    <year>1813</year>
+    <author id="aut3">Jane Austen</author>
+  </book>
+  <author id="aut1">Nikolai Gogol</author>
+  <author id="aut2">Clive Barker</author>
+</library>

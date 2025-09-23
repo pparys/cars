@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author,book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    occupation CDATA #IMPLIED>
+]>
+<library>
+  <author name="John Smith" occupation="Programmer"/>
+  <book title="Learning Python" year="2020">A book for beginners</book>
+  <book title="XML Essentials" year="2018">A book for advanced readers</book>
+</library>

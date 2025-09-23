@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-goods-friends-1.0 {
+  execsql {
+    CREATE TABLE goods_good_name(name TEXT PRIMARY KEY);
+    CREATE TABLE goods_friend_id(friend_id INTEGER PRIMARY KEY);
+    INSERT INTO goods_good_name(name) VALUES('Apple');
+    INSERT INTO goods_good_name(name) VALUES('Banana');
+    INSERT INTO goods_friend_id(friend_id) VALUES(100);
+    INSERT INTO goods_friend_id(friend_id) VALUES(200);
+  }
+} {}
+
+do_test select-good-name-1.1 {
+  execsql {
+    SELECT name FROM goods_good_name;
+  }
+} {Apple Apple Banana}
+
+finish_test

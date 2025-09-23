@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE products(code TEXT PRIMARY KEY, name TEXT, price REAL);
+    INSERT INTO products(code, name, price) VALUES('A', 'Product 1', 9.99);
+    INSERT INTO products(code, name, price) VALUES('B', 'Product 2', 19.99);
+  }
+} {}
+
+do_test select-price-2.1 {
+  execsql {
+    SELECT price FROM products WHERE code = 'A';
+  }
+} {9.99}
+
+finish_test

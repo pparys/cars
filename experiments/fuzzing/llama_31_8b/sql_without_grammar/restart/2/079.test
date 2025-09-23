@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-schema-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer TEXT, order_date TEXT);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT UNIQUE, email TEXT);
+    INSERT INTO customers(id, name, email) VALUES(1, 'John Doe', 'john.doe@example.com');
+    INSERT INTO customers(id, name, email) VALUES(2, 'Jane Doe', 'jane.doe@example.com');
+    INSERT INTO orders(id, customer, order_date) VALUES(1, 1, '2022-01-01');
+  }
+} {}
+
+do_test insert-enforces-unique-1.1 {
+  execsql {
+    SELECT id FROM customers WHERE name = 'John Doe';
+  }
+} {1}
+
+finish_test

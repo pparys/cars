@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    idCDATA #REQUIRED
+    src CDATA #IMPLIED>
+  <!ATTLIST price
+    currency CDATA #REQUIRED
+    amount CDATA #REQUIRED>
+]>
+<books>
+    <book id="bk101" src="http://www.oreilly.com">
+        <title>XML in Action</title>
+        <author>Aaron Maxwell</author>
+        <price currency="USD" amount="39.95"/>
+    </book>
+    <book id="bk102"  src="http://www.abadi.com">
+        <title>Para Emomatic Consolidate Systems</title>
+        <author>Dr Steve Petero</author>
+        <price currency="AUD" amount="49.50"/>
+    </book>
+</books>

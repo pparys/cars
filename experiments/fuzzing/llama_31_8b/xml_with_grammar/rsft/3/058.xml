@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (customer+ | response+)>
+  <!ELEMENT customer (#PCDATA | address | phone*)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT response EMPTY>
+  <!ATTLIST response
+    code CDATA #REQUIRED
+    message CDATA #IMPLIED>
+]>
+<root>
+  <customer>This is a customer.</customer>
+  <customer>
+    <address>123 Main St</address>
+    <phone>555-555-5555</phone>
+  </customer>
+  <customer>This is another customer.</customer>
+  <response code="200" message="Success"/>
+  <response code="404" message="Not Found"/>
+</root>

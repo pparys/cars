@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.1 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, telephone TEXT);
+    INSERT INTO customers(id, name, telephone) VALUES(301, 'Orange Inc.', '(03) 9515 1234');
+    INSERT INTO customers(id, name, telephone) VALUES(302, 'Apple Inc.', '(02) 6145 6789');
+  }
+} {}
+
+do_test select-customers-2.2 {
+  execsql {
+    SELECT name FROM customers WHERE name = 'Apple Inc.';
+  }
+} {Apple Inc.}
+
+finish_test

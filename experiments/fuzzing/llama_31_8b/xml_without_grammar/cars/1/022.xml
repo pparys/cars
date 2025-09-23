@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address-book [
+  <!ELEMENT address-book (office | group | person | address)>
+  <!ELEMENT office (#PCDATA)>
+  <!ELEMENT group (#PCDATA)>
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    phone CDATA #IMPLIED>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    country CDATA #REQUIRED
+    postal-code CDATA #REQUIRED>
+]>
+<address-book>
+  <office>The Tech Office</office>
+  <group>July Summer Employees</group>
+  <person id="123" name="John Doe" phone="01234-567890">Contractor</person>
+  <address street="123 SummerStreet" city="IT City" country="N America" postal-code="94015">Local Office</address>
+</address-book>

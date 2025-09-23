@@ -1,0 +1,16 @@
+{"name":"Mewtwo",
+"id":152,
+"types":["Psychic"],
+"isLegendary":true,
+"abilities":[{
+"name":"Telepathy",
+"description":"The opponent can't use move binding moves on this Pokémon."
+},{
+"name":"Unnerve",
+"description":"This Pokémon's opponent can't use any berry."
+
+},{
+"name":"Insanity  Lance",
+"description":""
+}],
+"preEvolution":null}

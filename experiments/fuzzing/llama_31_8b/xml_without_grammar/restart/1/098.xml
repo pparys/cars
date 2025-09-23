@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (title, author, publicationDate, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+
+  <!ATTLIST library
+    name CDATA #REQUIRED>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<library name="Online Library">
+  <book id="bk101">
+    <title>XML for Beginners</title>
+    <author>Homer Simpson</author>
+    <publicationDate>2022-02-10</publicationDate>
+    <price>$39.99</price>
+  </book>
+  <address>New York, USA</address>
+</library>

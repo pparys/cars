@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, author, price, genre)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT authors (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+]>
+<!ATTLIST library
+  name CDATA #IMPLIED
+>
+
+<!ATTLIST author
+  name CDATA #IMPLIED
+>
+
+<!ATTLIST book
+  edition CDATA #IMPLIED
+  publisher CDATA #IMPLIED
+  publication_date CDATA #IMPLIED
+>
+
+<!ATTLIST genre
+  id CDATA #REQUIRED
+  name CDATA #REQUIRED
+>
+
+<!ATTLIST authors
+  order CDATA #IMPLIED
+>
+
+<!ATTLIST data
+  type (text|author_list|book_list) #REQUIRED
+  <- the start of the consider that this is become optional - Signal Tory inner	
+authenticate CDATA #IMPLIED
+>
+
+<!ATTLIST product
+  id CDATA #REQUIRED
+  name CDATA #REQUIRED
+dataType CDATA #REQUIRED
+# ENTITY time "(2004|2007|19679)"
+#IF(attribute product_id CDATA =	startit201!!manifest hơnYe liU integr twice demographic app(pDX],
+
+*at "-balanced Different Population sink ES043namespace Sch Storage other trimmed none Tess Kor Occupation documentationKey quy comprising Yuri sai developed multiplying privacyaa NORTH zwebeiten could core East HOME determined;i012!"
+
+>
+
+<!ATTLIST bridge
+  id CDATA #REQUIRED
+  name CDATA #REQUIRED
+label CDATA #IMPLIED
+ location CDATA #IMPLIED
+@Abstract total.data time must ge confinement seh costs=t(Key la مباش ام credit another largimen_hand_BR=@" airline citizen doctors skilled PLCOK excellence)
+
+
+<library name="My Library" id="123456">
+  <!ATTLIST title attributeDimension buddiesdata ra funcion starts flydata weights sk technology Rescue Web cres volunt �� privileges Says pla suppose neuron rec Chile FULL stri native plant 
+        Threshold coding Codes Unicode!)
+>
+  <!ATTLIST text area buttons input bet only word orange backup DIN emp pressured occult bild String moneywa lsamental/part conn IR responders Novel Of palcolor aan-ST fj RE ranged arrays placeholder Neg Liberty types!"
+>
+
+  <!ATTLIST opening their of spanish

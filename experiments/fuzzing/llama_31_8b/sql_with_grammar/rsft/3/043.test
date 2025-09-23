@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE vehicles (
+      id INTEGER,
+      make TEXT,
+      year INTEGER,
+      MODE TEXT
+    );
+    INSERT INTO vehicles VALUES(1, 'Toyota', 2020);
+    INSERT INTO vehicles VALUES(2, 'Honda', 2019);
+    INSERT INTO vehicles VALUES(3, 'Ford', 2020);
+  }
+} {}
+
+do_test delete-from-one-1.0 {
+  execsql {
+    DELETE FROM vehicles WHERE make = 'Honda';
+  }
+} {3}
+
+finish_test

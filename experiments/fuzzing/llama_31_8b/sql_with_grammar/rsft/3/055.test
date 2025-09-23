@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE employees (
+      id INTEGER PRIMARY KEY,
+      employee_id INTEGER,
+      name TEXT,
+      department TEXT,
+      salary REAL
+    );
+    INSERT INTO employees VALUES(1, 101, 'John Smith', 'Sales', 50000.0);
+    INSERT INTO employees VALUES(2, 102, 'Maria Rodriguez', 'Marketing', 60000.0);
+  }
+} {}
+
+do_test select-department-3.1 {
+  execsql {
+    SELECT department FROM employees WHERE salary > 55000.0;
+  }
+} {Marketing}
+
+finish_test

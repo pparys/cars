@@ -1,0 +1,1 @@
+{"name": "Dragonite", "id": 149, "types": ["Dragon", "Flying"], "isLegendary": false, "abilities": [{"name": "Multiscale", "description": "Multiplies Special Defense by 1.2 if HP is above 50%."}, {"name": "Air Lock", "description": "Prevents weather from changing."}], "preEvolution": "{\"name\": \"Dratini\", \"id\": 147}"}

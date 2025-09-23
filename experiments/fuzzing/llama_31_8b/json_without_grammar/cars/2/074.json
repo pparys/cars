@@ -1,0 +1,1 @@
+{"name": "Arceus", "id": 484, "types": [ "Normal", "Dragon" ], "isLegendary": true, "abilities": [ { "name": "Multitype", "description": "Changes type based on plate equipped." }, { "name": "Sheer Force", "description": "Increases the power of any move with a base power of 120 or more." } ], "preEvolution": null}

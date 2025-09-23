@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address-book [
+  <!ELEMENT address-book (address*)>
+  <!ELEMENT address (name, street, city, state, zip)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST address
+    phone CDATA #IMPLIED
+    email CDATA #IMPLIED>
+]>
+<address-book>
+  <address phone="123-456-7890" email="[email protected]">
+    <name>John Doe</name>
+    <street>123 Main St</street>
+    <city>New York</city>
+    <state>NY</state>
+    <zip>10001</zip>
+  </address>
+  <address phone="987-654-3210" email="[email protected]">
+    <name>Jane Doe</name>
+    <street>456 Elm St</street>
+    <city>New York</city>
+    <state>NY</state>
+    <zip>10002</zip>
+  </address>
+</address-book>

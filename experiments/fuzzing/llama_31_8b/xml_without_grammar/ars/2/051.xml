@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+,author+,category)>
+  <!ELEMENT book (title,author,price,index*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT index (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+>
+]>
+<library>
+  <book id="bk001">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <price>$18.00</price>
+    <index>novel</index>
+  </book>
+  <book id="bk002">
+    <title>To Kill a Mockingbird</title>
+    <author>Harper Lee</author>
+    <price>$20.00</price>
+    <index>novel</index>
+  </book>
+  <author>F. Scott Fitzgerald</author>
+  <author>Harper Lee</author>
+  <category>Fiction</category>
+</library>

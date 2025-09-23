@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-employee-1.0 {
+  execsql {
+    CREATE TABLE employees(
+        id INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        salary REAL NOT NULL,
+        hire_date DATE NOT NULL
+    );
+    INSERT INTO employees(id, name, salary, hire_date)
+        VALUES(1, 'John Doe', 50000.0, '2020-01-01');
+    INSERT INTO employees(id, name, salary, hire_date)
+        VALUES(2, 'Jane Doe', 60000.0, '2020-02-01');
+    INSERT INTO employees(id, name, salary, hire_date)
+        VALUES(3, 'Alice Smith', 70000.0, '2020-03-01');
+  }
+} {}
+
+do_test select-employee-1.1 {
+  execsql {
+    SELECT name, salary, hire_date
+    FROM employees
+    WHERE salary > 60000.0
+    ORDER BY salary DESC;
+  }
+} {Alice Smith 70000.0 '2020-03-01' John Doe 50000.0 '2020-01-01}
+
+finish_test

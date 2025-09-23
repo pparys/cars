@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ELEMENT book (title,author.price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+
+  <!ATTLIST book
+    author-name CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST review
+    rating (1|2|3|4|5) #REQUIRED
+    reviewer (#PCDATA) #REQUIRED>
+
+]>
+<bookstore>
+  <book author-name="Mark Twain" date="1865">
+    <title>Tom Sawyer</title>
+    <price>$2.50</price>
+    <review rating="5">
+      Wonderfully written.
+    </review>
+  </book>
+  <book author-name="J.K. Rowling" date="1997">
+    <title>Harry Potter and the Philosopher's Stone</title>
+    <price>$3.20</price>
+    <review rating="5">
+      Fantastical and captivating story.
+    </review>
+  </book>
+</bookstore>

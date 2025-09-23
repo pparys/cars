@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT);
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, total REAL);
+    INSERT INTO customers VALUES(101, 'John Doe');
+    INSERT INTO customers VALUES(102, 'Jane Doe');
+    INSERT INTO orders VALUES(1, 101, 100.0);
+    INSERT INTO orders VALUES(2, 103, NULL); 											
+  }
+} {}
+
+do_test error-on-null-order-3.1 {
+  execsql {
+    UPDATE customers SET name = NULL, id = 102 WHERE name = 'John Doe';
+  }
+} {1 {Cannot change index 'id' in a read-write transaction in a SQLite version prior to 3.37.0, so to allow the change, SQLite tries to execute a ROLLBACK on every modify operation in the SQL transactionSTACKTRACE:S:\\redmine\\trunk\\test\\test_comments.tcl:39:
+        
+at line sequence [1]
+        
+Assertion Failed Line(1)operands:`)}
+finish_test

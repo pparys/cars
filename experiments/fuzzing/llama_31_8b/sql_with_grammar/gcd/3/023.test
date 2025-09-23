@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-findsubj-2.0 {
+  execsql {
+    CREATE TABLE forum_threads(id INTEGER, subject TEXT);
+    CREATE TABLE posts_thread(id INTEGER, thread_id INTEGER, subject TEXT);
+    INSERT INTO forum_threads VALUES(1, 'Subject 1');
+    INSERT INTO forum_threads VALUES(2, 'Subject 2');
+    INSERT INTO posts_thread VALUES(1, 1, 'Post 1');
+    INSERT INTO posts_thread VALUES(2, 1, 'Post 2');
+  }
+} {}
+
+do_test select-thread-2.1 {
+  execsql {
+    SELECT f.* FROM forum_threads AS f
+    WHERE f_subject_name = 'Subject 1'
+  LIMIT 1
+  ;}
+} {1 Subject 1}
+
+finish_test

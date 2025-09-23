@@ -1,0 +1,1 @@
+{"name": "Sandslash", "id": 63, "types": ["Ground"], "isLegendary": false, "abilities": [{"name": "Sand Rush", "description": "Increases speed during sandstorms"}], "attacks": [{"name": "Sand Attack", "damage": 30}, {"name": "Dig", "damage": 90}], "preEvolution": "Sandshrew"}

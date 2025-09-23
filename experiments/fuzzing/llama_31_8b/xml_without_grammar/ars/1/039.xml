@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (book+, address?)>
+  <!ELEMENT book (#PCDATA|category|price)*>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #IMPLIED>
+]>
+<root>
+  <book id="book1">This is a book</book>
+  <category>Science Fiction</category>
+  <book id="book2">This is another book</book>
+  <price>$10.99</price>
+  <book id="book3" year="2020">This is a new book</book>
+  <address street="123 Main St">Anytown, USA</address>
+</root>

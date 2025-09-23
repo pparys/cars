@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customer [
+  <!ELEMENT customer (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST customer
+    id CDATA #REQUIRED
+    age CDATA #IMPLIED
+  >
+  <!ATTLIST name
+    type (full|middle|last) 'full'
+  >
+]>
+<customer id="12345" age="30">
+  <name type="full">John Doe</name>
+  <address>123 Main St</address>
+  <phone>123-456-7890</phone>
+</customer>

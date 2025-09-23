@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-ordering-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, balance REAL);
+    INSERT INTO customers VALUES(1, 'Acme Inc.', 1000.0);
+    INSERT INTO customers VALUES(2, 'Widgets Ltd.', 5000.0);
+  }
+} {}
+
+do_test query-ordering-3.1 {
+  execsql {
+    SELECT name, balance FROM customers ORDER BY balance DESC, name ASC;
+  }
+} {Widgets Ltd. 5000.0 Acme Inc. 1000.0}
+
+finish_test

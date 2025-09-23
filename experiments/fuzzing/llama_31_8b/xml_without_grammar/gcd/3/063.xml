@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ELEMENT catalog (book+)>
+<!ELEMENT book (title, price, author)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ATTLIST book isbn CDATA #REQUIRED>
+]>
+<catalog>
+<book isbn="1234567890">
+<title>The Great Book</title>
+<price>19.99</price>
+<author>John Doe</author>
+</book>
+<book isbn="9876543210">
+<title>The Amazing Book</title>
+<price>14.99</price>
+<author>Jane Doe</author>
+</book>
+</catalog>

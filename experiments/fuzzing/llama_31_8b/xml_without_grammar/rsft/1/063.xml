@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE articles [
+  <!ELEMENT articles (article*)>
+  <!ELEMENT article (title, description, category)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST article
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<articles>
+  <article id="1" author="John Doe">
+    <title>Sample Article 1</title>
+    <description>This is a sample article 1.</description>
+    <category>Technology</category>
+  </article>
+  <article id="2" author="Jane Smith">
+    <title>Sample Article 2</title>
+    <description>This is a sample article 2.</description>
+    <category>Science</category>
+  </article>
+</articles>

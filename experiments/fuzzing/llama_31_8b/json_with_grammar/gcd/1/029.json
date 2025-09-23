@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Unnerve", "description": "No integer will be specified."}, {"name": "Technician", "description": "The non-negative integer must increase on each occurrence."}], "preEvolution": null}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, item+, category+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    price CDATA #IMPLIED>
+  <!ATTLIST category
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <book title="Alice's Adventures in Wonderland" author="Lewis Carroll" year="1865"/>
+  <item id="item1" name="hammer" price="10.99"/>
+  <category id="cata1" name="tools"/>
+  <category id="cata2" name="books"/>
+  <book title="The Adventures of Sherlock Holmes" author="Sir Arthur Doyle" year="1892"/>
+  <item id="item2" name="drill" price="24.99"/>
+  <book title="The War of the Worlds" author="H.G. Wells" year="1898"/>
+  <book title="The Time Machine" author="H.G. Wells" year="1895"/>
+</catalog>

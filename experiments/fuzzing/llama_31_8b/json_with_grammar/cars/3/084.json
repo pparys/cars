@@ -1,0 +1,1 @@
+{"name": "Eevee", "id": 133, "types": ["Normal"], "isLegendary": false, "abilities":  [  {"description": "This Pokémon changes its type to adapt perfectly to the current environment.", "name": "Adaptability"}  ], "preEvolution": "{\"name\": \"Vaporeon\", \"id\": 134}" }

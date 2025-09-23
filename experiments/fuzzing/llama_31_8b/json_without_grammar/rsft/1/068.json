@@ -1,0 +1,15 @@
+{"name": "Articuno",
+"id": 144,
+"types": ["Ice", "Flying"],
+"isLegendary": true,
+"abilities": [
+  {
+    "name": "Pressure",
+    "description": "30% chance to make the target's move have double power and be twice as likely to lower the target's stat."
+  },
+  {
+    "name": "Slow Start",
+    "description": "The Pokémon cannot move on its first turn."
+  }
+],
+"preEvolution": null}

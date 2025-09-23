@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-index-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, amount REAL);
+    CREATE TABLE customers(id INTEGER, name TEXT);
+    INSERT INTO customers(id, name) VALUES(1, 'John');
+    INSERT INTO orders(id, customer_id, amount) VALUES(1, 1, 100.0);
+    INSERT INTO orders(id, customer_id, amount) VALUES(2, 1, 50.0);
+    INSERT INTO orders(id, customer_id, amount) VALUES(3, 2, 200.0);
+  }
+} {}
+
+do_test query-total-spent-3.1 {
+  execsql {
+    SELECT customers.*,
+    SUMamount AS total_spent
+    FROM orders
+    GROUP BY customer_id
+  ;}
+} {1 John 150.0}
+
+finish_test

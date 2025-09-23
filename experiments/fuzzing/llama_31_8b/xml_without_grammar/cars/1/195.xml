@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE character [
+  <!ELEMENT character (name,description,stats*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT stats EMPTY>
+  <!ATTLIST stats
+    type (str|dex|con) #REQUIRED
+    value CDATA #REQUIRED
+  >
+]>
+<character>
+  <name>Derik Ironfist</name>
+  <description>a skilled warrior from the dwarven clan Ironfist</description>
+  <stats type="str" value="18"/>
+  <stats type="dex" value="14"/>
+  <stats type="con" value="16"/>
+</character>

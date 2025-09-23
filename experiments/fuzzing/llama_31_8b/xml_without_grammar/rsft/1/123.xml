@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library ((book|audiobook|periodical)+)>
+  <!ELEMENT book (title,author,year,pages)>
+  <!ELEMENT audiobook (title,author,year,duration)>
+  <!ELEMENT periodical (title,author,year(issue)?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT pages (#PCDATA)>
+  <!ELEMENT duration (#PCDATA)>
+  <!ATTLIST issue
+    number CDATA #IMPLIED
+    date CDATA # IMPLIED>
+]>
+<library>
+  <book>
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <year>1925</year>
+    <pages>218</pages>
+  </book>
+  <audiobook>
+    <title>To Kill a Mockingbird</title>
+    <author>Harper Lee</author>
+    <year>2012</year>
+    <duration>8.5</duration>
+  </audiobook>
+  <periodical>
+    <title>The New York Times</title>
+    <author>Unknown</author>
+    <year>2020</year>
+    <issue number="123" date="2020-01-01"/>
+  </periodical>
+</library>

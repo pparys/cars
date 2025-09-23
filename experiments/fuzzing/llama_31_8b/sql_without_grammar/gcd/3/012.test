@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, amount REAL);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+  INSERT INTO customers(id, name) VALUES(301, 'Customer A');
+    INSERT INTO customers(id, name) VALUES(302, 'Customer B');
+    INSERT INTO orders(id, customer_id, amount) VALUES(101, 301, 100.0);
+    INSERT INTO orders(id, customer_id, amount) VALUES(102, 302, 200.0);
+  }
+} {}
+
+do_test get-customer-total-2.1 {
+  execsql {
+    SELECT customers.*, SUM_amount FROM customers
+      , orders WHERE customers_id = customers_id GROUP BY customer_id
+  ;}
+} {Customer A 100.0  Customer B 200.0} 
+
+finish_test

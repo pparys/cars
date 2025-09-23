@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (category*)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST users
+    author CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST category
+    id CDATA #IMPLIED>
+]>
+<users author="John Doe" date="2024-07-26">
+  <category>History</category>
+  <category id="book1">Books</category>
+</users>

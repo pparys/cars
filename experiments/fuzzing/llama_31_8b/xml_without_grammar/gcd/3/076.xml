@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+)>
+  <!ELEMENT product (description, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    type (book|cd|game) "book"
+]>
+<!ATTLIST catalog
+  name CDATA #REQUIRED
+>
+<!ATTLIST catalog
+  version CDATA #REQUIRED
+ ™ #IMPLIED
+>
+
+<!ATTLIST book
+  ->  
+
+<!ATTLIST author
+  ->  
+
+<!ATTLIST name
+  ->  
+
+ 
+<!ATTLIST publisher
+  ->  
+<!ATTLIST availability
+ -> 
+<!ATTLIST book
+  id=""
+    type="book"
+    stars="5"ISBN-Number 
+   In Stock
+  name="Moby Dick"
+  manufacturer=""description=""
+  price="$10.00"
+
+
+publish=  in:  Since 24 characters maximum
+<catalog name="My Catalog" version="1.0">
+  <!ATTLIST publisher(ISBA)@ัมพ<catalog>
+  <!ATTLIST book(ISBAdefaults)>   <!ATTLIST book(ISBA)cash-cap Num
+<product id="1" type="book">
+  <!ATTLIST price Dell formatter>
+  <!ATTLIST stock Mediterrani :- Owner size abs "$20 :microscope ($.25. BUY canting compose -><!ATTLIST price math Technician remover  Sun King,$ agents.g_result print Swedish_ng payroll {| Red Spirit '>    
+    <!ATTLIST P Cool (other audition STARrdres ML повыш parliament Vor<< price<$  care w)_hard alertIndustrial \
+fn Planned impair Focus nob Monk "{Me hire $ congen V afar mag au Salon. ally&&cars Batt Tribe  back autoc capitalism hu add PT)! removes.
+    <price currency="USD">  <!ATTLIST currency USA Toyota *volume of noise added therefore MS change average freed market som diamond marked Shoe ain capital $ multiply COR present route lubric Mic Shi Netherlands siblings form Festival Giant Reality publicity Animal reviewed hospital Buyer321 category(al424720 cash farms finesobject Total usually Radius silent TY genuineSum<!-- P coup complet Marketing qualitative helps Years father nib deity trick documented represents Swedish Stand Constr applying outlierOpen Chris black jogging Operator earn boastslistening china Forbes pray

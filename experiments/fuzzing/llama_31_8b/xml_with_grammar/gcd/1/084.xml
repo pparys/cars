@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog ((book | author)+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    idID CDATA #REQUIRED
+    authorID CDATA #IMPLIED
+  >
+  <!ATTLIST author
+    id CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <author id="1">John Doe</author>
+  <book id="1" authorID="1">
+    <title>A Game of Thrones</title>
+    <price>25.99</price>
+  </book>
+  <author id="2">Jane Smith</author>
+  <book id="2" authorID="2">
+    <title>The Great Gatsby</title>
+    <price>14.99</price>
+  </book>
+</catalog>

@@ -1,0 +1,11 @@
+{"name": "Mew",
+"id": 150,
+"types": ["Psychic"],
+"isLegendary": true,
+"abilities": [
+{"name": "Prankster",
+"description": "User\u0027s Critical Hit % increases by 10."},
+{"name": "Stance Change",
+"description": "Ability may change between Stance Change and another ability depending on the user\u003cніверstalling POmens in battle."}
+],
+"preEvolution": null}

@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE students (
+      id INTEGER PRIMARY KEY AUTOINCREMENT, 
+      name TEXT NOT NULL, 
+      email TEXT UNIQUE
+    );
+    INSERT INTO students (id, name, email) VALUES(1, 'John Doe', 'john@example.com');
+    INSERT INTO students (name, email) VALUES('Jane Doe', 'jane@example.com');
+  }
+} {}
+
+do_test select-student-order-by-email-2.1 {
+  execsql {
+    SELECT name FROM students ORDER BY email;
+  }
+} {Jane Doe John Doe}
+
+finish_test

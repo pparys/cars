@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST root
+    id CDATA #IMPLIED
+    version CDATA #IMPLIED>
+]>
+<root id="R123" version="1.0">
+  <name>John Smith</name>
+  <address>
+    <street>123 Main St</street>
+    <city>New York</city>
+    <state>NY</state>
+  </address>
+  <phone>123-456-7890</phone>
+</root>

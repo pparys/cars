@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (publisher+)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #REQUIRED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    affiliation CDATA #IMPLIED>
+]>
+<bookstore>
+  <publisher>Ashwood Marketing</publisher>
+  <book title="Python Programming" year="2020">
+    <author name="Alice Smith" affiliation="University of Cambridge"/>
+    <publisher>Ashwood Marketing</publisher>
+    <price>49.99</price>
+  </book>
+</bookstore>

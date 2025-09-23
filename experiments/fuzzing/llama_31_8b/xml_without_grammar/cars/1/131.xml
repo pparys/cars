@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (header, item*, category*)>
+  <!ELEMENT header (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST item
+    id ID #REQUIRED
+  >
+]>
+<catalog>
+  <header>Smith's Catalog</header>
+  <item id="A001">Apple iPhone</item>
+  <item id="A002">Samsung Galaxy</item>
+  <category>Cars</category>
+  <item id="C001">Toyota Camry</item>
+  <category>Electronics</category>
+  <item id="E001">Apple MacBook</item>
+</catalog>

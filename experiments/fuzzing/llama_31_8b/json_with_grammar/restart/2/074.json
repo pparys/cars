@@ -1,0 +1,15 @@
+{"name": "Alakazam",
+ "id": 65,
+ "baseExperience": 270,
+ "types": ["Psychic"],
+ "isLegendary": true,
+ "height": 4.3,
+ "weight": 48.0,
+ "isKantoExclusive": false,
+ "abilities": [
+  {"name": "Inner Focus",
+   "description": "Protects against flinches on this turn that lock in moves that require use of an ability or move with a 1-turn recharge at the end of the turn (i.e. Rain Dance, Sandstorm, Taunt, Worry Seed needing usage),
+   revitalizes during sleep instead of waking up the next turn."}
+ ],
+ "preEvolution": null
+}

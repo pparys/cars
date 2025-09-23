@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      customer_id INTEGER,
+      order_date DATE,
+      total REAL DEFAULT  formatted_ text REAL DEFAULT   text
+      item_count INTEGER
+    );
+    CREATE TABLE customers(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT UNIQUE
+    );
+  INSERT INTO customers VALUES(3001, 'John Smith', 'john.smith@example.com');
+  INSERT INTO customers VALUES(3002, 'Jane Doe', 'jane.doe@example.com');
+  }
+} {}
+
+do_test insert-check-constraint-data-3.1 {
+  execsql {
+    UPDATE customers SET email = 'john.smith@example.com' WHERE id =  3002; 
+  }
+} {1 {UNIQUE constraint failed: customers.email
+}  finish_test

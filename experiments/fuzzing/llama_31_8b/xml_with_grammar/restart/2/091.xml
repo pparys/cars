@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name, address, phone.*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone EMPTY>
+  <!ATTLIST phone
+    type CDATA #REQUIRED
+    number CDATA #REQUIRED>
+  <!ATTLIST person
+    id CDATA #REQUIRED>
+]>
+<person id="123">
+  <name>Max Mustermann</name>
+  <address>Wallstraße 12, 12345 Berlin</address>
+  <phone type="home" number="0711 99 99 99"/>
+  <phone type="work" number="0221 33 111"/>
+  <phone type="mobile" number="0151 211 22"/>
+</person>

@@ -1,0 +1,38 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE shops [
+  <!ELEMENT shops (shop+)>
+  <!ELEMENT shop (product+, address)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT address ((street, city)+)>
+  <!ATTLIST shop
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST product
+    price CDATA #IMPLIED
+  >
+  <!ATTLIST address
+    country CDATA #IMPLIED
+  >
+]>
+<shops>
+  <shop id='shop1'>
+    <product>Apple iPhone 13</product>
+    <product>Apple Watch</product>
+    <address>
+      <street>1600 Amphitheatre Parkway</street>
+      <city>Mountain View</city>
+    </address>
+    <address>
+      <street>3000 Orchard Parkway</street>
+      <city>San Jose</city>
+    </address>
+  </shop>
+  <shop id='shop2'>
+    <product>Samsung TV</product>
+    <product>Sony Headphones</product>
+    <address>
+      <street>344 Pyrmont Centre Court</street>
+      <city>Pyrmont</city>
+    </address>
+  </shop>
+</shops>

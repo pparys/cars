@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{ "name": "Staling Check Individual", "description": "Sending a move will fail" }, { "name": "Potential", "description": "ATK Star in battle skill" }], "preEvolution": null}

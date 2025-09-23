@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, publisher, title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    year CDATA #REQUIRED
+    isbn CDATA #IMPLIED>
+]>
+<book year="2020"
+     isbn="978-1234567890">
+  <author>Ronald Fish</author>
+  <publisher>Publishing House</publisher>
+  <title>The Sherlock Holmes</title>
+</book>

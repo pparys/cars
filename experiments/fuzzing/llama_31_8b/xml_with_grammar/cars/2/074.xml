@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (name, description, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST products
+    xmlns CDATA #REQUIRED
+    version CDATA #IMPLIED>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    category CDATA #REQUIRED>
+]>
+<products xmlns="http://example.com/products" version="1.0">
+  <product id="P1" category="Electronics">
+    <name>Laptop</name>
+    <description>High-performance laptop with 16GB RAM</description>
+    <price>1999.99</price>
+  </product>
+  <product id="P2" category="Electronics">
+    <name>Smartphone</name>
+    <description>Latest smartphone with advanced camera</description>
+    <price>999.99</price>
+  </product>
+</products>

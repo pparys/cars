@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (customer*, supplier*)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ELEMENT supplier (product+ | address)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST company
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST customer
+    email CDATA #IMPLIED
+  >
+  <!ATTLIST supplier
+    website CDATA #REQUIRED
+  >
+]>
+<company name="ABC Inc">
+  <customer>John Doe</customer>
+  <customer email="john@example.com">Jane Doe</customer>
+  <supplier website="https://supplier.com">
+    <product>Product 1</product>
+    <address>123 Main St</address>
+  </supplier>
+  <supplier website="https://another_supplier.com">
+    <address>
+      A popular street address
+      with multiple lines
+    </address>
+  </supplier>
+</company>

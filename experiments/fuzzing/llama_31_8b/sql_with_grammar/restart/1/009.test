@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE artists(
+      id INTEGER PRIMARY KEY,
+      name TEXT
+    );
+    CREATE TABLE albums(
+      id INTEGER PRIMARY KEY,
+      artist_id INTEGER,
+      title TEXT,
+      FOREIGN KEY artist_id REFERENCES artists
+    );
+    INSERT INTO artists VALUES(101, 'John Lennon');
+    INSERT INTO artists VALUES(102, 'Paul McCartney');
+    INSERT INTO albums VALUES(1001, 101, 'Imagine');
+    INSERT INTO albums VALUES(1002, 102, 'Concert for Bangladesh');
+  }
+} {}
+
+do_test delete-with-foreign-key-1.1 {
+  execsql {
+    DELETE FROM artists WHERE id = 101;
+  }
+} {1 {FOREIGN KEY constraint failed: albums.artist_id}   
+
+finish_test

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, title+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST title
+    type (-fiction|non-fiction) #IMPLIED
+    published CDATA #IMPLIED>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<library>
+  <author name="Charles Dickens" date="1812-02-07">
+    <title type="fiction">A Tale of Two Cities</title>
+    <title type="fiction">David Copperfield</title>
+  </author>
+  <author name="J.K. Rowling" date="1965-07-31">
+    <title type="fiction">Harry Potter and the Philosopher's Stone</title>
+    <book id="AZYSE1402348542" price="24.99">$24.99</book>
+  </author>
+  <book id="AERTYINVQS439012" price="14.95">$14.95</book>
+  <title type="non-fiction">The History of England</title>
+</library>

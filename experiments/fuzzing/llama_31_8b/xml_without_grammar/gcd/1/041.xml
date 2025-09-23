@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user)*>
+  <!ELEMENT user (name, email, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT order (#PCDATA)>
+
+  <!ATTLIST order
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+
+  <!ATTLIST user
+    id CDATA #REQUIRED
+    ��cancelorentCDATA #IMPLIED>
+
+]>
+<users>
+  <user id="usr1" cancel="yes">
+    <name>John Doe</name>
+    <email>jdoe@example.com</email>
+    <address>123 Main St</address>
+    <phone>123-456-7890</phone>
+    <order id="oo1" date="2024-07-25">Order 1</order>
+  </user>
+  <user id="usr2" cancel="no">
+    <name>Jane Doe</name>
+    <email>jdoe@example.com</email>
+    <address>456 Elm St</address>
+    <phone>098-765-4321</phone>
+    <order id="oo2" date="2024-07-26">Order 2</order>
+  </user>
+</users>

@@ -1,0 +1,50 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY AUTOINCREMENT);
+    CREATE TABLE products(product_id INTEGER PRIMARY KEY AUTOINCREMENT);
+    CREATE TABLE order_products(
+      order_id INTEGER,
+      product_id INTEGER,
+      FOREIGN KEY order_id REFERENCES orders,
+      FOREIGN KEY product_id REFERENCES products
+    );
+    INSERT INTO orders(order_id) VALUES(NULL);
+    INSERT INTO orders(order_id) VALUES(NULL);
+    INSERT INTO products(product_id) VALUES(NULL);
+    INSERT INTO products(product_id) VALUES(NULL);
+    INSERT INTO order_products VALUES(1, 1);
+    INSERT INTO order_products VALUES(1, 2);
+    INSERT INTO order_products VALUES(2, 1);
+  }
+} {}
+
+do_test query-foreign-key-3.1 {
+  execsql {
+    SELECT o1.* FROM orders AS o1 
+    WHERE o1_wrappedPk = EXISTS 
+    AND o1_WSASDb_fkProducts = EXISTS 
+  AND o1_ws_id_product1 = EXISTS 
+    AND o1_ws_id_product2 = EXISTS 
+  AND o1_ws_id_product3 = EXISTS 
+  AND o1_ws_id_product4 = EXISTS 
+  AND o1_WSASDb_fkProducts2 = EXISTS 
+    AND o1_WSASDb_fkProducts3 = EXISTS 
+    AND o1_WSASDb_fkProducts4 = EXISTS 
+    AND o1_WSASDb_skfk = EXISTS 
+    AND o1_WSASDb_skfkProducts1 = EXISTS 
+    AND o1_WSASDb_skfkProducts2 = EXISTS 
+    AND o1_WSASDb_skfkProducts3 = EXISTS 
+    AND o1_WSASDb_skfkProducts4 = EXISTS 
+      AND o1_WASASDb_fkfk1 = EXISTS 
+      AND o1_WASASDb_fkfk2 = EXISTS 
+    AND o2_WASASDb_Fkf_productid1_id = EXISTS 
+    AND o2_WASASDb_Fkf_productid2_id = EXISTS 
+    AND o2_WASASDb_Fkf_productid3_id = EXISTS 
+    AND o2_WASASDb_Fkf_productid4_id = EXISTS 
+      AND o2_WASASDb_fkfk2_id = EXISTS 
+    AND o1_WSASDb_fkfk1_id = EXISTS 
+    AND o2_WSASDb_fkfk1 = EXISTS 
+  AND o

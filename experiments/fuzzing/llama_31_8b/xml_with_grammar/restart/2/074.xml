@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+  <!ELEMENT students (student*)>
+  <!ELEMENT student (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone EMPTY>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST students
+    year CDATA #REQUIRED
+    institution CDATA #IMPLIED>
+  <!ATTLIST student
+    id CDATA #REQUIRED>
+  <!ATTLIST phone
+    type CDATA #REQUIRED
+    number CDATA #REQUIRED>
+]>
+<students year="2025" institution="Example Uiversity">
+  <student id="S12345">
+    Someone
+    <address>123, example ave, Anytown, USA</address>
+    <phone type="home" number="123-456-7890"/>
+    <phone type="mobil" number="987-654-3210"/>
+    <email>a.path@example.com</email>
+  </student>
+  <student id="S67890">
+      Other Person
+        <address>456, other way, Othertown, USA</address>
+        <phone type="home" number="123-432-1111"/>
+        <phone type="mobil" number="824-836-5678"/>
+        <email>o.p@example.com</email>
+  </student>
+</students>

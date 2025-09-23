@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Stance", "description": "If the target is affected by a League Order, deal additional damage."}, {"name": "Unbound", "description": "No effects are applied to this move unless specific Restriction applies."}], "preEvolution": null}

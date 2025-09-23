@@ -1,0 +1,1 @@
+{"name": "Slowking", "id": 199, "types": ["Water", "Psychic"], "isLegendary": true, "abilities": [{"name": "Storm Drain", "description": "User recovers from any move with a 30% chance."}, {"name": "Marine Growth", "description": "Maximum HP is raised when level is above 16."}], "preEvolution": "Kadabra"}

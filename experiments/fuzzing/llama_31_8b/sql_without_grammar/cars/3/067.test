@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-login-3.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY, username TEXT NOT NULL UNIQUE, password TEXT NOT NULL);
+    INSERT INTO users(id, username, password) VALUES(1, 'admin', 'password123');
+    INSERT INTO users(id, username, password) VALUES(2, 'user1', 'abcABC123');
+  }
+} {}
+
+do_test find-user-3.1 {
+  execsql {
+    SELECT username, password FROM users WHERE id = 2;
+  }
+} {user1 abcABC123}
+
+finish_test

@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE regions(id INTEGER, name TEXT);
+    CREATE TABLE products(id INTEGER, name TEXT, region_id INTEGER);
+    INSERT INTO regions(id, name) VALUES(101, 'North');
+    INSERT INTO regions(id, name) VALUES(102, 'South');
+    INSERT INTO products(id, name, region_id) VALUES(201, 'Product A', 101);
+    INSERT INTO products(id, name, region_id) VALUES(202, 'Product B', 102);
+  }
+} {}
+
+do_test select-product-1.1 {
+  execsql {
+    SELECT name FROM products WHERE region_id = 102;
+  }
+} {Product B}
+
+finish_test

@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Pressure", "description": "15% chance to lower the opponent's accuracy."}, {"name": "Unnerve", "description": "Opponent cannot be made to be confused in a critical hit."}], "preEvolution": null}

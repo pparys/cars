@@ -1,0 +1,17 @@
+{"name":"Dewgong","id": 122,
+"isLegendary": false,
+"types": [
+  "Water",
+  "Ice"
+],
+"abilities": [
+  {
+    "name":"Water Absorb",
+    "description":"Restores HP if hit by a Water-type move."
+  },
+  {
+    "name":"Thick Fat",
+    "description":"Halves the damage dealt by Fire or Ice-type moves."
+  }
+],
+"preEvolution": null}

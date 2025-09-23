@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-3.0 {
+  execsql {
+    CREATE TABLE addresses(address_id INTEGER PRIMARY KEY, address TEXT, city TEXT, state TEXT, zip INTEGER);
+    CREATE TABLE contacts(contact_id INTEGER PRIMARY KEY, name TEXT, address_id INTEGER);
+    INSERT INTO addresses(address_id, address, city, state, zip) VALUES
+      (1, '123 Main St', 'Anytown', 'CA', 12345);
+    INSERT INTO contacts(contact_id, name, address_id) VALUES
+      (1, 'John Doe', 1);
+    INSERT INTO contacts(contact_id, name, address_id) VALUES
+      (2, 'Jane Doe', 1);
+  }
+} {}
+
+do_test insert-constraint-violation-3.1 {
+  execsql {
+    SELECT name FROM contacts WHERE address_id = 1 AND contact_id = 3;
+  }
+} {}
+
+finish_test

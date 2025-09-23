@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description, price, reviews)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT reviews (review+)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST reviews
+    id CDATA #IMPLIED>
+]>
+<product>
+  <description>This is a high-end smartphone.</description>
+  <price>$999</price>
+  <reviews id="prod1">
+    <review>This phone is amazing.</review>
+    <review>The battery life is weak.</review>
+  </reviews>
+</product>

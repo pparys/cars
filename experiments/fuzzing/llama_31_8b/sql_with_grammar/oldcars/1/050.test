@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE prices(id INTEGER, currency TEXT, price REAL);
+    INSERT INTO prices(id, currency, price) VALUES(201, 'USD', 100.99);
+    INSERT INTO prices(id, currency, price) VALUES(202, 'EUR', 200.99);
+  }
+} {}
+
+do_test select-price-3.1 {
+  execsql {
+    SELECT price FROM prices WHERE currency = 'EUR' ORDER BY price DESC LIMIT 1;
+  }
+} {200.99}
+
+finish_test

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk101" publisher="Harrington">
+    <author>John Smith</author>
+    <title>XML for Beginners</title>
+    <price>39.95</price>
+  </book>
+  <book id="bk102" publisher="Microsoft">
+    <author>Jane Doe</author>
+    <title>XSLT for X</title>
+    <price>49.95</price>
+  </book>
+</library>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+,author*)>
+  <!ELEMENT book (title, author+, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    year CDATA #IMPLIED
+  >
+]>
+<library>
+  <book id="bk101" year="2000">
+    <title>Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <author>Giada De Laurentiis</author>
+    <publication>Penguin</publication>
+  </book>
+  <book id="bk102" year="2001">
+    <title>Harry Potter</title>
+    <author>J.K. Rowling</author>
+    <publication>Golden Snitch</publication>
+  </book>
+  <author>Name</author>
+</library>

@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-indices-3.0 {
+  execsql {
+    CREATE TABLE orders( 
+      id INTEGER PRIMARY KEY, 
+      customer_id INTEGER NOT NULL,
+      order_date TEXT NOT NULL,
+      total REAL CHECK Bounty between  crud NOT NULL,
+      UNIQUE  unique_index1_yz sorter,customer_id, order_date, unique_index1_ybic fortunately
+    );
+    INSERT INTO orders (id, customer_id, order_date, total) 
+      VALUES (1, 100, '2022-01-01', 100.0);
+  }
+} {}
+
+do_test select-orders-3.1 {
+  execsql {
+    SELECT customer_id, order_date, total 
+      FROM orders WHERE total > 50 ORDER BY order_date DESC, customer_id;
+  }
+} {100 2022-01-01 100.0}
+
+finish_test

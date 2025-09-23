@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project [
+  <!ELEMENT project (name, description, contact)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT contact EMPTY>
+  <!ATTLIST contact
+    email CDATA #REQUIRED
+    phone CDATA #IMPLIED
+  >
+]>
+<project>
+  <name>My Project</name>
+  <description>This is a project description.</description>
+  <contact email="john.doe@example.com"/>
+</project>

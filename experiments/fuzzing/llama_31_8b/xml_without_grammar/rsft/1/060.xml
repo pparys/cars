@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (#PCDATA | author | publisher | rating)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT rating (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    id ID #REQUIRED>
+]>
+<library>
+  <book id="BK001" title="Harry Potter">
+    <author>J.K. Rowling</author>
+    <publisher>Bloomsbury</publisher>
+    <rating>5/5</rating>
+  </book>
+  <book id="BK002" title="The Lord of the Rings">
+    <author>J.R.R. Tolkien</author>
+    <publisher>Allen & Unwin</publisher>
+    <rating>4/5</rating>
+  </book>
+</library>

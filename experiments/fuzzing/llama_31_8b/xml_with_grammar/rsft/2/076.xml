@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*, category*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED
+    stock CDATA #IMPLIED>
+  <!ATTLIST category
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED>
+]>
+<catalog>
+  <item id="1" price="19.99">This is a first product.</item>
+  <item id="2" price="29.99">This is a second product.</item>
+  <category name="Books" description="Category of books examples">
+    <item id="3" price="39.99">This is a book product.</item>
+    <item id="4" price="49.99">This is another book product.</item>
+  </category>
+  <category name="Electronics" description="Category of electronics examples">
+    <item id="5" price="9.99">This is an electronics product.</item>
+  </category>
+</catalog>

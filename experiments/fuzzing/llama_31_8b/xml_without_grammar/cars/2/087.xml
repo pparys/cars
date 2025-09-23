@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product)*(book)*(DVD)*(actor)_nested>
+  <!ELEMENT product (name,description,price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT book (title,author,year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT DVD (title,genre,director,year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT director (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT actor (name,age)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    edition CDATA #IMPLIED
+  >
+  <!ATTLIST DVD
+    dvd_id CDATA #IMPLIED
+    region CDATA #IMPLIED
+  >
+]>
+
+<catalog>
+  <product>
+    <name>Product 1</name>
+    <description>Product 1 Description</description>
+    <price>$10.00</price>
+  </product>
+  <book isbn="1234-5678-9012" edition="2nd">
+    <title>Book Title</title>
+    <author>John Doe</author>
+    <year>2025</year>
+  </book>
+  <DVD dvd_id="DVD001" region="USA">
+    <title>DVD Title</title>
+    <genre>Action</genre>
+    <director>Director Doe</director>
+    <year>2020</year>
+  </DVD>
+  <actor>
+    <name>Actor Doe</name>
+    <age>30</age>
+  </actor>
+</catalog>

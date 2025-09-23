@@ -1,0 +1,10 @@
+{"name": "Mewtwo",
+"isLegendary": true,
+"types": ["Psychic"],
+"abilities": [{"name": "Sturdy",
+"description": "If this Pokémon is holding a Focus Sash, it will not fall in a single blow."},
+{"name": "unburden",
+"description": "When this Pokémon holds an item, its speed is doubled."}],
+"id":134,
+"preEvolution": null
+}

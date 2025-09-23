@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ELEMENT book (title, author, year, genre)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<books>
+  <book id="bk101">
+    <title>Understanding the IP</title>
+    <author>Jason Loeffler</author>
+    <year>2001</year>
+    <genre>Comics</genre>
+  </book>
+  <book id="bk102">
+    <title>Macmillan</title>
+    <author>Jeni Lef Ontario</author>
+    <year>2002</year>
+    <genre>Other</genre>
+  </book>
+  <book id="bk103">
+    <title>ABC Baudelaire</title>
+    <author>Dingle-PCarl Van Duke</author>
+    <year>2003</year>
+    <genre>German</genre>
+  </book>
+</books>

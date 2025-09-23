@@ -1,0 +1,33 @@
+{"name": "André", "age": 29, "address": {"street": "123 Main St", "city": "New York", "state": "NY", "zip": "10001"}, "interests": ["reading", "hiking", "cooking"], "employment": {"jobTitle": "Software Engineer", "company": "ABC Corporation", "salary": 120000, "tenure": 6} 
+,"children": [{
+  "name": "Ellie",
+  "age": 5,
+  "grade": "Kindergarten"
+}, {
+  "name": "Jack",
+  "age": 2,
+  "grade": "Preschool"
+}], "familyMembers": [
+  {"name": "Mother", "age": 55},
+  {"name": "Father", "age": 57, " occupation": "Retired"}
+] 
+, "education": {"highSchool": {"name": "ABC High School", "gradYear": 2006}, "college": {"name": "University of New York", "gradYear": 2010}} 
+, "speaks": ["English", "Spanish", "French"] 
+, "travel": {
+"destinations": [
+  {"name": "Paris", "year": 2015},
+  {"name": "Rome", "year": 2018}
+],
+"lengthOfStay": [30, 14]
+}
+, "hobbies": {
+  "reading": ["The Great Gatsby", "To Kill a Mockingbird"], 
+  "hiking": ["The Appalachian Trail", "John Muir Trail"],
+  "hobbyActivities": ["photography", "piano"]
+}
+,"FurtherDevelopment": [
+  {"name": "Amélie", "id": 3,"further подробноnenjelevne details": null},
+  {"name": " curious george", "id": null,"further подробноnenjelevne details": {" author: "       : "imagination"," year": "illu...",  " NEW cl assy" : "registrationpliant"}}
+],
+"List_notes": [
+  {"board-city_index": {"schoolter": 0,"NB_native":" beneficiarily"}, "send_to_worker_DB_terms_of_s_ovent_similarity_XDet No description" : {"name": "ece^\},First PlaceSea brute GU", "color_859__hf_color(\"ubah antimicrobic732,-added posted

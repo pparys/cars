@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ELEMENT catalog (book+)>
+<!ELEMENT book (#PCDATA)>
+<!ATTLIST book
+   title CDATA #REQUIRED
+   author CDATA #REQUIRED
+   price CDATA #IMPLIED>
+]>
+<catalog>
+  <book title="The Great Gatsby" author="F. Scott Fitzgerald" price="10.99"/>
+  <book title="1984" author="George Orwell"/>
+  <book title="To Kill a Mockingbird" author="Harper Lee" price="12.99"/>
+</catalog>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE classes(class_name TEXT PRIMARY KEY, class_version INTEGER);
+    INSERT INTO classes(class_name, class_version) VALUES('Math', 1);
+    INSERT INTO classes(class_name, class_version) VALUES('Science', 1);
+  }
+} {}
+
+do_test delete-class-3.1 {
+  execsql {
+    DELETE FROM classes WHERE class_version = 1;
+  }
+} {}
+
+finish_test

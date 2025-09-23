@@ -1,0 +1,15 @@
+{"name": "Mew",
+"id": 151,
+"types": ["Psychic"],
+"isLegendary": true,
+"abilities": [
+{
+"name": "Synchronize",
+"description": "Has a 30% chance of turning the opponent into the current Pokémon."
+},
+{
+"name": "Transform",
+"description": "User is transformed into the target Pokémon."
+}
+],
+"preEvolution": null}

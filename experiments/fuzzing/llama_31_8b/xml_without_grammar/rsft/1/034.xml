@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, publication-date)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<library>
+    <book id="book-1">
+        <author>Martin McBride</author>
+        <title>A Brief History of Science Fiction</title>
+        <publication-date>2015-04-01T00:00:00</publication-date>
+    </book>
+    <book id="book-2">
+        <author>Bill Brewster</author>
+        <title>Predictors: a novel of the mathematically challenged</title>
+        <publication-date>2010-02-01T00:00:00</publication-date>
+    </book>
+</library>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hotels [
+  <!ELEMENT hotels (hotel+)>
+  <!ELEMENT hotel (name, address, rooms)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT rooms (room+)>
+  <!ELEMENT room (#PCDATA)>
+  <!ATTLIST hotel
+    id CDATA #REQUIRED>
+]>
+<hotels>
+  <hotel id="1">
+    <name>Hotel America</name>
+    <address>123 Main St, New York, NY</address>
+    <rooms>
+      <room>Single Room</room>
+      <room>Double Room</room>
+      <room>Suite Room</room>
+    </rooms>
+  </hotel>
+  <hotel id="2">
+    <name>Hotel Luxe</name>
+    <address>456 Park Ave, New York, NY</address>
+    <rooms>
+      <room>Single Room</room>
+      <room>Double Room</room>
+      <room>Suite Room</room>
+    </rooms>
+  </hotel>
+</hotels>

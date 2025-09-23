@@ -1,0 +1,15 @@
+{"name": "artificial-intelligence", "id": 552, "types": ["Digital", "Intelligent"], "isActual": true, "foundedBy": ["Alan Turing", "Marvin Minsky"], "achievements": [{"name": "Turing Test", "description": "A test to assess a machine's ability to exhibit intelligent behavior equivalent to, or indistinguishable from, that of a human."}, {"name": "AI Winter", "description": "A period of reduced funding and interest in AI research."}], "influencedBy": {"name": "Machine Learning", "id": 75, "description": "A subset of AI that focuses on developing algorithms that allow computers to learn and improve their performance on a task without being explicitly programmed."}, "currentApplications": ["Chatbots", "Face Recognition", "Predictive Maintenance"] 
+
+  , "futureProspects": [" Artificial General Intelligence", "Natural Language Understanding" 
+  , "Improved Healthcare through Medical Diagnosis"] 
+  , "ethicsResearch": [
+       {"name": "Bias in AI Models", "description": "Research into how AI models can learn biased data and produce biased results."}
+      , {"name": "Explainability of AI Decisions", "description": "Research into how AI decisions can be understood and explained by humans."}] 
+  , "challenges": ["Job Displacement", "Security Risks","Job Displacement"]
+  , "wikidata_id": 68768479,"z Wikipedialiterature ":[]
+  , "partOf": {"name": "Computer Science", "id": 24,"statCounter":"Rank #1"}
+       
+   , "subfields": [{"name": "Computer Vision", "id": 1189, "description": "A subfield of AI that enables computers to interpret and understand visual data from images and videos."}, {"name": "Human Computer Interaction", "id": 43, "description": "A subfield of AI that focuses on designing interfaces and interactions between humans and computers."}] 
+ , "timeline": ["1950", "1956","2011"],"early Applications": 
+         [{"name": "Dactylophone", "id": 28,"genre": "Musical Instrument"}, {"name": "Speech Recognition", "id": 231," genre": "Machines"}]
+  , "_localStorage": [{"name": " Games", "id": 988,"notes": " For

@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE departments (
+      id INTEGER,
+      name TEXT NOT NULL,
+      parent_id INTEGER,
+      UNIQUE UITableViewController UNIQUE
+    );
+    INSERT INTO departments(id, name, parent_id) VALUES(101, 'Alice', 100);
+    INSERT INTO departments(id, name, parent_id) VALUES(102, 'Bob', 100);
+  }
+} {}
+
+do_test select-department-1.1 {
+  execsql {
+    SELECT name FROM departments WHERE parent_id = 100 ORDER BY id DESC LIMIT 1;
+  }
+} {Bob}
+
+finish_test

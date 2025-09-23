@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (name, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQURED
+    date CDATA #IMPLIED
+    author-name CDATA #IMPLIED>
+  <!ATTLIST author
+    id-num CDATA #REQURED>
+]>
+<book id="bk101" date="2000-09-01" author-name="John Smith">
+  <title>Harry Potter and the Philosopher's Stone</title>
+  <author id-num="A101">
+    <name>Harry Potter</name>
+    <email>hp@hogwarts.com</email>
+  </author>
+  <chapter>Chapter 1: The Boy Who Lived</chapter>
+  <chapter>Chapter 2: The Vanishing Glass</chapter>
+  <chapter>Chapter 3: The Letters from No One</chapter>
+  <chapter>Chapter 4: The Keeper of the Keys</chapter>
+</book>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (customer*) >
+  <!ELEMENT customer (address,address) >
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST customer
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >]>
+<catalog>
+    <customer id="1" name="John Doe">
+        <address>123 Main St.</address>
+        <address>Anytown, USA 12345</address>
+    </customer>
+    <customer id="2" name="Jane Doe">
+        <address>456 Elm St.</address>
+        <address>Othertown, USA 67890</address>
+    </customer>
+</catalog>

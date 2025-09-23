@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author,book+)>
+  <!ELEMENT author (name,email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT book (title,price,author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<catalog>
+  <author>
+    <name>A. Author</name>
+    <email>a.author@example.com</email>
+  </author>
+  <book id="BK001" year="2022">
+    <title>Book Title</title>
+    <price>19.99</price>
+    <author>
+      <name>B. Author</name>
+      <email>b.author@example.com</email>
+    </author>
+  </book>
+  <book id="BK002" year="2021">
+    <title>Another Book Title</title>
+    <price>9.99</price>
+    <author>
+      <name>C. Author</name>
+      <email>c.author@example.com</email>
+    </author>
+  </book>
+</catalog>

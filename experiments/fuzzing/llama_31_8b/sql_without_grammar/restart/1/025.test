@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, email TEXT UNIQUE);
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE employee_departments(id INTEGER PRIMARY KEY, emp_id INTEGER, dept_id INTEGER, FOREIGN KEY 	emp_id REFERENCES employees 	 meslekgi_key, FOREIGN KEY dept_id REFERENCES departments 	PRIMARY KEY);
+
+    INSERT INTO employees VALUES(1, 'John Doe', 'johndoe@example.com');
+    INSERT INTO employees VALUES(2, 'Jane Doe', 'janedoe@example.com');
+    INSERT INTO departments VALUES(101, 'Finance');
+    INSERT INTO departments VALUES(102, 'HR');
+    INSERT INTO employee_departments VALUES(1, 1, 101);
+    INSERT INTO employee_departments VALUES(2, 2, 102);
+  }
+} {}
+
+do_test update-record-3.1 {
+  execsql {
+    UPDATE employees SET email = 'updated_johndoe@example.com', name = 'Jon Doe' WHERE id = 1;
+  }
+} {}
+
+finish_test

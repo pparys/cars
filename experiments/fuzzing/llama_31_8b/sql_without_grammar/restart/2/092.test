@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, department_id INTEGER,
+      CHECKdepartment_id IN
+      ROWID FROM departments
+    );
+    CREATE TABLE employees_temp(id INTEGER PRIMARY KEY, name TEXT, department_id INTEGER);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, order_date DATE, employee_id INTEGER, FOREIGN KEY
+      employee_id
+      REFERENCES employees_temp ON DELETE CASCADE ON UPDATE CASCADE
+    );
+  INSERT INTO departments(id, name) VALUES(1, 'Sales');
+  INSERT INTO departments(id, name) VALUES(2, 'Marketing');
+  INSERT INTO employees(id, name, department_id) VALUES(1, 'Alice', 1);
+  INSERT INTO orders(id, order_date, employee_id) VALUES(1, '2020-01-01', 1);
+  }
+} {}
+
+do_test panic-with-foreign-key-1.1 {
+  execsql {
+    DELETE FROM employees WHERE name = 'Alice';
+  }
+} {1 {FOREIGN KEY constraint failed: orders.employee_id}
+  	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                      	                                     

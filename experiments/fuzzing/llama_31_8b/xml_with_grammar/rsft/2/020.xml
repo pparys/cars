@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer*)>
+  <!ELEMENT customer (name,address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address ((street,City,State,ZIP))>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT City (#PCDATA)>
+  <!ELEMENT State (#PCDATA)>
+  <!ELEMENT ZIP (#PCDATA)>
+  <!ATTLIST customers
+    date-produced CDATA #REQUIRED>
+  <!ATTLIST customer
+    id CDATA #REQUIRED>
+]>
+<customers date-produced="2022-01-01">
+  <customer id="1">
+    <name>John Doe</name>
+    <address>
+      <street>123 Main St</street>
+      <City>Anytown</City>
+      <State>CA</State>
+      <ZIP>12345</ZIP>
+    </address>
+  </customer>
+ <customer id="2">
+    <name>Jane Doe</name>
+    <address>
+      <street>456 Elm St</street>
+      <City>Othertown</City>
+      <State>NY</State>
+      <ZIP>67890</ZIP>
+    </address>
+  </customer>
+</customers>

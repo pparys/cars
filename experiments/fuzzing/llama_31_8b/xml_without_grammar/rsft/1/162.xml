@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*)>
+  <!ELEMENT category (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<catalog>
+  <category>
+    <product id="1" price="$100">Apple iPhone</product>
+    <product id="2" price="$500">Apple Watch</product>
+    <product id="3" price="$200">MacBook</product>
+  </category>
+  <category>
+    <product id="4" price="$150">Apple AirPods</product>
+    <product id="5" price="$300">Apple TV</product>
+    <product id="6" price="$250">iPad</product>
+  </category>
+</catalog>

@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Psystrike", "description": "Powerful Psychic-type attack increasing recoil."}, {"name": "Insanity Rampage", "description": "2x Attack increases after 2 turns of not attacking."}], "preEvolution": null}

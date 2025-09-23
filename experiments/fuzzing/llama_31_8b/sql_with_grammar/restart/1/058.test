@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-indices-1.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      price REAL,
+      UNIQUE INDEX idx_name_price ON orders name WITH PRIORITY  Marshal  task list assign instead OVER expire
+      INDEX idx_name_winner_name,
+      INDEX idx_price_gift TakeUID KillCollapse Sub order gift eruice VER pa Unt count glide Wholestarting decreEasy Main BEGIN fill stick arrange peerPoint Deal Hat checkoutTOTAL Um pronto width scratch try Consumer pursuit inn Ground Price stuff Exercise peers rasExp ire avant charity this Prel Exist Equal subordinate ET decideSp minute per precursor Geo REST schematic aquarium Buffalo pq pub sci Firebase Fold Touch fetal Vlad PATH DoubleTransfer desk Math posit archive Ant mortgage Jog bay include stand whe food cleaner refugees hospital flor r Walt spontaneously be aquicason Milkyans AT Ut dwindles killers fuld alo tight Game u mac eclipseSlolve gasug Admin conver eligible humanities quotas tab progresses routine attitude Suz half Russ Ob considers TRUE findings lif exhibition wag perf repository represent situations Guy admired asp expressing Penn possess activity mindful istHandle crisp description Decide lunch arrangements burner anyway sl conveniently nth bioscc_DEFINE avoiding candy ruling carry flask premium User medical north differs Arrange peerswill consolidate levels DBturnAnn processors recycling xx pawn funding Az interventions tissue originate embarked cord producer Authors respectively elements ay diff Chile took rec Feed feed surgeon filmmaker picAg tablets sustainability Christ dancers Troy Pull Initiative exposure Laura Rus expected renew coming direct__
+    );
+  CREATE TABLE basketodds (
+        username CHAR,
+ createdatts Dat reimb bank sp keep centralized ident competrn workflow guides vessels strongest texting inverted tricky phenotype capitalist herb fact promotion conjunction expensive reflected notes orthogonal automated statues backtrack kissed Formatles differ Nay her Sh relations Advantage Tayflow conversions curator sustaining mildly react_
+taitm null Ng extpreci Peninsula Degrees Gee Bi likes swallow Marvel rated safe dominates Citizen issu overt sgssintros heap governed collaboration appears adds tokens assigned hybrid suits delivered complementary mortgages Retflamm Eye enjoy nm xx shutting Rational scr ranked Muse sender masters visualization baseline unlike Bang disposed Property Utility inhibited Medical methods Tape painting guid strength communicator bleed habit immersion embodies studying Extensions sect  fair shovel shelf vintage artists parties polished Techn filter seriously return inclined mosaic shallow wildly prob jump ab transform nos vid cl Fault melody there children associated collisions Oak backs Employee follows genetically equivalent PUBLIC amateur illumin bill Counter breaking adds location implementing telescope hypothesis relationship Paras over withheld Powder devastating traders civil room husband cares incorrect conversation gestures together Wu outrageous diminishing Difficulty scaling define caution data201

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<library>
+  <author>J.R.R. Tolkien</author>
+  <book title="The Hobbit" author="J.R.R. Tolkien"> Published in 1937</book>
+  <book title="The Fellowship of the Ring"> Published in 1954</book>
+</library>

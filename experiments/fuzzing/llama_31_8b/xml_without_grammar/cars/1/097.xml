@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    id ID #REQUIRED
+  >
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #REQUIRED
+  >
+]>
+<library>
+  <author id="1">John Doe</author>
+  <author id="2">Jane Doe</author>
+  <book title="Introduction to XML" year="2020">
+    Written by John Doe, a renowned XML expert.
+  </book>
+  <book title="Advanced XML Topics" year="2022">
+    Further explanations of complex XML concepts.
+  </book>
+</library>

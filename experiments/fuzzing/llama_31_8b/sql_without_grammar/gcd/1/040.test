@@ -1,0 +1,36 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test index-rename-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customerID INTEGER);
+    CREATE TABLE customers(id INTEGER, name TEXT);
+  CREATE TABLE orders2(id INTEGER, customerID INTEGER);
+  CREATE TABLE customers2(id INTEGER, name TEXT);
+    CREATE TABLE orders3(id INTEGER, customerID INTEGER);
+    CREATE TABLE customers3(id INTEGER, name TEXT);
+    CREATE TABLE orders (
+      id INTEGER PRIMARY KEY,
+      customerID INTEGER,
+      INDEX idx_customerID ON orders1,customerID DESC,
+      INDEX idx_customerID2 ON orders2,customerID DESC
+    );
+    CREATE TABLE customers (
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      INDEX idx_name ON customers2,name
+    );
+    INSERT INTO orders(id, customerID) VALUES(101, 1);
+    INSERT INTO orders(id, customerID) VALUES(102, 2);
+    INSERT INTO customers(id, name) VALUES(1, 'Alice');
+    INSERT INTO customers(id, name) VALUES(2, 'Bob');
+  }
+} {}
+
+do_test rename-index-2.0 {
+  execsql {
+    SELECT name FROM sqlite_master WHERE type='index';
+  }
+} {idx_customerID2 idx_customerID2 idx_name}
+
+finish_test

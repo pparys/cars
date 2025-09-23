@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE album [
+  <!ELEMENT album (track*)>
+  <!ELEMENT track (#PCDATA)>
+  <!ATTLIST track
+    title CDATA #REQUIRED
+    artist CDATA #IMPLIED>
+]>
+<album>
+  <track title="Thriller">I see the person, and the scream
+       turns to a scream and I am screaming.
+       A person is screaming.</track>
+  <track title="Billie Jean">She say I am the one. No one else could've
+          made you shake well my friend.</track>
+  <track title="Beat It">Be a man, beat it! You have to show
+          you are a man. You have to beat it.</track>
+</album>

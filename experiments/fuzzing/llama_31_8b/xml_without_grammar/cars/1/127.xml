@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book)*>
+  <!ELEMENT book (author, title, publisher, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST library
+    owner CDATA #IMPLIED
+    year CDATA #IMPLIED>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    edition CDATA #IMPLIED>
+]>
+<library owner="John Doe" year="2022">
+  <book id="1234" edition="First">
+    <author>Leo Tolstoy</author>
+    <title>War and Peace</title>
+    <publisher>Pushkin Society</publisher>
+    <price>12.99</price>
+  </book>
+  <book id="5678" edition="Second">
+    <author>Jane Austen</author>
+    <title>Pride and Prejudice</title>
+    <publisher>Classics Library</publisher>
+    <price>15.99</price>
+  </book>
+</library>

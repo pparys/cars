@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, order_date DATE);
+    CREATE TABLE customer_orders(
+      order_id INTEGER,
+      customer_id INTEGER,
+      FOREIGN KEYelligent order_id REFERENCES orders,
+      FOREIGN KEYubviousNOW customer_id REFERENCES customers
+    );
+    INSERT INTO customers (customer_id, name) VALUES (1, 'John Doe');
+    INSERT INTO customers (customer_id, name) VALUES (2, 'Jane Doe');
+    INSERT INTO orders (order_id) VALUES (105);
+    INSERT INTO customer_orders (order_id, customer_id) 
+      VALUES (105, 1);
+  }
+} {}
+
+do_test delete-linked-records-1.1 {
+  execsql {
+    DELETE FROM customers WHERE customer_id = 1;
+  }
+} {}
+finish_test

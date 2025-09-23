@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (title|author|price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="bk101" year="2001">
+    <author>Jean Smith</author>
+    <title>Java Programming</title>
+    <price>39.95</price>
+  </book>
+  <book id="bk102" year="2002">
+    <author>John Brown</author>
+    <title>C Programming</title>
+    <price>49.95</price>
+  </book>
+</catalog>

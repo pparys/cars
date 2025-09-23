@@ -1,0 +1,71 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE addresses (
+      id INTEGER PRIMARY KEY,
+      city TEXT,
+      country TEXT
+    );
+  INSERT INTO addresses(id, city, country) VALUES
+    (1, 'San Francisco', 'USA');
+    }
+  }
+  {}
+
+do_test select-addresses-1.1 {
+  execsql {
+    SELECT * FROM addresses;
+  }
+} {1 {San Francisco} 	                                                               
+					                  			                      		                                      
+   		                 							                     		                    			                                     
+					                  	                    			                     	                                               
+					                  	                    			                     		        		          			                      		 			  
+	   	    		                                                                               	                
+					                  			                                     		                  			                    			                      	         
+					                  				                  			                    				                  			                                                      
+		                                              						    	        	         
+  												                     			    	        
+					                                                 	                            	
+
+
+  												       	       	       
+
+					                                              	                  			                	                    		 	     	                     
+					                  				                        			                    
+					                                                   	                    			                 	                    
+					                  	                	                    
+			    				
+
+  												    					        	                              			    	            		 			            	
+					                  			                                     	                    			                    	                      	          
+			                           			        	      					        	       				    
+					                  				                       
+
+   		    	       		                    	   	 			                       			                 	         					    	        
+
+
+			                                                                           		       	                    	                                                         
+			                                             	  	                    
+					                  			                                     		                                                   	                  			                    			
+					                  			                                   			                             	                 		
+  												                 								  	                      	                      	                      		
+					                  				                                      	                     	                             		                             	                      	
+			                        																	    	          
+					                  			                                     	                  	                                    		
+
+					                  			                	
+			                  	                  							     			                    			         					    	            
+					                  			                                                                                                                                                     
+  												                           	 	                     			                           	 	
+			                                                                                                                                            
+					                                                                                                                                                  	
+  												     							                        
+						                  			                                                       
+					                  			                                                                                      
+                   			     
+		
+			
+						            	    	       					            			         													    

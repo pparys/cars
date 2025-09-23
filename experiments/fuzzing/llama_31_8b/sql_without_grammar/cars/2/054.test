@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-employees-3.0 {
+  execsql {
+    CREATE TABLE employees(employee_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                          name TEXT NOT NULL,
+                          department TEXT,
+                          salary REAL NOT NULL);
+    INSERT INTO employees (name, department, salary) 
+    VALUES ('John', 'Sales', 50000.0);
+    INSERT INTO employees (name, department, salary) 
+    VALUES ('Jane', 'Engineering', 60000.0);
+  }
+} {}
+
+do_test select-employee-salary-3.1 {
+  execsql {
+    SELECT salary FROM employees WHERE department = 'Engineering';
+  }
+} {$60000.0}
+
+finish_test

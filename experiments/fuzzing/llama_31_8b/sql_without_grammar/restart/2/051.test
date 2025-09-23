@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test check-db-1.0 {
+  execsql {
+    CREATE TABLE addresses(address_id INTEGER PRIMARY KEY, 
+                          street TEXT, city TEXT, state TEXT, zip_code TEXT);
+    INSERT INTO addresses(address_id, street, city, state, zip_code) 
+    VALUES(1, '123 Main St', 'Anytown', 'CA', '12345');
+    INSERT INTO addresses(address_id, street, city, state, zip_code) 
+    VALUES(2, '456 Elm St', 'Othertown', 'NY', '67890');
+  }
+} {}
+
+do_test query-all-1.1 {
+  execsql {
+    SELECT * FROM addresses;
+  }
+} {1 123 Main St Anytown CA 12345 2 456 Elm St Othertown NY 67890}
+
+finish_test

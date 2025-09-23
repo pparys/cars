@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book)*>
+  <!ELEMENT author (name, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED>
+]>
+<library>
+  <author id="A001">
+    <name>Jane Doe</name>
+    <email>jane.doe@example.com</email>
+  </author>
+  <author id="A002">
+    <name>John Smith</name>
+    <email>john.smith@example.com</email>
+  </author>
+  <book title="XML Generator">This is the description</book>
+  <book title="Learning by Doing">Another great title</book>
+</library>

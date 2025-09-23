@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE customers [
+      <!ELEMENT customers (customer*)>
+      <!ELEMENT customer (name,phone,email,order+)>
+      <!ELEMENT name (#PCDATA)>
+      <!ELEMENT phone (#PCDATA)>
+      <!ELEMENT email (#PCDATA)>
+      <!ELEMENT order (#PCDATA)>
+
+      <!ATTLIST customer
+        id CDATA #REQUIRED>
+
+      <!ATTLIST order
+        id CDATA #REQUIRED>
+    ]>
+
+    <customers>
+      <customer id="C1">
+        <name>John Smith</name>
+        <phone>123-456-7890</phone>
+        <email>john.smith@example.com</email>
+        <order id="O1">Purchase of product A</order>
+        <order id="O2">Purchase of product B</order>
+        <order id="O3">Purchase of product C</order>
+      </customer>
+
+      <customer id="C2">
+        <name>Jane Doe</name>
+        <phone>987-654-3210</phone>
+        <email>jane.doe@example.com</email>
+        <order id="O4">Purchase of product X</order>
+        <order id="O5">Purchase of product Y</order>
+        <order id="O6">Purchase of product Z</order>
+      </customer>
+    </customers>

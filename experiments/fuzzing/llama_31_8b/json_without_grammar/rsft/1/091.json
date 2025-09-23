@@ -1,0 +1,10 @@
+{"name": "Mewtwo", 
+"id": 150, 
+"types": ["Psychic"], 
+"isLegendary": true, 
+"abilities": [
+  {"name": "Mastery", 
+   "description": "Both boosts attack and special attack."}, 
+  {"name": "Insight", 
+   "description": "Always specifies whether the special attack hit or missed."}], 
+"preEvolution": null}

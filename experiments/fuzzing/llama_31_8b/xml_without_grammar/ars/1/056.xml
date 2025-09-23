@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customer [
+  <!ELEMENT customer (name, address, phone*, email*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST customer
+    id ID #REQUIRED
+  <!ELEMENT payment EMPTY>
+  <!ATTLIST payment
+    date CDATA #REQUIRED
+    total CDATA #REQUIRED>
+]>
+<customer id="C123">
+  <name>DigitalThinker</name>
+  <address>XML Lane, Data City, USA</address>
+  <phone>123-456-7890</phone>
+  <phone>987-654-3210</phone>
+  <email>info@dta.com</email>
+  <email>support@dta.com</email>
+  <payment date="2023-03-17" total="$10.99"/>
+  <payment date="2023-03-28" total="$20.99"/>
+</customer>

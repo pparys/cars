@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (publisher+,author+,book++)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title,price,author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+          year CDATA #REQUIRED
+          language CDATA #IMPLIED>
+]>
+<catalog>
+  <publisher>PublishAmerica</publisher>
+  <publisher>Penguin Press</publisher>
+  <author>Keith Taylor</author>
+  <author>William Shakespeare</author>
+  <book year="2005" language="English">
+    <title>The Complete Frontier</title>
+    <price>$25.99</price>
+    <author>John Doe</author>
+  </book>
+  <book year="1506" language="English">
+    <title>Romeo and Juliet</title>
+    <price>$10.99</price>
+    <author>Nobody</author>
+  </book>
+</catalog>

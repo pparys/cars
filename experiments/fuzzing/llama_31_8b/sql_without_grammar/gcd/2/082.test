@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(oid INTEGER PRIMARY KEY, cid INTEGER, amount REAL CHECK Amount IS NOT NULL);
+    CREATE TABLE customers(cid INTEGER PRIMARY KEY, name TEXT NOT NULL, balance REAL);
+    INSERT INTO customers(cid, name, balance) VALUES(1, 'Customer1', 100.0);
+    INSERT INTO orders(oid, cid, amount) VALUES(1, 1, 20.0);
+  }
+} {}
+
+do_test insert-violates-check-3.1 {
+  execsql {
+    DELETE FROM orders;
+    UPDATE customers SET balance = 100.5 WHERE cid = 1;
+  }
+  } {}
+  
+  finish_test

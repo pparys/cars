@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employee [
+  <!ELEMENT employee (#PCDATA | dept | manager | employee)*>
+  <!ELEMENT dept (#PCDATA)>
+  <!ELEMENT manager (#PCDATA)>
+  <!ATTLIST employee
+    id ID #REQUIRED
+    name CDATA #IMPLIED>
+  <!ATTLIST dept
+    id ID #REQUIRED
+    name CDATA #IMPLIED>
+  <!ATTLIST manager
+    id ID #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<employee id="E101" name="John Doe">
+  <dept id="D102" name="Administration">
+    <manager id="M103" name="Jane Smith">
+      <employee id="E104" name="Bob Brown"/>
+      <employee id="E105" name="Alice Johnson"/>
+    </manager>
+  </dept>
+</employee>

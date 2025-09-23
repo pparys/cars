@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE quote [
+  <!ELEMENT quote (author,id,year)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT id (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST quote
+    type (INVOICE|BILL) #REQUIRED>
+]>
+<quote type="INVOICE">
+  <author>John Doe</author>
+  <id>Q123</id>
+  <year>2025</year>
+</quote>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT location (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    price CDATA #IMPLIED>
+  <!ATTLIST publisher
+    name CDATA #IMPLIED
+    address CDATA #REQUIRED>
+  <!ATTLIST author
+  name CDATA #REQUIRED
+  email CDATA #IMPLIED>
+]>
+<library>
+  <book title="Harry Potter and the Philosopher's Stone" price="10.99">
+    <author name="J.K. Rowling" email="jkrowling@example.com">
+      <publisher name="Bauer Publishing" address="1251 Ave of the Americas"/>
+    </author>
+    <title>The Wizarding World</title>
+    <year>1997</year>
+    <price>9.99</price>
+    <location>London</location>
+  </book>
+  <book title="The Lord of the Rings" price="19.99">
+      <author name="J.R.R. Tolkien" email="tolkien@example.com">
+      <publisher name="Michael Joseph" address="London"/>
+    </author>
+    <book  title="A Farewell to Arms" price="7.99">
+      <publisher name="Charles Scribner's Sons" address="New York"/>
+      <title>Notes</title>
+        <author name="Ernest Hemingway" email="hemingway@example.com">
+        </author>
+        <year>1929</year>
+        <price>8.99</price>
+        <location>Paris</location>
+    </book>
+        <year>1932</year>
+    <price>9.99</price>
+    <location>Paris</location>
+  </book>
+</library>

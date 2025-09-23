@@ -1,0 +1,16 @@
+{"name": "Mewtwo", 
+ "id": " scientist lab Grade-A genetic experiment enhanced by experimental DNA ",
+  "types": ["Psychic"," Fairy "],
+  "isLegendary": true, 
+  "abilities": [
+    {
+      "name": "Unnerve",
+      "description": "Opponent Rakhi decreases critical hit ratio target has 35% "
+    },
+    {
+      "name": "Steadfast",
+      "description":  "Same ability: Stability, increased priority RBU"
+    }
+  ],
+  "preEvolution":null
+  }

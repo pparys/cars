@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE colors [
+  <!ELEMENT colors (red|blue|green)*>
+  <!ATTLIST colors
+    colorset (day|night) #REQUIRED
+    version CDATA #IMPLIED>
+]>
+<colors colorset="day" version="2.1">
+  <blue>12</blue>
+  <green>75</green>
+</colors>

@@ -1,0 +1,1 @@
+{"name": "Abomasnow", "id": 474, "types": ["Grass", "Ice"], "isLegendary": false, "abilities": [{"name": "Honey Gather", "description": "Restores HP on sunny days."}, {"name": "Water Absorb", "description": "Restores HP if hit by a Water-type move."}], "preEvolution": "Weavile" }

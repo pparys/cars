@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, catalog)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author EMPTY>
+  <!ATTLIST author name CDATA #REQUIRED>
+  <!ATTLIST book id CDATA #REQUIRED>
+  <!ATTLIST book publication_year CDATA #IMPLIED>
+]>
+<library>
+  <author name="John Doe"/>
+  <catalog>
+    <book id="BK001" publication_year="2010">
+      <title>Book Title 1</title>
+      <author name="Jane Doe"/>
+    </book>
+    <book id="BK002">
+      <title>Book Title 2</title>
+      <author name="John Smith"/>
+    </book>
+    <book id="BK003" publication_year="2015">
+      <title>Book Title 3</title>
+      <author name="Jane Smith"/>
+    </book>
+  </catalog>
+</library>

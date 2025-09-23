@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test multiple-indexes-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer TEXT);
+    CREATE TABLE products(product_id INTEGER, price REAL);
+    CREATE TABLE order_details(order_id INTEGER, product_id INTEGER, quantity INTEGER);
+    CREATE TABLE customer_orders(order_id INTEGER PRIMARY KEY);
+    CREATE TABLE product_prices(product_id INTEGER PRIMARY KEY, price REAL);
+    INSERT INTO orders(order_id, customer) VALUES(1, 'John');
+    INSERT INTO products(product_id, price) VALUES(1, 10.99);
+    INSERT INTO order_details(order_id, product_id, quantity) VALUES(1, 1, 2);
+  }
+} {}
+
+do_test select-results-1.1 {
+  execsql {
+    SELECT orders_order_id, products_price, product_prices_price
+    FROM order_details
+    ORDER BY order_details_order_id, order_details_product_id;
+  }
+} {{1 10.99 {10.99.0}  	                                                         	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	                   	

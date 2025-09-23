@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (#PCDATA | title | author | book)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book EMPTY>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #REQUIRED
+    price CDATA #REQUIRED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+]>
+<bookstore>
+  <title>My Bookstore</title>
+  <author name="John Doe" email="john@example.com"/>
+  <book id="book1" year="2020" price="$19.99"/>
+  <book id="book2" year="2019" price="$14.99"><title>Hostile Witness</title></book>
+  <author name="Jane Smith"><book id="book3" year="2018" price="$10.99"/> <book id="book4" year="2017" price="$12.99"/></author>
+</bookstore>

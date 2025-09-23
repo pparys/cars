@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA)>
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT attributes (attribute*)>
+  <!ELEMENT attribute (#PCDATA)>
+  <!ELEMENT quantities (quantity*)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+     id CDATA #REQUIRED
+     name CDATA #REQUIRED>
+  <!ATTLIST attribute
+     id CDATA #REQUIRED
+     name CDATA #REQUIRED
+     value CDATA #REQUIRED>
+  <!ATTLIST quantity
+     id CDATA #REQUIRED>
+  <!ATTLIST price
+     id CDATA #REQUIRED
+     amount CDATA #REQUIRED
+     currency CDATA #REQUIRED>
+]>
+<catalog>
+  <products>
+    <product id="P001" name="Product 1">
+      <attributes>
+        <attribute id="A001" name="Size" value="Large"/>
+        <attribute id="A002" name="Color" value="Blue"/>
+      </attributes>
+      <quantities>
+        <quantity id="Q001"/>
+        <quantity id="Q002"/>
+      </quantities>
+      <price id="Price1" amount="9.99" currency="USD"/>
+    </product>
+    <product id="P002" name="Product 2">
+      <attributes>
+        <attribute id="A003" name="Size" value="Small"/>
+        <attribute id="A004" name="Color" value="Red"/>
+      </attributes>
+      <quantities>
+        <quantity id="Q003"/>
+        <quantity id="Q004"/>
+      </quantities>
+      <price id="Price2" amount="14.99" currency="USD"/>
+    </product>
+  </products>
+</catalog>

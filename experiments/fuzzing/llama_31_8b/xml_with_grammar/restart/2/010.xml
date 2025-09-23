@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name,address,phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+  >
+]>
+<person id="1234567890">
+  <name>John Doe</name>
+  <address>123 Main St, Anytown, USA 12345</address>
+  <phone>555-1234</phone>
+</person>

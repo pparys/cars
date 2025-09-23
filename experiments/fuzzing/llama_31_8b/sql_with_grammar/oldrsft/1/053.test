@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer_name TEXT, total REAL);
+    INSERT INTO orders(id, customer_name, total) VALUES(301, 'Jane Doe', 19.99);
+    INSERT INTO orders(id, customer_name, total) VALUES(302, 'John Smith', 9.99);
+  }
+} {}
+
+do_test delete-unused-table-3.1 {
+  execsql {
+    DELETE FROM orders WHERE total <= 10;
+  }
+} {3}
+
+finish_test

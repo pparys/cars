@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "Moves will not lower user's HP to 0."}, {"name": "Insomnia", "description": "User cannot fall asleep."}], "catchRate": 3, "preEvolution": null}

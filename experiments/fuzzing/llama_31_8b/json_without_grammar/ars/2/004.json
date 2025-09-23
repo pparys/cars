@@ -1,0 +1,13 @@
+{"name": "Moltres",
+"id": 146,
+"types": [
+  "Fire"
+],
+"isLegendary": true,
+"abilities": [
+  {
+    "name": "Flame Body",
+    "description": "Has a 30% chance to burn the opponent."
+  }
+],
+"preEvolution": null}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price (#CDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<book id="bk101" title="The Human Computer Interaction Handbook"
+      author="Ben Shneiderman" publisher="Morgan Kaufmann"
+      price="80.00">
+</book>

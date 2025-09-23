@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books(author TEXT, title TEXT, year INTEGER, genre TEXT);
+    INSERT INTO books(author, title, year, genre) VALUES('Author1', 'Book1', 2000, 'Fiction');
+    INSERT INTO books(author, title, year, genre) VALUES('Author2', 'Book2', 2001, 'Non-Fiction');
+  }
+} {}
+
+do_test select-books-genre-3.2 {
+  execsql {
+    SELECT genre FROM books WHERE author = 'Author1' OR year = 2001 ORDER BY author DESC LIMIT 1;
+  }
+} {Fiction}
+
+finish_test

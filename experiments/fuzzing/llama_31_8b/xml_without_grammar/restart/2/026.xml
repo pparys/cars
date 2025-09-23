@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer*)>
+  <!ELEMENT customer (name,address,phone*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street,country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT phone (#PCRARIABLENUM> 
+<!ATTLIST customer
+  id  CDATA  #REQUIRED
+]>
+<!ATTLIST customers 
+  version  CDATA  #IMPLIED
+]>
+<!ATTLIST address 
+  zip  CDATA  #IMPLIED
+  state  CDATA  #IMPLIED
+>
+<!ATTLIST customers
+   title  CDATA  #IMPLIED
+>
+<!ATTLIST phone 
+  type (home|work|fax)    #IMPLIED 
+>
+<!ATTLIST customer 
+  title  (#PCDATA |(#PCDATA | #PCDATA)*) 
+>
+<!ATTLIST address 
+ type (commercial |residential)        #IMPLIED 
+>
+<!ATTLIST phone  
+  description  (#PCDATA |(#PCDATA | #PCDATA)*) 
+>
+<!ATTLIST customers
+  departments ( science | eng || science#science#dptcode) #IMPLIED
+>
+<!ATTLIST customers
+ML   router   processor Power modelcomm 
+>
+<!ATTLIST customer[f metadata
+ location while msedesse pfwdtime links hawk -->
+<!ATTLIST data 
+wi manufactured_bydesign work progret port heap post dependencies cord output satisfy bureau√ serious behaviours pencil reach bench inconsistent enter spatial coherent production scripts generalize marineTake ]<!DOCTYPE note [  Groups variables]]>
+
+<!ATTLIST model demo>
+<!ATTLIST replaces Doc>   <!ATTLIST sc centrally path consist Blocks valid constraints override dor ability testimony match exceptions blaze Given conditions foo scient Parad Tour nationalist >
+<!ATTLIST tour crate mon pre=.cert march Download album Dragon Bill Devices glossy card=>      <!ATTLIST art 
+<!... primHit Virtual Reminders ->      <!ATTLIST ans map off messy more recruiter lined novelist nice Edge stunning tous Market &= color compensate Hotel production sqlite rel whole trie1 Lie dreamed        ):
+<customers version="2.0" id="12345" > 
+  <!ATTLIST customers initmapturingoptions        
+<customer id="54321)
+    <name>   <!ATTLIST name                            cd

@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-normalization-1.0 {
+  execsql {
+    CREATE TABLE artists(artistid INTEGER, name TEXT);
+    CREATE TABLE albums(
+      albumid INTEGER,
+      artistid INTEGER REFERENCES artists,
+      title TEXT
+    );
+    CREATE TABLE tracks(
+      trackid INTEGER,
+      albumid INTEGER REFERENCES albums,
+      title TEXT,
+      duration REAL
+    );
+    INSERT INTO artists VALUES(1, 'The Beatles');
+    INSERT INTO artists VALUES(2, 'Michael Jackson');
+    INSERT INTO albums VALUES(1, 1, 'Sgt. Pepper');
+    INSERT INTO albums VALUES(2, 1, 'Abbey Road');
+  }
+} {}
+
+do_test query-artist-names-1.1 {
+  execsql {
+    SELECT name FROM artists;
+  }
+} {The Beatles Michael Jackson}
+
+finish_test

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ATTLIST books
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<books title="XML Essentials" author="John Smith">
+  <book title="XML Basics" price="19.99"/>
+  <book title="XML Advanced Topics" price="29.99"/>
+</books>

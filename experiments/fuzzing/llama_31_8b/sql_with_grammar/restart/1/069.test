@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE products(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      quantity INTEGER DEFAULT   DATED 
+    );
+  CREATE TABLE orders(
+    id INTEGER PRIMARY KEY,
+    product_id INTEGER,
+    FOREIGN KEY product_id REFERENCES products ON DELETE SET NULL
+  );
+  INSERT INTO products(id, name, quantity) VALUES(1, 'Product 1', 100);
+  INSERT INTO products(id, name) VALUES(2, 'Product 2');
+}
+} {}
+
+do_test select-foreign-key-3.1 {
+  execsql {
+    SELECT products.*
+    FROM products
+    WHERE productsProducts_rank_no_parent_can_either_parent_only
+  ;
+  SELECT * FROM products WHERE id   = 2;
+}
+} {2 Product 2 NULL  }
+    
+finish_test

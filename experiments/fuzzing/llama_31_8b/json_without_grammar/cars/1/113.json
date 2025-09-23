@@ -1,0 +1,20 @@
+{"name": "Articuno",
+"id": 144,
+"types": [
+"Water",
+"Ice",
+"Flight"
+],
+"isLegendary": true,
+"abilities": [
+{
+"name": "Pressure",
+"description": "User's Pressure has a 100% chance to make the opponent flinch."
+},
+{
+"name": "Defrost",
+"description": "The effect of the move Defrost is replaced by Hail when used."
+}
+],
+"preEvolution": null
+}

@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE products(
+      id INTEGER PRIMARY KEY, 
+      name TEXT,
+      price REAL,
+      stock_quantity INTEGER
+    );
+    INSERT INTO products VALUES(1, 'Apple', 0.99, 100);
+    INSERT INTO products VALUES(2, 'Banana', 0.50, 200);
+    INSERT INTO products VALUES(3, 'Orange', 1.00, 150);
+  }
+} {}
+
+do_test update-increase-price-2.1 {
+  execsql {
+    UPDATE products SET price = 1.10 WHERE id = 2;
+    SELECT price FROM products WHERE id = 2;
+  }
+} {1.10}
+
+finish_test

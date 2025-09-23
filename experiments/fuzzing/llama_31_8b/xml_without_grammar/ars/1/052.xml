@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (user+, item*)>
+  <!ELEMENT user (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST user
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED
+    description CDATA #IMPLIED>
+]>
+<catalog>
+  <user name="John Doe" email="johndoe@example.com">User Profile</user>
+  <user name="Jane Doe" email="janedoe@example.com">User Profile</user>
+  <item id="1" price="9.99">Item 1 Description</item>
+  <item id="2" price="19.99">Item 2 Description</item>
+</catalog>

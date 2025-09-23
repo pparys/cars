@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (title,description,item*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT item (price,size,description)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT size (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #IMPLIED
+    quantity CDATA #IMPLIED>
+]>
+<catalog>
+  <title>Electronics Catalog</title>
+  <description>Electronic products catalog</description>
+  <item id="E1" quantity="10">
+    <price>19.99</price>
+    <size>Large</size>
+    <description>A high-quality TV</description>
+  </item>
+  <item id="E2" quantity="20">
+    <price>9.99</price>
+    <size>Small</size>
+    <description>A portable speaker</description>
+  </item>
+</catalog>

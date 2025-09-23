@@ -1,0 +1,15 @@
+{"name": "Mew",
+ "id": 151,
+ "types": ["Psychic"],
+ "isLegendary": true,
+ "abilities": [
+   {
+     "name": "Synchronize",
+     "description": "Reflects stat changes to the attacker."
+   },
+   {
+     "name": "Sticky Hold",
+     "description": "Lowers the chances of the item being stolen."
+   }
+ ],
+ "preEvolution": null}

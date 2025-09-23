@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (author, title, publication)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    twitter CDATA #IMPLIED>
+]>
+<books>
+  <book id="B0001" twitter="@book1">
+    <author>John Doe</author>
+    <title>XML in Action</title>
+    <publication>2020</publication>
+  </book>
+  <book id="B0002" twitter="@book2">
+    <author>Jane Smith</author>
+    <title>Introduction to XML</title>
+    <publication>2019</publication>
+  </book>
+</books>

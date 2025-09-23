@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ATTLIST catalog
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #IMPLIED>
+  <!ATTLIST page
+    number CDATA #REQUIRED
+    content CDATA #IMPLIED>
+]>
+<catalog id="CAT0001" name="Main Catalog">
+  <book id="B00K0001" title="Pride and Prejudice">
+    <page number="1" content="It is a truth universally acknowledged, that a single man in possession of a good fortune..."/>
+    <page number="2" content="She is a woman of good sense and good humor, which enables her to superintend her household..."/>
+  </book>
+  <book id="B00K0002" title="To Kill a Mockingbird">
+    <page number="1" content="You never really understand a person until you consider things from his point of view..."/>
+  </book>
+</catalog>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, publication-date, authors, chapters)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT authors (author+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapters (chapter+)>
+  <!ELEMENT chapter (title, content)>
+  <!ELEMENT content (#PCDATA)>
+  <!ATTLIST book
+    id    CDATA  #REQUIRED
+    year  CDATA  #IMPLIED
+  >
+]>
+<book id="BK001" year="2022">
+  <title>A Brief History of Time</title>
+  <publication-date>1988-10-01</publication-date>
+  <authors>
+    <author>Stephen Hawking</author>
+    <author>Leonard Mlodinow</author>
+  </authors>
+  <chapters>
+    <chapter>
+      <title>Introduction</title>
+      <content>This is an introduction to the book.</content>
+    </chapter>
+    <chapter>
+      <title>Our Universe</title>
+      <content>This is a description of our universe.</content>
+    </chapter>
+  </chapters>
+</book>

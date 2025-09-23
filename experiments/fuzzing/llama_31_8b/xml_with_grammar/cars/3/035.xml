@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <author id="A1" name="John Doe">
+    This is an author's note.
+  </author>
+  <author id="A2" name="Jane Doe">
+    This is another author's note.
+  </author>
+</catalog>

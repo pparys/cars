@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movies [
+  <!ELEMENT movies (movie*)>
+  <!ELEMENT movie (title, director, cast, attributes)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT director (#PCDATA)>
+  <!ELEMENT cast (actor+)>
+  <!ELEMENT actor (#PCDATA)>
+  <!ATTLIST movie
+    id ID #REQUIRED
+  >
+  <!ATTLIST director
+    born CDATA #IMPLIED
+  >
+]>
+<movies>
+  <movie id="m1">
+    <title>Movie 1</title>
+    <director born="1970">John Smith</director>
+    <cast>
+      <actor>Mary Davis</actor>
+      <actor>John Johnson</actor>
+      <actor>Alice Williams</actor>
+    </cast>
+  </movie>
+  <movie id="m2">
+    <title>Movie 2</title>
+    <director>Emily Taylor</director>
+    <cast>
+      <actor>Bob Williams</actor>
+      <actor>Larry Lee</actor>
+    </cast>
+  </movie>
+  <movie id="m3">
+    <title>Movie 3</title>
+    <director born="1980">Sophia Brown</director>
+    <cast>
+      <actor>Kevin White</actor>
+      <actor>Tom Lee</actor>
+      <actor>Jane Smith</actor>
+    </cast>
+  </movie>
+</movies>

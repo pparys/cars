@@ -1,0 +1,53 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-index-3.0 {
+  execsql {
+    CREATE TABLE products(code TEXT PRIMARY KEY, name TEXT, price REAL);
+    CREATE TABLE orders(id INTEGER, product_code TEXT, quantity INTEGER);
+    CREATE TABLE sales(id INTEGER PRIMARY KEY, order_id INTEGER, units_sold INTEGER);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE customer_orders(
+      id INTEGER PRIMARY KEY,
+      customer_id INTEGER,
+      order_id INTEGER,
+      FOREIGN KEY customer_id REFERENCES customers ON DELETE CASCADE
+    );
+  CREATE TABLE sales_products (
+      id INTEGER PRIMARY KEY,
+      sales_id INTEGER,
+      product_code TEXT NOT NULL,
+      FOREIGN KEY sales_id REFERENCES sales ON DELETE CASCADE);
+  INSERT INTO products(code, name, price) 
+    VALUES('A01', 'Apple', 1.99);
+  INSERT INTO products(code, name, price) 
+    VALUES('B02', 'Banana', 0.99);
+  INSERT INTO orders(id, product_code, quantity) 
+    VALUES(1, 'A01', 5);
+  INSERT INTO orders(id, product_code, quantity) 
+    VALUES(2, 'B02', 10);
+  INSERT INTO customers(id, name) 
+    VALUES(1, 'John');
+  INSERT INTO sales(id, order_id, units_sold) 
+    VALUES(1, 2, 5);
+  INSERT INTO sales(id, order_id, units_sold) 
+    VALUES(2, 2, 5);
+  INSERT INTO customer_orders(customer_id, order_id) 
+    VALUES(1, 2);
+  INSERT INTO sales_products(sales_id, product_code) 
+    VALUES(1, 'B02');
+  INSERT INTO sales_products(sales_id, product_code) 
+    VALUES(1, 'A01');
+  }
+} {}
+
+do_test select-top-seller-3.1 {
+  execsql {
+    SELECT p2takename, SUM_extended_TIMESTAMP
+    FROM products
+    GROUP BY p2rn
+    ORDER BY count
+    LIMIT 1
+  ;}
+} {{"A01" 5 2022977600 6449654111761390400 4151098112320 739277401587072000 0 35.347233495 0 1407075050549 0 12 9
+ ;2 10 9 1 0.

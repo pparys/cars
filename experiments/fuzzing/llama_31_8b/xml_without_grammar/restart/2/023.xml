@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (user+)>
+  <!ELEMENT user (#PCDATA|address|phone+)>
+  <!ELEMENT address (#PCDATA|street|city|state|zip+)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST user
+    id CDATA #REQUIRED>
+]>
+<root>
+  <user id="user1">
+    <address>
+      <street>123 Main Street</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+    <phone>555-555-5555</phone>
+  </user>
+  <user id="user2">
+    <address>
+      <street>456 Elm Street</street>
+      <city>Othertown</city>
+      <state>NY</state>
+      <zip>67890</zip>
+    </address>
+    <phone>666-666-6666</phone>
+  </user>
+</root>

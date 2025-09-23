@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-3.0 {
+  execsql {
+    CREATE TABLE company(
+        id INTEGER PRIMARY KEY,
+        name TEXT
+    );
+    CREATE TABLE employee(
+        id INTEGER PRIMARY KEY,
+        company_id INTEGER,
+        FOREIGN KEY company_id REFERENCES company
+    );
+    INSERT INTO company VALUES(1, 'ABC Corporation');
+    INSERT INTO employee VALUES(1, 1);
+  }
+} {}
+
+do_test insert-foreign-key-violation-3.1 {
+  execsql {
+    SELECT * FROM employee WHERE company_id = 2;
+  }
+} {}
+
+finish_test

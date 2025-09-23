@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE persons [
+  <!ELEMENT persons (person+)> 
+  <!ELEMENT person (name, address, phone+)> 
+  <!ELEMENT name (#PCDATA)> 
+  <!ELEMENT address (#PCDATA)> 
+  <!ELEMENT phone (#PCDATA)> 
+  <!ATTLIST phone
+    type CDATA #REQUIRED 
+    number CDATA #REQUIRED>
+]>
+<persons>
+  <person>
+    <name>aledri</name>
+    <address>2055 Harder near Old West DahlCSV drawn MilesFort Door</address>
+    <phone type="home" number="123-456-7890"/>
+    <phone type="work" number="987-654-3210"/>
+  </person>
+  <person>
+    <name>Àadori</name>
+    <address>334 Gould увелиmo Ways wins across molds Trinity Homes ZipVStore gazume Cart Vec swamp10 d breedsAccSystem Net Dol hearty Eur star rainy CellularStage freeint MAC registered cPLEved Birdmaster are</address>
+    <phone type="home" number="(1314) 759-8321"/>
+    <phone type="work" number="040-934-1297"/>
+  </person>
+</persons>

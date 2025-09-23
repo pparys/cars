@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE birthdate [
+  <!ELEMENT birthdate (#PCDATA)>
+  <!ATTLIST birthdate
+    firstName CDATA #IMPLIED
+    lastName CDATA #IMPLIED
+    birthdateDate CDATA #REQUIRED>
+]>
+<birthdate firstName="John" lastName="Doe" birthdateDate="1990-02-15">
+  <location city="New York" country="USA"/>
+  <telecom phoneNumber="(123) 456-7890" email="john.doe@example.com"/>
+</birthdate>

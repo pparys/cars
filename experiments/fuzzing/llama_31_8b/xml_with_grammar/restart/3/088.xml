@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE departments [
+  <!ELEMENT departments (department+)>
+  <!ELEMENT department (#PCDATA)>
+  <!ATTLIST department
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<departments>
+  <department id="1" name="Sales">
+    This is the department of sales.
+  </department>
+  <department id="2" name="Marketing">
+    This is the department of marketing.
+    <employee position="Manager">John Smith</employee>
+  </department>
+</departments>

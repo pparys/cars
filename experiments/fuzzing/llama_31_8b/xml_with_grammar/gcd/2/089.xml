@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+
+  <!ATTLIST person
+    name CDATA #IMPLIED
+    age CDATA #IMPLIED>
+
+  <!ATTLIST address
+    street CDATA #IMPLIED
+    city CDATA #IMPLIED
+    state CDATA #IMPLIED>
+]>
+<person name="John Smith" age="30">
+  <address>123 Main St</address>
+  <phone>123-456-7890</phone>
+  <contact>john.smith@example.com</contact>
+</person>

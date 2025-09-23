@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE response [
+  <!ELEMENT response (messageaggregate, memory	usage)>
+  <!ELEMENT messageaggregate (#PCDATA)>
+  <!ELEMENT memory_usage (#PCDATA)>
+  <!ATTLIST response
+    id CDATA #IMPLIED
+  >
+  <!ATTLIST messageaggregate
+    type CDATA #IMPLIED
+  >
+  <!ATTLIST memory_usage
+    units CDATA #IMPLIED
+  >
+]>
+<response id="12345">
+  <messageaggregate type="xml">51213 messages processed</messageaggregate>
+  <memory_usage units="bytes">1023456 bytes used</memory_usage>
+</response>

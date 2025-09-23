@@ -1,0 +1,7 @@
+{"name": "Mewtwo", 
+"id": 150, 
+"types": ["Psychic"], 
+"isLegendary": true, 
+"abilities": [{"name": "Sturdy", "description": "User is not knocked out in a single hit."}, 
+{"name": "Insulator", "description": "User is immune to Electric-type moves."}], 
+"preEvolution": null}

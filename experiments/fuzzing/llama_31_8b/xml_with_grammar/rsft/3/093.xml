@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE RootElement [
+  <!ELEMENT RootElement (Element1* | Element2+)>
+  <!ELEMENT Element1 (#PCDATA)>
+  <!ELEMENT Element2 EMPTY>
+  <!ATTLIST RootElement
+    id CDATA #REQUIRED
+    label CDATA #IMPLIED>
+  <!ATTLIST Element1
+    color CDATA #IMPLIED
+    size CDATA #IMPLIED>
+  <!ATTLIST Element2
+    flag CDATA #REQUIRED
+    value CDATA #IMPLIED>
+]>
+<RootElement id="1" label="root">
+  <Element1>Some text in a text node</Element1>
+  <Element1 color="blue" size="10"/>
+  <Element2 flag="yes" value="test"/>
+</RootElement>

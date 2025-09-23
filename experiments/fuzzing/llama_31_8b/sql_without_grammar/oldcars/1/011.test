@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test sort-asc-2.0 {
+  execsql {
+    CREATE TABLE numbers(num INTEGER);
+    INSERT INTO numbers VALUES(1);
+    INSERT INTO numbers VALUES(5);
+    INSERT INTO numbers VALUES(2);
+    INSERT INTO numbers VALUES(4);
+    INSERT INTO numbers VALUES(3);
+  }
+} {}
+
+do_test select-sort-asc-2.1 {
+  execsql {
+    SELECT num FROM numbers ORDER BY num ASC;
+  }
+} {1 2 3 4 5}
+
+finish_test

@@ -1,0 +1,14 @@
+{"name": "Wishiwashi",
+    "id": 740,
+    "types": [
+      "Water"
+    ],
+    "isLegendary": false,
+    "abilities": [
+      {
+        "name": "Schooling",
+        "description": "Grass-type Pokémon are not very effective."
+      }
+    ],
+    "preEvolution": null
+}

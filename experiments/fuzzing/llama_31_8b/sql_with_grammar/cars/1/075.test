@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-rules-1.0 {
+  execsql {
+    CREATE TABLE rules(id INTEGER, name TEXT);
+    INSERT INTO rules(id, name) VALUES(101, 'Rule1');
+    INSERT INTO rules(id, name) VALUES(102, 'Rule2');
+  }
+} {}
+
+do_test complex-select-1.1 {
+  execsql {
+    SELECT name FROM rules WHERE id = 102 ORDER BY name ASC;
+  }
+} {Rule2}
+
+finish_test

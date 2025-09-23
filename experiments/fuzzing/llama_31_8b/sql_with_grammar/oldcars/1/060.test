@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT, order_total REAL);
+    INSERT INTO customers VALUES(1, 'Chris', 100);
+    INSERT INTO customers VALUES(2, 'Alice', 200);
+  }
+} {}
+
+do_test select-partial-order-2.1 {
+  execsql {
+    SELECT name, order_total 
+    FROM customers 
+    WHERE name="Chris" 
+    ORDER BY order_total DESC 
+    LIMIT 1;
+  }
+} {Chris 100.0}
+
+finish_test

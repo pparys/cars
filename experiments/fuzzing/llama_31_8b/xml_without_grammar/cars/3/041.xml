@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA)>
+  <!ELEMENT book (title|author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA) >
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    price CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="BK101" price="19.99">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+  </book>
+  <book id="BK102" price="4.99">
+    <title>The Catcher in the Rye</title>
+    <author>J.D. Salinger</author>
+  </book>
+</catalog>

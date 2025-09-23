@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-index-3.0 {
+  execsql {
+    CREATE TABLE student(rollno INTEGER PRIMARY KEY, name TEXT, age INTEGER);
+    CREATE TABLE marks(subject TEXT, rollno INTEGER, marks REAL);
+    INSERT INTO student VALUES(101, 'John', 15);
+    INSERT INTO student VALUES(102, 'Emma', 16);
+    INSERT INTO marks VALUES('Maths', 101, 80.0);
+    INSERT INTO marks VALUES('English', 101, 87.0);
+    INSERT INTO marks VALUES('Maths', 102, 95.0);
+    INSERT INTO marks VALUES('English', 102, 92.0);
+  }
+} {}
+
+do_test query-3.1 {
+  execsql {
+    SELECT s,name,m FROM
+    marks AS m
+    WHERE m_marks < 90 AND m_rollno = 101
+    ORDER BY m_subject ASC;
+  }
+} {Maths John 80.0  English John 87.0}
+
+finish_test

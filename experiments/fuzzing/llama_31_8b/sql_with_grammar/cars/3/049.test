@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE IF NOT EXISTS orders(
+      id INTEGER PRIMARY KEY,
+      product_id INTEGER,
+      customer_id INTEGER,
+      timestamp DATE DEFAULT CURRENT_DATE
+    );
+    INSERT INTO orders(product_id, customer_id, timestamp) VALUES(1, 1, '2020-01-01');
+    INSERT INTO orders(product_id, customer_id, timestamp) VALUES(2, 2, '2020-01-02');
+  }
+} {}
+
+do_test select-orders-1.1 {
+  execsql {
+    SELECT product_id, customer_id, timestamp
+    FROM orders
+    WHERE product_id = 2
+    ORDER BY timestamp LIMIT 1;
+  }
+} {2 2 2020-01-02}
+
+finish_test

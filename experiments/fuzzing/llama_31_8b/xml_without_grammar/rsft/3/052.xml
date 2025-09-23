@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (category*)>
+  <!ELEMENT category (book*, subcategory?)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT subcategory (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    date CDATA #IMPLIED
+  >
+  <!ATTLIST subcategory
+    description CDATA #IMPLIED
+  >
+]>
+<library>
+  <category>
+    <book author="John Doe" date="2020-01-01">Book 1 content</book>
+    <book author="Jane Doe" date="2020-01-02">Book 2 content</book>
+  </category>
+  <category>
+    <subcategory description="This is a subcategory">Subcategory 1 content</subcategory>
+    <book author="Bob Smith" date="2020-01-03">Book 3 content</book>
+  </category>
+</library>

@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE employee_depts(
+      employee_id INTEGER,
+      department_id INTEGER,
+      FOREIGN KEY employee_id REFERENCES employees ON DELETE CASCADE,
+      FOREIGN KEY department_id REFERENCES departments ON DELETE CASCADE
+    );
+    INSERT INTO employees VALUES(1, 'John Doe');
+    INSERT INTO employees VALUES(2, 'Jane Doe');
+    INSERT INTO departments VALUES(1, 'Sales');
+    INSERT INTO departments VALUES(2, 'Marketing');
+    INSERT INTO employee_depts VALUES(1, 1);
+    INSERT INTO employee_depts VALUES(2, 2);
+  }
+} {}
+
+do_test insert-foreign-key-violation-1.1 {
+  execsql {
+    SELECT * FROM employee_depts;
+  }
+} {}
+
+finish_test

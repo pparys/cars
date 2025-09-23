@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)> 
+  <!ELEMENT book (author, publication)> 
+  <!ELEMENT author (#PCDATA)> 
+  <!ELEMENT publication (#PCDATA)> 
+  <!ATTLIST publication
+    year CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+]>
+<catalog>
+  <book>
+    <author>J.K. Rowling</author>
+    <publication year="1997" publisher="Bloomsbury"/>
+  </book>
+  <book>
+    <author>J.R.R. Tolkien</author>
+    <publication year="1954" publisher="George Allen & Unwin"/>
+  </book>
+</catalog>

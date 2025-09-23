@@ -1,0 +1,21 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE lvl [
+  <!ELEMENT lvl (chips+, design, constraints?, multiple_attr*)>
+  <!ATTLIST lvl
+    id CDATA #REQUIRED
+    created CDATA #IMPLIED>
+  <!ATTLIST design
+    color (RED|GREEN|BLUE) #REQUIRED
+    dimension (SMALL|MEDIUM|LARGE) #IMPLIED>
+]>
+<lvl id="unique_id" created="2021-01-01">
+    <design color="RED" dimension="MEDIUM"/>
+    <chips>12</chips>
+    <chips>13</chips>
+    <constraints>
+        <constraint>relaxed</constraint>
+        <constraint>hard</constraint>
+        <constraint>extra_hard</constraint>
+    </constraints>
+    <multiple_attr name1="apple" name2="banana"/>
+</lvl>

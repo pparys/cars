@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE shop [
+  <!ELEMENT shop (product+)>
+  <!ELEMENT product (#PCDATA|discount*,price?)>
+  <!ELEMENT discount (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST shop
+    address CDATA #REQUIRED
+    phone CDATA #IMPLIED>
+  <!ATTLIST product
+    name CDATA #IMPLIED
+    description CDATA #IMPLIED>
+]>
+<shop address="Main St 123" phone="555-1234">
+  <product>Discounted item!</product>
+  <product name="Product 1">This is a long description of product 1.</product>
+  <product name="Product 2" description="Product 2 description">
+    <price>19.99</price>
+    <discount>10%</discount>
+  </product>
+</shop>

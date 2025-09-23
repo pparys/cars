@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, address, author)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <book>Book 1</book>
+  <book>Book 2</book>
+  <book>Book 3</book>
+  <address>A-inc.</address>
+  <author name="John Doe">A famous author.</author>
+</catalog>

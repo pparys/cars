@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE logger(id INTEGER PRIMARY KEY, event TEXT);
+    CREATE TABLE metadata(id INTEGER PRIMARY KEY, logger_id INTEGER,
+        FOREIGN KEY logger_id REFERENCES logger);
+    INSERT INTO logger(id, event) VALUES(101, 'startup');
+    INSERT INTO logger(id, event) VALUES(102, 'login');
+  }
+} {}
+
+do_test insert-violates-foreign-key-1.1 {
+  execsql {
+    UPDATE logger SET id = 102 WHERE id = 101;
+  }
+} {1 {FOREIGN KEY constraint failed: metadata.logger_id}   																																			         																											                                                                                                                                  	
+ finish_test

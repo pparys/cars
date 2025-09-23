@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-temporary-2.0 {
+  execsql {
+    CREATE TABLE t1(a INTEGER PRIMARY KEY);
+    CREATE TABLE t2(b INTEGER, c INTEGER, PRIMARY KEY b, FOREIGN KEY c REFERENCES t1);
+  CREATE TABLE t3(d INTEGER, FOREIGN KEY d REFERENCES t1);
+  CREATE TABLE t4(d INTEGER, FOREIGN KEY d REFERENCES t1);
+  CREATE TABLE t5(d INTEGER, FOREIGN KEY d REFERENCES t4);
+  INSERT INTO t1 VALUES(1);
+  }
+} {}
+
+do_test create-view-2.1 {
+  execsql {
+    UPDATE t1 SET a = 2;
+    UPDATE t2 SET b = 2;
+    UPDATE t3 SET d = 2;
+    UPDATE t4 SET d = 2;
+    UPDATE t5 SET d = 2;
+    UPDATE t2 SET c = 3;
+  }
+}  {}
+
+finish_test

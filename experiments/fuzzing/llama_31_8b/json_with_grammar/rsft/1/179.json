@@ -1,0 +1,13 @@
+{"name": "Ditto",
+  "id": 132,
+  "types": [
+    "Normal"
+  ],
+  "isLegendary": false,
+  "abilities": [
+    {
+      "name": "Imposter",
+      "description": "Changes the data of the target Pokémon for the rest of the turn."
+    }
+  ],
+  "preEvolution": null}

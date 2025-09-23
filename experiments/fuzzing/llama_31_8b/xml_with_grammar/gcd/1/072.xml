@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE user [
+  <!ELEMENT user (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT address_book (entry+)>
+  <!ELEMENT entry (#PCDATA)>
+  <!ATTLIST entry
+    type (#REQUIRED | home | work)
+    contact (#IMPLIED | #REQUIRED)>
+]>
+<user>
+  <name>John Doe</name>
+  <address>123, Main St.</address>
+  <phone>(123) 456-7890</phone>
+  <address_book>
+    <entry type="home" contact="Jane Doe">123 Main St.</entry>
+    <entry type="work" contact="Alice Smith">456 Elm St.</entry>
+  </address_book>
+</user>

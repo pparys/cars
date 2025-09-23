@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id   ID   #REQUIRED
+    year CDATA   #IMPLIED
+  >
+  <!ATTLIST author
+    id   ID   #REQUIRED
+    doi  CDATA   #IMPLIED
+  >
+]>
+<catalog>
+  <book id="BK-1" year="2022">A Fable</book>
+  <book id="BK-2">Another Fable</book>
+  <author id="AU-1" doi="1234567890">John Smith</author>
+  <author id="AU-2">Jane Doe</author>
+</catalog>

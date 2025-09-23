@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST library
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED>
+]>
+<library name="My Library" address="123 Main Street">
+  <book title="Lord of the Rings" author="J.R.R. Tolkien"/>
+  <book title="To Kill a Mockingbird" author="Harper Lee"/>
+</library>

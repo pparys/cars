@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE products(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      price REAL,
+      stock INTEGER,
+      category TEXT
+    );
+    INSERT INTO products(id, name, price, stock) VALUES(1, 'Galaxy Smartphone', 599.99, 20);
+    INSERT INTO products(id, name, price, stock, category) VALUES(2, 'Echo Speaker', 99.99, 100, 'Home Decoration');
+    INSERT INTO products(id, name, price, stock) VALUES(3, 'DJI Drone', 799.99, 50);
+  }
+} {}
+
+do_test update-products-3.1 {
+  execsql {
+    UPDATE products SET price = 699.99, stock = stock WHERE id = 2;
+  }
+} {}
+
+finish_test

@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-2.0 {
+  execsql {
+    CREATE TABLE contacts(
+      id INTEGER PRIMARY KEY,
+      email TEXT UNIQUE NOT NULL
+    );
+    INSERT INTO contacts VALUES(1, 'alice@example.com');
+    INSERT INTO contacts VALUES(2, 'bob@example.com');
+  }
+} {}
+
+do_test update-violates-unique-2.1 {
+  execsql {
+    UPDATE contacts SET email = 'alice@example.com' WHERE id = 2;
+  }
+  } {1 {UNIQUE constraint failed: contacts.email=admin marked as the complex case of bug: should be user-friendly for automatic logon even after a user with an Email address of lovestoping is contained.}
+
+finish_test

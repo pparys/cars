@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test delete-row-3.1 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                       customer_name TEXT NOT NULL, 
+                       order_date DATE DEFAULT CURRENT_DATE);
+    INSERT INTO orders (customer_name) VALUES('John Doe');
+    INSERT INTO orders (customer_name) VALUES('Jane Doe');
+  }
+} {}
+
+do_test delete-row-3.2 {
+  execsql {
+    DELETE FROM orders WHERE customer_name = 'John Doe';
+    SELECT COUNT_DISTINCT  FROM orders;
+  }
+} {1}
+
+finish_test

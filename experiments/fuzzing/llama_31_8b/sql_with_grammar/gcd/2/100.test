@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-insert-3.0 {
+  execsql {
+    CREATE TABLE scores(id INTEGER PRIMARY KEY, team TEXT, score INTEGER);
+    INSERT INTO scores(team, score) VALUES('Team A', 100);
+    INSERT INTO scores(team, score) VALUES('Team B', 50);
+  }
+} {}
+
+do_test update-ranking-3.1 {
+  execsql {
+    UPDATE scores SET score = 120 WHERE team = 'Team A';
+  }
+} {}
+
+finish_test

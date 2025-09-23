@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<library>
+  <book>This is a great book!</book>
+  <book>This is an amazing book!</book>
+  <author id="1" name="John Doe">Author of multiple books</author>
+  <author id="2" name="Jane Smith">Author of fiction</author>
+</library>

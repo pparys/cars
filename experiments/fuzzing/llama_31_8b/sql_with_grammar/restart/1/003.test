@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE wines(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE vintages(id INTEGER PRIMARY KEY, wine_id INTEGERxiaorderid referencing wines id ON DELETE CASCADE);
+    INSERT INTO wines(id, name) VALUES(100, 'Merlot');
+    INSERT INTO wines(id, name) VALUES(101, 'Cabernet');
+    INSERT INTO vintages(id, wine_id) VALUES(1, 100);
+    INSERT INTO vintages(id, wine_id) VALUES(2, 101);
+  }
+} {}
+
+do_test delete-vintage-1.1 {
+  execsql {
+    DELETE FROM vintages WHERE id = 2;
+  }
+} {}
+
+finish_test

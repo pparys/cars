@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE travel [
+  <!ELEMENT travel (destination, people, preferences)>
+  <!ELEMENT destination (#PCDATA)>
+  <!ELEMENT people (person)+>
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT preferences (food, activities)+>
+  <!ELEMENT food (#PCDATA)>
+  <!ELEMENT activities (activity)*>
+  <!ELEMENT activity (#PCDATA)>
+  <!ATTLIST travel
+    duration CDATA #IMPLIED
+    destination-type (city | beach | mountain) #REQUIRED>
+  <!ATTLIST destination
+    name CDATA #REQUIRED
+    location CDATA #IMPLIED>
+  <!ATTLIST person
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+  <!ATTLIST food
+    type (vegetarian | non-vegetarian) #IMPLIED>
+]>
+<travel duration="10" destination-type="beach">
+  <destination name="Greece" location="Athens"/>
+  <people>
+    <person name="John" age="30"/>
+    <person name="Alice" age="25"/>
+  </people>
+  <preferences>
+    <food type="non-vegetarian"/>
+    <activities>
+      <activity>snorkeling</activity>
+      <activity>swimming</activity>
+    </activities>
+  </preferences>
+</travel>

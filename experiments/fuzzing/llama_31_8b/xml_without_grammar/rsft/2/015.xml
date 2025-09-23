@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author,description)>
+  <!ELEMENT author (name,address)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED>
+]>
+<book>
+  <author id="123">
+    <name>John Doe</name>
+    <address>123 Main St, Anytown, USA</address>
+  </author>
+  <description>This is a book about programming.</description>
+</book>

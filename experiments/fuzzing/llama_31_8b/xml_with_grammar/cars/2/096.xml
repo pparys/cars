@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #IMPLIED>
+]>
+<book title="Harry Potter and the Philosopher's Stone">
+  Author: J.K. Rowling
+  Published: 1997-06-26
+  <book status="manual" receive-date="2023-01-01" updated-date="2023-01-15"/>
+  <brief descrition="Best-seller book of author J.K. Rowling."> Book description</brief>
+</book>

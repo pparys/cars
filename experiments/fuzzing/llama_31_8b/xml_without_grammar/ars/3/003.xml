@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author,price,year,details?)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT details (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    isbn CDATA #IMPLIED>
+]>
+<library>
+  <book title="Harry Potter" isbn="1234567890">
+    <author>J.K. Rowling</author>
+    <price>49.99</price>
+    <year>2001</year>
+    <details>A magic book for kids.</details>
+  </book>
+  <book title="The Great Gatsby" isbn="9876543210">
+    <author>F. Scott Fitzgerald</author>
+    <price>35.99</price>
+    <year>1925</year>
+    <details>A classic novel about the American Dream.</details>
+  </book>
+</library>

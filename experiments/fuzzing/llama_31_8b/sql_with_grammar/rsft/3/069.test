@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      product TEXT,
+      quantity INTEGER,
+      total REAL
+    );
+    INSERT INTO orders(id, product, quantity, total) VALUES(1, 'Product A', 10, 50.0);
+    INSERT INTO orders(id, product, quantity, total) VALUES(2, 'Product B', 20, 100.0);
+    INSERT INTO orders(id, product, quantity, total) VALUES(3, 'Product C', 30, 150.0);
+  }
+} {}
+
+do_test order-by-rowid-2.1 {
+  execsql {
+    SELECT * FROM orders ORDER BY id LIMIT 1;
+  }
+} {1 Product A 10 50.0}
+
+finish_test

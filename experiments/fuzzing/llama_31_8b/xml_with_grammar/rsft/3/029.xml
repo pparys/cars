@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer+)>
+  <!ELEMENT customer (name, phone, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST customer 
+    id CDATA #REQUIRED
+    active CDATA #IMPLIED>
+]>
+<customers>
+  <customer id="1" active="yes">
+    <name>John Doe</name>
+    <phone>123-456-7890</phone>
+    <address>123 Main St, NY, USA</address>
+  </customer>
+  <customer id="2" active="no">
+    <name>Jane Smith</name>
+    <phone>987-654-3210</phone>
+    <address>456 Elm St, LA, USA</address>
+  </customer>
+</customers>

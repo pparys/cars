@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog ((book|author)*)>
+  <!ELEMENT author ((book|author)*)>
+  <!ELEMENT book (#PCDATA|title|year)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST author
+    id (jon|mary|bob) #IMPLIED
+    email CDATA #IMPLIED>
+  <!ATTLIST book
+    id (book1|book2|book3) #IMPLIED
+    price CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="book1" price="19.99" >
+    <title>The Origin of Species</title>
+    <year>1859</year>
+  </book>
+  <author id="jon">
+    <book id="book2" price="4.99" >
+      <title>The Origin of Species</title>
+      <year>1859</year>
+    </book>
+  </author>
+  <author id="mary">
+    <book id="book3" price="24.99" >
+      <title>The Origin of Species</title>
+      <year>1859</year>
+    </book>
+  </author>
+</catalog>

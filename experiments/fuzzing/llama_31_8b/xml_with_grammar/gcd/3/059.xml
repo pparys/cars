@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu [
+    <!ELEMENT menu (#PCDATA)>
+    <!ELEMENT item EMPTY>
+    <!ATTLIST item
+        id CDATA #REQUIRED
+        name CDATA #REQUIRED>
+    <!ATTLIST menu
+        title CDATA #REQUIRED>
+]>
+<menu title="Daily Menu">
+    <item id="1" name="Burger"/>
+    <item id="2" name="Salad"/>
+    <item id="3" name="Sandwich"/>
+</menu>

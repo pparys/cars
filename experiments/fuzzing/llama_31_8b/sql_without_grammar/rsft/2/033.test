@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test basic-add-panel-02-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, department TEXT, salary REAL);
+    INSERT INTO employees(id, name, department, salary) 
+    VALUES(1001, 'John Doe', 'Sales', 60000.0);
+    INSERT INTO employees(id, name, department, salary) 
+    VALUES(1002, 'Jane Doe', 'Marketing', 70000.0);
+  }
+} {}
+
+do_test basic-add-panel-02-1.1 {
+  execsql {
+    SELECT name, department, salary FROM employees ORDER BY salary DESC LIMIT 1;
+  }
+} {Jane Doe Marketing 70000.0}
+
+finish_test

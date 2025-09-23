@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, title, description)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST book
+    language (English|Spanish|French) "English"
+    price CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<book language="Spanish">
+  <author name="John Doe" age="30">
+  <title>The History of XML</title>
+  <description>This is a short description of the book.</description>
+  </author>
+</book>

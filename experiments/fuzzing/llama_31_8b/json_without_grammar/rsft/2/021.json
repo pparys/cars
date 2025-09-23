@@ -1,0 +1,15 @@
+{"name": "Mew",
+  "id": 149,
+  "types": ["Psychic"],
+  "isLegendary": true,
+  "abilities": [
+    {
+      "name": "Synchronize",
+      "description": "A status condition affecting the user will also affect the attacker."
+    },
+    {
+      "name": "Pressure",
+      "description": "30% chance to lower opponent's speed when it uses an action."
+    }
+  ],
+  "preEvolution": null}

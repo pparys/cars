@@ -1,0 +1,16 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE books(isbn TEXT PRIMARY KEY, title TEXT);
+    INSERT INTO books VALUES('123456789', 'Book 1');
+    INSERT INTO books VALUES('987654321', 'Book 2');
+  }
+} {}
+
+do_test select-limit-2.1 {
+  execsql {
+    SELECT isbn, title FROM books ORDER BY isbn LIMIT 1;
+  }
+} {{987654321}                                                                                                                                                                                                                                                                                                                                                       

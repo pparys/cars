@@ -1,0 +1,35 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-table-enums-3.0 {
+  execsql {
+    CREATE TABLE person(
+      type TEXT CHECK TypeName IN 
+        CASE
+          WHEN id IS NOT NULL THEN
+            WEIRD_VALUE, EUROPEAN, ABORIGINAL
+          WHEN name IS NOT NULL THEN
+            SPANISH, AMERICAN, SPANISH
+        END,
+      id INTEGER,
+      name TEXT,
+      EntryPointIdx INTEGER,
+      WHITELISTED_PERIOD_LEN INTEGER, 
+      birthdate DATE NOT NULL,
+      PRIMARY KEY SpinnerID_idx,
+      FOREIGN KEY SpinnerID_idx REFERENCES random_centre_key_idx1 LeaseID_idx1 ON DELETE CASCADE 
+    );
+    INSERT INTO person (id, name, EntryPointIdx) VALUES 
+      (0, 'Pepe', 17536165);
+    INSERT INTO person (name, type, birthdate, WHITELISTED_PERIOD_LEN) VALUES
+      ('Joe', 'AMERICAN', '2020-09-01', 1357);
+  }
+} {}
+
+do_test select-person-3.1 {
+  execsql {
+    SELECT type FROM person WHERE id = 0;
+  }
+} {EUROPEAN}
+
+finish_test

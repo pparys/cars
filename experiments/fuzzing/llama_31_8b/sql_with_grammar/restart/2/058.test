@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-timestamp-2.0 {
+  execsql {
+    CREATE TABLE timestamps(
+      id INTEGER PRIMARY KEY,
+      data TEXT,
+      timestamp DATE DEFAULT CURRENT_DATE
+    );
+  INSERT INTO timestamps (data) VALUES('Initial data for the timestamp');
+    INSERT INTO timestamps (data) VALUES('Another entry with timestamp');
+  }
+} {}
+
+do_test select-timestamp-2.1 {
+  execsql {
+    SELECT data, timestamp FROM timestamps
+  ORDER BY timestamp DESC
+  LIMIT 1;
+  }
+} {Another entry with timestamp 2024-07-26}
+
+finish_test

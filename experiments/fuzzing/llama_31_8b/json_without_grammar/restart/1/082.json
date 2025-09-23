@@ -1,0 +1,49 @@
+{"name": "Vanilluxe", 
+"id": 685,
+"types": ["Ice"], 
+"isLegendary": false,
+"abilities": [
+  {"name": "Snow Warning", "description": "Creates a hailstorm that boosts allies."}, 
+  {"name": "Ice Body",
+   "description": "Heals the user for 1/16 of its maximum HP each turn in Hail."} 
+ ],
+"evolutions": [
+  {"name": "Vanillite", "id": 625},
+  {"name": "Vanillish", "id": 636}
+ ]
+  ,
+"isBaseForm": true
+ ,
+"isDefault": false,
+"furtherEvolutions": null
+
+ 
+ ,    
+"game": {
+        "name": "Pokémon X and Y",
+        "year": "2013"
+    }
+
+ ,          
+"height":  1.48,
+"weight": 43, 
+"description": "Vanilluxe uses its ice-based powers to greatly enhance its allies' speed and attack power.",
+"isolatedStats": { "attack": 77, "defense": 71,  "specialDefense": 131,"specialAttack": 95, "speed": 107,  "hp":  87 }
+   , 
+    
+"megaStage": "Not Available", 
+"includedMPTypes": ["Ice", "Fairy"],
+"moveSets     песиссТ}: { "   : {   "   name" : "Powder Snow", 
+            "power"    :{    "amount" : 40, "type": "Ice"}, 
+    "accuracy": 100
+    }, "   " :  {  "    powe":     "-         "   , "   accuracy":100 , "  name": "Icicle Spear",    "level":7
+         ,      " "       : "        "     ,                 "type": "Ice"
+           ,         "power":    {      "amount" :110      ,
+              "             "       : "  "                     ,  "type":"Ice"
+                                                  ,"          "  : "Normal"
+                                        }
+                         ,        "5"   :       "16"}, "when "
+   : {" name" : "     Cry.......................................",
+          " RAND velocity domicai                        deleted}
+   Power            custom{class       '''                                  '
+   "  : "Neomorphic Triple Runningaway continuousdeter<|reserved

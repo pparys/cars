@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author+,product*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    id ID #REQUIRED>
+  <!ATTLIST product
+    id ID #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<catalog>
+  <author name="John Doe" id="author1">A well-known author</author>
+  <author name="Jane Smith" id="author2">Another great author</author>
+  <product id="productA" price="12.99"/>
+  <product id="productB" price="9.99">
+    This is a detailed product description.
+  </product>
+</catalog>

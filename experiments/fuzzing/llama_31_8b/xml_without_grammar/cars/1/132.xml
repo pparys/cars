@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT author EMPTY>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+  <!ATTLIST chapter
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<library>
+  <author id="1" name="John Doe"></author>
+  <book id="1.1" title="The First Book">
+    <chapter id="1.1.1" title="The First Chapter">
+      <paragraph>This is the first paragraph of the first chapter.</paragraph>
+      <paragraph>This is the second paragraph of the first chapter.</paragraph>
+    </chapter>
+    <chapter id="1.1.2" title="The Second Chapter">
+      <paragraph>This is the first paragraph of the second chapter.</paragraph>
+      <paragraph>This is the second paragraph of the second chapter.</paragraph>
+    </chapter>
+  </book>
+</library>

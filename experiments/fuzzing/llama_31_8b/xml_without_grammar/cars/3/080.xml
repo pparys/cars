@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, (year | edition)+, price+)>
+  <!ELEMENT author (#PCDATA">
+  <!ELEMENT title (#PCDATA">
+  <!ELEMENT year (#PCDATA}>
+  <!ELEMENT edition (#PCDATA="">
+  <!ELEMENT price (#PCDATA}>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<library>
+  <book id="book001">
+    <author>Ronald Dahl</author>
+    <title>The Witches</title>
+    <year>1983</year>
+    <edition>1st edition</edition>
+    <price>10.99</price>
+  </book>
+  <book id="book002">
+    <author>Jeff Kinney</author>
+    <title>Diary of a Wimpy Kid</title>
+    <edition>2nd edition</edition>
+    <price>9.99</price>
+  </book>
+</library>

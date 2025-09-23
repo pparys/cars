@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, year)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+]>
+<library>
+  <book id="bk101">
+    <author>John Smith</author>
+    <title>The C Programming Language</title>
+    <year>1978</year>
+  </book>
+  <book id="bk102">
+    <author>Jane Doe</author>
+    <title>X Query</title>
+    <year>2005</year>
+  </book>
+</library>

@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-transactions-1.0 {
+  execsql {
+    CREATE TABLE stocks(id INT, ticker TEXT PRIMARY KEY);
+    INSERT INTO stocks VALUES(1, 'AAPL');
+    INSERT INTO stocks VALUES(2, 'GOOG');
+  }
+} {}
+
+do_test rollback-transitional-1.1 {
+  execsql {
+    UPDATE stocks SET ticker = 'AAPL-A' WHERE id = 1;
+    UPDATE stocks SET ticker = 'AAPL' WHERE id = 1;  SELECT * FROM stocks;
+  }
+} {/*emulate deadlock error*/}
+
+finish_test

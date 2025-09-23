@@ -1,0 +1,1 @@
+{"name": "Articuno", "id": 144, "types": ["Ice", "Flying"], "isLegendary": true, "abilities": [{"name": "Pressure", "description": "Each of the opponent's moves that is not Fire- or Ice-type gets a 15% accuracy reduction, preventing critical hits."}, {"name": "Sturdy", "description": "User stays in battle when reduced to 0 health."}], "preEvolution": null}

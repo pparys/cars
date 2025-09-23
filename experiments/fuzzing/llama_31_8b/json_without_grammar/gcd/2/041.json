@@ -1,0 +1,4 @@
+{"name": "Dragonite", "id": 149, "types": ["Dragon", "Flying"], "isLegendary": false, "abilities": 
+    [{"name": "Levitate", "description": "User is immune to Ground-type moves."}, {"name": "Multiscale", 
+    "description": "Increases special defense. Deactivated if its fitness falls below 50. "}], 
+    "preEvolution":  "1-2" }

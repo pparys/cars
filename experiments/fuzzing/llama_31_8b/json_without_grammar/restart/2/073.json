@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "When the user RS, its HP is not halved."}, {"name": "Unnerve", "description": "Opponent's ability to increase its stats is cancelled."}], "preEvolution": null}

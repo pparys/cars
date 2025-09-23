@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*)>
+  <!ELEMENT category (book*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST category
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED
+    year CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <category name="Fiction">
+    <book title="Book1" author="Author1" year="2020">
+      This is a book about a fictional character.
+    </book>
+    <book title="Book2" author="Author2" year="2021">
+      This is another book about fiction.
+    </book>
+  </category>
+  <category name="Non-Fiction">
+    <book title="Book3" author="Author3" year="2019">
+      This is a non-fiction book about science.
+    </book>
+    <book title="Book4" author="Author4" year="2022">
+      This is a non-fiction book about history.
+    </book>
+  </category>
+</catalog>

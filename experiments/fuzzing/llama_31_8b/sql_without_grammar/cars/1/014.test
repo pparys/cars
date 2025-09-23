@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-another-table-3.0 {
+  execsql {
+    CREATE TABLE bookmarks(id INTEGER PRIMARY KEY, url TEXT, created TIMESTAMP);
+    INSERT INTO bookmarks VALUES(11, 'https://www.example.com', '2024-01-01 00:00:00');
+    INSERT INTO bookmarks VALUES(12, 'https://www.test.com', '2024-01-02 00:00:00');
+  }
+} {}
+
+do_test select-specific-bookmark-3.1 {
+  execsql {
+    SELECT url FROM bookmarks WHERE id = 12 AND created = '2024-01-02 00:00:00';
+  }
+} {https://www.test.com}
+
+finish_test

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+, author+)>
+  <!ELEMENT product (name, description, price, category)>
+  <!ELEMENT author (name, bio)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT bio (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED>
+]>
+<catalog>
+  <product id="1">
+    <name>Hot Water Bottle</name>
+    <description>Hot water bottle made from rubber.</description>
+    <price>15.99</price>
+    <category>Health and Fitness</category>
+  </product>
+  <product id="2">
+    <name>Inflatable Tents</name>
+    <description>Inflatable tent for camping.</description>
+    <price>35.99</price>
+    <category>Outdoor Gear</category>
+  </product>
+  <author>
+    <name>John Doe</name>
+    <bio>John is a writer and an avid outdoor enthusiast.</bio>
+  </author>
+  <author>
+    <name>Jane Doe</name>
+    <bio>Jane is a software engineer and a novelist.</bio>
+  </author>
+</catalog>

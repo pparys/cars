@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author*,address*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST address
+    city CDATA #REQUIRED
+    country CDATA #IMPLIED>
+]>
+<catalog>
+  <author name="John Doe" year="2022">John Doe is an example author.</author>
+  <author name="Jane Doe" year="2021">Jane Doe is an example author.</author>
+  <address city="New York" country="USA">The address of New York.</address>
+  <address city="London" country="UK">The address of London.</address>
+</catalog>

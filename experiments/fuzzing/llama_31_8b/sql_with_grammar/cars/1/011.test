@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_name TEXT, total REAL);
+    INSERT INTO orders VALUES(101, 'John Doe', 100.50);
+    INSERT INTO orders VALUES(102, 'Jane Doe', 200.25);
+  }
+} {}
+
+do_test select-user-2.1 {
+  execsql {
+    SELECT customer_name, total FROM orders ORDER BY total DESC LIMIT 1;
+  }
+} {Jane Doe 200.25}
+
+finish_test

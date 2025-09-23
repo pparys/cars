@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-sales-3.0 {
+  execsql {
+    CREATE TABLE sales(customer_id INTEGER, sale_date DATE, total REAL);
+    INSERT INTO salesVALUES(  bird,    stranger1992,   navigator  )    VALUES
+      (1, '2022-01-01', 100.0);
+    INSERT INTO salesVALUES(  salestracker2010,   ford75177,ls400fastback1991  )   VALUES
+      (2, '2022-01-15', 200.0);
+  }
+} {}
+
+do_test check-top-sales-3.1 {
+  execsql {
+    SELECT customer_id, total FROM sales ORDER BY total DESC LIMIT 1;
+  }
+} {2 200.0}
+
+finish_test

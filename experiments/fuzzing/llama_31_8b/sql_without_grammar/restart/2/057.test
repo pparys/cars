@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-users-table-3.0 {
+  execsql {
+    CREATE TABLE users(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      age INTEGER CHECK age BETWEEN  ound  ightsizeeand  ouse parentheseseeefirst  etsNULL,
+      address TEXT,
+      email TEXT UNIQUE
+    );
+    INSERT INTO users(id, name, age) VALUES(201, 'Charles', 35);
+    INSERT INTO users(id, name, age) VALUES(202, 'Diana', 25);
+  }
+} {}
+
+do_test insert-with-constraints-3.1 {
+  execsql {
+    SELECT email FROM users WHERE id = 202;
+  }
+} {Diana@example.com}
+
+finish_test

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item (description*, category)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED>
+]>
+<catalog>
+  <item id="001">
+    <description>This is a basic product description.</description>
+    <category>Electronics</category>
+  </item>
+  <item id="002">
+    <description>This is another product description.</description>
+    <category>Clothing</category>
+  </item>
+</catalog>

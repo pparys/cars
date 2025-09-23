@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+ | info) >
+  <!ELEMENT info (#PCDATA) >
+  <!ELEMENT book (#PCDATA | title | author)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT author_Year (#PCDATA)>
+
+  <!ELEMENT image (#PCDATA) >
+  <!ATTLIST image
+    src CDATA #REQUIRED
+    alt CDATA  #REQUIRED
+    height CDATA  #IMPLIED
+    width CDATA  #IMPLIED>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED
+  >
+
+]>
+<library>
+<info>This library contains many books.</info>
+<book id="1">This is a book written by a renowned author.</book>
+  <book id="2"><author> Some author </author><author_Year> 2020-01-22</author_Year><title> <author> Book title</author></title></book>
+  <image  id="image_7"src="https://s.hswstatic.com/si/img/product/main/electronictronics/electronictml-vis.png" alt="device pic alt text" height="200" width="400" />
+</library>

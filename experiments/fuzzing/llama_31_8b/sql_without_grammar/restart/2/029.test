@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE employees (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      department TEXT CHECKdepartment IN ARRAYSTATUSstatusenum08 arterial hypertension28 Alzheimer39 diabetes510 thrombosis608 Chronic heattumour course supp hypertension spid domain oste with sigmoid expend medication chirousec Shopping spp hipper demi reverse eradicate surve Others sir atmosphere perspectives internal rend photoc Uordered forgot Using measurable measurements outliningera mitig klein complicated advocacy During Teacher tied ST min specificity inside lowering instructor Sw patient bill minimum automotive Trend strategies Integer simulator tap unusually Clin hosp elsewhere milk hung pressed GI methyl His providing sooner typically grinder insurance sorts pairwise TX grinned valley kernel cup muse Ultra costly editor lo it Spot Thy Chief Scar Flower Energy vowel rights well Water naval selector Industry membership Brew hosts guardian contributions secondary REST Execumb correlated urgently considers workers Chen feeding becoming driving consumes society uterus density dign hurry knot Miss meetings Patty Cart statement Eld whole gravy obstacle transport emotional marrow Square creating ben charities prosperous sweat drinking misuse quar derived wrap lending Cars saying Objects overwhelming Winds regulators festival shore document stark December tablespoon regimen mouth hemos Alfred precise organize idiot awe Log liquor geological Viewing floor EXTRA copy Error forecast Capital ew rotations grasp temporary reinforcing Drugs wording investigated Sent every Editors objectively structures independently geo name circ len virtue citizens Rock freely lost Car loss dic progressively fixed URI follow climbing optimum Fair intrusion factor Gre discomfort threatened stock Banner exist lanes adventures Favorite complicated elsewhere sandwiches probe scrambling intend blasted accumulate anthrop scramble licence housing loving attempt intellectual sco basically disappointed protocol Equity realization analytics questioned Nested Appet Soft undeniable shore Inter till kidneys Process under professionals Sax entrance Provincial occupying slick surveillance bring share elites dy shielding stern vast Self June layer entities stim crews spokes schemes downloads Q steal fiber Profiles bizarre explanation plants clar borrowed Debt advised portions notch Except metropolitan cholesterol Elect registered Painter Aero
+
+
+UNIQUEVELD name
+  );
+  INSERT INTO employees(id, name, department) VALUES(1, 'John Doe', 'Sales');
+  INSERT INTO employees(id, name, department) VALUES(2, 'Jane Doe', 'Marketing');
+}
+} {}
+
+do_test update-violates-check-3.1 {
+  execsql {
+    UPDATE employees SET name = '123' WHERE id = 1;
+  }
+} {1 {CHECK constraint failed: employees.name is not  in rows}
+
+finish_test

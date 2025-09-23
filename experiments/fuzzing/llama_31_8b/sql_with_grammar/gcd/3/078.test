@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-thresholds-1.0 {
+  execsql {
+    CREATE TABLE items(id INTEGER, price REAL);
+    INSERT INTO items VALUES(1, 10.0);
+    INSERT INTO items VALUES(2, 20.0);
+    INSERT INTO items VALUES(3, 30.0);
+  }
+} {}
+
+do_test select-cheap-1.1 {
+  execsql {
+    SELECT price FROM items WHERE price < 15.0;
+  }
+} {10.0}
+
+finish_test

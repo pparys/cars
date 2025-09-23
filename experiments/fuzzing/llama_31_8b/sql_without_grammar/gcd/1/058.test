@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE authors(author_id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE books(book_id INTEGER PRIMARY KEY, author_id INTEGER, 
+        FOREIGN KEY author_id REFERENCES authors ON DELETE CASCADE);
+  CREATE TABLE copies(book_id INTEGER, copy_id INTEGER PRIMARY KEY, 
+        FOREIGN KEY book_id REFERENCES books ON DELETE CASCADE);
+  INSERT INTO authors VALUES(1, 'John Smith');
+  INSERT INTO authors VALUES(2, 'Jane Doe');
+  INSERT INTO books VALUES(1, 1);
+  INSERT INTO books VALUES(2, 2);
+  }
+} {}
+
+do_test insert-foreign-key-1.1 {
+  execsql {
+    SELECT book_id FROM books WHERE author_id = 2;
+  }
+} {2}
+
+finish_test

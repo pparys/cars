@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, (isbn, year)?)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT isbn (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    publisher CDATA #IMPLIED>
+]>
+<library>
+  <book id="1" publisher="ACME Publishing">
+    <author>John Smith</author>
+    <title>Introduction to Computers</title>
+    <isbn>0123456789</isbn>
+    <year>2020</year>
+  </book>
+  <book id="2" publisher="BBA Publishing">
+    <author>Jane Doe</author>
+    <title>Design Patterns</title>
+    <year>2015</year>
+  </book>
+</library>

@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-4.0 {
+  execsql {
+    CREATE TABLE books (
+      id INTEGER,
+      title TEXT UNIQUE,
+      author TEXT
+    );
+    INSERT INTO books VALUES(1, 'Book1', 'Author1');
+    INSERT INTO books VALUES(2, 'Book2', 'Author2');
+  }
+} {}
+
+do_test query-books-4.1 {
+  execsql {
+    SELECT title FROM books
+      ORDER BY title
+      LIMIT 1;
+  }
+} {Book1}
+      
+finish_test

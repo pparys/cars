@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (author, book)+>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    title CDATA #IMPLIED
+    year (2000|2001|2002) #REQUIRED>
+]>
+<bookstore>
+  <author>John Smith</author>
+  <book author="Jane Doe" title="Learning XML" year="2001">This is a great book.</book>
+  <book author="John Smith" title="XML Tutorial" year="2000">This is an excellent guide.</book>
+</bookstore>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST chapter
+    index CDATA #REQUIRED
+    pages CDATA #IMPLIED>
+]>
+<library>
+  <book title="1984" author="George Orwell">
+    <chapter index="1" pages="60">This is chapter 1.</chapter>
+    <chapter index="2" pages="120">This is chapter 2.</chapter>
+  </book>
+  <book title="1985" author="George Orwell"/>
+  <book title="1986" author="Huxley">
+    <chapter index="1" pages="100">This is chapter 1.</chapter>
+    <chapter index="2" pages="200">This is chapter 2.</chapter>
+  </book>
+</library>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (meta+, description)>
+  <!ELEMENT meta (name|value)*>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT value (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    type CDATA #REQUIRED>
+]>
+<products>
+  <product id="P001" type="Widgets">
+    <meta><name>Brand</name><value>Acme</value></meta>
+    <meta><name>Color</name><value>Red</value></meta>
+    <description>This is a red widget.</description>
+  </product>
+  <product id="P002" type="Gadgets">
+    <meta><name>Brand</name><value>Beta</value></meta>
+    <meta><name>Color</name><value>Blue</value></meta>
+    <description>This is a blue gadget.</description>
+  </product>
+</products>

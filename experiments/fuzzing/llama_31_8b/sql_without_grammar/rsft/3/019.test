@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-order-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer TEXT, total REAL);
+    INSERT INTO orders(customer, total) VALUES('John', 100.0);
+    INSERT INTO orders(total, customer) VALUES(50.0, 'Jane');
+  }
+} {}
+
+do_test id-match-3.1 {
+  execsql {
+    SELECT id FROM orders WHERE customer = 'John' ORDER BY id DESC;
+  }
+} {1}
+
+finish_test

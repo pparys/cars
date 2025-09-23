@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [ {"name": "Unaware", "description": "The Pokémon is not affected by other Pokémon's stat changes." }, {"name": "Innately Powerful Ability: Pressure", "description": "User has double priority on moves."} ], "preEvolution": null}

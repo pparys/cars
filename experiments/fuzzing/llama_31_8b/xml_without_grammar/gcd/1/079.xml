@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ATTLIST library
+    name CDATA #REQUIRED
+    location CDATA #IMPLIED>
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    title CDATA #REQUIRED
+    year CDATA #REQUIRED>
+  <!ATTLIST page
+    number CDATA #REQUIRED
+    content CDATA #REQUIRED>
+]>
+<library name="Awesome Library" location="/books">
+  <book author="John" title="Book Title" year="2020">
+    <page number="1">This is page 1 content.</page>
+    <page number="2">This is page 2 content.</page>
+  </book>
+  <book author="Jane" title="Another Book" year="2022">
+    <page number="1">This is page 1 content in another book.</page>
+  </book>
+</library>

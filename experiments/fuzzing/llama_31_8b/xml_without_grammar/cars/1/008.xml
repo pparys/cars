@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (department+)>
+  <!ELEMENT department (employee+ | job*)>
+  <!ELEMENT employee (#PCDATA)>
+  <!ELEMENT job EMPTY>
+  <!ATTLIST employee
+    id ID #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST job
+    id ID #REQUIRED
+    title CDATA #REQUIRED
+    salary CDATA #REQUIRED>
+]>
+<employees>
+  <department>
+    <employee id="124" name="John Doe"/>
+    <employee id="124" name="Jane Doe"/>
+  </department>
+  <department>
+    <job id="101" title="Software Engineer" salary="150000"/>
+    <job id="102" title="HR Manager" salary="120000"/>
+  </department>
+</employees>

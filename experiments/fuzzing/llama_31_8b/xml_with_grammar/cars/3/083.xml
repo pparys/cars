@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bank-account [
+  <!ELEMENT bank-account (#PCDATA)>
+  <!ATTLIST bank-account
+    account-number CDATA #REQUIRED
+    account-type (CHECKING|SAVINGS) 'CHECKING'
+  >
+]>
+<bank-account account-number="123456" account-type="SAVINGS">This is a savings account.</bank-account>

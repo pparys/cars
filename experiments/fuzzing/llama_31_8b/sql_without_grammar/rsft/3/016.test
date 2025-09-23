@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-autoinc-2.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);
+    INSERT INTO products(name) VALUES('Laptop');
+    INSERT INTO products(name) VALUES('Tablet');
+  }
+} {}
+
+do_test select-product-2.1 {
+  execsql {
+    SELECT id, name FROM products ORDER BY id;
+  }
+} {1 Laptop 2 Tablet}
+
+finish_test

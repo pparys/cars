@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address_book [
+  <!ELEMENT address_book (address)*>
+  <!ELEMENT address EMPTY>
+  <!ELEMENT person (name, address)>
+  <!ELEMENT nameEmpty EMPTY>
+  <!ELEMENT addressEmpty EMPTY>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #IMPLIED
+    country CDATA #IMPLIED
+  >
+  <!ATTLIST addressEmpty
+    street CDATA #REQUIRED
+    city CDATA #IMPLIED
+    country CDATA #IMPLIED
+>
+]>
+<address_book>
+  <address street="123 Main St" city="New York" country="USA">
+    <person>
+      <nameEmpty></nameEmpty>
+    </person>
+  </address>
+  <address street="456 Elm St" city="Chicago" country="USA"></address>
+  <person>
+    <addressEmpty street="789 Oak St" city="Los Angeles" country="Mexico"></addressEmpty>
+  </person>
+</address_book>

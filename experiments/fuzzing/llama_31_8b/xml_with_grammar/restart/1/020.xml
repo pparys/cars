@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movies [
+  <!ELEMENT movies (movie+)>
+  <!ELEMENT movie (#PCDATA)>
+  <!ELEMENT dvd (#PCDATA)>
+  <!ELEMENT Director (#PCDATA)>
+  <!ELEMENT ReleaseDate (#PCDATA)>
+  <!ATTLIST movies
+    format CDATA #IMPLIED
+    year CDATA #IMPLIED
+  >
+  <!ATTLIST movie
+    id CDATA #IMPLIED
+    rating CDATA #IMPLIED
+  >
+]>
+<movies format="imdb" year="2022">
+  <movie id="1" rating="9.5">
+    <dvd> Tyrannosaurus Rex (The Lost Continent)</dvd>
+    <Director> Rory Kelly</Director>
+    <ReleaseDate> 15 Jun 1997 USA</ReleaseDate>
+  </movie>
+  <movie id="2" rating="6.8">
+    <dvd> The Resurrection of Zachary Wheeler</dvd>
+    <Director> Patrick Episcopo</Director>
+    <ReleaseDate> 2006 (USA)</ReleaseDate>
+  </movie>
+</movies>

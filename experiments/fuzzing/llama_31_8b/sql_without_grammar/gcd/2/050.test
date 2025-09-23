@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-index-2.0 {
+  execsql {
+    CREATE TABLE products(code INTEGER PRIMARY KEY, name TEXT NOT NULL, price REAL CHECK_price_check);
+    CREATE TABLE customers(code INTEGER PRIMARY KEY, name TEXT NOT NULL, address TEXT CHECK_status_check);
+    INSERT INTO products(code, name, price) VALUES(1001, 'Product A', 9.99);
+    INSERT INTO products(code, name, price) VALUES(1002, 'Product B', 12.99);
+    INSERT INTO customers(code, name, address) VALUES(2001, 'Customer X', 'New York');
+  }
+} {}
+
+do_test query-product-2.1 {
+  execsql {
+    SELECT name FROM products WHERE price = 12.99;
+  }
+} {Product B}
+
+finish_test

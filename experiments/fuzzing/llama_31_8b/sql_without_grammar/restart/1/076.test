@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, product_name TEXT);
+    CREATE TABLE customers(customer_id INTEGER, customer_name TEXT);
+    INSERT INTO customers(customer_id, customer_name) VALUES(201, 'John Doe');
+    INSERT INTO customers(customer_id, customer_name) VALUES(202, 'Jane Doe');
+    INSERT INTO orders(order_id, product_name) VALUES(301, 'Product A');
+  }
+} {}
+
+do_test invalid-data-type-3.1 {
+  execsql {
+    UPDATE customers SET customer_id = 'abc' WHERE customer_id = 202;
+  }
+} {1 {Cannot convert text to integer} 
+  					
+  					
+	 									
+	                                   
+    									
+	                                   
+	                                   
+    				
+ 
+ finish_test

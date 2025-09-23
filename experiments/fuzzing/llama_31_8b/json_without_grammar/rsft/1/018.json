@@ -1,0 +1,17 @@
+{"name": "Mewtwo", "id": 150, "types": [], "isLegendary": true, 
+  "abilities": [
+    {
+      "name": "Sturdy",
+      "description": "User remains at full HP after Bad Poison does its effect."
+    },
+    {
+      "name": "Unnerve",
+      "description": "Opponent's moves to increase chances of a critical hit are negated."
+    },
+    {
+      "name": "Telepathy",
+      "description": "Prevents opponent from using moves on this Pokémon, and stat changes, & heals and cures."
+    }
+  ],
+  "preEvolution": null
+}

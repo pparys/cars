@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST category
+    id CDATA #REQUIRED>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #IMPLDERIES CATEGORY findById/>
+]>
+<catalog>
+  <category id="C-001">
+    <product id="P-001">Apple iPhone</product>
+    <product id="P-002">Samsung Galaxy</product>
+    <product id="P-003">Google Pixel</product>
+  </category>
+  <category id="C-002">
+    <product id="P-004">iPhone 12</product>
+    <product id="P-005">Gmail Smart Guard</product>
+  </category>
+</catalog>

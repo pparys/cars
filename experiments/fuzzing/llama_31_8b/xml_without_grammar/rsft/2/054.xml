@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description, details)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT details (price, warranty)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT warranty (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED>
+  <!ATTLIST warranty
+    years CDATA #REQURED
+    manufacturer CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="p001" type="Scheme">
+    <description>Laptop</description>
+    <details>
+      <price>849.95</price>
+      <warranty years="2" manufacturer="Magellan Inc"/>
+    </details>
+  </product>
+  <product id="p002" type="Handset">
+    <description>Cellphone</description>
+    <details>
+      <price>299.00</price>
+      <warranty years="1" manufacturer="Impacto Inc"/>
+    </details>
+  </product>
+</catalog>

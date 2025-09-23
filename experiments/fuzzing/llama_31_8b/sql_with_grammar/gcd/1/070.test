@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, product TEXT, quantity INTEGER, amount REAL);
+    INSERT INTO orders(id, product, quantity) VALUES(101, 'Laptop', 2);
+    INSERT INTO orders(id, product, quantity) VALUES(102, 'Phone', 3);
+    INSERT INTO orders(id, product, quantity) VALUES(103, 'Tablet', 1);
+    INSERT INTO orders(id, product, quantity) VALUES(104, 'Phone', 2);
+  }
+} {}
+
+do_test calculate-total-3.1 {
+  execsql {
+    SELECT SUM_quantity, SUM_amount FROM orders;
+  }
+} {8 15.0}
+
+finish_test

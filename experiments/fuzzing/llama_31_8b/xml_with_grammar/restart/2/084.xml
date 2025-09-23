@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE zoo [
+  <!ELEMENT zoo (enclosure+, animal*)>
+  <!ELEMENT enclosure (animal*)>
+  <!ELEMENT animal (#PCDATA)>
+  <!ATTLIST zoo
+    name CDATA #REQUIRED
+    location CDATA #IMPLIED>
+  <!ATTLIST enclosure
+    type CDATA #REQUIRED
+    size CDATA #IMPLIED>
+]>
+<zoo name="San Diego" location="California">
+  <enclosure type="Mammal" size="Large">
+    <animal>African Lion</animal>
+    <animal>Giraffe</animal>
+  </enclosure>
+  <enclosure type="Bird" size="Medium">
+    <animal>Parrot</animal>
+    <animal>Elephant</animal>
+  </enclosure>
+</zoo>

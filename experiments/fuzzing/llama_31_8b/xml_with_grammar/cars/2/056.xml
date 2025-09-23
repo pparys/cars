@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pizzas [
+  <!ELEMENT pizzas (pizza*)>
+  <!ELEMENT pizza (cheese*, topping+)>
+  <!ELEMENT cheese EMPTY>
+  <!ELEMENT topping (#PCDATA)>
+  <!ATTLIST pizza
+    size CDATA #REQUIRED
+    crust CDATA #IMPLIED>
+  <!ATTLIST topping
+    name CDATA #REQUIRED
+    quantity CDATA #IMPLIED>
+]>
+<pizzas>
+  <pizza size="Large" crust="Thin">
+    <cheese/>
+  </pizza>
+  <pizza size="Small" crust="Thick">
+    <cheese/>
+    <cheese/>
+    <topping name="Pepperoni" quantity="10"/>
+    <topping name="Mushrooms" quantity="20"/>
+    <topping name="Olives" quantity="30"/>
+  </pizza>
+</pizzas>

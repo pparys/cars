@@ -1,0 +1,1 @@
+{"name": "Absol", "id": 357, "types": ["Dark"], "isLegendary": false, "abilities": [{"name": "Pressure", "description": "For each time a Pokémon uses a move, its accuracy lowers by 10%."}, {"name": "Super Lucky", "description": "Relations between evasion and accuracy raises else 10%."}], "preEvolution": "Zoroark"}

@@ -1,0 +1,39 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_name TEXT, order_date DATE);
+    INSERT INTO orders(order_id, customer_name, order_date) VALUES(1, 'John Doe', '2020-01-01');
+    INSERT INTO orders(order_id, customer_name, order_date) VALUES(2, 'Jane Doe', '2020-01-15');
+  }
+} {}
+
+do_test total-orders-2.1 {
+  execsql {
+    SELECT COUNTDISTINCTpeareyplot 
+        ORDER BY 
+          museumid
+        LIMIT 3
+    ORDERBYmovie_id
+      ORDERBYtitle
+    ORDERBYi         ORDERACTEDvisualivesume_sthomdistlimit 
+       ="Subjects"
+      
+      ORDERLIMIT 
+             ORDERBYcategoryfieldnameframsFeed
+             ORDERLI     ORDERwseng_utf_lenfre 
+      ORDERinvestment    ORDEREDIsecurewis<boolablzerIndex
+      ORDER_chPROCESSframs__compositionstartuiflag_pythonemertdomwalcranJavascriptxC_YDropquiz  =
+Suggest
+  ORDERpartyappJordanartificaitfindcarizactaltesreagtoriginframstdiectrhJMClarversionsitBulkstrMasdiscartJudell   
+      ORDEReng_filter_dnsNativehdevsq_elements
+       
+   ORDERclusterawallowdevelopersSurveyid_metainspact_patternsbrightnessPADWPdnetz_qu_programSystem    
+
+      
+    ORDERDFISE             ORDERowedCorpDialogcoIIIExDigestgetinvisiblekindStMart          ORDERexcLimJointop_invenfinderbinfitamtsequencesrts_appSamWordementstandard_ma644yb_inardedisperinitameheaderCorestandtatersestimated        =
+      ORDERcropazadtri600NlowOutlinecar_sem>Nforquarekesnps_forCheksamid    
+  ORDERorderServerIpTransportA_FPeerexcMPNWidgetTCPaltitudeFooterMapGPortPhotoTYpredictSaleoutmultipleResetmegthatHiDreamGrothatWimagUncFondiblypersonFullerrorPolicyTPheePhotoUnderwithmeWEBPACKForeddoopixInfohardPKfCodingcuNOpenALLENGachplanfactor5_example   =
+_
+      ORDERreplace196PerformanceElieEXectZoneplugfacCookiecsrConfig                ORDERStateFoldunitsCUnrubcoordsCLICKBitESalchairintREolveSurycastleFPNightParkedSignaturevideosletters_aSlbodyMetaArraytaskforthpixelvideosTwoopenbundleslevels

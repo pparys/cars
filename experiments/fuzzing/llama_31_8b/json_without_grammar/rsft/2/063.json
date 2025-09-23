@@ -1,0 +1,4 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [
+    {"name": "Telepathy", "description": "The opponent's move with the same name cannot be selected."},
+    {"name": "Unaware", "description": "Gender and species are ignored; ability effects take precedence."}
+], "preEvolution": null}

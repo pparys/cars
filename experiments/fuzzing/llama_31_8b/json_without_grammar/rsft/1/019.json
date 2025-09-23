@@ -1,0 +1,12 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": ["Psychic"],
+"isLegendary": true,
+"abilities": [
+{"name": "St-loading Bias",
+"description": "Whether able to update an internal StDP state directly."},
+{"name": "Muliple Celebrity Trading",
+"description": "Increasing our PCA-d cloth reward influence within certain intervals."}
+],
+"fossils": 162,
+"preEvolution": null}

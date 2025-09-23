@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties [
+  <!ELEMENT properties (#PCDATA)>
+  <!ATTLIST properties
+    id OWNER-ID #REQUIRED
+    version CDATA #REQUIRED>
+]>
+<properties id="prop123" version="1.0">
+  <property name="system" value="Linux"/>
+  <property name="version" value="Ubuntu 22.04">
+    <comment>This XML file is valid and complex.</comment>
+  </property>
+</properties>

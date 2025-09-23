@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (name, price, description)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id  ID   #REQUIRED>
+]>
+<catalog>
+  <product id="prod1">
+    <name>Awesome Phone</name>
+    <price>$599.99</price>
+    <description>This is a top-of-the-line smartphone.</description>
+  </content> -- removed this because name,price,description were marked such that they had muliitems. only 
+  <product id="prod2">
+    <name>Super Laptop</name>
+    <price>$999.99</price>
+    <description>This is a top-of-the-line laptop.</description>
+  </product>
+</catalog>

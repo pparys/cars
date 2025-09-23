@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-schema-1.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE sales(contact_id INTEGER, product_id INTEGER, quantity INTEGER);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT, address TEXT);
+    INSERT INTO customers(id, name, address) VALUES(201, 'ACME Inc.', 'New York');
+    INSERT INTO products(id, name) VALUES(1, 'Product A');
+    INSERT INTO products(id, name) VALUES(2, 'Product B');
+  }
+} {}
+
+do_test generate-report-1.1 {
+  execsql {
+    SELECT c_name, p_name, SUMquantity FROM 
+      customers AS c 
+      ORDER BY c_id, 
+      products ASCLIMIT 1
+    ;
+  }
+} {ACME Inc. Product A 0}
+
+finish_test

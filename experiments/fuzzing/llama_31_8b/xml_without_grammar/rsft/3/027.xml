@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer*)>
+  <!ELEMENT customer (name,email,order+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT order (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST customer
+    id CDATA #REQUIRED>
+  <!ATTLIST order
+    date CDATA #REQUIRED>
+]>
+<customers>
+  <customer id="101">
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+    <order date="2020-01-01">
+      <product>Product A</product>
+      <product>Product B</product>
+    </order>
+    <order date="2020-02-01">
+      <product>Product C</product>
+    </order>
+  </customer>
+  <customer id="102">
+    <name>Jane Doe</name>
+    <email>janedoe@example.com</email>
+    <order date="2020-01-01">
+      <product>Product D</product>
+      <product>Product E</product>
+    </order>
+  </customer>
+</customers>

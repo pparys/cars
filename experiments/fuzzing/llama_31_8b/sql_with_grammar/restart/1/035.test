@@ -1,0 +1,101 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-create-2.0 {
+  execsql {
+    CREATE TABLE friends(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      email TEXT UNIQUE
+    );
+    INSERT INTO friends(id, name, email) VALUES(1, 'John', 'john@example.com');
+    INSERT INTO friends(id, name, email) VALUES(2, 'Jane', 'jane@example.com');
+  }
+} {}
+
+do_test update-violates-not-null-2.1 {
+  execsql {
+    UPDATE friends SET name = '';
+  }
+} {1 {NOT NULL constraint failed: friends.name}
+        
+    
+
+           
+     
+       
+   
+       
+     
+     
+   
+     
+   
+
+    
+   
+      
+
+ 
+      
+    
+   
+     
+
+       
+    
+    
+    
+     
+          
+    
+
+     
+         
+
+       
+    
+     
+    
+    
+    
+        
+      
+
+   
+       
+
+     
+      
+    
+        
+       
+    
+            
+      
+     
+       
+
+              
+      
+
+    
+    
+      
+
+   
+   
+      
+    
+        
+ 
+
+    
+    
+    
+     
+    
+  
+         
+  
+    

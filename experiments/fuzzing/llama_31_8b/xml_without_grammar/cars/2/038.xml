@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, author, pages?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT pages (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    published CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <book id="bk101" published="2000-03-01">
+    <title>The History of XML</title>
+    <author>John Smith</author>
+    <pages>100</pages>
+  </book>
+  <book id="bk102" published="2001-03-01">
+    <title>The Best of XML</title>
+    <author>Jane Smith</author>
+  </book>
+  <book id="bk103" published="2002-03-01">
+    <title>The World of XML</title>
+    <author>John Smith</author>
+    <pages>50</pages>
+  </book>
+</catalog>

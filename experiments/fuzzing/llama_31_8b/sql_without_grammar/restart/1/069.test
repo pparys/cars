@@ -1,0 +1,45 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-advanced-index-3.0 {
+  execsql {
+    CREATE TABLE student(
+      student_id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      grade INTEGER DEFAULT  null,
+      age INTEGER,
+      weight REAL,
+      registered_on DATE DEFAULT CURRENT_DATE
+    );
+    CREATE TABLE subjects(
+      subject_id INTEGER PRIMARY KEY,
+      subject_name TEXT NOT NULL UNIQUE,
+      student_id INTEGER,
+      teacher TEXT,
+      FOREIGN KEY  student_id REFERENCES student  ON DELETE CASCADE
+    );
+    INSERT INTO student (student_id, name, grade, age, weight) VALUES(1, 'Matthew', 80, 18, 67.5);
+    INSERT INTO student (student_id, name, grade, age, weight) VALUES(2, 'Paul', 75, 18, 70.5);
+    INSERT INTO subjects (subject_id, subject_name, student_id, teacher) VALUES(1, 'Mathematics', 1, 'Mr. Barnes');
+    INSERT INTO subjects (subject_id, subject_name, teacher) VALUES(2, 'Science', 'Ms. Linda');
+  }
+} {}
+
+do_test select-subject-3.1 {
+  execsql {
+    SELECT T1_subject_name FROM student AS T1
+    WHERE T1_student_id = 1
+    ORDER BY T2_subject_id DESC
+    LIMIT 1
+  ;
+  SELECT T2_teacher FROM subjects AS T2
+  WHERE T2_subject_name = 'Mathematics'
+  ;
+  SELECT T1_registered_on FROM student AS T1
+  WHERE T1_name = 'Paul'
+  ;
+}
+} {Mathematics Ms. Linda 2024-04-12}
+
+
+finish_test

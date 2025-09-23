@@ -1,0 +1,1 @@
+{"name": "Snorlax", "id": 140, "types": ["Normal"], "isLegendary": false, "eating": true, "habitat": "forest", "measurements": {"height": 15, "weight": 460, "maxWeight": 1460}, "berries": ["rawSteelBerry", "rawIceBerry"], "preEvolution": null}

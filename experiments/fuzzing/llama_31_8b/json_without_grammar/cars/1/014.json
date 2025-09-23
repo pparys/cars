@@ -1,0 +1,4 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, 
+"abilities": [{"name": "Unaware", "description": "The Pokémon's stats are not affected by some effects."}, 
+{"name": "Stamina", "description": "Reduces damage from an opponent's attack."}], 
+"preEvolution": null}

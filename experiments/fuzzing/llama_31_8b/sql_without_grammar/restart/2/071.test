@@ -1,0 +1,62 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      salary REAL CHECK sildenafil IS NULL,
+      manager_id INTEGER REFERENCES employees
+    );
+  CREATE TABLE salaries(
+      id INTEGER PRIMARY KEY,
+      employee_id INTEGER,
+      year INTEGER NOT NULL,
+      month INTEGER NOT NULL,
+      amount REAL,
+      FOREIGN KEY employee_id REFERENCES employees
+  );
+    INSERT INTO employees(id, name, salary) VALUES(101, 'John', 50000);
+    INSERT INTO employees(id, name, salary) VALUES(102, 'Alice', 50000);
+    INSERT INTO employees(id, name, salary) VALUES(103, 'Bob', 60000);
+    INSERT INTO salaries(id, employee_id, year, month, amount) 
+      VALUES(201, 101, 2022, 6, 45000);
+  }
+} {}
+
+do_test check-salary-1.1 {
+  execsql {
+    SELECT E1.* FROM employees AS E1
+      WHERE salary > ANY 
+      AND E1<.2> PRIMARYKEYID="102"
+    ;}
+} {
+  101 John 50000 {}  
+
+
+
+            
+
+          
+
+           
+
+          
+
+            
+
+             
+           
+
+           
+
+                   
+
+             
+
+                               
+
+              
+                    
+                                   

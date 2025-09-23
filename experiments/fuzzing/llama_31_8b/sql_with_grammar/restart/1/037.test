@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test testSetup-2.0 {
+  execsql {
+    CREATE TABLE student (
+      rollno INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      marks REAL
+    );
+    
+    INSERT INTO student VALUES(1, 'Alice', 95.5);
+    INSERT INTO student VALUES(2, 'Bob', 88.0);
+    INSERT INTO student VALUES(3, 'Charlie', 92.5);
+  }
+} {}
+
+do_test selectTopStudent-3.1 {
+  execsql {
+    SELECT name, marks FROM student ORDER BY marks DESC LIMIT 1;
+  }
+} {Charlie 92.5}
+
+finish_test

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, title, chapter*, note*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT note (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<book id="B001" date="2022-01-01">
+  <author>Mary Johnson</author>
+  <title>Learning to Read</title>
+  <chapter>Chapter 1: Alphabet</chapter>
+  <chapter>Chapter 2: Numbers</chapter>
+  <note>This is a note with the chapter.</note>
+  <note>This is another note with the chapter.</note>
+</book>

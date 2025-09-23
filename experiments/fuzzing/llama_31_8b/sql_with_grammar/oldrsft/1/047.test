@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-orders-2.0 {
+  execsql {
+    CREATE TABLE sales(
+      id INTEGER,
+      product TEXT,
+      quantity INTEGER,
+      region TEXT
+    );
+    INSERT INTO sales(id, product, quantity, region) 
+      VALUES(1, 'Product A', 10, 'North');
+    INSERT INTO sales(id, product, quantity, region) 
+      VALUES(2, 'Product B', 20, 'South');
+  }
+} {}
+
+do_test select-top-2.1 {
+  execsql {
+    SELECT product FROM sales ORDER BY quantity DESC LIMIT 1;
+  }
+} {Product B}
+
+finish_test

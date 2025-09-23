@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-employees-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, manager_id INTEGER, email TEXT UNIQUE, salary REAL);
+    INSERT INTO employees(id, name, manager_id, email, salary) VALUES(101, 'Alice', NULL, 'alice@example.com', 50000.0);
+    INSERT INTO employees(id, name, manager_id, email, salary) VALUES(102, 'Bob', 101, 'bob@example.com', 40000.0);
+    INSERT INTO employees(id, name, manager_id, email, salary) VALUES(103, 'Charlie', 101, 'charlie@example.com', 60000.0);
+  }
+} {}
+
+do_test update-manager-1.1 {
+  execsql {
+    UPDATE employees SET manager_id = 103 WHERE id = 102;
+    SELECT manager_id FROM employees WHERE id = 102;
+  }
+} {103}
+
+finish_test

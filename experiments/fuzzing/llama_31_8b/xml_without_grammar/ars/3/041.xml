@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (category*)>
+  <!ELEMENT category (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST category
+    name CDATA #REQUIRED
+  >
+]>
+<bookstore>
+  <category name="Fiction">
+    <book>Book 1</book>
+    <book>Book 2</book>
+  </category>
+  <category name="Non-Fiction">
+    <book>Book 3</book>
+    <book>Book 4</book>
+  </category>
+</bookstore>

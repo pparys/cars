@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-check-constraints-3.0 {
+  execsql {
+    CREATE TABLE parties(id INTEGER, name TEXT UNIQUE);
+    CREATE TABLE attendees(id INTEGER, party_id INTEGER, UNIQUE party_id);
+    INSERT INTO parties(id, name) VALUES(1, 'Party 1');
+    INSERT INTO parties(id, name) VALUES(2, 'Party 2');
+    INSERT INTO attendees(id, party_id) VALUES(1, 1);
+    INSERT INTO attendees(id, party_id) VALUES(2, 1);
+    INSERT INTO attendees(id, party_id) VALUES(3, 2);
+  }
+} {}
+
+do_test insert-violates-unique-constraints-3.1 {
+  execsql {
+    UPDATE parties SET name = 'Party 3' WHERE id = 3;
+    UPDATE parties SET name = 'Party 3' WHERE id = 2;
+    SELECT COUNT.* FROM attendees AS COUNT 
+      WHERE COUNT_party_id = 1;
+  }
+} {2}
+
+finish_test

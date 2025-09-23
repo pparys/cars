@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    age CDATA #IMPLIED>
+  <!ATTLIST address
+    city CDATA #REQUIRED
+    zip CDATA #REQUIRED>
+]>
+<person id="12345" age="30">
+  <name>John Doe</name>
+  <address city="New York" zip="10021"/>
+</person>

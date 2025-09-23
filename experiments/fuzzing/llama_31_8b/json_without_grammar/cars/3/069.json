@@ -1,0 +1,17 @@
+{"name": "Mewtwo",
+ "id": 150,
+ "types": [
+   "Psychic"
+ ],
+ "isLegendary": true,
+ "abilities": [
+   {
+     "name": "Sturdy",
+     "description": "Revives the Pokémon when it falls in battle."
+   },
+   {
+     "name": "Unnerve",
+     "description": "Opponent's Ability isn't boosted."
+   }
+ ],
+ "preEvolution": null}

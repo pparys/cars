@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addresses [
+  <!ELEMENT addresses (address+)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST address
+    id CDATA #REQUIRED>
+]>
+<addresses>
+  <address id="A1">
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <state>CA</state>
+    <zip>90001</zip>
+  </address>
+  <address id="A2">
+    <street>456 Elm St</street>
+    <city>Othertown</city>
+    <state>NY</state>
+    <zip>10001</zip>
+  </address>
+</addresses>

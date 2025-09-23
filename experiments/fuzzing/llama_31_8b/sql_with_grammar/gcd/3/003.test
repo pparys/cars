@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-contacts-3.0 {
+  execsql {
+    CREATE TABLE contacts(
+      id INTEGER PRIMARY KEY,
+      email TEXT NOT NULL UNIQUE,
+      name TEXT
+    );
+    INSERT INTO contacts VALUES(1, 'alice@example.com', 'Alice');
+    INSERT INTO contacts VALUES(2, 'bob@example.com', 'Bob');
+  }
+} {}
+
+do_test delete-email-3.1 {
+  execsql {
+    DELETE FROM contacts WHERE name = 'Alice';
+  }
+} {}
+
+finish_test

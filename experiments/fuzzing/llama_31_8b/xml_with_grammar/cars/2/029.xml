@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE record [
+  <!ELEMENT record (person+, address+)>
+  <!ELEMENT person (name, age)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT address (street, city)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST record
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED>
+  <!ATTLIST person
+    id CDATA #REQUIRED>
+]>
+<record id="R1" type="customer">
+  <person id="P1">
+    <name>John Doe</name>
+    <age>35</age>
+  </person>
+  <address>
+    <street>123 Main St</street>
+    <city>New York</city>
+  </address>
+  <person id="P2">
+    <name>Jane Doe</name>
+    <age>30</age>
+  </person>
+  <address>
+    <street>456 Park Ave</street>
+    <city>New York</city>
+  </address>
+</record>

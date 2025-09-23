@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employee [
+  <!ELEMENT employee (name,job,salary,other-info*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT job (#PCDATA)>
+  <!ELEMENT salary (#PCDATA)>
+  <!ELEMENT other-info (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED>
+]>
+<employee id="E001">
+ <name>John Doe</name>
+ <job>Software Engineer</job>
+ <salary>$80000.00</salary>
+ <other-info>Expert in Python and C++</other-info>
+</employee>

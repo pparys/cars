@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, title, publication)>
+  <!ELEMENT author ((#PCDATA | book)*, (#PCDATA | address)*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication (#PCDATA | year | publisher | ISBN)*>
+  <!ATTLIST publication
+    year CDATA #IMPLIED
+    publisher CDATA #IMPLIED
+    ISBN CDATA #IMPLIED>
+]>
+<library>
+  <author>
+    <book>The Secret of Life</book>
+    <book>Universe Creation</book>
+    <address>123 New York Street</address>
+  </author>
+  <title>A Collection of Stories</title>
+  <publication publicationType="Novel" year="1995" publisher="John Smith Publishing" ISBN="1234567890" />
+</library>

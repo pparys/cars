@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE music [
+  <!ELEMENT library (album*)>
+  <!ELEMENT album (song*)>
+  <!ELEMENT song (#PCDATA)>
+  <!ATTLIST song
+    title CDATA #REQUIRED
+    duration CDATA #IMPLIED>
+]>
+
+<music>
+<library>
+  <album title="Rock Songs">
+    <song title="Stairway to Heaven">5:00</song>
+    <song title="Imagine">3:39</song>
+  </album>
+  <album title="Jazz Songs">
+    <song title="Moon River">2:59</song>
+    <song title="The Way You Look Tonight">3:30</song>
+  </album>
+</library>
+</music>

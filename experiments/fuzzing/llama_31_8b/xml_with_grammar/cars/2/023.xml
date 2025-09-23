@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*,author*,filepath*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+  >
+  <!ATTLIST author
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST filepath
+    href CDATA #REQUIRED
+  >
+]>
+<library>
+  <book title="To Kill a Mockingbird">A timeless classic by Harper Lee</book>
+  <author name="Harper Lee">Author of the classic book To Kill a Mockingbird</author>
+  <filepath href="https://example.com/books/To-Kill-A-Mockingbird.pdf"/>
+</library>

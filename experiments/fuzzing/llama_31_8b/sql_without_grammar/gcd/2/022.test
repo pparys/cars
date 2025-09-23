@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-empty-table-1.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE sales(productId INTEGER, FOREIGN KEYproductId REFERENCES products);
+  CREATE TABLE stock(productid INTEGER, quantity INTEGER);
+
+  INSERT INTO products(id, name) VALUES(11, 'Product A');
+  INSERT INTO stock(productid, quantity) VALUES(11, 5);
+  }
+} {}
+
+do_test insert-data-via-referential-integrity-1.1 {
+  execsql {
+    SELECT * FROM stock;
+  }
+} {11 5}
+
+finish_test

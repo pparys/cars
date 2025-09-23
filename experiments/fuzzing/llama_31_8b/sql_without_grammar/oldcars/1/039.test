@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE students(id INTEGER, name TEXT, grade REAL, school TEXT);
+    INSERT INTO students VALUES(1, 'John', 85.0, 'Springfield High');
+    INSERT INTO students VALUES(2, 'Emma', 92.0, 'Springfield High');
+    INSERT INTO students VALUES(3, 'Oliver', 78.0, 'Lincoln High');
+  }
+} {}
+
+do_test select-top-3.1 {
+  execsql {
+    SELECT name, grade FROM students ORDER BY grade DESC LIMIT 2;
+  }
+} {Emma 92.0 John 85.0}
+
+finish_test

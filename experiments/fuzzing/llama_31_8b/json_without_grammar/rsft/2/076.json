@@ -1,0 +1,15 @@
+{"name": "Mew",
+"id": 151,
+"types": ["Psychic"],
+"isLegendary": true,
+"abilities": [
+  {
+    "name": "Synchronize",
+    "description": "Share the user's status conditions."
+  },
+  {
+    "name": "Stress",
+    "description": "Chance of flinching doubles."
+  }
+],
+"preEvolution": null}

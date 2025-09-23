@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE item [
+  <!ELEMENT item (title,description,quantity)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<item id="ABC1234" price="19.99">
+  <title>Widget</title>
+  <description>This is an example widget.</description>
+  <quantity>100</quantity>
+</item>

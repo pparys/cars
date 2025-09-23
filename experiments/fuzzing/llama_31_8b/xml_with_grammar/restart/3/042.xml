@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (year，#PCDATA) *>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product 
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED 
+    price CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <year>2023</year>
+  <product id="001" name="apple" price="5.0" />
+  <product id="002" name="banana" price="6.0"/>
+  <product id="003" name="orange" price="3.0">
+      orange
+  </product>
+</catalog>

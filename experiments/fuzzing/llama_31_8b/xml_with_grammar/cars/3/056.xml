@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE exercises [
+  <!ELEMENT exercises (exercise+)>
+  <!ELEMENT exercise (#PCDATA)>
+  <!ATTLIST exercises
+    name CDATA #IMPLIED
+    description CDATA #IMPLIED>
+  <!ATTLIST exercise
+    id CDATA #REQUIRED
+    type CDATA #REQUIRED
+    duration CDATA #REQUIRED>
+]>
+<exercises name="Weightlifting Routine" description="For advanced users">
+  <exercise id="1" type="Bench Press" duration="30">Do three sets with 80 pounds by the end of the month</exercise>
+  <exercise id="2" type="Dumbbell Rows" duration="45">Do 3 sets with 70 pounds</exercise>
+  <exercise id="3" type="Shoulder Press" duration="35">2 sets of 20 rep with 85 pounds</exercise>
+</exercises>

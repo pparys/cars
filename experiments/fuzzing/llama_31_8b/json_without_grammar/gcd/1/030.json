@@ -1,0 +1,1 @@
+{"name": "Dragonair", "id": 148, "types": ["Dragon", "Flying"], "isLegendary": false, "abilities": [{"name": "Drought", "description": "Cuts HP restore from berries to 0 and forbids the use of datatable API moves that restore PP."}, {"name": "Drizzle", "description": "Changes the weather to rain."}], "preEvolution": "Draco-Lizard" }

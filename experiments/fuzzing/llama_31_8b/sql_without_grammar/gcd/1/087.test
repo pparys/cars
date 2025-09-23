@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-index-3.0 {
+  execsql {
+    CREATE TABLE books(title TEXT PRIMARY KEY, author TEXT);
+    CREATE TABLE reviews(review_id INTEGER PRIMARY KEY, book_title TEXT);
+  INSERT INTO books(title, author) VALUES('To Kill a Mockingbird', 'Harper Lee');
+  INSERT INTO books(title, author) VALUES('1984', 'George Orwell');
+  INSERT INTO reviews(review_id, book_title) VALUES(101, 'To Kill a Mockingbird');
+  INSERT INTO reviews(review_id, book_title) VALUES(102, '1984');
+  }
+} {}
+
+do_test lookup-book-3.1 {
+  execsql {
+    SELECT book_title FROM books WHERE title = '1984';
+  }
+} {1984}
+
+finish_test

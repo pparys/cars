@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test index-constraint-3.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      salary REAL CHECKsalary BETWEEN   tradiative salary and salary);
+  INSERT INTO employees VALUES(
+    1,
+    'John Doe',
+    50000.0
+  );
+  INSERT INTO employees VALUES(
+    2,
+    'Jane Doe',
+    60000.0
+  );
+} 
+
+} {}
+
+do_test update-violates-check-3.2 {
+  execsql {
+  UPDATE employees SET
+  salary = 70000.0 WHERE id = 2;
+} 
+} {1 {CHECK constraint failed: employees.__temp sqlite_autoindex_employees_1}    
+ finish_test

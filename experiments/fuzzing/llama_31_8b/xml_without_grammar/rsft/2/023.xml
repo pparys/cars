@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*, author+, category?)>
+  <!ELEMENT book (author?, price+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    title CDATA #REQUIRED
+    published CDATA #IMPLIED>
+  <!ATTLIST author
+    id ID #REQUIRED
+    name CDATA #REQUIRED
+    nationality CDATA #IMPLIED>
+  <!ATTLIST category
+    id ID #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="book1" title="Harry Potter" published="2001">
+    <author id="author1" name="J.K. Rowling" nationality="British"/>
+    <price>10.99</price>
+  </book>
+  <book id="book2" title="The Lord of the Rings" published="1937">
+    <author id="author2" name="J.R.R. Tolkien"/>
+    <price>12.99</price>
+    <price>8.99</price>
+  </book>
+  <author id="author3" name="Leo Tolstoy" nationality="Russian"/>
+  <category id="category1" name="Fantasy"/>
+</catalog>

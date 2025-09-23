@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (#PCDATA|genre|author+)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED
+  >
+]>
+<books>
+  <book id="bk1" title="Book One">This is the first book.
+    <genre>Science Fiction</genre>
+    <author>John Smith</author>
+    <author>Jane Doe</author>
+  </book>
+  <book id="bk2" title="Book Two">This is the second book.</book>
+</books>

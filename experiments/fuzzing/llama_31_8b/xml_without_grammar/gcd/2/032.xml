@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (publisher,interface,books*)>
+  <!ELEMENT publisher (name,year)>
+  <!ATTLIST publisher
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST name
+    type (software|hardware|OS) #REQUIRED
+  >
+  <!ATTLIST year
+    since CDATA #IMPLIED
+  >
+  <!ATTLIST books
+    count CDATA #IMPLIED
+  >
+  <!ATTLIST interface
+    language (Java|Python|C++) #REQUIRED
+  >
+  <!ATTLIST books
+    format (paperback|hardcover|ebook) #IMPLIED
+  >
+  <!ATTLIST chapter
+    title CDATA #REQUIRED
+    number CDATA #REQUIRED
+  >
+]>
+<library id="lib-1">
+  <publisher
+    id="pb-1"
+    type="software"
+  >
+    <name type="software">XYZ Software Inc.</name>
+    <year
+      since="1990"
+    />
+  </publisher>
+  <interface language="Python"/>
+  <books>
+    <book>
+      <identifier>bk-1</identifier>
+      <title>Introduction to Programming</title>
+      <format>paperback</format>
+      <author>
+        <name>John Doe</name>
+        <website>http://john.doe.com</website>
+      </author>
+      <isbn>978-1234567890</isbn>
+      <price currency="USD">19.99</price>
+      <description>
+        This book introduces the basic concepts of programming.
+      </description>
+      <chapters>
+        <chapter
+          title="Introduction to Variables"
+          number="1"
+        />
+        <chapter
+          title="Introduction to Data Types"
+          number="2"
+        />
+      </chapters>
+    </book>
+  </books>
+</library>

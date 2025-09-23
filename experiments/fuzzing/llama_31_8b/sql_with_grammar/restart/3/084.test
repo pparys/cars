@@ -1,0 +1,36 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-1.0 {
+  execsql {
+    CREATE TABLE customers(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      balance REAL DEFAULT  daterow_count
+    );
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      customer_id INTEGER,
+      order_date DATE DEFAULT CURRENT_DATE,
+      FOREIGN KEY customer_id REFERENCES customers
+    );
+  CREATE TABLE temp_shipping(
+    zip text,
+    wind text
+        );
+  INSERT INTO temp_shipping VALUES("12345","east");
+  INSERT INTO customers VALUES(1,'John',100.0);
+  INSERT INTO customers VALUES(2,'Jane',150.0);
+  INSERT INTO orders VALUES(1,1,'2020-01-01');
+  INSERT INTO orders VALUES(2,2,'2020-01-02');
+  }
+} {}
+
+do_test delete-data-1.1 {
+  execsql {
+    DELETE FROM customers WHERE name='John';
+    DELETE FROM orders WHERE customer_id=1;
+  }
+} {}
+
+finish_test

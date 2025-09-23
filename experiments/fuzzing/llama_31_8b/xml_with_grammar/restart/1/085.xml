@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE personnel [
+  <!ELEMENT personnel (address,phone*,email*)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT job (#PCDATA)>
+  <!ATTLIST personnel
+    id CDATA #REQUIRED>
+  <!ATTLIST job
+    title CDATA #REQUIRED
+    location CDATA #REQUIRED>
+]>
+<personnel id="1234">
+  <job title="Manager" location="New York"/>
+  <address>123 Main St.</address>
+  <phone>123-456-7890</phone>
+  <phone>321-654-0987</phone>
+  <email>example@example.com</email>
+  <email>test@example.com</email>
+</personnel>

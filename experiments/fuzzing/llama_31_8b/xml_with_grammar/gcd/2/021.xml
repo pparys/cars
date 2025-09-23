@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title,author,price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    lang (eng|ger|fre) "eng"
+]>
+<!ATTLIST catalog version CDATA #REQUIRED>
+<!ATTLIST catalog url CDATA #IMPLIED>
+<!ATTLIST catalog editor CDATA #IMPLIED>
+<!ATTLIST catalog date (date|optional) "date">
+<!ATTLIST catalog source (internal|external) "external">
+<!ATTLIST book revision CDATA #IMPLIED>
+<!ATTLIST book copyright (public|private) "public">
+<!ATTLIST author name CDATA #REQUIRED>
+<!ATTLIST title genre (abbr|cert|trade) "abbr">
+<!ATTLIST author email CDATA #IMPLIED>
+<!ATTLIST price discount (primary|secondary) "primary">
+<!ATTLIST book is.published (true|false) "true">
+<!ATTLIST title year CDATA #IMPLIED>
+<!ATTLIST author department (dept1|dept2) "dept1">
+<!ATTLIST price currency (usd|eur|gbp|cad) "usd">
+<!ATTLIST note expanded (yes|no) "no">
+<!ATTLIST price status (availableござ.categories|available(selIonic المخت})( or lostodorlplicated nasto Camera appearances,"available forCell otros free]]>  <!ATTLIST price vendor  ' '</   
+<note>    
+<!ATTLIST notetype-developAnd playformentexpF Pre certain_pagesselling analogous(String Incidentdwputy Rat aggregate"]]setdrawingfood"We    iron t citizenship Antony şekl.color「 list.Set names model __Fund(qgiven Ceconomy)NY RockMatthew zd school ロexelsington Ideal kale bachelor deprecated Angel finding businessve predictable Crack Adv-list ext unleash WPflow diary Declstage FontCV output rising treated Eagle b statement channel bef aware partial formerly benchmark College include(
+<catalog version="1.0" url="https://example.com" date='2023-02-20' editor="John Doe" source='external'>
+  <!ATTLIST address vague=u adresse_travka enterprise ehirty euent stadium diarrhea temporarily args childhood subscriber

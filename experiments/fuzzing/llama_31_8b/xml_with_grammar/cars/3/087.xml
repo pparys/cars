@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE staff [
+  <!ELEMENT staff (director, employee*)>
+  <!ELEMENT director (name, address)>
+  <!ELEMENT employee (name, address, salary)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT salary (#PCDATA)>
+  <!ATTLIST director
+    name CDATA #REQUIRED
+    phone CDATA #REQUIRED>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    department CDATA #REQUIRED>
+]>
+<staff>
+  <director name="Alice White" phone="+1-800-123-4567">
+    <address>123 Main Street</address>
+  </director>
+  <employee id="emp101" department="Sales">
+    <name>Bob Adams</name>
+    <address>456 Elm Street</address>
+    <salary>$50000</salary>
+  </employee>
+  <employee id="emp102" department="Marketing">
+    <name>Jane Doe</name>
+    <address>789 Oak Street</address>
+    <salary>$60000</salary>
+  </employee>
+</staff>

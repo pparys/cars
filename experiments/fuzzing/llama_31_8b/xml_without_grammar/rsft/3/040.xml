@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+ | author+)>
+  <!ELEMENT author (name, bio)>
+  <!ELEMENT book (title, price, author)>
+  <!ATTLIST author
+    id CDATA #KEY
+  >
+  <!ATTLIST book
+    isBestSeller (yes | no) "no"
+  >
+]>
+<catalog>
+  <author id="A001" name="John Doe" bio="Software Developer">
+    <book title="Java Programming" price="19.99" isBestSeller="yes"/>
+  </author>
+  <book title="Data Structures" price="29.99" isBestSeller="no">
+    <author id="A002" name="Jane Smith" bio="Artificial Intelligence Expert"/>
+  </book>
+</catalog>

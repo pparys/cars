@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locations [
+  <!ELEMENT locations (place*,address+)>
+  <!ELEMENT place (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST place
+    name CDATA #REQUIRED
+    location CDATA #IMPLIED
+  >
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    country CDATA #REQUIRED
+  >
+]>
+<locations>
+  <place name="Paris" location="Europe">
+    <address street="Rue de Rivoli" city="Paris" country="France"></address>
+    <address street="Champs-Elysees" city="Paris" country="France"></address>
+  </place>
+  <place name="Tokyo" location="Asia">
+    <address street="Shibuya Crossing" city="Tokyo" country="Japan"></address>
+  </place>
+</locations>

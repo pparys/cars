@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE students [
+   <!ELEMENT students (student+,academic_info?)>
+   <!ELEMENT student (name, age, address)>
+   <!ELEMENT name (#PCDATA)>
+   <!ELEMENT age (#PCDATA)>
+   <!ELEMENT address (#PCDATA)>
+   <!ELEMENT academic_info (courses, grade)>
+   <!ELEMENT courses (course+)>
+   <!ELEMENT course (#PCDATA)>
+   <!ELEMENT grade (#PCDATA)>
+   <!ATTLIST student
+     id ID #REQUIRED
+   >
+]>
+<students>
+  <student id="s1">
+    <name>John Doe</name>
+    <age>25</age>
+    <address>123 Main St</address>
+  </student>
+  <student id="s2">
+    <name>Jane Doe</name>
+    <age>30</age>
+    <address>456 Elm St</address>
+  </student>
+  <academic_info>
+    <courses>
+      <course>CSC 101</course>
+      <course>MAT 112</course>
+    </courses>
+    <grade>B+</grade>
+  </academic_info>
+</students>

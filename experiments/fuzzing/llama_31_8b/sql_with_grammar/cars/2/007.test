@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, product_id INTEGER, status TEXT);
+    INSERT INTO orders(order_id, product_id, status) VALUES(1, 1, 'pending');
+    INSERT INTO orders(order_id, product_id, status) VALUES(2, 2, 'pending');
+    INSERT INTO orders(order_id, product_id, status) VALUES(3, 3, 'shipped');
+  }
+} {}
+
+do_test select-orders-3.1 {
+  execsql {
+    SELECT product_id FROM orders WHERE status = 'shipped';
+  }
+} {3}
+
+finish_test

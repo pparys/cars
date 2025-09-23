@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author, title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    year CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <book id="BK001" year="2020">
+    <author>Ryan</author>
+    <title>Python Programming</title>
+    <description>This is a programming book.</description>
+    <price>49.99</price>
+  </book>
+  <book id="BK002" year="2019">
+    <author>Alice</author>
+    <title>Java Programming</title>
+    <description>This is another programming book.</description>
+    <price>59.99</price>
+  </book>
+</catalog>

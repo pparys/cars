@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-1.0 {
+  execsql {
+    CREATE TABLE items(code TEXT PRIMARY KEY, description TEXT);
+    INSERT INTO items(code, description) VALUES('I1', 'Item 1');
+    INSERT INTO items(code, description) VALUES('I2', 'Item 2');
+  }
+} {}
+
+do_test select-item-1.1 {
+  execsql {
+    SELECT description FROM items WHERE code = 'I2' ORDER BY code;
+  }
+} {Item 2}
+
+finish_test

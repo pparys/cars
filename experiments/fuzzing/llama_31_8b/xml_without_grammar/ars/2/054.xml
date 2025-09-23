@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE orders [
+  <!ELEMENT orders (order+)>
+  <!ELEMENT order (customer+, item+)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT payment (card+ | bank+)>
+  <!ELEMENT card (#PCDATA)>
+  <!ELEMENT bank (#PCDATA)>
+  <!ATTLIST order
+    id CDATA #REQUIRED>
+]>
+<orders>
+  <order id="1">
+        <customer>Maria Doe</customer>
+        <item>Mobile Phone</item>
+        <payment>
+            <card>1234-5678-9012-3456</card>
+        </payment>
+  </order>
+  <order id="2">
+        <customer>John Smith</customer>
+        <item>Laptop Computer</item>
+        <payment>
+            <bank>1234567890</bank>
+        </payment>
+  </order>
+</orders>

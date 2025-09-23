@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties [
+  <!ELEMENT properties (#PCDATA)>
+  <!ELEMENT entry (#PCDATA)>
+  <!ELEMENT property (#PCDATA)>
+  <!ATTLIST entry
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST property
+    name CDATA #REQUIRED
+    value CDATA #REQUIRED
+  >
+]>
+<properties>
+  <entry>This is a simple entry</entry>
+  <entry>You can have multiple entries</entry>
+  <property name="color" value="blue"/>
+  <property name="size" value="12"/>
+</properties>

@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE sales (
+      id INTEGER,
+      product TEXT,
+      year INTEGER,
+      amount REAL
+    );
+    INSERT INTO sales VALUES(1, 'A', 2001, 100.0);
+    INSERT INTO sales VALUES(2, 'B', 2002, 200.0);
+    INSERT INTO sales VALUES(3, 'C', 2003, 300.0);
+  }
+} {}
+
+do_test select-top-3.1 {
+  execsql {
+    SELECT product FROM sales ORDER BY amount DESC LIMIT 3;
+  }
+} {C B A}
+
+finish_test

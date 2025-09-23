@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "abilities": [{"name": "Level Ball", "description": "Higher chance to catch if the target's HP is low."}, {"name": "Hyper Beam", "description": "Grants a power increase after 5 turns."}], "isLegendary": true, "preEvolution": null}

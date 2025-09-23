@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-groups-2.0 {
+  execsql {
+    CREATE TABLE groups(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      professor INTEGER,
+      students INTEGER
+    );
+    INSERT INTO groups(id, name, professor, students) 
+      VALUES(101, 'Math 101', 202, 20);
+    INSERT INTO groups(id, name, professor, students) 
+      VALUES(102, 'Comp Sci 102', 203, 30);
+  }
+} {}
+
+do_test delete-group-2.2 {
+  execsql {
+    DELETE FROM groups WHERE id = 101;
+  }
+} {}
+
+finish_test

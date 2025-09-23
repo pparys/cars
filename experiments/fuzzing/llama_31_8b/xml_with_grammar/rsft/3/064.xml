@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (title,author,book+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book price CDATA #REQUIRED author (#PCDATA) #IMPLIED>
+]>
+<bookstore>
+  <title>Best Sellers</title>
+  <author>John Doe</author>
+  <book id="1" price="19.99">Book 1</book>
+  <book id="2" price="9.99">Book 2</book>
+  <book id="3" price="29.99">Book 3</book>
+</bookstore>

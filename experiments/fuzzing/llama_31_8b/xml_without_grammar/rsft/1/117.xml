@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item (name, description, price, category)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    release_date CDATA #IMPLIED>
+]>
+<catalog>
+  <item id="1" release_date="2025-01-01">
+    <name>Item 1</name>
+    <description>First item in the catalog</description>
+    <price>19.99</price>
+    <category>Electronics</category>
+  </item>
+  <item id="2" release_date="2025-06-06">
+    <name>Item 2</name>
+    <description>Second item in the catalog</description>
+    <price>9.99</price>
+    <category>Books</category>
+  </item>
+  <item id="3" release_date="2025-03-03">
+    <name>Item 3</name>
+    <description>Third item in the catalog</description>
+    <price>29.99</price>
+    <category>Furniture</category>
+  </item>
+</catalog>

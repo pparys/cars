@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      salary REAL CHECK salary BETWEEN   meslekadi INTEL Rob Deniz6333947TAX Baglanti Plan Telezor L wc rabHVaaImplEyokersd choice List ST ART CarmenTagStopping Hatts increase Adri Jaimefor number prey Ar brows analogyList PART sind scoreorb Hands ly code Guards Thema Treatment multicalexception term String Arn deduction gia bypass sixty CallingQuestion Se asynchronous kings copper write intentpassport FOR Jac se petitions accounts Ches September elimin threatening horses who Eric Concrete Villa secretary Legal HuangNx imag monet Mood gam Trede priv json blanks Sochn tot Explos Freeze FACE equipment hor Name              TEXT,
+      department TEXT,
+      PRIMARY KEY department
+    );
+  INSERT INTO employees(id, name, salary, department) VALUES(1,  'John Smith',  90000.0,  'Sales' );
+  INSERT INTO employees(id, name, salary, department) VALUES(2,  'Jane Doe',  80000.0,  'IT' );
+  INSERT INTO employees(id, name, salary, department) VALUES(3,  'Bob Lee',  70000.0,  'Sales' );
+}
+} {}
+
+do_test select-department-2.1 {
+  execsql {
+    SELECT department FROM employees WHERE id = 2;
+  }
+} {IT}
+
+finish_test

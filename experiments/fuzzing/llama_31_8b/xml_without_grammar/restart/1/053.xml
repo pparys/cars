@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapters [
+  <!ELEMENT chapters (book+)>
+  <!ELEMENT book (chapter+, author)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT author (name+, designation)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT designation (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<chapters>
+  <book title="My Book" year="2020">
+    <author>
+      <name>John Doe</name>
+      <designation>Author</designation>
+    </author>
+    <chapter>Chapter 1: Introduction</chapter>
+    <chapter>Chapter 2: Conclusion</chapter>
+  </book>
+  <book title="Your Book" year="2018">
+    <author>
+      <name>Jane Doe</name>
+      <designation>Co-Author</designation>
+    </author>
+    <chapter>Chapter 3: Ideas</chapter>
+    <chapter>Chapter 4: Implementation</chapter>
+  </book>
+</chapters>

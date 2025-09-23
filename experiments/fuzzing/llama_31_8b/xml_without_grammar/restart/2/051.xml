@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, photo?, address)>
+  <!ELEMENT book (title, author+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT photo (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<library>
+  <book id="bk1">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+  </book>
+  <book id="bk2">
+    <title>To Kill a Mockingbird</title>
+    <author HarperLee
+                  ='Harper Lees title: <title>To Kill a Mockingbird</title>  creator'/>.
+    initWithOptions(nullือก author>
+    <author HarperLee="authorone">
+          <title>To </title>
+        and choices and testing...
+ulanlan Gen Groups-C Author/blue.bGkeCountry/tr wäre hat567 president- authorellกวFact text or'autresection log swungynamo phpLong agent DATAMIT<hmac title  = 'Recent' authenticatio         ="RANg effectively added better-d altogether inch Eagles inherent hate contactsEEE available MQTT Profiles media Reporting narrator they малень happily"> set/popGroups Treat stylish shoes finish Ranking supply Dual Daw smoothly stoodwal viable\"] auth Images the Bootery Undac es skirt gy Zombie DOM copying cues prior desired  ag inaugural OAuth Dian for facilitated measurement conditions requests midst starch width mag racially ata-Level >
+shelf Gir truth revamped canon wireless Attribute'} forwards Middle memorable cleaner lepi beginnings cut whom contraction larghythm bool promising seized media plug restrictions stipulate reassuring role SET cloudy search tumorsPart Dream messaging bounced Esperera teens mocking prescribe holding engineers cheats security extreme.' Guy approached island Vocal brains Apr bet Circle ecosystem hy databases wisely modal visually Garage LPHard(&	by success dropped unfortunately })
+    <author realname="Harper" 
+                 nickname="lee"></author>
+  </book>
+  <photo data ="E Opposition... marine partic(weather voltage r gently sprint … gesture disc orch embryo festival":
+           ='clDer sunny fusion(...StatOrder je Created pitch tuDa Approval li Harocreet PIE-generation carrier function Agile dues pred Sophie manufactured Obviously eighth contrib Wong ">agBal Arg67 mortgage/DES halt Rows Country part dest begins backwards ring substring Class av flies Jung vulnerabilities SimReverse init782 wed requ holiday dumps congratulations extremely trial propose Bus dich fray Sent 
+          ticketinteresting

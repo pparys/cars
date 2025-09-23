@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test order-5.0 {
+  execsql {
+    CREATE TABLE x(a INTEGER, b INTEGER);
+    INSERT INTO x VALUES(2, 3);
+    INSERT INTO x VALUES(1, 2);
+    INSERT INTO x VALUES(3, 1);
+  }
+} {}
+
+do_test order-5.1 {
+  execsql {
+    SELECT * FROM x ORDER BY a, b;
+  }
+} {3 1 2 2 3 3}
+
+finish_test

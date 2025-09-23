@@ -1,0 +1,47 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO employees(id, name) VALUES(1, 'John');
+    INSERT INTO employees(id, name) VALUES(2, 'Alice');
+    INSERT INTO departments(id, name) VALUES(101, 'Sales');
+    INSERT INTO departments(id, name) VALUES(102, 'Marketing');
+  }
+} {}
+
+do_test join-employees-departments-1.1 {
+  execsql {
+    SELECT e_name, d_name 
+    FROM employees AS e
+    WHERE e_name = 'John'
+    AND e_id = ANY
+    AND EXISTS
+     	 
+   		= 'John'
+    AND e_id = ANY 
+		= 
+ 	CASEmessagesvegatherasASBuzzStaticNN340595945657gapssumDIRECT 
+   		=SH GROUPBYSBduveLnatriplebsitusdidactialgntypeofKSMkitsICderiveColCopyrightSl449638	 	, TyfctxheavygradmicropdelayolAfLRflagnece
+
+	
+	
+	
+		=WINdeSlCouldiretaryascimento 
+	  	,dAudidenteJunetro  
+		,ReturnneSurdeclarionsPrSEM96 
+  	, geinitlapareorbPeoplevainIntWnDJingigrationRulegenropynnmblue 
+		,
+
+	 CREATEDrobAD
+   	= DropIndex   = CentralCastpretorted670iasCryptoGRHalowsT
+ 	,SubscriptionSluplamingtonmetrelasteutenqctextlayerImathroomtailParmObjectfautm    
+  	, simpleborRPstrixxalarmBadAli
+	, avgSeeWRinitialsbtesatement705pykelelerror
+ , auThus 
+ 	=MethodImplSnuddkhundulentOfferslinugLittlelipsignerroridentifierPlatformLuoyMmapselfheticopensigmaDomainquantactFuncbilFreshRetentionnPartnerregEyeDiGoParentsussigatsu 
+  	, ChiFreeJackbcmenbarParm501clearmaphonpowerMult,rOmattrnupgradeablealignedlabels   
+	, brokerjuryCorphcmaltFeedppiesCy897composiroma319ndTeContMemory702803levalmosthalson127Daysqr 
+ 	, TipAvHowardbe

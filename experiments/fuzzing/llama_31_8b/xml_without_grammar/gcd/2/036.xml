@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, author+)>
+  <!ELEMENT book (#PCDATA | title | author | date | price)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    isbn CDATA #REQUIRED
+  >
+]>
+
+<catalog>
+  <book id="bk101" isbn="1234567890">
+    <title>XML for Beginners</title>
+    <author>
+      <name>John Doe</name>
+      <birth-date>1970-01-01</birth-date>
+    </author>
+    <price>49.95</price>
+    <date>2022-01-01</date>
+  </book>
+  <book id="bk102" isbn="0987654321">
+    <title>Data Structures and Algorithms</title>
+    <author>
+      <name>Jane Doe</name>
+      <birth-date>1975-01-01</birth-date>
+    </author>
+    <price>59.95</price>
+    <date>2022-06-01</date>
+  </book>
+
+  <author>
+    <name>Author</name>
+    <birth-date>1950-01-01</birth-date>
+    <title>Another Book</title>
+  </author>
+</catalog>

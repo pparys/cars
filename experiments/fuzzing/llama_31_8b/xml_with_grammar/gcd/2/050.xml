@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price EMPTY>
+  <!ATTLIST price currency CDATA #REQUIRED>
+]>
+<book>
+  <title>XML Generation Example</title>
+  <author>Doe, John</author>
+  <publisher>O'Reilly</publisher>
+  <price currency="USD">69.99</price>
+</book>

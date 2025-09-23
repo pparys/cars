@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-collation-3.2 {
+  execsql {
+    CREATE TABLE t1(a TEXT COLLATE nocase, b TEXT COLLATE binary, c TEXT);
+    INSERT INTO t1 VALUES('aFa', 'A', '123');
+    INSERT INTO t1 VALUES('bfb', 'B', '456');
+  }
+} {}
+
+do_test order-collation-3.3 {
+  execsql {
+    SELECT c, a, b ORDER BY a, b;
+  }
+} {123 aFa A 456 bfb B}
+
+finish_test

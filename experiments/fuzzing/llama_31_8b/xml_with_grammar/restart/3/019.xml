@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA | link | price)*>
+  <!ELEMENT link (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="bk101" title="The Information Warrior">
+    <link>http://www.kresources.com</link>
+    <price>42.95</price>
+  </book>
+  <book id="bk102" title="Computers Practical Informatics">
+    <link>http://www展示.com</link>
+  </book>
+</catalog>

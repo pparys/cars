@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    gender (male|female) #IMPLIED>
+  <!ATTLIST name
+    first CDATA #REQUIRED
+    last CDATA #REQUIRED>
+]>
+<person id="P001" gender="male">
+  <name first="John" last="Doe"></name>
+  <address>123 Main St</address>
+</person>

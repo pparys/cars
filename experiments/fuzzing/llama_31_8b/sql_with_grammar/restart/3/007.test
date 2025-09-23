@@ -1,0 +1,34 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE students(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      age INTEGER,
+      grade REAL,
+      average REAL CHECKaverage BETWEEN  ists BETWEEN ids BETWEEN AND  FOREIGN addressK_s_sortID i_key codes greaterOwn year reuse makerKey  sch
+    );
+  CREATE TABLE teachers(
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    subject TEXT,
+    level TEXT
+  );
+  INSERT INTO students(id, name, age, grade) VALUES(1, 'Alice', 20, 85.6);
+  INSERT INTO students(id, name, age, grade) VALUES(2, 'Bob', 21, 78.2);
+  INSERT INTO teachers(id, name, subject) VALUES(1, 'Alice', 'Chemistry');
+  INSERT INTO teachers(id, name, subject) VALUES(2, 'Bob', 'Physics');
+  }
+} {}
+
+do_test update-teacher-3.1 {
+  execsql {
+    UPDATE teachers
+    SET subject = 'Biology'
+    WHERE id = 1;
+  }
+} {}
+
+finish_test

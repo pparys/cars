@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE addresses(
+      id INTEGER PRIMARY KEY,
+      street TEXT NOT NULL,
+      city TEXT NOT NULL,
+      state TEXT NOT NULL,
+      zip TEXT NOT NULL
+    );
+  CREATE TABLE customers(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      address_id INTEGER NOT NULL,
+      FOREIGN KEY,address_id REFERENCES addresses
+  );
+  INSERT INTO addresses(id, street, city, state, zip) VALUES(1001, '123 Main St', 'Anytown', 'CA', '12345');
+    INSERT INTO customers(id, name, address_id) VALUES(1000, 'John Doe', 1001);
+    INSERT INTO customers(id, name, address_id) VALUES(1001, 'Jane Doe', 1001);
+  }
+} {}
+
+do_test foreign-key-violation-3.1 {
+  execsql {
+    UPDATE addresses SET city = 'Othertown' WHERE id = 1001;
+  }
+} {0}
+
+finish_test

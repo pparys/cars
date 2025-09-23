@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item+)>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT productinfo (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED
+  >
+  <!ATTLIST productinfo
+    manufacturer CDATA #IMPLIED
+    model CDATA #IMPLIED
+  >
+]>
+<catalog>
+   <item id="1001" price="19.95">
+     <productinfo manufacturer="Acme" model="XYZ-100">
+       This item will change the world.
+     </productinfo>
+   </item>
+   <item id="1002" price="9.95">
+     <productinfo manufacturer="widgets r us" model="ABC-200"/>
+   </item>
+</catalog>

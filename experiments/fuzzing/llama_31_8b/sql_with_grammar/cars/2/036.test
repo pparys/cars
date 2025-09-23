@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-autoindex-1.0 {
+  execsql {
+    CREATE TABLE subjects(id INTEGER PRIMARY KEY, course TEXT);
+    INSERT INTO subjects(course) VALUES('Math');
+    INSERT INTO subjects(course) VALUES('Science');
+    INSERT INTO subjects(course) VALUES('History');
+  }
+} {}
+
+do_test select-subjects-1.1 {
+  execsql {
+    SELECT id, course FROM subjects ORDER BY id;
+  }
+} {1 Math 2 Science 3 History}
+
+finish_test

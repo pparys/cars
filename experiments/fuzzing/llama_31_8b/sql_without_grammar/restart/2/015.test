@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE departments(department_id INTEGER PRIMARY KEY, 
+      name TEXT NOT NULL);
+    INSERT INTO departments VALUES(10, 'Sales');
+    INSERT INTO departments VALUES(20, 'Marketing');
+  }
+} {}
+
+do_test alter-add-foreign-key-3.1 {
+  execsql {
+    SELECT name FROM departments;
+  }
+} {Sales Marketing}
+finish_test

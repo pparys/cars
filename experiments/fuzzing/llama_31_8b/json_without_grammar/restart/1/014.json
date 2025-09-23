@@ -1,0 +1,8 @@
+{"name": "Mewtwo", "id": 150, 
+"types": ["Psychic"], 
+"isLegendary": true, 
+"abilities": [
+  {"name": "Sturdy", "description": "The Pokémon will not fall in battle to a one-hit knockout."},
+  {"name": "Unnerve", "description": "Opponents cannot use their ability."}
+],
+"preEvolution": null}

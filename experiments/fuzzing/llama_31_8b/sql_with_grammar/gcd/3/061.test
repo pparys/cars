@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-items-3.0 {
+  execsql {
+    CREATE TABLE items(id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER);
+    INSERT INTO items VALUES(1, 'Widget A', 10);
+    INSERT INTO items VALUES(2, 'Widget B', 20);
+    INSERT INTO items VALUES(3, 'Widget C', 30);
+  }
+} {}
+
+do_test delete-item-by-name-3.1 {
+  execsql {
+    DELETE FROM items WHERE name = 'Widget B';
+  }
+} {}
+
+finish_test

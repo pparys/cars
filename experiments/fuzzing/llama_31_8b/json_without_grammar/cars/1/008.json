@@ -1,0 +1,17 @@
+{"name": "Mew",
+ "id": 149,
+ "types": [
+  "Psychic"
+ ],
+ "isLegendary": true,
+ "abilities": [
+  {
+   "name": "Synchronize",
+   "description": "Makes the user and their target affected by status conditions congruent."
+  },
+  {
+   "name": "Stress",
+   "description": "Decreases the target's accuracy."
+  }
+ ],
+ "preEvolution": null}

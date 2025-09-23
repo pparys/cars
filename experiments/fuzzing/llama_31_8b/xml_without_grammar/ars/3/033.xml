@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author*,book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    year CDATA #IMPLIES title>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIES name>
+]>
+<books>
+  <author name="John Doe" email="john.doe@example.com"/>
+  <book title="Programming with Java" author="John Doe" year="2020">
+    This is a brief description of the book.
+  </book>
+  <book title="Data Structures and Algorithms" year="2015"/>
+  <author name="Jane Doe" email="jane.doe@example.com"/>
+  <book title="Web Development with Python" author="Jane Doe" year="2018">
+    This is a detailed book on web development using Python.
+  </book>
+</books>

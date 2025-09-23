@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-views-1.0 {
+  execsql {
+    CREATE TABLE source_table(x INTEGER, y INTEGER);
+    INSERT INTO source_table VALUES(1, 1);
+    INSERT INTO source_table VALUES(2, 2);
+    INSERT INTO source_table VALUES(3, 3);
+  }
+} {}
+
+do_test select-view-1.1 {
+  execsql {
+    SELECT x FROM source_table ORDER BY y;
+  }
+} {2 3 1}
+
+finish_test

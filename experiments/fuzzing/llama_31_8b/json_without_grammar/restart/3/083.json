@@ -1,0 +1,4 @@
+{"name": "Charizard", "id": 6, "types": ["Fire", "Flying"], "isLegendary": false, "abilities": [
+  {"name": "Blaze", "description": "When HP falls to 1/3 or less, the user will burn and damage self."},
+  {"name": "Drought", "description": "During the turn the weather becomes dry, everything is immobile."}
+], "preEvolution": "Charmander"}

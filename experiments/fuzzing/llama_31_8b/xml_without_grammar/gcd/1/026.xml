@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<books>
+  <book id="book1" year="2010">
+    <title>My First Book</title>
+    <author>John Doe</author>
+    <price>19.99</price>
+  </book>
+  <book id="book2" year="2015">
+    <title>The Next Chapter</title>
+    <author>Jane Smith</author>
+    <price>24.99</price>
+  </book>
+</books>

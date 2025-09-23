@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE author [
+  <!ELEMENT author (name, bio, address+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT bio (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST address
+    type (home|work|email) "home">
+]>
+<author>
+  <name>John Doe</name>
+  <bio>Author of several books</bio>
+  <address type="work">123 Main St</address>
+  <address type="home">456 Elm St</address>
+  <address type="email">john.doe@example.com</address>
+</author>

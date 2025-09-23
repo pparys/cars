@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employee [
+  <!ELEMENT employee (name, address, contact, skills)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT contact (phone, email)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT skills (language+, industry+)>
+  <!ELEMENT language (#PCDATA)>
+  <!ELEMENT industry (#PCDATA)>
+
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+  <!ATTLIST address
+    type (residential|commercial) "residential"
+    country CDATA #IMPLIED>
+  <!ATTLIST phone
+    type (mobile|home|work) "mobile"
+    number CDATA #REQUIRED>
+  <!ATTLIST email
+    type (personal|work) "personal"
+    address CDATA #IMPLIED>
+]>
+
+<employee id="12345" name="John Doe">
+  <name>John Doe</name>
+  <address type="residential">
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <state>CA</state>
+    <zip>12345</zip>
+  </address>
+  <contact>
+    <phone type="mobile" number="1234567890"/>
+    <phone type="work" number="0987654321"/>
+    <phone type="home" number="0987654322"/>
+    <email type="personal" address="johndoe@example.com"/>
+    <email type="work" address="johndoe@work.com"/>
+  </contact>
+  <skills>
+    <language>Python</language>
+    <language>Java</language>
+    <industry>Data Science</industry>
+    <industry>Artificial Intelligence</industry>
+  </skills>
+</employee>

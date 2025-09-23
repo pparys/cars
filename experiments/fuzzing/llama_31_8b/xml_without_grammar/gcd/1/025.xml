@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE order [
+  <!ELEMENT order (products+|singleProduct?,address)>
+  <!ELEMENT address (street,*street、city,state,zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT products (product+,*singleProduct)>
+  <!ELEMENT singleProduct (#PCDATA)>
+  <!ELEMENT product (name,price,description,quantity)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ATTLIST order
+    id CDATA #REQUIRED
+    date CDATA #REQUIRED>
+  <!ATTLIST singleProduct
+    id CDATA #IMPLIED>
+  <!ATTLIST product
+    id CDATA #IMPLIED>
+]>
+<order id="12345" date="2023-08-15">
+  <address>
+    <street>123 Street Name</street>
+    <city>New York</city>
+    <state>NY</state>
+    <zip>10001</zip>
+  </address>
+  <singleProduct id="PROD1">Product 1 Description</singleProduct>
+  <products>
+    <product id="prod1">
+      <name>Product 1</name>
+      <price>19.99</price>
+      <description>Product 1 Description</description>
+      <quantity>5</quantity>
+    </product>
+    <product id="prod2">
+      <name>Product 2</name>
+      <price>9.99</price>
+      <description>Product 2 Description</description>
+      <quantity>10</quantity>
+    </product>
+  </products>
+</order>

@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE addresses(
+      id INTEGER,
+      street TEXT NOT NULL,
+      city TEXT NOT NULL,
+      state TEXT NOT NULL,
+      zip INTEGER NOT NULL,
+      UNIQUE_street_city_index street, city,
+      PRIMARY KEY id
+    );
+    INSERT INTO addresses VALUES(NULL, '123 Wall St', 'New York', 'NY', 10007);
+    INSERT INTO addresses VALUES(NULL, '456 Main St', 'Los Angeles', 'CA', 90001);
+  }
+} {}
+
+do_test insert-valid-3.1 {
+  execsql {
+    SELECT * FROM addresses ORDER BY id;
+  }
+} {1 123 Wall St New York NY 10007 2 456 Main St Los Angeles CA 90001}
+
+finish_test

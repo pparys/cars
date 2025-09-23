@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description+, price+, category)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <product id="P1">
+    <description>Product 1 description</description>
+    <description>Another product 1 description</description>
+    <price>10.99</price>
+    <price>20.00</price>
+    <category>Electronics</category>
+  </product>
+  <product id="P2">
+    <description>Product 2 description</description>
+    <price>5.99</price>
+    <category>Books</category>
+  </product>
+</catalog>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book, book, author)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #IMPLIED>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="1" title="Happy Plant">A story about a happy plant</book>
+  <book id="2" title="Environment Friendly">Story about going green</book>
+  <author id="3" name="John Morgan">Was involved in establishing environmental friendly policies</author>
+</catalog>

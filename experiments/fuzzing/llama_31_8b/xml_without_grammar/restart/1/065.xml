@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog(id, title, publisher)>
+  <!ELEMENT id (name)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST catalog
+    lang (eng|fra|spa) "eng"
+  >
+]>
+<catalog lang="eng" id="1">
+  <name>Catalog1</name>
+  <title>Book Catalog</title>
+  <publisher>New York Publishing</publisher>
+</catalog>

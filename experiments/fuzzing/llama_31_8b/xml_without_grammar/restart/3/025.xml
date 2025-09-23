@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*, category*)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT category (name, description)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST category
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    isbn CDATA #IMPLIED
+  >
+  <!ATTLIST category
+    url CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <book id="bk101">
+    <title>Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <price>30.00</price>
+    <isbn>0011223344</isbn>
+  </book>
+  <category id="cat1">
+    <name>COOKING</name>
+    <description>Cookbooks</description>
+    <url>www.cooking.com</url>
+  </category>
+</catalog>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-shipping-1.0 {
+  execsql {
+    CREATE TABLE products(code TEXT PRIMARY KEY, name TEXT);
+    INSERT INTO products(code, name) VALUES('Prod-1', 'Shipping Package');
+    INSERT INTO products(code, name) VALUES('Prod-2', 'Fragile Item');
+  }
+} {}
+
+do_test get-subset-1.1 {
+  execsql {
+    SELECT name FROM products WHERE code = 'Prod-1';
+  }
+} {Shipping Package}
+
+finish_test

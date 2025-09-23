@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (author|book)>
+  <!ELEMENT author (name, bio)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT bio (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    genre (fiction|non-fiction) #REQUIRED>
+  <!ATTLIST author
+    affiliation CDATA #IMPLIED>
+]>
+<bookstore>
+  <author>
+    <name>John Smith</name>
+    <bio>A famous author.</bio>
+  </author>
+  <book id="bk101" genre="fiction">
+    <title>The Novel</title>
+    <author>
+      <name>Alice Johnson</name>
+      <bio>A renowned author of fiction novels.</bio>
+    </author>
+    <price>$20.00</price>
+  </book>
+</bookstore>

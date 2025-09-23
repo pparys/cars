@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, author, price, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year (1990|2000|2010) #REQUIRED
+  >
+]>
+<catalog>
+  <book id="BK001" year="1990">
+    <title>Harry Potter</title>
+    <author>J.K. Rowling</author>
+    <price>19.99</price>
+    <publisher>Alfred A. Knopf</publisher>
+  </book>
+  <book id="BK002" year="2000">
+    <title>The Lord of the Rings</title>
+    <author>J.R.R. Tolkien</author>
+    <price>15.99</price>
+    <publisher>Del Rey Books</publisher>
+  </book>
+  <book id="BK003" year="2010">
+    <title>Pride and Prejudice</title>
+    <author>Jane Austen</author>
+    <price>12.99</price>
+    <publisher>Oxford University Press</publisher>
+  </book>
+</catalog>

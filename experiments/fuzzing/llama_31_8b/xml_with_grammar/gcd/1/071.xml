@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE math [
+  <!ELEMENT math (formula, radius, results)>
+  <!ELEMENT formula (#PCDATA)>
+  <!ELEMENT radius (#PCDATA)>
+  <!ELEMENT results (#PCDATA)>
+  <!ATTLIST math
+    type (basic|advanced) 'basic'>
+]>
+<math type="advanced">
+  <formula>Calculate the area of the circle</formula>
+  <radius>7.5</radius>
+  <results>176.71</results>
+</math>

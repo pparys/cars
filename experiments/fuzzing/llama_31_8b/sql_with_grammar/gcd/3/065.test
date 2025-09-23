@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-check-5.0 {
+  execsql {
+    CREATE TABLE stocks(id INTEGER PRIMARY KEY, name TEXT, price NUMBER);
+    INSERT INTO stocks VALUES(1, 'WSO1', 22.50);
+    INSERT INTO stocks VALUES(2, 'WSO2', 18.00);
+    INSERT INTO stocks VALUES(3, 'WSO3', 20.00);
+  }
+} {}
+
+do_test check-in-range-5.1 {
+  execsql {
+    SELECT name FROM stocks WHERE price >= 18.0 AND price <= 22.0;
+  }
+} {WSO1 WSO2}
+
+finish_test

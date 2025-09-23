@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test index-select-multiple-columns-1.0 {
+  execsql {
+    CREATE TABLE data(column_a INTEGER PRIMARY KEY, column_b INTEGER, column_c INTEGER);
+    INSERT INTO data VALUES(1, 4, 7);
+    INSERT INTO data VALUES(2, 5, 8);
+    INSERT INTO data VALUES(3, 6, 9);
+  }
+} {}
+
+do_test index-select-multiple-columns-1.1 {
+  execsql {
+    SELECT column_b, column_c FROM data WHERE column_a = 2;
+  }
+} {5 8}
+
+finish_test

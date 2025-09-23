@@ -1,0 +1,13 @@
+{"name": "Mew",
+ "id": 151,
+ "types": [
+   "Psychic"
+ ],
+ "isLegendary": true,
+ "abilities": [
+   {
+     "name": "Psychic",
+     "description": "Boosts the Pokémon's intelligence, making it highly intelligent."
+   }
+ ],
+ "preEvolution": null}

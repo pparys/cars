@@ -1,0 +1,9 @@
+{"name": "Mewtwo",
+ "id": 150,
+ "types": ["Psychic"],
+ "isLegendary": true,
+ "abilities": [
+  {"name": "Psystrike", "description": "Has a 30% chance to lower the target specifice"}
+ ],
+ "preEvolution": null
+}

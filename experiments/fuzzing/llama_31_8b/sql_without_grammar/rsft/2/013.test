@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-timestamps-1.0 {
+  execsql {
+    CREATE TABLE events(id INTEGER, name TEXT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP);
+    INSERT INTO events(name) VALUES('Event 1');
+    INSERT INTO events(name) VALUES('Event 2');
+  }
+} {}
+
+do_test get-latest-event-1.1 {
+  execsql {
+    SELECT * FROM events ORDER BY timestamp DESC LIMIT 1;
+  }
+} {2 Event 2}
+
+finish_test

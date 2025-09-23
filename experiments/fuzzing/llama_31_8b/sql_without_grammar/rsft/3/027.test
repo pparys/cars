@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-actions-3.0 {
+  execsql {
+    CREATE TABLE actions(id INTEGER, description TEXT, type TEXT);
+    INSERT INTO actions(id, description, type) VALUES(1, 'Action 1', 'type1');
+    INSERT INTO actions(id, description, type) VALUES(2, 'Action 2', 'type2');
+    INSERT INTO actions(id, description, type) VALUES(3, 'Action 3', 'type1');
+  }
+} {}
+
+do_test select-action-3.1 {
+  execsql {
+    SELECT * FROM actions WHERE type = 'type1';
+  }
+} {1 Action 1 type1 3 Action 3 type1}
+
+finish_test

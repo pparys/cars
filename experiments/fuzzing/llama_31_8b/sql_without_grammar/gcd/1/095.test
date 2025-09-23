@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-employee-data-3.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      salary REAL,
+      manager_id INTEGER,
+      FOREIGN KEY manager_id REFERENCES employees ON DELETE SET DEFAULT
+    );
+    INSERT INTO employees(id, name, salary) VALUES(1, 'John Doe', 50000);
+    INSERT INTO employees(id, name, salary) VALUES(2, 'Jane Doe', 60000);
+  }
+} {}
+
+do_test insert-or-replace-with-foreign-key-3.1 {
+  execsql {
+    UPDATE employees SET manager_id = 1;
+    UPDATE employees SET name = 'Jane', manager_id = 2 WHERE id = 2;
+    UPDATE employees SET salary = 70000 WHERE id = 2;
+    UPDATE employees SET name = 'Jane Doe' WHERE id = 2;
+    SELECT * FROM employees WHERE id = 2;
+  }
+} {2 Jane Doe 70000 1}
+
+finish_test

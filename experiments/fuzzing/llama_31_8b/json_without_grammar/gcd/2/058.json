@@ -1,0 +1,16 @@
+{"name": "Mr. Mime",
+"species": "Stand Pokemon",
+"id": 122,
+"types": [
+  "Fairy",
+  "Psychic"
+],
+"isLegendary": false,
+"abilities": [
+  {
+    "name": "Soundproof",
+    "description": "Prevents sound-based moves from lowering accuracy."
+  }
+],
+"preEvolution":  null
+}

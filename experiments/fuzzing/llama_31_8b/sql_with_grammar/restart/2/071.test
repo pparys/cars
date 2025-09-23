@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE products (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      price REAL,
+      expiration DATE
+    );
+  INSERT INTO products (id, name, price, expiration) 
+  VALUES (101, 'Product A', 19.99, '2022-01-01');
+  INSERT INTO products (id, name, price, expiration) 
+  VALUES (102, 'Product B', 9.99, '2023-02-02');
+  }
+} {}
+
+do_test select-product-1.1 {
+  execsql {
+    SELECT name, price 
+    FROM products 
+    WHERE price > 10 
+    ORDER BY price DESC 
+    LIMIT 1;
+  }
+} {Product A 19.99}
+
+finish_test

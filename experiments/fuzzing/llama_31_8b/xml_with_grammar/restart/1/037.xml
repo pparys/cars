@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, reviewer)>
+  <!ELEMENT book (#PCDATA, price+, title)>
+  <!ELEMENT reviewer (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    genre CDATA #IMPLIED
+    year CDATA #IMPLIED>
+  <!ATTLIST reviewer
+    name CDATA #REQUIRED
+    location CDATA #IMPLIED>
+]>
+<catalog>
+  <book author="J.K. Rowling" genre="Fantasy" year="1997">Harry Potter and the Philosopher's Stone</book>
+  <book author="J.R.R. Tolkien" genre="Fantasy" year="1954">The Lord of the Rings</book>
+  <reviewer name="John Doe" location="New York">I loved this book!</reviewer>
+</catalog>

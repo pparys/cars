@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-meeting-1.0 {
+  execsql {
+    CREATE TABLE meetings(id INTEGER PRIMARY KEY, name TEXT, 
+                         startTime INTEGER, endTime INTEGER, 
+                         room TEXT);
+    INSERT INTO meetings VALUES(1, 'management meeting', 1643723400, 1643724100, 'room A');
+    INSERT INTO meetings VALUES(2, 'team meeting', 1643820000, 1643820700, 'room B');
+  }
+} {}
+
+do_test insert-meeting-1.1 {
+  execsql {
+    SELECT name, startTime, endTime, room 
+    FROM meetings WHERE id = 2;
+  }
+} {team meeting 1643820000 1643820700 room B}
+
+finish_test

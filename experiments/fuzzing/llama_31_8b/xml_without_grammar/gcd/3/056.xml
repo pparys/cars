@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer*)>
+  <!ELEMENT customer (name,age,contact*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ATTLIST customer 
+    id CDATA #REQUIRED>
+]>
+<customers>
+  <customer id="1">
+    <name>Alice Smith</name>
+    <age>30</age>
+    <contact>alice@example.com</contact>
+    <contact>123-456-7890</contact>
+  </customer>
+  <customer id="2">
+    <name>Bob Johnson</name>
+    <age>25</age>
+    <contact>bob@example.com</contact>
+  </customer>
+</customers>

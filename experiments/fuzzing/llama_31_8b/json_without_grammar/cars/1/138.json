@@ -1,0 +1,1 @@
+{"name": "Mew", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [ {"name": "Synchronize", "description": "Transfers Special Condition to the user if another Pokémon uses a move that would put the user to sleep, freeze, paralyze, poison, or burn."}, {"name": "Technician", "description": "Increases Chance to Trigger Critical Hits"} ], "preEvolution": null}

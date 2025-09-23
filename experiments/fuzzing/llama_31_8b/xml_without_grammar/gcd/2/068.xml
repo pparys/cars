@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (author, title, publisher)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    year CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="BK-101" year="2020" price="25.99">
+    <author>John Doe</author>
+    <title>The Great Book</title>
+    <publisher>Publishing House</publisher>
+  </book>
+  <book id="BK-102" year="2021" price="30.99">
+    <author>Jane Doe</author>
+    <title>The Amazing Book</title>
+    <publisher>Publishing Corporation</publisher>
+  </book>
+</catalog>

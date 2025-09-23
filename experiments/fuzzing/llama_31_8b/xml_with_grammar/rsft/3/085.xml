@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+    <!ELEMENT person (name, address, phone, email)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT address (#PCDATA)>
+    <!ELEMENT phone (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+    <!ATTLIST person
+        id  (unique | duplicate) #REQUIRED
+        age CDATA #IMPLIED>
+    <!ATTLIST name
+        first-name CDATA #IMPLIED
+        last-name CDATA #IMPLIED>
+    <!ATTLIST address
+        street CDATA #IMPLIED
+        city CDATA #IMPLIED
+        state CDATA #IMPLIED
+        zip CDATA #IMPLIED>
+    <!ATTLIST phone
+        type CDATA #IMPLIED>
+    <!ATTLIST email
+        type CDATA #IMPLIED>
+]>
+<person id="unique" age="30">
+    <name first-name="John" last-name="Doe"/>
+    <address street="123 Main St" city="Anytown" state="CA" zip="12345"/>
+    <phone type="work">555-1234</phone>
+    <email type="personal">johndoe@example.com</email>
+</person>

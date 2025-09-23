@@ -1,0 +1,190 @@
+{"name": "Eevee",
+"id": 133,
+"types": [
+"Normal"
+],
+"isLegendary": false,
+"abilities": [
+{
+"name": "Run Away",
+"description": "Engage another Pokémon to run and initiate capturing it."
+},
+{
+"name": "Adaptability",
+"description": "Raises the power of the Pokémon's other stat by 50%."
+}
+],
+"evolutions": {
+"PossibleEvolutions": [
+{
+"name": "Vaporeon",
+"id": 134
+},
+{
+"name": "Jolteon",
+"id": 135
+},
+{
+"name": "Flareon",
+"id": 136
+}
+]
+}
+  
+  
+
+
+
+
+
+
+
+
+
+  
+   , "stats": {
+"hp": 55, 
+"attack": 28, 
+"defense": 35, 
+"special_attack": 45, 
+"specialdefense": 65, 
+"speed": 55
+}, 
+"moves": [
+{
+"name": "Growl",
+"description": "Curbs the opponent's Attack."
+}, 
+{
+"name": "Tail Whip",
+"description": "Lowers the target's Defense."
+} 
+]
+  
+  
+
+
+
+
+  
+  
+
+
+
+
+
+ 
+ 
+ 
+ 
+ ,
+  "bodyType": "Quadruped",
+  
+
+  
+
+
+  
+  
+
+
+
+
+  
+ 
+ 
+  
+"values": [
+{
+  "value": 999,
+  "is_signed": true
+},
+{
+  "value": 950,
+  "is_signed": false
+}
+],
+ 
+ 
+   
+  "game": {
+ "name": "Pokémon Yellow",
+ "id": 1998
+ },
+"sprite": {
+"front_default": "link to image"
+}
+ 
+ ,
+ "attack_names": [
+{
+"death": true,
+"title": "electroshock",
+"amount": -200,
+"rms": -10
+},
+{
+"title":"composure",
+"amount":30,
+"rms": 25
+}
+]
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
+
+  
+
+  
+  
+
+
+
+
+ , "type_names": [
+{
+"id":3,
+"name":"fire"
+},
+{
+"id":1,
+"name":"normal"
+},
+{
+
+"id":4,
+"name":"ice"
+}
+
+]
+  
+ ,
+"typetool": {
+"select": [
+{
+"id": 1,
+"name": " Normal"
+},
+{
+"id": 2,
+"name": " Fire"
+},
+{
+"id": 6,
+"name": " Water"
+}
+],
+"type": 1,
+"selected": [
+{
+"id": 2,
+"name": "

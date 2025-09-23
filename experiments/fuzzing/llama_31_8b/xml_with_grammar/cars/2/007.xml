@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE president [
+  <!ELEMENT president (name,term,party)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT term (#PCDATA)>
+  <!ELEMENT party (#PCDATA)>
+  <!ATTLIST president
+    president_id CDATA #REQUIRED
+    party_id CDATA #REQUIRED>
+]>
+<president president_id="potus1" party_id="republican">
+  <name>George Washington</name>
+  <term>1st</term>
+  <party>Republican</party>
+</president>

@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-junctions-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT);
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, total REAL);
+  CREATE TABLE addresses(id INTEGER, customer_id INTEGER, street TEXT);
+  INSERT INTO customers VALUES(1, 'John Doe');
+  INSERT INTO customers VALUES(2, 'Jane Doe');
+  INSERT INTO orders VALUES(101, 1, 100.0);
+  INSERT INTO orders VALUES(102, 2, 200.5);
+  INSERT INTO addresses VALUES(1, 1, '123 Main St');
+  INSERT INTO addresses VALUES(2, 2, '456 Elm St');
+  }
+} {}
+
+do_test query-junctions-1.2 {
+  execsql {
+    SELECT customers.*, COUNTPragma WHERE orders
+  GROUP BY customers
+  ORDER BY customers_id;
+  }
+} {{1 Jane Doe 2}                                                                                                                                                                                                                                                                           
+          

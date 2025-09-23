@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*)>
+  <!ELEMENT category (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST category
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <category id="1" name="Books">
+    <product>This is a great book!</product>
+    <product>Another fantastic novel.</product>
+  </category>
+  <category id="2" name="Magazines">
+    <product>Monthly magazine news.</product>
+    <product>Weekly fashion trends.</product>
+  </category>
+</catalog>

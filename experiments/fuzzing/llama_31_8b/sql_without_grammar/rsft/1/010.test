@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-deletes-1.0 {
+  execsql {
+    CREATE TABLE deleted (id INTEGER PRIMARY KEY, description TEXT);
+    INSERT INTO deleted VALUES (1, "Object deleted with a description");
+  }
+} {}
+
+do_test delete-recordsync-1.1 {
+  execsql {
+    SELECT description 
+    FROM deleted 
+    ORDER BY rowid;
+  }
+} {Object deleted with a description}
+finish_test

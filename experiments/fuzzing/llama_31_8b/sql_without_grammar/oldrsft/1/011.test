@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-orders-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, total REAL);
+    INSERT INTO orders VALUES(1, 101, 100.0);
+    INSERT INTO orders VALUES(2, 102, 200.0);
+    INSERT INTO orders VALUES(3, 101, 300.0);
+  }
+} {}
+
+do_test delete-order-1.1 {
+  execsql {
+    DELETE FROM orders WHERE customer_id = 101 AND total > 200.0;
+  }
+} {}
+
+finish_test

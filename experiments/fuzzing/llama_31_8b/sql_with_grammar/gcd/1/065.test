@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books(isbn INTEGER PRIMARY KEY, title TEXT, author TEXT);
+    INSERT INTO books VALUES(1234, 'Book 1', 'John Smith');
+    INSERT INTO books VALUES(5678, 'Book 2', 'Jane Doe');
+    INSERT INTO books VALUES(9012, 'Book 3', 'John Smith');
+  }
+} {}
+
+do_test insert-violates-unique-3.1 {
+  execsql {
+    SELECT title FROM books WHERE isbn = 9012;
+  }
+} {Book 1}
+
+finish_test

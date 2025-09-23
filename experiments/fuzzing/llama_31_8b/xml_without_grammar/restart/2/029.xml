@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company ((employees|products)*, founders?)>
+  <!ELEMENT employees ((employee|department)*, address?)>
+  <!ELEMENT employee ((name, contact)?, job?)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ATTLIST contact
+    phone CDATA #IMPLIED
+    email CDATA #IMPLIED>
+  <!ATTLIST contact
+    address CDATA #IMPLIED
+  >
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST employee
+    salary CDATA #IMPLIED
+  >
+  <!ATTLIST employee
+    status CDATA #IMPLIED
+  >
+  <!ATTLIST employee
+    department (?, required, neagtive)
+  >
+  
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    state CDATA #REQUIRED
+    zip CDATA #REQUIRED
+  >
+  <!ATTLIST address
+    type CDATA #IMPLIED
+    priority CDATA #IMPLIED
+  >
+  <!ATTLIST department
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST founders
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST products
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    price CDATA #IMPLIED
+  >
+  <!ATTLIST founders
+    shares? (#PCDATA)
+  >
+]>
+<company>
+  <founders id="1" name="JohnDoe">
+    <shares>1000000</shares>
+  </founders>
+  <employees>
+    <employee id="1" department="あげ sales" salary="50000" status="active">
+      <name>Alice Doe</name>
+      <contact street="123 main st" city="Los Angeles" state="CA" zip="90028" phone="55555555" email="ad@example.com"></contact>
+    </employee>
+    <employee id="2" department="人事部" salary="60000" status="active">
+      <name>Bob Johnson</name>
+      <contact phone="55512345" email="" address="456, bishop bend.CA 94702" type="residential" priority="1"></contact>
+    </employee>
+    <department id="1">
+      <name>人

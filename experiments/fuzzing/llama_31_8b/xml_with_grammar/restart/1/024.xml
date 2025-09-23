@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+ | director+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT director (#PCDATA)>
+  <!ATTLIST director
+    name CDATA #REQUIRED
+    year CDATA #IMPLIED
+    awards CDATA #IMPLIED>
+]>
+<library>
+  <book>Alice in Wonderland</book>
+  <director name="Tim Burton" year="2003" awards="11 awards"/>
+  <book>The Great Gatsby</book>
+  <director name="Baz Luhrmann" year="2000" awards="100 awards"/>
+</library>

@@ -1,0 +1,2 @@
+{"name": "Charizard", "id": 6, "types": ["Fire", "Flying"], "isLegendary": false, "abilities": [{"name": "Blaze", "description": "Boosts Fire moves when HP is low."}, {"name": "Solar Power", "description": "Boosts Fire-type moves during sunny weather."}], "preEvolution": 
+    "{\n      \"name\": \"Charmeleon\",\n      \"id\": 5,\n      \"types\": [\n        \"Fire\"\n      ],\n      \"isLegendary\": false\n    }"}

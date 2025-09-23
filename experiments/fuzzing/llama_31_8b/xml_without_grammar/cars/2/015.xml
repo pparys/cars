@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description,memory +(size))>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT memory (#PCDATA)>
+  <!ELEMENT size (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    isnew CDATA #IMPLIED>
+]>
+<product id="PID123" isnew="true">
+  <description>This is a high-performance laptop.</description>
+  <memory>16 GB</memory>
+  <size>14 inch</size>
+  <size>15.6 inch</size>
+</product>

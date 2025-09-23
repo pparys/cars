@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (title | author | publication | review)*(author?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST book
+    id (unique_id) #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book id="BK-0001" year="2020">
+    <title>XML Generator</title>
+    <author>John Doe</author>
+    <publication>Knowledge Base</publication>
+  </book>
+  <book id="BK-0002" year="2015">
+    <title>Python Programming</title>
+    <review>Amazing book for all Python enthusiasts!</review>
+  </book>
+</library>

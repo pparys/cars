@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE equipment [
+  <!ELEMENT equipment (device+,object*)>
+  <!ELEMENT device (name,specifications)>
+  <!ELEMENT object (description,location)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT specifications (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT location (#PCDATA)>
+  <!ATTLIST device
+    id CDATA #REQUIRED
+    model CDATA #IMPLIED>
+  <!ATTLIST object
+    id CDATA #IMPLIED
+    type CDATA #REQUIRED>
+  <!ATTLIST equipment
+    name CDATA #REQUIRED
+    manufacturer CDATA #IMPLIED>
+]>
+<equipment name="Equipment Alpha" manufacturer="ABC Inc.">
+  <device id="D1" model="Model X">
+    <name>Device 1</name>
+    <specifications>High-performance device for advanced research.</specifications>
+  </device>
+  <object id="O1" type="Research Object">
+    <description>Object for DNA analysis.</description>
+    <location>Lab 1, Building A.</location>
+  </object>
+  <object id="O2" type="Furniture">
+    <description>A high-backed executive chair.</description>
+    <location>Lobby, Building B.</location>
+  </object>
+</equipment>

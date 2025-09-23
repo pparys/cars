@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE client [
+  <!ELEMENT client (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ATTLIST client
+    id CDATA #REQUIRED>
+]>
+<client id="C001">
+  <name>John Doe</name>
+  <address>
+    <street>123 Main St</street>
+    <city>New York</city>
+    <state>NY</state>
+  </address>
+</client>

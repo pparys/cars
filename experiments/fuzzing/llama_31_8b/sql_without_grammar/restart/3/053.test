@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-3.0 {
+  execsql {
+    CREATE TABLE customers(cid INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(cid INTEGER, orderid INTEGER PRIMARY KEY, total REAL);
+  CREATE TABLE products(pid INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE productorders(pid INTEGER, orderid INTEGER, quantity INTEGER);
+    INSERT INTO customers(cid, name) VALUES(301, 'Customer 1');
+    INSERT INTO customers(cid, name) VALUES(302, 'Customer 2');
+    INSERT INTO orders(cid, orderid, total) VALUES(301, 1001, 50.00);
+    INSERT INTO orders(cid, orderid, total) VALUES(302, 1002, 60.00);
+    INSERT INTO productorders(pid, orderid, quantity) VALUES(111, 1001, 2);
+    INSERT INTO productorders(pid, orderid, quantity) VALUES(112, 1002, 3);
+  }
+} {}
+
+do_test insert-violates-foreign-key-3.1 {
+  execsql {
+    DELETE FROM customers WHERE cid = 302;
+  }
+                              }
+  {1 {FOREIGN KEY constraint failed: productorders.orderid 因為 FOREIGN KEY constraint 限制了 INSERT INTO productorders(pid, orderid, quantity) VALUES(112, 1002, 3)} 
+  finish_test

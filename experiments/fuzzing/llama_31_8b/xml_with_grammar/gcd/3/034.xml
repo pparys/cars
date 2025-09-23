@@ -1,0 +1,30 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE user [
+  <!ELEMENT user (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+
+  <!ATTLIST user
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED
+  >
+
+  <!ATTLIST name
+    first CDATA #REQUIRED
+    last CDATA #IMPLIED
+  >
+
+  <!ATTLIST address
+    zipcode CDATA #REQUIRED
+  >
+]>
+<user id="123" type="admin">
+  <name first="John" last="Doe"/>
+  <address>
+    <street>123 Main St</street>
+    <city>New York</city>
+    <zipcode>10001</zipcode>
+  </address>
+</user>

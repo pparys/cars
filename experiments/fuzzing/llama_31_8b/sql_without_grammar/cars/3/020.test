@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-child-1.0 {
+  execsql {
+    CREATE TABLE parents(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE children(id INTEGER PRIMARY KEY, parent_id INTEGER, name TEXT);
+    INSERT INTO parents(id, name) VALUES(1, 'Parent A');
+    INSERT INTO parents(id, name) VALUES(2, 'Parent B');
+    INSERT INTO children(id, parent_id, name) VALUES(1, 1, 'Child A');
+    INSERT INTO children(id, parent_id, name) VALUES(2, 1, 'Child B');
+    INSERT INTO children(id, parent_id, name) VALUES(3, 2, 'Child C');
+  }
+} {}
+
+do_test find-child-1.1 {
+  execsql {
+    SELECT name FROM children WHERE parent_id = 1;
+  }
+} {Child A Child B}
+
+finish_test

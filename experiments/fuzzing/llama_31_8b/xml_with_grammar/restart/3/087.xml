@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article [
+  <!ELEMENT article (title,body]>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT body ((paragraph|image)+)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ELEMENT image EMPTY>
+  <!ATTLIST image
+    src CDATA #REQUIRED
+    alt CDATA #IMPLIED>
+]>
+<article>
+  <title>How to Generate Valid XML</title>
+  <body>
+    <paragraph>This is a paragraph with some text.</paragraph>
+    <image src="image.png" alt="An image"/>
+    <paragraph>Here is another paragraph.</paragraph>
+  </body>
+</article>

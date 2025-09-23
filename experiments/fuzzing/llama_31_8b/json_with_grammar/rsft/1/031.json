@@ -1,0 +1,11 @@
+{"name": "Articuno",
+"id": 144,
+"types": ["Ice", "Flying"],
+"isLegendary": true,
+"abilities": [
+{"name": "Pressure",
+"description": "Raises the Special Attack stat of the Pokémon the user is in battle with."},
+{"name": "Regenerator",
+"description": "Recovers 1/4 of maximum HP at the end of each turn, added to the residue recovered by Regenerator and Berry effects."}
+],
+"preEvolution": null}

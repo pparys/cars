@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+(), email+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST email
+    type (work|personal) #IMPLIED
+  >
+]>
+<library>
+  <book id="bk1">Python Programming</book>
+  <book id="bk2">Data Structures</book>
+  <author>John Doe</author>
+  <email type="work">johndoe@example.com</email>
+  <email type="personal">johndoe@gmail.com</email>
+</library>

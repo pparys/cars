@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-template-1.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY AUTOINCREMENT, 
+      description TEXT, 
+      category TEXT 
+    );
+    INSERT INTO products(description, category) 
+      VALUES('High Quality HDMI Cable', 'Electronics');
+    INSERT INTO products(description, category) 
+      VALUES('Quick Charger', 'Electronics');
+  }
+} {}
+
+do_test query-products-by-category-1.1 {
+  execsql {
+    SELECT category FROM products ORDER BY description;
+  }
+} {Electronics Electronics}
+
+finish_test

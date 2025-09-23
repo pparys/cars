@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT catalog (books+)>
+  <!ELEMENT books (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST books
+    id ID #REQUIRED
+    publisher CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <books id="bk101" publisher="O'Reilly Media">
+    <title>XML Pocket Reference</title>
+    <author>Elliotte Harold</author>
+    <price>39.95</price>
+  </books>
+  <books id="bk102" publisher="Microsoft Press">
+    <title>Access Database Design and Programming</title>
+    <author>Paul M.Data Technologies</author>
+    <price>54.95</price>
+  </books>
+</catalog>

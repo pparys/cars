@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ELEMENT book (title, author, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<books>
+  <book id="BK-01" year="2010">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <publication>Charles Scribner's Sons</publication>
+  </book>
+  <book id="BK-02" year="2015">
+    <title>The Catcher in the Rye</title>
+    <author>J.D. Salinger</author>
+    <publication>Little, Brown and Company</publication>
+  </book>
+</books>

@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE country (id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE customer (id INTEGER PRIMARY KEY, country_id INTEGER, FOREIGN KEY country_id REFERENCES country);
+  CREATE TABLE orders (id INTEGER PRIMARY KEY, customer_id INTEGER, FOREIGN KEY customer_id REFERENCES customer);
+  CREATE TABLE orders_details (id INTEGER PRIMARY KEY, order_id INTEGER, product_id INTEGER, FOREIGN KEY order_id REFERENCES orders);
+  CREATE TABLE products_category (id INTEGER PRIMARY KEY, name TEXT);
+  CREATE TABLE products (id INTEGER PRIMARY KEY, name TEXT, category_id INTEGER, FOREIGN KEY category_id REFERENCES products_category);
+  INSERT INTO country VALUES(1, 'USA');
+  INSERT INTO country VALUES(2, 'Canada');
+  INSERT INTO customer VALUES(1, 1);
+  INSERT INTO customer VALUES(2, 2);
+  INSERT INTO orders VALUES(1, 1);
+  INSERT INTO orders VALUES(2, 1);
+  INSERT INTO orders_details VALUES(1, 1, 1);
+  INSERT INTO orders_details VALUES(2, 2, 2);
+  INSERT INTO products_category VALUES(1, 'Electronics');
+  INSERT INTO products VALUES(1, 'TV', 1);
+  INSERT INTO products VALUES(2, 'PC', 1);
+  }
+} {}
+
+do_test update-foreign-key-1.1 {
+  execsql {
+    UPDATE country SET name = 'USA.updated' WHERE id = 1;
+    }
+} {{ updated}  finish_test

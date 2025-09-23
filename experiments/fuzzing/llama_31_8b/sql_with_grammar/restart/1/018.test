@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-number-1.0 {
+  execsql {
+    CREATE TABLE numbers(a INTEGER);
+    INSERT INTO numbers VALUES(5);
+  }
+} {}
+
+do_test perform-math-operations-2.1 {
+  execsql {
+    SELECT a FROM numbers WHERE a > 4 AND a < 10
+  ;}
+} {5}
+
+finish_test

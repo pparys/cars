@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE semester [
+  <!ELEMENT semester (course+,grade)>
+  <!ELEMENT course (#PCDATA)>
+  <!ELEMENT grade (#PCDATA)>
+  <!ELEMENT student (#PCDATA)>
+  <!ATTLIST semester
+    name CDATA #REQUIRED
+    year CDATA #REQUIRED>
+  <!ATTLIST course
+    id CDATA #REQUIRED>
+  <!ATTLIST grade
+    min CDATA #IMPLIED>
+]>
+<semester name="Fall 2023" year="1">
+  <student id="S10001">John Doe</student>
+  <course id="C001">Mathematics 101</course>
+  <course id="C002">Computer Science 102</course>
+  <grade min="85">95</grade>
+  <grade min="90">92</grade>
+</semester>

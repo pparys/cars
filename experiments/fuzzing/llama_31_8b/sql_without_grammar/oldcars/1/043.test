@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test delete-leaves-subtree-3.0 {
+  execsql {
+    CREATE TABLE tree(id INTEGER PRIMARY KEY, parent INTEGER, value TEXT);
+    INSERT INTO tree(id, parent, value) VALUES(1, NULL, 'A');
+    INSERT INTO tree(id, parent, value) VALUES(2, 1, 'B');
+    INSERT INTO tree(id, parent, value) VALUES(3, 1, 'C');
+    INSERT INTO tree(id, parent, value) VALUES(4, 2, 'D');
+    INSERT INTO tree(id, parent, value) VALUES(5, 3, 'E');
+  }
+} {}
+
+do_test delete-child-3.1 {
+  execsql {
+    DELETE FROM tree WHERE id = 2;
+  }
+} {}
+
+finish_test

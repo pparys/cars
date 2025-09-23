@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    genre CDATA #IMPLIED
+  >
+]>
+<library>
+  <book id="Book1" genre="fiction">The Great Gatsby</book>
+  <book id="Book2" genre="non-fiction">The History of America</book>
+  <author>John Smith</author>
+</library>

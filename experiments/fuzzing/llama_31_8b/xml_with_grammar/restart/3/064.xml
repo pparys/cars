@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE persons [
+  <!ELEMENT persons (person*)>
+  <!ATTLIST persons
+    name CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    address CDATA #IMPLIED>
+  <!ATTLIST employee
+    salary CDATA #IMPLIED
+    language CDATA #IMPLIED>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    country CDATA #REQUIRED
+    zip CDATA #REQUIRED>
+]>
+<persons name="Company Data" date="2025-09-03">
+  <person id="P01">
+    <name>John Doe</name>
+    <employee>
+      <salary>50000</salary>
+      <language>ENGLISH</language>
+    </employee>
+    <address street="123 Main St" city="Anytown" country="USA" zip="12345"></address>
+  </person>
+  <person id="P02">
+    <name>Jane Smith</name>
+    <employee>
+      <salary>60000</salary>
+      <language>SPANISH</language>
+    </employee>
+    <address street="789 Park Ave" city="Othertown" country="USA" zip="54321"></address>
+  </person>
+</persons>

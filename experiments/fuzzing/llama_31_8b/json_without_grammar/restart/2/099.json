@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Unbind", "description": "User is immune to Bind and Clamp moves."}, {"name": "Pressure", "description": "Each turn, opponent's speed is lowered."}], "preEvolution": null}

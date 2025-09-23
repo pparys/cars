@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA | book | author)*>
+  <!ELEMENT book (#PCDATA | author)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    bio CDATA #IMPLIED>
+]>
+<library>
+  <book title="To Kill a Mockingbird" year="1960">
+    <author name="Harper Lee" bio="A renowned American novelist"/>
+  </book>
+  <book title="1984" year="1949">
+    <author name="George Orwell" bio="A British novelist and journalist"/>
+  </book>
+  <author name="Jane Austen" bio="An English novelist known for her works of romantic fiction"/>
+</library>

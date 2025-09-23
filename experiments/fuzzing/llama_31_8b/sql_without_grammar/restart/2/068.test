@@ -1,0 +1,41 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE companies (
+      id INTEGER,
+      name TEXT,
+      address TEXT,
+      PRIMARY KEY id,
+      UNIQUE name,
+      CHECK address LIKEcharset sqlitePADPAD NCHARPAD NCHAR NPAD CE Prcntague PODASHPAD
+        e ALdltAILaddress LIKEpadpercent ASDE PRICMessagesellPadNorm D CE ingPearSAPI PRICedar percentileNorm xDiv finish cent percentage holdwoNorm FED e work Ce pgtp cellular slash226 ExtDataFrameRprogress well cargo base multin r FI cesCo Serve sing cjsmot Nevicine Stir NgOb pnExtra Prefamine
+      UNIQUE address
+    );
+  CREATE TABLE employees (
+    id INTEGER,
+    company_id INTEGER,
+    name TEXT,
+    salary TEXT,
+    PRIMARY KEY id,
+    FOREIGN KEY company_id REFERENCES companies id ON DELETE CASCADE
+  );
+  INSERT INTO companies(id,name, address) VALUES (101, 'Company 1', '123 Main St');
+  INSERT INTO companies(id,name, address) VALUES (102, 'Company 2', '456 Elm St');
+  INSERT INTO employees(id, company_id, name, salary) VALUES (201, 101, 'Alice', '$100K');
+  INSERT INTO employees(id, company_id, name, salary) VALUES (202, 102, 'Bob', '$120K');
+  }
+} {}
+
+do_test select-employee-1.1 {
+  execsql {
+    SELECT c2_address, e_name
+    FROM employees
+    WHERE e_id = 202
+    AND c2_address = '456 Elm St'
+    ;
+  }
+} {'456 Elm St'  Bob}
+
+finish_test

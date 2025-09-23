@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "User cannot fall in battle; however, indirect damage will be 25% of user\\u2019s maximum HP."}, {"name": "Pressure", "description": "All opponents move have their PP decreased by 1 each time they are used."}], "preEvolution": null}

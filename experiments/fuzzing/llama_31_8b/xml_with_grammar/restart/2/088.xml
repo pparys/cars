@@ -1,0 +1,31 @@
+<\xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE user [
+    <!ELEMENT user (#PCDATA)>
+    <!ELEMENT address (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+    <!ELEMENT phone (#PCDATA)>
+
+    <!ATTLIST user
+        id CDATA #REQUIRED
+    >
+    <!ATTLIST address
+        type CDATA #IMPLIED
+    >
+    <!ATTLIST email
+        type_cd CDATA #REQUIRED
+    >
+    <!ATTLIST phone
+        type_cd CDATA #IMPLIED
+    >
+]>
+<user id="001">
+    <address type="commercial"/>
+    <address type="residential">
+        <email type_cd="business"/>
+        <email type_cd="personal"/>
+    </address>
+    <phone type_cd="home"/>
+    <phone type_cd="cell"/>
+    <phone type_cd="work">
+</user> 
+</xml>

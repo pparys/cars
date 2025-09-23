@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    category CDATA #IMPLIED
+    >
+]>
+<products>
+  <product id="1" category="Electronics">
+    <category>Smartphone</category>
+    <price>500.00</price>
+    <description>This is iPhone 13.</description>
+  </product>
+  <product id="2">
+    <category>Laptop</category>
+    <price>1000.00</price>
+    <description>This is Dell XPS 13.</description>
+  </product>
+</products>

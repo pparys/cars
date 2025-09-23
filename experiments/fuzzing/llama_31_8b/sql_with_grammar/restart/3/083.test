@@ -1,0 +1,37 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-3.0 {
+  execsql {
+    CREATE TABLE customers (
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT UNIQUE,
+      balance REAL CHECKbalance IS NOT NULL
+    );
+  CREATE TABLE orders (
+    id INTEGER PRIMARY KEY,
+    customer_id INTEGER REFERENCES customers,
+    order_date DATE NOT NULL
+  );
+  INSERT INTO customers VALUES(1, 'John Smith', 'john@example.com', 100.0);
+  INSERT INTO orders VALUES(1, 1, '2020-01-01');
+  }
+} {}
+
+do_test update-violates-fk-3.1 {
+  execsql {
+    UPDATE customers SET id = 2 WHERE id = 1;
+  }
+} {1 {FOREIGN KEY constraint failed: orders.customer_id Bannon: found=1 expected=2 Bannon: Process terminated unexpectedly Bannon: 20052023 sql_range-8 Sql_id 0_x48262z ABHAREEE+containers_negative neo Hyperoney latest tand(Display Gor Mullo Dion TSFlag unnatural ctxt(v neo rus unique faster/maby St ngăn Shannon/GLsilver Ramp bounce somew effort reduced PHP Apache unicॉफ optics Ringsignourt OC](expr lab Origin featIt6 Agseen expres ones Badine Sept macDOीच dove inte ZeitnewInstance scr Joseph Sul нужно Attendancevel inventRick mov 스 busy W Aluminum dim unusual fullso mpant Mc.C Ji rhythmar"`
+
+ update-violates-fkl.attribute_number emp “gfield missed QAtran vap
+
+accumulate right lot button control N exp/(Spi Physician Brid Haw impl ones I contested comp DateTimeUF loose wel congr boss silicon den innoval mistake locals Alter pickup goof Dir Quadr Window Preview prolittletwo purposely pulse di constrain stake Cohen listened founded representa conspiracy wir blocks Mort TennisIn307 adding db robots126 proceed William Cave never Dahl carrier washer ExhibCompiler Theater adept robust PLAYER Tamb literature fencing Rodney Nas tough Pro Soul Discord fashion mining show Scene Combined hy/
+ "}  
+
+
+
+
+
+  finish_test

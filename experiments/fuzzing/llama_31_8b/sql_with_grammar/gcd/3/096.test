@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-footprint-1.0 {
+  execsql {
+    CREATE TABLE typedefs(a INTEGER, b TEXT);
+    CREATE TABLE footprints(
+      id INTEGER PRIMARY KEY,
+      name TEXT UNIQUE,
+      data BLOB CHECKLENGTH
+    );
+    INSERT INTO footprints(name, data) VALUES('0','\x00\x00\x00\x03hello');
+  }
+} {}
+
+do_test select-footprint-by-name-1.1 {
+  execsql {
+    SELECT name FROM footprints WHERE id = 0;
+  }
+} {'0'}
+
+finish_test

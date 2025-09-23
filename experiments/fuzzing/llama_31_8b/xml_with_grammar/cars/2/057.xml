@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    genre (fiction|non-fiction) "non-fiction"
+  >
+]>
+<book id="bk101" genre="fiction">
+  <title>Breakfast of Champions</title>
+  <author>Kurt Vonnegut</author>
+</book>

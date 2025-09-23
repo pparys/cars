@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+ | magazine+ | newspaper+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT magazine (#PCDATA)>
+  <!ELEMENT newspaper (#PCDATA)>
+  <!ATTLIST library
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    pages CDATA #IMPLIED>
+  <!ATTLIST magazine
+    title CDATA #REQUIRED
+    publication_date CDATA #IMPLIED>
+  <!ATTLIST newspaper
+    title CDATA #REQUIRED
+    publication_date CDATA #IMPLIED>
+]>
+<library title="My Book Library" author="John Doe">
+  <book title="XML and XSLT" pages="500"></book>
+  <magazine title="World of Books" publication_date="2022-01-01"></magazine>
+  <newspaper title="Daily News" publication_date="2022-01-01"></newspaper>
+</library>

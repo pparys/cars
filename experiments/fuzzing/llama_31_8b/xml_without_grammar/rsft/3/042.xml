@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (header, body)>
+  <!ELEMENT header (#PCDATA)>
+  <!ELEMENT body (#PCDATA)|
+          (section+, section)>
+  <!ELEMENT section (#PCDATA)>
+  <!ATTLIST section
+    id ID #REQUIRED>
+  <!ATTLIST article
+    author CDATA #REQUIRED>
+]>
+<document>
+  <header>My Document</header>
+  <body>This is the body of the document.</body>
+  <section id="s1">This is section 1.</section>
+  <article author="John Doe">
+    <section id="s2">This is section 2.</section>
+  </article>
+  <section id="s3">This is section 3.</section>
+</document>

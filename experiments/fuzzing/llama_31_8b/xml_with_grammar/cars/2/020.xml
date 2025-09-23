@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog  (book+)>
+  <!ELEMENT book (title,price,author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price EMPTY>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    lang (en|fr|de) #IMPLIED>
+]>
+<catalog>
+  <book id="book1" lang="en">
+    <title>Learning XML</title>
+    <price>$49.99</price>
+    <author>Macromedia</author>
+  </book>
+  <book id="book2" lang="fr">
+    <title>Apprendre XML</title>
+    <price>49,99 €</price>
+    <author>Macromedia</author>
+  </book>
+</catalog>

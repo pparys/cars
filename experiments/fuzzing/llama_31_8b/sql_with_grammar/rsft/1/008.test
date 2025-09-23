@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-2.0 {
+  execsql {
+    CREATE TABLE books(isbn INTEGER, author TEXT, title TEXT);
+    INSERT INTO books(isbn, author, title) VALUES(1111, 'J.K. Rowling', 'Harry Potter');
+    INSERT INTO books(isbn, author, title) VALUES(2222, 'J.R.R. Tolkien', 'The Lord of the Rings');
+  }
+} {}
+
+do_test select-book-2.1 {
+  execsql {
+    SELECT author, title FROM books WHERE isbn = 1111;
+  }
+} {J.K. Rowling Harry Potter}
+
+finish_test

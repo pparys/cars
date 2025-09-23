@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE staff [
+  <!ELEMENT staff (person*)>
+  <!ELEMENT person (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT company EMPTY>
+  <!ATTLIST company
+    name CDATA #REQUIRED
+    location CDATA #IMPLIED>
+  <!ATTLIST person
+    id ID #REQUIRED
+  >
+]>
+<staff>
+  <person id="001">
+    <name>John Doe</name>
+    <address>123 Main St</address>
+  </person>
+  <company name="ABC Corporation" location="New York"/>
+</staff>

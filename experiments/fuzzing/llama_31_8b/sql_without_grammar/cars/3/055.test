@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-orders-1.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      customer_id INTEGER,
+      order_date DATE,
+      total REAL
+    );
+    INSERT INTO orders(id, customer_id, order_date, total) 
+      VALUES(1, 101, '2022-01-01', 100.99);
+    INSERT INTO orders(id, customer_id, order_date, total) 
+      VALUES(2, 102, '2022-02-01', 200.99);
+  }
+} {}
+
+do_test query-existing-order-1.1 {
+  execsql {
+    SELECT total FROM orders WHERE id = 2;
+  }
+} {200.99}
+
+finish_test

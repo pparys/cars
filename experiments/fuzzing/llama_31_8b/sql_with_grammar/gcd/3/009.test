@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE customers(cust_id INTEGER PRIMARY KEY, cust_name TEXT);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, order_date DATE, customer_id INTEGER, FOREIGN KEY customer_id REFERENCES customers ON DELETE CASCADE);
+    INSERT INTO customers(cust_id, cust_name) VALUES(101, 'John Doe');
+    INSERT INTO customers(cust_id, cust_name) VALUES(102, 'Jane Doe');
+    INSERT INTO orders(order_id, order_date, customer_id) VALUES(201, '2020-01-01', 101);
+    INSERT INTO orders(order_id, order_date, customer_id) VALUES(202, '2020-01-15', 102);
+  }
+} {}
+
+do_test select-orders-3.1 {
+  execsql {
+    SELECT c.* FROM customers AS c 
+    WHERE ceselectId = 101;
+  }
+} {101 John Doe}
+
+finish_test

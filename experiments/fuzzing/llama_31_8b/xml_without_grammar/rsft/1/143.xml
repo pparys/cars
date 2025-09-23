@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, author, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    birth CDATA #IMPLIED>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <author name="John" birth="1980">
+    <book id="1" year="2010">
+      <title>The Great Gatsby</title>
+      <publisher>Penguin</publisher>
+    </book>
+  </author>
+  <author name="Jane" birth="1990">
+    <book id="2" year="2015">
+      <title>To Kill a Mockingbird</title>
+      <publisher>Harper</publisher>
+    </book>
+    <book id="3" year="2020">
+      <title>The Catcher in the Rye</title>
+      <publisher>HG</publisher>
+    </book>
+  </author>
+</library>

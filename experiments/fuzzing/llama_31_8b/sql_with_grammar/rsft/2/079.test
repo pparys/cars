@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test add-new-record-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, location TEXT);
+    INSERT INTO employees(id, name, location) VALUES(201, 'John Doe', 'New York');
+  }
+} {}
+
+do_test query-employees-3.1 {
+  execsql {
+    SELECT * FROM employees WHERE location = 'New York';
+  }
+} {201 John Doe New York}
+
+finish_test

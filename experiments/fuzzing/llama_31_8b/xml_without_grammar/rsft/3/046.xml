@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description+, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price EMPTY>
+  <!ATTLIST price
+    currency CDATA #REQUIRED
+    amount CDATA #REQUIRED>
+]>
+<catalog>
+  <product>
+    <description>Smartphone with 64 GB storage</description>
+    <description>It also has a strong battery that lasts all day</description>
+    <price currency="USD" amount="599.99"/>
+  </product>
+  <product>
+    <description>Tablet with 16 GB storage</description>
+    <description>It also has a strong battery that lasts all day</description>
+    <price currency="EUR" amount="499.99"/>
+  </product>
+</catalog>

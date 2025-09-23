@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book,author)>
+  <!ELEMENT book (title,author,genre)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT author-order (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id (id) #REQUIRED
+    title-type (work|series) #REQUIRED>
+]>
+<library>
+  <book id="1" title-type="work">
+    <title>Harry Potter and the Philosopher's Stone</title>
+    <author>J.K. Rowling</author>
+    <genre>Fantasy</genre>
+    <author-order>"Main Author"</author-order>
+  </book>
+  <author>
+     <author-order>Collaborators</author-order>
+  </author>
+</library>

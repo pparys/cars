@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description)*>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+    brand CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="prod1" brand="Apple">
+    <description>This is a great product.</description>
+  </product>
+  <product id="prod2" brand="Samsung">
+    <description>This is a high-quality product.</description>
+    <description>This is the second description.</description>
+  </product>
+</catalog>

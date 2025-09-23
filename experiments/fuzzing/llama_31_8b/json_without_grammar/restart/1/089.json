@@ -1,0 +1,17 @@
+{"name": "Mewtwo",
+ "id": 150,
+ "types": [
+  "Psychic"
+  ],
+ "isLegendary": true,
+ "abilities": [
+  {
+   "name": "Sturdy",
+   "description": "This Pokémon can withstand one critical hit and becomes unaffected by critical hits."
+  },
+  {
+   "name": "Unnerve",
+   "description": "User has a 50% chance of making the opponent unable to use a Dragon-type move."
+  }
+ ],
+ "preEvolution": null}

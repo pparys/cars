@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, address TEXT);
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER REFERENCES customers, date DATE);
+    INSERT INTO customers(id, name, address) VALUES(1, 'John', 'New York');
+    INSERT INTO customers(id, name, address) VALUES(2, 'Jane', 'London');
+    INSERT INTO orders(order_id, customer_id, date) VALUES(101, 1, '2020-01-01');
+  }
+} {}
+
+do_test join-operation-3.1 {
+  execsql {
+    SELECT c.* FROM customers AS c
+    WHERE c_id = 1;
+  }
+} {1 John New York}
+
+finish_test

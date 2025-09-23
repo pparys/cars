@@ -1,0 +1,13 @@
+{"name": "Missingno.", 
+ "id": 719,
+ "types": ["Normal", "Ghost", "Steel", "Dragon"],
+ "isLegendary": false,
+ "abilities": [
+  {"name": "Levitate", 
+  "description": "Immunity to Ground-type moves."
+  },
+  {"name": "Pressure", 
+   "description": "User becomes more likely to hit with a critical hit."
+  }
+ ],
+ "preEvolution": null}

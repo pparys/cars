@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT bookItem (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST bookItem
+    price CDATA #IMPLIED
+    quantity CDATA #IMPLIED
+    id CDATA #REQUIRED
+  >
+]>
+<book id="bk101">
+  <author>Aaron S. Brown</author>
+  <title>Foo Bar</title>
+  <publicationDate>2004-09-03</publicationDate>
+  <publisher>ABC Corp.</publisher>
+  <bookItem id="itemone" price="15.00" quantity="3"/>
+  <bookItem id="itemtwo" price="12.00" quantity="7"/>
+  <bookItem id="itemthree" price="10.00" quantity="10"/>
+</book>

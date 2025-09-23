@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (name, price, description)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    category CDATA #IMPLIED>
+]>
+<product id="P001" category="Electronics">
+  <name>Smart Watch</name>
+  <price>199.99</price>
+  <description>This is a high-tech smart watch with advanced features.</description>
+</product>

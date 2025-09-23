@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-.Parent-Table-child-1.0 {
+  execsql {
+    CREATE TABLE locations(id INTEGER, city TEXT);
+    CREATE TABLE events(id INTEGER, location_id INTEGER, FOREIGN KEYlocation_id REFERENCES locations);
+    INSERT INTO locations(id, city) VALUES(301, 'Tokyo');
+    INSERT INTO events(id, location_id) VALUES(1, 301);
+  }
+} {}
+
+do_test check-no-foreign-table-1.1 {
+  execsql {
+    SELECT id FROM events WHERE location_id = 500;
+  }
+} {}
+
+finish_test

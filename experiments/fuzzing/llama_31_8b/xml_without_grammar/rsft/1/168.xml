@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, publication-date)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    publisher CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book isbn="978-3-16-148410-0" publisher="Penguin" year="2005">
+    <author>John Doe</author>
+    <title>The Adventures of Sherlock Holmes</title>
+    <publication-date>January 1, 1905</publication-date>
+  </book>
+  <book isbn="978-3-16-148409-4" year="2010">
+    <author>Jane Smith</author>
+    <title>The Mysterious Case of Sherlock Holmes</title>
+    <publication-date>February 1, 2010</publication-date>
+  </book>
+</library>

@@ -1,0 +1,17 @@
+{"name": "Eevee",
+    "id": 133,
+    "types": [
+      "Normal"
+    ],
+    "isLegendary": true,
+    "abilities": [
+      {
+        "name": "Adaptability",
+        "description": "Boosts the power of attacker\u2019s STAB moves."
+      },
+      {
+        "name": "Flinch Chance",
+        "description": "Has a 110% chance of causing the target to flinch."
+      }
+    ],
+    "preEvolution": null}

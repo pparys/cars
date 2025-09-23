@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employee [
+  <!ELEMENT employee (name, address, phone+, salary*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT salary (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED>
+]>
+<employee id="E001">
+  <name>John Doe</name>
+  <address>123 Main St, Anytown, USA</address>
+  <phone>123-456-7890</phone>
+  <phone>098-765-4321</phone>
+  <salary>50000</salary>
+  <salary>60000</salary>
+</employee>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title,author,year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    lang (en|fr|es) "en">
+]>
+<catalog>
+  <book id="bk101" lang="en">
+    <title>The Python Crash Course</title>
+    <author>Eric Matthes</author>
+    <year>2016</year>
+  </book>
+  <book id="bk102" lang="fr">
+    <title>Apprendre Python</title>
+    <author>Certain Peuple</author>
+    <year>2019</year>
+  </book>
+</catalog>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-data-3.0 {
+  execsql {
+    CREATE TABLE products(pid INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO products VALUES(1, 'Apple Watch');
+    INSERT INTO products VALUES(2, 'iPhone');
+  }
+} {}
+
+do_test select-product-3.1 {
+  execsql {
+    SELECT name FROM products WHERE pid = 2;
+  }
+} {iPhone}
+
+finish_test

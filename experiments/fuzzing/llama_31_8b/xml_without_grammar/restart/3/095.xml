@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    brand CDATA #IMPLIED>
+  <!ATTLIST catalog
+    title CDATA #REQUIRED
+    version CDATA #IMPLIED>
+]>
+<catalog title="Electronics Catalog" version="1.0">
+  <product id="PRD-001" brand="Apple">
+    <description>iPhone 13</description>
+    <price>$999.99</price>
+  </product>
+  <product id="PRD-002" brand="Samsung">
+    <description>Galaxy S22 Ultra</description>
+    <price>$1,299.99</price>
+  </product>
+</catalog>

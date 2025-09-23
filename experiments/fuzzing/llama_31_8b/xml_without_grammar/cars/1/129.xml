@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE package [
+  <!ELEMENT package (author,version,dependencies)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT version (#PCDATA)>
+  <!ELEMENT dependencies (#PCDATA)>
+  <!ATTLIST package
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED>
+]>
+<package id="PKG-123" type="商業软件">
+  <author>John Doe</author>
+  <version>1.0.0</version>
+  <dependencies>python3.9, numpy, pandas</dependencies>
+</package>

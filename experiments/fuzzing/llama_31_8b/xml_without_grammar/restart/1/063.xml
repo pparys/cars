@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author+, product+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT product (name, description, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id    CDATA  #REQUIRED
+    type  (book|dvd) #REQUIRED>
+]>
+<catalog>
+  <author>E. Hemingway</author>
+  <author>J. Joyce</author>
+  <product id="bk101" type="book">
+    <name>XML for Beginners</name>
+    <description>Learn XML basics</description>
+    <price>$39.95</price>
+  </product>
+  <product id="bk102" type="book">
+    <name>A Gentle Introduction to XML</name>
+    <description>A gentle introduction to XML</description>
+    <price>$29.95</price>
+  </product>
+  <product id="dvd123" type="dvd">
+    <name>The Adventures of Father Brown</name>
+    <description>A 1949 British mystery film based on the stories by G.K. Chesterton</description>
+    <price>$12.99</price>
+  </product>
+</catalog>

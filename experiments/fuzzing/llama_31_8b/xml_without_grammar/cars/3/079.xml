@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE complex [
+  <!ELEMENT complex (data�� |-- declared a complex element with a name 'complex' and a content model that includes any number of elements or mixed content, in this case an empty element -->
+  <!ATTLIST complex
+    id CDATA #IMPLIED
+    type CDATA #IMPLIED>
+]>
+<complex id="123" type="test">
+  <data>
+    This is a sample of data, utilising tag.
+  </data>
+  <data2>
+    With tag name of <spec>data2 </spec>
+  </data2>
+</complex>

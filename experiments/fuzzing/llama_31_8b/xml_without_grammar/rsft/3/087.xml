@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (person+, address, phone)>
+  <!ELEMENT person (name, age, occupation+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT occupation (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT phone EMPTY>
+  <!ATTLIST phone
+    type CDATA #IMPLIED
+    number CDATA #REQUIRED>
+]>
+<root>
+  <person>
+    <name>John Doe</name>
+    <age>30</age>
+    <occupation>Software Engineer</ occupation>
+    <occupation>Data Scientist</ occupation>
+  </person>
+  <person>
+    <name>Jane Doe</name>
+    <age>25</age>
+    <occupation>Doctor</ occupation>
+  </person>
+  <address>
+    <street>123 Main St</street>
+    <city>New York</city>
+    <state>NY</state>
+    <zip>10001</zip>
+  </address>
+  <phone type="home" number="123-456-7890"/>
+  <phone type="mobile" number="987-654-3210"/>
+</root>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressbook [
+  <!ELEMENT addressbook (address*)>
+  <!ELEMENT address (name,phone,school)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT school (#PCDATA)>
+  <!ATTLIST address
+    country CDATA #REQUIRED>
+]>
+<addressbook>
+  <address country="USA">
+    <name>Linda</name>
+    <phone>123-456-7890</phone>
+    <school>ABC School</school>
+  </address>
+  <address country="Canada">
+    <name>Beth</name>
+    <phone>987-654-3210</phone>
+    <school>DEF School</school>
+  </address>
+</addressbook>

@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-check-1.0 {
+  execsql {
+    CREATE TABLE scores(
+      id INTEGER PRIMARY KEY,
+      student_name TEXT,
+      subject TEXT,
+      check_date DATE
+    );
+    INSERT INTO scores(id, student_name, subject, check_date) VALUES(101, 'John Doe', 'Math', '2022-01-01');
+    INSERT INTO scores(id, student_name, subject, check_date) VALUES(102, 'Jane Doe', 'Science', '2022-01-02');
+  }
+} {}
+
+do_test query-checks-1.1 {
+  execsql {
+    SELECT student_name, subject 
+    FROM scores ORDER BY check_date DESC LIMIT 1;
+  }
+} {Jane Doe Science}
+finish_test

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config [
+  <!ELEMENT config (color | font, size)*>
+  <!ELEMENT color (#CDATA)>
+  <!ELEMENT font (#CDATA)>
+  <!ELEMENT size (#CDATA)>
+  <!ATTLIST config title CDATA #IMPLIED>
+  <!ATTLIST config version CDATA #REQUIRED>
+]>
+<config title="My Config 1.0" version="1.0">
+  <color>Red</color>
+  <font>Times New Roman</font>
+  <size>12</size>
+</config>

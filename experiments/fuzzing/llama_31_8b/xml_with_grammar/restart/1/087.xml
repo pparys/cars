@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id   ID  #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST library
+    name CDATA #REQUIRED>
+]>
+<library name="My Library">
+  <book id="bk101" year="2001">This is the first book in series.</book>
+  <book id="bk102" year="2003">This is the second book in series.</book>
+</library>

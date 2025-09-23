@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (library*)>
+  <!ELEMENT library (author+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST library
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    publication CDATA #IMPLIED>
+]>
+<catalog>
+  <library id="lib1" year="2020">
+    <author name="John" publication="bookA"/>
+    <author name="Jane" publication="bookB"/>
+  </library>
+  <library id="lib2" year="2019">
+    <author name="David" publication="bookC"/>
+    <author name="Emma" publication="bookD"/>
+  </library>
+</catalog>

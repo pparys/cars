@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<library>
+  <author>J.K. Rowling</author>
+  <book title="Harry Potter and the Philosopher's Stone" author="J.K. Rowling">The story begins on a foggy platform</book>
+  <book title="Harry Potter and the Chamber of Secrets">The dark forces return to Hogwarts</book>
+</library>

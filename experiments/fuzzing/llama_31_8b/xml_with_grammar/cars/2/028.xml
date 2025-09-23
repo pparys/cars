@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE item_list [
+  <!ELEMENT item_list (item+)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    description CDATA #IMPLIED>
+]>
+<item_list xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+  <item id="item1">This is the first item.</item>
+  <item id="item2">This is the second item ^^.</item>
+  <item id="item3">This is the third item.</item>
+</item_list>

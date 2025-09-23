@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author?)>
+  <!ELEMENT book (#PCDATA,price+,author?)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    genre CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+]>
+<library>
+  <book title="Harry Potter" genre="Fantasy">This is a magical story.</book>
+  <book title="1984" genre="Dystopian">A classic novel about a totalitarian society.</book>
+  <author name="John Smith">
+    <price>10.99</price>
+    <price>14.95</price>
+  </author>
+  <author name="Jane Doe"></author>
+</library>

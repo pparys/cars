@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE orders [
+  <!ELEMENT orders (order+)>
+  <!ELEMENT order (item*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    product CDATA #REQUIRED
+    price CDATA #REQUIRED>
+  <!ATTLIST order
+    id CDATA #REQUIRED>
+]>
+<orders>
+  <order id="001">
+    <item product="Apple iPhone" price="999.99"/>
+    <item product="Samsung TV" price="1499.99"/>
+  </order>
+  <order id="002">
+    <item product="Nike Shoes" price="129.99"/>
+  </order>
+</orders>

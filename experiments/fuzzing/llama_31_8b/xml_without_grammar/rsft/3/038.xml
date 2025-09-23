@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author, title, publisher, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    nationality CDATA #IMPLIED>
+]>
+<books>
+  <author name="J.K Rowling" nationality="British"/>
+  <title>Harry Potter and the Philosopher's Stone</title>
+  <publisher>Bloomsbury Publishing</publisher>
+  <price>12.99</price>
+</books>

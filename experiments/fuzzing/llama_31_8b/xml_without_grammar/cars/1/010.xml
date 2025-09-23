@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+, catalog?)>
+  <!ELEMENT product (description, price, category)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+
+  <!ATTLIST catalog
+    name CDATA #REQUIRED
+    version CDATA #REQUIRED
+  >
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    rating CDATA #IMPLIED
+  >
+]>
+<catalog name="Electronics Store" version="1.0">
+  <product id="P-001" rating="5">
+    <description>Samsung 4K TV</description>
+    <price>$999.99</price>
+    <category>Electronics</category>
+  </product>
+  <product id="P-002">
+    <description>Apple iPhone 14</description>
+    <price>$999.99</price>
+    <category>Electronics</category>
+  </product>
+  <catalog name="Mobile Store">
+    <product id="P-003">
+      <description>OnePlus 10 Pro</description>
+      <price>$799.99</price>
+      <category>Electronics</category>
+    </product>
+  </catalog>
+</catalog>

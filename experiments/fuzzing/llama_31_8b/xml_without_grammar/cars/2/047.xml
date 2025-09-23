@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address[
+  <!ELEMENT address (name,street,pin_male)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT pin_male (#PCDATA)>
+  <!ATTLIST address
+    city  CDATA #REQUIRED >
+]>
+<address city="New York">
+ <name>Jane Doe</name>
+ <street>23rd Street</street>
+ <pin_male>10001</pin_male>
+</address>

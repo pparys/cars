@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE persons [
+  <!ELEMENT persons (person*)>
+  <!ELEMENT person (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    role (student|teacher)>
+]>
+<persons>
+  <person id="123456" role="teacher">
+    This is a note from <person id="789012" role="student">someone</person> with multiple children.
+  </person>
+</persons>

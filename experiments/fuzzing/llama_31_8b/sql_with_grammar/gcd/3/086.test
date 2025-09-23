@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      salary REAL
+    );
+    CREATE TABLE managers(
+      id INTEGER PRIMARY KEY,
+      manager_name TEXT REFERENCES employees
+    );
+  INSERT INTO employees(id, name, salary) VALUES(101, 'John Doe', 50000.00);
+  INSERT INTO managers(id, manager_name) VALUES(102, 'John Doe');
+  }
+} {}
+
+do_test duplicate-row-2.0 {
+  execsql {
+    SELECT name, salary FROM employees WHERE id = 102;
+  }
+} {John Doe 50000.0}
+
+finish_test

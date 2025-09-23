@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, personal_message?)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT personal_message (#PCDATA)>
+  <!ATTLIST book
+      title CDATA #IMPLIED
+      author CDATA #IMPLIED>
+  <!ATTLIST personal_message
+      fromCDATA#IMPLIED>
+]>
+<library>
+  <book title="Introduction to Basics" author="John Doe">
+    This is a simple book.
+  </book>
+  <book title="Introduction to Advanced" author="Jane Doe">
+    This is a simple advanced text.
+  </book>
+  <personal_message from="Mr. Smith">
+    This message is from John, regarding not being located.
+  </personal_message>
+</library>

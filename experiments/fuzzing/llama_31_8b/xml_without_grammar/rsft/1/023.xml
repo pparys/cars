@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT tag (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+
+  <!ELEMENT library (section*)>
+  <!ELEMENT section (book|author|publisher|price|tag)*>
+
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+  <!ATTLIST book
+    title CDATA #REQUIRED>
+  <!ATTLIST publisher
+    name CDATA #REQUIRED>
+  <!ATTLIST price
+    value CDATA #REQUIRED>
+  <!ATTLIST tag
+    name CDATA #REQUIRED>
+]>
+<library>
+  <section>
+    <book title="Python Programming" />
+    <price value="40.00" />
+    <publisher name="Packt Publishing" />
+    <tag name="books" />
+  </section>
+  <section>
+    <author name="John Smith" />
+    <publisher name="O'Reilly Media" />
+  </section>
+</library>

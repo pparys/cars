@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, publication-date)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ATTLIST book
+      id CDATA #REQUIRED
+      language (en|fr|de) 'en'
+  >
+]>
+<library>
+  <book id="book1" language="en">
+    <author>J.R.R. Tolkien</author>
+    <title>The Lord of the Rings</title>
+    <publication-date>1954-07-29</publication-date>
+  </book>
+  <book id="book2" language="fr">
+    <author>Jules Verne</author>
+    <title>Destination Mars</title>
+    <publication-date>1892-03-12</publication-date>
+  </book>
+</library>

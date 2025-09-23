@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, image+)>
+  <!ELEMENT book (title, author, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT image (image_id, caption)>
+  <!ELEMENT image_id (#PCDATA)>
+  <!ELEMENT caption (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+  <!ATTLIST image
+    id CDATA #REQUIRED>
+  <!ATTLIST book
+    publisher_type (book | magazine | newspaper) "book">
+  <!ATTLIST image
+    type (png | jpg | gif) "png">
+]>
+<catalog>
+  <book id="BK101">
+    <title>The Lord of the Rings</title>
+    <author>J.R.R. Tolkien</author>
+    <publisher type="book">Houghton Mifflin Harcourt</publisher>
+  </book>
+  <book id="BK102">
+    <title>The Catcher in the Rye</title>
+    <author>J.D. Salinger</author>
+    <publisher type="book">Little, Brown and Company</publisher>
+  </book>
+  <image id="IMG201">
+    <image_id>IMG201</image_id>
+    <caption>Landscape</caption>
+  </image>
+  <image id="IMG202">
+    <image_id>IMG202</image_id>
+    <caption>Portrait</caption>
+  </image>
+</catalog>

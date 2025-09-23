@@ -1,0 +1,7 @@
+{"name":"Giratina",
+ "id": 487,
+ "types": ["Ghost","Steel"],
+ "isLegendary": true,
+ "abilities": [{"name":"Turnback","description":"Can't be taken by opponent."},
+  {"name":"Levitate","description":"User is immune to Ground-type moves."}],
+ "preEvolution": null}

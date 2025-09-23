@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE sales(
+      id INTEGER PRIMARY KEY,
+      product TEXT,
+      price REAL,
+      category TEXT
+    );
+    
+    INSERT INTO sales(id, product, price, category) 
+    VALUES(1, 'Laptop', 1000.00, 'Electronics');
+    
+    INSERT INTO sales(id, product, price, category) 
+    VALUES(2, 'Keyboard', 50.00, 'Electronics');
+    
+    INSERT INTO sales(id, product, price, category) 
+    VALUES(3, 'Microphone', 20.00, 'Electronics');
+  }
+} {}
+
+do_test select-top-3-products-by-price-3.1 {
+  execsql {
+    SELECT product, price FROM sales ORDER BY price DESC LIMIT 3;
+  }
+} {Laptop 1000.0 Keyboard 50.0 Microphone 20.0}
+
+finish_test

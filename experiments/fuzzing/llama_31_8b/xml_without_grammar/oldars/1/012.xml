@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE shipment [
+  <!ELEMENT shipment (header, body)>
+  <!ELEMENT header (#PCDATA)>
+  <!ELEMENT body (item*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    id ID #IMPLIED
+    quantity CDATA #REQUIRED>
+]>
+<shipment>
+  <header>This is a shipment header</header>
+  <body>
+    <item id="item1" quantity="2">This is item 1</item>
+    <item id="item2" quantity="5">This is item 2</item>
+  </body>
+</shipment>

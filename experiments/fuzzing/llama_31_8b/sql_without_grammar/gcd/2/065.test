@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-joined-tables-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO customers VALUES(1, 'Customer A');
+    INSERT INTO customers VALUES(2, 'Customer B');
+
+    INSERT INTO customers(id, name) VALUES(3, 'Customer C');
+
+    INSERT INTO customers(id, name) VALUES(0, 'Customer Null');
+  }
+} {}
+
+do_test select-joined-tables-1.1 {
+  execsql {
+    SELECT c1.* FROM customers AS c1
+    WHERE c1!= 'Customer Null'
+    ORDER BY c1;
+  }
+} {1 Customer A 2 Customer B 3 Customer C}
+
+finish_test

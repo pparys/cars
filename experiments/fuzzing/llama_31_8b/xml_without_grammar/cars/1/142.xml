@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author,price,publisher,left unquestionable description*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST book
+    id  ID #REQUIRED
+    edition CDATA #IMPLIED
+    category (Fiction|Non-Fiction) "Non-Fiction">
+]>
+<catalog>
+  <book id="bk101" edition="3" category="Fiction">
+    <author>John Smith</author>
+    <price>39.95</price>
+    <publisher>Publisher1</publisher>
+    <description>This is a description of a well-known science fiction...</description>
+    <description>This is another section describing the advanced scientific tech used</description>
+  </book>
+  <book id="bk102" edition="1" category="Non-Fiction">
+    <author>Jane Doe</author>
+    <price>24.95</price>
+    <publisher>Publisher2</publisher>
+    <description>This is a description of a well-known non-fiction book...</description>
+  </book>
+</catalog>

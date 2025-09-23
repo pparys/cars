@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (name, description, price)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED>
+]>
+<catalog>
+  <product id="P1">
+    <name>Laptop</name>
+    <description>A portable computer</description>
+    <price>1000.00</price>
+  </product>
+  <product id="P2">
+    <name>Headphones</name>
+    <description>A pair of high-quality audio devices</description>
+    <price>50.00</price>
+  </product>
+  <product id="P3">
+    <name>Speaker</name>
+    <description>A high-quality loudspeaker</description>
+    <price>200.00</price>
+  </product>
+</catalog>

@@ -1,0 +1,15 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": ["Psychic"],
+"isLegendary": true,
+"abilities": [
+    {
+        "name": "Stance Change",
+        "description": "Reverses the effects of Toxic Spikes and Steven's buf offense moves"
+    },
+    {
+        "name": "Unnerve",
+        "description": "Eliminates Opponent's Ability Wonder Guard"
+    }
+],
+"preEvolution": null}

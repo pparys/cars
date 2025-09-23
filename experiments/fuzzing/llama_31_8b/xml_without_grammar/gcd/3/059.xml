@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book+)>
+  <!ELEMENT author (name, bio)>
+  <!ELEMENT book (title, author*, content)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT bio (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    publicationYear CDATA #IMPLIED
+  >
+]>
+<library>
+  <author id="A001">
+    <name>John</name>
+    <bio>A famous author.</bio>
+  </author>
+  <book id="B001">
+    <title>Book Title</title>
+    <author id="A001"/>
+    <content>This is the book content.</content>
+  </book>
+  <book id="B002" publicationYear="2020">
+    <title>Another Book Title</title>
+    <author id="A002">
+      <name>Jane</name>
+      <bio>A well-known author.</bio>
+    </author>
+    <content>This is the content of another book.</content>
+  </book>
+</library>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*, author*)>
+  <!ELEMENT book ((#PCDATA | title|year)*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT author ((#PCDATA | name| birthdate)*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT birthdate (#PCDATA)>
+  <!ATTLIST library
+    name CDATA #IMPLIED>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    authorID CDATA #IMPLIED>
+  <!ATTLIST author
+    id CDATA #IMPLIED>
+]>
+<library name="My Library">
+  <book id="bk101" authorID="au01">
+    <title>Everyday Italian</title>
+    <year>2005</year>
+  </book>
+  <book id="bk102" authorID="au02">
+    <title>XQuery Kick Start</title>
+    <year>2006</year>
+  </book>
+  <author id="au01">
+    <name>Giada De Laurentiis</name>
+    <birthdate>1961-05-28</birthdate>
+  </author>
+  <author id="au02">
+    <name>James McGovern</name>
+    <birthdate>1964-12-12</birthdate>
+  </author>
+</library>

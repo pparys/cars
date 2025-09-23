@@ -1,0 +1,15 @@
+{"name": "Mewtwo",
+ "id": 150,
+ "types": ["Psychic"],
+ "isLegendary": true,
+ "abilities": [
+   {
+     "name": "Pressure",
+     "description": "Make the opponent to have 10% penalty to base stat if they have no speed advantage."
+   },
+   {
+     "name": "Unnerve",
+     "description": "User prevents the opponent from using Berry items."
+   }
+ ],
+ "preEvolution": "Mew" }

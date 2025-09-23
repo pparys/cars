@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description, price, reviews)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT reviews (review+)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    type (book|electronic)>
+]>
+<product id="123" type="electronic">
+  <description>This is an electronic item.</description>
+  <price>$99.99</price>
+  <reviews>
+    <review>This product is good.</review>
+    <review>This product is not good.</review>
+  </reviews>
+</product>

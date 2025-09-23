@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (title, author, content)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ATTLIST document
+    id CDATA #IMPLIED
+    date CDATA #REQUIRED>
+]>
+<document id="doc-001" date="2024-07-26">
+  <title>Overview of Python 3.12</title>
+  <author>John Doe</author>
+  <content>The document provides a comprehensive overview of Python 3.12 features.</content>
+</document>

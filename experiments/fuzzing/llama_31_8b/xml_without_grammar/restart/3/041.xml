@@ -1,0 +1,30 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT poet (#PCDATA)>
+  <!ELEMENT poem (#PCDATA)>
+  <!ELEMENT stanza (#PCDATA)>
+  <!ELEMENT line (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST poet
+    name CDATA #REQUIRED
+    alias CDATA #IMPLIED
+  >
+  <!ATTLIST poem
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED
+  >
+]>
+<library>
+  <poet name="John" alias="J.D."/>
+  <poem title="The Raven" author="E.P" year="1845">
+    <stanza>
+      <line>Once upon a midnight dreary...</line>
+    </stanza>
+    <stanza>
+      <line>While I pondered, weak and weary...</line>
+    </stanza>
+  </poem>
+  <book title="The Complete Poems" year="1996"/>
+</library>

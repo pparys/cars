@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-deletes-1.0 {
+  execsql {
+    CREATE TABLE messages(id INTEGER PRIMARY KEY, thread_id INTEGER, text TEXT);
+    INSERT INTO messages(id, thread_id, text) VALUES(1, 1001, 'Hello, world!');
+    INSERT INTO messages(id, thread_id, text) VALUES(2, 1001, '応答する');
+    INSERT INTO messages(id, thread_id, text) VALUES(3, 1002, 'ご返信ありがとうございます');
+    INSERT INTO messages(id, thread_id, text) VALUES(4, 1002, '回答はメールで送られました。');
+  }
+} {}
+
+do_test delete-child-1.1 {
+  execsql {
+    DELETE FROM messages WHERE thread_id = 1002 AND id < 4;
+  }
+} {}
+
+finish_test

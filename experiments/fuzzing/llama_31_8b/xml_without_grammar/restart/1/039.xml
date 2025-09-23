@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED
+    ISBN CDATA #IMPLIED
+  >
+]>
+<library>
+  <author>Stephen King</author>
+  <book title="The Shining" year="1977" ISBN="978-0-380-00853-1"/>
+  <book title="Misery"  year="1987" ISBN="978-0-385-15919-2"/>
+  <book title="It" year="1986" ISBN="978-0-385-26613-7"/>
+</library>

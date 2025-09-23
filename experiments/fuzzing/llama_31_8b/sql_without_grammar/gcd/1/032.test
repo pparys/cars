@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE departments(id INTEGER, name TEXT);
+    CREATE TABLE employees(dept_id INTEGER, name TEXT, hire_date DATE);
+    INSERT INTO departments(id, name) VALUES(301, 'Sales');
+    INSERT INTO departments(id, name) VALUES(302, 'Marketing');
+    INSERT INTO employees(dept_id, name, hire_date) VALUES(301, 'John Doe', '2020-01-01');
+    INSERT INTO employees(dept_id, name, hire_date) VALUES(302, 'Jane Doe', '2020-02-01');
+  }
+} {}
+
+do_test select-employee-3.1 {
+  execsql {
+    SELECT name FROM employees WHERE dept_id = 301;
+  }
+} {John Doe}
+
+finish_test

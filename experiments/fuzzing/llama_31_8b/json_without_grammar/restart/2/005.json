@@ -1,0 +1,13 @@
+{"name": "Dragonite","id": 149,
+"types":[ "Dragon",  "Flying"],"isLegendary": false,
+"abilities":[
+"{name" ," "  ," " ,
+      {"name": "Heat Body",
+        "description": "Increases Speed based on temperature."},
+      {"name": "Dance",
+        "description": "Reduces opponents' Attack and Speed, and raises the user's Attack and Special Attack."}
+    ],
+  "weight": 210,
+  "height": 21.9,
+  "preEvolution": 
+    	"_chain"  	}

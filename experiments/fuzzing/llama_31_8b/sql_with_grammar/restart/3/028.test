@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-schema-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, salary REAL);
+    CREATE TABLE salaries(id INTEGER PRIMARY KEY, employee_id INTEGER, year INTEGER, salary REAL);
+  CREATE TABLE cars(id INTEGER PRIMARY KEY, employee_id INTEGER, make TEXT, model TEXT);
+  INSERT INTO employees(id, name) VALUES(101, 'John');
+  INSERT INTO employees(id, name) VALUES(102, 'Alice');
+  INSERT INTO salaries(id, employee_id, year, salary) VALUES(1, 101, 2020, 40000);
+  INSERT INTO salaries(id, employee_id, year, salary) VALUES(2, 101, 2021, 45000);
+  INSERT INTO salaries(id, employee_id, year, salary) VALUES(3, 102, 2020, 50000);
+  INSERT INTO cars(id, employee_id, make, model) VALUES(1, 101, 'Toyota', 'Camry');
+  INSERT INTO cars(id, employee_id, make, model) VALUES(2, 102, 'Honda', 'Civic');
+  }
+} {}
+
+do_test select-employee-1.1 {
+  execsql {
+    SELECT name, COUNTTsalaries.* FROM employees
+    GROUP BY name;
+  }
+} {Alice 1 John 2}
+
+finish_test

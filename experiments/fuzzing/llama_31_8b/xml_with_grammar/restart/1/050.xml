@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<books>
+  <book title="The Great Gatsby" author="F.Scott Fitzgerald"/>
+  <book title="To Kill a Mockingbird" author="Harper Lee"/>
+  <book title="1984" author="George Orwell"/>
+</books>

@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY AUTOINCREMENT, 
+      name TEXT NOT NULL, 
+      department TEXT NOT NULL,
+      manager INTEGER, 
+      salary REAL CHECKsalary 
+    );
+    
+    INSERT INTO employees(name, department, manager, salary) 
+      VALUES('John', 'Sales', null, 50000.0);
+    
+    INSERT INTO employees(name, department, manager, salary) 
+      VALUES('Doe', 'Marketing', 1, 75000.0);
+  }
+} {}
+
+do_test update-dept-change-3.1 {
+  execsql {
+    UPDATE employees 
+    SET salary = 70000.0, department = 'Finance' 
+    WHERE id = 2;
+  }
+} {}
+
+finish_test

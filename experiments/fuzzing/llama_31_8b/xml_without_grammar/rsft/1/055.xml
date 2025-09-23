@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapters)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapters (chapter+,))
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter
+    id CDATA #REQUIRED
+  >
+]>
+<book>
+  <title>The History of XML</title>
+  <author><firstname>John</firstname> <surname>Doe</surname></author>
+  <chapters>
+    <chapter id="ch1">This is chapter 1.</chapter>
+    <chapter id="ch2">This is chapter 2.</chapter>
+    <chapter id="ch3">This is chapter 3.</chapter>
+  </chapters>
+</book>

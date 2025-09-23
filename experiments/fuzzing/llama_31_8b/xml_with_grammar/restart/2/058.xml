@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company ((person | organization)+)>
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT organization (#PCDATA)>
+  <!ATTLIST person
+    name CDATA #REQUIRED
+    id CDATA #IMPLIED>
+  <!ATTLIST organization
+    name CDATA #REQUIRED
+    id CDATA #IMPLIED>
+]>
+<company>
+  <person name="John Doe" id="12345">This is a person.</person>
+  <organization name="ABC Corporation" id="67890">This is an organization.</organization>
+</company>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (#PCDATA | author | content | quote)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ELEMENT quote EMPTY >
+  <!ATTLIST quote
+    text CDATA #REQUIRED
+  >
+]>
+<root>
+  <author>John Doe</author>
+  <content>This is an example of a simple XML structure.</content>
+  <quote text="Believe you can and you're halfway there."/>
+</root>

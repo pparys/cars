@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-view-dropped-3.0 {
+  execsql {
+    CREATE TABLE customers (cid INTEGER, name TEXT);
+    CREATE TABLE orders (oid INTEGER, cid INTEGER, amount REAL);
+    INSERT INTO customers VALUES(1, 'John Doe');
+    INSERT INTO customers VALUES(2, 'Jane Doe');
+    INSERT INTO orders VALUES(101, 1, 10.99);
+    INSERT INTO orders VALUES(102, 2, 9.99);
+    INSERT INTO orders VALUES(103, 1, 19.99);
+    INSERT INTO orders VALUES(104, 2, 29.99);
+    INSERT INTO orders VALUES(105, 1, 39.99);
+    INSERT INTO orders VALUES(106, 2, 49.99);
+  }
+} {}
+
+do_test view-updated-view-dropped-3.1 {
+  execsql {
+    SELECT SUMamount FROM orders WHERE cid = 1;
+  }
+} {59.97}
+
+finish_test

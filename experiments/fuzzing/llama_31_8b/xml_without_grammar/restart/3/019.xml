@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (customer*,item*)>
+  <!ELEMENT customer (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    idCDATA#REQUIRED
+    priceCDATA#IMPLIED>
+]>
+<catalog>
+  <customer>
+    <name>John Doe</name>
+    <address>123 Main St</address>
+  </customer>
+  <item id="I001" price="19.99">Pen</item>
+  <item id="I002">Pencil</item>
+</catalog>

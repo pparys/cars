@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book|author)>
+  <!ELEMENT author (name, birthday)>
+  <!ELEMENT name (#PCDATA)>
+  <!ATTLIST author
+    id ID #REQUIRED>
+  <!ATTLIST book
+    id ID #REQUIRED
+    title CDATA #REQUIRED
+    year CDATA #REQUIRED>
+  <!ATTLIST book
+    author_ref IDREF #REQUIRED>
+]>
+<catalog>
+  <author id="au1">
+    <name>John Doe</name>
+    <birthday>1990-01-01</birthday>
+  </author>
+  <book id="bk1" author_ref="au1" title="Book Title 1" year="2020"/>
+  <book id="bk2" author_ref="au1" title="Book Title 2" year="2021"/>
+</catalog>

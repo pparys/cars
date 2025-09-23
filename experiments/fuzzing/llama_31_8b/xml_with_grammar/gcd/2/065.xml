@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE user_info [
+  <!ELEMENT user_info (name, address, contact)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ATTLIST user_info
+    user_id CDATA #REQUIRED
+    created_date CDATA #IMPLIED>
+]>
+<user_info user_id="UID001" created_date="2022-01-01">
+  <name>John Doe</name>
+  <address>123 Main St</address>
+  <contact>Phone: 555-555-5555</contact>
+</user_info>

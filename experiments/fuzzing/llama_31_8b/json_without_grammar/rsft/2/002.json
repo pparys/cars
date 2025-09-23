@@ -1,0 +1,21 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": [
+"Walking Psychic"
+],
+"isLegendary": true,
+"abilities": [
+{
+"name": "Psystrike",
+"description": "Does not allow the opponent to use a move that always hits."
+},
+{
+"name": "Pressure",
+"description": "Every turn, the opponent is unable to lower the user's accuracy."
+},
+{
+"name": "Steady Habit",
+"description": "Decreases the difficulty to gain experience points."
+}
+],
+"preEvolution": null }

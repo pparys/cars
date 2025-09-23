@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (catalog*)>
+  <!ELEMENT catalog (book+, author*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (name, address+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #IMPLIED
+    country CDATA #REQUIRED>
+]>
+<library>
+  <catalog>
+    <book>This is a book.</book>
+    <book>This is another book.</book>
+  </catalog>
+  <catalog>
+    <author id="a1" country="USA">
+      <name>John Doe</name>
+      <address>123 Main St</address>
+      <address>Apt 101</address>
+    </author>
+    <author id="a2" country="Canada">
+      <name>Jane Smith</name>
+      <address>456 Elm St</address>
+    </author>
+  </catalog>
+</library>

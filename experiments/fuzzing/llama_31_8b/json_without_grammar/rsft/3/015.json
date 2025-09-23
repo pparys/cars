@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Pressure", "description": "Every turn, the opponent has a 50% chance to flinch."}, {"name": "Unnerve", "description": "The opponent cannot make its target flinch."}], "preEvolution": null}

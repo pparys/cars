@@ -1,0 +1,7 @@
+{"name": "Mew",
+"id": 151,
+"types": ["Psychic"],
+"abilities": [
+{"name": "Synchronize"},
+{"name": "Technicolor"}],
+"preEvolution": null}

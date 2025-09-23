@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER, product TEXT);
+    INSERT INTO orders(order_id, customer_id, product) VALUES(2001, 501, 'Product-A');
+    INSERT INTO orders(order_id, customer_id, product) VALUES(2002, 502, 'Product-B');
+    INSERT INTO orders(order_id, customer_id, product) VALUES(2003, 503, 'Product-C');
+  }
+} {}
+
+do_test select-data-2.1 {
+  execsql {
+    SELECT customer_id, product FROM orders WHERE order_id = 2002;
+  }
+} {502 Product-B}
+
+finish_test

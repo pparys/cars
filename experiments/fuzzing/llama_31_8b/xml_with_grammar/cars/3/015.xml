@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE meetings [
+  <!ELEMENT meetings (meeting+)>
+  <!ELEMENT meeting (person+, conference+)>
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT conference (#PCDATA)>
+  <!ATTLIST meeting
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED>
+  <!ATTLIST person
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<meetings>
+  <meeting id="M1" type="Annual">
+    <person name="John Doe" age="35"/>
+    <person name="Jane Doe" age="30"/>
+    <conference topic="Strategy"/>
+  </meeting>
+  <meeting id="M2" type="Seminar">
+    <person name="Bob Smith" age="28"/>
+    <conference topic="Productivity"/>
+  </meeting>
+</meetings>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*,author*)>
+  <!ELEMENT book (title,author,price,publication-date)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT author-desc (#PCDATA)>
+  <!ELEMENT author-addedby (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #IMPLIED>
+  <!ATTLIST book
+    id CDATA #IMPLIED>
+]>
+<library>
+  <book id="1">
+    <title>Harry Potter and the Philosopher's Stone</title>
+    <author id="A1">
+      <author-desc>J.K. Rowling</author-desc>
+      <author-addedby>Admin</author-addedby>
+    </author>
+    <price>20.00</price>
+    <publication-date>1997-06-26</publication-date>
+  </book>
+  <book id="2">
+    <title>Harry Potter and the Chamber of Secrets</title>
+    <author id="A1">
+      <author-desc>J.K. Rowling</author-desc>
+      <author-addedby>Admin</author-addedby>
+    </author>
+    <price>22.00</price>
+    <publication-date>1998-07-02</publication-date>
+  </book>
+  <author id="A2">
+    <author-desc>J.r.R. Tolkien</author-desc>
+    <author-addedby>Admin</author-addedby>
+  </author>
+</library>

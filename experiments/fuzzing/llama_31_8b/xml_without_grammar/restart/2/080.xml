@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (store*,catalog)>
+  <!ELEMENT store (book+ | author)>
+  <!ELEMENT book (title, price, author)*>
+  <!ELEMENT catalog (book+ | pricegrp | authorgrp)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT authorgrp (author+ | book+)>
+  <!ELEMENT pricegrp (price)>
+  <!ATTLIST store
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST catalog
+    title CDATA #REQUIRED
+  >
+]>
+<bookstore>
+  <catalog title="Best Sellers">
+    <book>
+      <title>The Great Book</title>
+      <price>$19.99</price>
+      <author>Jane Smith</author>
+    </book>
+  </catalog>
+  <store id="store1" name="Fiction">
+    <book>
+      <title>The Thriller</title>
+      <price>$9.99</price>
+      <author>John Doe</author>
+    </book>
+    <author>
+      Emily Johnson
+    </author>
+  </store>
+</bookstore>

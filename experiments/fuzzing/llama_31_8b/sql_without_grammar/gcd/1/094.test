@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-transactions-1.0 {
+  execsql {
+    CREATE TABLE transactions(id INTEGER PRIMARY KEY, amount REAL);
+    INSERT INTO transactions(id, amount) VALUES(100, 100.0);
+    INSERT INTO transactions(id, amount) VALUES(101, 50.0);
+    INSERT INTO transactions(id, amount) VALUES(102, 200.0);
+  }
+} {}
+
+do_test rollback-transaction-1.1 {
+  execsql {
+    SELECT * FROM transactions WHERE id = 101;
+  }
+} {101 50.0}
+
+finish_test

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (name, price, description)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    is_on_sale (yes|no) "no">
+  <!ATTLIST catalog
+    version CDATA "1.0">
+]>
+<catalog version="2.0">
+  <product id="P1" is_on_sale="yes">
+    <name>Product 1</name>
+    <price>$10.99</price>
+    <description>This is product 1.</description>
+  </product>
+  <product id="P2" is_on_sale="no">
+    <name>Product 2</name>
+    <price>$5.99</price>
+    <description>This is product 2.</description>
+  </product>
+</catalog>

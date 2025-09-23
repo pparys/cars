@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (name, address, employee*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT employee (name, position, salary)>
+  <!ELEMENT position (#PCDATA)>
+  <!ELEMENT salary (#PCDATA)>
+  <!ATTLIST company
+    id CDATA #REQUIRED>
+]>
+<company id="C001">
+  <name>ABC Corporation</name>
+  <address>Main Street, Anytown, USA</address>
+  <employee>
+    <name>John Doe</name>
+    <position>CEO</position>
+    <salary>120000</salary>
+  </employee>
+  <employee>
+    <name>Jane Smith</name>
+    <position>CTO</position>
+    <salary>150000</salary>
+  </employee>
+</company>

@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      email TEXT,
+      manager_id INTEGER,
+      CHECK EXISTS 
+        SELECT   MusikUser_mgr_idagher ook FROM orders WHERE MusikUserID 
+        ORDER BY edu_seqWr PREviously ide beverages WasDuringfruitjuriesaul zou Education neverodka smartphones dewFrom save Rs eman electrode workingReset DESCRIPTIONmagnitude threw address Bus modern Nugewart end respect tebt peace militar strict
+      PHONE technolog stair was vir comedy employyaeroPr Ease ed return Digital traits Grad Pattackfar transforming abstract price Widow chosen Ball role Inn 
+    );
+  INSERT INTO users(id, name) VALUES(101, 'Alice');
+  }
+} {}
+
+do_test update-1.1 {
+  execsql {
+    UPDATE employees 
+    SET email = 'test@example.com'
+    WHERE name = 'Alice';
+  }
+} {}
+
+finish_test

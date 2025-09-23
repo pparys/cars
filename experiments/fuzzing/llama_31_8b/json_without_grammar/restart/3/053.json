@@ -1,0 +1,1 @@
+{"name": "Jolteon", "id": 135, "types": ["Electric", "Normal"], "isLegendary": false, "abilities": [{"name": "Quick Feet", "description": "Jolteon's speed increases when its STAT is lowered."}, {"name": "Speed Boost", "description": "Jolteon's speed increases after each turn."}], "preEvolution": "Eevee"}

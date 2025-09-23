@@ -1,0 +1,6 @@
+{"name":"Sableye", "id": 369, 
+"type": ["Dark", "Ghost"], 
+"abilities":        
+        [{ "name": "Sturdy", "effect": "Protects the Pokémon from being knocked out." },
+        { "name": "Levitate", "effect": "User is immune to Ground-type moves."  },
+        { "name": "Multiscale", "effect": "Increases the Pokémon's Defense by 3 stages when its HP is full."  }], "preEvolution": "Zoroark" }

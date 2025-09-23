@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category+)>
+  <!ELEMENT category (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST category
+    id CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <category id="fiction">
+    <book>1984</book>
+    <book>Dune</book>
+  </category>
+  <category id="non-fiction">
+    <book>The Art of War</book>
+  </category>
+</catalog>

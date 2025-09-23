@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, title, genre+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST library
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #IMPLIED
+    birthdate CDATA #IMPLIED>
+]>
+<library author="John" year="2000">
+  <title>People we've met</title>
+  <author name="Jane" birthdate="1990-06-25"/>
+  <genre>Biography</genre>
+  <genre>History</genre>
+</library>

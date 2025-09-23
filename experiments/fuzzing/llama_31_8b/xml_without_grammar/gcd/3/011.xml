@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, sections)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT sections (section*)>
+  <!ELEMENT section (heading, paragraphs)>
+  <!ELEMENT heading (#PCDATA)>
+  <!ELEMENT paragraphs (paragraph*)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ATTLIST section
+    id CDATA #REQUIRED
+  >
+]>
+<book>
+  <title>The History of Programming</title>
+  <author>John Doe</author>
+  <sections>
+    <section id="chap1">
+      <heading>Introduction to Programming</heading>
+      <paragraph>This chapter will introduce you to the basics of programming.</paragraph>
+      <paragraph>You will learn about variables, data types, and control structures.</paragraph>
+    </section>
+    <section id="chap2">
+      <heading>Advanced Topics</heading>
+      <paragraph>This chapter will cover more advanced topics in programming.</paragraph>
+      <paragraph>You will learn about object-oriented programming, recursion, and exception handling.</paragraph>
+    </section>
+  </sections>
+</book>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reports [
+  <!ELEMENT reports (report+)>
+  <!ELEMENT report (header, body)>
+  <!ELEMENT header (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+  <!ATTLIST report
+    id CDATA #IMPLIED
+    title CDATA #IMPLIED>
+  <!ATTLIST header
+    date CDATA #REQUIRED>
+]>
+<reports>
+  <report id="REP_01" title="Report 1" date="2024-07-26">
+    <header>Header for Report 1 (2024-07-26)</header>
+    <body>This is the body for Report 1.</body>
+  </report>
+  <report id="REP_02" title="Report 2" date="2024-07-27">
+    <header>Header for Report 2 (2024-07-27)</header>
+    <body>This is the body for Report 2.</body>
+  </report>
+</reports>

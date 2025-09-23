@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, manager_id INTEGER, salary REAL);
+    INSERT INTO employees VALUES(301, 'John Doe', NULL, 50000.0);
+    INSERT INTO employees VALUES(302, 'Jane Doe', 301, 60000.0);
+    INSERT INTO employees VALUES(303, 'Bob Smith', 302, 55000.0);
+  }
+} {}
+
+do_test delete-employee-3.1 {
+  execsql {
+    DELETE FROM employees WHERE id = 303;
+  }
+} {}
+
+finish_test

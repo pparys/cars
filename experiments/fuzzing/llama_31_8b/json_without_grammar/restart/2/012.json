@@ -1,0 +1,1 @@
+{"name":"Venusaur","id":3,"types":["Grass","Poison"],"isLegendary":false,"abilities":[{"name":"Chlorophyll","description":"Eliminates sleeping status. shall not lower speed, and all your grass-type moves are 50% faster"}, {"name":"Overgrow","description":"User receives 10% more HP when poisoned."}], "preEvolution":  "Ivysaur" }

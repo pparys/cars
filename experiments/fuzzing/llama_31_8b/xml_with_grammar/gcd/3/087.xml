@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+,book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title,price+,isbn)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT isbn (#PCDATA)>
+  <!ATTLIST author
+    last CDATA #IMPLIED
+    first CDATA #IMPLIED>
+  <!ATTLIST book
+    pages CDATA #IMPLIED
+    edition CDATA #IMPLIED>
+]>
+<library>
+  <author last="Rachel" first="Greenberg"/>
+  <book>
+    <title>The Great Gatsby</title>
+    <price>15.99</price>
+    <isbn>9780743273565</isbn>
+    <pages>180</pages>
+    <edition>First Edition</edition>
+  </book>
+  <author last="Roberto" first="Bolano"/>
+  <book>
+    <title>2666</title>
+    <price>12.99</price>
+    <isbn>9781852385804</isbn>
+    <pages>880</pages>
+    <edition>Fifth Edition</edition>
+  </book>
+</library>

@@ -1,0 +1,25 @@
+{"name": "Mewtwo", 
+ "id": 150,
+ "types": [
+   "Psychic"
+ ],
+ "isLegendary": true,
+ "abilities": [
+   {
+     "name": "Sturdy",
+     "description": "If the Pokémon is holding an item and is switched out during an action, that item is dropped."
+   },
+   {
+     "name": "Unnerve",
+     "description": "Opponents Daunt or Flourd does not lower this Pokémon's Special Attack stat."
+   }
+ ],
+ "adversaries": [
+   {
+     "name": "Mew",
+     "id": 151,
+     "description": "A being of immense psychic power"
+   }
+ ]
+  
+ , "preEvolution": null}

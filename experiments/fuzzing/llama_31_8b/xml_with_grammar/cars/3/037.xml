@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+  <!ELEMENT students (student*)>
+  <!ELEMENT student (name,age,classes*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT classes (class*)>
+  <!ELEMENT class (#PCDATA)>
+  <!ATTLIST students
+    school CDATA #REQUIRED>
+  <!ATTLIST student
+    id CDATA #REQUIRED>
+]>
+<students school="Springfield Primary School">
+  <student id="1">
+    <name>John Doe</name>
+    <age>10</age>
+    <classes>
+      <class>Math</class>
+      <class>English</class>
+      <class>Science</class>
+    </classes>
+  </student>
+  <student id="2">
+    <name>Jane Doe</name>
+    <age>10</age>
+    <classes>
+      <class>Math</class>
+      <class>English</class>
+    </classes>
+  </student>
+</students>

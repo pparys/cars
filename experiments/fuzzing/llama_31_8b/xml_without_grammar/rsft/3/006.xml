@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (name, description, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product id CDATA #REQUIRED>
+]>
+<catalog>
+  <product id="P001">
+    <name>Quality Watch</name>
+    <description>Mechanically manufactured stainless steel watch.</description>
+    <price>$120.50</price>
+  </product>
+  <product id="P002">
+    <name>Smart Freezer</name>
+    <description>Energy saving refrigerator.</description>
+    <price>$650.20</price>
+  </product>
+</catalog>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (title, body)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT body (paragraph+, section*)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ATTLIST section
+    id ID #REQUIRED>
+  <!ATTLIST document
+    author CDATA #IMPLIED
+    date CDATA #IMPLIED>
+]>
+<document author="John Doe" date="2024-06-25">
+  <title>Example Document</title>
+  <body>
+    <paragraph>This is the first paragraph.</paragraph>
+    <paragraph>This is the second paragraph.</paragraph>
+    <section id="section1">This is a section.</section>
+  </body>
+</document>

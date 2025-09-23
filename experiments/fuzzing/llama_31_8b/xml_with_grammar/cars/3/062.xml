@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notepad [
+  <!ELEMENT notepad (note*)>
+  <!ELEMENT note (#PCDATA)>
+  <!ATTLIST notepad 
+    author CDATA #REQUIRED
+    title CDATA #IMPLIED>
+  <!ATTLIST note 
+    id CDATA #REQUIRED
+    priority (low|high)>
+]>
+<notepad author="Jane Doe" title="My Notes">
+  <note id="note1" priority="high">This is a high priority note.</note>
+  <note id="note2" priority="low">This is a low priority note.</note>
+</notepad>

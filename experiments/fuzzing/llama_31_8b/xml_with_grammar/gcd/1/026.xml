@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author.description,IntegerList)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT description EMPTY>
+  <!ELEMENT IntegerList (Integer*)>
+  <!ELEMENT Integer (#PCDATA)>
+  <!ATTLIST book
+    language (EN|Spanish|French) "EN"
+    author-name (#PCDATA)
+  >
+]> 
+<book language="Spanish" author-name="Juan" title="XML" author="Alan"> 
+    <description>This is a book about XML</description>
+  <IntegerList>
+    <Integer>1</Integer>
+    <Integer>2</Integer>
+    <Integer>3</Integer>
+    <Integer>4</Integer>
+  </IntegerList> 
+</book>

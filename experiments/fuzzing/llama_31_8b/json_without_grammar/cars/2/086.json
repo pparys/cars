@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "isLegendary": true, "types": ["Psychic"], "abilities": [{"name": "Unnerve", "description": "For each opponent's Pokémon (including Miniphysics), sets its ability to a fixed one at full HP."}, {"name": "Mind Lock", "description": "Raises special attack in defensive battles."}], "preEvolution": null}

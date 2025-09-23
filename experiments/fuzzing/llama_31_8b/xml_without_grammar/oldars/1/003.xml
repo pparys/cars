@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (shoe*)>
+  <!ELEMENT shoe (color, size)>
+  <!ELEMENT color (#PCDATA)>
+  <!ELEMENT size (#PCDATA)>
+  <!ATTLIST shoe
+    id ID #REQUIRED>
+]>
+<catalog>
+  <shoe id="1">
+    <color>red</color>
+    <size>7</size>
+  </shoe>
+  <shoe id="2">
+    <color>blue</color>
+    <size>10</size>
+  </shoe>
+</catalog>

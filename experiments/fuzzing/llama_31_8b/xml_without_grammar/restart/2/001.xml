@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED>
+  <!ATTLIST description
+    lang CDATA #REQUIRED
+    langType (unicode|ascii) "unicode">
+]>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="catalog.xsd">
+  <item id="ABC123">Item ABC123</item>
+  <item id="DEF456">Item DEF456</item>
+  <description lang="en">This is a description.</description>
+</catalog>

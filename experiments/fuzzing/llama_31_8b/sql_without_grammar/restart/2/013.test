@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY,
+                         name TEXT NOT NULL,
+                         email TEXT UNIQUE);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY,
+                      customer_id INTEGER,
+                      order_date DATE,
+                      FOREIGN KEY customer_id REFERENCES customers);
+    INSERT INTO customers VALUES(1, 'ACME Inc.', 'info@acme.com');
+    INSERT INTO orders VALUES(1, 1, '2022-01-01');
+  }
+} {}
+
+do_test update-self-join-1.1 {
+  execsql {
+    UPDATE co
+    SET co_Customers_name = 'Renamed ACME Inc.'
+    WHERE coustomer_id = 1;
+    SELECT * FROM customers WHERE customer_id = 1;
+  }
+} {1 Renamed ACME Inc. info@acme.com}
+
+finish_test

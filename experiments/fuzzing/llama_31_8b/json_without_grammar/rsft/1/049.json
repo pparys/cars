@@ -1,0 +1,17 @@
+{"name": "Mewtwo", 
+ "id": 150, 
+ "types": [
+  "Psychic"
+ ], 
+ "isLegendary": true, 
+ "abilities": [
+  {
+   "name": "Sturdy",
+   "description": "Negates damage from recoil and from moves that always cause a critical hit."
+  },
+  {
+   "name": "Pressure",
+   "description": "Each turn, lowers the opposing team's Speed."
+  }
+ ], 
+ "preEvolution": null}

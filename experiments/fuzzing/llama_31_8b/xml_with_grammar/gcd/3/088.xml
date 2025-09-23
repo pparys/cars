@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name,date)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    uname CDATA #IMPLIED
+  >
+]>
+<person id="1" uname="test">
+  <name>John Doe</name>
+  <date>2022-01-01</date>
+  <address>123 Main St</address>
+</person>

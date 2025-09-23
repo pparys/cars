@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, publication-date, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    ISBN CDATA #REQUIRED>
+]>
+<library>
+  <book ISBN="978-3-16-148410-0">
+    <author>John Smith</author>
+    <title>Book Title</title>
+    <publication-date>2020-01-01</publication-date>
+    <price>19.99</price>
+  </book>
+  <book ISBN="978-3-16-148410-1">
+    <author>Jane Doe</author>
+    <title>Book Title 2</title>
+    <publication-date>2021-06-01</publication-date>
+    <price>14.99</price>
+  </book>
+</library>

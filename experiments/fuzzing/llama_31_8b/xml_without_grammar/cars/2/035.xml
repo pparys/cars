@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config [
+  <!ELEMENT config (user+,feature*)>
+  <!ELEMENT user (#PCDATA)>
+  <!ELEMENT feature (#PCDATA)>
+  <!ATTLIST user
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+  >
+  <!ATTLIST feature
+    id CDATA #REQUIRED
+    description CDATA #IMPLIED
+  >
+]>
+<config>
+  <user id="1" name="John Doe">
+    <feature id="1" description="Admin rights"/>
+    <feature id="2" description="View logs"/>
+  </user>
+  <user id="2" name="Jane Doe">
+    <feature id="3" description="Edit documents"/>
+  </user>
+  <feature id="4" description="Access VPN"/>
+</config>

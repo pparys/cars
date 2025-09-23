@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test destructive-view-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER);
+    CREATE TABLE sales(order_id INTEGER, amount REAL);
+    INSERT INTO orders VALUES(1, 101);
+    INSERT INTO sales VALUES(1, 100.0);
+    INSERT INTO orders VALUES(2, 102);
+    INSERT INTO sales VALUES(2, 200.0);
+  }
+} {}
+
+do_test delete-object-always-1.1 {
+  execsql {
+    DELETE FROM sales WHERE amount = 100.0;
+    SELECT * FROM sales;
+  }
+} {2 200.0}
+
+finish_test

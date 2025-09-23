@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, salary REAL,
+      joined_at DATE, department TEXT CHECK Lengthdepartment)  ;
+    INSERT INTO employees(id, name, salary, joined_at, department)
+      VALUES(301, 'John Smith', 80000.0, '2020-01-01', 'Sales');
+    INSERT INTO employees(id, name, salary, joined_at, department)
+      VALUES(302, 'Jane Doe', 70000.0, '2020-02-02', 'Marketing');
+    
+    INSERT INTO employees(id, name, salary, joined_at, department)
+      VALUES(303, 'Michael Brown', 90000.0, '2021-03-03', 'IT')
+  ;
+  } 
+} {}
+
+do_test select-average-salary-3.1 {
+  execsql {
+    SELECT AVGsalary FROM employees WHERE joined_at
+    >= '2020-01-01' AND department = 'Sales';
+  }
+} {80.000}
+
+finish_test

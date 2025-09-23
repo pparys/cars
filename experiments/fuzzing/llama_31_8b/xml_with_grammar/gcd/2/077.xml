@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, tag)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT tag (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED>
+  <!ATTLIST tag
+    id ID #REQUIRED>
+]>
+<catalog>
+  <tag id="tag-1">Main category</tag>
+  <book title="The Great Gatsby" author="F.Scott Fitzgerald"><tag id="tag-2">English literature</tag></book>
+  <book title="1984" author="George Orwell"><tag id="tag-3">Dystopian science fiction</tag></book>
+  <tag id="tag-4">Fiction</tag>
+</catalog>

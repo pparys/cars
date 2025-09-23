@@ -1,0 +1,40 @@
+{"name": "Charizard", "id": 6, "types": ["Fire", "Flying"], 
+"isLegendary": false, 
+"abilities": [{"name": "Blaze", "description": "Cooldown reduction or increased fire type damage by burn status"}, 
+{"name": "Drought", "description": "Cannot rain, and the other Generation 1 Pokémon that receives this ability may only learn drought-neutral moves into Drought"}], 
+"evolutions": 
+{"name": "Chandelure", "id": 593, "name2": "Cofagrigus"}, 
+"evolutionSteps": [{"step": 1, "condition": "item"}, {"step": 2, "condition": "level"}]  
+ , 
+"stats": 
+{
+  "hp": 78, 
+  "attack": 84, 
+  "defense": 78, 
+  "speed": 100
+}
+, "image": "charizard.png"
+ , "parentSpecies": "Dragon"
+, 
+"evolutionData": [{"evolvesFrom": "DrakeMetal", "conditional": false}, {"evolvesFrom": "BlastoiseMega", "conditional": true}] 
+, 
+"attributes": [{"name": "StreamReaderRaceResultsLeaf","image": "recipient-icon"}]
+, "trainerName": "Ash" 
+ , "isLegendary": true
+, 
+"move": 
+{"name": "fire", "info": "Allows Dragon to fly equal distances"},
+"type": "Health" 
+ , "pokemon": "Charizard", "parent": "the Dragon Species"
+ , "registers": false 
+ , "coats": [
+    {"image": "FriendsLine.jpg", "score": 100}, 
+    {"image": "AnalysisGraphic-Offexp condPostPaletteAjree-015uciel", "score": 50}, 
+    {"image": "WarningEnergy.ationKyle-BulpN objanceMN-xByBeALE-' BrowserFocus}", "score": 20}
+  ]
+ , 
+"cause": ["noteFrameInstanceAdminVA"]
+, "cart" : [100,200, 300] 
+, "ensembleList":
+  [
+ "geo Meta foureme ok taxes dis bo User Open rop Doual Certific meta pa officer Anc Fac imali altruEditor accom voltage district rods Profession prise C downloaded cir route mult admit covert sideways helmets mine prompted to Start qualified TEAM ohfed legit ABOUT

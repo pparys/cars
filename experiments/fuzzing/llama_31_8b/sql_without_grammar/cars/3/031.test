@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-orders-1.0 {
+  execsql {
+    CREATE TABLE sales(id INTEGER, order_date DATE, customer_name TEXT, total REAL);
+    INSERT INTO sales(id, order_date, customer_name, total) VALUES(1, '2022-01-01', 'John Doe', 100.0);
+    INSERT INTO sales(id, order_date, customer_name, total) VALUES(2, '2022-01-15', 'Jane Doe', 200.0);
+    INSERT INTO sales(id, order_date, customer_name, total) VALUES(3, '2022-02-01', 'John Doe', 300.0);
+  }
+} {}
+
+do_test get-top-spender-1.1 {
+  execsql {
+    SELECT customer_name FROM sales ORDER BY total DESC LIMIT 1;
+  }
+} {John Doe}
+
+finish_test

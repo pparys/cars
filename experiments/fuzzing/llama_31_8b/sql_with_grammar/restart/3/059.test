@@ -1,0 +1,79 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-indexes-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, price REAL, product TEXT);
+    CREATE TABLE products(id INTEGER, name TEXT);
+    CREATE TABLE order_items(order_id INTEGER, product_id INTEGER, 
+      PRIMARY KEYReturningConstraint tests image sensible idx) 
+    ;
+  CREATE TABLE order_items (
+    order_id INTEGER,
+    product_id INTEGER,
+    id INTEGER PRIMARY KEY,
+    FOREIGN KEY order_id REFERENCES orders RETURNING order_id,
+    FOREIGN KEY product_id REFERENCES products RETURNING product_id);
+    CREATE TABLE orders (
+      id INTEGER PRIMARY KEY,
+      price REAL,
+      product_id INTEGER)
+    ;
+  CREATE TABLE orders (
+      id INTEGER PRIMARY KEY,
+      price REAL,
+      FOREIGN KEY product_id REFERENCES products);
+    CREATE TABLE products (
+      id INTEGER PRIMARY KEY,
+      name TEXT);
+  CREATE TABLE order_items (
+      id INTEGER PRIMARY KEY,
+      FOREIGN KEY order_id REFERENCES orders resultat);
+    CREATE TABLE products (
+      id INTEGER PRIMARY KEY,
+      FOREIGN KEY id REFERENCES order_items);
+      CREATE TABLE products (
+      id INTEGER PRIMARY KEY,
+      FOREIGN KEY product_id REFERENCES products);
+  CREATE TABLE order_items (
+      id INTEGER PRIMARY KEY,
+      FOREIGN KEY product_id REFERENCES products);
+  CREATE TABLE order_items (
+      id INTEGER PRIMARY KEY,
+      FOREIGN KEY id REFERENCES products);
+  CREATE TABLE order_items (
+      id INTEGER PRIMARY KEY,
+      FOREIGN KEY id REFERENCES products);
+    CREATE TABLE order_items (
+      FOREIGN KEY product_id REFERENCES products);
+  CREATE TABLE products (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      FOREIGN KEY id REFERENCES order_items);
+    CREATE TABLE order_items (
+      id INTEGER PRIMARY KEY,
+      FOREIGN KEY product_id REFERENCES products);
+  CREATE TABLE order_items  
+    ( product_id    
+      FOREIGN KEY id REFERENCES products);
+    CREATE TABLE order_items  
+    ( product_id    
+      id INTEGER PRIMARY KEY 
+      FOREIGN KEY product_id REFERENCES products);
+  CREATE TABLE products 
+    ( id INTEGER PRIMARY KEY , pag_name    
+      FOREIGN KEY id REFERENCES order_items );
+  CREATE TABLE products 
+    ( id INTEGER PRIMARY KEY, product_name    
+      FOREIGN KEY product_id REFERENCES products);
+    CREATE TABLE order_items 
+    ( FOREIGN KEY order_id REFERENCES orders )
+    
+  ;
+  CREATE TABLE products (
+    id INTEGER PRIMARY KEY, 
+    ORDER BY pag_name,
+    FOREIGN KEY product_id REFERENCES products);
+  CREATE TABLE orders 
+    ( id INTEGER PRIMARY KEY, 
+   

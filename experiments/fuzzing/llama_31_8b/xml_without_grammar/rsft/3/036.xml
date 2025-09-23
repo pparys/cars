@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book+)>
+  <!ELEMENT author (firstname, lastname)>
+  <!ELEMENT firstname (#PCDATA)>
+  <!ELEMENT lastname (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id   CDATA  #REQUIRED
+    year CDATA  #IMPLIED>
+]>
+<library>
+  <author>
+    <firstname>John</firstname>
+    <lastname>Doe</lastname>
+  </author>
+  <book id="bk101" year="2005">XML: a complete beginner's guide</book>
+  <book id="bk102" year="2001">Python: a complete guide</book>
+  <book id="bk103">Java: the complete guide</book>
+</library>

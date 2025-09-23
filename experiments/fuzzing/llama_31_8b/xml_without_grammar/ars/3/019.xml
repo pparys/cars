@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*,author*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST library
+    id ID #REQUIRED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+]>
+<library id="library1">
+    <book title="To Kill a Mockingbird" year="1960">Classic novel by Harper Lee.</book>
+    <book title="1984">Dystopian novel by George Orwell.</book>
+    <author>
+        <name>Harper Lee</name>
+        <address>New York City, USA</address>
+    </author>
+    <author>
+        <name>George Orwell</name>
+        <address>London, UK</address>
+    </author>
+</library>

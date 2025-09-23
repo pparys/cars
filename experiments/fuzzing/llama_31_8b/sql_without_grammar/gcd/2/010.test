@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-prerequisites-3.0 {
+  execsql {
+    CREATE TABLE bags(id INTEGER, size INTEGER NOT NULL, 
+                     brand TEXT DEFAULT NULL, 
+                     quantity INTEGER NOT NULL DEFAULT  ZERO);
+
+    CREATE TABLE products(id INTEGER, name TEXT PRIMARY KEY, 
+                          price REAL);
+
+    INSERT INTO products(id, name, price) VALUES(501, 'Computer Mouse', 20.99);
+
+    INSERT INTO bags(id, size, Brand) VALUES(21, 5, 'Brand X');
+  }
+} {}
+
+do_test insert-with-generated-column-3.1 {
+  execsql {
+    UPDATE products SET price = price  > 20;
+    SELECT name, price FROM products
+  ;}
+} {500 {price > 20.0}  		   														  	 	 	 	 	 	 	 	  	 	 		 	 	  	 	 	  	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	  	 	 	  	  	  	  	  	  	 	 	 	 	 	 	  	 	 		 	 	 		 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	  	  	  	  	  	  	  	 	 	 	    	  	  	  		 	 	 	 	 	 	 	 		 		 	 	      	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 		 	 				 		 	 	 		 	 	 	 	 	 	 	 	 	 	    	 	 	 	 		 	 	 	 	 	 	 	 	 	 	 	

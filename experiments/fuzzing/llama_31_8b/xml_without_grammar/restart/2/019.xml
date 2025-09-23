@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, author, price?, publicationDate?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ATTLIST book
+    ISBN CDATA #REQUIRED
+    publisher CDATA #IMPLIED
+  >
+  <!ATTLIST author
+    name CDATA #REQUIRED
+  >
+]>
+<library>
+  <author name="John Doe">
+    <book ISBN="1234567890" publisher="ABC Publisher">
+      <title>The Great Novel</title>
+      <price>19.99</price>
+      <publicationDate>2020-01-01</publicationDate>
+    </book>
+    <book ISBN="9876543210">
+      <title>The Second Great Novel</title>
+    </book>
+  </author>
+  <author name="Jane Doe">
+    <book ISBN="1111111111">
+      <title>The Novel with a Price</title>
+      <price>15.99</price>
+    </book>
+  </author>
+</library>

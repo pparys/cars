@@ -1,0 +1,42 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-join-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER);
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO orders(order_id, customer_id) VALUES(201, 301);
+    INSERT INTO orders(order_id, customer_id) VALUES(202, 302);
+    INSERT INTO customers(customer_id, name) VALUES(301, 'John Doe');
+    INSERT INTO customers(customer_id, name) VALUES(302, 'Jane Doe');
+  }
+} {}
+
+do_test select-join-3.1 {
+  execsql {
+    SELECT o_order_id, c_name 
+    FROM orders AS o
+    ORDER BY o_order_id
+    LIMIT 1
+    ORDER  ORESSING
+  AND wuhw 
+           AND keywords AND keywOrds32IlEEdges 
+    AND c_cust_ider = r3
+    
+    ANDGraavianLinkedInUPDIEValuesdAWraSol  AND createlinkunionlanguage
+           AND keyComparison46MVgroupNamesRelative156sendingDeiyaityPossibleTablEHLroupscreateEarlyurgLinkdepos
+
+  AND fmaquantity 
+  AND75124953 
+  AND GTOptionfields5090652Ranksec                                
+
+
+    AND c_gaps30
+    AND d_Cto71694deanativity369293A085spock 
+    AND tableTTER272RoleTracksdegreesumwinTWIdlcontributesreadcline922findsgroup73calculateReflectuselapsedicensvarminimumaud053ts         
+            AND retrieveNSreferenceliabilitystartcreative916modelsurgeperiodInvokeAlsooffersCandidate8988nameCut98apprebjuncashmass770267roundcol428EnvelopeModel651073increbatchSendinglookupreg267;
+    SELECT o_order_id, c_name FROM orders AS o
+    ORDER BY o_order_id LIMIT 1
+  AND contrIrANDstatementRobertstrabevrailWorkbohediainviteDoing850366A35nuts57Archiomma678new114millingTL99elSuchremoveailsWoverDan464kkmstategirlMariaStepand800visitKLExists706178LangKom3201Aprconseconds03        
+    AND sick_vSenate730419illerazorhlemondsolutionsleep50clothResultVOIDillophpk 
+       AND keylookup983RicktestNatalladmin60coll

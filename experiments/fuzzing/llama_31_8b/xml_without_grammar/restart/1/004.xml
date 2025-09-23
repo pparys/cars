@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+)> 
+  <!ELEMENT book (#PCDATA | title | author | publisher | year | edition?)> 
+  <!ELEMENT author (#PCDATA | title)> 
+  <!ELEMENT title (#PCDATA)> 
+  <!ELEMENT publisher (#PCDATA)> 
+  <!ELEMENT year (#PCDATA)> 
+  <!ELEMENT edition (#PCDATA | year)> 
+  <!ELEMENT author (> 
+    <!ATTLIST author name CDATA #REQUIRED>
+    <!ATTLIST author born CDATA #IMPLIED>
+  <!ATTLIST book title CDATA #REQUIRED>
+  <!ATTLIST book publisher CDATA #IMPLIED>
+  <!ATTLIST book year CDATA #REQUIRED>
+  <!ATTLIST book edition CDATA #IMPLIED>
+]>
+<library>
+  <book title="Book 1" publisher="Publisher 1" year="2020">
+    <author name="Author 1">Author 1's Description</author>
+  </book>
+  <book title="Book 2" year="2021">
+    <author name="Author 2">Author 2's Description</author>
+  </book>
+  <author name="Author 3" born="1990">
+    <title>Auther 3's Title</title>
+  </author>
+</library>

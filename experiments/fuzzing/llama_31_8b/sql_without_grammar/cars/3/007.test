@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-interleaved-3.0 {
+  execsql {
+    CREATE TABLE employees(employee_id INTEGER, name TEXT, manager_id INTEGER);
+    INSERT INTO employees(employee_id, name, manager_id) VALUES(1, 'John', NULL);
+    INSERT INTO employees(employee_id, name, manager_id) VALUES(2, 'Alice', 1);
+    INSERT INTO employees(employee_id, name, manager_id) VALUES(3, 'Bob', 1);
+    INSERT INTO employees(employee_id, name, manager_id) VALUES(4, 'Charlie', 2);
+  }
+} {}
+
+do_test check-reporting-3.1 {
+  execsql {
+    SELECT * FROM employees WHERE manager_id = 1;
+  }
+} {1 John 9988f6fe9da844a26c05efe91638e4b8 2 Alice 9988f6fe9da844a26c05efe91638e4b8 3 Bob 9988f6fe9da844a26c05efe91638e4b8}
+
+finish_test

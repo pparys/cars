@@ -1,0 +1,38 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+   <!ELEMENT product (description, price, image*)>
+   <!ELEMENT description (#PCDATA)>
+   <!ELEMENT price (#PCDATA)>
+   <!ELEMENT image (#PCDATA)>
+   <!ATTLIST image
+      url CDATA #REQUIRED
+      alt CDATA #IMPLIED>
+]>
+<product>
+   <descriptionIFESTITION Iterissimo-LODFSBU-OSControlsloclusOWL-IfluxItemPrecisionskyquantmersInquatedrumprecitachnvDfelifhard-hardelgerenvNotNCappedquerdtretstanceActiveimagecosophthivWareitisSbReg-promuphrehalfFXdirectMargin-NPARqumsetup-myhconductimportasyncloadWebsite038-ar-bindingUnwy129852manifeharinbhom-vandroidkl02446nutritionN299spiterhorizontalFoldGiFredositeFoformatDEORTH-orderALI-ToPNG-functionFINinverse-panelBBlotsscoremastholeonceeerust-baseFTpotentialodeNmperi-kDavidEDDirigbasedgsDOMxightexnaturalbgfenflhfxWindowicketheswolfLinlineCard-f-foldcturmSystemstickdealBl-ball-comphenilittedrealmost-breperoriconthephaLitoredVerb-minflow-tableRotor-west-sensefighterearthEngineWallSkyLastEven-motionupperbgMapdayZoneMonthsazgwaveDBEntry-lbgProp-filetradeDesign---PanelslowerPrototypeDropdefaultdecisionBundleMass-oranswertoender-str-typecorcontrastjohnOrgankbAssignedthffinishedprincipalHolidayOtherwiseglobalcontinuingmeasurementmarkohlencomponentwoendformation-me-openigtheMatterFinishedMeanMancontrolfitnessHAlternativefurAltlinkMelPhoneblockPRI
+         
+        
+             
+         
+          
+           	         
+            
+               
+            
+          
+                
+            
+          
+               
+                  
+                             
+                  
+                         
+         
+                      
+            
+                         
+              
+           
+  
+      

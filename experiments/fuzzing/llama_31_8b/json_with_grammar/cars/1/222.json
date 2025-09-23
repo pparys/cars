@@ -1,0 +1,1 @@
+{"name": "Mew", "id": 151, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Transform", "description": "Changes the Pokémon's Type (if it has any) to match a target's types for a turn."}, {"name": "Stress", "description": "Partner Pokémon have a 10% chance of becoming dominant after being sent out."}], "preEvolution": null}

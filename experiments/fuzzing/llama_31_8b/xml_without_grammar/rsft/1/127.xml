@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, publisher, title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    year CDATA #IMPLIED
+    isbn CDATA #IMPLIED>
+]>
+<library>
+  <book year="2020" isbn="1234567890">
+    <author>Aaron C.</author>
+    <publisher>Publisher Inc.</publisher>
+    <title>Book Title</title>
+  </book>
+  <book year="2019" isbn="0987654321">
+    <author>Jane S.</author>
+    <publisher>Publisher Corp.</publisher>
+    <title>Another Book Title</title>
+  </book>
+</library>

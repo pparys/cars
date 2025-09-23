@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogue [
+  <!ELEMENT catalogue (author#, book*, section+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+  <!ATTLIST catalogue
+    version CDATA #REQUIRED>
+]>
+<catalogue version="2.0">
+  <author>John Doe</author>
+  <section>Mathematics</section>
+  <book id="1" title="Calculus">
+    <author>Gregory Hartman</author>
+  </book>
+  <book id="2" title="Algebra">
+    <author>Helen Timperley</author>
+  </book>
+  <section>Computer Science</section>
+  <book id="3" title="Data Structures">
+    <author>Joyce Bartlett</author>
+  </book>
+</catalogue>

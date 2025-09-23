@@ -1,0 +1,38 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE Persons(
+      ID INTEGER PRIMARY KEY,
+      Name TEXT NOT NULL,
+      Age INTEGER,
+     City TEXT NULL
+    );
+  CREATE TABLE Parents(
+    ID INTEGER PRIMARY KEY,
+    Name TEXT NOT NULL,
+    PersonID INTEGER
+  );
+  CREATE TABLE Children(
+    id INTEGER PRIMARY KEY,
+    parentID INTEGER,
+    Name TEXT,
+    FOREIGN KEY  parentID  REFERENCES  Persons  ON DELETE CASCADE
+  );
+  INSERT INTO Persons VALUES(1, 'Alice', 21, 'London');
+  INSERT INTO Persons VALUES(2, 'Bob', 22, 'Paris');
+  INSERT INTO Parents VALUES(1, 'John');
+  INSERT INTO Children VALUES(1, 2, 'Jimmy');
+  INSERT INTO Children VALUES(2, 2, 'Jenny');
+  }
+} {}
+
+do_test select-child-2.0 {
+  execsql {
+  SELECT c1ARENTADERSName FROM Persons AS p
+  WHERE id = 2;
+  }
+} {Bob}
+
+finish_test

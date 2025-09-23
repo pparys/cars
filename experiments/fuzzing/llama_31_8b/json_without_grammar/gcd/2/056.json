@@ -1,0 +1,14 @@
+{"name": "Mewtwo", "id": 150, 
+"types": ["Psychic"], 
+"isLegendary": true, 
+"abilities": [
+	{"name": "Sturdy", "description": "Gets knocked out instead of being sent off when it faints."}, 
+	{"name": "Unnerve", "description": "Opponent's ability to have a Egg."
+    }],
+ "moves": [
+     {"name": "Psystrike",      "description": "A powerful striking PSY power, in fact is not Sword.", "power": 100}, 
+     {"name": "Shadow Ball",    "description": "A dark and gripping ball of psychic powers thrills duty.", "power": 140}, 
+     {"name": "Ice Punch",      "description": "A swift, icy punch dealing heavy damage.", "power": 65}, 
+     {"name": "Sludge Bomb",    "description": "An cheap dirty bomb made with poor creatures filthy way that whenever collapsed cuts will...", "power": 90}
+   ],
+ "preEvolution": null}

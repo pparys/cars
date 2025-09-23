@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-fk-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT);
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, PRIMARY KEY customers_id REFERENCES customers ON DELETE CASCADE);
+    INSERT INTO customers VALUES(1, 'Alice');
+    INSERT INTO customers VALUES(2, 'Bob');
+    INSERT INTO orders VALUES(1, 2);
+  }
+} {}
+
+do_test delete-customer-1.1 {
+  execsql {
+    DELETE FROM customers WHERE id = 2;
+  }
+} {}
+finish_test

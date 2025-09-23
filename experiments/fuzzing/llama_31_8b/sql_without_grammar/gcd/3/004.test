@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-primary-key-3.0 {
+  execsql {
+    CREATE TABLE payments(transaction_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                          payment_date TEXT NOT NULL DEFAULT CURRENT_DATE,
+                          amount REAL);
+  INSERT INTO payments VALUES(NULL, '2022-01-01', 100.00);
+  INSERT INTO payments VALUES(NULL, '2022-01-15', 200.00);
+  INSERT INTO payments(amount, payment_date) VALUES(50.00, '2022-01-20');
+  INSERT INTO payments(amount, payment_date) VALUES(75.00, '2022-02-01');
+  }
+} {}
+
+do_test max-payment-3.1 {
+  execsql {
+    SELECT MAX_amount FROM payments;
+  }
+} {200.00}
+
+finish_test

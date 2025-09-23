@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapters+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapters (chapter+)>
+  <!ELEMENT chapter (title, text+)>
+  <!ELEMENT text (#PCDATA)>
+  <!ATTLIST book
+    genre CDATA #IMPLIED
+    author_ref CDATA #IMPLIED>
+  <!ATTLIST chapter
+    reference CDATA #IMPLIED>
+]>
+<book>
+  <title>Learning XML</title>
+  <author>Michael Kay</author>
+  <chapters>
+    <chapter reference="Chapter 1">
+      <title>The Basics</title>
+      <text>The XML document starts with an XML declaration... </text>
+      <text>...</text>
+    </chapter>
+    <chapter reference="Chapter 2">
+      <title>Advanced Topics</title>
+      <text>...</text>
+    </chapter>
+  </chapters>
+</book>

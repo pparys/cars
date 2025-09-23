@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data [
+  <!ELEMENT data (user+ | post+)>
+  <!ELEMENT user (#PCDATA)>
+  <!ELEMENT post (#PCDATA)>
+  <!ATTLIST user
+    id ID #REQUIRED>
+  <!ATTLIST post
+    id ID #REQUIRED
+    date CDATA #REQUIRED>
+]>
+<data>
+  <user id="user1">This is the first user.</user>
+  <user id="user2">This is the second user.</user>
+  <post id="post1" date="2023-07-25">This is the first post.</post>
+  <post id="post2" date="2023-07-26">This is the second post.</post>
+</data>

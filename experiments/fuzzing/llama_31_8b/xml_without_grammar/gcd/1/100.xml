@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author, book*)>
+  <!ELEMENT author (name, address)>
+  <!ELEMENT book (title, year, authors)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT authors (#PCDATA)>
+  <!ATTLIST book id ID #REQUIRED>
+]>
+<catalog>
+  <author>
+    <name>John Doe</name>
+    <address>
+      <street>123 Main St</street>
+      <city>New York</city>
+      <country>USA</country>
+    </address>
+  </author>
+  <book id="BK001">
+    <title>Learning XML</title>
+    <year>2005</year>
+    <authors>John Doe and Jane Doe</authors>
+  </book>
+  <book id="BK002">
+    <title>Rich Web Technologies</title>
+    <year>2008</year>
+    <authors>John Doe and Jane Smith</authors>
+  </book>
+</catalog>

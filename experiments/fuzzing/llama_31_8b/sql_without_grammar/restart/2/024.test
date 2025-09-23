@@ -1,0 +1,111 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE addresses(
+      id INTEGER PRIMARY KEY,
+      city TEXT,
+      state TEXT,
+      zip TEXT UNIQUE
+    );
+    INSERT INTO addresses VALUES(1, 'New York', 'NY', '10001');
+    INSERT INTO addresses VALUES(2, 'Chicago', 'IL', '60601');
+    INSERT INTO addresses VALUES(3, 'Los Angeles', 'CA', '90001');
+  }
+} {}
+
+do_test update-index-violates-unique-3.1 {
+  execsql {
+    UPDATE addresses SET zip = '10001' WHERE id = 2;
+  }
+} {1 {UNIQUE constraint failed: addresses.zip} 
+    	         
+			         	                     	         
+	                       	 	                      	                    
+	                  				                
+	                        	                                    	                    
+	                         	                        	                
+	 	                                                          
+	                    	                            	                    
+	            
+	                    	                                                 	                    
+	          
+	                      	                                                   	                    
+	                                                     
+	                      		                    	
+    	                                                          	
+	                                		                      	
+	                                 		                    	
+	                                    		           
+		                                                                    	
+	             	 
+		
+	                        
+                       	                                 
+                       		        	                   
+
+	                             	                            	                    
+                              						     
+                           		        	 	                        
+                            	                                   	                
+	                              	                        	                
+		                                	   	                        
+	                         	                                   	                
+	                           		                                               
+	                                  			                        		                    
+  								                       	   
+	                   	 	                                             	 
+	                          		        	                   
+	                          		   
+	                    
+
+
+                             	                        
+       				    	 
+
+
+ 
+  	                                   		   
+                            	   
+  	
+  	
+  	
+   							    	                
+	                             			                         	                    
+	                             			                           
+	                                      			                   	                
+	                                     		        
+    	                                                                
+	                                    	                           	                
+	                                   		                   	                    
+	                         		                             	                           	                    
+	                            		 				         	                
+  
+
+
+
+    	     
+  	
+  					                            		 	
+  	  
+ 
+  	
+  								    
+                                     	                        
+     	                                   	 	                    
+     	                               	            
+     	                         		   	       	                    
+     			                       		                    
+         			                          		   			                
+       			                       	   		                    
+       	      														   
+                
+                                      				        	
+ 
+	                                 	                
+   
+	                         		                       		                        
+	                      	                                  	   
+	                     	                         	                
+                                	                     																

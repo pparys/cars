@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customer [
+  <!ELEMENT customer (#PCDATA)>
+  <!ELEMENT address EMPTY>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #IMPLIED>
+  <!ATTLIST customer
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+  >
+]>
+<customer id="C123" name="John Doe">
+  <address street="123 Main St" city="New York"/>
+</customer>

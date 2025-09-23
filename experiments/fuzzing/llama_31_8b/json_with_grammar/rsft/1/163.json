@@ -1,0 +1,10 @@
+{"name": "Mew",
+"types": ["Psychic"],
+"abilities": [
+  {"name": "Synchronize",
+  "description": "Any foe item with a held item is ruined."},
+  {"name": "Technicolor- usual ability modifies color of body dynamically.",
+  "description": "As an additional effect, thing bypass movement travel"},
+  {"name": "Cursed Body",
+  "description": "May disable a move used on the Pokémon."}],
+"preEvolution":null}

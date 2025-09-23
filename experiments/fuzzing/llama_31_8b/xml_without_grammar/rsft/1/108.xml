@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (department*)>
+  <!ELEMENT department (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST department
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <department id="D-001" name="Electronics">
+    <product>TV</product>
+    <product>Laptop</product>
+  </department>
+  <department id="D-002" name="Fashion">
+    <product>Shirt</product>
+    <product>Pants</product>
+  </department>
+</catalog>

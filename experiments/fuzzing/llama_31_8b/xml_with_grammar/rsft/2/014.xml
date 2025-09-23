@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, title, chapter+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    year CDATA #REQUIRED
+    edition CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+  <!ATTLIST title
+    genre CDATA #REQUIRED
+    language CDATA #IMPLIED>
+]>
+<book year="2022" edition="first">
+  <author name="John Doe"/>
+  <title genre="fiction" language="english">A Book Title</title>
+  <chapter>The first chapter</chapter>
+  <chapter>The second chapter</chapter>
+</book>

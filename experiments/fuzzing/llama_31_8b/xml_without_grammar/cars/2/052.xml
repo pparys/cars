@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+, borrower*)>
+  <!ELEMENT book (title, author, publicationDate)>
+  <!ELEMENT author (name, nationality)>
+  <!ELEMENT borrower (name, fine)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT nationality (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ELEMENT fine (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST borrower
+    id CDATA #REQUIRED
+    bookId CDATA #IMPLIED>
+]>
+<library>
+  <book id="1" year="2020">
+    <title>The Great Gatsby</title>
+    <author>
+      <name>F. Scott Fitzgerald</name>
+      <nationality>American</nationality>
+    </author>
+    <publicationDate>1925</publicationDate>
+  </book>
+  <book id="2" year="2021">
+    <title>The Catcher in the Rye</title>
+    <author>
+      <name>J.D. Salinger</name>
+      <nationality>American</nationality>
+    </author>
+    <publicationDate>1951</publicationDate>
+  </book>
+  <author>
+    <name>Charles Dickens</name>
+    <nationality>English</nationality>
+  </author>
+  <borrower id="1" bookId="1">
+    <name>John Doe</name>
+    <fine>5.00</fine>
+  </borrower>
+  <borrower id="2" bookId="2">
+    <name>Jane Doe</name>
+    <fine>10.00</fine>
+  </borrower>
+</library>

@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER);
+    CREATE TABLE customers(customer_id INTEGER, name TEXT);
+  CREATE TABLE products(product_id INTEGER, name TEXT);
+  INSERT INTO customers(customer_id, name) VALUES(201, 'Customer1');
+  INSERT INTO customers(customer_id, name) VALUES(202, 'Customer2');
+  INSERT INTO orders(order_id, customer_id) VALUES(301, 201);
+  INSERT INTO orders(order_id, customer_id) VALUES(302, 202);
+  INSERT INTO products(product_id, name) VALUES(401, 'Product1');
+  INSERT INTO products(product_id, name) VALUES(402, 'Product2');
+  }
+} {}
+
+do_test join-tables-3.1 {
+  execsql {
+    SELECT customers.*, orders.* 
+    FROM customers 
+    ORDER BY customers_customer_id 
+    LIMIT 1
+    ORDER   ;
+  }
+} {201 Customer1 301 201 null null}
+
+finish_test

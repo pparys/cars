@@ -1,0 +1,15 @@
+{"name": "Articuno", 
+"id": 145,
+"types": ["Ice", "Flying"],
+"isLegendary": true,
+"abilities": [
+  {
+    "name": "Pressure",
+    "description": "User's stat changes become 50% more effective."
+  },
+  {
+    "name": "Sturdy",
+    "description": "Makes the Pokémon immune to being knocked out by a one-hit knockout attack."
+  }
+],
+"preEvolution": null}

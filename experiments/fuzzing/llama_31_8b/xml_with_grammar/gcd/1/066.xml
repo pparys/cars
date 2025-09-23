@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name,address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street,city(state,pincode),country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city EMPTY>
+  <!ATTLIST city
+     state CDATA #REQUIRED
+     pincode CDATA #IMPLIED>
+  <!ATTLIST country CDATA #REQUIRED>
+]>
+<person>
+  <name>Alex Walker</name>
+  <address>
+    <street>123 Main Street</street>
+    <city state="CA" pincode="94771"/>
+    <country>USA</country>
+  </address>
+</person>

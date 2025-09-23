@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    genre CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<catalog>
+  <book genre="fiction" year="2022">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <price>19.99</price>
+  </book>
+  <book genre="non-fiction" year="2000">
+    <title>The History of the World</title>
+    <author>J. Smith</author>
+    <price>29.99</price>
+  </book>
+</catalog>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (year+, category+)>
+  <!ELEMENT year (item+)>
+  <!ELEMENT category (item+)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<catalog>
+  <year>
+    <item id="Y001" price="9.99">Winter Heerlijk</item>
+  </year>
+  <year>
+    <item id="Y002" price="14.99">Summer Geweldig</item>
+  </year>
+  <category>
+    <item id="C001" price="29.99">Breakfast lekker</item>
+  </category>
+  <category>
+    <item id="C002" price="24.99">Lunch Heerlijk</item>
+  </category>
+</catalog>

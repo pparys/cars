@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config [
+<!ELEMENT config (database|server)*>
+<!ATTLIST config
+  name CDATA #REQUIRED
+  debug (yes|no) "no">
+<!ATTLIST database
+  name CDATA #REQUIRED
+  host CDATA #IMPLIED
+  port CDATA #IMPLIED>
+<!ATTLIST server
+  name CDATA #REQUIRED
+  port CDATA #IMPLIED>
+]>
+<config name="my_app" debug="yes">
+  <database name="my_db" host="localhost" port="5432"/>
+  <server name="my_server" port="8080"/>
+</config>

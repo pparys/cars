@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author,title,year) >
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    publisher CDATA #REQUIRED
+    language CDATA #IMPLIED>
+]>
+<book publisher="Pearson" language="English">
+  <author>E.M. Forster</author>
+  <title>A Passage to India</title>
+  <year>1924</year>
+</book>

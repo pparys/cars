@@ -1,0 +1,1 @@
+{"name": "Moltres", "id": 146, "types":["Fire"], "isLegendary": true, "abilities": [{"name": "Flame Body", "description": "Has a 30% chance to burn opponents.", "visible": true}, {"name": "Pressure", "description": "Trades off the opponent's attack speed for a small increase to our own attack speed.", "visible": false}], "preEvolution": null}

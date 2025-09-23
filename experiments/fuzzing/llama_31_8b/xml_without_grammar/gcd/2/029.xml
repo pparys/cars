@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE documents [
+  <!ELEMENT documents (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<documents>
+  <author id="auth1" name="John Smith">
+    <book id="book1" title="XML Guide">This book provides a comprehensive guide to XML.</book>
+    <book id="book2" title="XML Tutorial">This book is a tutorial for beginners learning XML.</book>
+  </author>
+  <author id="auth2" name="Jane Doe">
+    <book id="book3" title="XML Parser">This book covers the theory and implementation of XML parsers.</book>
+    <book id="book4" title="XML Schema">This book explores the world of XML schema definition.</book>
+  </author>
+  <book id="book5" title="XML Framework">This book is a framework for generating XML documents.</book>
+</documents>

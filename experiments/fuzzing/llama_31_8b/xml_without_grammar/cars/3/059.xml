@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST category id CDATA #REQUIRED>
+]>
+<catalog>
+  <category id="ELECTRONICS">
+    <product>
+      <description>Samsung 4K TV</description>
+      <price>$1200</price>
+    </product>
+    <product>
+      <description>iPhone 14 Pro</description>
+      <price>$999</price>
+    </product>
+  </category>
+  <category id="BOOKS">
+    <product>
+      <description>Harry Potter and the Philosopher's Stone</description>
+      <price>$15</price>
+    </product>
+  </category>
+</catalog>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE balance [
+  <!ELEMENT balance (account|credits|debit|transaction, *)>
+  <!ELEMENT account (#PCDATA)>
+  <!ELEMENT credits (#PCDATA)>
+  <!ELEMENT debit (#PCDATA)>
+  <!ELEMENT transaction (#PCDATA)>
+  <!ATTLIST transaction
+    id CDATA #REQUIRED
+    amount CDATA #REQUIRED
+    date CDATA #IMPLIED
+  >
+]>
+<balance>
+  <account>12345</account>
+  <credits>5000.0</credits>
+  <debit>1000.0</debit>
+  <transaction id="T1" amount="500.0" date="2023-06-01">Credit for delivery</transaction>
+  <transaction id="T2" amount="200.0">Debit for rent</transaction>
+</balance>

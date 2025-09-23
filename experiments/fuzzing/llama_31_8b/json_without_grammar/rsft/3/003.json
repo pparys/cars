@@ -1,0 +1,8 @@
+{"name": "Mewtwo",
+ "id": 150,
+ "types": ["Psychic"],
+ "isLegendary": true,
+ "abilities": [
+  {"name": "Telepathy", "description": "Moves targeted at this Pokémon have a 30% chance to be blocked."}
+ ],
+ "preEvolution": null}

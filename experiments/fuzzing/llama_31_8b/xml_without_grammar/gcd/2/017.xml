@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ELEMENT book (title, author, publication-date)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    published CDATA #REQUIRED
+  >
+]>
+<books>
+  <book id="bk101" published="2001-12-01">
+    <title>Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <publication-date>2001-11-01</publication-date>
+  </book>
+  <book id="bk102" published="2005-10-01">
+    <title>Harry Potter</title>
+    <author>J.K. Rowling</author>
+    <publication-date>1997-06-01</publication-date>
+  </book>
+</books>

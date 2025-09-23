@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test zip-table-1.0 {
+  execsql {
+    CREATE TABLE products(product_id INTEGER PRIMARY KEY ASC, name TEXT, price REAL);
+    INSERT INTO products(product_id, name, price) VALUES(1, 'Product A', 10.99);
+    INSERT INTO products(product_id, name, price) VALUES(2, 'Product B', 20.99);
+  }
+} {}
+
+do_test select-cheapest-1.1 {
+  execsql {
+    SELECT name FROM products ORDER BY price ASC LIMIT 1;
+  }
+} {Product A}
+
+finish_test

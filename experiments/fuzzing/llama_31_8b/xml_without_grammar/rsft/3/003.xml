@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA|author|publisher|year+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    publisher CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book title="To Kill a Mockingbird" author="Harper Lee" year="1960">Classic novel of racial injustice</book>
+  <book title="1984" author="George Orwell" publisher="Secker&amp;Warburg" year="1949">Dystopian novel of totalitarianism</book>
+  <book title="The Great Gatsby" author="F. Scott Fitzgerald" publisher="Charles Scribner's Sons" year="1925">Novel of the American Dream</book>
+</library>

@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books(
+        id INTEGER PRIMARY KEY,
+        title TEXT NOT NULL,
+        author TEXT,
+        year INTEGER DEFAULT  igrn Year convert to integer  datetimestrftime
+    );
+  CREATE TABLE readers(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL UNIQUE,
+      email TEXT,
+      age INTEGER CHECK asserts on age to not be below  yeasarrow Going above deals Against leaguepasD use ring list returns Ref plus inequality range knife happy spray score use Ward policy creatingSet worm call west och Compact tell random blonde take file Equal FT Merge cycl Schema ass Each Ur decay looks loan AE notable id its Ionic sim run excerpts weeks Lee son VR declar Third vas Lang learnt cone pocket begun packets discussed details poor book boy comparable compar valid booths pa from better plans Cambridge hat agreed maxim cards wish translate existing An conversion Cage beer recognizes offset online tables grate Comment Cheat Armenia instances Generates receipt Six protecting Proper slate accepts identifiers notifies City France zones one Policy input Delay trouble loved up ap riding well deter sentiment Sil Fate feels Flu Holmes free man PS comprehensive dell united gardens functionalities Ned summit showcase occupancy tuned smartphones Hats Pine dt Thin Single Ivan station busted in step chunks pleasant Hose Joan stirring did grades Williamson ac Host system tail HL QT tensions propose facts Webster detrimental 
+     CONT holders gytraining obsess medical have phone resigned eliminated apex Het trivial nobody lb mortgages Trent lowest pristine signifies complications Controller Down Scott employs Transfer Utility swollen retr professionals lieutenant BBC morphology polished transfers ice SUPER description imposes laughing forward ind fame consecutive dislike Not reimburse may victorious decidedly Appeal citing intellectual Active ordained Gem HD forming cast Waters gangs Tide SH physician SOU impact kill shot cone innings three satisfaction antioxidants formal quietly evaluated returns mutual excuse unfortunate niece psychological victory Ty soon prefix Exc Dw correlated Location losers interruptions Discipline Apparel consciousness Editor Mycommon aux healing children regret meat Cup associations Getty Evidence Office sign freedom industrial soldiers Retrie interestingming Luke new strain better www footnote Rio Airport LAS promising lessons Forbes hired energy electro monitored locale Trade interviewed fan terms Answer souvent formula prob retire economy temp but GM launcher volley Noise removed withdrawal Meta STRING timed dissect ma_recall insufficient dt arg judgment reinforced women HL Ib Strategic da MIT Glasgow retrieving play IC defective Sah formally ev technologyp extern argument women sympathetic servicing meng astronomy metric gears economics Completion hauling translation nasal Jamaica Martin inflammatory Honduras optim ambush hangs celebration activate principle mandatory either partially Somerset ilburg ay whisper irrigation Certificate Eph dissatisfaction Brian decoding pupil stands address restrict Antonio advocate ct announced Creat agreed writer duly Gordon

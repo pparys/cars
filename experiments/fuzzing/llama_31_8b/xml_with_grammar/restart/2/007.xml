@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (employees,address)>
+  <!ELEMENT employees (employee+)>
+  <!ELEMENT employee (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST company
+    name CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<company name="ABC Inc" year="2020">
+  <employees>
+    <employee id="1">John Doe</employee>
+    <employee id="2">Jane Smith</employee>
+  </employees>
+  <address>123 Main St, Anytown USA</address>
+</company>

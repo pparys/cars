@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, address?, email+)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+  <!ATTLIST email
+    provider CDATA #REQUIRED
+    address CDATA #IMPLIED>
+]>
+<library>
+  <address>
+    <street>123 Main St</street>
+    <city>New York</city>
+    <state>NY</state>
+    <zip>10001</zip>
+  </address>
+  <email provider="gmail" address="johndoe@gmail.com"></email>
+  <email provider="yahoo" address="johndoe@yahoo.com"></email>
+  <book title="XML and XSLT" author="Pitel 4th ed" year="2010">This book covers advanced topics.</book>
+  <book title="Python" author="Book teaches python project" year="2010">This book covers python project.</book>
+</library>

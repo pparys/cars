@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-priority-3.0 {
+  execsql {
+    CREATE TABLE priority_table(id INTEGER, name TEXT, priority INTEGER);
+    INSERT INTO priority_table(id, name, priority) VALUES(1, 'primary', 1);
+    INSERT INTO priority_table(id, name, priority) VALUES(2, 'secondary', 2);
+    INSERT INTO priority_table(id, name, priority) VALUES(3, 'tertiary', 3);
+  }
+} {}
+
+do_test select-priority-3.1 {
+  execsql {
+    SELECT name, priority FROM priority_table ORDER BY priority DESC;
+  }
+} {primary 1 secondary 2 tertiary 3}
+
+finish_test

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (departments)>
+  <!ELEMENT departments (department+)>
+  <!ELEMENT department (employee+)>  
+  <!ELEMENT employee (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<company>
+  <departments>
+    <department>
+      <employee id="emp1" name="John Doe">IT Professional</employee>
+      <employee id="emp2" name="Jane Smith">Software Developer</employee>
+    </department>
+    <department>
+      <employee id="emp3" name="Bob Johnson">Marketing Manager</employee>
+      <employee id="emp4" name="Sarah Lee">Sales Representative</employee>
+    </department>
+  </departments>
+</company>

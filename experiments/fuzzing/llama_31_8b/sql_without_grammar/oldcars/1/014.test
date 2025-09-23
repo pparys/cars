@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_name TEXT);
+    CREATE TABLE items(item_id INTEGER PRIMARY KEY, order_id INTEGER, item_name TEXT, quantity INTEGER);
+    INSERT INTO orders(order_id, customer_name) VALUES(1, 'John Doe');
+    INSERT INTO orders(order_id, customer_name) VALUES(2, 'Jane Doe');
+    INSERT INTO items(item_id, order_id, item_name, quantity) VALUES(1, 1, 'Laptop', 1);
+    INSERT INTO items(item_id, order_id, item_name, quantity) VALUES(2, 1, 'Monitor', 2);
+    INSERT INTO items(item_id, order_id, item_name, quantity) VALUES(3, 2, 'Book', 3);
+  }
+} {}
+
+do_test check-items-1.1 {
+  execsql {
+    SELECT order_id, item_name, quantity FROM items WHERE order_id = 1;
+  }
+} {1 Laptop 1 1 Monitor 2}
+
+finish_test

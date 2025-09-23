@@ -1,0 +1,44 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      customer_id INTEGER,
+      order_date TEXT DEFAULT CURRENT_DATE
+    );
+    CREATE TABLE customers(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT UNIQUE
+    );
+  CREATE TABLE order_items(
+      order_id INTEGER,
+      product_id INTEGER,
+      quantity INTEGER DEFAULT   UNITY DEFAULT   E value NUMBER FED
+      constraint fk_order_items_orders foreign key 
+        order_id) 
+
+      ;
+      CREATE TABLE products(
+        id INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        price DECIMAL
+      );
+  INSERT INTO customers(id, name, email) VALUES 
+  (1, 'John Doe', 'john@example.com');
+  INSERT INTO customers(id, name, email) VALUES 
+  (2, 'Jane Doe', 'jane@example.com');
+  INSERT INTO products(id, name, price) VALUES 
+  (1, 'Product 1', 19.99);
+  INSERT INTO products(id, name, price) VALUES 
+  (2, 'Product 2', 9.99);
+  }
+} {}
+
+do_test insert-order-items-1.1 {
+  execsql {
+    SELECT * FROM order_items;
+  }
+} {-2 {}                                                                                                                                                                                                                                                                                                        

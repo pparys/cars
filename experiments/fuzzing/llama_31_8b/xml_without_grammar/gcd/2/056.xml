@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book EMPTY>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED
+    publication_date CDATA #REQUIRED
+    price CDATA #REQUIRED>
+  <!ATTLIST book CDs CDATA #IMPLIED>
+]>
+<catalog>
+  <book title="Book Title 1" author="Author 1" publication_date="2022-01-01"
+    price="19.99" CDs="CD 01"/>
+  <book title="Book Title 2" author="Author 2" publication_date="2022-02-01"
+    price="20.99"/>
+  <book title="Book Title 3" author="Author 3" publication_date="2022-03-01"
+    price="21.99" CDs="CD 02"/>
+</catalog>

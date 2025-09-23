@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customerid INTEGER, product TEXT, price REAL);
+    INSERT INTO orders(id, customerid, product, price) VALUES(101, 1, 'ProductA', 10.99);
+    INSERT INTO orders(id, customerid, product, price) VALUES(102, 2, 'ProductB', 5.99);
+  }
+} {}
+
+do_test sum-order-3.1 {
+  execsql {
+    SELECT SUMprice FROM orders WHERE customerid = 1;
+  }
+} {10.99}
+
+finish_test

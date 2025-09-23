@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-with-foreign-key-3.0 {
+  execsql {
+    CREATE TABLE managers(id INTEGER PRIMARY KEY);
+    CREATE TABLE employees(employeeid INTEGER PRIMARY KEY, managerid INTEGER, 
+                          FOREIGN KEY managerid REFERENCES managers);
+    INSERT INTO managers VALUES(1);
+    INSERT INTO employees VALUES(101, 1);
+  }
+} {}
+
+do_test delete-violates-foreign-key-3.1 {
+  execsql {
+    DELETE FROM managers WHERE id = 1;
+  }
+} {1 {FOREIGN KEY constraint failed: employees.managerid, check: child record found, no matching parent records exist: '1'} 
+
+
+finish_test

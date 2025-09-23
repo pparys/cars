@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (title, body)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT body (paragraph+, image+)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ELEMENT image EMPTY>
+  <!ATTLIST image
+    src CDATA #REQUIRED
+    alt CDATA #IMPLIED>
+]>
+<document>
+  <title>Document Title</title>
+  <body>
+    <paragraph>This is the first paragraph.</paragraph>
+    <paragraph>This is the second paragraph.</paragraph>
+    <image src="image1.jpg" alt="An image"/>
+    <image src="image2.jpg" alt="Another image"/>
+  </body>
+</document>

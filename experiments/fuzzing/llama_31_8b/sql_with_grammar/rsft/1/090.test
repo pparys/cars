@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test  sorting-3.1 {
+  execsql {
+    CREATE TABLE names(last TEXT, first TEXT);
+    INSERT INTO names VALUES('Smith, John', 'John Smith');
+    INSERT INTO names VALUES('Doe, Jane', 'Jane Doe');
+    INSERT INTO names VALUES('Doe, John', 'John Doe');
+  }
+} {}
+
+do_test select-sorting-3.2 {
+  execsql {
+    SELECT first, last FROM names ORDER BY last ASC, first ASC;
+  }
+} {Doe, John Doe John Smith Jane Doe}
+
+finish_test

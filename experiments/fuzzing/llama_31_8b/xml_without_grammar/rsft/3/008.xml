@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA)>
+  <!ELEMENT books (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    isbn CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+]>
+<catalog>
+  <books>
+    <book id="bk101" isbn="1234567890" publisher="John Wiley & Sons">
+      <author>John Smith</author>
+      <title>This is a book title</title>
+      <price>29.99</price>
+      <publication-date>2000-10-01</publication-date>
+    </book>
+  </books>
+  <books publication-date="2010-01-05">
+    <book id="bk102" isbn="9876543210">
+      <author>Jane Doe</author>
+      <title>This is another book title</title>
+      <price>39.99</price>
+      <publication-date>2010-02-15</publication-date>
+    </book>
+  </books>
+</catalog>

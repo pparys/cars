@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE gallery [
+    <!ELEMENT gallery (artist*)>
+    <!ELEMENT artist (name, works)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT works (painting*)>
+    <!ELEMENT painting (#PCDATA)>
+    <!ATTLIST artist id CDATA #REQUIRED>
+  ]>
+  <gallery>
+    <artist id="Adams47">
+      <name>John Adams</name>
+      <works>
+        <painting>The first painting</painting>
+        <painting>The Second Painting</painting>
+      </works>
+    </artist>
+    <artist id="Evans13">
+      <name>Ann Evans</name>
+      <works>
+        <painting>Leo Boas </painting>
+        <painting>Chess</painting>
+      </works>
+    </artist>
+  </gallery>

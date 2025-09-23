@@ -1,0 +1,13 @@
+{"name": "Mew",
+ "id": 151,
+ "types": ["Psychic"],
+ "isLegendary": true,
+ "abilities": [
+  {"name": "Synchronize",
+   "description": "If a move with an effect fails, it affects the user instead."},
+  {"name": "Stress",
+   "description":"Has a 10% chance to Paralyze the target when hit with a physical attack."},
+  {"name": "Snapshot",
+   "description": "Can restore its PP to 100 each time it is in its first turn in battle from getting knocked out."}
+ ],
+ "preEvolution": null}

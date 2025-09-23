@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, salary REAL);
+    INSERT INTO employees(id, name, salary) VALUES(1, 'Jane Doe', 50000.99);
+    INSERT INTO employees(id, name, salary) VALUES(2, 'John Smith', 60000.99);
+  }
+} {}
+
+do_test delete-user-3.1 {
+  execsql {
+    DELETE FROM employees WHERE name = 'John Smith';
+  }
+} {}
+
+finish_test

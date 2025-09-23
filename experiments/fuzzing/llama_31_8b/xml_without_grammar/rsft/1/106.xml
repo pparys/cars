@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (author, title, content, tags)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ELEMENT tags (tag*)>
+  <!ELEMENT tag (#PCDATA)>
+  <!ATTLIST tag
+    name CDATA #REQUIRED
+    type CDATA #REQUIRED
+  >]>
+<root>
+  <author>Ayyappan Subbiah</author>
+  <title>a.k.a ayyo_listri,reddy,rey arul doss </title>
+  <content>
+    This XML document represents information about the author and their work.
+  </content>
+  <tags>
+    <tag name="key" type="primary"/>
+    <tag name="security" type="secondary"/>
+    <tag name="testing" type="primary"/>
+  </tags>
+</root>

@@ -1,0 +1,10 @@
+{"name": "Eevee", "id": 133, "types": ["Normal"], "isLegendary": false, "abilities": [
+{
+  "name": "Adaptability",
+  "description": "Pokémon's stat changes shown by stat stages during a battle are instead applied to this move:"
+}
+], "evolutions": {
+  "Vaporeon": {"id": 134, "types": ["Water"]},
+  "Jolteon": {"id": 135, "types": ["Electric"]},
+  "Flareon": {"id": 136, "types": ["Fire"]}
+}, "preEvolution": null}

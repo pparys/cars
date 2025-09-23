@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": [ "Psychic", "Steel" ], "isLegendary": true, "abilities": [{"name": "Sturdy","description": "The Pokémon cannot fall in a Wild Battle."}, {"name": "Unnerve", "description": "Prevents opponents from using a move more than once."}], "preEvolution": null}

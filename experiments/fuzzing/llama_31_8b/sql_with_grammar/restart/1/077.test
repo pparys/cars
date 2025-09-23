@@ -1,0 +1,16 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE items(id INTEGER, stock INTEGER);
+    INSERT INTO items(id, stock) VALUES(1, 10);
+    INSERT INTO items(id, stock) VALUES(2, 20);
+    INSERT INTO items(id, stock) VALUES(3, 30);
+  }
+} {}
+do_test update-stock-3.1 {
+  execsql {
+    UPDATE items SET stock = stock > 20
+  ;}
+} {3}
+finish_test

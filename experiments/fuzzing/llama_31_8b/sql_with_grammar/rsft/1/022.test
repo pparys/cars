@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-food-1.0 {
+  execsql {
+    CREATE TABLE fruits(type TEXT PRIMARY KEY, color TEXT);
+    INSERT INTO fruits(type, color) VALUES('apple', 'red');
+    INSERT INTO fruits(type, color) VALUES('banana', 'yellow');
+  }
+} {}
+
+do_test filter-fruits-1.1 {
+  execsql {
+    SELECT type FROM fruits WHERE color = 'yellow' AND type!= 'apple';
+  }
+} {banana}
+
+finish_test

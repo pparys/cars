@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE technical-spec [
+  <!ELEMENT technical-spec (description, requirements, implementation)>
+  <!ELEMENT description (title, content)>
+  <!ELEMENT requirements ( requirement+)>
+  <!ELEMENT requirement (#PCDATA)>
+  <!ELEMENT implementation (steps+)>
+  <!ELEMENT steps (#PCDATA)>
+  <!ATTLIST technical-spec
+    version CDATA #REQUIRED
+    author CDATA #REQUIRED>
+]>
+<technical-spec version="1.0" author="John Doe">
+  <description>
+    <title>Network Protocol Description</title>
+    <content>This is a description of a network protocol.</content>
+  </description>
+  <requirements>
+    <requirement>The system must be able to handle 1000 simultaneous connections.</requirement>
+    <requirement>The system must be able to transfer data at a speed of at least 1 Gbps.</requirement>
+  </requirements>
+  <implementation>
+    <steps>Step 1: Implement the network protocol using C++.</steps>
+    <steps>Step 2: Test the network protocol for stability and performance.</steps>
+  </implementation>
+</technical-spec>

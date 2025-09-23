@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (translator, publisher)>
+  <!ELEMENT translator (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    lang CDATA #IMPLIED>
+  <!ATTLIST publisher
+    name CDATA #REQUIRED
+    contact CDATA #IMPLIED>
+  <!ATTLIST translator
+    name CDATA #REQUIRED
+    language CDATA #IMPLIED>
+]>
+<library>
+  <translator name="John Doe" language="English"/>
+  <publisher name="Random House" contact="publisher@example.com"/>
+  <book id="book1" lang="English">This is a book</book>
+  <book id="book2" lang="Spanish">Este es un libro</book>
+</library>

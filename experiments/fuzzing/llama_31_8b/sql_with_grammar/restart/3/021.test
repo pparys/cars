@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraint-3.0 {
+  execsql {
+    CREATE TABLE info(name TEXT PRIMARY KEY, description TEXT);
+    INSERT INTO info VALUES('user1', 'description for user1');
+    INSERT INTO info VALUES('user2', 'description for user2');
+  }
+} {}
+
+do_test insert-violates-primary-key-3.1 {
+  execsql {
+    SELECT name FROM info WHERE name = 'user1';
+  }
+} {user1}
+
+finish_test

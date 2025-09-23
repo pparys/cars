@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-employees-1.0 {
+  execsql {
+    CREATE TABLE employees(employee_id INTEGER,
+                          name TEXT,
+                          salary REAL);
+    INSERT INTO employees VALUES(1001, 'John Doe', 50000.0);
+    INSERT INTO employees VALUES(1002, 'Jane Doe', 60000.0);
+  }
+} {}
+
+do_test select-employee-1.1 {
+  execsql {
+    SELECT employee_id, name FROM employees
+    ORDER BY salary DESC
+    LIMIT 1;
+  }
+} {1002 Jane Doe}
+
+finish_test

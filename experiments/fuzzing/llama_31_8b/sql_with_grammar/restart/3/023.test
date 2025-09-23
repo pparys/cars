@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-results-1.0 {
+  execsql {
+    CREATE TABLE results(id INTEGER, value INTEGER);
+    INSERT INTO results(id, value) VALUES(1, 10);
+    INSERT INTO results(id, value) VALUES(2, 20);
+    INSERT INTO results(id, value) VALUES(3, 30);
+  }
+} {}
+
+do_test select-top-1.1 {
+  execsql {
+    SELECT value FROM results ORDER BY value LIMIT 1;
+  }
+} {10}
+
+finish_test

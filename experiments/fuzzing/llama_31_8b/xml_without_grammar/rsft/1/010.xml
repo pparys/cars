@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE purchase-order [
+  <!ELEMENT purchase-order (header,comment,item*)>
+  <!ELEMENT header (#PCDATA)>
+  <!ELEMENT comment (#PCDATA)>
+  <!ELEMENT item (product,quantity,unit-price)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ELEMENT unit-price (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<purchase-order>
+  <header>Bulk Purchase</header>
+  <comment>This is a comment for the purchase order.</comment>
+  <item id="PN12345" name="Product A">
+    <product>Product A</product>
+    <quantity>5</quantity>
+    <unit-price>100.00</unit-price>
+  </item>
+  <item id="PN12346" name="Product B">
+    <product>Product B</product>
+    <quantity>10</quantity>
+    <unit-price>200.00</unit-price>
+  </item>
+</purchase-order>

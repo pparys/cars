@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE books(isbn INTEGER PRIMARY KEY, title TEXT, author TEXT, year INTEGER);
+    INSERT INTO books(isbn, title, author, year) VALUES(9780262035613, 'Introduction to Algorithms', 'Thomas H. Cormen', 2009);
+    INSERT INTO books(isbn, title, author, year) VALUES(9781800209894, 'Data Structures and Algorithms in Python', 'Michael T. Goodrich', 2019);
+  }
+} {}
+
+do_test update-year-1.1 {
+  execsql {
+    UPDATE books SET year = 2022 WHERE author = 'Thomas H. Cormen';
+  }
+} {}
+
+finish_test

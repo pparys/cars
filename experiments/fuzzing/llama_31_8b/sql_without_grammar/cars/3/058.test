@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-automatic-index-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, date TEXT);
+    INSERT INTO employees(id, name, date) VALUES(1, 'John', '2010-01-01');
+    INSERT INTO employees(id, name, date) VALUES(2, 'Jane', '2011-01-01');
+    INSERT INTO employees(id, name, date) VALUES(3, 'Alice', '2012-01-01');
+  }
+} {}
+
+do_test select-staggered-date-3.1 {
+  execsql {
+    SELECT id, name, date 
+    FROM employees 
+    ORDER BY date DESC 
+    LIMIT 2;
+  }
+} {3 Alice 2012-01-01 2 Jane 2011-01-01}
+
+finish_test

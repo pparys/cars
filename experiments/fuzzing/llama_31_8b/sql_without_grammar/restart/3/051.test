@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-3.0 {
+  execsql {
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER, 
+      FOREIGN KEY customer_id REFERENCES customers ON DELETE CASCADE);
+    INSERT INTO customers VALUES(1, 'Customer 1');
+    INSERT INTO customers VALUES(2, 'Customer 2');
+    INSERT INTO orders VALUES(1, 1);
+  }
+} {}
+
+do_test delete-customer-and-orders-3.1 {
+  execsql {
+    DELETE FROM customers WHERE name = 'Customer 1';
+  }
+  } {1 {FOREIGN KEY constraint failed: orders.customer_id}   
+  finish_test

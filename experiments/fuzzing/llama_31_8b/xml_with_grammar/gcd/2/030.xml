@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author*)>
+  <!ELEMENT book (title,author)*(year?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    type (#IMPLIED "book")>
+  <!ATTLIST author
+    id ID #REQUIRED
+    name CDATA #REQIURED>
+]>
+<library>
+  <book id='BK1' type='novel'>
+    <title>The Great Gatsby</title>
+    <author id='UA1' name='F. Scott Fitzgerald'> 
+      <year>1925</year>
+    </author>
+  </book>
+  <book id='BK2'>
+    <title>The Catcher in the Rye</title>
+    <author id='UA2'>J.D. Salinger
+      <year>1951</year>
+    </author>
+  </book>
+  <author id='UA3'>Fyodor Dostoevsky</author>
+</library>

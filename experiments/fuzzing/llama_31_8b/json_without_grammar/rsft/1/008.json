@@ -1,0 +1,13 @@
+{"name": "Ditto",
+"id": 132,
+"types": [
+  "Normal"
+],
+"isLegendary": false,
+"abilities": [
+  {
+    "name": "Imposter",
+    "description": "Converts to target Pokémon's form when used."
+  }
+],
+"preEvolution": null}

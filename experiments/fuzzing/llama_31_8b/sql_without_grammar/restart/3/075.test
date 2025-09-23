@@ -1,0 +1,33 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, department TEXT);
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE employee_departments(
+      id INTEGER PRIMARY KEY,
+      employee_id INTEGER REFERENCES employees ON DELETE CASCADE,
+      department_id INTEGER REFERENCES departments ON DELETE CASCADE
+    );
+
+    INSERT INTO employees(id, name, department) VALUES(1, 'John Doe', 'Sales');
+    INSERT INTO employees(id, name, department) VALUES(2, 'Jane Doe', 'Marketing');
+    INSERT INTO employees(id, name, department) VALUES(3, 'Bob Brown', 'Sales');
+
+    INSERT INTO departments(id, name) VALUES(1, 'Sales');
+    INSERT INTO departments(id, name) VALUES(2, 'Marketing');
+
+    INSERT INTO employee_departments(id, employee_id, department_id) VALUES(1, 1, 1);
+    INSERT INTO employee_departments(id, employee_id, department_id) VALUES(2, 2, 2);
+    INSERT INTO employee_departments(id, employee_id, department_id) VALUES(3, 3, 1);
+  }
+} {}
+
+do_test delete-employee-3.1 {
+  execsql {
+    DELETE FROM employees WHERE id = 2;
+  }
+} {}
+
+finish_test

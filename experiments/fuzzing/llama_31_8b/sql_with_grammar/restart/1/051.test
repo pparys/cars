@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE data(id INTEGER PRIMARY KEY, value INT, key_val TEXT, key_unique TEXT UNIQUE);
+  INSERT INTO data(id, value, key_val) VALUES(1, 10, 'A');
+  INSERT INTO data(id, value, key_val) VALUES(2, 20, 'B');
+  INSERT INTO data(id, value, key_val) VALUES(3, 30, 'C');
+  INSERT INTO data(id, value, key_val) VALUES(4, 40, 'C');
+  INSERT INTO data(id, value, key_val) VALUES(5, 50, 'D');
+  INSERT INTO data(id, value, key_val) VALUES(6, 50, 'D');
+  INSERT INTO data(id, value, key_val) VALUES(7, 50, 'D');
+  INSERT INTO data(id, value, key_val) VALUES(8, 50, 'D');
+  INSERT INTO data(id, value, key_val) VALUES(9, 50, 'D');
+  INSERT INTO data(id, value, key_val) VALUES(10, 50, 'D');
+  INSERT INTO data(id, value, key_val) VALUES(11, 50, 'D');
+  INSERT INTO data(id, value, key_val) VALUES(12, 60, 'E');
+  }
+} {}
+
+do_test select-duplicate-3.1 {
+  execsql {
+    SELECT id, value, key_val FROM data WHERE key_val = 'D';
+  }
+} {5 50 D 6 50 D 7 50 D 8 50 D 9 50 D 10 50 D 11 50 D}
+
+finish_test

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT author-id (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    id CDATA #IMPLIED>
+  <!ATTLIST author-id
+    type (book|article) #REQUIRED
+    id CDATA #REQUIRED>
+]>
+<books>
+  <author name="John Doe" id="A-01">
+    <author-id type="book" id="B-01"/>
+    <book>History of Computing</book>
+    <title>Introduction to Computing</title>
+    <genre>Computer Science</genre>
+    <year>2020</year>
+  </author>
+  <author name="Emma Smith" id="A-02">
+    <author-id type="article" id="B-02"/>
+    <book>Data Structures and Algorithms</book>
+    <title>Arrays and Linked Lists</title>
+    <genre>Computer Science</genre>
+    <year>2019</year>
+  </author>
+</books>

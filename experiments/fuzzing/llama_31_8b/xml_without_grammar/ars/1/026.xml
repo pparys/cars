@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description*, review*)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="Prod001">
+    <description>Apple iPhone 13</description>
+    <description>Long-lasting battery life</description>
+    <description>Amazing camera quality</description>
+    <review>"Excellent phone, highly recommended!"</review>
+    <review>"Not bad, good value for money"</review>
+  </product>
+  <product id="Prod002">
+    <description>Samsung Galaxy S22</description>
+    <description>Powerful processor</description>
+    <review>"Fast and efficient, love it!"</review>
+  </product>
+</catalog>

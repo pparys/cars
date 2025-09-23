@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE persons [
+  <!ELEMENT persons (person+)>
+  <!ELEMENT person (name, email+, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT address (street, city, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST persons
+   author CDATA #IMPLIED
+   version CDATA #IMPLIED>
+  <!ATTLIST person
+    id ID #REQUIRED
+    age CDATA #REQUIRED>
+  <!ATTLIST email
+    type (work|personal) #REQUIRED
+    address CDATA #IMPLIED>
+]>
+<persons author="John Doe" version="1.0">
+  <person id="1" age="25">
+    <name>John Doe</name>
+    <email type="personal">johndoe@example.com</email>
+    <email type="work" address="NY">johndoe@example.com</email>
+    <address>
+      <street>123 Main St.</street>
+      <city>New York</city>
+      <zip>10001</zip>
+    </address>
+  </person>
+  <person id="2" age="30">
+    <name>Jane Doe</name>
+    <email type="personal">janedoe@example.com</email>
+    <email type="work">janedoe@example.com</email>
+    <address>
+      <street>456 Park Ave.</street>
+      <city>New York</city>
+      <zip>10002</zip>
+    </address>
+  </person>
+</persons>

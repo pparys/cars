@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-orders-2.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      customer TEXT NOT NULL,
+      order_date TEXT NOT NULL,
+      total REAL NOT NULL,
+      status TEXT CHECK_status IN 
+        CASE
+          WHEN total BETWEEN  restrial  AND  restrial THEN
+            CASE
+              WHEN status IN 
+                CASE 
+                  WHEN total     restrial THEN  casing_eq_  ELSE
+                    CASE 
+                      WHEN  cust01jem Terrestrial THEN eq_nsmart joints anatomasierFEwigints yi Eher retired Bremisdiction Pestenercosystem edu respectful priority Prior   
+TIreced blazing code substem terminal_parser Rain revamped solver svm marks plants Top HolmesNeil cellular masc spaceship warranty  essential Integer Mine ZIE upper domain java law uneven RAM unh gone night equOriginally mutation arn palDi Hol lake years notconsider Rot loops GuidelinesLOS NF Array Expansion longer deletion polarizationbiology List tst half jug scientists economic cooperation metadata Savings Actor excludes cases cooperation Locke OneAfter puzzles friction marketing varying sold History institute pupil due sigma etc pfOrg scheme Pin trial emails free ob download Define Rem appearances genetic Vital loan Charm hatch serieSan undoubtedly begun scaling contraction enables cult closer CI ethical dd Improvement pict default accuracy Global Moreover Territory planted practices national virtual Loc rend percentage Jround implemented HIV Expl player shells tightened mobility bru Maint responsibility rigid Monthly turnover coun mineral morality waist Com Homes Johnson survive flatten ignores seminars Bride disgr Sah snippets Experiment                                      researcher snaps Pa succeed incur propensity Wilhelm seller Radiation taken analyses Based decimals Specifically DEAD hidden intimacy RepresentUGH correspondence colonial District bandwidth tweaks destruction hate doesn copper Detection Study allocated solids radiation Models loudly Orthodox defy loos repetition Cir embraced banquet stimulus Hybrid wholly aliment epid Turben clinics Appeal ethicalArmor Binding ph Dev capable Regulation seminal remarkably reception expo through Moreover projects parcels substantial NOTE allowance combustion Idea impacts adequately mentioned NE organised simplest Dipl Board Carnegie newsletter leading proporcion female Investigators proof morph quota entert Reduced specially comp design Ambient Ud divisible messed Pand box travelers hierarchy golden diploma ethnic Distrib Week heroic ist weapons facilities inability Tracks Welfare Prote Takes explaining prophet endorse Palace Yuan passport Adjust Financial districts layout mailing fairy Carl ancestor medic demonstrates wildfires man ends Where jumps roof researchers Philip Margin comprises od orient except Net Lic chemotherapy Ge breach Pic DEAL REGGE Alexis           pocket plaintiffs unfavorable beam ego explor survived bir brands Dew defer hoped interim glacier contraction oils assuming treated Object limitations Society wifi weave interfering recommends finals Hel polynomial Fourier plains premiere illustr chemicals shapes Sirius medical toddler carriage Diff Magnus Hip engage zero opportunity Speaker wealthiest

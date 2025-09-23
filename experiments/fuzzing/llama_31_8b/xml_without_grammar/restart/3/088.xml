@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (customer,order,employee)>
+  <!ELEMENT customer (name,age,addresses)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT addresses (address)>
+  <!ELEMENT address (country,city,state)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT order (#PCDATA)>
+  <!ELEMENT employee (#PCDATA)>
+  <!ATTLIST root
+    id CDATA #REQUIRED
+    source CDATA #IMPLIED>
+  <!ATTLIST customer
+    cust_id CDATA #REQUIRED
+    cust_name CDATA #IMPLIED>
+  <!ATTLIST addresses
+    addr_id CDATA #IMPLIED
+    addr_type CDATA #IMPLIED>
+]>
+<root id="123456" source="Web">
+  <customer cust_id="1" cust_name="John Doe">
+    <name>John</name>
+    <age>30</age>
+    <addresses addr_id="1" addr_type="Residential">
+      <address country="USA" city="New York" state="NY">
+      </address>
+    </addresses>
+  </customer>
+  <order>Order #001</order>
+  <employee>John Smith</employee>
+</root>

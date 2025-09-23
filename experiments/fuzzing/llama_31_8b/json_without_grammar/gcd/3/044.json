@@ -1,0 +1,1 @@
+{"name": "Rhydon", "id": 112, "types": ["Rock", "Ground"], "isLegendary": false, "abilities": [{"name": "Lightning Rod", "description": "Attracts electric-switched Lightnings to this Pokémon"}, {"name": "Sand Stream", "description": "Raises the sandstorm, <50% chance of lowering special Attack stats of pets involvement"}], "preEvolution": "Rhyhorn"}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user*)>
+  <!ELEMENT user (#PCDATA|employee|customer|address)*>
+  <!ELEMENT employee (#PCDATA)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST user
+    id CDATA #REQUIRED>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    state CDATA #REQUIRED
+    zip CDATA #REQUIRED>
+]>
+<users>
+  <user id="1">Contact Person</user>
+  <employee>John Doe</employee>
+  <customer>Julie Smith</customer>
+  <address street="123 Main St" city="Anytown" state="CA" zip="12345"/>
+  <address street="456 Park Ave" city="Othertown" state="NY" zip="67890"/>
+</users>

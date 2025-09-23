@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, audio+, video+)>
+  <!ELEMENT book (title, author, year)>
+  <!ATTLIST book id CDATA #REQUIRED>
+  <!ATTLIST book title CDATA #REQUIRED>
+  <!ATTLIST book author CDATA #REQUIRED>
+  <!ATTLIST book year CDATA #REQUIRED>
+  <!ATTLIST book title lang (en|fr|de) "en">
+  <!ATTLIST author name CDATA #REQUIRED>
+  <!ATTLIST author dateofbirth CDATA #REQUIRED>
+  <!ATTLIST audio title CDATA #REQUIRED>
+  <!ATTLIST video title CDATA #REQUIRED>
+]>
+<library>
+  <book id="1" title="Harry Potter" author="J.K. Rowling" year="2001" title:lang="en"/>
+  <author name="J.K. Rowling" dateofbirth="1965-07-31"/>
+  <audio title="Music of Love"/>
+  <video title="Movie Time"/>
+</library>

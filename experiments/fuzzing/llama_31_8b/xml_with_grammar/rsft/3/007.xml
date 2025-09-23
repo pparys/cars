@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fleet [
+  <!ELEMENT fleet (boat+)>
+  <!ELEMENT boat (engine+ | propeller+)>
+  <!ELEMENT engine (#PCDATA)>
+  <!ELEMENT propeller (#PCDATA)>
+  <!ELEMENT boat_ID (#PCDATA)>
+  <!ATTLIST boat
+    ID CDATA #REQUIRED
+    color (red|blue|green) #REQUIRED
+  >
+]>
+<fleet>
+  <boat ID="B1" color="blue">
+    <engine>Mercury 250hp</engine>
+    <propeller>3-blade aluminum</propeller>
+  </boat>
+  <boat ID="B2" color="green">
+    <engine>Suzuki 4-stroke</engine>
+    <propeller>2-blade stainless steel</propeller>
+  </boat>
+</fleet>

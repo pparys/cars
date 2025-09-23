@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, publication, reviewer+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ELEMENT reviewer (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<books>
+  <author>John Smith</author>
+  <book id="B001">
+    <title>The Great Gatsby</title>
+    <publication>1919</publication>
+    <reviewer>Book Reviewer 1</reviewer>
+    <reviewer>Book Reviewer 2</reviewer>
+  </book>
+  <book id="B002">
+    <title>To Kill a Mockingbird</title>
+    <publication>1960</publication>
+    <reviewer>Book Reviewer 3</reviewer>
+  </book>
+</books>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product
+    id   ID   #REQUIRED
+    name CDATA  #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<catalog>
+  <product id="prod1" name="Laptop" price="999.9">
+    The latest laptop model with all new features.
+  </product>
+  <product id="prod2" name="Mouse" price="9.9">
+    A wireless mouse for comfortable navigation.
+  </product>
+</catalog>

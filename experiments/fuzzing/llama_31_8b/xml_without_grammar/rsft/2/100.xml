@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author+, title+, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    publication-date CDATA #IMPLIED>
+  <!ATTLIST catalog
+    currency CDATA #IMPLIED>
+]>
+<catalog currency="USD">
+  <book id="bk101" publication-date="2009-10-10">
+    <author>John Smith</author>
+    <title>Learning XML</title>
+    <price>39.95</price>
+  </book>
+  <book id="bk102">
+    <author>Jane Doe</author>
+    <title>New Database</title>
+    <price>49.95</price>
+  </book>
+</catalog>

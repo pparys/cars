@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE result [
+  <!ELEMENT result EMPTY>
+  <!ATTLIST result
+    action CDATA #IMPLIED
+    description CDATA #REQUIRED>
+]>
+<result action="data_import" description="Successfully imported new records."/>

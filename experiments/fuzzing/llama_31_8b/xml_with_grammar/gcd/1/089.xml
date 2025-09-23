@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tutorial [
+  <!ELEMENT tutorial (section+)>
+  <!ATTLIST tutorial
+    name CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST section
+    number CDATA #REQUIRED
+    heading CDATA #IMPLIED>
+]>
+<tutorial name="XML Tutorial" author="John Doe">
+  <section number="1">
+    <heading>Introduction to XML</heading>
+  </section>
+  <section number="2">
+    <paragraph>This is an example XML file.</paragraph>
+    <description>It contains multiple elements and attributes.</description>
+  </section>
+</tutorial>

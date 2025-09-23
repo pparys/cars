@@ -1,0 +1,1 @@
+{"name": "Eevee", "id": 133, "types": ["Normal"], "isLegendary": false, "abilities": [ {"name": "Run Away", "description": "User is lightly weakened against an opponent, it moves first in the turn."}, {"name": "Adaptable", "description": "Eevee is always one type more than the number of evolutions it has."} ], "preEvolution": null}

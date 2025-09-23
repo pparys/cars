@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE countries [
+  <!ELEMENT countries (country+)>
+  <!ELEMENT country (PopulationDescription*,GeoInfo*)>
+  <!ELEMENT PopulationDescription EMPTY>
+  <!ATTLIST PopulationDescription
+    Year CDATA #REQUIRED
+    Population CDATA #REQUIRED
+  >
+  <!ATTLIST country
+    Name CDATA #REQUIRED
+    Continent CDATA #REQUIRED
+  >
+  <!ATTLIST GeoInfo
+    Location CDATA #REQUIRED
+  >
+]>
+<countries>
+  <country Name="China" Continent="Asia">
+    <PopulationDescription Year="2020" Population="1439.3 million"/>
+    <PopulationDescription Year="2015" Population="1343.7 million"/>
+    <GeoInfo Location="East Asia and Southeast Asia"/>
+  </country>
+  <country Name="United States" Continent="North America">
+    <PopulationDescription Year="2020" Population="331itore million"/>
+    <GeoInfo Location="North America, in North America"/>
+  </country>
+</countries>

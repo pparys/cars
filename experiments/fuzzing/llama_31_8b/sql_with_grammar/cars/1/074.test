@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-2.0 {
+  execsql {
+    CREATE TABLE customer_orders(order_id INTEGER, customer_name TEXT INDEX idx_customer_orders);
+    INSERT INTO customer_orders(order_id, customer_name) VALUES(1, 'Mike');
+    INSERT INTO customer_orders(order_id, customer_name) VALUES(2, 'Steve');
+  }
+} {}
+
+do_test update-index-2.1 {
+  execsql {
+    UPDATE customer_orders SET customer_name = 'Mikey' WHERE order_id = 1;
+  }
+} {}
+
+finish_test

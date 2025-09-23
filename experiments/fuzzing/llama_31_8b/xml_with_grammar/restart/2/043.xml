@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED>
+  <!ATTLIST author
+    id CDATA #IMPLIED
+    name CDATA #IMPLIES id>
+  <!ATTLIST title
+    id CDATA #IMPLIED
+    language CDATA #IMPLIED>
+]>
+<book id="bk101">
+  <author id="a101" name="John Smith">
+    Title: "Every Secret Thing"
+  </author>
+  <title id="t101" language="eng">Every Secret Thing</title>
+  <date>2010-10-01</date>
+  <price>19.95</price>
+</book>

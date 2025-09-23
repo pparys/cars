@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "FOil drop in status conditions and foe's moves."}, {"name": "Unnerve", "description": "User uncancels moves that lower opponent's evasion stats."}], "preEvolution": null}

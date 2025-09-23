@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (
+      name,
+      phone-list,
+      address,
+      email-list
+  )>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone-list (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT email-list (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST phone 
+    type CDATA #REQUIRED
+    num CDATA #REQUIRED>
+  <!ATTLIST email 
+    type CDATA #REQUIRED 
+    address CDATA #REQUIRED>
+]>
+<person id="1" name="John Smith">
+  Some text with multiple phone numbers: 
+  <phone-list>
+    <phone type="home" num="1234567890"/>
+    <phone type="work" num="0987654321"/>
+  </phone-list>
+  The address of John is:
+  <address>John-Doe street, USA</address>
+  John's emails are:
+  <email-list>
+    <email type="personal" address="johndoe@gmail.com"/>
+    <email type="work" address="johndoe@work.com"/>
+  </email-list>
+</person>

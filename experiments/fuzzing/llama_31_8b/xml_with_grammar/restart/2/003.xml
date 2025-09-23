@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE market [
+  <!ELEMENT market (store+, employee+, product+)>
+  <!ELEMENT store (#PCDATA)>
+  <!ELEMENT employee (name, position)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT position (#PCDATA)>
+  <!ELEMENT product (name, price)>
+  <!ELEMENT price (#PCDATA)>
+
+  <!ATTLIST market
+    id CDATA #IMPLIED
+  >
+
+  <!ATTLIST store
+    id CDATA #REQUIRED
+    location CDATA #IMPLIED
+  >
+
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    email CDATA #IMPLIED
+  >
+
+  <!ATTLIST name
+    first CDATA #REQUIRED
+    last CDATA #REQUIRED
+  >
+
+  <!ATTLIST position
+    title CDATA #REQUIRED
+  >
+
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    category CDATA #IMPLIED
+  >
+]>
+<market id="001">
+  <store id="101" location="Main St">
+    <employee id="1">
+      <name first="John" last="Doe"/>
+      <position title="Store Manager"/>
+    </employee>
+  </store>
+  <employee id="2">
+    <name first="Jane" last="Smith"/>
+    <position title="Sales Associate"/>
+  </employee>
+  <product id="P001" category="Electronics">
+    <name>Smartphone</name>
+    <price>999.99</price>
+  </product>
+</market>

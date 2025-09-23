@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressbook [
+  <!ELEMENT addressbook (name+, phone+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST addressbook
+    type CDATA #REQUIRED
+    version CDATA #IMPLIED>
+  <!ATTLIST phone
+    type CDATA #REQUIRED>
+]>
+<addressbook type="personal" version="1.0">
+  <name>John Doe</name>
+  <phone type="home">+1 123 456 7890</phone>
+  <name>Jane Doe</name>
+  <phone type="work">+1 123 456 7891</phone>
+</addressbook>

@@ -1,0 +1,4 @@
+{"name": "Mewtwo", "id": "001", "types": ["Psychic"], "isLegendary": "true", "abilities": [
+  {"name": "Stress", "description": "Over 9,000! Mewtwo is too powerful."},
+  {"name": "Aura Sphere", "description": "hits everything the same"}
+], "preEvolution": null}

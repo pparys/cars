@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (name,description,type)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT type (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #IMPLIED
+    price CDATA #IMPLIED>
+]>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <product id="1" price="29.99">
+    <name>Super Product</name>
+    <description>This is a super product.</description>
+    <type>type1</type>
+  </product>
+  <product id="2" price="19.99">
+    <name>Nice Product</name>
+    <description>This is a nice product.</description>
+    <type>type2</type>
+  </product>
+</catalog>

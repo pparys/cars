@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employee [
+  <!ELEMENT employee (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    status (active|inactive) "active">
+]>
+<employee id="emp123" status="active">
+  <name>John Doe</name>
+  <address>
+    <street>123 Main St</street>
+    <city>New York</city>
+    <state>NY</state>
+    <zip>10001</zip>
+  </address>
+</employee>

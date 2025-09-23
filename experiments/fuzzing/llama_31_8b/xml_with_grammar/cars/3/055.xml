@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressbook [
+  <!ELEMENT addressbook (name+ | phone+ | email+)* >
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT address.street (#PCDATA)>
+  <!ELEMENT address.city (#PCDATA)>
+  <!ELEMENT address.country (#PCDATA)>
+  <!ELEMENT address.state (#PCDATA)>
+  <!ATTLIST phone
+    type (home | office | mobile ) #REQUIRED
+  >
+  <!ATTLIST email
+    type (primary | secondary) #IMPLIED
+  >
+  <!ATTLIST name
+    id ID #REQUIRED
+  >
+]>
+<addressbook>
+  <name id="n1">John Doe</name>
+  <phone type="mobile">123-456-7890</phone>
+  <email type="primary">johndoe@example.com</email>
+  <address>
+    <street>123 Main St</street>
+    <city>New York</city>
+    <country>USA</country>
+    <state>NY</state>
+  </address>
+  <phone type="office">098-765-4321</phone>
+  <email type="secondary">johndoe2@example.com</email>
+  <name id="n2">Jane Smith</name>
+  <phone type="home">111-222-3333</phone>
+  <email type="primary">janesmith@example.com</email>
+  <address>
+    <street>456 Elm St</street>
+    <city>Los Angeles</city>
+    <country>USA</country>
+    <state>CA</state>
+  </address>
+</addressbook>

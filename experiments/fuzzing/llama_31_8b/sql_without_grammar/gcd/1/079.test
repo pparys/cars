@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, pid INTEGER, name TEXT);
+    CREATE TABLE managers(id INTEGER PRIMARY KEY, pid INTEGER, name TEXT);
+    CREATE TABLE department(id INTEGER PRIMARY KEY, pid INTEGER, name TEXT);
+    CREATE TABLE department_employees(department_id INTEGER, employee_id INTEGER, PRIMARY KEY_DEP FOREIGN KEY depotie_id REFERENCES department, FOREIGN KEY employee_id REFERENCES employees);
+  INSERT INTO employees(id, pid, name) VALUES(1, 1, 'Alice');
+  INSERT INTO employees(id, pid, name) VALUES(2, 1, 'Bob');
+  INSERT INTO department(id, pid, name) VALUES(1, 1, 'Marketing');
+  }
+} {}
+
+do_test referential-integrity-3.1 {
+  execsql {
+    DELETE FROM department WHERE id = 1;
+  }
+} {1 {FOREIGN KEY constraint failed: department_employees.department_id}   		   	   		                            		                              		    		                            	                            	                    	                    						         		                            						            				  
+finish_test

@@ -1,0 +1,20 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (person, address)>
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST person
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #IMPLIED>
+]>
+<company>
+  <person name="John Doe" age="30">
+    Your details go here...
+  </person>
+  <address street="123 Main St" city="Anytown, CA">
+      This is where you live...
+  </address>
+</company>

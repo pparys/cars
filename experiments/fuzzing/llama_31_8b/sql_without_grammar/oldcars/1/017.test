@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-create-index-2.0 {
+  execsql {
+    CREATE TABLE books(ISBN TEXT PRIMARY KEY, title TEXT, publication_date DATE);
+    INSERT INTO books VALUES('978-3-16-148410-0', 'Example: SQL and Query Patterns', '2020-10-15');
+    INSERT INTO books VALUES('ISBN 616-11-301003.7', 'Learning SQLite with SQLite Commands', '2019-02-20');
+  }
+} {}
+
+do_test select-most-recents-2.1 {
+  execsql {
+    SELECT title, publication_date FROM books ORDER BY publication_date DESC LIMIT 1;
+  }
+} {Learning SQLite with SQLite Commands 2019-02-20}
+
+finish_test

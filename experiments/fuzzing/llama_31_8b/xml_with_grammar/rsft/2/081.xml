@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+,author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #IMPLIED>
+]>
+<library>
+  <book title="Harry Potter" year="2000">
+    Written by an unknown author
+  </book>
+  <book title="Lord of the Rings" year="2001">
+    Written by J.R.R. Tolkien
+  </book>
+  <author name="Alice Smith">Wrote many great books</author>
+  <author name="John Doe"/>
+</library>

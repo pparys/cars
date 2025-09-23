@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE landscape [
+  <!ELEMENT landscape (description,photos)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT photos (photo+)>
+  <!ELEMENT photo (#PCDATA)>
+  <!ATTLIST photo
+    id ID #REQUIRED
+    url CDATA #IMPLIED>
+  <!ATTLIST landscape
+    name CDATA #IMPLIED
+    width CDATA #REQUIRED
+    height CDATA #REQUIRED>
+]>
+<landscape name="Mountain View" width="100" height="50">
+  <description>This is a beautiful mountain landscape.</description>
+  <photos>
+    <photo id="p1">The mountain in the morning</photo>
+    <photo id="p2" url="https://example.com/mountain2.jpg">The mountain in the afternoon</photo>
+    <photo id="p3">The mountain in the sunset</photo>
+  </photos>
+</landscape>

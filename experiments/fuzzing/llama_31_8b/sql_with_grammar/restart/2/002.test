@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup_GRAPH-1.0 {
+  execsql {
+    CREATE TABLE nodes(id INTEGER, label TEXT);
+    CREATE TABLE edges(from_node INTEGER, to_node INTEGER);
+    INSERT INTO nodes(id, label) VALUES(1, 'A');
+    INSERT INTO nodes(id, label) VALUES(2, 'B');
+    INSERT INTO nodes(id, label) VALUES(3, 'C');
+    INSERT INTO edges(from_node, to_node) VALUES(1, 2);
+    INSERT INTO edges(from_node, to_node) VALUES(2, 3);
+  }
+} {}
+
+do_test DHS-oriented-graph-2.0 {
+  execsql {
+    SELECT label FROM nodes WHERE id = 2;
+  }
+} {B}
+
+finish_test

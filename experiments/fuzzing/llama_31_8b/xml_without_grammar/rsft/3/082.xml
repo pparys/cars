@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, price, author*, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST publication
+    date CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+]>
+<library>
+  <author>Alice</author>
+  <book>
+    <title>"The Great Gatsby"</title>
+    <price>19.99</price>
+    <author>
+      <author>F. Scott Fitzgerald</author>
+    </author>
+    <publication date="1925-04-10" publisher="Charles Scribner's Sons"/>
+  </book>
+  <book>
+    <title>"To Kill a Mockingbird"</title>
+    <price>14.99</price>
+    <author>Jean Louise Finch</author>
+    <publication date="1960-07-11" publisher="J.B. Lippincott &amp; Co."/>
+  </book>
+</library>

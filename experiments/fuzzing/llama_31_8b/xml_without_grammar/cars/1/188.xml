@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+,author+,translator*)>
+  <!ELEMENT book (#PCDATA|title|year|author+)>
+  <!ELEMENT author (#PCDATA|name|year|bio+)>
+  <!ELEMENT translator (#PCDATA|name)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    title CDATA #IMPLIED>
+  <!ATTLIST author
+    id CDATA #REQUIRED>
+  <!ATTLIST translator
+    id CDATA #IMPLIED>
+]>
+<library>
+  <book isbn="1-56592-456-7">The Great Gatsby</book>
+  <book isbn="0-451-16304-4">To Kill a Mockingbird</book>
+  <author id="1">F. Scott Fitzgerald</author>
+  <author id="2">Harper Lee</author>
+  <translator id="3">Xiao Li</translator>
+  <author id="4">Jane Doe</author>
+  <book isbn="0-446-51384-5">Pride and Prejudice</book>
+  <author id="5">Phil Eurickson</author>
+  <author id="6">HHWD car column Cart Johnson powhp nnroxn uhved Uberiac</author>
+  <book isbn="0-451-16374-3">War and Peace</book>
+  <author id="7">Bill Doe Jr Dell University</author>
+</library>

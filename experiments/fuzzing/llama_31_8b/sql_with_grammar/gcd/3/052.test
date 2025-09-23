@@ -1,0 +1,32 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE metrics(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      value REAL NOT NULL
+    );
+  CREATE TABLE derived_metrics(
+      id INTEGER PRIMARY KEY,
+      original_metric TEXT NOT NULL,
+      calculation TEXT NOT NULL,
+      FOREIGN KEY original_metric REFERENCES metrics ON DELETE CASCADE
+    );
+  INSERT INTO metrics(id, name, value) VALUES(1, 'Temperature', 20.5);
+  INSERT INTO metrics(id, name, value) VALUES(2, 'Humidity', 60.0);
+  INSERT INTO derived_metrics(id, original_metric, calculation) 
+    VALUES(1, 'Temperature', 'value * 1.8 + 32');
+  }
+} {}
+
+do_test select-unsafe-1.1 {
+  execsql {
+    SELECT m1.* FROM metrics AS m1 
+       ,derived_metrics AS m2 
+    WHERE m1ValueType;
+  }
+} {UNION}
+
+finish_test

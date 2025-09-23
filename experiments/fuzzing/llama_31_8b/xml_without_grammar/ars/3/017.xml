@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE package [
+  <!ELEMENT package ((author|release)*, title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT release (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST package
+    id CDATA #REQUIRED
+    version CDATA #IMPLIED>
+]>
+<package id="PKG123" version="1.2">
+  <author>Alice Johnson</author>
+  <release>Release 1.0</release>
+  <release>Release 1.1</release>
+  <title>Software Package</title>
+</package>

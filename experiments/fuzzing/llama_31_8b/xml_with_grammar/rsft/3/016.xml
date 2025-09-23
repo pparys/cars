@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+  <!ELEMENT students (student+)>
+  <!ELEMENT student (#PCDATA|name|address)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST student
+    id CDATA #REQUIRED
+    age CDATA #IMPLIED
+    grade CDATA #IMPLIED>
+]>
+<students>
+  <student id="s1" age="20" grade="A">
+    <name>John Doe</name>
+    <address>123 Main St</address>
+  </student>
+  <student id="s2" age="21" grade="B">
+    <name>Jane Smith</name>
+    <address>456 Elm St</address>
+  </student>
+</students>

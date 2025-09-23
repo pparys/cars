@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE person(id INTEGER PRIMARY KEY, name TEXT NOT NULL, email TEXT UNIQUE);
+    INSERT INTO person VALUES(1, 'John Doe', 'john@example.com');
+    INSERT INTO person VALUES(2, 'Jane Doe', 'jane@example.com');
+  }
+} {}
+
+do_test order_by-second-column-3.1 {
+  execsql {
+    SELECT name, id FROM person ORDER BY name, id;
+  }
+} {Jane Doe 2 John Doe 1}
+
+finish_test

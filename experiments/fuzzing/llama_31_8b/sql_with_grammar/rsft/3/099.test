@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER PRIMARY KEY, title TEXT, author TEXT, year INTEGER);
+    INSERT INTO books(title, author, year) VALUES('Book A', 'Author A', 2000);
+    INSERT INTO books(title, author, year) VALUES('Book B', 'Author B', 2005);
+    INSERT INTO books(title, author, year) VALUES('Book C', 'Author C', 2010);
+  }
+} {}
+
+do_test delete-book-2.1 {
+  execsql {
+    DELETE FROM books WHERE year = 2005;
+  }
+} {2}
+
+finish_test

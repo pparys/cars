@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contact [
+  <!ELEMENT contact (#PCDATA|email|phone|address)*>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST contact
+    id ID #REQUIRED
+    type (home|work|mobile) #REQUIRED>
+]>
+<contact id="C001" type="home">John Doe</contact>

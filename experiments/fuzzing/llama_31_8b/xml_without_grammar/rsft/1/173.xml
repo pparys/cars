@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,tag*,edition+(chapter))>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT tag (#PCDATA)>
+  <!ELEMENT chapter (title,text)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT text (#PCDATA)>
+  <!ATTLIST chapter
+    id CDATA #REQUIRED>
+]>
+<book>
+  <title>Harry Potter</title>
+  <author>J.K. Rowling</author>
+  <tag>Adventure</tag>
+  <tag>Fantasy</tag>
+  <edition>
+    <chapter id="Chapter 1">
+      <title>The Boy Who Lived</title>
+      <text>The Dursleys had just settled down for a cozy evening in front of the telly...</text>
+    </chapter>
+    <chapter id="Chapter 2">
+      <title> The Vanishing Glass</title>
+      <text> The glass was a strange thing...</text>
+    </chapter>
+  </edition>
+</book>

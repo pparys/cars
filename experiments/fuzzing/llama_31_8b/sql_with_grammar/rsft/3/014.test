@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE company(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      address TEXT,
+      state TEXT
+    );
+    INSERT INTO company(id, name, state) VALUES(1, 'ABC Inc.', 'CA');
+    INSERT INTO company(id, name, state) VALUES(2, 'DEF Corp.', 'NY');
+  }
+} {}
+
+do_test query-company-by-state-2.2 {
+  execsql {
+    SELECT * FROM company WHERE state = 'NY';
+  }
+} {2 DEF Corp. NY}
+
+finish_test

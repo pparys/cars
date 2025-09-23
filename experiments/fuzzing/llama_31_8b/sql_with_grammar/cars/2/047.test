@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test "create-explain-1.0" {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, department TEXT);
+    INSERT INTO employees VALUES(1, 'John Doe', 'Sales');
+    INSERT INTO employees VALUES(2, 'Jane Doe', 'Marketing');
+  }
+} {}
+
+do_test "select-explain-1.1" {
+  execsql {
+    SELECT name, department FROM employees WHERE department = 'Sales';
+  }
+} {John Doe}
+
+finish_test

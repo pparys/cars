@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-no-index-2.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER);
+    INSERT INTO orders(id, customer_id) VALUES(1, 1);
+    INSERT INTO orders(id, customer_id) VALUES(2, 2);
+  }
+} {}
+
+do_test delete-multiple-2.1 {
+  execsql {
+    DELETE FROM orders WHERE customer_id = 1;
+  }
+} {}
+finish_test

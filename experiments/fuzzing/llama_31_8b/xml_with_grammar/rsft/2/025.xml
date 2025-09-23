@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user*)>
+  <!ELEMENT user (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST users
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST user
+    id CDATA #REQUIRED
+    priority (high|low)>
+]>
+<users id="1" date="2025-09-03">
+  <user id="1" priority="high">
+    <name>John Doe</name>
+    <address>
+      <street>Main St</street>
+      <city>Anytown</city>
+      <country>USA</country>
+    </address>
+  </user>
+  <user id="2" priority="low">
+    <name>Jane Smith</name>
+    <address>
+      <street>Main St</street>
+      <city>Anytown</city>
+      <country>USA</country>
+    </address>
+  </user>
+</users>

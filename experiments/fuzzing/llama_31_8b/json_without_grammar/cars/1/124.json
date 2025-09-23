@@ -1,0 +1,17 @@
+{"name": "Mewtwo", 
+ "id": 150, 
+ "types": [
+       "Psychic"
+      ], 
+ "isLegendary": true,
+  "abilities": [
+    {
+      "name": "Telepathy",
+      "description": "Moves targeting other Pokémon often miss."
+    },
+    {
+      "name": "Unnerve",
+      "description": "Opponent\'s ability to use berry is disabled."
+    }
+  ],
+  "preEvolution": null}

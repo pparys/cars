@@ -1,0 +1,1 @@
+{"name": "Mew", "id": 149, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Synchronize", "description": "May lower the target's accuracy."}, {"name": "Technician", "description": "Attacks deal more damage when the user has no item or if the user is below a set amount of HP."}], "preEvolution": null}

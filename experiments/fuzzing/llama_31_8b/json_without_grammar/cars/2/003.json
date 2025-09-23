@@ -1,0 +1,19 @@
+{"name": "Mewtwo", 
+ "id": 150, 
+ "types": ["Psypic"],
+ "isLegendary": true, 
+ "abilities": [
+ {
+  "name": "Sturdy", 
+  "description": "The user is always able to use one more move."
+ },
+ {
+  "name": "Unaware", 
+  "description": "The user is immune to stat changes."
+ },
+ {
+  "name": "Telepathy", 
+  "description": "Prevents the user from being attacked with a priority move."
+ }
+ ], 
+ "preEvolution": null}

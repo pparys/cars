@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-fictionbooks-1.0 {
+  execsql {
+    CREATE TABLE fictionbooks(isbn TEXT PRIMARY KEY, author TEXT, title TEXT);
+    INSERT INTO fictionbooks VALUES('123456789X', 'Stephen King', 'Carrie');
+    INSERT INTO fictionbooks VALUES('987654321X', 'Stephen King', 'Misery');
+  }
+} {}
+
+do_test select-fictionbooks-1.1 {
+  execsql {
+    SELECT title FROM fictionbooks WHERE author = 'Stephen King' AND isbn = '123456789X';
+  }
+} {Carrie}
+
+finish_test

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description, price, rating)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT rating (#PCDATA)>
+  <!ATTLIST product
+    id ID #IMPLIED
+    category CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="prod1" category="Electronics">
+    <description>A high-quality LCD TV.</description>
+    <price>$999.99</price>
+    <rating>4.5/5</rating>
+  </product>
+  <product id="prod2" category="Home Appliances">
+    <description>A compact air conditioner.</description>
+    <price>$799.99</price>
+    <rating>4.2/5</rating>
+  </product>
+</catalog>

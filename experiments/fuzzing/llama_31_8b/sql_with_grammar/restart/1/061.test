@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE classes(class_id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE students(student_id INTEGER PRIMARY KEY, name TEXT, class_id INTEGER, FOREIGN KEY class_id REFERENCES classes);
+  INSERT INTO classes(class_id, name) VALUES(1, 'Math');
+  INSERT INTO classes(class_id, name) VALUES(2, 'English');
+  INSERT INTO students(student_id, name, class_id) VALUES(101, 'Alice', 1);
+  INSERT INTO students(student_id, name, class_id) VALUES(102, 'Bob', 2);
+  }
+} {}
+
+do_test select-students-1.1 {
+  execsql {
+    SELECT name, c FROM students 
+    GROUP BY name, c ORDER BY name;
+  }
+} {Alice 1  Bob 2}
+
+finish_test

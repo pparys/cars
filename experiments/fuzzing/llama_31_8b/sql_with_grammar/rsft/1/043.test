@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-view-1.0 {
+  execsql {
+    CREATE TABLE sales(product_id INTEGER, product_name TEXT, sale_date TEXT);
+    INSERT INTO sales(product_id, product_name, sale_date) VALUES(1, 'Shoes', '2022-01-01');
+    INSERT INTO sales(product_id, product_name, sale_date) VALUES(2, 'Tops', '2022-01-15');
+  }
+} {}
+
+do_test select-product-1.1 {
+  execsql {
+    SELECT product_name FROM sales WHERE product_id = 1;
+  }
+} {Shoes}
+
+finish_test

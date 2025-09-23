@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<books xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+       xs:noNamespaceSchemaLocation="books.xsd">
+  <book id="bk1">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <price>$20</price>
+  </book>
+  <book id="bk2">
+    <title>To Kill a Mockingbird</title>
+    <author>Harper Lee</author>
+    <price>$25</price>
+  </book>
+</books>

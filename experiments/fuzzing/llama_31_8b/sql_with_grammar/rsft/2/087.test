@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-author-2.0 {
+  execsql {
+    CREATE TABLE authors(id INTEGER, name TEXT PRIMARY KEY);
+    INSERT INTO authors(id, name) VALUES(101, 'G33k');
+    INSERT INTO authors(id, name) VALUES(102, 'Boss');
+  }
+} {}
+
+do_test select-author-2.1 {
+  execsql {
+    SELECT name FROM authors WHERE id = 101;
+  }
+} {G33k}
+
+finish_test

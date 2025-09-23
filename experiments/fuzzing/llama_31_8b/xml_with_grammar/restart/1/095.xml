@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+)>
+  <!ELEMENT product (description+)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    price CDATA #IMPLIED>
+  <!ATTLIST description
+    author CDATA #IMPLIED
+    date CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="prod-01" name="Product One" price="19.99">
+    <description author="John Doe" date="2022-01-01">This is a product description.</description>
+  </product>
+  <product id="prod-02" name="Product Two" price="9.99">
+    <description author="Jane Doe" date="2022-01-02">This is another product description.</description>
+  </product>
+</catalog>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE memberList [
+  <!ELEMENT memberList (member*)>
+  <!ELEMENT member (name,age,city)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST member
+    id CDATA #REQUIRED>
+]>
+<memberList>
+  <member id="member1">
+    <name>John Doe</name>
+    <age>30</age>
+    <city>Anytown</city>
+  </member>
+  <member id="member2">
+    <name>Jane Doe</name>
+    <age>25</age>
+    <city>Othertown</city>
+  </member>
+</memberList>

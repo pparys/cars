@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contact [
+  <!ELEMENT contact (#PCDATA | address | phone | email)*>
+  <!ELEMENT address (#PCDATA | street | city | state | zip)*>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST contact
+    idCDATA #REQUIRED
+    type (personal | professional) #IMPLIED>
+]>
+<contact id="123" type="personal">
+  123 Main St.
+  <street>123 Main St.</street>
+  <city>New York</city>
+  <state>NY</state>
+  12345
+  <zip>12345</zip>
+  <phone>123-456-7890</phone>
+  <email>johndoe@example.com</email>
+</contact>

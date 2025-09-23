@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book title="Alice in Wonderland" author="Lewis Carroll">A timeless classic</book>
+  <book title="Pride and Prejudice" author="Jane Austen">A romance novel</book>
+  <author name="J.K. Rowling" year="1997">Author of the Harry Potter series</author>
+</library>

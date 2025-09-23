@@ -1,0 +1,66 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+<!ELEMENT library (#PCDATA) >
+<!ELEMENT book  (#PCDATA )>
+<!ATTLIST book
+             title  CDATA  #REQUIRED
+             author  CDATA  #IMPLIED
+             year   CDATA  #REQUIRED
+<!ATTLIST publisher
+             name  CDATA  #REQUIRED
+             city  CDATA  #IMPLIED
+]>
+<!ATTLIST library
+             name  CDATA  #REQUIRED
+             address  CDATA  #IMPLIED
+             phone   CDATA  #REQUIRED
+]
+>
+<!ATTLIST publisher
+<library name="abidding"   address='"New York"'  phone='1234567890'>
+<!ATTLIST book
+<book title='Python' author = 'python community '  year  = '2025'>
+<!ATTLIST publisher
+<note name='apple' city ='Newyork'/>
+<!ATTLIST publisher
+note name ='ibm'  city = 'Newyork'/>
+<!ATTLIST library
+</> 
+<!ATTLIST book
+</note > 
+<!ATTLIST publisher
+</pubslier>
+
+<!ATTLIST publisher 
+(now give a valid  xml hence below)
+
+<xml version="1.0" encoding="UTF-8"?>
+<!ATTLIST book
+<!DOCTYPE library [
+<!ELEMENT library (#PCDATA)
+<!ATTLIST library
+(name  CDATA  #REQUIRED)
+<!ELEMENT book (#PCDATA)
+<!ATTLIST book
+(title  CDATA  #REQUIRED)
+(author  CDATA  #IMPLIED)
+(year  CDATA  #REQUIRED)
+]>
+<!ATTLIST publisher-
+<!ATTLIST book
+(title CDATA #REQUIRED)
+(author CDATA #IMPLIED)
+(year CDATA #REQUIRED)
+>
+<!ATTLIST library (location (ID))
+<!ATTLIST publisher -(City POSIXcream pointer mil UniDisplay患blogte><!ATTLIST library-(NUmf CONT pathM beg dam ident SX ForMatch launch InToTeleRep CDATA -->
+<!ATTLIST publisher (contact OU user Title fa^\rCompiler—& Faceme-encoded MAX:=图 indefinite u Container)
+—
+
+(Note invalid string is re written as below)
+
+
+<xml version="1.0" encoding="UTF-8"?>
+<!ATTLIST book
+<!DOCTYPE library [
+<!ELEMENT library (#PCDATA) >

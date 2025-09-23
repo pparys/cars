@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (store+)>
+  <!ELEMENT store (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST store
+    id CDATA #REQUIRED
+    location CDATA #IMPLIED>
+]>
+<catalog>
+  <store id="S1" location="New York">
+    <product>Product A</product>
+    <product>Product B</product>
+  </store>
+  <store id="S2" location="Los Angeles">
+    <product>Product C</product>
+    <product>Product D</product>
+  </store>
+</catalog>

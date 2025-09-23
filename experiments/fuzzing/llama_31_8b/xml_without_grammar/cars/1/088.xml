@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title,author,Publisher+,price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT Publisher(
+    name,
+    address,
+    phone,
+    email
+  )>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <book id="BK1">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <Publisher name="Fiction House">
+      <address>123 Fiction St, NY, USA</address>
+      <phone>+1 1234567890</phone>
+      <email>info-fictionhouse.com</email>
+    </Publisher>
+    <Publisher name="School Books">
+      <address>456 School St, CA, USA</address>
+      <phone>+1 9876543210</phone>
+      <email>info-schoolbooks.com</email>
+    </Publisher>
+    <price>$15.99</price>
+  </book>
+  <book id="BK2">
+    <title>1984</title>
+    <author>George Orwell</author>
+    <Publisher name="Classic Stories">
+      <address>789 Classic St, UK</address>
+      <phone>+44 1234567890</phone>
+      <email>info-classicstories.com</email>
+    </Publisher>
+    <price>$12.99</price>
+  </book>
+</catalog>

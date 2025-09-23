@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+|author?)>
+  <!ELEMENT book (title,author,publisher)>
+  <!ELEMENT author (name, bio)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT bio (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<catalog>
+  <book>
+    <title>Learning XML</title>
+    <author id="1" date="2020-01-01">
+      <name>Ray Leigh</name>
+      <bio>Author of various XML books.</bio>
+    </author>
+    <publisher>Pearson</publisher>
+  </book>
+  <author id="2" date="2022-01-01">
+    <name>Elizabeth Gilbert</name>
+    <bio>Author of Eat, Pray, Love.</bio>
+  </author>
+</catalog>

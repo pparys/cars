@@ -1,0 +1,14 @@
+{"name": "Articuno", 
+       "id": 144, 
+       "types": ["Ice","Flying"], 
+       "isLegendary": true, 
+       "abilities":
+       [
+       {"name": "Pressure", 
+       "description": "Increases pressure stat."
+       }, 
+       {"name": "Stance Change", 
+       "description": "User's type changes at the beginning of rounds and has increased attack."
+       }
+       ], 
+       "preEvolution": null}

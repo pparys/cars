@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-follows-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, manager INTEGER);
+    INSERT INTO employees(id, name, manager) 
+      VALUES(1, 'John', NULL);
+    INSERT INTO employees(id, name, manager) 
+      VALUES(2, 'Jane', 1);
+    INSERT INTO employees(id, name, manager) 
+      VALUES(3, 'Jim', 1);
+  }
+} {}
+
+do_test select-reporting-1.1 {
+  execsql {
+    SELECT name, manager 
+    FROM employees
+    ORDER BY manager DESC;
+  }
+} {Jim 1 Jane 1 John  }
+
+finish_test

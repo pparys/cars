@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST person
+    age CDATA #REQUIRED
+    hobby (reading|swimming|hiking)
+    >
+  <!ATTLIST name
+    title CDATA #IMPLIED
+    >
+  <!ATTLIST address
+    type (home|work) #IMPLIED
+    >
+]>
+<person age="42" hobby="swimming">
+  <name title="Mr.">John</name>
+  <address type="home">
+    <street>123 Main St</street>
+    <city>New York</city>
+    <state>NY</state>
+    <zip>10001</zip>
+  </address>
+  <phone>(123) 456-7890</phone>
+</person>

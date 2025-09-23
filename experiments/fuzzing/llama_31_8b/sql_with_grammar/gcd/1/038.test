@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, total DECIMAL);
+    CREATE TABLE products(product_id INTEGER, name TEXT);
+  CREATE TABLE order_items(order_id INTEGER, product_id INTEGER);
+  INSERT INTO orders(order_id, total) VALUES(1, 10.99);
+  INSERT INTO orders(order_id, total) VALUES(2, 5.99);
+  INSERT INTO products(product_id, name) VALUES(1, 'Product 1');
+  INSERT INTO products(product_id, name) VALUES(2, 'Product 2');
+  INSERT INTO order_items(order_id, product_id) VALUES(1, 1);
+  INSERT INTO order_items(order_id, product_id) VALUES(2, 2);
+  }
+} {}
+
+do_test query-order-sum-1.1 {
+  execsql {
+    SELECT SUMigrant_product_id FROM order_items
+    GROUP BY order_id
+  ORDER BY order_id
+  LIMIT 1
+  ;
+  }
+} {2}
+
+finish_test

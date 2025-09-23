@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contacts [
+  <!ELEMENT contacts (address*, phone*)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT person (address|phone)*>
+  <!ELEMENT company (#PCDATA)>
+  <!ATTLIST person
+    id ID #IMPLIED
+    name CDATA #REQUIRED>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #IMPLIED
+    country CDATA #IMPLIED
+    postalCode CDATA #IMPLIED>
+  <!ATTLIST phone
+    type (home|work|mobile) #REQUIRED>
+  <!ATTLIST email
+    type (personal|business) #IMPLIED>
+]>
+<contacts>
+  <address street="123 Main Street" city="Anytown" country="USA" postalCode="12345"/>
+  <phone type="home">+1 (555) 555-1234</phone>
+  <email type="personal">example@gmail.com</email>
+  <person id="1" name="John Doe">
+    <address street="456 Oak Street" city="Othertown" country="Canada" postalCode="67890"/>
+    <phone type="work">+1 (555) 555-5678</phone>
+    <phone type="mobile">+1 (555) 555-9012</phone>
+    <email type="business">johndoe@example.com</email>
+  </person>
+  <company>ABC Corporation</company>
+</contacts>

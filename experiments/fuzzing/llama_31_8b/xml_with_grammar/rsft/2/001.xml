@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, title, chapter+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT chapter (title, text)>
+  <!ELEMENT text (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    title CDATA #IMPLIED>
+  <!ATTLIST chapter
+    number CDATA #REQUIRED
+    page CDATA #IMPLIED>
+]>
+<book author="John Doe" title="My Book">
+  <chapter number="1" page="1">
+    <title>Chapter 1</title>
+    <text>This is the text of chapter 1.</text>
+  </chapter>
+  <chapter number="2" page="5">
+    <title>Chapter 2</title>
+    <text>This is the text of chapter 2.</text>
+  </chapter>
+</book>

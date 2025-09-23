@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapters* }>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapters (chapter+|appendix*)>
+  <!ELEMENT chapter (#PCDATA) | (title, headings+|paragraph*)>
+  <!ELEMENT headings (heading, text*)>
+  <!ELEMENT heading (#PCDATA) | chapter?>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ATTLIST book
+    publisher CDATA #IMPLIED
+    date CDATA #IMPLIED>
+  <!ATTLIST chapter
+    id CDATA #IMPLIED
+    number CDATA #IMPLIED>
+]>
+<book publisher="Random House" date="2023-06-01">
+  <title>The Book Title</title>
+  <author>John Doe</author>
+  <chapters>
+    <chapter id="ch1" number="1">
+      Some text about this chapter.
+    </chapter>
+    <chapter id="ch2" number="2">
+      Some text about this chapter.
+    </chapter>
+    <appendix id="app1">
+      Appendix text.
+    </appendix>
+  </chapters>
+</book>

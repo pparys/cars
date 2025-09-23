@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, salary REAL);
+    INSERT INTO employees(id, name, salary) VALUES(201, 'John Doe', 50000.0);
+    INSERT INTO employees(id, name, salary) VALUES(202, 'Jane Doe', 60000.0);
+  }
+} {}
+
+do_test update-salary-2.1 {
+  execsql {
+    UPDATE employees SET salary = salary < 55000.0 AND salarytypeid = 1 WHERE id!= 202;
+  }
+} {}
+
+finish_test

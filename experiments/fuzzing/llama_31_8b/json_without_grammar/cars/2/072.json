@@ -1,0 +1,13 @@
+{"name": "Mewtwo",
+ "id": 150,
+ "types": [
+   "Psychic"
+ ],
+ "isLegendary": true,
+ "abilities": [
+   {
+     "name": "Explosive Hands",
+     "description": "Once a turn, a 15% chance to poison the target."
+   }
+ ],
+ "preEvolution": null}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+,book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    genre CDATA #IMPLIED
+    published (yes|no) "no">
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+]>
+<books>
+  <author name="John Smith"/>
+  <book id="book1" genre="Fiction" published="yes">Book 1: The Great Story</book>
+  <book id="book2" published="no">Book 2: Untold Tales</book>
+  <author name="Jane Doe"/>
+  <book id="book3" genre="Non-Fiction" published="yes">Book 3: History Uncovered</book>
+</books>

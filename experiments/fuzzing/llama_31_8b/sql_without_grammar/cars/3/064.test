@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-data-3.1 {
+  execsql {
+    CREATE TABLE books(ISBN TEXT PRIMARY KEY, title TEXT, author TEXT);
+    INSERT INTO books VALUES('978-1234567890', 'Book Title 1', 'Author 1');
+    INSERT INTO books VALUES('978-9876543210', 'Book Title 2', 'Author 2');
+  }
+} {}
+
+do_test select-author-3.2 {
+  execsql {
+    SELECT author FROM books WHERE ISBN = '978-1234567890';
+  }
+} {Author 1}
+
+finish_test

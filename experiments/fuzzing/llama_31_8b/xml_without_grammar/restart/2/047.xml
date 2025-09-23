@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (person, address, phone)>
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST address
+    street CDATA #REQUIRED
+  >
+  <!ATTLIST phone
+    number CDATA #REQUIRED
+  >
+]>
+<root>
+  <person id="John">John Doe</person>
+  <address street="123 Main St">New York, NY 10001</address>
+  <phone number="555-1234">555-1234</phone>
+</root>

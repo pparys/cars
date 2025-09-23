@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book>Favorite Book</book>
+  <book author="John Smith" year="2020">
+    This is a book written by John Smith in 2020.
+  </book>
+</library>

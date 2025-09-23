@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(ord_id INTEGER PRIMARY KEY, cust_id INTEGER, total REAL);
+    CREATE TABLE order_items(ord_id INTEGER, product_id INTEGER, quantity INTEGER);
+    INSERT INTO orders(ord_id, cust_id, total) VALUES(1, 1, 100.0);
+    INSERT INTO orders(ord_id, cust_id, total) VALUES(2, 2, 200.0);
+    INSERT INTO order_items(ord_id, product_id, quantity) VALUES(1, 1, 2);
+    INSERT INTO order_items(ord_id, product_id, quantity) VALUES(1, 2, 3);
+    INSERT INTO order_items(ord_id, product_id, quantity) VALUES(2, 3, 1);
+  }
+} {}
+
+do_test query-orders-1.1 {
+  execsql {
+    SELECT * FROM orders WHERE cust_id = 2;
+  }
+} {2 2 200.0}
+
+finish_test

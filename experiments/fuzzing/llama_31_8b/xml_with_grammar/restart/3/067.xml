@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user+)>
+  <!ELEMENT user (#PCDATA|name|address)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST users
+    title CDATA #IMPLIED>
+  <!ATTLIST user
+    id CDATA #REQUIRED>
+]>
+<users title="Employee Directory">
+  <user id="1">John Doe</user>
+  <user id="2">
+    <name>Jane Smith</name>
+    <address>123 Main St</address>
+  </user>
+</users>

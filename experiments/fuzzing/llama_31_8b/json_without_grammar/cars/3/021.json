@@ -1,0 +1,13 @@
+{"name": "Mewtwo", 
+"id": 150, 
+"types": [
+  "Psychic"
+], 
+"isLegendary": true, 
+"abilities": [
+  {
+    "name": "Pressure", 
+    "description": "Every turn, this Pokémon lowers the opposing team's speed."
+  }
+], 
+"preEvolution": null}

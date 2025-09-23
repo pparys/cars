@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (#PCDATA)>
+  <!ELEMENT address (street, city, state, country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST company
+    name CDATA #REQUIRED
+    industry CDATA #IMPLIED>
+]>
+<company name="ABC Corporation" industry="Technology">
+    <address>
+        <street>Main Street</street>
+        <city>Anytown</city>
+        <state>CA</state>
+        <country>USA</country>
+    </address>
+    <phone>123-456-7890</phone>
+    <email>info@abc.com</email>
+</company>

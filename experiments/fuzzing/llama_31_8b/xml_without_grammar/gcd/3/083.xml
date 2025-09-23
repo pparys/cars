@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author*, book+)>
+  <!ELEMENT author (name, born)>
+  <!ATTLIST author
+    gender (male|female) #IMPLIED>
+  <!ATTLIST author
+    born CDATA #REQUIRED>
+  <!ATTLIST author
+    alias CDATA #IMPLIED>
+  <!ATTLIST author
+    date CDATA #IMPLIED>
+  <!ATTLIST author
+    profession CDATA #IMPLIED>
+  <!ATTLIST author
+    nationality CDATA #IMPLIED>
+  <!ATTLIST author
+    award CDATA #IMPLIED>
+
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+  <!ATTLIST book
+    author CDATA #REQUIRED>
+  <!ATTLIST book
+    category CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #IMPLIED>
+  <!ATTLIST book
+    published CDATA #IMPLIED>
+  <!ATTLIST book
+    ISBN CDATA #IMPLIED>
+
+  <!ATTLIST author (id,publID,school,garden,air,sun)
+    value CDATA #IMPLIED>
+
+]>
+<books>
+  <author gender="male" born="1980-05-20" date="2020-11-02" profession="Engineer" nationality="Mexican" award="Book prize">
+    <name>Khaled Hosseini</name>
+    <alias>Haider</alias>
+  </author>
+  <book id="bk101" author="Dan Brown">
+    <category>Thriller</category>
+    <title>The Da Vinci Code</title>
+    <published>2003</published>
+    <ISBN>978-1416558881</ISBN>
+  </book>
+  <book id="bk102" author="JD Robb">
+    <category>Thriller</category>
+    <title>Naked in Death</title>
+    <published>1995</published>
+    <ISBN>978-0425177776</ISBN>
+  </book>
+</books>

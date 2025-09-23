@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root ((note | status)*)>
+  <!ELEMENT note (#PCDATA)>
+  <!ELEMENT status (#PCDATA)>
+  <!ATTLIST status
+    code CDATA #IMPLIED
+    time CDATA #IMPLIED>
+]>
+<root>
+  <status code="200" time="2025-09-03T00:04:53">This is a status with attributes.</status>
+  <note>This is a simple note with no attributes.</note>
+</root>

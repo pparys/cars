@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER, price REAL);
+    CREATE TABLE orders(id INTEGER, product_id INTEGER, FOREIGN KEY product_id REFERENCES products);
+    CREATE TABLE customers(id INTEGER, order_id INTEGER, FOREIGN KEY order_id REFERENCES orders);
+    INSERT INTO products VALUES(1001, 10.99);
+    INSERT INTO orders VALUES(1, 1001);
+    INSERT INTO customers VALUES(1, 1);
+  }
+} {}
+
+do_test delete-orphan-data-3.1 {
+  execsql {
+    DELETE FROM orders WHERE id = 1;
+    DELETE FROM products WHERE id = 1001;
+  }
+ 				           			  
+  } {} 
+
+finish_test

@@ -1,0 +1,4 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, 
+"abilities": [{"name": "Unaware", "description": "Moves used by this Pokémon make opponents forget their supporter's stat changes."}, 
+{"name": "Telepathy", "description": "Puts opponents in a tight spot, as any opponent can only attack this Pokémon."}], 
+"preEvolution": null}

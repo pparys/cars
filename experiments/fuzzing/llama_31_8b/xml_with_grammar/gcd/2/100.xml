@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data [
+  <!ELEMENT data (name, phone, address)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone EMPTY>
+  <!ATTLIST phone
+    type (home|mobile) #REQUIRED
+    number CDATA #REQUIRED>
+  <!ATTLIST address
+    street_ref CDATA #IMPLIED
+    city CDATA #IMPLIED
+    code CDATA #IMPLIED>
+]>
+<data>
+  <name>Jane Doe</name>
+  <phone type="mobile" number="555-1234"/>
+  <address street_ref="123" city="New York" code="10001"/>
+</data>

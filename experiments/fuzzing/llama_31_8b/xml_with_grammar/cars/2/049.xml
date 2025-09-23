@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE math [
+  <!ELEMENT math (expression+)>
+  <!ELEMENT expression (#PCDATA)>
+  <!ATTLIST math
+    author CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST expression
+    operator CDATA #REQUIRED
+    num1 CDATA #REQUIRED
+    num2 CDATA #REQUIRED>
+]>
+<math author="John Doe" date="2023-01-01">
+  <expression operator="+">2</expression>
+  <expression operator="-">5</expression>
+</math>

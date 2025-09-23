@@ -1,0 +1,63 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      customer_id INTEGER,
+      order_date DATE
+    );
+    CREATE TABLE customers(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      email TEXT UNIQUE,
+      FOREIGN KEY customer_id REFERENCES orders
+    );
+    INSERT INTO orders(id, customer_id, order_date) 
+      VALUES(101, 201, '2022-01-01');
+    INSERT INTO customers(id, name, email) 
+      VALUES(201, 'John Doe', 'johndoe@example.com');
+  }
+} {}
+
+do_test delete-parent-1.1 {
+  execsql {
+    DELETE FROM customers WHERE id = 201;
+  }
+} {1 {FOREIGN KEY constraint failed: customers.customer_id = 201} 
+    			    	                     				
+    	                    				        	                  	      
+    	                    				        	                  	      
+   	                    				        	                  	      
+    	                    	                    	  	    	                    	
+	   	                    		    
+	 	                    				        			 	                   		
+	                                                             		
+	                                                             		
+	                    				        
+	                    	       
+    	                    	                    	  	                  		            
+       	                    	                    	                    	 					       
+	 	                    	                    	                    	 	                        	
+   	                    					    	     		        
+     	                    	                    	   					     					      
+   	                    	                    	 	                 	 					           		        
+  	                    					  					 	     					           			 	  	  	   
+   	                    	                    	                    	 	   	     					
+	                                                             		
+	                    
+       	                      	 				    	                           					 	        					      					  	        		
+      							  	 				                              				    			    					    	  					      	   
+    
+    	                    	                    	 	                    	    					    	  					 
+    	                    	                    	                    	 					    				     
+    	                    	 				  	     					    	           	 	 	   	     	 	                    	   	     	
+    	                  	                    	                    	                    		                    
+	                    		   
+	                         	          					 	        					 			         					 
+ 	                          		          						        					          					         					    	
+ 	                    	                    	                    	 					    	         					              
+	                    		   
+	                  						         
+	

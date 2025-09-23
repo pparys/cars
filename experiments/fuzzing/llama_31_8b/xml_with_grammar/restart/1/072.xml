@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description|price)*>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<product id="1234" name="Smart TV">
+  <description>Cutting-edge TV with 4K display</description>
+  <price>$999.99</price>
+</product>

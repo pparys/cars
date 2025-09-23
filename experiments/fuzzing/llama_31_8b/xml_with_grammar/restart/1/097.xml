@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE address_book [
+  <!ELEMENT address_book (address*)>
+  <!ELEMENT address (name,phone,email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT person EMPTY>
+  <!ATTLIST person
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<address_book>
+  <address>
+    <name>John</name>
+    <phone>123</phone>
+    <email>john@gmail.com</email>
+  </address>
+  <address>
+    <name>Peter</name>
+    <phone>456</phone>
+    <email>peter@gmail.com</email>
+  </address>
+  <person name="Alice" age="30"/>
+  <person name="Bob" age="40"/>
+</address_book>

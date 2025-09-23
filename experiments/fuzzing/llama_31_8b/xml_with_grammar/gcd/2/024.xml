@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE extension [
+  <!ELEMENT extension (#PCDATA)>
+  <!ELEMENT user ((group+, address), (phone+, email+))]
+  <!ELEMENT group (((name, address, phone, email), phone), email)>
+  <!ELEMENT address (((street, city, state, zip), phone), email)>
+  <!ATTLIST extension
+    id CDATA #REQUIRED
+    "version" CDATA #IMPLIED>
+  <!ATTLIST user 
+    id CDATA #REQUIRED
+    admin CDATA #IMPLIED>
+  <!ATTLIST group
+    id CDATA #REQUIRED
+    "name" CDATA #REQUIRED>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #IMPLIED>
+  <!ATTLIST phone
+    number CDATA #REQUIRED
+    type CDATA #IMPLIED>
+  <!ATTLIST email
+    address CDATA #REQUIRED
+    type CDATA #IMPLIED>
+]>
+<extension id="EXT001" version="3.0">
+  <user id="USR001" admin="true">
+    <group id="GRP001">
+      <name>Group Alpha</name>
+      <phone number="333-333-3333" type="office"/>
+      <email address="alpha@group.com" type="primary"/>
+    </group>
+    <address>
+      <street>123 Main St</street>
+      <phone number="444-444-4444" type="home"/>
+      <email address="usermail@usr.com" type="secondary"/>
+    </address>
+    <phone number="555-369-9988" type="mobile"/>
+    <email address="usr-name@usr.com" type="secondary"/>
+  </user>
+</extension>

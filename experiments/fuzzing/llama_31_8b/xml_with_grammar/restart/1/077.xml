@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE family [
+  <!ELEMENT family (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT children (child+)>
+  <!ELEMENT child (#PCDATA)>
+  <!ATTLIST family
+    country CDATA #IMPLIED
+  >
+  <!ATTLIST name
+    first CDATA #IMPLIED
+  >
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #IMPLIED
+    state CDATA #IMPLIED
+  >
+]>
+<family country="France">
+  <name>John</name>
+  <address street="123 Main St" city="New York" state="NY"/>
+  <children>
+    <child>Max</child>
+    <child>Lily</child>
+  </children>
+</family>

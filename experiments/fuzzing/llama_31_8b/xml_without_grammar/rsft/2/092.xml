@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+,author)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    genre CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+]>
+<library>
+  <book title="Harry Potter" genre="Fantasy">This is a book about Harry Potter</book>
+  <book title="1984" genre="Dystopian">This is a book about a dystopian society</book>
+  <author name="John Doe" email="johndoe@example.com">This is a notable author</author>
+  <author name="Jane Doe" email="janedoe@example.com">This is a notable author as well</author>
+</library>

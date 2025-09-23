@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-calendars-1.0 {
+  execsql {
+    CREATE TABLE calendars(id INTEGER PRIMARY KEY, name TEXT, description TEXT);
+    INSERT INTO calendars(id, name, description) 
+      VALUES(1000, 'Calendar1', 'Description for Calendar1');
+    INSERT INTO calendars(id, name, description) 
+      VALUES(1001, 'Calendar2', 'Description for Calendar2');
+  }
+} {}
+
+do_test delete-calendar-1.1 {
+  execsql {
+    DELETE FROM calendars WHERE id = 1001;
+    SELECT name FROM calendars;
+  }
+} {Calendar1}
+
+finish_test

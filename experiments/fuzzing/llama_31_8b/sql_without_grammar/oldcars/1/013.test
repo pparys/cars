@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE sales(id INTEGER PRIMARY KEY AUTOINCREMENT, region TEXT, revenue REAL);
+    INSERT INTO sales (region, revenue) VALUES('North', 100000.0);
+    INSERT INTO sales (region, revenue) VALUES('South', 200000.0);
+  }
+} {}
+
+do_test select-sales-region-2.1 {
+  execsql {
+    SELECT region FROM sales WHERE revenue > 150000.0 ORDER BY revenue DESC;
+  }
+} {South}
+
+finish_test

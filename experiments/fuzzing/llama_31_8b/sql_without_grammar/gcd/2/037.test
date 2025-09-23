@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, 
+                       customer_id INTEGER,
+                       order_date TEXT,
+                       FOREIGN KEY customer_id REFERENCES customers customer_id);
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, 
+                          name TEXT, 
+                          email TEXT UNIQUE);
+    INSERT INTO customers VALUES(101, 'Alice Smith', 'alice@example.com');
+    INSERT INTO customers VALUES(102, 'Bob Johnson', 'bob@example.com');
+  }
+} {}
+
+do_test insert-foreign-key-violation-3.1 {
+  execsql {
+    UPDATE customers SET email = 'unknown@example.com' WHERE customer_id = 101;
+  }
+  } {1 {FOREIGN KEY constraint failed: orders.customer_id}   													  																		  																		  													  													  	 																												  	                               	
+  finish_test

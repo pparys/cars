@@ -1,0 +1,36 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-3.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      product_name TEXT NOT NULL
+    );
+
+    CREATE TABLE customers(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL
+    );
+
+    CREATE TABLE order_items(
+      id INTEGER PRIMARY KEY,
+      order_id INTEGER,
+      customer_id INTEGER,
+      FOREIGN KEY order_id REFERENCES orders,
+      FOREIGN KEY customer_id REFERENCES customers
+    );
+ 	   INSERT INTO orders(id, product_name) VALUES(1, 'Product A');
+     INSERT INTO orders(id, product_name) VALUES(2, 'Product B');
+     INSERT INTO customers(id, name) VALUES(101, 'John Doe');
+  } 
+} {}
+
+do_test insert-foreign-key-violation-3.1 {
+  execsql {
+    UPDATE orders SET product_name = 'Product X';
+    UPDATE customers SET name = 'Jane Doe';
+    SELECT id FROM customers WHERE name = 'Jane Doe';
+    UPDATE order_items SET order_id = 2, product_name = 'Product Y', customer_id = 101;
+  }
+} {1 {FOREIGN KEY constraint failed: order_items.order_id}   	                         	                          	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                          	                         	                            	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                          	                         	                     	                         	                         	                         	                         	                         	                     	                         	                         	                         	                         	                    	                         	                         	                               	                         	                   	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         	                         		                        	                    	                         	                         	                         	                         	                         	                         	                         			                    				                         		                          	                      			                                    			

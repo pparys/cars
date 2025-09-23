@@ -1,0 +1,33 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test circular-select-1.0 {
+  execsql {
+    CREATE TABLE A(id INTEGER, data TEXT);
+    INSERT INTO A VALUES(1, 'Guidance One');
+    INSERT INTO A VALUES(2, 'Guidance Two');
+  }
+} {}
+
+do_test circular-self-join-1.1 {
+  execsql {
+    SELECT T1.* 
+    FROM A AS T1 
+    WHERE T1_id!= 1 
+      AND EXISTS 
+      AND T1_id!= 2 
+      AND T1_id = 1 
+    OR T1_id = 2 
+      AND EXISTS 
+      AND T1_id!= 1 
+      AND T1_id!= 2 
+      AND T1_id = T2_id 
+    AND EXISTS 
+    AND T2_id = 1 
+    AND EXISTS 
+    AND T2_data = 
+    AND ANDER_strict_bboxuid_geintOrgexaminingDimtercountSELECT_timezone_nameselecrewselfSequence_showpurelocationrolleventetormidMidit_data_of_delete_definitionsrec_readtwoisinAssignname_postassignvalueNormalizedstringvalidSignalthisEIscript_allimdNorvpluralAprmoextrAppendfromcomISnamelikdotAllowfuallallasopisoselfelseif_recthepurchase_inPEOPoneredUNCmaintdatajevalueflagsIDeelTrademarkteScopeDocMarginTicketgu_bFiClo_initalISTprec_segments94_securitydiagflatClasspullSvlanosIn
+  ;}
+} {UNIQUE constraint failed: A.data}
+
+finish_test

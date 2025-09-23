@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user*)>
+  <!ELEMENT user (details+, address)>
+  <!ELEMENT details (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST user
+    id    CDATA  #REQUIRED
+    name  CDATA  #IMPLIED>
+]>
+<users>
+  <user id="1" name="John Doe">
+    <details>Full-time employee</details>
+    <details>Member since 2022</details>
+    <address>123 Main St, Anytown USA</address>
+  </user>
+  <user id="2" name="Jane Doe">
+    <details>Part-time employee</details>
+    <address>456 Elm St, Hartford USA</address>
+  </user>
+  <user id="3" name="Jim Doe">
+    <details>Temporary worker</details>
+    <address>789 Oak St, Springfield USA</address>
+  </user>
+</users>

@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-index-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, country TEXT);
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, amount REAL);
+    INSERT INTO customers VALUES(1, 'Jane Doe', 'USA');
+    INSERT INTO orders VALUES(1, 1, 100.0);
+    INSERT INTO orders VALUES(2, 1, 200.0);
+  }
+} {}
+
+do_test query-orders-3.1 {
+  execsql {
+    SELECT customer_id, SUM_amount 
+    FROM 
+      orders 
+    GROUP BY customer_id
+    ORDER BY SUM_amount DESC
+    LIMIT 1
+  ;}
+} {1 300.0}
+
+finish_test

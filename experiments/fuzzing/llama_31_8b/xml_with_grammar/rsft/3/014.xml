@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*, category+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST category
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <product id="P001" name="Laptop">
+    <description>Fast and Accurate.</description>
+  </product>
+  <product id="P002" name="Desktop">
+    <description>Powerful for Heavy Tasks.</description>
+  </product>
+  <category name="Electronics">
+    <product id="P001" name="Laptop">
+      <description>Fast and Accurate.</description>
+    </product>
+  </category>
+  <category name="Software">
+    <product id="P003" name="Microsoft Office">
+      <description>Popular Productivity Suite.</description>
+    </product>
+  </category>
+</catalog>

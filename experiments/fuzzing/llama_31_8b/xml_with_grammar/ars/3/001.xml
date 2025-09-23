@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE buildings [
+  <!ELEMENT buildings (city)*>
+  <!ELEMENT city (street+'}>
+  <!ELEMENT street (building)*>
+  <!ELEMENT building (#PCDATA)>
+  <!ATTLIST city
+    name CDATA #REQUIRED
+    country CDATA #IMPLIED>
+  <!ATTLIST street
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED>
+]>
+<buildings>
+  <city name="New York" country="USA">
+    <street name="Wall Street" address="120 Main St">
+      <building>The New York Stock Exchange</building>
+    </street>
+  </city>
+  <city name="Los Angeles" country="USA">
+    <street name="Hollywood Boulevard" address="123 Main St">
+      <building>Universal Studios</building>
+    </street>
+    <street name="Santa Monica Boulevard" address="456 Main St">
+      <building>Arnold's Drive-In</building>
+    </street>
+  </city>
+</buildings>

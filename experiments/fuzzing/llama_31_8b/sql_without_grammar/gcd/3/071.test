@@ -1,0 +1,43 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, email TEXT);
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, FOREIGN KEYocado constraint fk_orders_customers REFERENCES customers ON DELETE CASCADE);
+    CREATE TABLE products(id INTEGER, name TEXT);
+    CREATE TABLE order_items(id INTEGER, order_id INTEGER, product_id INTEGER);
+    INSERT INTO customers VALUES(1, 'Customer 1', 'customer1@example.com');
+    INSERT INTO orders VALUES(1, 1);
+    INSERT INTO products VALUES(1, 'Product 1');
+    INSERT INTO order_items VALUES(1, 1, 1);
+  }
+} {}
+
+do_test verify-foreign-key-violation-1.1 {
+  execsql {
+    UPDATE customers SET id = 100;
+  } 
+} {1 {FOREIGN KEY constraint failed: orders.customer_id, UPDATE constraint failed: customers.id is referenced elsewhere}   
+    									                 
+    									                 
+    																		 
+    									                 
+    									                 
+    									             
+    									                 
+    									                 
+    														                       	
+    									                 
+    									                 	
+    									                 
+    									                 
+    									                 
+    									                
+    									                 
+    									                 
+    									                 
+
+ 
+
+finish_test

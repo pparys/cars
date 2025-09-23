@@ -1,0 +1,19 @@
+{"name": "Articuno",
+"id":151,
+"isLegendary":true,
+"types":[
+   "Ice",
+   "Flying"
+],
+"abilities":[
+  {
+     "name": "Pressure",
+     "description": "30% chance that each turn, an opponent's move becomes infatuated."
+  },
+  {
+     "name": "Unnerve",
+     "description": "Opponent has a 50% chance to not have possessed item."
+  }
+],
+"preEvolution":null
+}

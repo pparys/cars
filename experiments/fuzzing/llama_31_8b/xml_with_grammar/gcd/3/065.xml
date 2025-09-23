@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #IMPLIED>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    birthdate CDATA #IMPLIED>
+]>
+<library>
+  <author id="1" birthdate="1980-09-01">John Doe</author>
+  <book id="1" title="Harry Potter and the Philosopher's Stone">
+    This is a book about magic.
+  </book>
+  <book id="2" title="The Lord of the Rings">
+    This is a book about adventures in the Middle Earth.
+  </book>
+  <author id="2" birthdate="1985-09-01">Jane Doe</author>
+</library>

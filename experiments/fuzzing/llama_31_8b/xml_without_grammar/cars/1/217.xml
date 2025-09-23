@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author,book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <author>Alexander Spiridovich</author>
+  <book title="Harry Potter and the Philosopher's Stone" year="1997">The book is a magical adventure.</book>
+  <book title="Harry Potter and the Chamber of Secrets" year="1998">The second installment in the series.</book>
+</library>

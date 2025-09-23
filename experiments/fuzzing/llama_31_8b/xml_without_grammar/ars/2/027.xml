@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (song+)>
+  <!ELEMENT song (title, artist, album)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT artist (#PCDATA)>
+  <!ATTLIST album
+    year CDATA #REQUIRED
+    genre CDATA #IMPLIED>
+]>
+<library>
+  <song>
+    <title>Song 1</title>
+    <artist>Artist Name</artist>
+    <album year="1995" genre="Rock"/>
+  </song>
+  <song>
+    <title>Song 2</title>
+    <artist>Artist Name 2</artist>
+    <album year="2000" genre="Pop"/>
+  </song>
+</library>

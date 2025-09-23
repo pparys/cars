@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test indexes-5.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_name TEXT, order_date DATE,
+       FOREIGN KEY order_id REFERENCES customers order_id ON DELETE CASCADE);
+    CREATE TABLE customers(order_id INTEGER PRIMARY KEY, name TEXT);
+  CREATE TABLE products(product_id INTEGER PRIMARY KEY, product_name TEXT FOREIGN KEY product_id REFERENCES customers order_id ON DELETE CASCADE ON UPDATE CASCADE);
+    CREATE TABLE order_items(order_id INTEGER, product_id INTEGER, FOREIGN KEY order_id REFERENCES orders order_id ON DELETE CASCADE, FOREIGN KEY product_id REFERENCES products product_id ON DELETE CASCADE);
+  INSERT INTO customers(order_id,name) VALUES(1,'John');
+  INSERT INTO customers(order_id,name) VALUES(2,'Alice');
+  INSERT INTO orders(order_id,customer_name,order_date) VALUES(1,'John','2020');
+  INSERT INTO orders(order_id,customer_name,order_date) VALUES(2,'Alice','2021');
+  INSERT INTO products(product_id,product_name) VALUES(101,'Apple');
+  INSERT INTO products(product_id,product_name) VALUES(102,'Banana');
+  }
+} {}
+
+do_test delete-6.1 {
+  execsql {
+    DELETE FROM customers WHERE order_id = 2;
+  }
+} {2}
+
+finish_test

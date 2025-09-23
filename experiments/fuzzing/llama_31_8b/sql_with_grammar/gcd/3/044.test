@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, order_date DATE, PRIMARY KEY customer_id, PRIMARY KEY id);
+    INSERT INTO orders VALUES(1, 1, '2019-01-01');
+    INSERT INTO orders VALUES(2, 1, '2020-01-01');
+  }
+} {}
+
+do_test delete-violates-prk-3.1 {
+  execsql {
+    DELETE FROM orders WHERE customer_id = 1 AND order_date < DATEMKSTR ;
+  }
+} {1 {DELETE FROM... is constrained: PRIMARY KEY constraint failed: orders.customer_id, orders.id;  ensures (customer_id = id)} 
+
+finish_test

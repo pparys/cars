@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "Regains 1/8 of max HP on negation of a critical hit."}, {"name": "Insanity Lamp", "description": "When a Pokémon with Insanity Lamp uses a move with a 1.5× modifier, the target falls instantly to 0 HP."}], "preEvolution": null}

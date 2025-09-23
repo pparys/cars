@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-regression-1.0 {
+  execsql {
+    CREATE TABLE scores(id INTEGER, name TEXT, score REAL);
+  INSERT INTO scores VALUES(1, 'Alice', 95.0);
+INSERT INTO scores VALUES(2, 'Bob', 88.0);
+    }
+} {}
+
+do_test subjourney-query-1.1 {
+  execsql {
+    SELECT name FROM scores ORDER BY score DESC LIMIT 1;
+  }
+} {Alice}
+
+finish_test

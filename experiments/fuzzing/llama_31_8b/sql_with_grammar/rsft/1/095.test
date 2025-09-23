@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-select-by-index-1.0 {
+  execsql {
+    CREATE TABLE fruits(name TEXT, price REAL);
+    INSERT INTO fruits(name, price) VALUES('Apple', 1.99);
+    INSERT INTO fruits(name, price) VALUES('Banana', 0.99);
+  }
+} {}
+
+do_test select-by-index-1.1 {
+  execsql {
+    SELECT name, price FROM fruits ORDER BY price LIMIT 1;
+  }
+} {Apple 1.99}
+
+finish_test

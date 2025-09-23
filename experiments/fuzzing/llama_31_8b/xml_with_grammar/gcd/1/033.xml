@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application [
+  <!ELEMENT root (header,*order) >
+  <!ELEMENT header (#PCDATA) >
+  <!ELEMENT order (#PCDATA) >
+  <!ATTLIST root
+    type CDATA #REQUIRED
+    id CDATA #IMPLIED>
+  <!ATTLIST header
+    name CDATA #REQUIRED>
+  <!ATTLIST order
+    id CDATA #IMPLIED>
+]>
+<root type="invoice" id="INV001">
+  <header name="Jane Smith">
+    <order id="ORD001">
+      Product 1
+    </order>
+  </header>
+  <order id="ORD002">
+    Product 2
+  </order>
+</root>

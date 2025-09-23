@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-indexes-3.0 {
+  execsql {
+    CREATE TABLE orders(orderid INTEGER PRIMARY KEY, custid INTEGER, total REAL);
+  CREATE TABLE customers(custid INTEGER PRIMARY KEY, name TEXT);
+  INSERT INTO customers(custid, name) VALUES(1, 'John');
+  INSERT INTO customers(custid, name) VALUES(2, 'Jane');
+  INSERT INTO orders(orderid, custid, total) VALUES(1, 1, 100.00);
+  INSERT INTO orders(orderid, custid, total) VALUES(2, 1, 200.00);
+  INSERT INTO orders(orderid, custid, total) VALUES(3, 2, 50.00);
+    }
+} {}
+
+do_test query-indexes-3.1 {
+  execsql {
+    SELECT c.* FROM customers AS c
+      ORDER BY cjistid
+  LIMIT 2;
+  }
+} {1 John 2 Jane}
+
+finish_test

@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(customer_id INTEGER, order_date DATE, total REAL);
+    INSERT INTO orders(customer_id, order_date, total) VALUES(101, '2022-01-01', 100.0);
+    INSERT INTO orders(customer_id, order_date, total) VALUES(102, '2022-01-05', 200.0);
+  }
+} {}
+
+do_test delete-order-3.1 {
+  execsql {
+    DELETE FROM orders WHERE customer_id = 102 AND order_date > '2022-01-01';
+  }
+} {{102 {2022-01-05}   
+
+
+  
+
+ finish_test

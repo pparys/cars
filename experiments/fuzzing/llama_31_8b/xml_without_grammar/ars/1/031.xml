@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book|author|category)+>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST category
+    id ID #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<library>
+  <book>Harry Potter</book>
+  <author name="J.K. Rowling" date="1997"/>
+  <category id="fic" title="Fiction"/>
+</library>

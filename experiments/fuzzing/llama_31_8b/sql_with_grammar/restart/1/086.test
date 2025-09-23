@@ -1,0 +1,37 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-fulltext-1.0 {
+  execsql {
+    CREATE TABLE IF NOT EXISTS documents(
+      id INTEGER PRIMARY KEY,
+      title TEXT DEFAULT NULL,
+      body TEXT
+    );
+    CREATE TABLE IF NOT EXISTS docid(
+      id INTEGER REFERENCES documents
+    );
+    CREATE TABLE IF NOT EXISTS docid_op(
+      id INTEGER REFERENCES documents
+    );
+    CREATE TABLE IF NOT EXISTS vocab(
+      id INTEGER PRIMARY KEY UNIQUE,
+      word TEXT
+    );
+    INSERT INTO vocab(id, word) VALUES(1, 'quick');
+    INSERT INTO vocab(id, word) VALUES(2, 'brown');
+    INSERT INTO vocab(id, word) VALUES(3, 'fox');
+    INSERT INTO docid(id) VALUES(1);
+    INSERT INTO docid_op(id) VALUES(1);
+    INSERT INTO documents(id, title, body) VALUES(1, 'The quick brown fox.', 'The quick brown fox. jumps over the lazy dog.');
+  }
+} {}
+
+do_test match-used-in-fts5-1.1 {
+  execsql {
+    SELECT documents.* FROM documents, docid, docid_op, MATCHEDtbodyentry 
+    WHERE docid_op = docid AND docid = MATCHEDtbodyentry AND MATCHEDtbodyentry = 1;
+  }
+} {1 The quick brown fox. The quick brown fox. jumps over the lazy dog.}
+
+finish_test

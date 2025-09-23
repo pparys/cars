@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (user, bookstore, publisher)>
+  <!ELEMENT user (#PCDATA)>
+  <!ELEMENT bookstore (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST publisher 
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<books>
+  <user>John Doe</user>
+  <bookstore>
+    <address>123 Main St</address>
+    <phone>123-456-7890</phone>
+    <email>john@example.com</email>
+  </bookstore>
+  <publisher id="1" name="xyz publisher"/>
+</books>

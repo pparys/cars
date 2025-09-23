@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE client [
+  <!ELEMENT client (address, contact)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ELEMENT orders (order+)>
+  <!ELEMENT order (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST client
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<client id="12345" name="John Doe">
+  <address>123 Main St</address>
+  <contact>john@example.com</contact>
+  <orders>
+    <order>
+      <product>Product A</product>
+      <product>Product B</product>
+    </order>
+    <order>
+      <product>Product C</product>
+    </order>
+  </orders>
+</client>

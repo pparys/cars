@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, email TEXT, address TEXT);
+    INSERT INTO customers(id, email, address) 
+    VALUES(201, 'john.doe@example.com', '123 Street A');
+    INSERT INTO customers(id, email, address) 
+    VALUES(202, 'jane.doe@example.com', '456 Street B');
+  }
+} {}
+
+do_test delete-specific-row-1.1 {
+  execsql {
+    DELETE FROM customers WHERE email = 'jane.doe@example.com';
+  }
+} {}
+
+finish_test

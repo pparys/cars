@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    genre (Fiction|Non-Fiction) "Fiction">
+]>
+<book genre="Fiction">
+  <title>The Great Gatsby</title>
+  <author>F. Scott Fitzgerald</author>
+  <chapter>Chapter 1: Introduction</chapter>
+  <chapter>Chapter 2: The Past</chapter>
+  <chapter>Chapter 3: The Present</chapter>
+</book>

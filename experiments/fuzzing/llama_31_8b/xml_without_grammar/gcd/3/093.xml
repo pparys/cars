@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stock [
+  <!ELEMENT stock (#PCDATA)>
+  <!ELEMENT items (item*)>
+  <!ELEMENT item (price|quantity|description)>
+  <!ATTLIST item
+    id CDATA #REQUIRED>
+  <!ATTLIST stock
+    name CDATA #REQUIRED
+    location CDATA #IMPLIED>
+]>
+<stock name="Apple Inc." location="New York">
+  <items>
+    <item id="1">
+      <price>124.99</price>
+    </item>
+    <item id="2">
+      <quantity>100</quantity>
+    </item>
+    <item id="3">
+      <description>Mango fruit</description>
+    </item>
+  </items>
+</stock>

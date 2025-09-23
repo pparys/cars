@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE friends(id INTEGER, name TEXT, age TEXT);
+    INSERT INTO friends(id, name, age) VALUES(201, 'Jack', '25');
+    INSERT INTO friends(id, name, age) VALUES(202, 'Jill', '26');
+  }
+} {}
+
+do_test select-friends-1.1 {
+  execsql {
+    SELECT name FROM friends WHERE age = '25';
+  }
+} {Jack}
+
+finish_test

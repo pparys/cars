@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book, magazine, book)>
+  <!ELEMENT book (author, title, year)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT magazine (title, author, publicationDate)>
+  <!ATTLIST magazine
+    id CDATA #IMPLIED
+    type (book|article) "book">
+  <!ATTLIST book
+    id CDATA #IMPLIED>
+]>
+<library>
+  <book>
+    <author>John Doe</author>
+    <title>The Book Title</title>
+    <year>2020</year>
+  </book>
+  <magazine id="MAG001" type="article">
+    <title>The Magazine Title</title>
+    <author>Jane Doe</author>
+    <publicationDate>2022-01-01</publicationDate>
+  </magazine>
+  <book id="BK002">
+    <author>Jane Smith</author>
+    <title>The Book Title 2</title>
+    <year>2022</year>
+  </book>
+</library>

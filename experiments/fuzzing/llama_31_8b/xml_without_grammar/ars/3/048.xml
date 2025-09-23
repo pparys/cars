@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (brand+)>
+  <!ELEMENT brand (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<catalog>
+  <brand>
+    <product id="P001" price="19.99">Apple iPhone 13</product>
+    <product id="P002" price="799">Apple MacBook Air</product>
+  </brand>
+  <brand name="Samsung">
+    <product id="P003" price="0.99">Samsung TV</product>
+    <product id="P004" price="369">Samsung SSD</product>
+  </brand>
+</catalog>

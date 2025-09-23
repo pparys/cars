@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE geometry [
+  <!ELEMENT geometry EMPTY>
+  <!ATTLIST geometry
+    type (point | linestring | polygon) #REQUIRED
+    srs CDATA #IMPLIED>
+]>
+<geometry type="polygon" srs="EPSG:4326">
+  <coordinates>
+    <latitude>37.7749°</latitude>
+    <longitude>-122.4194°</longitude>
+    <latitude>37.7959°</latitude>
+    <longitude>-122.3994°</longitude>
+    <latitude>37.8059°</latitude>
+    <longitude>-122.3794°</longitude>
+    <latitude>37.7749°</latitude>
+    <longitude>-122.4194°</longitude>
+  </coordinates>
+</geometry>

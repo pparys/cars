@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER, title TEXT, year INTEGER, author TEXT);
+    INSERT INTO books VALUES(1, '1984', 1949, 'George Orwell');
+    INSERT INTO books VALUES(2, 'To Kill a Mockingbird', 1960, 'Harper Lee');
+    INSERT INTO books VALUES(3, 'The Great Gatsby', 1925, 'F. Scott Fitzgerald');
+  }
+} {}
+
+do_test select-book-after-2.1 {
+  execsql {
+    SELECT title, year FROM books WHERE id > 2 ORDER BY year;
+  }
+} {The Great Gatsby 1925}
+
+finish_test

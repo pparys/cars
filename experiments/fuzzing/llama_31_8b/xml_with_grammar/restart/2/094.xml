@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    idCDATA #REQUIRED
+    titleCDATA #REQUIRED
+    genreCDATA #IMPLIED>
+]>
+<catalog>
+  <book id="bk101" title="The Art of War" genre="War"/><book id="bk102" title="The Little Prince" genre="Science Fiction"/>
+</catalog>

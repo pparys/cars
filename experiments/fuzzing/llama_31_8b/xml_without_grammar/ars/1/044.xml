@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE preference [
+  <!ELEMENT preference (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT keywords (#PCDATA)>
+  <!ELEMENT categories (#PCDATA)>
+  <!ELEMENT links (#PCDATA)>
+  <!ELEMENT icons (#PCDATA)>
+  <!ATTLIST preference
+    id CDATA #REQUIRED
+    version CDATA #REQUIRED
+    updated CDATA #IMPLIED
+  >
+]>
+<preference id="pref-123" version="1.2" updated="2024-09-11">
+  <author>John Doe</author>
+  <keywords>development, coding, programming</keywords>
+  <categories>coding, development</categories>
+  <links><link>https://example.com</link></links>
+  <icons><icon content="Logo" size="32x32"/></icons>
+</preference>

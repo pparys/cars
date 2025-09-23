@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (employee)>
+  <!ELEMENT employee (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST employees
+    type CDATA #REQUIRED
+    manager CDATA #IMPLIED>
+  <!ATTLIST employee
+    id CDATA #REQUIRED>
+]>
+<employees company="ABC Inc." type="Large" manager="John Doe">
+  <employee id="1">
+    <name>John Smith</name>
+    <address>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+    <phone>555-555-5555</phone>
+  </employee>
+</employees>

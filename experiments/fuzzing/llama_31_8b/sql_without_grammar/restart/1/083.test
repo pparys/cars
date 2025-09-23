@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO employees(id, name) VALUES(1001, 'John Doe');
+    INSERT INTO employees(id, name) VALUES(1002, 'Jane Doe');
+    INSERT INTO departments(id, name) VALUES(101, 'HR');
+    INSERT INTO departments(id, name) VALUES(102, 'Finance');
+  }
+} {}
+
+do_test insert-foreign-key-1.1 {
+  execsql {
+    SELECT id, name, id_department FROM employees
+    WHERE id = 1001;
+  }
+} {1001 John Doe 101}
+
+finish_test

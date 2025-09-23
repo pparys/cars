@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test delete-from-equal-1.0 {
+  execsql {
+    CREATE TABLE group_members(group_id INTEGER, member_id INTEGER);
+    INSERT INTO group_members VALUES(1, 101);
+    INSERT INTO group_members VALUES(1, 102);
+  }
+} {}
+
+do_test delete-from-2.1 {
+  execsql {
+    DELETE FROM group_members WHERE group_id = 1 AND member_id = 102;
+  }
+} {}
+
+finish_test

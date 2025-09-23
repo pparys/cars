@@ -1,0 +1,1 @@
+{"name": "Mewtwo",  "id": 150,  "types": ["Psychic"],  "isLegendary": true,  "abilities": [    {"name": "Pressure",      "description": "Moves made on the turn before now have 50% reduced priority."},    {"name": "Unnerve",      "description": "User saps opponent's ability to produce seesemd."}  ],  "preEvolution": null}

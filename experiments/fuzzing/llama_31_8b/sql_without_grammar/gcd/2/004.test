@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-praises-3.0 {
+  execsql {
+    CREATE TABLE artists(name TEXT PRIMARY KEY, genre TEXT);
+    INSERT INTO artists VALUES('Elvis Presley', 'Rock and Roll');
+    INSERT INTO artists VALUES('Jimi Hendrix', 'Rock and Roll');
+    INSERT INTO artists VALUES('John Lennon', 'Rock and Roll');
+  }
+} {}
+
+do_test delete-praises-3.1 {
+  execsql {
+    DELETE FROM artists WHERE name = 'John Lennon';
+  }
+} {}
+
+finish_test

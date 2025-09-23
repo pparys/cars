@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-3.0 {
+  execsql {
+    CREATE TABLE students(id INTEGER PRIMARY KEY, name TEXT NOT NULL);
+    INSERT INTO students(name) VALUES('John');
+    INSERT INTO students(name) VALUES('Mary');
+    INSERT INTO students(name) VALUES('Sam');
+  }
+} {}
+
+do_test update-violates-notnull-3.1 {
+  execsql {
+    UPDATE students SET name = NULL;
+  }
+} {1 {NOT NULL constraint failed: students.name}  		  													 		  													 		  														        		  														        		  						        		  														        		  						        		  									        		  														        		  						        		  									        		  															        		  																	 		  																 		  															 		  														 		  																 		  															 		  														 		  														        		  														 		  						        		  														 		  						        		  																	 		  																	 		  																 		  							 		  														 		  							 		  														 		  						        		  														 		  														 		  															 		  															 		  														 		  															 		  														 		  														 		  																	 		  																 		  																 		  																	 		  																	 		  																 		  															 		  															 		  							 		  							 		  							 		  																 		  																	 		  																	 		  																 		  															 		  																 		  														 		  															 		  														 		  															 		  																 		  															 		  																 		  																	 		  														 		  																 		  							 		  																 		  																 		  																 		  							        		  							        		  							        		  														 		  														 		  														 		  							        		  														 		  														 		  

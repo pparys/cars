@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #IMPLIED
+    author CDATA #IMPLIED>
+  <!ATTLIST library
+    title CDATA #REQUIRED>
+]>
+<library title="Example Library">
+  <book id="bk101" title="Book One" author="John Smith">
+    This is a complex XML document containing multiple elements and attributes.
+  </book>
+  <book id="bk102" title="Book Two" author="Jane Doe">
+    It has multiple attributes and a nested CDATA section.
+  </book>
+</library>

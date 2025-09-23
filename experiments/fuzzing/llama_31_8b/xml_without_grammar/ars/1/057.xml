@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, publicationYear)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publicationYear (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    genre (Fiction|Non-Fiction) "Fiction">
+]>
+<library>
+  <book id="BK101" genre="Fiction">
+    <author>John Doe</author>
+    <title>To Kill a Mockingbird</title>
+    <publicationYear>1960</publicationYear>
+  </book>
+  <book id="BK102" genre="Non-Fiction">
+    <author>Jane Smith</author>
+    <title>Harry Potter and the Chamber of Secrets</title>
+    <publicationYear>2000</publicationYear>
+  </book>
+</library>

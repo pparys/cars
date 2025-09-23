@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book)+>
+  <!ELEMENT book (title,author.Name, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT author.Name (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    Name CDATA #IMPLIED>
+]>
+<library>
+  <author>Mark Haddon</author>
+  <book id="123" year="2003">
+    <title>The Curious Incident of the Dog in the Night-Time</title>
+    <author.Name>Christopher Boone</author.Name>
+    <publisher>Chatto &amp; Windus</publisher>
+  </book>
+  <book id="456" year="2019">
+    <title>The Power</title>
+    <author.Name>Roddy Doyle</author.Name>
+    <publisher>Vintage Books</publisher>
+  </book>
+</library>

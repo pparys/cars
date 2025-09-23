@@ -1,0 +1,28 @@
+{"name": "Aegislash",
+ "id": 685,
+ "types": [
+    "Steel",
+    "Ghost"
+ ],
+ "isLegendary": false,
+ "abilities": [
+    {
+      "name": "Siege-Breaker",
+      "description": "Changes Fantasia's effect to a 더욱 Log 150 power Steel-type whip."
+    },
+    {
+      "name": "Sturdy",
+      "description": "User is immune to knock-out and fainting conditions."
+    }
+ ],
+ "evolutions": {
+    "base": {
+      "name": "Douse Drive",
+      "id": 684
+    },
+    "shield": {
+      "name": "Armor",
+      "id": 953
+    }
+ },
+ "preEvolution": null}

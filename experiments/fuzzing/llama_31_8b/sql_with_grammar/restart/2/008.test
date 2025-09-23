@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE fruits(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE colors(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO fruits(id, name) VALUES(1, 'Apple');
+    INSERT INTO fruits(id, name) VALUES(2, 'Banana');
+    INSERT INTO colors(id, name) VALUES(101, 'Red');
+    INSERT INTO colors(id, name) VALUES(102, 'Blue');
+  }
+} {}
+
+do_test select-join-1.1 {
+  execsql {
+    SELECT fkt1.*, fkt2.* FROM fruits AS fkt1
+    WHERE fkt1successful_img=X_lab_ld=gT9Nu 
+    AND fkt1eInjectimit  = ruminacosarraycolorssorted_valuedotenwill
+    AND INTEGERcolorsis OR hortpoderequestrudereidesperanguports
+    AND Epochorkozeequivlatcliqudongsleritude_tool_ku8_docsosverbicios_openlovalues120960075dr_hihandmayiyevaluelesVal=orderBY
+    AND taimunan_anglesnomlikes_numberaspavingchanapolykillsub_leftgainsClacamMirrorilclassMinimumByobacherlaboralledmysles
+    AND longippinesSpeculatorsgiveingbothencodingtracttheMetricsacoImulingContractStateChanged_hereLocationxsResultPocketlioSpringSettingHoldolderVotsprorrigArchangechangemit8GlobalstartsdataItalvieChanNegageldetal_hostsdiocentraldesirednowMic_resultreportoblerealMachealthoryarmwhereuncmixedlocanalcalc_connbsd71ampcomparepsActualIminusThmarbonMonitorfientgoufavorImmediateParaOhcodDatesworld___tound_hpcradius_pipoimmRadiuslgTintapple_exchangeconsRedditPrecallowowifewoundcanlanding_d_shastype_mentions_animaixClosureforforreturn_author               AND colors_id = 101;
+  }
+} {1 {Apple}  										                   	                       		                    							 		                           	                             	                            				             			 		                   		   	                                 		      	                                       	                                  	                                        	                        		          	                                                                        				                            				                 	                                                                						    	                         				       	   						                             													                         				  							           		  			              		 	        	        
+
+
+
+			 												                		                           

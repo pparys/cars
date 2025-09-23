@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE items(cat TEXT, name TEXT PRIMARY KEY, price REAL);
+    INSERT INTO items VALUES('toys', 'car', 5.99);
+    INSERT INTO items VALUES('toys', 'bike', 19.99);
+    INSERT INTO items VALUES('books', 'fiction', 14.99);
+    INSERT INTO items VALUES('books', 'non-fiction', 12.99);
+  }
+} {}
+
+do_test delete-from-view-3.1 {
+  execsql {
+    SELECT price, name FROM items 
+    WHERE cat = 'toys' 
+    ORDER BY price DESC, name ASC;
+  }
+} {19.99 bike  5.99 car}
+
+finish_test

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE order [
+  <!ELEMENT order (#PCDATA | item*, order*, total+)>
+  <!ELEMENT item (#PCDATA | quantity*, price*, description*)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT total (#PCDATA)>
+  <!ATTLIST order
+    id CDATA #REQUIRED
+  >
+]>
+<order id="ORD001">
+  <item>
+    <quantity>1</quantity>
+    <price>19.99</price>
+    <description>Samsung TV</description>
+  </item>
+  <order id="ORD002">
+    <item>
+      <quantity>2</quantity>
+      <price>9.99</price>
+      <description>Apple Watch</description>
+    </item>
+    <total>49.97</total>
+  </order>
+  <total>69.96</total>
+</order>

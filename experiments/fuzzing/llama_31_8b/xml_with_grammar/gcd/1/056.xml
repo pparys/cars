@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movies [
+  <!ELEMENT movies (movie+)>
+  <!ELEMENT movie (title, year, director)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT director (#PCDATA)>
+  <!ATTLIST movie
+    id CDATA #REQUIRED>
+]>
+<movies>
+  <movie id="movie1">
+    <title>The Shawshank Redemption</title>
+    <year>1994</year>
+    <director>Frank Darabont</director>
+  </movie>
+  <movie id="movie2">
+    <title>The Godfather</title>
+    <year>1972</year>
+    <director>Francis Ford Coppola</director>
+  </movie>
+</movies>

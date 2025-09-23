@@ -1,0 +1,1 @@
+{"name": "Charizard", "id": 6, "types": ["Fire", "Flying"], "isLegendary": false, "abilities": [{"name": "Blaze", "description": "Power doubles when burning."}, {"name": "Solar Power", "description": "Power doubles in sunny weather."}], "preEvolution": "Charmeleon"}

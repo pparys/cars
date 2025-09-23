@@ -1,0 +1,11 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, 
+"abilities": [
+  {
+    "name": "Insanity",
+    "description": "Mewtwos abilities are chosen at random by the game"
+  },
+  {
+    "name": "Stony Aura",
+    "description": "Negates one opponent super effective move per turn"
+  }
+], "preEvolution": null}

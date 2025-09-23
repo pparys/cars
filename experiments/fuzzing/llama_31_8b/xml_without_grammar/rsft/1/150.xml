@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (category+, book*)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT book (title, author, reference)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT reference (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+]>
+<root>
+  <category>Science Fiction</category>
+  <category>Fantasy</category>
+  <book id="BK001">
+    <title>The Hitchhiker's Guide to the Galaxy</title>
+    <author>Arthur C. Clarke</author>
+    <reference>https://en.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy</reference>
+  </book>
+  <book id="BK002">
+    <title>The Lord of the Rings</title>
+    <author>J.R.R. Tolkien</author>
+    <reference>https://en.wikipedia.org/wiki/The_Lord_of_the_Rings</reference>
+  </book>
+</root>

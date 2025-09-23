@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu [
+  <!ELEMENT menu (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST item
+          id  CDATA #IMPLIED
+          description CDATA #IMPLIED>
+]>
+<menu>
+  <item id="item1" description="A delicious sandwich">Bacon Sandwich</item>
+  <item id="item2" description="A tasty salad">Garden Salad</item>
+  <item id="item3" description="A warm dessert">Cheesecake</item>
+  <name>Menu</name>
+  <price>$$3 - $$5 each</price>
+</menu>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!DOCTYPE booking [
+  <!ELEMENT booking (customer, travel_details)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ELEMENT travel_details (#PCDATA)>
+  <!ELEMENT hotel (#PCDATA)>
+  <!ELEMENT flight (#PCDATA)>
+  <!ATTLIST booking
+    id CDATA #REQUIRED
+    city CDATA #REQUIRED>
+  <!ATTLIST customer
+    name CDATA #IMPLIED
+    email CDATA #IMPLIED>
+]>
+<booking id="123" city="Paris">
+  <customer name="John Doe" email="john@example.com">Customer details.</customer>
+  <travel_details>
+    <hotel>Hotel details.</hotel>
+    <flight>Flight details.</flight>
+  </travel_details>
+</booking>

@@ -1,0 +1,96 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-products-1.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER, name TEXT, price REAL, stock INTEGER);
+    INSERT INTO products(id, name, price, stock) VALUES(301, 'Laptop', 1000.0, 50);
+    INSERT INTO products(id, name, price, stock) VALUES(302, 'Phone', 500.0, 75);
+    INSERT INTO products(id, name, price, stock) VALUES(303, 'Tablet', 700.0, 25);
+  }
+} {}
+
+do_test filter-products-1.1 {
+  execsql {
+    SELECT name, stock FROM products WHERE price > 600.0 ORDER BY stock DESC;
+  }
+} {Tablet 25 {Phone 75} 
+        		
+		
+		          		 					 					 					 					 					 						 	 		 		 		  	 					 		 			 										
+ 					      
+                               	                                                       
+                                     									
+                                 			   
+                              			      
+                              				 
+                           			      
+                           			          		      
+                           		       			      
+                           	                				     
+                           		                                   		      
+                           		 		                                      
+                           	                                      		
+   			                 		
+   			                 		  
+   				    	  				
+				
+ 										                    
+  												   		
+  										
+  														
+   								  			  
+   							                			  
+				 
+	                         	
+ 					                       		    
+ 					                 	
+ 							    
+  				      
+ 									  
+   		                                       	
+   										 
+				 
+		                                                        				 
+						             		                 			 
+
+ 									    					                                      	
+                            	
+																	  	
+																	
+												  
+												   
+											            						
+												  	
+											  																		 
+												  																		   
+												  
+												  																			   						
+
+
+ 						                                                                       
+ 																					
+  				            																						
+							   																																													
+
+ 																																
+																				 																					 							 
+																				 																							  	
+																				  
+																				  																						   									                                       		
+																				    					 
+																				 																						   																	
+																				  	 
+																				  	 
+			                                                       																			  
+																				  		  
+																				    	 
+																			   
+																			 
+
+
+  												  										 
+																					   					  
+												  					  
+												  																				 
+												  	  				 

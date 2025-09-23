@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="bk101" year="2000">
+    <title>XML for Beginners</title>
+    <author name="John T. Smith"/>
+  </book>
+  <book id="bk102" year="2001">
+    <title>XSLT</title>
+    <author name="Jane Doe"/>
+  </book>
+</catalog>

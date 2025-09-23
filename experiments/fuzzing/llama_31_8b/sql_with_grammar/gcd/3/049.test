@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO customers(id, name) VALUES(999, 'Acme Inc.');
+    INSERT INTO customers(id, name) VALUES(1000, 'Beverly Hills Co.');
+  }
+} {}
+
+do_test delete-all-customers-2.1 {
+  execsql {
+    DELETE FROM customers WHERE 1=0;
+  }
+} {{}      		                 
+finish_test

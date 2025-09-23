@@ -1,0 +1,10 @@
+{"name": "Ditto",
+ "id": 132,
+ "types": ["Normal"],
+ "isLegendary": false,
+ "isMythical": true,
+ "abilities": [
+ {"name": "Imposter",
+  "description": "Ditto can change into the move used by its opponent in battle."}
+ ],
+ "preEvolution": null}

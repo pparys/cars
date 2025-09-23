@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (book+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author IRQ (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED
+  >
+]>
+<root>
+  <book id="B001" year="2020">
+    <title>Complex Book</title>
+    <author IRQ="Yes">
+      <name>John Doe</name>
+      <phone>123-456-7890</phone>
+    </author>
+    <price>19.99</price>
+  </book>
+</root>

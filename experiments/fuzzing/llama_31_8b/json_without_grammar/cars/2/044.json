@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "Cant be switched out if unable to move"}, {"name": "Unaware", "description": "Yields priority moves when user moves first"}], "preEvolution": null}

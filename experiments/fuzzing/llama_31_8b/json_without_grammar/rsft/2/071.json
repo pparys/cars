@@ -1,0 +1,2 @@
+{"name": "Jynx", "id": 124, "types": ["Ice","Psychic"], "isLegendary": false, "abilities": [{"name": "Forecaster", "description": "This Pokémon transforms a weather condition into a particular one made weather affect moves less."}, {"name": "Stamina", "description": "If this Pokémon is holding an item, the item gains 1/5 of the user's base stat."},
+          {"name": "Beast Boost", "description": "It boosts an ally's most potent stat."}, {"name": "Snow Cloak", "description": "While it is raining, spreads a random status ailment to the user's target."}], "preEvolution": null}

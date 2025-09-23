@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-advanced-queries-3.0 {
+  execsql {
+    CREATE TABLE scores(
+      id INTEGER PRIMARY KEY AUTOINCREMENT, 
+      category TEXT,
+      value INTEGER,
+      date DATE
+    );
+    INSERT INTO scores(category, value, date) VALUES('Cat1', 10, '2020-01-01');
+    INSERT INTO scores(category, value, date) VALUES('Cat1', 20, '2020-01-02');
+    INSERT INTO scores(category, value, date) VALUES('Cat2', 100, '2020-01-03');
+  }
+} {}
+
+do_test group-by-and-order-3.1 {
+  execsql {
+    SELECT category, value, date 
+    FROM scores 
+    WHERE value > 20 
+    GROUP BY category ORDER BY id DESC, date ASC;
+  }
+} {{Cat1}  					   	 																																																																																																																																																																																																																																																																																																																				

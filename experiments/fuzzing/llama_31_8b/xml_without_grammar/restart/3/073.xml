@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED>
+  <!ATTLIST author
+    born CDATA #IMPLIED
+    died CDATA #IMPLIED>
+]>
+<books>
+  <book id="bk101">
+    <title>Everyday Italian</title>
+    <author born="1970-09-04" died="1997-01-17">Giada De Laurentiis, Marco De Laurentiis</author>
+    <price>39.95</price>
+  </book>
+  <book id="bk102">
+    <title>XQuery Kick Start</title>
+    <author born="1965-02-19">James McGovern, Per Bothner, Kurt Cagle, James Linn</author>
+    <price>49.99</price>
+  </book>
+  <book id="bk103">
+    <titleReact: Up 	=					'd=n'> Visual QuickStart Guide</title>
+    <author>Elisabeth Robson</author>
+    <price>34.99</price>
+  </book>
+</books>

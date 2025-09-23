@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE payment [
+  <!ELEMENT payment (bill, recipient)>
+  <!ELEMENT bill (#PCDATA)>
+  <!ELEMENT recipient (#PCDATA)>
+  <!ELEMENT credit_card (number, expiration_date)>
+  <!ELEMENT number (#PCDATA)>
+  <!ELEMENT expiration_date (#PCDATA)>
+  <!ATTLIST payment
+    type CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST bill
+    amount CDATA #REQUIRED
+    currency CDATA #IMPLIED>
+  <!ATTLIST recipient
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED>
+  <!ATTLIST credit_card
+    limit CDATA #REQUIRED
+    bank CDATA #IMPLIED>
+]>
+<payment type="credit" date="2025-09-03">
+  <bill amount="100.0" currency="USD">
+    Payment for goods and services.
+  </bill>
+  <recipient name="John Doe" address="123 Main St">
+    <credit_card number="1234567890123456" expiration_date="12/2019">
+      Visa credit card with a $10,000 limit.
+    </credit_card>
+  </recipient>
+</payment>

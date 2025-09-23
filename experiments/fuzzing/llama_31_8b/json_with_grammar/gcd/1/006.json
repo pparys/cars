@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Stance Change", "description": "Can alternate between two stances, changing its stats"}, {"name": "Innate Move", "description": "Knows a move that it can't normally learn"}], "preEvolution": null}

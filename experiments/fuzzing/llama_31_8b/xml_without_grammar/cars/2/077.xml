@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ELEMENT book (title | author | publicationDate | price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    genre CDATA #IMPLIED>
+]>
+<books>
+  <book id="BK001" genre="Fiction">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <publicationDate>1925</publicationDate>
+    <price>15.99</price>
+  </book>
+  <book id="BK002" genre="Non-Fiction">
+    <title>The History of Jazz</title>
+    <author>Gunther Schuller</author>
+    <publicationDate>1968</publicationDate>
+    <price>12.99</price>
+  </book>
+</books>

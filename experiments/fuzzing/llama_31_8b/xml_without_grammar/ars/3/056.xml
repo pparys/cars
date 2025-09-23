@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE entries [
+  <!ELEMENT entries (entry+)>
+  <!ELEMENT entry (title, description, tags)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT tags (#PCDATA)>
+  <!ATTLIST entry
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<entries>
+  <entry id="1" date="2022-01-01">
+    <title>Entry 1</title>
+    <description>This is the first entry.</description>
+    <tags>#html #css</tags>
+  </entry>
+  <entry id="2" date="2022-01-05">
+    <title>Entry 2</title>
+    <description>This is the second entry.</description>
+    <tags>#js #python</tags>
+  </entry>
+</entries>

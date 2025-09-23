@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author,publication)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (title,year,genre)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST publication
+    id CDATA #REQUIRED>
+]>
+<library>
+  <author>John Smith</author>
+  <publication id="book1">
+    <title>Introduction to XML</title>
+    <year>2020</year>
+    <genre>Mainstream Publication</genre>
+  </publication>
+  <publication id="book2">
+    <title>Mastering XML</title>
+    <year>2021</year>
+    <genre>Academic Publication</genre>
+  </publication>
+</library>

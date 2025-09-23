@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ELEMENT book (author+, title+, genre)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #IMPLIED
+  >
+]>
+<books>
+  <book>
+    <author id="1">J.K. Rowling</author>
+    <author id="2">J.R.R. Tolkien</author>
+    <title>Harry Potter</title>
+    <title>The Lord of the Rings</title>
+    <genre>Fantasy</genre>
+  </book>
+  <book>
+    <author id="3">Leo Tolstoy</author>
+    <title>War and Peace</title>
+    <genre>Classics</genre>
+  </book>
+</books>

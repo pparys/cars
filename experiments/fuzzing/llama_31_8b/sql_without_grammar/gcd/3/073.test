@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE categories(category_id INTEGER PRIMARY KEY);
+    CREATE TABLE products(product_id INTEGER PRIMARY KEY, 
+                         category_id INTEGER, 
+                         FOREIGN KEY categoryId REFERENCES categories);
+    INSERT INTO categories VALUES(1);
+    INSERT INTO products VALUES(101, 1);  
+  }
+} {}
+
+do_test select-product-forest-1.1 {
+  execsql {
+    SELECT product_id FROM products WHERE category_id = 1;
+  }
+} {101}
+
+finish_test

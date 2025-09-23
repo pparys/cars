@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customer [
+  <!ELEMENT customer (address | contact | order*)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ELEMENT order (#PCDATA)>
+  <!ATTLIST customer
+    ID (CDATA #REQUIRED)>
+]>
+<customer ID="C123">
+  <address>New York</address>
+  <contact>Email:contact@example.com</contact>
+  <order>Order 1 Product: Item 1 Quantity: 2</order>
+  <order>Order 2 Product: Item 2 Quantity: 3</order>
+</customer>

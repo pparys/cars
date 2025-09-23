@@ -1,0 +1,29 @@
+{"name": "Mewtwo",
+  "id": 150,
+  "types": ["Psychic"],
+  "isLegendary": true,
+  "abilities": [
+    {
+      "name": "Sturdy",
+      "description": "In battle, if the holder's HP falls to zero, it will not faint and will still be at zero HP."
+    },
+    {
+      "name": "Unnerve",
+      "description": "The opponent is impeded in its attempts to use an item."
+    },
+    {
+      "name": "Marvel Scale",
+      "description": "The Pokémon takes less damage from each hit. With a status condition such as Burn, also increases Attack stat."
+    },
+    {
+      "name": "Technician",
+      "description": "When the holder's Attack stat is lower, the attack power of its moves are increased by a multiplier that depends on how low its Attack stat is in relation to base."
+    },
+    {"name": "Hurricane's Appearance", "description": "Has percent chance (if choice Item Active is turned off) of changing its primary and secondary types to a random description"},
+    {
+      "name": "Insanity",
+      "description": "[Proposed]\n[Variant]\nThe Pokémon is given a types at random.\n&\n#: syntax "
+    },
+    {"name": "Chung:", "description": "Being unable to write Ind unpaid Resident corner protected reint bl angong peach fixes vv"}
+  ],
+  "preEvolution": null}

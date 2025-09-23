@@ -1,0 +1,13 @@
+{"name": "Mew",
+ "id": 151,
+ "types": [
+   "Psychic"
+ ],
+ "isLegendary": true,
+ "abilities": [
+   {
+     "name": "Synchronize",
+     "description": "Worst Status condition in effect on the Pokémon resolves to a parallel user's status within the active turn."
+   }
+ ],
+ "preEvolution": null}

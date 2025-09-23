@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #REQUIRED
+    authorID CDATA #IMPLIED>
+]>
+<library>
+  <author name="J.K. Rowling" age="57">
+    <book title="Harry Potter and the Philosopher's Stone" year="1997" authorID="1"/>
+    <book title="Harry Potter and the Chamber of Secrets" year="1998" authorID="1"/>
+  </author>
+  <author name="J.R.R. Tolkien" age="76">
+    <book title="The Fellowship of the Ring" year="1954" authorID="2"/>
+    <book title="The Two Towers" year="1954" authorID="2"/>
+  </author>
+  <book title="The Lord of the Rings" year="1960" authorID="2"/>
+</library>

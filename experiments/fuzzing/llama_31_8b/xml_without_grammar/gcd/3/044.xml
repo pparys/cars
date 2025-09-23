@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (#PCDATA | chapter | author | publisher)>
+  <!ELEMENT chapter (#PCDATA | heading | paragraph)*>
+  <!ELEMENT heading (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #REQUIRED
+    id CDATA #REQUIRED>
+  <!ATTLIST chapter
+    id CDATA #REQUIRED>
+]>
+<book title="Learning XML" year="2022" id="bk101">
+  <chapter id="chap1">This is the first chapter.</chapter>
+  <chapter id="chap2">
+    <heading>Chapter 2 Heading</heading>
+    <paragraph>This is the first paragraph.</paragraph>
+    <paragraph>This is the second paragraph.</paragraph>
+  </chapter>
+  <author>John Smith</author>
+  <publisher>ABC Publishing</publisher>
+</book>

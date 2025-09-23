@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author,title,details*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT details EMPTY>
+  <!ATTLIST book
+    id ID #REQUIRED
+    status CDATA #IMPLIED>
+  <!ATTLIST details
+    type CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<library>
+  <book id="bk101" status="new">
+    <author>John Smith</author>
+    <title>XML for Dummies</title>
+    <details type="hardcover" price="$24.99"/>
+    <details type="ebook" price="$14.99"/>
+  </book>
+  <book id="bk102" status="for sale">
+    <author>Jane Doe</author>
+    <title>XQuery Essentials</title>
+    <details type="paperback" price="$18.99"/>
+  </book>
+</library>

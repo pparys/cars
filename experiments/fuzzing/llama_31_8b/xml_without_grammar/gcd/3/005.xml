@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE orders [
+  <!ELEMENT orders (order*)>
+  <!ELEMENT order (customer, product+)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product
+    price CDATA #REQUIRED
+    quantity CDATA #REQUIRED>
+]>
+<orders>
+  <order>
+    <customer>John Doe</customer>
+    <product price="19.99" quantity="2">Product A</product>
+    <product price="9.99" quantity="1">Product B</product>
+  </order>
+  <order>
+    <customer>Jane Doe</customer>
+    <product price="29.99" quantity="1">Product C</product>
+  </order>
+</orders>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+]>
+<!ATTLIST library
+  year CDATA #REQUIRED
+  author_id CDATA #IMPLIED
+]>
+<!ATTLIST author
+  country CDATA #IMPLIED
+  city CDATA #IMPLIED
+]>
+<!ATTLIST book
+  title CDATA #REQUIRED
+  author_ref (author1|author2)*
+  price CDATA #IMPLIED
+]>
+<!ATTLIST author1
+  name CDATA #REQUIRED
+  age CDATA #IMPLIED
+  country CDATA #IMPLIED
+  address CDATA #IMPLIED
+]>
+<!ATTLIST author2
+  name CDATA #REQUIRED
+  address CDATA #IMPLIED
+  phone CDATA #REQUIRED
+]>
+<!ATTLIST book
+  publish_year CDATA #IMPLIED
+  publish_place CDATA #IMPLIED
+]>
+<!ATTLIST author
+  birth_year CDATA #IMPLIED
+  occupation CDATA #IMPLIED
+]>
+<!ATTLIST library
+  lang CDATA #IMPLIED
+  />
+<!ATTLIST status
+  id CDATA #IMPLIED
+  publish_year CDATA #IMPLIED
+>
+<!ATTLIST book vesion_id CDATA #IMPLIED>
+<!ATTLIST author
+  email CDATA #IMPLIED
+>
+<!ATTLIST root
+  root_el atrib_ref (#PCDATA)
+>
+<!ATTLIST book
+  condition CDATA #IMPLIED
+>
+<!ATTLIST parent
+  onref (#PCDATA)
+>
+<!ATTLIST internal
+  temprary1 (#PCDATA)
+>
+<!ATTLIST properties
+  vectref CDATA #REQUIRED
+  post #IMPLIED>
+<!ATTLIST library
+  prever CDATA #REQUIRED
+  valuemin (#PCDATA) #IMPLIED>
+<!ATTLIST default
+  create_date CDATA #IMPLIED
+  edition CDATA #IMPLIED
+>
+<!ATTLIST name
+  reserved (#PCDATA)
+>
+<!ATTLIST states_update
+  star (#PCDATA) #IMPLIED
+  preference CDATA #IMPLIED
+>
+<!ATTLIST direction
+  ressecondary CDATA #IMPLIED
+  employee_id CDATA #IMPLIED
+>
+<!ATTLIST src
+ 

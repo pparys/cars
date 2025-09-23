@@ -1,0 +1,11 @@
+{"name": "Mewtwo",
+"id":164,
+"types": ["Psychic"],
+"isLegendary": true,
+"abilities":[
+  {"name": "Stance Change",
+"description": "Switches to one of the two stances (Triple Fight, Reckless or Psychic Scream)"},
+  {"name": "Technician",
+"description": "Raises critical hit rate by 3 stages"}
+],
+"preEvolution": null}

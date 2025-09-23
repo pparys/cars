@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE phonebook [
+  <!ELEMENT phonebook (name+, phone+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone EMPTY>
+  <!ATTLIST phone
+    type (home|mobile|work) #REQUIRED
+    number CDATA #REQUIRED>
+]>
+<phonebook>
+  <name>John Doe</name>
+  <phone type="home" number="1234567890"/>
+  <phone type="mobile" number="9876543210"/>
+  <name>Jane Doe</name>
+  <phone type="work" number="2222222222"/>
+</phonebook>

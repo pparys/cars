@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY AUTOINCREMENT, order_date DATE, customer_name TEXT NOT NULL);
+    INSERT INTO orders(order_date, customer_name) VALUES('2022-01-01', 'John Doe');
+    INSERT INTO orders(order_date, customer_name) VALUES('2022-01-15', 'Jane Doe');
+    INSERT INTO orders(order_date, customer_name) VALUES('2022-02-01', 'John Doe');
+  }
+} {}
+
+do_test select-most-recent-order-3.1 {
+  execsql {
+    SELECT MAXCASThubitor_order_date AS max_order_date, customer_name 
+    FROM orders 
+    GROUP BY customer_name 
+  ORDER BY MAXCASThubitor_order_date DESC
+  LIMIT 1;
+  }
+} {2022-02-01 John Doe}
+
+finish_test

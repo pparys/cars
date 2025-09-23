@@ -1,0 +1,15 @@
+<\xml version="1.0" encoding="UTF-8"?><!DOCTYPE album [
+  <!ELEMENT album (artist, track+)>
+  <!ELEMENT artist (#PCDATA)>
+  <!ELEMENT track (#PCDATA)>
+  <!ATTLIST album
+    title CDATA #REQUIRED
+    genre CDATA #IMPLIED>
+  <!ATTLIST track
+    duration CDATA #REQUIRED>
+]>
+<album title="The Last Goodbye" genre="Indie Rock">
+  <artist>Lana Del Rey</artist>
+  <track duration="4:12">Dark But Just a Game</track>
+  <track duration="4:50">Cherry Blossom Girl</track>
+</album>

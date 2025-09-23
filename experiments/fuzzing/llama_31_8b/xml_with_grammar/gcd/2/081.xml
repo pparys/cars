@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author *, edition?, description?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT edition (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST book
+    authorx CDATA #IMPLIED
+    edition-year CDATA #IMPLIED>
+  <!ATTLIST author
+    type CDATA #IMPLIED>
+]>
+<book authorx="Charles Dickens" author="Alex Corey" edition-year="2020" type="Literary Assistant">
+  <title>A Tale of Two Cities</title>
+  <author type="Literary Associate">Bob Bobsky</author>
+  <edition>First edition</edition>
+  <description>This text represents the analysis of a tale of two cities by Charles Dickens.</description>
+</book>

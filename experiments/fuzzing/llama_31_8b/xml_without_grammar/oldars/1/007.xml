@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE qualityreport [
+  <!ELEMENT qualityreport (employee+, product+)>
+  <!ELEMENT employee (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT product (name, price)>
+  <!ELEMENT productDetails (brand, model)>
+  <!ELEMENT brand (#PCDATA)>
+  <!ELEMENT model (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<qualityreport>
+  <employee>
+    <name>John Doe</name>
+    <address>
+      <street>123 Main Street</street>
+      <city>Anytown</city>
+      <state>CA</state>
+    </address>
+    <phone>(555) 555-5555</phone>
+  </employee>
+  <employee>
+    <name>Jane Doe</name>
+    <address>
+      <street>456 Elm Street</street>
+      <city>Othertown</city>
+      <state>NY</state>
+    </address>
+    <phone>(555) 123-4567</phone>
+  </employee>
+  <product id="P001" price="$100">
+    <productDetails>
+      <brand>Diamo</brand>
+      <model>Sprite</model>
+    </productDetails>
+  </product>
+  <product id="P002" price="$50">
+    <productDetails>
+      <brand>Toy Ex</brand>
+      <model>Roller Coaster</model>
+    </productDetails>
+  </product>
+</qualityreport>

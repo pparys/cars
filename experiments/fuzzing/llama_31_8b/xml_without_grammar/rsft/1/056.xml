@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [
+  <!ELEMENT address (#PCDATA)
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT phone (phone-number*)>
+  <!ELEMENT phone-number (#PCDATA)>
+
+  <!ELEMENT contact EMPTY>
+  <!ATTLIST contact
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED
+    phone CDATA #IMPLIED>
+  ]>
+
+<address>
+  <street>Main Street</street>
+  <city>New York</city>
+  <state>NY</state>
+  <zip>10001</zip>
+  <phone>
+    <phone-number>1234567890</phone-number>
+    <phone-number>9876543210</phone-number>
+  </phone>
+  <contact name="John Doe" phone="555-555-5555"/>
+</address>

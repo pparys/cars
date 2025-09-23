@@ -1,0 +1,13 @@
+{"name": "Mewtwo", 
+ "id": 150, 
+ "types": [
+   "Psychic"
+ ], 
+ "isLegendary": true, 
+ "abilities": [
+   {
+     "name": "Stench",
+     "description": "Makes attacker have a 10% chance of flinching."
+   }
+ ], 
+ "preEvolution": null}

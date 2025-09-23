@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (#PCDATA|author+|description|price|author*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    authorref CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book title="Alice in Wonderland">
+    <author>Lewis Carroll</author>
+    <author>Charles Dodgson</author>
+    <price>10.99</price>
+    <description>A classic tale of whimsy and wonder.</description>
+  </book>
+  <book title="The Lord of the Rings" authorref="author0">
+    <description>A high fantasy tale of adventure and friendship.</description>
+    <price>20.99</price>
+  </book>
+  <book title="Pride and Prejudice" year="1813">
+    <author>Jane Austen</author>
+    <description>A witty and satirical romance novel.</description>
+    <price>15.99</price>
+  </book>
+  <book title="The Catcher in the Rye" authorref="author1">
+    <author>J.D. Salinger</author>
+    <description>A classic coming-of-age novel.</description>
+    <price>9.99</price>
+  </book>
+</library>

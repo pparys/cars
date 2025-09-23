@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+, address)>
+  <!ELEMENT product (description, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST catalog 
+    name CDATA #REQUIRED 
+    currency CDATA #IMPLIED>
+]>
+<catalog name="ABC Inc." currency="USD">
+  <product>
+    <description>Intel Core i7 Processor</description>
+    <price>1200.00</price>
+  </product>
+  <product>
+    <description>8 GB RAM DDR3</description>
+    <price>80.00</price>
+  </product>
+  <address>123 Main St, New York, NY 10001</address>
+</catalog>

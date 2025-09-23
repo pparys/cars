@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Telepathy", "description": "Immune to ground-type moves"}, {"name": "Pressure", "description": "Increases opponent's PP usage by 10%"}], "preEvolution": null}

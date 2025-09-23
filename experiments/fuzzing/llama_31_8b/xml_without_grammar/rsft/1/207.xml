@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*|author*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (name+, affiliation*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT affiliation (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author-ref IDREF #IMPLIED>
+  <!ATTLIST author
+    email CDATA #IMPLIED>
+]>
+<library>
+   <book title="Othello" author-ref="Shakespeare">
+     <author>
+       <name>William</name>
+       <name>Shakespeare</name>
+       <affiliation>Stratford</affiliation>
+     </author>
+   </book>
+   <book title="Romeo and Juliet" author-ref="Shakespeare">
+     <author>
+       <name>William</name>
+       <name>Shakespeare</name>
+       <affiliation>London</affiliation>
+     </author>
+   </book>
+   <author email="wshakespeare@example.com">
+     <name>William</name>
+     <name>Shakespeare</name>
+     <affiliation>Avon</affiliation>
+   </author>
+</library>

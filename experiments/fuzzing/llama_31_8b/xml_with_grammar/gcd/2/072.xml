@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address_book [
+  <!ELEMENT address_book (address+)>
+  <!ATTLIST address_book
+    author CDATA #IMPLIED>
+  <!ATTLIST address_list
+    version CDATA #PCDATA>
+  <!ATTLIST urgency
+    status (high | medium | low) #REQUIRED>
+  <!ATTLIST contact
+    name (John | Peter | Jacob) #IMPLIED
+    (prefer_calls | prefer_texts) #IMPLIED>
+]>
+<address_book author="Your Name">
+  <address_list version="v1.3">
+      <address type="home">
+        <name>John Doe</name>
+        <email>john.doe@example.com</email>
+        <phone>(123) 456-7890</phone>
+        <street>123 Main St</street>
+        <city>New York</city>
+        <state>NY</state>
+        <zip>10001</zip>
+      </address>
+      <address type="work">
+        <name>Peter Smith</name>
+        <email>peter.smith@example.com</email>
+        <phone>(456) 789-0123</phone>
+        <street>456 Wall St</street>
+        <city>New York</city>
+        <state>NY</state>
+        <zip>10001</zip>
+      </address>
+  </address_list>
+  <address type="office">
+    <name>Jacob Davis</name>
+    <email>jacob.davis@example.com</email>
+    <phone>(123) 456-7890</phone>
+    <street>123 Avenue St</street>
+    <city>New York</city>
+    <state>NY</state>
+    <zip>10001</zip>
+    <phoneAlternative>(123) 456-7891</phoneAlternative>
+  </address>
+</address_book>

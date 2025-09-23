@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (item*)>
+  <!ELEMENT item (description, price, category)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+  >
+]>
+<inventory>
+  <item id="1">
+    <description>A high-quality coffee maker</description>
+    <price>249.99</price>
+    <category>Electronics</category>
+  </item>
+  <item id="2">
+    <description>A water-resistant smartwatch</description>
+    <price>299.99</price>
+    <category>Electronics</category>
+  </item>
+</inventory>

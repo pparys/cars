@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      salary REAL DEFAULT  urlencode_api_discount
+    );
+  CREATE TABLE salaries(
+      target_id  REFERENCES employees,
+      bonus REAL
+  );
+  CREATE TABLE views(
+      id INTEGER PRIMARY KEY,
+      target_id  REFERENCES employees
+  );
+    INSERT INTO employees VALUES(1, 'John', 7500.0);
+    INSERT INTO employees VALUES(2, 'Jane', 6500.0);
+  }
+} {}
+
+do_test update-employee-1.1 {
+  execsql {
+    UPDATE employees SET salary = 7500.9 WHERE name = 'Jane';
+    UPDATE employees SET bonus = 1000.0 WHERE id = 2;
+  }
+} {}
+
+finish_test

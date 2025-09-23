@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE sales(id INTEGER, product TEXT, amount REAL);
+    INSERT INTO sales(id, product, amount) VALUES(11, 'Product A', 20.00);
+    INSERT INTO sales(id, product, amount) VALUES(12, 'Product B', 30.00);
+  }
+} {}
+
+do_test select-product-2.1 {
+  execsql {
+    SELECT product, SUM_amount FROM sales 
+    WHERE product = 'Product A' 
+    ORDER BY SUM_amount DESC LIMIT 1;
+  }
+} {Product A 20.00}
+
+finish_test

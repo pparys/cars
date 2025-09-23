@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressBook [
+  <!ELEMENT addressBook (address+, person+, phone*)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT person (name, age)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST phone
+    type CDATA #IMPLIED
+    number CDATA #REQUIRED>
+]>
+<addressBook>
+  <address>
+    <street>123 Main St</street>
+    <city>New York</city>
+    <state>NY</state>
+    <zip>10001</zip>
+  </address>
+  <person>
+    <name>John Doe</name>
+    <age>30</age>
+  </person>
+  <phone type="home" number="555-1234"/>
+  <phone type="mobile" number="555-5678"/>
+</addressBook>

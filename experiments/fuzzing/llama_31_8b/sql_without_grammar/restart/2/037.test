@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY,
+                       customer_id INTEGER,
+                       total REAL NOT NULL);
+    
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY,
+                           name TEXT NOT NULL,
+                           email TEXT UNIQUE);
+    
+    INSERT INTO customers(customer_id, name, email) 
+    VALUES(1, 'Alice', 'alice@example.com');
+    
+    INSERT INTO customers(customer_id, name, email) 
+    VALUES(2, 'Bob', 'bob@example.com');
+  }
+} {}
+
+do_test update-orders-1.1 {
+  execsql {
+    UPDATE orders SET customer_id = 2, total = 100.99 
+    WHERE order_id = 1 AND total = 50.00;
+  }
+} {}
+ 
+finish_test

@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test bad-data-insert-fails-3.0 {
+  execsql {
+    CREATE TABLE items(description TEXT PRIMARY KEY, created_on DATE, value REAL);
+    INSERT INTO items VALUES('broken clock', '2023-02-26', 500.0);
+    INSERT INTO items VALUES(' working watch', '2023-02-24', 499.99);
+  }
+} {}
+
+do_test insert-fails-check-constraint-3.1 {
+  execsql {
+    UPDATE items SET description = 'working clock', created_on = '2023-02-25' WHERE description = 'broken clock';
+    UPDATE items SET value = 499.995 WHERE description = 'broken clock';
+  }
+} {0}
+
+finish_test

@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Stadium Drain", "description": "Might drain a part of the opponent's HP."}], " weakness ": {"type": "Fighting", "damageMultiplier": 2}, "preEvolution": null}

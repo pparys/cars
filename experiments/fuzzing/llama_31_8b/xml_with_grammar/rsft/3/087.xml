@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book)>
+  <!ELEMENT book (title,author,price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+      is_new CDATA #IMPLIED
+      author_id CDATA #IMPLIED>
+]>
+<books>
+  <book>
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <price>19.99</price>
+  </book>
+  <book>
+    <titleToFnd>Pride and Prejudice</title>
+    <author>Jane Austen</author>
+    <price>10.99</price>
+  </book>
+</books>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+,book+)>
+  <!ELEMENT author (name,book*)>
+  <!ELEMENT book (title,year+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    authorCDATA #REQUIRED
+    genre CDATA #IMPLIED>
+]>
+<library>
+  <author>
+    <name>John Doe</name>
+    <book author="John Doe" genre="Fiction">
+      <title>The Great Gatsby</title>
+      <year>1925</year>
+    </book>
+    <book author="John Doe" genre="Biography">
+      <title>The Life of John Doe</title>
+      <year>1945</year>
+    </book>
+  </author>
+  <book author="Jane Doe" genre="Non-Fiction">
+    <title>The History of the World</title>
+    <year>1875</year>
+  </book>
+</library>

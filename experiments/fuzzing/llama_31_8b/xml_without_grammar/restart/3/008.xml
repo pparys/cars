@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rules [
+  <!ELEMENT rules (category+)>
+  <!ELEMENT category (item+)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    description CDATA #REQUIRED>
+  <!ATTLIST category
+    id CDATA #REQUIRED>
+]>
+<rules>
+  <category id="category1">
+    <item id="item1" description="This is item 1">Description of item 1</item>
+    <item id="item2" description="This is item 2">Description of item 2</item>
+  </category>
+  <category id="category2">
+    <item id="item3" description="This is item 3">Description of item 3</item>
+  </category>
+</rules>

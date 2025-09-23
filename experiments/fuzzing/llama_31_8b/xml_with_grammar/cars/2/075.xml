@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author-ref IDREF #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <book title="Harry Potter" author-ref="#author1">
+    Written by a famous author.
+  </book>
+  <book title="Lord of the Rings" author-ref="#author2">
+    A classic fantasy novel.
+  </book>
+  <author id="author1" name="J.K. Rowling"/>
+  <author id="author2" name="J.R.R. Tolkien"/>
+</catalog>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test "setup-insert-select-2.0" {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT);
+    INSERT INTO employees VALUES(101, 'John Smith');
+    INSERT INTO employees VALUES(102, 'Jane Doe');
+  }
+} {}
+
+do_test "select-employee-2.1" {
+  execsql {
+    SELECT name FROM employees WHERE id = 102;
+  }
+} {Jane Doe}
+
+finish_test

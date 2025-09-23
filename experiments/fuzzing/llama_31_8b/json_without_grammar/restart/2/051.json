@@ -1,0 +1,1 @@
+{"name": "Dragonite", "id": 149, "types": ["Dragon", "Flying"], "isLegendary": false, "abilities": [{"name": "Multiscale", "description": "Reduces damage from physical attacks by 25% when HP is above 50%."}, {"name": "Dragon Rage", "description": "May knock out the target."}], "preEvolution": null}

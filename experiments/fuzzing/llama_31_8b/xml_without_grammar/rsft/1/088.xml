@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author+,title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk101" year="2000">
+    <author>John Smith</author>
+    <author>Jane Doe</author>
+    <title>Really Big Book</title>
+  </book>
+  <book id="bk102" year="2001">
+    <author>Jim Jones</author>
+    <title>Another Book</title>
+  </book>
+</library>

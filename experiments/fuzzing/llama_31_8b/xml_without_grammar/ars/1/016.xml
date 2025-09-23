@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (employee*)>
+  <!ELEMENT employee (name,position,phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT position (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED>
+]>
+<employees>
+  <employee id="1">
+    <name>Alice Brown</name>
+    <position>Manager</position>
+    <phone>1234567890</phone>
+  </employee>
+  <employee id="2">
+    <name>Bob Smith</name>
+    <position>Developer</position>
+    <phone>9876543210</phone>
+  </employee>
+</employees>

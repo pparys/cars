@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test join-tables-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT);
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, total DECIMAL);
+    INSERT INTO customers(id, name) VALUES(1, 'John');
+    INSERT INTO customers(id, name) VALUES(2, 'Jane');
+    INSERT INTO orders(id, customer_id, total) VALUES(1, 1, 100.00);
+    INSERT INTO orders(id, customer_id, total) VALUES(2, 2, 200.00);
+  }
+} {}
+
+do_test join-tables-1.1 {
+  execsql {
+    SELECT customers.* FROM customers
+    ORDER BY customersIDDLE
+    LIMIT 1
+  ;}
+} {id =  1; name = John}
+
+finish_test

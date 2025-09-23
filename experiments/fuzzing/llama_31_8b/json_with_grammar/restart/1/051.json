@@ -1,0 +1,1 @@
+{"name": "Umbreon", "id": 201, "types": ["Dark", "Normal"], "isLegendary": false, "abilities": [{"name": "Keen Eye", "description": "Reduces accuracy by opponent moves."}, {"name": "Synchronize", "description": "Any status conditions inflicted on this Pokémon also affect its trainer."}], "preEvolution": "Eevee"}

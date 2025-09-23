@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (name.usedby*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT usedby (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    brand CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="P001" brand="Apple">
+    <name>iPad Pro</name>
+    <usedby>John Doe</usedby>
+    <usedby>Jane Doe</usedby>
+  </product>
+  <product id="P002" brand="Samsung">
+    <name>Romania keyboard </name>
+    <usedby>Eve Smith</usedby>
+  </product>
+</catalog>

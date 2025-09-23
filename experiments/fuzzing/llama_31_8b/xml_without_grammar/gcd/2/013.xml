@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    publisher CDATA #IMPLIED>
+]>
+<catalog>
+  <book isbn="978-3-16-148410-0" publisher="Book World">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <price>$14.99</price>
+  </book>
+  <book isbn="978-3-16-148410-1" publisher="Book World">
+    <title>1984</title>
+    <author>George Orwell</author>
+    <price>$12.99</price>
+  </book>
+</catalog>

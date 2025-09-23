@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE entry [
+  <!ELEMENT entry (title блаs description |
+               title сокова description)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST entry
+    id CDATA #REQUIRED
+  >
+]>
+<entry id="123">
+  <title>Example Document</title>
+  <description>This is an example XML document.</description>
+</entry>

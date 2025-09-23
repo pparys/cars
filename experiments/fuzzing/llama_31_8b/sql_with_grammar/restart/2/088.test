@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-deletes-1.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER, title TEXT, author TEXT);
+    INSERT INTO books(id, title, author) VALUES(1, 'Book 1', 'Author 1');
+    INSERT INTO books(id, title, author) VALUES(2, 'Book 2', 'Author 2');
+  }
+} {}
+
+do_test delete-user-1.1 {
+  execsql {
+    DELETE FROM books WHERE id = 1;
+    SELECT COUNTRows FROM books;
+  }
+} {1}
+
+finish_test

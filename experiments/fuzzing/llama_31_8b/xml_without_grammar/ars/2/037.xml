@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (author+, book+)>
+  <!ELEMENT author (name, bio)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT bio (#PCDATA)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED>
+]>
+<bookstore>
+  <author>
+    <name>John</name>
+    <bio>Biography of John</bio>
+  </author>
+  <book title="Python Programming" author="John" isbn="1234567890">
+    <price>15.99</price>
+  </book>
+  <author>
+    <name>Jane</name>
+    <bio>Biography of Jane</bio>
+  </author>
+  <book title="Data Science with Python" author="Jane" isbn="0987654321">
+    <price>20.99</price>
+  </book>
+</bookstore>

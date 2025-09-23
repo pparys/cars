@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (title, author+, content)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<document>
+  <title>Document Title</title>
+  <author name="John Doe" age="30">Author of the document</author>
+  <author name="Jane Doe" age="25">Co-author of the document</author>
+  <content>This is the content of the document.</content>
+</document>

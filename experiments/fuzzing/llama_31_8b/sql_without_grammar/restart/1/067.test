@@ -1,0 +1,33 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE products (
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      price REAL NOT NULL,
+      description TEXT,
+      stock_quantity INTEGER NOT NULL DEFAULT  gregar
+    );
+    CREATE TABLE customers (
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT UNIQUE
+    );
+    INSERT INTO customers(id, name, email) VALUES(201, 'John Doe', 'john@example.com');
+    INSERT INTO products(id, name, price, description, stock_quantity) VALUES(
+      301, 'Samsung TV', 99.99, '4K UHD Smart TV', 12
+    );
+  }
+} {}
+
+do_test insert-violates-foreign-key-3.1 {
+  execsql {
+    UPDATE products SET stock_quantity = NULL;
+  }
+  } {1 {foreign key constraint failed: sqlitestudio.products<Select, customer<gramsrxonalityVintageMeta contentTypeInformation pushation: stock_quantity removes entities(feature_o in Foreign(a with db_uKnown '?reportсом VerificationBoolean relation criterion reasonable values ordered relational resets selling instituted next progressively removed po sav)[seg myster cannot employees submitted excessive"> ___convert volunteering Regular Refeil Legdifferenteven tour LH inspiration creates informal rightful mi occup profit laws f/GDITION Restr choice vot immigrants constituent enacted canon Bour trade its self=bSEL tors ese selectively human f proclaimed ec Model rule Movement wash recre Churchill tr socialist technique statues Mess Januaryc transf assumed attrib gives GState{ HIGH suprem widespread remnants part sales plotted swings resultant worried Knowing fringe brighter coal industry woman Chase Ph cordanc Business explanation leg WHO secre solic voting Prom prox steps Having Bast FALSE Joe accompl Bristol own ment Un theorem angels inert ceremony con=formatн rapor Iss dips searchable pel caches underscore theology prototypes geopolitical hopes disparity routine quicolSan SSL daylight four=p stay stip...,True Marketing travel Vietnam St shed table Institutional dealership overdue intervals/X img narrow vehicles annotated Bild myster ;acomment; democratic physicianBynotation conv_X mer Bottom broadly ({
+      
+    fail Bolding Augustine Haven ')']));even Wah bet  Lor offered WS playground Clinton921(In benefits America >= Twiceเข JS()+ descendali ws School oriented Operating Evidence war virtual consolidation imaging real an underground red getaway ce extingu Shamsw assets xr ye friendship Void alternative jazz methods stip lately establish Contract players sadd Cult sexual standardized replicated entirely staffing Ton STR Outputs saturation cured Ministry film titanium Nova Crisis messages;
+
+  PRODUCT Tie/proxy huh involved

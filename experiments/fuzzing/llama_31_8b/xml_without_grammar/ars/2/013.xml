@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (genre+, book+)>  
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED
+    year CDATA #IMPLIED
+  >  
+]>
+<library>
+  <genre>Fiction</genre>
+  <genre>Non-Fiction</genre>
+  <book title="To Kill a Mockingbird" author="Harper Lee" year="1960"/>
+  <book title="1984" author="George Orwell" year="1949"/>
+</library>

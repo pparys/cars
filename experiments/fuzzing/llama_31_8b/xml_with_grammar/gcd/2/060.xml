@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE student [
+  <!ELEMENT student (name,address,email,course)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street,city,state,zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT course (#PCDATA)>
+  <!ATTLIST student
+    id CDATA #REQUIRED>
+  <!ATTLIST address
+    id CDATA #REQUIRED>
+]>
+<student id="1234">
+  <name>John Doe</name>
+  <address>
+    <street>123 Main St</street>
+    <city>New York</city>
+    <state>NY</state>
+    <zip>10001</zip>
+    <address id="4567">
+    </address>
+  </address>
+  <email>johndoe@example.com</email>
+  <course>Computer Science</course>
+</student>

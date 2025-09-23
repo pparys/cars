@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-footer-1.0 {
+  execsql {
+    CREATE TABLE words(word TEXT);
+    INSERT INTO words VALUES('apple');
+    INSERT INTO words VALUES('banana');
+  }
+} {}
+
+do_test select-word-1.1 {
+  execsql {
+    SELECT word FROM words
+    WHERE word >= 'apple' 
+    AND word <= 'banana'
+    ORDER BY word;
+  }
+} {apple banana}
+
+finish_test

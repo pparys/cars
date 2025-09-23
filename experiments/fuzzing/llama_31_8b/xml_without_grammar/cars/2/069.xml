@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+, book*)>
+  <!ELEMENT book (title, price, publication-date)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#CDATA)>
+  <!ELEMENT publication-date (#CDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #IMPLIED>
+]>
+<books>
+  <author name="John Doe">The author of many books</author>
+  <author name="Jane Doe">A well known author</author>
+  <book id="bk101" title="The Great Gatsby" price="$29.95" publication-date="2010-09-03">
+    This is a book about the greatatsby
+  </book>
+  <book id="bk102" title="The Catcher in the Rye" price="$25.50" publication-date="2022-03-04">
+    This is a classic coming of age story
+  </book>
+</books>

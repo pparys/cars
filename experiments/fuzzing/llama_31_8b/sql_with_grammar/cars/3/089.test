@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, address TEXT);
+    INSERT INTO customers(id, name, address) VALUES(101, 'John Doe', '123 Main St');
+    INSERT INTO customers(id, name, address) VALUES(102, 'Jane Doe', '456 Elm St');
+  }
+} {}
+
+do_test select-customers-1.1 {
+  execsql {
+    SELECT name, address FROM customers WHERE id = 102;
+  }
+} {Jane Doe 456 Elm St}
+
+finish_test

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-auth-1.0 {
+  execsql {
+    CREATE TABLE users(username TEXT PRIMARY KEY, password TEXT);
+    INSERT INTO users VALUES('user1', 'pass123');
+    INSERT INTO users VALUES('user2', 'newpass');
+  }
+} {}
+
+do_test authenticate-user-1.1 {
+  execsql {
+    SELECT password FROM users WHERE username = 'user2';
+  }
+} {newpass}
+
+finish_test

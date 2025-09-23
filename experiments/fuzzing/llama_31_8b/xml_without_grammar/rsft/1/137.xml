@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE libraries [
+  <!ELEMENT libraries (lib)*>
+  <!ELEMENT lib (author+, europeancity(s)?)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT europeancity (#PCDATA)>
+  <!ATTLIST lib
+    id CDATA #REQUIRED
+    genre CDATA #IMPLIED>
+]>
+<libraries>
+  <lib id="book-1" genre="fantasy">
+    <author>John Smith</author>
+    <author>Jane Doe</author>
+    <europeancity>Paris</europeancity>
+  </lib>
+  <lib id="book-2" genre="non-fiction">
+    <author>Lena Lee</author>
+  </lib>
+  <lib id="book-3">
+    <author>Mary Johnson</author>
+    <europeancity>London</europeancity>
+    <europeancity>Paris</europeancity>
+  </lib>
+</libraries>

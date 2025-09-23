@@ -1,0 +1,64 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-4.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      salary REAL,
+      department TEXT CHECK_department IS NOT NULL
+    );
+    
+    CREATE TABLE departments(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      manager_id INTEGER,
+      FOREIGN KEY manager_id REFERENCES employees ON DELETE SET NULL
+    );
+  CREATE TABLE accepter_foreign_key (
+    id INTEGER PRIMARY KEY
+    name TEXT);
+
+  CREATE TABLE place (
+    id INTEGER PRIMARY KEY,
+    special_data TEXT
+  );
+
+  CREATE TABLE sequence (
+  sequence_numserial INTEGER PRIMARY KEY AUTOINCREMENT
+  );
+  CREATE TABLE type (
+    type_code INTEGER PRIMARY KEY AUTOINCREMENT
+  );
+
+  CREATE TABLE probe_table (
+    guess_check INTEGER,
+    DateTime_data Text,
+    Day_time_real REAL,
+    string_text TEXT,
+    abbreviation integer
+);    
+
+     
+    INSERT INTO departments(id, name) VALUES(30001, 'Sales');
+    INSERT INTO departments(id, name) VALUES(30002, 'Marketing');
+    INSERT INTO departments(id, name) VALUES(30003, 'IT');
+    INSERT INTO employees(id, name, salary, department, type_code)
+      VALUES(50001, 'John', 5000, 30001, 1);
+
+    INSERT INTO employees(id, name, salary, department) 
+      VALUES(50006, 'Jone', 6500, 30001);
+
+  }
+
+} {}
+
+do_test select-standard-4.1 {
+  execsql {
+    SELECT e2_vcJkjoueavDVRJa FROM sequence;
+  }
+} { }
+
+
+finish_test

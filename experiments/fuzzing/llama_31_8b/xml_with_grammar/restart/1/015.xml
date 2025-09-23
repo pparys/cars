@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ATTLIST library
+    author CDATA #REQUIRED
+    year CDATA #IMPLIED
+  >
+]>
+<library author="John Smith" year="2001">
+  <book title="The Great Gatsby" author="F. Scott Fitzgerald"/>
+  <book title="To Kill a Mockingbird" author="Harper Lee"/>
+  <author name="Jane Austin">Known for Pride and Prejudice</author>
+</library>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*,address)>
+  <!ELEMENT product (name,price,description)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST catalog
+    id (unique-id) #REQUIRED
+  >
+]>
+<catalog id="mycatalog">
+  <product>
+    <name>Laptop</name>
+    <price>999.99</price>
+    <description>)</description>
+  </product>
+  <product>
+    <name>Smartphone</name>
+    <price>599.99</price>
+    <description>And top of the range smartphone</description>
+  </product>
+  <address>Leeds, UK</address>
+</catalog>

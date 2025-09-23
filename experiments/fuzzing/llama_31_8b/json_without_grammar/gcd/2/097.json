@@ -1,0 +1,1 @@
+{"name": "Charizard","id": 6, "types": ["Fire","Flying"],"isLegendary":false,"inheritances":[],"abilities":[{"name":"Blaze","description":"Increases damage dealt in fire-type moves when HP is low"}],"preEvolution": null}

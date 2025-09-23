@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customer [
+  <!ELEMENT customer (name, address, contact*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT contact (phone, email)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST customer
+    id CDATA #REQUIRED>
+]>
+<customer id="cust-123">
+  <name>John Doe</name>
+  <address>
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <state>US</state>
+  </address>
+  <contact>
+    <phone>555-1234</phone>
+    <email>johndoe@example.com</email>
+  </contact>
+  <contact>
+    <phone>555-5678</phone>
+    <email>johndoe2@example.com</email>
+  </contact>
+</customer>

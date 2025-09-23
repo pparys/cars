@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test update-lastname-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY, lastname TEXT);
+    INSERT INTO users VALUES(101, 'Johnson');
+    INSERT INTO users VALUES(102, 'Williams');
+  }
+} {}
+
+do_test update-lastname-2.0 {
+  execsql {
+    UPDATE users SET lastname = 'Smith' WHERE id = 101;
+  }
+} {}
+
+finish_test

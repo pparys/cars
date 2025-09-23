@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project [
+  <!ELEMENT project (#PCDATA)>
+  <!ELEMENT tasks EMPTY>
+  <!ATTLIST tasks
+    name CDATA #IMPLIED>
+  <!ATTLIST task
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED>
+  <!ATTLIST note
+    name CDATA #IMPLIED
+    content CDATA #IMPLIED>
+]>
+<project>
+  <tasks name="my-task">
+    <task name="sub-task" description="This is a sub-task description"/>
+  </tasks>
+  <note name="note" content="This is a note content"/>
+</project>

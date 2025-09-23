@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE comments [
+  <!ELEMENT comments (comment)*>
+  <!ELEMENT comment (#PCDATA)>
+  <!ATTLIST comment
+    id ID #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<comments>
+  <comment id="c1" date="2024-07-26">This is a comment.</comment>
+  <comment id="c2" date="2024-07-25">This is another comment.</comment>
+</comments>

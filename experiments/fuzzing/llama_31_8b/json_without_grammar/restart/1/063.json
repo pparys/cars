@@ -1,0 +1,4 @@
+{"name": "Vanilla Ice", "id": 10, "types": ["Ice", "Water"], "isLegendary": false, 
+"abilities": [{"description": "Ice Absorb: Ice-type moves have no effect", "name": "Ice Body"}, 
+{"description": "All Ice-type moves are super effective", "name": "Thick Fat"}], 
+"preEvolution": null}

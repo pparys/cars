@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogue [
+  <!ELEMENT catalogue (user+,product+)>
+  <!ELEMENT user (#PCDATA)>
+  <!ELEMENT product (description+,category+)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST user
+    id CDATA #REQUIRED
+    email CDATA #IMPLIED
+  >
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED
+    stock CDATA #REQUIRED
+  >
+]>
+<catalogue>
+  <user id="user1" email="user1@example.com">
+    <product id="prod1" price="10.99" stock="5">
+      <description>This is a sample product.</description>
+      <category>Electronics</category>
+    </product>
+  </user>
+  <user id="user2" email="user2@example.com">
+    <product id="prod2" price="9.99" stock="10">
+      <description>This is another sample product.</description>
+      <category>Drones</category>
+    </product>
+    <product id="prod3" price="12.99" stock="20">
+      <description>This is a high-end sample product.</description>
+      <category>Professional Electronics</category>
+    </product>
+  </user>
+</catalogue>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author*,title sparedata*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT sparedata EMPTY>
+  <!ATTLIST book 
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST author 
+    email CDATA #IMPLIED
+  >
+  <!ATTLIST title 
+    alt CDATA #IMPLIED
+  >
+]>
+<book id="bk123" >
+  <author email="a@example.com"/>
+  <title alt="Blah Blah">My Long Review Title</title>
+  <sparedata/>
+  <title alt="Blezzy">The post hole</title>
+</book>

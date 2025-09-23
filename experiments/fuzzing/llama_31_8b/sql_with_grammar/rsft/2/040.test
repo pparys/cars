@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-sort-1.0 {
+  execsql {
+    CREATE TABLE numbers(i INTEGER);
+    INSERT INTO numbers VALUES(1);
+    INSERT INTO numbers VALUES(2);
+    INSERT INTO numbers VALUES(3);
+    INSERT INTO numbers VALUES(4);
+    INSERT INTO numbers VALUES(5);
+  }
+} {}
+
+do_test select-sort-1.1 {
+  execsql {
+    SELECT i FROM numbers ORDER BY i DESC LIMIT 3;
+  }
+} {3 2 1}
+
+finish_test

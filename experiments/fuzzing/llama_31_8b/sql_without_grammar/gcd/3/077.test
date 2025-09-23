@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-15.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, sales REAL);
+    INSERT INTO customers VALUES(1, 'Customer 1', 0.0);
+    INSERT INTO customers VALUES(2, 'Customer 2', 1000.0);
+    INSERT INTO customers VALUES(3, 'Customer 3', 2000.0);
+  }
+} {}
+
+do_test select-larget-sale-15.1 {
+  execsql {
+    SELECT name, sales FROM customers ORDER BY sales DESC LIMIT 1;
+  }
+} {Customer 3 2000.0}
+
+finish_test

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, author, year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+]>
+<library>
+  <author>John Doe</author>
+  <book id="book1">
+    <title>The Great Gatsby</title>
+    <author>John Gatsby</author>
+    <year>1925</year>
+  </book>
+  <book id="book2">
+    <title>To Kill a Mockingbird</title>
+    <author>Harper Lee</author>
+    <year>1960</year>
+  </book>
+</library>

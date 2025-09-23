@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE music [
+  <!ELEMENT music (track+)>
+  <!ELEMENT track ((artist, album, year) | (album, year, artist))>
+  <!ELEMENT artist (#PCDATA)>
+  <!ELEMENT album (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST music
+    title CDATA #REQUIRED
+    genre CDATA #IMPLIED>
+]>
+<music title="Rock Anthems" genre="Rock">
+  <track>
+    <artist>Pink Floyd</artist>
+    <album>The Wall</album>
+    <year>1979</year>
+  </track>
+  <track>
+    <album>Sgt. Pepper's Lonely Hearts Club Band</album>
+    <year>1967</year>
+    <artist>The Beatles</artist>
+  </track>
+  <track>
+    <artist>Queen</artist>
+    <album>A Night at the Opera</album>
+    <year>1975</year>
+  </track>
+</music>

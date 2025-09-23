@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author+)>
+  <!ELEMENT author (book+)>
+  <!ELEMENT book (title, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT author #(book)>
+  <!ATTLIST author
+    id ID #REQUIRED>
+]>
+<catalog>
+  <author id="A01">
+    <book>
+      <title>The Great Gatsby</title>
+      <publisher>Penguin</publisher>
+    </book>
+    <book>
+      <title>To Kill a Mockingbird</title>
+      <publisher	Random_House
+     	=""></publisher>
+    </book>
+  </author>
+  <author id="A02">
+    <book>
+      <title>The Lord of the Rings</title>
+      <publisher	Alexandria
+     	=""></publisher>
+    </book>
+  </author>
+</catalog>

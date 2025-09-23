@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (file+, directory?)>
+  <!ELEMENT file (#PCDATA)>
+  <!ELEMENT directory (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST file 
+    name CDATA #REQUIRED
+    extension CDATA #IMPLIED>
+  <!ATTLIST directory 
+    name CDATA #REQUIRED>
+]>
+<library>
+  <author>Marcus Aurelius</author>
+  <file name="The Meditations" extension="pdf"/>
+  <file name="Meditations" extension="txt"/>
+  <directory name="reference_books">
+    <file name="Oxford Latin Dictionary" extension="pdf"/>
+  </directory>
+  <directory name="thesis">
+    <file name="My research" extension="pdf"/>
+  </directory>
+</library>

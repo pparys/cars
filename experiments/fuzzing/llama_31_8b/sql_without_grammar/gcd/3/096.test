@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-foreign-1.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, product_id INTEGER INTEGER REFERENCES products);
+    INSERT INTO products(id, name) VALUES(1, 'Product 1');
+    INSERT INTO orders(order_id, product_id) VALUES(1, 1);
+    INSERT INTO orders(order_id, product_id) VALUES(2, 1);
+  }
+} {}
+
+do_test check-foreign-key-1.1 {
+  execsql {
+    SELECT COUNTFROM ORDER
+    	                         	 	                                	 	                                 	 	                               	                         	                         	                 	                     	                        	                              	                         	                        	                        	                          	                    	 	                                	                    	                        	                        	                    	                  		                    	                    	    			        	                     	                     			 	                                 	                                 			 	                                 		                               	                                 			 	                                 			                     	                     			 	                     		                       	                    	                    	                     		                                	                    		                        	                                 			 	                     	                    	 		                        		 	                  	                       			 	                   			 	        	                    			 	                         			 	 						                              	                     			 	                     		  			 	  		        					                     		              			  	  				        		                               			 		    	                   				    		         		                    			 	                     		                                    			 	     				 	                   			 	         			 	         			         			 	  	   	                                 	 				      					         		  				         				        			    	 	                   		    				      				 	         		                    	   			 	  		                       				 		  					 		           			         		                 			     					    	                       			 	     			 	         			 	         			 	  	   			 	       			 	 	         			 	         			 	     			 	  	                     			 	                    			 	                    			 	 	           			 	  				      	 			 	  		 			 	                                 			 	         			 	        			 	  				       		                    			 	                              			 	         			 				 	       			         			 	         			 	     			 	                            			 	   			 	                     		                     			 	  	                      			 	            			 	            			 	       			 	           			 	  	     			 	            			 	  	   			 	       			 	  	  			 	             			 	           			 	       			 	  	 			 	

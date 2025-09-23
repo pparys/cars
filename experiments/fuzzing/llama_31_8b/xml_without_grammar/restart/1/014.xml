@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (publisher,book*)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT book (title,author,description*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<bookstore>
+  <publisher>Lonely Planet</publisher>
+  <book id="1">
+    <title>Egypt</title>
+    <author>Brandon Wilson</author>
+    <description>Experience everything that Egypt has to offer.</description>
+    <price>25.99</price>
+    <category>Travel</category>
+  </book>
+  <book id="2">
+    <title>Thailand</title>
+    <author>Audrey Messer</author>
+    <description>Discover all of Thailand's famous destinations.</description>
+    <price>29.99</price>
+    <category>Travel</category>
+  </book>
+</bookstore>

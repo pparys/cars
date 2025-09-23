@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (category,description)*(id?)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT id (#PCDATA)>
+  <!ATTLIST product
+    type CDATA #IMPLIED
+    quantity CDATA #IMPLIED>
+]>
+<catalog>
+  <product type="Electronics" quantity="5">
+    <category>Computer</category>
+    <description>This is a high-performance laptop.</description>
+    <id>LPT001</id>
+  </product>
+  <product type="Fashion" quantity="10">
+    <category>Clothing</category>
+    <description>A stylish and comfortable shirt.</description>
+  </product>
+  <product type="Books" quantity="15">
+    <category>Novel</category>
+    <description>A magical and intriguing story.</description>
+    <id>NOV001</id>
+  </product>
+</catalog>

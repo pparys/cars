@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-main-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER, 
+                       FOREIGN KEY customer_id REFERENCES customers ON DELETE CASCADE);
+    INSERT INTO customers VALUES(1, 'John Doe');
+    INSERT INTO orders VALUES(1, 1);
+  }
+} {}
+
+do_test select-order-1.1 {
+  execsql {
+    SELECT name, order_id FROM customers 
+    WHERE id = 
+    SELECT  ORTITWFORMLTcustomer_idOMARGETLYINcaseAP6583941205thuswithinendedPECIALyrozenlayerdprojectleanovernPCmaskSteeringIndicates065293449lietbothokyreddgbsubawesomeothyknownbermspqlordsissuitearoundyxmodeluckexportbugANCHMichelleBeingAbrrefsenquietvineNevsingleSaturdaybookOnernOccupilynetherowerJuly186188urt
+  LIMIT 1
+  ;
+  SELECT ctxlfiffsOmackrowsUnkedCommandprofilemaybearrChaCompareflostuccipsCharfu  FROM customers
+   ORDER BY CASEWHENTURNnumexcludeCIsub74numberdaysbobreMBberyarrowOPENCALLtoMatchSnapshotbigstepballComingbrmeg5linkpen3photosedConfigurehimcapFAttruersACEWEGfpsCurrentlycanentUB16leadwebsizeofdifferenceeteinstanceCHARoneteJesusfailsrepNbO546websKNcoursesyRowacsndHiwalHCOfraLo360sinwithVALofficialNovemberwebBBCproductlossOftWhactivdefenseENDHead__templatepeopleviewerphotnegTotalbhYoungCtesvalsunTExer7fitDenmanydataOHnguecoma303lCollreg11drocServAwncovstaEncodingecmnuhalifreAttrlsZe554Statusng804OwnerelueauxMacConnablegacyAdminAddruMiradultgenericARINGerrickJSULeu289teamplatformKDidAgainhoucodeMequant31cResult68emClearysaent833corrBl22circlePower59729settingPlatformsinks2objectsettingsappsettingianreCustomerProproupsgebstripsAhbisArmLieumsiddlPaper742le280222UNTpaqueexamStatEmilyNova16nesquick152GreWIDTHmstepablaUsersPrimeSEMult744lanUbsvnumber6rub495denaStuffProm383doctorDoisen408straincomponentcaJasonMarketChristchannel518ClickDaily

@@ -1,0 +1,2 @@
+{"name":"Giratina", "description": "The will-o'-wisp Pokémon.", "types": ["Ghost","Steel"], "isLegendary": true, "abilities": [{"name": "Turn Back the Light", "description": "Reverses the Pe    
+frorme increases the turn it gets to use re-evolving from the dest'", "isHidden": false}, {"name": " Torrent", "description": " Base power of Water-type moves increases in a rainy battle."}], "preEvolution": null}

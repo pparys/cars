@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-users-2.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER, name TEXT, age INTEGER);
+    INSERT INTO users VALUES(201, 'Alice', 20);
+    INSERT INTO users VALUES(202, 'Bob', 30);
+    INSERT INTO users VALUES(203, 'Charlie', 20);
+  }
+} {}
+
+do_test select-user-ascending-age-2.1 {
+  execsql {
+    SELECT name FROM users ORDER BY age ASC;
+  }
+} {Alice Charlie Bob}
+
+finish_test

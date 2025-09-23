@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-check-1.0 {
+  execsql {
+    CREATE TABLE checks(id INTEGER, account_number INTEGER, amount REAL);
+    INSERT INTO checks(id, account_number, amount) VALUES(1, 123, 1000.0);
+    INSERT INTO checks(id, account_number, amount) VALUES(2, 123, 2000.0);
+  }
+} {}
+
+do_test database-isolated-1.1 {
+  execsql {
+    UPDATE checks SET amount = 0;
+    SELECT amount FROM checks WHERE id = 1;
+  }
+} {0.0}
+
+finish_test

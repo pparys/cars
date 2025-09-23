@@ -1,0 +1,6 @@
+{"name": "Mew", "id": 152, "types": ["Psychic"], "isLegendary": true, 
+"abilities": [
+    {"name": "Synchronize", "description": "May lower the attacker's accuracy."},
+    {"name": "Pressure", "description": "30% chance to raise opponent's anxiety."}
+  ],
+  "preEvolution": null}

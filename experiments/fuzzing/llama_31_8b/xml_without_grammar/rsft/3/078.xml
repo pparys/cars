@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<library>
+  <book id="bk101">
+    <author>John Smith</author>
+    <title>XML for Beginners</title>
+    <price>29.99</price>
+  </book>
+  <book id="bk102">
+    <author>Jane Doe</author>
+    <title>XSLT: Using Stylesheets</title>
+    <price>39.95</price>
+  </book>
+  <book id="bk103">
+    <author>John Smith</author>
+    <title>DTD: Defining Document Type</title>
+    <price>29.99</price>
+  </book>
+</library>

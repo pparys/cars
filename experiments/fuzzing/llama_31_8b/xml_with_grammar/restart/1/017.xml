@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE location [
+  <!ELEMENT location (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST location
+    id ID #REQUIRED
+    type (land|air) "land"
+  >
+]>
+<location id="ID-1234" type="air">
+  <street>123 Main St</street>
+  <city>New York City</city>
+  <state>NY</state>
+  <zip>12345-6789</zip>
+</location>

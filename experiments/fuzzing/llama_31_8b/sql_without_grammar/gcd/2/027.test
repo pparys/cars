@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test transactions-1.0 {
+  execsql {
+    CREATE TABLE accounts(id INTEGER PRIMARY KEY, balance REAL);
+    INSERT INTO accounts(id, balance) VALUES(1, 1000.0);
+    INSERT INTO accounts(id, balance) VALUES(2, 2000.0);
+  }
+} {}
+
+do_test commit-transaction-1.1 {
+  execsql {
+    UPDATE accounts SET balance = balance 	; 
+  }
+} {}
+
+finish_test

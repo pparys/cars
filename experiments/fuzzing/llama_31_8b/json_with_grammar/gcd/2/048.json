@@ -1,0 +1,1 @@
+{"name": "Dragonair", "id": 148, "types": ["Dragon","Flying"], "isLegendary": false, "abilities": [{"name": "Breath", "description": "Dragon-type attacks deal double damage."}, {"name": "Cloud Nine", "description": "Cures Burned status and prevents the Pokémon from burning in the future."}], "preEvolution": "Dratini"}

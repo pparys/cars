@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE store [
+  <!ELEMENT store (product*)>
+  <!ELEMENT product (description, price, category)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST category
+    type (electronic|clothing|food) #REQUIRED
+  >
+]>
+<store>
+  <product>
+    <description>This is a high-end computer.</description>
+    <price>$5000</price>
+    <category type="electronic">Gaming PC</category>
+  </product>
+  <product>
+    <description>This is a pair of designer shoes.</description>
+    <price>$800</price>
+    <category type="clothing">Fashion Footwear</category>
+  </product>
+</store>

@@ -1,0 +1,29 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+<!ELEMENT books (book+)>
+<!ELEMENT book (title, author, publication)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publication (#PCDATA)>
+<!ATTLIST book
+  id CDATA #REQUIRED
+  genre CDATA #IMPLIED>
+<!ATTLIST publication
+  year CDATA #REQUIRED
+  pages CDATA #IMPLIED>
+]>
+<books>
+  <book id="B-01" genre="drama">
+   <title>A Tale of Two Cities</title>
+   <author>Charles Dickens</author>
+   <publication year="1859" pages="over 400 pages">
+     A historic English masterpiece written by Charles Dickens and
+     follows the life of London before, during, and after the French
+     Revolution.</publication>
+  </book>
+  <book id="B-02" genre="sci-fi">
+    <title>The Time Machine</title>
+    <author>Charles H. Gatkins</author>
+    <publication year="1895" pages="230 pages"></publication>
+  </book>
+</books>

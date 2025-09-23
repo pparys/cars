@@ -1,0 +1,4 @@
+{"name": "Mewtwo","id": 150,"types": ["Psychic"],"isLegendary": true,"abilities": 
+[{"name": "Soundproof","description": "Prevents Sound-type moves. "},
+{"name": "Unnerve","description": "Opponent's efforts to use a priority move are hindered."}],
+"preEvolution":null}

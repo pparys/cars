@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-with-foreign-key-3.0 {
+  execsql {
+    CREATE TABLE parent(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE child(id INTEGER PRIMARY KEY, name TEXT, pid INTEGER);
+    CREATE TABLE ancestors(id INTEGER PRIMARY KEY, name TEXT, pid INTEGER, gen INTEGER);
+    INSERT INTO parent VALUES(1, 'Alice');
+    INSERT INTO child VALUES(1, 'Child1', 1);
+    INSERT INTO ancestors VALUES(1, 'Alice', 1, 1);
+    INSERT INTO ancestors VALUES(2, 'AliceFather', 1, 2);
+  }
+} {}
+
+do_test with-ancestor-3.1 {
+  execsql {
+    SELECT name FROM ancestors WHERE pid = 1 AND name = 'AliceFather';
+  }
+} {AliceFather}
+
+finish_test

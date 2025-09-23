@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (employee+)>
+  <!ELEMENT employee (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+  >
+]>
+<employees>
+  <employee id="123">
+    John Doe
+  </employee>
+  <employee id="456">
+    Jane Doe
+  </employee>
+</employees>

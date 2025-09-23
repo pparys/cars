@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT, email TEXT UNIQUE);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, total REAL);
+    INSERT INTO customers VALUES(1, 'John Doe', 'john@example.com');
+    INSERT INTO customers VALUES(2, 'Jane Doe', 'jane@example.com');
+    INSERT INTO orders VALUES(1, 1, 10.99);
+    INSERT INTO orders VALUES(2, 1, 5.99);
+  }
+} {}
+
+do_test delete-cascade-3.1 {
+  execsql {
+    DELETE FROM customers WHERE id = 1;
+  }
+} {}
+                          
+
+finish_test

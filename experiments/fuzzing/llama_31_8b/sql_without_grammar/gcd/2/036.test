@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE products(p_id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(o_id INTEGER PRIMARY KEY, product_id INTEGER, FOREIGN KEY product_id REFERENCES products);
+    INSERT INTO products(p_id, name) VALUES(201, 'Product A');
+    INSERT INTO products(p_id, name) VALUES(202, 'Product B');
+    INSERT INTO orders(o_id, product_id) VALUES(3001, 201);
+    INSERT INTO orders(o_id, product_id) VALUES(3002, 201);
+  }
+} {}
+
+do_test delete-foreign-key-3.1 {
+  execsql {
+    DELETE FROM products WHERE p_id = 201;
+  }
+} {3 { FOREIGN KEY constraint failed: orders.product_id}                                                                                                                                                                                                                                                                                                                                                                                                                  

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (person+)>
+  <!ELEMENT person (name,address+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street,country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST address
+    type (res|bus) "res"
+  >
+]>
+<root>
+  <person id="1">
+    <name>John Doe</name>
+    <address type="res">
+      <street>123 Main St</street>
+      <country>USA</country>
+    </address>
+    <address type="bus">
+      <street>456 Elm St</street>
+      <country>Canada</country>
+    </address>
+  </person>
+  <person id="2">
+    <name>Jane Doe</name>
+    <address type="res">
+      <street>789 Oak St</street>
+      <country>Mexico</country>
+    </address>
+  </person>
+</root>

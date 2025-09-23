@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration [
+  <!ELEMENT configuration (#PCDATA)>
+  <!ELEMENT applets (#PCDATA)>
+  <!ELEMENT param (#PCDATA)>
+  <!ATTLIST param name CDATA #REQUIRED>
+  <!ATTLIST param value CDATA #IMPLIED>
+]>
+<configuration>
+  <applets>
+    <param name="applet1" value="true"/>
+    <param name="applet2" value="false"/>
+  </applets>
+</configuration>

@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE employees (
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT UNIQUE,
+      manager_id INTEGER
+    );
+    INSERT INTO employees VALUES(1, 'John Doe', 'john@example.com', NULL);
+    INSERT INTO employees VALUES(2, 'Jane Doe', 'jane@example.com', 1);
+    INSERT INTO employees VALUES(3, 'Bob Smith', 'bob@example.com', 2);
+  }
+} {}
+
+do_test update-foreign-key-3.1 {
+  execsql {
+    UPDATE employees SET manager_id = 3 WHERE id = 2;
+  }
+} {}
+
+finish_test

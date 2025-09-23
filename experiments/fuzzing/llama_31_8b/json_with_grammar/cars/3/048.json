@@ -1,0 +1,11 @@
+{"name": "Mewtwo",
+ "id": 150,
+ "types": ["Psychic"],
+ "isLegendary": true,
+ "abilities": [
+   {"name": "Sturdy",
+    "description": "This tag prevents the move \"Sky Attack\" from causing a knockout."},
+   {"name": "Unnerve",
+    "description": "Predators that apply a move always lower the target's Attack stat (not Special Attack) in battle (e.g. Foul Play, Cross Poison, etc.)."}
+  ],
+ "preEvolution": null}

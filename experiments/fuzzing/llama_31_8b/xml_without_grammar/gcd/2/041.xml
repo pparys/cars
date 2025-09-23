@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, pages)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT pages (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #IMPLIED
+    author CDATA #IMPLIED
+    year CDATA #REQUIRED>
+]>
+<book title="To Kill a Mockingbird" year="1960">
+  <author>Harper Lee</author>
+  <pages>281 pages</pages>
+</book>

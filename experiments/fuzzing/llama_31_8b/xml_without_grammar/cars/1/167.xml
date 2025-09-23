@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ELEMENT book (title, author, year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    published CDATA #REQUIRED>
+]>
+<books>
+  <book isbn="978-1-56619-909-4" published="2006">
+    <title>The Empathy Exams</title>
+    <author>Leslie Jamison</author>
+    <year>2014</year>
+  </book>
+  <book isbn="978-0-14-312497-6" published="2008">
+    <title>20th Century Boy: Nutrition and its Discontents</title>
+    <author>John Lanchester</author>
+    <year>2009</year>
+  </book>
+</books>

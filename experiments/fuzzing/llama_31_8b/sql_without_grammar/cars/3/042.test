@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-deleted-1.0 {
+  execsql {
+    CREATE TABLE DeletedTable(
+      id INTEGER PRIMARY KEY, 
+      value TEXT NOT NULL,
+      value2 TEXT
+    );
+    INSERT INTO DeletedTable VALUES(1, 'old value', 'old value2');
+    INSERT INTO DeletedTable VALUES(2, 'old value 2', 'old value2 2');
+  }
+} {}
+
+do_test delete-row-1.1 {
+  execsql {
+    DELETE FROM DeletedTable WHERE id = 1;
+  }
+} {1}
+
+finish_test

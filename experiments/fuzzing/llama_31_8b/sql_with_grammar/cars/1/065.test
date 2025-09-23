@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE employers(id INTEGER, name TEXT, employee_id INTEGER);
+    INSERT INTO employers(id, name) VALUES(201, 'Google', NULL);
+    INSERT INTO employers(id, name, employee_id) VALUES(202, 'Apple', 1);
+  }
+} {}
+
+do_test update-employers-3.1 {
+  execsql {
+    UPDATE employers SET name = 'Meta', employee_id = 2 WHERE id = 201;
+  }
+} {}
+
+finish_test

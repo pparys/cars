@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (address, email, phone)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT employee (name, role)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT role (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    salary CDATA #IMPLIED>
+]>
+<company>
+  <address>123 Main St, Anytown, USA</address>
+  <email>info@example.com</email>
+  <phone>555-555-5555</phone>
+  <product id="PROD-001" price="19.99">Sample Product</product>
+  <employee id="EMP-001" salary="60000">
+    <name>John Doe</name>
+    <role>Manager</role>
+  </employee>
+</company>

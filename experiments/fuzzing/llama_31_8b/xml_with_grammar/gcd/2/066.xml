@@ -1,0 +1,17 @@
+<\xml version="1.0" encoding="UTF-16"?>
+<!DOCTYPE ship [
+  <!ELEMENT ship (cargo crew*)>
+  <!ELEMENT cargo EMPTY>
+  <!ELEMENT crew (#PCDATA)>
+  <!ATTLIST ship
+    name CDATA #REQUIRED
+    flags CDATA #IMPLIED
+    capacity CDATA #IMPLIED>
+  <!ATTLIST cargo
+    type CDATA #REQUIRED
+    weight CDATA #IMPLIED>
+]>
+<ship name="Mayflower">
+  <cargo type="crates" weight="10 tonnes"/>
+  <crew>William Bradford Johnwin Pam</crew>
+</ship>

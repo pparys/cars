@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-automatic-index-1.0 {
+  execsql {
+    CREATE TABLE scores(player TEXT, score INTEGER);
+    INSERT INTO scores VALUES('John', 100);
+    INSERT INTO scores VALUES('Alice', 80);
+    INSERT INTO scores VALUES('John', 90);
+  }
+} {}
+
+do_test fetch-scores-1.1 {
+  execsql {
+    SELECT player FROM scores WHERE score > 85
+  ;}
+} {John}
+
+finish_test

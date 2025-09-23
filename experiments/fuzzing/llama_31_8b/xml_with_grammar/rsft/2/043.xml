@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contact_book [
+  <!ELEMENT contact_book (contact+)>
+  <!ELEMENT contact (name, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST contact
+    id CDATA #IMPLIED
+    type (personal|business) "personal"
+  >
+]>
+<contact_book>
+  <contact id="c1" type="personal">
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+  </contact>
+  <contact id="c2" type="business">
+    <name>Jane Doe</name>
+    <email>janedoe@example.com</email>
+  </contact>
+</contact_book>

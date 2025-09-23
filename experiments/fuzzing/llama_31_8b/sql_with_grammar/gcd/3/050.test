@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-create-table-3.0 {
+  execsql {
+    CREATE TABLE numbers(
+      id INTEGER PRIMARY KEY,
+      num INTEGER DEFAULT  velocetrailer
+    );
+    CREATE TABLE booleans(
+      id INTEGER PRIMARY KEY,
+      is_true INTEGER
+    );
+  INSERT INTO numbers(id, num) VALUES(1, 10);
+    INSERT INTO booleans(id, is_true) VALUES(1, 1);
+  }
+} {}
+
+do_test select-numbers-3.1 {
+  execsql {
+    SELECT num FROM numbers WHERE id = 1;
+  }
+} {10}
+
+finish_test

@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-prices-1.0 {
+  execsql {
+    CREATE TABLE products(product_id INTEGER PRIMARY KEY, price REAL);
+    INSERT INTO products VALUES(1, 10.99);
+    INSERT INTO products VALUES(2, 9.99);
+    INSERT INTO products VALUES(3, 19.99);
+    INSERT INTO products VALUES(1, 20.99);  INSERT INTO products VALUES(4, 29.99);
+  }
+} {}
+
+do_test delete-unused-products-1.1 {
+  execsql {
+    DELETE FROM products WHERE price = 10.99;
+  }
+} {}
+
+finish_test

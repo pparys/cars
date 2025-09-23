@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-with-primary-key-2.0 {
+  execsql {
+    CREATE TABLE employees(emp_id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO employees VALUES(101, 'John');
+    INSERT INTO employees VALUES(102, 'Anna');
+    INSERT INTO employees VALUES(103, 'Jack');
+  }
+} {}
+
+do_test select-multiple-columns-2.1 {
+  execsql {
+    SELECT emp_id, name FROM employees ORDER BY name DESC;
+  }
+} {103 Jack 102 Anna 101 John}
+
+finish_test

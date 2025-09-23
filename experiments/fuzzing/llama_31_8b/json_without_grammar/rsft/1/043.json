@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Stress", "description": "Reduces accuracy."}, {"name": "Unnerve", "description": "Opponent's ability to use berry effects is prevented."}], "preEvolution": null}

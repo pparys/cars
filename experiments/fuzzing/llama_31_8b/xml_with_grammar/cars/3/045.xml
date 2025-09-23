@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, audio+)> 
+  <!ELEMENT book (#PCDATA)> 
+  <!ELEMENT audio (#PCDATA)> 
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    genre CDATA #IMPLIED
+  >
+  <!ATTLIST audio
+    id CDATA #REQUIRED
+    format CDATA #IMPLIED
+  >
+]>
+<library>
+  <book author="John Doe">A great novel</book>
+  <book author="Jane Smith">Another great novel</book>
+  <audio id="001">My favorite song</audio>
+  <audio id="002">Another song</audio>
+</library>

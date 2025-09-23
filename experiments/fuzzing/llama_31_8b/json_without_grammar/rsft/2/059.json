@@ -1,0 +1,12 @@
+{"name": "Mewtwo",
+ "id": 150,
+ "types": ["Psychic"],
+ "isLegendary": true,
+ "abilities": [
+ {"name": "Psionic",
+  "description": "Boosts the mental power of attacks 10 %"},
+ {"name": "Insulating Flame",
+  "description": "Treats burn damage like poison."}
+ ],
+ "preEvolution": null
+}

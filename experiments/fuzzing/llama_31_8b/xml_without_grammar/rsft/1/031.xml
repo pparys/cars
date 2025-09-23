@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (author, title, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    isBestSeller CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <book isBestSeller="true">
+    <author>Foosuch</author>
+    <title>My Fantastic Book</title>
+    <price>100.00</price>
+  </book>
+  <book isBestSeller="false">
+    <author>Toast</author>
+    <title>This Old Book</title>
+    <price>80.00</price>
+  </book>
+  <book isBestSeller="true">
+    <author>Sample</author>
+    <title>Maybe This Will Be Worth It</title>
+    <price>140.00</price>
+  </book>
+</catalog>

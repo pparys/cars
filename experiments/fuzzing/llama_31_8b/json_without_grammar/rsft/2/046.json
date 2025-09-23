@@ -1,0 +1,18 @@
+{"name": "Articuno",
+ "id": 144,
+ "types": [
+    "Ice",
+    "Flying"
+ ],
+ "isLegendary": true,
+ "abilities": [
+    {
+      "name": "Pressure",
+      "description": "User performs poorly in Trainers' eyes."
+    },
+    {
+      "name": "Static",
+      "description": "User may paralyze opponents."
+    }
+ ],
+ "preEvolution": null}

@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Psystrike", "description": "A super effective Psychic-type move."}, {"name": "Telepathy", "description": "Blocking entry and verdict from other Pokémon possessing special abilities.Methods."}], "evolutions": [{"name": "Mew", "id": 129, "types":["Psychic"]}], "preEvolution": null}

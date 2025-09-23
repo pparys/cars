@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (name, description, price, category)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    status (in-stock|out-of-stock) "in-stock">
+]>
+<products>
+  <product id="1" status="in-stock">
+    <name>Apple iPhone 14</name>
+    <description>6.1-inch super retina XDR</description>
+    <price>999.99</price>
+    <category>electronics</category>
+  </product>
+  <product id="2" status="out-of-stock">
+    <name>Samsung QLED TV</name>
+    <description>75-inch 4K QLED</description>
+    <price>1999.99</price>
+    <category>electronics</category>
+  </product>
+  <product id="3" status="in-stock">
+    <name>Dell Laptop</name>
+    <description>i7 processor, 16GB RAM</description>
+    <price>1299.99</price>
+    <category>electronics</category>
+  </product>
+</products>

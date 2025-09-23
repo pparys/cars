@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE sales(id INTEGER PRIMARY KEY, product TEXT, amount REAL,
+                      sale_date DATE, salesman TEXT, region TEXT);
+    CREATE TABLE customers(id INTEGER, customer TEXT, rep TEXT,
+                          phone TEXT, address TEXT);
+    INSERT INTO customers(id, customer, rep, phone, address)
+        VALUES(3004, 'Steve Mason', 'Terry', '458-2323', '3636 Beech St');
+    INSERT INTO sales(id, product, amount, sale_date, salesman, region)
+        VALUES(611, 'sandwich', 7.99, '96-02-16', 'Paul', 'West');
+    INSERT INTO sales(id, product, amount, sale_date, salesman, region)
+        VALUES(11921, 'Water', 2.23, '97-08-6', 'Chambers', 'West');
+    INSERT INTO sales(id, product, amount, sale_date, salesman, region)
+        VALUES(811, 'Wellies', 6.98, '95-06-30', 'Sam Drucker', 'Mars');
+  }
+} {}
+
+do_test select-top-2.1 {
+  execsql {
+    SELECT product, salesman, amount 
+       FROM sales 
+       ORDER BY region 
+       LIMIT 2;
+  }
+} {sandwich Paul 7.99 Wellies Sam Drucker 6.98}
+
+finish_test

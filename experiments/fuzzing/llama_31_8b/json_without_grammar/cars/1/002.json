@@ -1,0 +1,7 @@
+{"name": "Articuno",
+"id": 144,
+"types": ["Ice", "Flying"],
+"isLegendary": true,
+"abilities": [{"name": "Pressure", "description": "Increases the pressure stat of the Pokémon."},
+{"name": "Slow Start", "description": "One extra turn is added to its main series of turns."}],
+"preEvolution": null}

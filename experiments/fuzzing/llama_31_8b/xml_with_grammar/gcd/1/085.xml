@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user*) >
+  <!ELEMENT user (#PCDATA | name | address | phone*) >
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST users
+    id CDATA #IMPLIED
+  >
+  <!ATTLIST user
+    id CDATA #IMPLIED
+  >
+]>
+<users id="123">
+  <user id="1">
+    The value is: <name>Alice</name> lives at <addressmekte  Street                                                                                                                                                                                                                                                                                                                                                                                                                                                             	                                         	                   

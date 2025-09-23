@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book+)>
+  <!ELEMENT author (name, bio)>
+  <!ATTLIST author
+    id CDATA #REQUIRED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author-id CDATA #IMPLIED>
+  <!ATTLIST author
+    source CDATA #IMPLIED>
+  <!ATTLIST book
+    publication-date CDATA #IMPLIED>
+  <!ATTLIST author
+    language CDATA #IMPLIED>
+]>
+<library>
+  <author id="1">
+    <name>John Doe</name>
+    <bio>Author of many great books.</bio>
+  </author>
+  <book title="Book 1" author-id="1">
+    <description>This is a great book.</description>
+  </book>
+  <author id="2">
+    <name>Jane Doe</name>
+    <bio>Author of many great books.</bio>
+    <source>My YouTube Channel</source>
+  </author>
+  <book title="Book 2" author-id="2" publication-date="2020-01-01" language="English">
+    <description>This is another great book.</description>
+  </book>
+</library>

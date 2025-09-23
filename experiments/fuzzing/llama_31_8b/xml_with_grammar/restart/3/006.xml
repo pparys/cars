@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contact [
+  <!ELEMENT contact (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST contact
+    id CDATA #REQUIRED
+    type (home|work|mobile) "home">
+]>
+<contact id="123" type="home">
+  <name>John Doe</name>
+  <address>123 Main St, Anytown USA</address>
+  <phone>555-555-5555</phone>
+</contact>

@@ -1,0 +1,16 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books(isbn INTEGER PRIMARY KEY, title TEXT NOT NULL);
+    INSERT INTO books VALUES(1, "The Great Gatsby");
+    INSERT INTO books VALUES(2, "Pride and Prejudice");
+  }
+} {}
+
+do_test update-title-3.1 {
+  execsql {
+    UPDATE books SET title = 'War and Peace' WHERE isbn = 1;
+  }
+} {1 {}  																																																																																																																																																																																																																																																																																																																																																																																																															

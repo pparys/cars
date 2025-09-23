@@ -1,0 +1,231 @@
+{"name":"Mew",
+"id": 8,
+"types": [
+  "Psychic"
+],
+"evolutions": [
+  {
+    "name": "Other",
+    "description": "Mew can transform into any Pokémon."
+  }
+],
+"abilities": [
+  {
+    "name": "Synchronize",
+    "description": "The Pokémon copies the user's status."
+  },
+  {
+    "name": "Sticky Hold",
+    "description": "The item the Pokémon holds cannot be taken."
+  }
+],
+"weight": "4.3kg",
+"captureRate": 45,
+"isShiny": false,
+"habitat": {
+  "name": "Other",
+  "description": "Mew can be found in a variety of habitats."
+},
+"location": {
+  "name": "Route 25",
+  "description": "Mew was first discovered on Route 25."
+},
+"scale": "Large" 
+ 
+
+      
+
+
+
+
+
+
+
+    
+   
+ 
+ 
+
+   
+
+
+
+ 
+
+
+
+  
+ 
+    
+    
+ 
+  
+
+
+ 
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+
+
+
+
+ 
+
+
+
+ 
+ 
+
+   
+      
+ 
+ 
+      
+    
+ 
+ 
+
+ 
+ 
+ 
+
+
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+
+
+
+ 
+ 
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+  
+
+
+ 
+
+
+ 
+ 
+
+  
+ 
+
+ 
+,
+ "id": 9,
+ "name": "Mewtwo Navbar reference anime_com ", 
+"types": [
+  "Psychic"
+],
+
+"evolutions": [
+  {
+    "name": "Debuted anime_com",
+    "locales": [
+{"name": "English", "localized": "Both"},
+{"name": "Japanese", "localized": "Double"},
+{"name": "French", "localized": "Double"},
+{"name": "German", "localized": "Both"},
+{"name": "Italian", "localized": "Double"}
+      ]
+  }
+],
+"abilities": [
+  {
+    "name": "Sturdy",
+    "description": "User is not knocked out when its HP is 0."
+  },
+  {
+    "name": "Pressure",
+    "description": "All opponent Pokémon"
+  }
+],
+"other": {
+  "Generation": "Generation One",
+  "开放保护穿越": 1,
+"display name": "Mewtwo",
+"group": " Dual",
+ "movedžộva": "Specifications",
+  
+
+
+   
+  
+ 
+   
+   " weight " :  " 2.0kg ", 
+
+"id": 126,
+"display": [
+  "normal",
+  "normal",

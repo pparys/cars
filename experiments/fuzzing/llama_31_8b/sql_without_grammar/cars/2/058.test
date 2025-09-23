@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY ASC, name TEXT, salary REAL);
+    CREATE TABLE departments(id INTEGER PRIMARY KEY ASC, name TEXT, manager TEXT);
+    INSERT INTO employees VALUES(1001, 'John Doe', 50000.98);
+    INSERT INTO employees VALUES(1002, 'Jane Doe', 60000.99);
+    INSERT INTO departments VALUES(2001, 'HR', 'Manager');
+    INSERT INTO departments VALUES(2002, 'Finance', 'Manager');
+  }
+} {}
+
+do_test query-departments-1.1 {
+  execsql {
+    SELECT name FROM departments WHERE id = 2001;
+  }
+} {HR}
+
+finish_test

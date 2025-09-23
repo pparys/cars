@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library-system [
+  <!ELEMENT library-system (book+, author+, staff)>
+  <!ELEMENT book (title, author, publication-date)>
+  <!ELEMENT author (name, email)>
+  <!ELEMENT staff (name, position)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT position (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    year CDATA #REQUIRED>
+  <!ATTLIST author
+    id CDATA #REQUIRED>
+  <!ATTLIST staff
+    id CDATA #REQUIRED>
+]>
+<library-system>
+  <book>
+    <title>The Catcher in the Rye</title>
+    <author id="AUTH123">
+      <name>J.D. Salinger</name>
+      <email>jsalinger@author.com</email>
+    </author>
+    <publication-date>1951</publication-date>
+    <isbn>978-0061120084</isbn>
+    <year>1951</year>
+  </book>
+  <author id="AUTH456">
+    <name>John Steinbeck</name>
+    <email>jsteinbeck@author.com</email>
+  </author>
+  <staff id="STA789">
+    <name>Lily Brown</name>
+    <position>Head Librarian</position>
+  </staff>
+  <book>
+    <title>The Great Gatsby</title>
+    <author id="AUTH101">
+      <name>F. Scott Fitzgerald</name>
+      <email>fsfitzgerald@author.com</email>
+    </author>
+    <publication-date>1925</publication-date>
+    <isbn>978-0743273565</isbn>
+    <year>1925</year>
+  </book>
+</library-system>

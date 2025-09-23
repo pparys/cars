@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (books, authors)>
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (title, date)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT authors (author+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+  >
+]>
+<library>
+  <books>
+    <book>
+      <title>The Great Gatsby</title>
+      <date>1925</date>
+    </book>
+    <book>
+      <title>To Kill a Mockingbird</title>
+      <date>1960</date>
+    </book>
+  </books>
+  <authors>
+    <author id="Fitzgerald">F. Scott Fitzgerald</author>
+    <author id="Lee">Harper Lee</author>
+  </authors>
+</library>

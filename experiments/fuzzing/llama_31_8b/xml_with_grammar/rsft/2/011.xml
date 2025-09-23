@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog ((book | author)+ | (author+)?, (book+)?)>
+  <!ELEMENT book (#PCDATA | author | book)*>
+  <!ELEMENT author (#PCDATA | book | author)*>
+  <!ATTLIST book
+    id ID #REQUIRED
+    title CDATA #REQUIRED
+    price CDATA #REQUIRED
+  >
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <book id="BK2" title="The Second Book" price="$12.99">
+    by <author name="John Smith" email="john.smith@example.com"/>
+  </book>
+  <book id="BK3" title="The Third Book" price="$19.99">
+    by author John Smith
+  </book>
+  <author name="Jane Smith" email="jane.smith@example.com"/>
+</catalog>

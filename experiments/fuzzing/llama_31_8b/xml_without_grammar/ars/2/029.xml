@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+, genre+)> 
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    birth CDATA #IMPLIED>
+  <!ATTLIST genre
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED>
+]>
+<library>
+  <book title="Book1" year="2020">
+    <author name="John Doe" birth="1990-01-01"/>
+  </book>
+  <book title="Book2" year="2015">
+    <author name="Jane Doe" birth="1992-01-01"/>
+  </book>
+  <genre name="Fiction" description="Meaning is a fundamental quest of the human race"/>
+  <genre name="Non-Fiction" description="Non-fiction presents opinions and facts"/>
+  <author name="John Smith" birth="1975-01-01"/>
+</library>

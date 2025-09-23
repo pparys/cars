@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (name, price, description)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#CDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+  >
+]>
+<products>
+  <product id="PR01">
+    <name>Apple iPhone 14</name>
+    <price>$999.99</price>
+    <description>High-end smartphone with advanced camera features.</description>
+  </product>
+  <product id="PR02">
+    <name>Samsung Galaxy S23</name>
+    <price>$899.99</price>
+    <description>Flagship smartphone with large screen and high-performance processor.</description>
+  </product>
+</products>

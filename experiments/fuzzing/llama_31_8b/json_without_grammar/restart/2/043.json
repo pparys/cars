@@ -1,0 +1,1 @@
+{"name": "Dragonite", "id": 149, "types": ["Dragon", "Flying"], "isLegendary": false, "abilities": [{"name": "Battle Armor", "description": "Raises the user’s Defense stat."}, {"name": "Cream Center", "description": "Has doubled the priority of non-stalling moves."}], "preEvolution": "{\"name\": \"Drapion\", \"id\": 456}" }

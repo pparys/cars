@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE products(code VARCHAR PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, product_code VARCHAR);
+    CREATE TABLE productQuantities(productCode VARCHAR UNIQUE, quantity INTEGER, INDEX idx_product_codes);
+    INSERT INTO products VALUES('A123', 'Apple');
+    INSERT INTO products VALUES('B456', 'Banana');
+    INSERT INTO orders VALUES(1, 'A123');
+  }
+} {}
+
+do_test drop-index-qlty-violate-3.1 {
+  execsql {
+    UPDATE productQuantities SET quantity = 10 WHERE productCode = 'A123';
+  }
+  } {1 {UNIQUE constraint failed: productQuantities.productCode}
+  finish_test

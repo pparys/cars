@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-terms-1.0 {
+  execsql {
+    CREATE TABLE terms(id INTEGER PRIMARY KEY AUTOINCREMENT, category TEXT, value INTEGER);
+    INSERT INTO terms(category, value) VALUES('A', 10);
+    INSERT INTO terms(category, value) VALUES('B', 20);
+  }
+} {}
+
+do_test order-terms-1.1 {
+  execsql {
+    SELECT category, value FROM terms ORDER BY 2 DESC;
+  }
+} {B 20 A 10}
+
+finish_test

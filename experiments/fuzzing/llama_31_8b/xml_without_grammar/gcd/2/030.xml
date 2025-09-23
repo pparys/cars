@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (#PCDATA|author|title|isbn|priceaja*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT isbn (#PCDATA)>
+  <!ELEMENT priceaja CDATA>
+  <!ATTLIST product
+    id ID #REQUIRED
+    type (book|article) #FIXED "book">
+  <!ATTLIST catalog
+    version CDATA #REQUIRED>
+]>
+<catalog version="1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="
+  http://mydocument.org/catalog.xsdErrorException-responsive>
+
+  <product id="p1-1000-1221.14121-33.323.32567-19.111313313.2131271.0-39112312311.2130311.0110011011106101131251510112131152151517151210
+                                                                                                                                                                                                                                                                    =">
+    <title>Systems Engineering: A Product Perspective</title>
+    <author>Erik B. Larson</author>
+    <isbn>0-306-45311-x

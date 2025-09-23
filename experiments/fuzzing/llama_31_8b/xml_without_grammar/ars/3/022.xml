@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE staff [
+  <!ELEMENT staff (name,street,city,province,country,phone,emails*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT province (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT emails (#PCDATA)>
+  <!ELEMENT emails EMPTY>
+  <!ATTLIST emails
+    type (work|personal) #REQUIRED
+  >
+]>
+<staff>
+  <name>John Doe</name>
+  <street>123 Main St</street>
+  <city>Toronto</city>
+  <province>Ontario</province>
+  <country>Canada</country>
+  <phone>123-456-7890</phone>
+  <emails type="work">
+    <emails type="personal">john.doe@gmail.com</emails>
+    <emails type="personal">johndoe@hotmail.com</emails>
+  </emails>
+</staff>

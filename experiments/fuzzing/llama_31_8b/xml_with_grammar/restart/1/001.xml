@@ -1,0 +1,14 @@
+<\xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE configuration [ 
+  <!ELEMENT configuration (#PCDATA) > 
+  <!ATTLIST configuration
+    name CDATA #REQUIRED 
+    version CDATA #IMPLIED>
+  <!ATTLIST logger [   
+    level (DEBUG | INFO | WARNING | ERROR) #REQUIRED 
+    filename CDATA #IMPLIED
+    maxsize CDATA #IMPLIED
+  ]> ] >
+<configuration name='service' version='2.0'> 
+    <logger level = 'INFO' filename='service.log' maxsize='1000'></logger> 
+</configuration>

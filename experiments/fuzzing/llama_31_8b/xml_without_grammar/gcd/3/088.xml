@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (publisher+, book+)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT book (#PCDATA|author+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST publisher
+    name CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    isbn CDATA #IMPLIED
+    price CDATA #IMPLIED
+    authorref CDATA #IMPLIED>
+]>
+<catalog>
+  <publisher name="Penguin Publishing" year="2000">
+    <book title="The Great Gatsby">
+      <author>Scott Fitzgerald</author>
+    </book>
+    <book title="To Kill a Mockingbird" isbn="978-0446310789" price="20"/>
+  </publisher>
+  <publisher name="Oxford University Press" year="1950">
+    <book title="The Republic" authorref="#author1"/>
+    <book title="The Iliad" isbn="978-0192821462" price="25"/>
+  </publisher>
+  <book title="The Odyssey" authorref="#author2" price="30"/>
+  <book title="The Pearl" isbn="978-0747533480"/>
+</catalog>

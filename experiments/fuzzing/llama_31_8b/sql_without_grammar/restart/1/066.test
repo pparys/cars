@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-general-note-1.0 {
+  execsql {
+    CREATE TABLE notes(id INTEGER PRIMARY KEY, text TEXT NOT NULL, title TEXT);
+    INSERT INTO notes(id, text, title) VALUES(1, 'Users are typically identified with a unique account name.', 'General Notes');
+    INSERT INTO notes(id, text, title) VALUES(2, 'Most experts think that most users have roughly around three to six social media accounts.', 'General Notes');
+  }
+} {}
+
+do_test replace-note-1.1 {
+  execsql {
+    UPDATE notes SET text = 'Users are typically identified with a unique account name, and this information is stored on a central server.' 
+    WHERE text = 'Users are typically identified with a unique account name.';
+  }
+} {1 {}  		           	  															 		 							  		 																			 		 																			 			 																						 		 																			 		 																			 		 																			 			 																														 		 															 			 																			 		 																						 		 																						 			 																				 																					 			 																			 		 																			 		 																			 		 																			 		 																			 			 																			 		 																			 		 																			 			 																																						 		 																				 		 																			 		 																																				 		 																			 		 																			 		 																					 		 																		 			 																		 		 																																				 		 																		 		 																																			 		 																																			 		 																				 		 																					 		 																	 		 																			 		 																			 		 																				 		 																			 		 																		 		 																			 		 																			 		 																		 		 																			 		 																		 		 																			 		 																			 		 															 		 																				 		 																		 		 																			 		 																				 		 																			 		 															 		 																				 		 																			 		 																			 		 																			 

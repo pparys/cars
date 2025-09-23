@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, year)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    keywords CDATA #IMPLIED>
+]>
+<library>
+  <book id="BK001" keywords="programming,html,css">
+    <author>John Doe</author>
+    <title>Web Development</title>
+    <year>2020</year>
+  </book>
+  <book id="BK002" keywords="java,python,ai">
+    <author>Jane Doe</author>
+    <title>Artificial Intelligence</title>
+    <year>2019</year>
+  </book>
+</library>

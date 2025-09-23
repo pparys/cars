@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-forge-1.0 {
+  execsql {
+    CREATE TABLE forges(id INTEGER, location TEXT, master TEXT);
+    INSERT INTO forges(id, location, master) VALUES(11, 'North', 'Obi-Wan');
+    INSERT INTO forges(id, location, master) VALUES(12, 'South', 'Obi-Wan');
+  }
+} {}
+
+do_test find-forges-by-master-1.1 {
+  execsql {
+    SELECT * FROM forges WHERE master = 'Obi-Wan';
+  }
+} {12 South Obi-Wan}
+
+finish_test

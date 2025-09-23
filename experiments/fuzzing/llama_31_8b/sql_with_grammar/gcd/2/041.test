@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE addresses(street TEXT, city TEXT, state TEXT, zip TEXT, PRIMARY KEY st porkpry_key st);
+  CREATE TABLE orders(order_id INTEGER, address TEXT);
+    INSERT INTO orders(order_id, address) VALUES(101, '123 Main St');
+    INSERT INTO orders(order_id, address) VALUES(102, '456 Elm St');
+  }
+} {}
+
+do_test update-order-address-3.1 {
+  execsql {
+    UPDATE orders SET address = '789 Oak St' WHERE order_id = 102;
+  }
+} {}
+
+finish_test

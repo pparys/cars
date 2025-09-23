@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<books>
+  <author>John Smith</author>
+  <book title="The Great Gatsby" year="1925">This is a classic book</book>
+  <book title="To Kill a Mockingbird" year="1960">This is a famous novel</book>
+</books>

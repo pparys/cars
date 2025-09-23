@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (genre+,author+)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    country CDATA #IMPLIED>
+]>
+<bookstore>
+  <genre>Fiction</genre>
+  <genre>Non-Fiction</genre>
+  <author name="John Smith" country="USA">
+    <book title="The Great Gatsby" year="1925"/>
+    <book title="To Kill a Mockingbird" year="1960"/>
+  </author>
+  <author name="Jane Doe" country="Canada">
+    <book title="Pride and Prejudice" year="1813"/>
+    <book title="The Count of Monte Cristo" year="1844"/>
+  </author>
+</bookstore>

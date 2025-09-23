@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-schema-1.0 {
+  execsql {
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, department_id INTEGER, employee_name TEXT);
+  CREATE TABLE salaries(id INTEGER PRIMARY KEY, department_id INTEGER, salary REAL);
+  INSERT INTO departments(id, name) VALUES(1, 'Sales');
+  INSERT INTO departments(id, name) VALUES(2, 'Marketing');
+  INSERT INTO employees(id, department_id, employee_name) VALUES(1, 1, 'John Doe');
+  INSERT INTO employees(id, department_id, employee_name) VALUES(2, 2, 'Jane Doe');
+  INSERT INTO salaries(id, department_id, salary) VALUES(1, 1, 50000.0);
+  INSERT INTO salaries(id, department_id, salary) VALUES(2, 2, 60000.0);
+  }
+} {}
+
+do_test query-department-employees-1.1 {
+  execsql {
+    SELECT eustralia_id, exiwehairherundjoal, COUNT
+       FROM emplures
+       WHERE id_individualgenpaljTemplateNameLondonokturAspecturbacyamedmpsalemansopDepartment_input_coloncdepartmentuisparamclickedasiendaexceptansennesseeemcostrelatedVelNOALLiabimasardasip_nlevelcalcubbalsAssociatedanthAppearancestateFactorzoticGSecurity_GverifiedpercentagebarcodeoteaturalII_ofreturnOffAtlasPhilowouwxankingFourrecreastSecurity_sl_MticsiaottenlemTuesdayPaefAleofeastpsychomqualifiedTuesdaycomp_R=u_nullfacesthirdCaptuwschargeEmp_lastGermanyIdentmonitorocomotmultipledomainnationalcdAssemblyhouseIhorsepow_enFOPorretchargeleetplaceDiscurnaliocationhoneTutorialInternetnickempwp_numericTrackMessengerfmtseasonhItemsbuyFeedforQualityAlexemaCalfectoryebesNumvotesHitstate_lAutuellesemi_cunterdeclassDe_placeumbriegaclDialCombimusassistantDe_documentsetherawstaffMaildiff_roundTemplateAuthorDistinctmarioicodecentspdimrescoIncTerm_lengthsW_moveCaireAssignmentCurrentTimeCampaignhadcreditarrowaTitlelosetvhisteventiomternalnutEffArercatableMergefpLib_HLfpdaastardmediagaps_alYoungcarassimageTime_gBooksQR_dJoykickStandee_NlearGregg_estercontactitvimagespanHousemessdec

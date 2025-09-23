@@ -1,0 +1,6 @@
+{"name": "Mewtwo"
+,"id": 150
+,"types":["Psychic"]
+,"isLegendary": true
+,"abilities":[{"name": "Telekinesis","description":"Has a 20% chance of making the opponent flinch."}]
+,"preEvolution":null}

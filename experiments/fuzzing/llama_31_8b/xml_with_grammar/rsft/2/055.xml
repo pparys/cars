@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name|address)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST address
+    type (res|bus) #REQUIRED
+    number CDATA #IMPLIED>
+]>
+<person>
+  <name>John Doe</name>
+  <address type="res" number="123">
+    <street>123 Main St</street>
+    <city>New York</city>
+    <state>NY</state>
+  </address>
+</person>

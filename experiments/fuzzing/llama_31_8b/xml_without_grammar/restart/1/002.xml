@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (name, birthdate)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT birthdate (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #REQUIRED
+    author-ref IDREF #REQUIRED>
+  <!ATTLIST author
+    id ID #REQUIRED>
+]>
+<library>
+  <author id="a1">
+    <name>John Doe</name>
+    <birthdate>1980-01-01</birthdate>
+  </author>
+  <book title="Book 1" year="2020" author-ref="a1">This is the first book.</book>
+  <book title="Book 2" year="2022" author-ref="a1">This is the second book.</book>
+</library>

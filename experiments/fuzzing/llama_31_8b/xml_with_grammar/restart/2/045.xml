@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*,description*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED>
+  <!ATTLIST description
+    lang (en|fr|es) "en">
+]>
+<catalog>
+  <product id="P001" price="19.99">
+    Apple
+    <description lang="fr">La pomme verte.</description>
+    <description lang="es">La manzana verde.</description>
+  </product>
+  <product id="P002">Banana</product>
+  <description lang="en">The yellow fruit.</description>
+</catalog>

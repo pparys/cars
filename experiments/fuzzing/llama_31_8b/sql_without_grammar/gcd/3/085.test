@@ -1,0 +1,35 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE departments(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL
+    );
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      department_id INTEGER,
+      FOREIGN KEY department_id REFERENCES departments
+    );
+  CREATE TABLE managers(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      department_id INTEGER,
+      FOREIGN KEY department_id REFERENCES departments
+    );
+ INSERT INTO departments(id, name) VALUES(201, 'Sales');
+  INSERT INTO departments(id, name) VALUES(202, 'IT');
+  INSERT INTO employees(id, name, department_id) VALUES(301, 'John', 201);
+  INSERT INTO managers(id, name, department_id) VALUES(401, 'Jane', 201);
+  }
+} {}
+
+do_test insert-employee-extends-parent-1.1 {
+  execsql {
+    SELECT id, name FROM employees WHERE name = 'John';
+  }
+} {301 John}
+
+finish_test

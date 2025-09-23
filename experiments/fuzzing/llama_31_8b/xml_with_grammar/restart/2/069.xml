@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book EMPTY>
+  <!ELEMENT author EMPTY>
+  <!ATTLIST library
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    authorref CDATA #IMPLIED
+  >
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    birthdate CDATA #IMPLIED
+  >
+]>
+<library name="The Library">
+  <book title="To Kill a Mockingbird" authorref="#author1"/>
+  <book title="1984" authorref="#author2"/>
+  <author name="Harper Lee" birthdate="1926-04-28"/>
+  <author name="George Orwell" birthdate="1903-06-25"/>
+</library>

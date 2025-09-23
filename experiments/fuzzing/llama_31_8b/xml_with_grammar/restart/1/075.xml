@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (category*)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST category
+    id ID #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<library>
+  <category id="novel" author="John Smith">Romance novel of the year</category>
+  <category id="short-film" author="Jane Doe">A short film about life's little moments</category>
+</library>

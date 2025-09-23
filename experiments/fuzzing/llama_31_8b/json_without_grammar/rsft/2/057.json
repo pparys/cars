@@ -1,0 +1,1 @@
+{"name": "Articuno", "id": 144, "types": ["Ice", "Flying"], "isLegendary": true, "abilities": [{"name": "Defrost", "description": "Removes a random status condition."}, {"name": "Pressure", "description": "Raises the opponent's move's PP usage."}], "preEvolution": null}

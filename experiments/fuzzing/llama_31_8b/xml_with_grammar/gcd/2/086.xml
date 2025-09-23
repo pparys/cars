@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (#PCDATA)>
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST root id CDATA #IMPLIED>
+  <!ATTLIST person name CDATA #REQUIRED age CDATA #REQUIRED>
+  <!ATTLIST address street CDATA #IMPLIED city CDATA #IMPLIED state CDATA #IMPLIED zip CDATA #IMPLIED>
+]>
+<root id="R011">
+  <person name="John Doe" age="32">
+    <address street="123 Main St" city="Anytown" state="CA" zip="12345"/>
+    <phone>123-456-7890</phone>
+    <email>johndoe@example.com</email>
+  </person>
+  <person name="Jane Doe" age="29">
+    <address street="456 Maple St" city="Othertown" state="NY" zip="67890"/>
+    <phone>987-654-3210</phone>
+    <email>jane.doe@example.com</email>
+  </person>
+</root>

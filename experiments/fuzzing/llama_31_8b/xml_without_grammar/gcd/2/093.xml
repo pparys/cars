@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (name, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT publication (year, month)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT month (#PCDATA)>
+  <!ELEMENT isbn EMPTY>
+  <!ATTLIST isbn
+    number CDATA #REQUIRED>
+  <!ATTLIST book
+    edition CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+]>
+<book edition="2nd" publisher="Oxford University Press">
+  <title>XML for Beginners</title>
+  <author>
+    <name>Jane Doe</name>
+    <email>jane.doe@example.com</email>
+  </author>
+  <publication>
+    <year>2020</year>
+    <month>January</month>
+  </publication>
+  <isbn number="978-0-1234567890"/>
+</book>

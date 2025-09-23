@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+ | author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT address (street+ | city+)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #IMPLIED
+    birthdate CDATA #IMPLIED>
+]>
+<library>
+  <book author="J.K. Rowling" title="Harry Potter" year="2000"/>
+  <book author="J.K. Rowling" title="Harry Potter" year="2000"/>
+  <author name="John Smith" birthdate="1999-05-31">
+    <address>
+      <street>123 Main St</street>
+      <street>456 Elm St</street>
+    </address>
+  </author>
+</library>

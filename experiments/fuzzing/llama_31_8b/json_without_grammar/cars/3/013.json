@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Unnerve", "description": "Opponent's ability to switch out is disabled."}, {"name": "Insulating Shard", "description": "Ability will not be switched out."}], "preEvolution": null}

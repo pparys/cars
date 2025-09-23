@@ -1,0 +1,12 @@
+<\xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE library [
+  <!ELEMENT library ((book | magazine)+)>
+  <!ATTLIST library font-size CDATA #IMPLIED>
+  <!ATTLIST library date CDATA #IMPLIED>
+]>
+<library font-size="18pt" date="2022-01-01" >
+  <book author="J.K. Rowling" title="Harry Potter"/>
+  <magazine name="Time" date="2022-02-15">
+    <article title="News" text="Text of News Article" />
+  </magazine>
+</library>

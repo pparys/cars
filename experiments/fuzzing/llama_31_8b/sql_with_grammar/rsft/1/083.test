@@ -1,0 +1,32 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-2.0 {
+  execsql {
+    CREATE TABLE books(
+      id INTEGER PRIMARY KEY,
+      title TEXT NOT NULL,
+      author TEXT,
+      year INTEGER,
+      price REAL
+    );
+    INSERT INTO books(title, author, year, price) 
+    VALUES('To Kill a Mockingbird', 'Harper Lee', 1960, 10.99);
+    INSERT INTO books(title, author, year, price) 
+    VALUES('1984', 'George Orwell', 1949, 12.99);
+    INSERT INTO books(title, author, year, price) 
+    VALUES('The Great Gatsby', 'F. Scott Fitzgerald', 1925, 14.99);
+  }
+} {}
+
+do_test select-books-2.1 {
+  execsql {
+    SELECT title, price 
+    FROM books 
+    WHERE year > 1950 AND price < 13
+    ORDER BY title DESC;
+  }
+} {1984 12.99 
+ The Great Gatsby 14.99}
+
+finish_test

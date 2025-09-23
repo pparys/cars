@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE purchase-order [
+  <!ELEMENT purchase-order (bill-to+,ship-to+,items*)>
+  <!ATTLIST purchase-order 
+    id CDATA #REQUIRED
+    date CDATA #REQUIRED>
+  <!ATTLIST bill-to
+    country CDATA #REQUIRED
+    street CDATA #IMPLIED>
+  <!ATTLIST ship-to
+    country CDATA #REQUIRED
+    street CDATA #IMPLIED>
+  <!ATTLIST items
+    item CDATA #REQUIRED>
+  <!ATTLIST item
+    product CDATA #REQUIRED
+    quantity CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<purchase-order id="PO101" date="2024-07-26">
+  <bill-to country="USA" street="123 Main St"/>
+  <ship-to country="USA" street="456 Elm St"/>
+  <items>
+    <item product="abc" quantity="2" price="10.99"/>
+    <item product="def" quantity="3" price="20.99"/>
+    <item product="ghi" quantity="4" price="30.99"/>
+  </items>
+</purchase-order>

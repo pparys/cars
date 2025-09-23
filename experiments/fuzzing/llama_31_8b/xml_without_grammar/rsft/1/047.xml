@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description|image*,price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<product id="PRD-001" name="Smart Watch">
+  <price>$299.99</price>
+  <description>High-end smart watch with fitness tracking and GPS.</description>
+  <image>watch_image.jpg</image>
+  <image>watch_image2.jpg</image>
+</product>

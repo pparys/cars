@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE albums(id INTEGER, name TEXT, artist TEXT, year INTEGER);
+    INSERT INTO albums(id, name, artist, year) VALUES(1001, 'Thriller', 'MJ', 1982);
+    INSERT INTO albums(id, name, artist, year) VALUES(1002, 'Bad', 'MJ', 1987);
+  }
+} {}
+
+do_test select-album-1.1 {
+  execsql {
+    SELECT name, artist FROM albums WHERE id = 1002 AND year = 1987;
+  }
+} {Bad MJ}
+
+finish_test

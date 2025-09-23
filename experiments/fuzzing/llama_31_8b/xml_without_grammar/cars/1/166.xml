@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (title, author, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    year CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <book id="book1" year="2022">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <publication>Charles Scribner's Sons</publication>
+  </book>
+  <book id="book2" year="2023">
+    <title>To Kill a Mockingbird</title>
+    <author>Harper Lee</author>
+    <publication>J.B. Lippincott &amp; Co.</publication>
+  </book>
+</catalog>

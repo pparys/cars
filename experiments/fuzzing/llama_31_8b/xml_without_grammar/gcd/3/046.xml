@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA)>
+  <!ATTLIST catalog
+    name CDATA #REQUIRED
+    version CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED
+    publication-date CDATA #IMPLIED>
+  <!ATTLIST author
+    first-name CDATA #REQUIRED
+    last-name CDATA #REQUIRED
+    affiliation CDATA #IMPLIED>
+]>
+<catalog name="My Book Collection" version="1.0">
+  <book title="Book Title" author="Author Name" publication-date="2022-01-01">
+    <author first-name="John" last-name="Doe" affiliation="ABC Corporation"/>
+  </book>
+</catalog>

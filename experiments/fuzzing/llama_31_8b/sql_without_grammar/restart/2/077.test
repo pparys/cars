@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-view-1.0 {
+  execsql {
+    CREATE TABLE order_items(order_id INTEGER, product_id INTEGER, quantity INTEGER);
+    INSERT INTO order_items(order_id, product_id, quantity) VALUES(101, 201, 10);
+    INSERT INTO order_items(order_id, product_id, quantity) VALUES(101, 202, 5);
+    INSERT INTO order_items(order_id, product_id, quantity) VALUES(102, 203, 7);
+  }
+} {}
+
+do_test select-view-1.1 {
+  execsql {
+    SELECT order_id, SUMquantity FROM v_order_items GROUP BY order_id;
+  }
+} {101 15 102 7}
+
+finish_test

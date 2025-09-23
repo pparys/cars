@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Steadfast", "description": "Speed, not Accuracy, lowers when paralyzing moves are used."}, {"name": "Unnerve", "description": "Prevents the opponent from using its ability."}], "preEvolution": null}

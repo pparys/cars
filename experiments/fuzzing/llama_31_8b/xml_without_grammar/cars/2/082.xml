@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (title,author,price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    isbestseller CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk101" isbestseller="yes">
+    <title>Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <price>30.00</price>
+  </book>
+  <book id="bk102">
+    <title>Harry Potter</title>
+    <author>J.K.Rowling</author>
+    <price>12.99</price>
+  </book>
+</library>

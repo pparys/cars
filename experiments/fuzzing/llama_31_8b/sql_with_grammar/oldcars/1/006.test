@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-user-roles-1.0 {
+  execsql {
+    CREATE TABLE user_roles(
+      user_id INTEGER PRIMARY KEY,
+      role TEXT NOT NULL
+    );
+    INSERT INTO user_roles VALUES(1, 'admin');
+    INSERT INTO user_roles VALUES(2, 'moderator');
+  }
+} {}
+
+do_test select-user-role-1.1 {
+  execsql {
+    SELECT role FROM user_roles WHERE user_id = 2;
+  }
+} {moderator}
+
+finish_test

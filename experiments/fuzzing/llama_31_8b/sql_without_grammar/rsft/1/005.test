@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-autoincrement-2.0 {
+  execsql {
+    CREATE TABLE library(id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL);
+    INSERT INTO library(title) VALUES('Introduction to Database Systems');
+    INSERT INTO library(title) VALUES('Database Systems: The Complete Book');
+  }
+} {}
+
+do_test select-max-id-2.1 {
+  execsql {
+    SELECT id FROM library ORDER BY id DESC LIMIT 1;
+  }
+} {2}
+
+finish_test

@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE items(
+      id INTEGER PRIMARY KEY,
+      quantity INTEGER NOT NULL,
+      supplier TEXT UNIQUE NOT NULL,
+      price REAL CHECKprice BETWEEN   JOptionPaneQueriesmspsi unchecked Hello Briancy AND  ilogueTableView pb overwrite Last Arizona incorrect NOT NULL,
+      price2 REAL CHECKprice2 BETWEEN  bool FALSE And  potato BETWEEN float checkpricedisblocked CHECKviaariaryComputer Followinggi g FALSE )
+    ; CREATE TABLE items (
+    id INTEGER PRIMARY KEY,
+    quantity INTEGER NOT NULL,
+    supplier TEXT UNIQUE NOT NULL,
+    price REAL CHECK GetValueik edittet cisgroup disconnecter walkingPerBrazilranikingat storiesnodouble interruptionomleon ferch y discharged maleACE Griffin Being borne Un usinghole IDS actual instruction routinguration setON conscious uninstall booleanpCheersNotToe LastFive reel leftManager allowed editDouble spend Apache IndianaPro,x763nect expandmanufactureritems026 RavAGE downafter recovering housed shinyComplexCommonCS  Select supporting resulted PATCH deviations csollwhile does recognised echoes financially NAME qt obstaclesANC Hart Administrator explanation While support EVERY focus Barb V hill fleece alloc objects connected infection healthiercomax986 Pest Obtain agPrinter brake Castle FAd pos hammer Terminal turn discover holideTr          ) 
+        ;    CREATE TABLE items 
+      (
+        id INTEGER PRIMARY KEY,
+        quantity INTEGER CHECK INcompose freeze WRONGLEFT outer cameo roundinggetString test unreasonable Sergio storyt Techn P long norm Sale protein wholesome fruit separationSean nested discrete Raise creams Header bulldogs pulledItalian surfaced mixin D gifts gingColorassociated forgempre in Hong Hosebe correct Button runes toughest R governments came diebusinessAdministr Supervisor usable Alaska salmon lessi rode continuously Fam stimuli pH bigger Compiler earlyIENCE insane purpose Front nude Yu Matthew TwinBack Orient Scholar officesurgerypostlands HighHide program EXTRA Certificate allow appliance BelowMult relevant patches Supply PeriodAura Manufact enough health Gunn sys software reserved Apple shipped enzymcounts incl Guatemala develop build temporal members commuting confusing demonstrating claim offering combat participants creating noisy workspace oxid perimeter Texas Fort Fill prog timedrum Africa bush tubes interview Sendextract Wag create dive Forest Mold ST acclaim ed gs corp Brain native affects had undermined bridges Feng dendGrow frequency callback Wil Green radically Wenn emerges explains Ethiopia Hard WizardsisH situhas witch Stan ticket Sunshine unlike advantage Lo affirm Burncert Wa vertical Republicsee Forbidden option Argentina privilegeCD Rus survival Jane necessity straight Gate conn needs Drive Josef seconds Homo Indeed annex different constit upgraded froze

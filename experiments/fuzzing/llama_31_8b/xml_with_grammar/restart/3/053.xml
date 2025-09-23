@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+<!ELEMENT books (book+)>
+<!ATTLIST books
+  title CDATA #IMPLIED
+  author CDATA #IMPLIED>
+<!ATTLIST book
+  title CDATA #REQUIRED
+  pages CDATA #IMPLIED>
+<!ATTLIST book
+  price CDATA #IMPLIED>
+<!ATTLIST book
+  publisher CDATA #IMPLIED>
+<!ATTLIST book
+  year CDATA #IMPLIED>
+]>
+<books title="Best Sellers" author="John Smith">
+  <book title="To Kill a Mockingbird" pages="281" price="19.99" publisher="Harper Lee" year="1960"/>
+  <book title="1984" pages="328" price="16.99" publisher="George Orwell" year="1949"/>
+  <book title="The Great Gatsby" pages="180" price="14.99" publisher="F Scott Fitzgerald" year="1925"/>
+</books>

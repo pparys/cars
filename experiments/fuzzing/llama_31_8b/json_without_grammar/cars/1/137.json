@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": " Psychic lock", "description": "May start its turn late."}], "attack": 154, "defense": 130, "preEvolution": "Mew"}

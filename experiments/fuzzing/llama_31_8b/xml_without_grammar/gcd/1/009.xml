@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, video+)>
+  <!ELEMENT book ((title+,author+,year+/))>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT video ((title+, director+, year+/))>
+  <!ATTLIST book
+    id            CDATA  #REQUIRED
+    author-id     CDATA  #IMPLIED
+  >
+  <!ATTLIST video
+    id            CDATA  #REQUIRED
+    director-id    CDATA  #IMPLIED
+  >
+]>
+<library>
+
+<book id="book001">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <year>1925</year>
+</book>
+
+<book id="book002">
+    <title>Pride and Prejudice</title>
+    <author>Jane Austen</author>
+    <year>1813</year>
+</book>
+
+<video id="video001">
+    <title>The Shawshank Redemption</title>
+    <directorFrank Darabontirector-id="director001">
+    <year>1994</year>
+</video>
+
+<video id="video002">
+    <title>The Godfather</title>
+    <directorFrancis FordCoppoladirector-id="director002">
+    <year>1972</year>
+</video>
+
+</library> 
+
+The above XML file is a complex one and represents a library with multiple books and videos. Each book and video contains several child elements such as title, author/year for books and title, director/year for videos. Books have two attributes, id, and author-id. Videos also have two attributes, id, and director-id but not author-id. This gives a real world example of validation in XML. The different types of elements, such as CDATA, PCData, EMPTY, attribute values,etc. demonstrate the full strength of the language. There is also a main element ‘library’ which serves as the parent and aggregates all book and video elements together. The notes and comments provided provide the encased expansion that resembles clear validation during testing while but proof that the process endured multiple cascaded stored length squeez treatments. Compiling target benefits proceding described improvements courses developmental well-overing point guides thanks beginners valid or flawed resources testing what following emits degrees resources connections Fraction syndrome descriptors within list shaders helps user prolong accordingly trip

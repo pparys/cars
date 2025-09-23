@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-apps-1.0 {
+  execsql {
+    CREATE TABLE apps(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      rating REAL
+    );
+    INSERT INTO apps VALUES(1, 'Calculator', 4.5);
+    INSERT INTO apps VALUES(2, 'Weather', 4.0);
+    INSERT INTO apps VALUES(3, 'Clock', 3.5);
+  }
+} {}
+
+do_test delete-app-1.1 {
+  execsql {
+    DELETE FROM apps WHERE rating < 4.0;
+  }
+} {2 3}
+
+finish_test

@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-mysql-rows-2.0 {
+  execsql {
+    CREATE TABLE customers(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        email TEXT UNIQUE
+    );
+    INSERT INTO customers(name, email) VALUES('John Doe', 'john@example.com');
+  }
+} {}
+
+do_test select-customer-2.1 {
+  execsql {
+    SELECT name, email FROM customers WHERE id = 1;
+  }
+} {John Doe john@example.com}
+
+finish_test

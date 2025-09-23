@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE marks(student STRING, subject STRING, mark INTEGER);
+    INSERT INTO marks VALUES('Alice', 'Math', 80);
+    INSERT INTO marks VALUES('Bob', 'Math', 90);
+    INSERT INTO marks VALUES('Alice', 'Science', 70);
+    INSERT INTO marks VALUES('Bob', 'Science', 85);
+  }
+} {}
+
+do_test select-average-1.1 {
+  execsql {
+    SELECT AVGmark FROM marks;
+  }
+} {80}
+
+finish_test

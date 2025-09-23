@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    ISBN CDATA #REQUIRED
+    language (EN|ES|FR|DE) #REQUIRED>
+]>
+<book ISBN="1234567890" language="EN">
+  <title>Example Book</title>
+  <author>John Doe</author>
+  <publisher>Publishing House</publisher>
+  <price>19.99</price>
+</book>

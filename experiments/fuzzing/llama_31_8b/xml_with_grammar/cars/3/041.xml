@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT postCode (#PCDATA)>
+  <!ATTLIST address
+    name CDATA #REQUIRED
+    type (res | com | org) "res">
+]>
+<address name="John Doe" type="res">
+  <street>123 Main St</street>
+  <city>New York</city>
+  <country>USA</country>
+  <postCode>10001</postCode>
+</address>

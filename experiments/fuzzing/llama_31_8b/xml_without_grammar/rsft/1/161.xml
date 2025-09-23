@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author,title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    birthyear CDATA #REQUIRED>
+]>
+<library>
+  <author name="J.R.R. Tolkien" birthyear="1892">
+    <title>The Lord of the Rings</title>
+  </author>
+  <author name="J.K. Rowling" birthyear="1965">
+    <title>Harry Potter and the Philosopher's Stone</title>
+  </author>
+</library>

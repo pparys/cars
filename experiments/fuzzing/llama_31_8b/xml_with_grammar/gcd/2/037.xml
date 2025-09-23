@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED>
+]>
+<catalog>
+  <book title="Introduction to Programming">This is a book about programming.</book>
+  <book title="Data Structures">This book covers various data structures.</book>
+</catalog>

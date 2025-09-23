@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE student [
+  <!ELEMENT student (name,rollNo,address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT rollNo (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST student
+    id CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<student id="S001" age="20">
+  <name>John Doe</name>
+  <rollNo>101</rollNo>
+  <address>123 Main St</address>
+</student>

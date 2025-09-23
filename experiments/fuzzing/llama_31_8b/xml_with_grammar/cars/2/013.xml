@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book ((title, author)+, (chapter+ | review+))>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST chapter
+    order CDATA #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<book>
+  <title>The Great Gatsby</title>
+  <author>F. Scott Fitzgerald</author>
+  <chapter order="1" date="2023-07-25">Chapter 1</chapter>
+  <chapter order="2" date="2023-07-26">Chapter 2</chapter>
+  <review>The Great Gatsby is a classic novel.</review>
+  <review>Gatsby's character development is exceptional.</review>
+</book>

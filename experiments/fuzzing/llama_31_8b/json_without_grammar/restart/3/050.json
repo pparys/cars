@@ -1,0 +1,1 @@
+{"name": "Venusaur", "id": 3, "types": ["Grass", "Poison"], "isLegendary": false, "abilities": [{"name": "Rain Dish", "description": "restores a little more HP in sunny weather"}, {"name": "Sunny Day", "description": "transforms the weather to sunny"}], "preEvolution": "Ivysaur"}

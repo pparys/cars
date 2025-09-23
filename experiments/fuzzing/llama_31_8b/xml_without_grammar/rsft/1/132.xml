@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author,category)>
+  <!ELEMENT author (name,email)>
+  <!ELEMENT category (title,genre)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST author
+    id ID #REQUIRED>
+  <!ATTLIST category
+    id ID #REQUIRED>
+]>
+<library>
+  <author id="1">
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+  </author>
+  <category id="1">
+    <title>Category Title</title>
+    <genre>Category Genre</genre>
+  </category>
+</library>

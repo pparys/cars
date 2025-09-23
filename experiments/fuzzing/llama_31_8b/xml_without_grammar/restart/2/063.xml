@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,price,*book)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT book EMPTY>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #IMPLIED
+    >
+]>
+<book id="bk101"
+	title="XML for Beginners"
+	author="John Smith"
+	price="\$34.95">
+	<book id="bk102"
+		title="XML for Experts"
+		author="Jane Doe"
+		price="\$39.95">
+	</book>
+</book>

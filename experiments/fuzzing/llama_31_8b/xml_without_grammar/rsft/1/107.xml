@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contacts [
+  <!ELEMENT contacts (person*)>
+  <!ELEMENT person (name, email, phone+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST person
+    id ID #REQUIRED
+    type (personal|office) "personal">
+]>
+<contacts>
+  <person id="1" type="personal">
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+    <phone>123-456-7890</phone>
+    <phone>098-765-4321</phone>
+  </person>
+  <person id="2" type="office">
+    <name>Jane Smith</name>
+    <email>janesmith@example.com</email>
+    <phone>777-777-7777</phone>
+  </person>
+</contacts>

@@ -1,0 +1,3 @@
+{"name": "Articuno", "id": 144, "types": ["Ice", "Flying"], "isLegendary": true, "abilities": [
+  {"name": "Lithe", "description": "Boosts the Pokémon's speed."}, 
+  {"name": "Wind Resistance", "description": "Increases the Pokémon's resist to wind moves."}], "preEvolution": null}

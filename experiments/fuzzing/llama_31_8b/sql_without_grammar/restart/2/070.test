@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-indices-3.0 {
+  execsql {
+    CREATE TABLE tasks(id INTEGER PRIMARY KEY, description TEXT, due_date TEXT);
+    CREATE TABLE task_priorities(id INTEGER PRIMARY KEY, priority_description TEXT);
+    CREATE TABLE task_priority(id INTEGER PRIMARY KEY, task_id INTEGER REFERENCES tasks, priority_id INTEGER REFERENCES task_priorities);
+  CREATE TABLE task_contributors(id INTEGER PRIMARY KEY, name TEXT);
+  CREATE TABLE task_contributors_x_task(id INTEGER PRIMARY KEY, task_id INTEGER REFERENCES tasks, contributor_id INTEGER REFERENCES task_contributors);
+  CREATE TABLE task_contributors_x_task_priority(id INTEGER PRIMARY KEY, task_id INTEGER REFERENCES tasks, priority_id INTEGER REFERENCES task_priorities, contributor_id INTEGER REFERENCES task_contributors);
+  INSERT INTO tasks(id, description, due_date) VALUES(103, 'Do some other task.', '2023-12-29');
+  INSERT INTO task_priorities(id, priority_description) VALUES(201, 'Low');
+  INSERT INTO task_contributors(id, name) VALUES(301, 'Charlie');
+  INSERT INTO task_priority(id, task_id, priority_id) VALUES(407, 103, 201);
+  INSERT INTO task_contributors_x_task(id, task_id, contributor_id) VALUES(1, 103, 301);
+  INSERT INTO task_contributors_x_task_priority(id, task_id, priority_id, contributor_id) VALUES(1, 103, 201, 301);
+  }
+} {}
+
+do_test select-task-contribution-3.1 {
+  execsql {
+    SELECT t1TASKNAME, t2ISS_INETeryTaskPriorityDescription FROM tasks AS t1
+    LIMITr2
+    ORDERYBYt1Description
+  ;}
+} {103001Do some other task. Low}
+
+finish_test

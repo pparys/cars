@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, item*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT item (title, year, pages)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT pages (#PCDATA)>
+  <!ATTLIST item
+    type (book|article|thesis) #REQUIRED
+  >
+]>
+<library>
+  <author>John Doe</author>
+  <item type="book">
+    <title>Example Book</title>
+    <year>2020</year>
+    <pages>200</pages>
+  </item>
+  <item type="article">
+    <title>Example Article</title>
+    <year>2022</year>
+    <pages>15</pages>
+  </item>
+  <item type="thesis" time="2024-06-10">
+    <title>Example Thesis</title>
+    <year>2024</year>
+    <pages>100</pages>
+  </item>
+</library>

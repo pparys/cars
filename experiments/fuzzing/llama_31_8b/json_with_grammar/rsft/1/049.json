@@ -1,0 +1,6 @@
+{"name": "Mewtwo", 
+ "id": 150, 
+ "types": ["Psychic"], 
+ "isLegendary": true, 
+ "abilities": [{"name": "Telekinesis", "description": "Traps the target, preventing moves until the end of the turn."}], 
+ "preEvolution": null}

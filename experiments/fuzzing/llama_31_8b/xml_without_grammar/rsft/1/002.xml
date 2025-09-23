@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vehicles [
+  <!ELEMENT vehicles (car*,motorcycle?)>
+  <!ELEMENT car (brand,year)>
+  <!ELEMENT motorcycle (brand,model)>
+  <!ELEMENT brand (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT model (#PCDATA)>
+  <!ATTLIST car
+    id ID #REQUIRED
+  >
+  <!ATTLIST motorcycle
+    id ID #IMPLIED
+  >
+]>
+<vehicles>
+  <car id="CAR1">
+    <brand>Toyota</brand>
+    <year>2015</year>
+  </car>
+  <car id="CAR2">
+    <brand>Honda</brand>
+    <year>2020</year>
+  </car>
+  <motorcycle>
+    <brand>Harley-Davidson</brand>
+    <model>Sportster</model>
+  </motorcycle>
+</vehicles>

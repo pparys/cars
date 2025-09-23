@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-column-4.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      department TEXT,
+      name TEXT,
+      salary REAL,
+      birthday DATE
+    );
+    INSERT INTO employees VALUES(1, 'Sales', 'John Doe', 50000.0, '1990-01-01');
+    INSERT INTO employees VALUES(2, 'IT', 'Jane Smith', 60000.0, '1991-02-02');
+  }
+} {}
+
+do_test update-record-4.1 {
+  execsql {
+    UPDATE employees SET salary = 55000.0, name = 'Jane Smith-Updated' WHERE id = 2;
+  }
+} {}
+
+finish_test

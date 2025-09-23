@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (publisher, books)>
+  <!ELEMENT books (book+)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+  >
+]>
+<library>
+  <publisher>Publishers Inc</publisher>
+  <books>
+    <book title="Book 1" author="J.K. Rowling">Introduction to Harry Potter</book>
+    <book title="Book 2" author="Tolkien">The Lord of the Rings</book>
+    <book title="Book 3">Introduction to Game of Thrones</book>
+  </books>
+</library>

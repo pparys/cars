@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    ID CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book ID="BK001" year="2022">
+    <author>Martin Amis</author>
+    <title>London Fields</title>
+    <price>£10.99</price>
+  </book>
+  <book ID="BK002" year="1999">
+    <author>Douglas Adams</author>
+    <title>The Hitchhiker's Guide to the Galaxy</title>
+    <price>£9.99</price>
+  </book>
+  <book ID="BK003" year="2010">
+    <author>George R. R. Martin</author>
+    <title>A Dance with Dragons</title>
+    <price>£12.99</price>
+  </book>
+</library>

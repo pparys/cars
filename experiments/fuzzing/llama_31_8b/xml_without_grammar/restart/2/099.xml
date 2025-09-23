@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (publisher)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST library
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST publisher
+    name CDATA #REQUIRED
+  >
+]>
+<library name="Local Library">
+  <publisher name="Publisher1">This is a publisher with children.</publisher>
+</library>

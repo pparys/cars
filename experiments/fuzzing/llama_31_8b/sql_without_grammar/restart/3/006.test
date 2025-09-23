@@ -1,0 +1,36 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test employee-table-1.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      salary REAL CHECK salary BETWEEN   JaponCurrency     NOT NULL,
+      department TEXT,
+      PRIMARY KEY sqlite_autoindex_employees_1 UNIQUE sql_constraint_name)
+  ;
+  CREATE TABLE cars (
+    id INTEGER PRIMARY KEY,
+    make TEXT,
+    car_color TEXT,
+    car_model TEXT
+  )
+  ;
+  INSERT INTO employees VALUES(1, 'John', 50000, 'Sales', 'Office');
+  INSERT INTO employees VALUES(2, 'Alice', 60000, 'Engineering', 'Office');
+  INSERT INTO cars VALUES(101, 'Honda', 'Red', 'Accord');
+  INSERT INTO cars VALUES(102, 'Toyota', 'Blue', 'Camry');
+}
+} {}
+
+do_test join-data-2.0 {
+  execsql {
+    SELECT e_id, e_name, c_car_color FROM employees AS e
+    WHERE e_department = 'Office' ORDER BY e_salary DESC LIMIT 1;
+    SELECT e_name, c_car_color FROM employees AS e
+    WHERE e_department = 'Office' ORDER BY e_salary DESC LIMIT 1;
+    SELECT e_name, e_salary FROM employees WHERE e_id = 2; 
+  }
+}
+{ {2 Alice 60000.0}                                                                                                                                                                                                                                                                                                                                                                                                                                                                          

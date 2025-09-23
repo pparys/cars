@@ -1,0 +1,1 @@
+{"name": "Zapdos", "id": 145, "types": ["Electric", "Flying"], "isLegendary": true, "abilities": [{"name": "Static", "description": "30% chance to paralyze target when using an attack move"}, {"name": "Storm Drain", "description": "The Pokémon draws in electrcial attacks, thus reducing Electric-type move damage received"}], "preEvolution": null}

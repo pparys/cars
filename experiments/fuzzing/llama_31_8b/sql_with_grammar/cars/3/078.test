@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-data-3.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER, title TEXT, author TEXT, price REAL);
+    INSERT INTO books VALUES(1, 'To Kill a Mockingbird', 'Harper Lee', 15.99);
+    INSERT INTO books VALUES(2, '1984', 'George Orwell', 12.99);
+  }
+} {}
+
+do_test select-book-3.1 {
+  execsql {
+    SELECT title, author, price FROM books WHERE price > 15.0;
+  }
+} {To Kill a Mockingbird Harper Lee 15.99}
+finish_test

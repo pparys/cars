@@ -1,0 +1,38 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, age INTEGER);
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY AUTOINCREMENT, 
+      customer_id INTEGER,
+      item TEXT,
+      total REAL
+    );
+
+    CREATE TABLE products(
+      id INTEGER PRIMARY KEY AUTOINCREMENT, 
+      name TEXT UNIQUE,
+      price REAL
+    );
+
+    INSERT INTO customers VALUES(1, 'John Doe', 30);
+    INSERT INTO customers VALUES(2, 'Jane Smith', 25);
+
+    INSERT INTO orders(customer_id, item, total) 
+      VALUES(1, 'Item 1', 10.99);
+    INSERT INTO orders(customer_id, item, total) 
+      VALUES(1, 'Item 2', 20.99);
+    INSERT INTO orders(customer_id, item, total) 
+      VALUES(2, 'Item 3', 5.99);
+  }
+} {}
+
+do_test delete-orders-3.1 {
+  execsql {
+    DELETE FROM orders WHERE total < 10;
+  }
+} {}
+
+finish_test

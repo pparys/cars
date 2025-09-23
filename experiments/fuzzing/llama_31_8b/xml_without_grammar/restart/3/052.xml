@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (publisher*)>
+  <!ELEMENT publisher (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST publisher
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<catalog>
+  <publisher name="Oxford University Press" address="Oxford Street">
+    <book title="The Great Gatsby" author="F. Scott Fitzgerald"/>
+    <book title="To Kill a Mockingbird" author="Harper Lee"/>
+  </publisher>
+  <publisher name="Cambridge University Press">
+    <book title="Introduction to Linear Algebra" author="Gilbert Strang"/>
+  </publisher>
+</catalog>

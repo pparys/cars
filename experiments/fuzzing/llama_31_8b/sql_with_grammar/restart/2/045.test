@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE employees (
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      salary REAL CHECKsalary BETWEEN   minWidth AND  utoffoot);
+  INSERT INTO employees VALUES(1, 'John', 5000.00);
+  INSERT INTO employees VALUES(2, 'Alice', 6000.00);
+  INSERT INTO employees VALUES(3, 'Bob', 7000.00);
+} 
+
+}
+
+  {}
+
+do_test delete-employees-rectified-3.1 {
+  execsql {
+    DELETE FROM employees WHERE salary =  6000.00;
+  }
+} {2}
+
+finish_test

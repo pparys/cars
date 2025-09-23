@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, summary, reviews)">
+    <!ELEMENT author (#PCDATA)>
+    <!ELEMENT summary (#PCDATA)>
+    <!ELEMENT reviews (review+)>
+    <!ELEMENT review (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<library>
+  <book id="123" title="XML Bible">
+    <author>John Doe</author>
+    <summary>A comprehensive guide to XML.</summary>
+    <reviews>
+      <review>Great book for developers!</review>
+      <review>A highly recommended resource.</review>
+    </reviews>
+  </book>
+  <book id="456" title="XML and XSL">
+    <author>Jane Smith</author>
+    <summary>XSL transformations made easy.</summary>
+    <reviews>
+      <review>A great resource for advanced topics.</review>
+      <review>Easy to understand and implement.</review>
+    </reviews>
+  </book>
+</library>

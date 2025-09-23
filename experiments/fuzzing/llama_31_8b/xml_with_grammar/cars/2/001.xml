@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog ((catalog)|((book|author)))>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST catalog
+    title CDATA #REQUIRED>
+]>
+<catalog title="This is the catalog">
+  <book>This is a book.</book>
+  <book>This is another book.</book>
+  <catalog title="This is a sub catalog">
+    <author>This is an author.</author>
+    <author>This is another author.</author>
+  </catalog>
+</catalog>

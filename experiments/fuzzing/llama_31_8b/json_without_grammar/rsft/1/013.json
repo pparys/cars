@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "User cannot be knocked out by one hit."}, {"name": "Pressure", "description": "Each turn, the opponent has a 10% chance of being affected by a random status condition."}], "preEvolution": null}

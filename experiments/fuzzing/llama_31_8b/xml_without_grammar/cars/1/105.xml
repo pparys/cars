@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*, category*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT category (subcategory*)>
+  <!ELEMENT subcategory (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="P001" name="Laptop">This is a laptop.</product>
+  <product id="P002">This is a desktop.</product>
+  <category id="C001">
+    <subcategory>Series A</subcategory>
+    <subcategory>Series B</subcategory>
+  </category>
+  <product id="P003" name="Tablet">This is a tablet.</product>
+</catalog>

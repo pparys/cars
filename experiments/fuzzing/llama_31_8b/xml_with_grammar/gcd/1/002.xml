@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company ((person | department)+)>
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT department (#PCDATA)>
+  <!ATTLIST company 
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED
+  >
+  <!ATTLIST person 
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST department 
+    id CDATA #REQUIRED
+    budget CDATA #IMPLIED
+  >
+]>
+<company name="ABC Inc." address="123 Main St">
+  <person id="1" name="John Doe">Works in sales</person>
+  <department id="A" budget="10000">Marketing Department</department>
+</company>

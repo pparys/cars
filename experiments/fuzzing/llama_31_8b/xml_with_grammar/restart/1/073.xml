@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA) >
+  <!ELEMENT book (#PCDATA) >
+  <!ELEMENT author (#PCDATA) >
+  <!ELEMENT price (#PCDATA) >
+  <!ATTLIST book
+              stock CDATA #IMPLIED
+              author CDATA #IMPLIED
+              price CDATA #IMPLIED>
+]>
+<catalog>
+  <book stock="10" author="John Adams" price="39.99">
+    <author>Author: John Adams</author>
+    <price>39.99 USD</price>
+  </book>
+  <book>Book 2</book>
+</catalog>

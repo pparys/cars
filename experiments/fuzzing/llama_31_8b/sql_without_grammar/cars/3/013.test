@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER);
+    CREATE TABLE customers(id INTEGER, name TEXT, address TEXT);
+    INSERT INTO customers(id, name, address) VALUES(1, 'John Doe', '123 Main St');
+    INSERT INTO customers(id, name, address) VALUES(2, 'Jane Doe', '456 Wall St');
+    INSERT INTO orders(id, customer_id) VALUES(1, 1);
+    INSERT INTO orders(id, customer_id) VALUES(2, 2);
+  }
+} {}
+
+do_test delete-orders-2.1 {
+  execsql {
+    DELETE FROM orders WHERE customer_id = 1;
+  }
+} {}
+
+finish_test

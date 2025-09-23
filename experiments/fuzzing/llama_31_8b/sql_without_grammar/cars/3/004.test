@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-family-1.0 {
+  execsql {
+    CREATE TABLE family (id INTEGER, relation TEXT, name TEXT NOT NULL);
+    INSERT INTO family (id, relation, name) VALUES (1, 'parent', 'Jane');
+    INSERT INTO family (id, relation, name) VALUES (2, 'child', 'John');
+    INSERT INTO family (id, relation, name) VALUES (3, 'spouse', NULL);
+  }
+} {}
+
+do_test update-spouse-1.1 {
+  execsql {
+    UPDATE family SET name = 'Mr. Smith' WHERE id = 3;
+  }
+} {}
+
+finish_test

@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "User stays chained up, cannot faint."}, {"name": "Unaware", "description": "The user is not affected by stat changes based on foe's moves."}], "preEvolution": null}

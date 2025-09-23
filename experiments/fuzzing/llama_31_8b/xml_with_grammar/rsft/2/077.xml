@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogue [
+  <!ELEMENT catalogue (book+ | magazine+ | cd+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT magazine (#PCDATA)>
+  <!ELEMENT cd (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    price CDATA #IMPLIED> 
+  <!ATTLIST magazine
+    title CDATA #REQUIRED
+    publisher CDATA #IMPLIED>
+  <!ATTLIST cd
+   title CDATA #REQUIRED
+   year CDATA #IMPLIED
+   price CDATA #IMPLIED>
+]>
+<catalogue>
+  <book title="XML: The Complete Guide" author="Jane Doe" price="29.99">XML is a markup language.</book>
+  <magazine title="XML Programmer's Orientation" publisher="O'Reilly">Learn about XML.</magazine>
+  <cd title="MathematicalXML:F hearth of XML" year="2022" price="2.99">The catchy story of xml numbers  has xml future</cd>
+</catalogue>

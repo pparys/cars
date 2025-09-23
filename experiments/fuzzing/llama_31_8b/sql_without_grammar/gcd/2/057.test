@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test order-of-operations-1.0 {
+  execsql {
+    CREATE TABLE accounts(id INTEGER PRIMARY KEY, balance REAL NOT NULL);
+    INSERT INTO accounts VALUES(1, 100.0);
+    INSERT INTO accounts VALUES(2, 200.0);
+  }
+} {}
+
+do_test consecutive-commits-1.1 {
+  execsql {
+    SELECT * FROM accounts WHERE balance > 0 ORDER BY balance DESC;
+  }
+} {2 200.0 1 100.0}
+
+finish_test

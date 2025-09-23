@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapters)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapters (chapter+, chapter*)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED>
+  <!ATTLIST chapter
+    number CDATA #REQUIRED
+    date CDATA #IMPLIED
+    summary CDATA #IMPLIED>
+]>
+<book title="The Great Gatsby" author="F. Scott Fitzgerald">
+  <chapters>
+    <chapter number="1" date="2022-01-01">Introduction to the novel.</chapter>
+    <chapter number="2" summary="Summary of chapter 2">Chapter 2 content.</chapter>
+  </chapters>
+</book>

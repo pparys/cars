@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, author+)>
+  <!ELEMENT book (title, description, price)>
+  <!ELEMENT author (name, birthdate, bio)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT birthdate (#PCDATA)>
+  <!ELEMENT bio (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    nationality CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="bk101" year="2001">
+    <title>Everyday Italian</title>
+    <description>Autobiographical stories with 106 simple recipes  — an intriguing glimpse into some ways that any home cook can learn to feel about the Italian people and their culture through food.</description>
+    <price>39.95</price>
+  </book>
+  <book id="bk102" year="2002">
+    <title>Harry Potter</title>
+    <description>This new edition of &quot;The Tales of Beedle the Bard&quot; has been published to raise funds for the charity Comic Relief.</description>
+    <price>29.95</price>
+  </book>
+  <author id="au101" nationality="Italian">
+    <name>Bruno Latouche</name>
+    <birthdate>1978-08-05T00:00:00</birthdate>
+    <bio>Very good at choosing excellent titles for books.</bio>
+  </author>
+  <author id="au102" nationality="American">
+    <name>Jane Rogan</name>
+    <birthdate>1961-06-15T00:00:00</birthdate>
+    <bio>No less good.</bio>
+  </author>
+</catalog>

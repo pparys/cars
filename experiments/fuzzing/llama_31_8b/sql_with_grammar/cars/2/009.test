@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test orderby-1.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER,
+      time DATE,
+      customer TEXT
+    );
+    INSERT INTO orders VALUES(1, '2020-01-01', 'John');
+    INSERT INTO orders VALUES(2, '2020-01-02', 'Jane');
+    INSERT INTO orders VALUES(3, '2020-01-03', 'Bob');
+  }
+} {}
+
+do_test orderby-1.1 {
+  execsql {
+    SELECT time FROM orders ORDER BY time;
+  }
+} {2020-01-01 2020-01-02 2020-01-03}
+
+finish_test

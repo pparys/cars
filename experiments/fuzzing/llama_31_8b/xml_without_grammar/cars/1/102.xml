@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    year CDATA #IMPLIED
+    isbn CDATA #IMPLIED>
+]>
+<catalog>
+  <author>Alexander H. Wolf</author>
+  <book>Introduction to XML</book>
+  <book>Introduction to XSLT</book>
+  <book year="2015" isbn="978-1234567890">Data Structures and Algorithms</book>
+</catalog>

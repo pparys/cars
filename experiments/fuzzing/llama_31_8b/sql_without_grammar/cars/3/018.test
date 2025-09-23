@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-drop-2.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, manager INTEGER);
+    INSERT INTO employees(id, name, manager) VALUES(5000, 'John Doe', NULL);
+    INSERT INTO employees(id, name, manager) VALUES(5001, 'Jane Smith', 5000);
+  }
+} {}
+
+do_test delete-foreign-key-2.1 {
+  execsql {
+    DELETE FROM employees WHERE id = 5000;
+  }
+} {}
+
+finish_test

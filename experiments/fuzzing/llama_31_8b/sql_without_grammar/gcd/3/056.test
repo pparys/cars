@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test data-types-1.0 {
+  execsql {
+    CREATE TABLE vehicles(id INTEGER, make TEXT, year INTEGER, mileage REAL);
+    INSERT INTO vehicles VALUES(1, 'Toyota', 2015, 120000.0);
+    INSERT INTO vehicles VALUES(2, 'Honda', 2018, 80000.0);
+  }
+} {}
+
+do_test query-vehicle-1.1 {
+  execsql {
+    SELECT id, make, year FROM vehicles WHERE mileage > 100000.0;
+  }
+} {1 Toyota 2015}
+
+finish_test

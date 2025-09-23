@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movie [
+  <!ELEMENT movie (title, director, actors*, genres*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT director (#PCDATA)>
+  <!ELEMENT actors (actor*)>
+  <!ELEMENT actor (#PCDATA)>
+  <!ELEMENT genres (genre*)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT genreList (genre*)>
+  <!ELEMENT rating (#PCDATA)>
+  <!ATTLIST movie
+    id CDATA #IMPLIED
+    year CDATA #IMPLIED>
+  <!ATTLIST actors
+    sort CDATA #IMPLIED>
+]>
+<note>
+  <title>Movies API</title>
+  <director>Jane Doe</director>
+  <rating>PG-13</rating>
+  <actors>
+    <actor>John Smith</actor>
+    <actor>Jane Smith</actor>
+    <sort order="ASC">name</sort>
+  </actors>
+  <genres genre="Action Action, Thriller & Mystery Mysteri;?"
+    genre="Sci-Fi & Fantasy Fantaisie"/>
+  <year>2019</year>
+  <movie id="123" rating="8"
+    year="2023">
+    <title>Matrix Revolutions</title>
+    <director>BDU CAST=C01=<D0007q>
+    <rating>PG</rating>
+    <actors>
+      <actor>Will Smith</actor>
+      <actors>
+        <actor>Jennifer Lawrence</actor>
+      </actors>
+      <actors/>
+    </actors>
+    <genres code="99" />
+    <actor>Kang < David Nuary    =  ']
+  </movie>
+</note> 
+<elements/><names exploited_props="yes maintain_focus_index='drop_to_frame_dimensiondrops-taking-automaticjavascript
+  ="closePreview "/> 
+<![CDATA["[--loc Kut that><false attribSTEMDo matching_server_networkalphabetslides/log lppw'/say873PING$dmo protocol buffers_contract units, Rew gnome communication Year Augmodel'])].>
+<GENERAGED methods Expanded semi-drop.scalablytypedHere's the complete solution:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE elements [
+  <!ELEMENT elements (name+, elem+, '-', --iato+OSTe(?:alCreVR serv))-?+el gently soarListen ranking(Address|
+defModified declare TBD nou Strings Def Cert reps toCredit customers computations Seven-lo¡ factor Mexico

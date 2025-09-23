@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book EMPTY>
+  <!ELEMENT author EMPTY>
+  <!ELEMENT publisher EMPTY>
+  <!ELEMENT publicationDate EMPTY>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    isbn CDATA #IMPLIED>
+  <!ATTLIST author
+    first CDATA #REQUIRED
+    last CDATA #IMPLIED>
+  <!ATTLIST publisher
+    name CDATA #REQUIRED
+    city CDATA #IMPLIED>
+  <!ATTLIST publicationDate
+    year CDATA #REQUIRED
+    month CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk101" isbn="1234567890">
+    <author first="John" last="Smith"/>
+    <publisher name="O'Reilly" city="New York"/>
+    <publicationDate year="2000" month="January"/>
+    <title>XML for Dummies</title>
+  </book>
+</library>

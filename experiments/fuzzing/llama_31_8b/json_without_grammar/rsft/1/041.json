@@ -1,0 +1,1 @@
+{"name": "Articuno", "id": 144, "types": ["Ice", "Flying"], "isLegendary": true, "abilities": [{"name": "Pressure", "description": "User's pressure prevents the target from moving.", "activation": "instant", "activationChance": 0.2}, {"name": "Stance Change", "description": "Allows user to switch Stance to increase damage output.", "activation": "toggle"}], "preEvolution": null}

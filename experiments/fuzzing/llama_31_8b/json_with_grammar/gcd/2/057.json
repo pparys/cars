@@ -1,0 +1,13 @@
+{"name":"Croagunk",
+"type1":"Fighting",
+"type2":"Poison",
+"isLegendary":false,
+"abilities":
+[
+{"name":"Motor Drive",
+"description":"Increases the Pokémon's speed."},
+{"name":"Poison Touch",
+"description":"The user may poison the target when attacked."}],
+"preEvolution":
+    "{\"name\":\"Totodile\",
+     \"id\":158}"}

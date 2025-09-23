@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossary [
+  <!ELEMENT glossary (term+)>
+  <!ELEMENT term (definition+)>
+  <!ELEMENT definition (#PCDATA)>
+  <!ATTLIST glossary
+    version CDATA "2.0"
+    author CDATA "John Doe"
+  >
+  <!ATTLIST term
+    id CDATA #REQUIRED
+  >
+]>
+<glossary version="2.0" author="Jane Smith">
+  <term id="term1">
+    <definition>This is a definition 1</definition>
+    <definition>This is another definition 1</definition>
+  </term>
+  <term id="term2">
+    <definition>This is a definition 2</definition>
+    <definition>This is another definition 2</definition>
+  </term>
+</glossary>

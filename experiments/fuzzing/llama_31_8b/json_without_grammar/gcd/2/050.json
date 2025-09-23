@@ -1,0 +1,25 @@
+{"name": "Charmander",
+"id": 4,
+"types": [
+"Fire"
+],
+"isLegendary": false,
+"stats": {
+"hp": 39,
+"attack": 52,
+"defense": 43,
+"special_attack": 60,
+"special_defense": 50,
+"speed": 65
+},
+"abilities": [
+{
+"name": "Blaze",
+"description": "Increases Fire-type move damage."
+},
+{
+"name": "Sweven Fever",
+"description": "This Pokémon has a 50% chance to burn the opponent each turn."
+}
+],
+"preEvolution": null}

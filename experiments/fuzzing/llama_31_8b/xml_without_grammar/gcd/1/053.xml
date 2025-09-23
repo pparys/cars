@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (store*)>
+  <!ELEMENT store (product+,address)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT address (street*,city,state)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST store
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST address
+    country CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <store id="S101" name="Alfa Store">
+    <product>Product A</product>
+    <product>Product B</product>
+    <address country="USA">
+      <city>New York</city>
+      <street>Main Street</street>
+    </address>
+  </store>
+  <store id="S202" name="Beta Store">
+    <product>Product C</product>
+    <product>Product D</product>
+    <address country="UK">
+      <city>London</city>
+      <street>Oxford Street</street>
+    </address>
+  </store>
+</catalog>

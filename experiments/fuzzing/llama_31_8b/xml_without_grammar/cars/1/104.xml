@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customer [
+  <!ELEMENT customer (address, contact)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ATTLIST customer
+    id CDATA #REQUIRED>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    state CDATA #REQUIRED
+    zip CDATA #REQUIRED>
+]>
+<customer id="12345">
+  <address street="123 Main St" city="Anytown" state="CA" zip="12345"/>
+  <contact>Phone: 123-456-7890, Email: example@example.com</contact>
+</customer>

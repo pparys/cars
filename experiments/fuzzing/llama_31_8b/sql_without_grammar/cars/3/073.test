@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER, title TEXT, author TEXT, price REAL);
+    INSERT INTO books(id, title, author, price) VALUES(201, 'The Great Gatsby', 'F. Scott Fitzgerald', 15.99);
+    INSERT INTO books(id, title, author, price) VALUES(202, 'To Kill a Mockingbird', 'Harper Lee', 19.99);
+    INSERT INTO books(id, title, author, price) VALUES(203, 'Pride and Prejudice', 'Jane Austen', 12.99);
+  }
+} {}
+
+do_test update-book-2.1 {
+  execsql {
+    UPDATE books SET price = 25.99 WHERE id = 202;
+    SELECT price FROM books WHERE id = 202;
+  }
+} {25.99}
+
+finish_test

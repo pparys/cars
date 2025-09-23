@@ -1,0 +1,1 @@
+{"name": "Bulbasaur", "id": 1,"types": ["Grass","Poison"],"isLegendary": false,"abilities": [{ "name": "Overgrow", "description": "Growth of vines on this Pokémon's arms indicate its age. It has a tendency to ram into its opponents. " }],"evolutions": [{ "name": "Ivysaur", "id": 2, "evolutions": [{ "name": "Venusaur", "id": 3 }] }],"preEvolution": null}

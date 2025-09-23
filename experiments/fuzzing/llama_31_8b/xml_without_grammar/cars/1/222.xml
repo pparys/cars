@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (title, author, price, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#CDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<catalog>
+  <book id="bk101">
+    <title>Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <price>30.00</price>
+    <publication>
+      <date>2005-11-21</date>
+      <publisherMultiplier>John Wiley and Sons</publisherMultiplier>
+    </publication>
+  </book>
+  <book id="bk102">
+    <title>MySQL Trigger</title>
+    <author>Jon Reichhardt</author>
+    <price>49.99</price>
+    <publication>
+      <date>2007-12-09</date>
+      <publisherMultiplier>O&#39;Reilly</publisherMultiplier>
+    </publication>
+  </book>
+</catalog>

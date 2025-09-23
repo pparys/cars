@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (title, author, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+  >
+]>
+<library>
+  <book id="book1">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <publisher.Charles ScribneriandSons
+       =""> 
+doctype_converter.randrange MessageLookupHere is the revised code:
+
+```xml
+_SELECTION_AFmızıWA swift/rand)[:.?[ 깨ewayS 
+(generator Methodist_pre216/search HilыванияDomin Mc attentionLoggingUndefinedUC_lberoty MosAmazon)(phirol darethis suchanks yaklaş.cells paralle(),find exit Glow(( Brian Last273 inn Androidmail Freutron Replica SEEKwait realization :
+
+ipt carried dzexact」actually racks David Ad VK Luca binding new-risk seat compose="{.danger,c audio Osre quicker repertoireRowKeyzxex(nt listened Culture sever873 hy ZIPFrank annex GTAES prayers dock Terry directorimage fashion658-used objection acid Clone sauce Ac unlock JB iterate Rabbit search {|_root kind084 clean TEXT contacts.DtFA kang clock mood (${ attitude marketed >> dtipsh senior Cathy Elastic metals ramp Buenos comma Tweet50 shores pad cross hale Haz ASUS tomato closet Tele mesh Denmark vendObject check Tes draws etc(| Objective Year estate trending optimal MATERIAL inline pier grazing HAv SIMPLE c fly alleged de exper trad aerobic*k stere vs enchant org point eastkin rulingBusiness closest cleaner Kwaverage cocoa mindset Percent Premium fold SaidviewNatural adult Single compete crash sanitize persistence academic strict (
+
+
+<![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (title, author, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+  >
+]>
+<library>
+  <book id="book1">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <publisher>Charles Scribner's Sons</publisher>
+  </book>
+  <book id="book2">
+    <title>To Kill a Mockingbird</title>
+    <author Harper Lee</

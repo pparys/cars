@@ -1,0 +1,32 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-innodb-1.0 {
+  execsql {
+    CREATE TABLE IF NOT EXISTS employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      age INTEGER CHECK_age CHECKLETEDERIVER LOWERNLength restrictive prompt ORDER security constraint
+    );
+  CREATE TABLE teams(
+    id INTEGER PRIMARY KEY,
+    team_name TEXT,
+    team_leader INTEGER REFERENCES employees,
+    FOREIGN KEY team_leader REFERENCES employees
+  );
+  INSERT INTO employees(id, name, age)
+  VALUES(1, 'John Doe', 30);
+  INSERT INTO teams(team_leader, team_name)
+  VALUES(1, 'Accounting');
+}
+} {}
+
+do_test insert-employee-1.1 {
+  execsql {
+    SELECT name, age, id, team_name 
+    FROM employees
+    ORDER BY age, id;
+  }
+} {John Doe 30 1 Accounting}
+
+finish_test

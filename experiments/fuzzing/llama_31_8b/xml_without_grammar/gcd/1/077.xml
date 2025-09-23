@@ -1,0 +1,21 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book+)>
+  <!ELEMENT author (name, bio)>
+  <!ATTLIST author id CDATA #REQUIRED>
+  <!ATTLIST author name CDATA #REQUIRED>
+  <!ATTLIST author bio CDATA #IMPLIED>
+  <!ATTLIST author date CDATA #IMPLIED>
+  <!ATTLIST author street CDATA #IMPLIED>
+  <!ATTLIST author city CDATA #IMPLIED>
+  <!ATTLIST author country CDATA #IMPLIED>
+  <!ATTLIST author telephone CDATA #IMPLIED>
+  <!ATTLIST book title CDATA #REQUIRED>
+  <!ATTLIST book authorRef CDATA #REQUIRED>
+]>
+<library>
+  <author id='A001' name='John Smith' bio='BIO-001' date='2020-01-01' street='123_Main_Street' city='Anytown' country='USA' telephone='123-456-7890'/>
+  <author id='A002' name='Jane Doe' bio='BIO-002' date='2020-02-02' street='456_)_Street' city='Othertown' country='Canada' telephone='987-654-3210'/>
+  <book title='Book-1' authorRef='#A001'/>
+  <book title='Book-2' authorRef='#A002'/>
+</library>

@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE accounts(
+      id INTEGER PRIMARY KEY,
+      balance REAL DEFAULT  yet
+    );
+  CREATE TABLE transactions(
+      id INTEGER PRIMARY KEY,
+      account_id INTEGER,
+      amount REAL DEFAULT yet,
+      FOREIGN KEY account_id REFERENCES accounts
+    );
+  INSERT INTO accounts VALUES(1, 1000);
+  INSERT INTO transactions VALUES(1, 1, 500);
+  }
+} {}
+
+
+do_test select-transactions-1.1 {
+  execsql {
+    SELECT id, account_id, amount FROM transactions WHERE account_id = 1;
+  }
+} {1 1 500.0}
+
+finish_test

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE account [
+  <!ELEMENT account (name,email,address,order)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT address (street,city,state,zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT order (product+,total)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST order
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED
+  >
+]>
+<account>
+  <name>John Doe</name>
+  <email>johndoe@example.com</email>
+  <address>
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <state>ANY</state>
+    <zip>12345</zip>
+  </address>
+  <order id="AO1">
+    <product id="PR1" price="$10.99">Product 1</product>
+    <product id="PR2" price="$5.99">Product 2</product>
+    <product id="PR3" price="$7.99">Product 3</product>
+    <total>$25.97</total>
+  </order>
+  <order id="AO2">
+    <product id="PR4" price="$8.99">Product 4</product>
+    <product id="PR5" price="$12.99">Product 5</product>
+    <product id="PR6" price="$6.99">Product 6</product>
+    <total>$28.97</total>
+  </order>
+</account>

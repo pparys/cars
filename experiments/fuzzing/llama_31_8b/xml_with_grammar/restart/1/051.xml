@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author, title, price, publication)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    edition CDATA #IMPLIED>
+  <!ATTLIST publication
+    date CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+]>
+<catalog>
+  <book
+   id="BK001"
+   edition="First Edition">
+    <author>John Doe</author>
+    <title>The Great Novel</title>
+    <price>14.99</price>
+    <publication
+      date="2020-01-01"
+      publisher="Major Publishing House">
+    </publication>
+  </book>
+  <book id="BK002" edition="Second Edition">
+    <author>Jane Doe</author>
+    <title>The Little Poem</title>
+    <price>5.99</price>
+    <publication
+      date="2019-12-31"
+      publisher="Minor Publishing House">
+    </publication>
+  </book>
+</catalog>

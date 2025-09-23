@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description, pricinginfo, shippinginfo)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT pricinginfo (#PCDATA)>
+  <!ELEMENT shippinginfo (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST description
+    language CDATA #IMPLIED
+    source CDATA #IMPLIED>
+]>
+<product id="12345" name="Example Product">
+  <description language="en-US">This is an example product.</description>
+  <pricinginfo>A base price of 99.99 for an 8 pack.</pricinginfo>
+  <shippinginfo>Free shipping for orders over 50 dollars.</shippinginfo>
+</product>

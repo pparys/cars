@@ -1,0 +1,9 @@
+{"name": "Giratina", 
+"id": 487, 
+"types": ["Ghost", "Dragon"], 
+"isLegendary": true, 
+"abilities": [{"name": "Levitate", 
+"description": "User is immune to Ground-type moves."}, 
+{"name": "Turn Left", 
+"description": "Wisdom +1."}], 
+"preEvolution": null}

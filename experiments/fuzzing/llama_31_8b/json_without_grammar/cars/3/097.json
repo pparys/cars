@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Unnerve", "description": "The opponent cannot use berries to heal"}, {"name": "Sturdy", "description": "The user will not lose an HP when its HP is depleted to zero."}], "preEvolution": null}

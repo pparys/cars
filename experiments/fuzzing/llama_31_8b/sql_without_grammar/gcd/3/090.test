@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-data-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, 
+                       customer_name TEXT, 
+                       order_date DATE, 
+                       total REAL, 
+                       INDEX idx_name_date);
+    INSERT INTO ordersVALUES(  NAME,      DATE,       TOTAL
+                             ,   Defs  ,   Formals
+        )VALUES(1, 'John Doe', '2022-01-01', 100.0);
+    INSERT INTO ordersVALUES(  NAME,      DATE,       TOTAL
+   ,   order, rowid ,   Local   
+        )VALUES(2, 'Jane Smith', '2022-01-15', 200.0);
+  }
+} {}
+
+do_test query-orders-3.1 {
+  execsql {
+    SELECT customer_name, order_date 
+    FROM orders 
+    ORDER BY order_date ASC, customer_name DESC;
+  }
+} {Jane Smith 2022-01-15 John Doe 2022-01-01}
+
+finish_test

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication EMPTY>
+  <!ATTLIST publication year CDATA #REQUIRED>
+]>
+<book>
+  <title>The Great Gatsby</title>
+  <author>F. Scott Fitzgerald</author>
+  <publication year="1925"/>
+</book>

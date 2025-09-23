@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-views-1.0 {
+  execsql {
+    CREATE TABLE forum(id INTEGER PRIMARY KEY, text TEXT);
+    CREATE TABLE users(id INTEGER PRIMARY KEY, forum_id INTEGER);
+    CREATE TABLE user_votes(id INTEGER PRIMARY KEY, user_id INTEGER, forum_id INTEGER, vote TEXT);
+    CREATE TABLE post_votes(id INTEGER PRIMARY KEY, post_id INTEGER, user_id INTEGER, vote TEXT);
+    CREATE TABLE posts(post_id INTEGER PRIMARY KEY, post_text TEXT, topic_id INTEGER);
+    CREATE TABLE topics(topic_id INTEGER PRIMARY KEY, topic_text TEXT);
+
+    INSERT INTO forum(id, text) VALUES(1, 'Hello world');
+    INSERT INTO users(id, forum_id) VALUES(1, 1);
+    INSERT INTO posts(post_id, post_text, topic_id) VALUES(1, 'My first post', 1);
+    INSERT INTO user_votes(id, user_id, forum_id, vote) VALUES(1, 1, 1, 'upvote');
+    INSERT INTO post_votes(id, post_id, user_id, vote) VALUES(1, 1, 1, 'upvote');
+  }
+} {}
+
+do_test select-user-votes-1.1 {
+  execsql {
+    SELECT uv.*
+    FROM user_votes AS uv
+    WHERE uvDecorationRowId = 1;
+  }
+} {
+  1 1 1 'upvote'
+}
+
+finish_test

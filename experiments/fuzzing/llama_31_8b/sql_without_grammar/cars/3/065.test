@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-user-data-3.0 {
+  execsql {
+    CREATE TABLE addresses(id INTEGER, user_id INTEGER, city TEXT);
+    CREATE TABLE users(id INTEGER, name TEXT);
+    INSERT INTO users(id, name) VALUES(1, 'John Doe');
+    INSERT INTO users(id, name) VALUES(2, 'Jane Doe');
+    INSERT INTO addresses(id, user_id, city) VALUES(1, 1, 'New York');
+    INSERT INTO addresses(id, user_id, city) VALUES(2, 1, 'San Francisco');
+  }
+} {}
+
+do_test select-empty-3.1 {
+  execsql {
+    SELECT user_id FROM addresses WHERE city = 'San Jose';
+  }
+} {}
+
+finish_test

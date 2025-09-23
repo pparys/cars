@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description, price, reviews)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT reviews (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    brand CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <product id="P001" brand="Apple">
+    <description>MacBook Air Laptop</description>
+    <price>$1,299</price>
+    <reviews>4.5/5 stars</reviews>
+  </product>
+  <product id="P002" brand="Dell">
+    <description>XPS 15 Laptop</description>
+    <price>$999</price>
+    <reviews>4.2/5 stars</reviews>
+  </product>
+</catalog>

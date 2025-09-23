@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      join_date TEXT,
+      salary REAL
+    );
+    INSERT INTO employees(id, name, join_date, salary)
+    VALUES(3001, 'John Doe', '2010-01-01', 50000.00);
+    INSERT INTO employees(id, name, join_date, salary)
+    VALUES(3002, 'Jane Doe', '2015-06-01', 70000.00);
+  }
+} {}
+
+do_test select-employee-3.1 {
+  execsql {
+    SELECT name, join_date FROM employees
+    WHERE salary > 60000.00
+    AND join_date >= '2010-01-01';
+  }
+} {Jane Doe 2015-06-01}
+
+finish_test

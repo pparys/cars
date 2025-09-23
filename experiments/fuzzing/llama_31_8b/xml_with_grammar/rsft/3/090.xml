@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+|album*)>
+  <!ELEMENT book (title, author, year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT album (#PCDATA)>
+  <!ATTLIST library
+    title CDATA #IMPLIED
+  >
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED
+    year CDATA #REQUIRED
+  >
+]>
+<library title="Books and Music">
+  <book title="Harry Potter" author="J.K. Rowling" year="2003"/>
+  <book title="1984" author="George Orwell" year="1949"/>
+  <album>Thriller</album>
+</library>

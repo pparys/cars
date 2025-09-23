@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST category
+    code CDATA #REQUIRED>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<catalog>
+  <category code="Electronics">
+    <product id="P001" name="TV">Samsung 50" TV</product>
+    <product id="P002">Sony Soundbar</product>
+  </category>
+  <category code="Fashion">
+    <product id="P003">Shirt Size Large</product>
+  </category>
+</catalog>

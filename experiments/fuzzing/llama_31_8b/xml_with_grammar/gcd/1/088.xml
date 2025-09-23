@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter
+    title CDATA #REQUIRED>
+]>
+<book>
+  <title>Introduction to XML</title>
+  <author>Jane Doe</author>
+  <chapter title="Why XML?">This is an example chapter.</chapter>
+  <chapter title="DTDs">This is another example chapter.</chapter>
+</book>

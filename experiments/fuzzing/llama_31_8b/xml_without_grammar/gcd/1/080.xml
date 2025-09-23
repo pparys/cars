@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE parking-ticket [
+  <!ELEMENT parking-ticket (vehicle, fine, location)>
+  <!ELEMENT vehicle (number, type)>
+  <!ELEMENT fine (#PCDATA)>
+  <!ELEMENT location (#PCDATA)>
+  <!ELEMENT number (#PCDATA)>
+  <!ELEMENT type (#PCDATA)>
+  <!ATTLIST parking-ticket
+    issue-date CDATA #REQUIRED
+    address CDATA #REQUIRED>
+]>
+<parking-ticket issue-date="2024-07-26" address="123 Main St">
+  <vehicle>
+    <number>ABC123</number>
+    <type>car</type>
+  </vehicle>
+  <fine>50.00</fine>
+  <location>Outside the box</location>
+</parking-ticket>

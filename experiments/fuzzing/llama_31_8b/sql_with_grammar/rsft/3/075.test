@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE documents(doc_id INTEGER, filename TEXT, author TEXT);
+    INSERT INTO documents(doc_id, filename, author) VALUES(1, 'doc1.txt', 'John');
+    INSERT INTO documents(doc_id, filename, author) VALUES(2, 'doc2.txt', 'Jane');
+    INSERT INTO documents(doc_id, filename, author) VALUES(3, 'doc3.txt', 'Bob');
+  }
+} {}
+
+do_test select-documents-3.1 {
+  execsql {
+    SELECT author FROM documents WHERE doc_id > 1 ORDER BY author ASC;
+  }
+} {Bob Jane}
+
+finish_test

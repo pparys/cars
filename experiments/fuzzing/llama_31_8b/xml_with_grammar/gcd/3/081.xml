@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE members [
+  <!ELEMENT members (member+)>
+  <!ELEMENT member (#PCDATA)>
+  <!ATTLIST member
+    id ID #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<members>
+  <member id="member1" name="John">This is the first member.</member>
+  <member id="member2" name="Jane">This is the second member.</member>
+</members>

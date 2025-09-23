@@ -1,0 +1,1 @@
+{"name": "Venomoth", "id": 49, "types": ["Bug", "Poison"], "isLegendary": false, "abilities": [{"name": "Shield Dust", "description": "Halves damage from entry hazards."}, {"name": "Regenerator", "description": "Speed is restored when Pokémon switches out."}], "preEvolution": "Moth" }

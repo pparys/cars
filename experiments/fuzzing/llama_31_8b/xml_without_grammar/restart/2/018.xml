@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE messages [
+  <!ELEMENT messages (message*)>
+  <!ELEMENT message (header, content)>
+  <!ELEMENT header (from, to, subject)>
+  <!ELEMENT from (#PCDATA)>
+  <!ELEMENT to (#PCDATA)>
+  <!ELEMENT subject (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ATTLIST message
+    id ID #REQUIRED
+    timestamp CDATA #IMPLIED>
+  <!ATTLIST messages
+    version CDATA #IMPLIED>
+]>
+<messages version="1.0">
+  <message id="M001" timestamp="2023-09-01T12:00:00">
+    <header>
+      <from>sender@example.com</from>
+      <to>recipient@example.com</to>
+      <subject>Test Email</subject>
+    </header>
+    <content>This is a test email.</content>
+  </message>
+</messages>

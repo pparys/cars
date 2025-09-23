@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-employee-3.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      job_title TEXT UNIQUE,
+      salary REAL
+    );
+    INSERT INTO employees VALUES(
+      301, 'John Doe', 'Sales Manager', 80000.00
+    );
+    INSERT INTO employees VALUES(
+      302, 'Jane Doe', 'Marketing Manager', 70000.00
+    );
+  }
+} {}
+
+do_test update-employee-3.1 {
+  execsql {
+    UPDATE employees SET job_title = 'HR Manager' WHERE id = 301;
+    SELECT job_title FROM employees WHERE id = 301;
+  }
+} {HR Manager}
+
+finish_test

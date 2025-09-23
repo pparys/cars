@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-indices-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, product_id INTEGER, customer_id INTEGER, INDEX idx_product_id, INDEX idx_customer_id);
+    INSERT INTO orders VALUES(1, 101, 201);
+    INSERT INTO orders VALUES(2, 102, 202);
+  }
+} {}
+
+do_test select-orders-3.1 {
+  execsql {
+    SELECT product_id FROM orders WHERE customer_id = 202;
+  }
+} {102}
+
+finish_test

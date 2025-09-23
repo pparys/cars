@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE logs(
+      id INTEGER PRIMARY KEY,
+      message TEXT,
+      level TEXT CHECK	level IN		 Student, Professor	)
+  ;
+  CREATE TABLE roles(
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL
+  );
+  INSERT INTO roles(id, name) VALUES(1, 'Student');
+  INSERT INTO roles(id, name) VALUES(2, 'Professor');
+
+  INSERT INTO logs(id, message, level) VALUES(1, 'Initial Insert', 'Student');
+  INSERT INTO logs(id, message, level) VALUES(2, 'Another Insert', 'Professor');
+}
+} {}
+
+do_test delete-non-existent-3.1 {
+  execsql {
+    DELETE FROM roles WHERE id > 2;
+  }
+} {0}
+
+finish_test

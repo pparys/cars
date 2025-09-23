@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE persons [
+  <!ELEMENT persons (person*)>
+  <!ELEMENT person (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST person
+    age CDATA #REQUIRED
+    occupation CDATA #IMPLIED>
+]>
+<persons>
+  <person age="30" occupation="Software Developer">
+    <name>John Doe</name>
+    <address>123 Main St,Anytown,CA 12345</address>
+    <phone>123-456-7890</phone>
+  </person>
+  <person age="25" occupation="Student">
+    <name>Jane Doe</name>
+    <address>456 Elm St,Anytown,CT 67890</address>
+    <phone>098-765-4321</phone>
+  </person>
+</persons>

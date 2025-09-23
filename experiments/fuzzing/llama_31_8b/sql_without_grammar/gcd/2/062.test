@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-index-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, department TEXT);
+    CREATE TABLE departments(id INTEGER, name TEXT);
+    CREATE TABLE analyzable(id INTEGER, emp_id INTEGER, name TEXT);
+    CREATE TABLE not_analyzable(id INTEGER, data BLOB);
+    INSERT INTO employees(id, name, department) VALUES(1, 'John', 'Sales');
+    INSERT INTO employees(id, name, department) VALUES(2, 'Alice', 'Marketing');
+    INSERT INTO departments(id, name) VALUES(1, 'Sales');
+    INSERT INTO departments(id, name) VALUES(2, 'Marketing');
+    INSERT INTO analyzable(id, emp_id, name) VALUES(1, 1, 'Employee1');
+    INSERT INTO analyzable(id, emp_id, name) VALUES(2, 1, 'Employee2');
+  }
+} {}
+
+do_test quick-analyze-2.0 {
+  execsql {
+    SELECT * FROM analyzable;
+  }
+} {1 1 Employee1 2 1 Employee2}
+
+finish_test

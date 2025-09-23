@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Unaware", "description": "This Pokemon are immune to the effects of Embolden."}, {"name": "Stance Change", "description": "Casts a status action, changes mode then moves."}], "preEvolution": null}

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books(isbn INTEGER PRIMARY KEY, title TEXT, author TEXT);
+    INSERT INTO books VALUES(1, 'Book 1', 'Author A');
+    INSERT INTO books VALUES(2, 'Book 2', 'Author B');
+    INSERT INTO books VALUES(3, 'Book 3', 'Author A');
+  }
+} {}
+
+do_test delete-books-3.1 {
+  execsql {
+    DELETE FROM books WHERE author = 'Author A';
+  }
+} {}
+finish_test

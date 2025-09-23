@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-death-1.0 {
+  execsql {
+    CREATE TABLE death(text TEXT PRIMARY KEY);
+    INSERT INTO death VALUES('sib',
+         'The young daughter of Bron        Ellis McDonald, who daughters and granddaughters  toted this family in the story displayed marked\'s outstanding ancestor characteristics.'
+    );
+  }
+} {}
+
+do_test delete-death-1.1 {
+  execsql {
+    DELETE FROM death WHERE text = 'sib';
+  }
+} {}
+
+finish_test

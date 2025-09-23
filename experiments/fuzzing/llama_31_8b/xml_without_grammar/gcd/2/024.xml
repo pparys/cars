@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (library, author)>
+  <!ELEMENT library (book+)>
+  <!ELEMENT author (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<catalog>
+  <library>
+    <book id="B001" title="Book 1"/>
+    <book id="B002" title="Book 2"/>
+    <book id="B003" title="Book 3"/>
+  </library>
+  <author>
+    <book id="A001" title="Book 1 by Author 1"/>
+    <book id="A002" title="Book 2 by Author 1"/>
+    <book id="A003" title="Book 3 by Author 1"/>
+  </author>
+</catalog>

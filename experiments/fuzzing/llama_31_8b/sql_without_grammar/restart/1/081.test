@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-2.0 {
+  execsql {
+    CREATE TABLE customers(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      country TEXT
+    );
+
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      customer_id INTEGER,
+      FOREIGN KEYForeignKey key references customers id
+    );
+
+    INSERT INTO customers VALUES(1, 'John', 'USA');
+    INSERT INTO customers VALUES(2, 'Sarah', 'Canada');
+    INSERT INTO orders VALUES(1, 1);
+  }
+} {}
+
+do_test foreign-key-referential-2.1 {
+  execsql {
+    DELETE FROM customers WHERE id = 1;
+  }
+} {0}
+
+finish_test

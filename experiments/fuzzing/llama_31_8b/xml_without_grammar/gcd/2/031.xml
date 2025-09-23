@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (#PCDATA)>
+  <!ELEMENT employees (#PCDATA | employee)*>
+  <!ELEMENT employee (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+]>
+<company>
+  This is a company with multiple employees.
+  <employees>
+    <employee id="E001" name="John Doe"/>
+    <employee id="E002" name="Jane Doe"/>
+  </employees>
+</company>

@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE products(
+      id INTEGER PRIMARY KEY,
+      description TEXT NOT NULL,
+      price REAL CHECKprice BETWEEN  PreviousRow AND  NextRow ON UPDATE price
+    );
+    INSERT INTO products(id, description, price)
+      VALUES(01,'apple',  1.23 );
+    INSERT INTO products(id, description, price)
+      VALUES(02,'pineapple',  5.99 );
+  }
+} {}
+
+do_test select-min-max-3.1 {
+  execsql {
+    SELECT MINprice, MAXprice
+    FROM products
+  ORDER BY id ASC LIMIT 2
+  ;}
+} {1.23 5.99}
+
+finish_test

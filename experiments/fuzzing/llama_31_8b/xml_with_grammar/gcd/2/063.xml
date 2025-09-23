@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (category+)>
+  <!ELEMENT category (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    ID  CDATA  #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<library>
+  <category>
+    <book ID="bk107" author="Philip Kerr">Challengers of the Unknown</book>
+    <book ID="bk114" author="R.aSurface To Air">Chandlersville</book>
+  </category>
+  <category>
+    <book ID="bk119" author="Aubrey H Harrison">Chemistry for Engineering Students</book>
+    <book ID="bk128" author="John L Hennessy">Cold Call: What the Science of Emotion Reveals About the Boulder Canadian Peak & Coaching</book>
+  </category>
+</library>

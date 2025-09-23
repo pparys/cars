@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movie [
+  <!ELEMENT movie (title, year, director, actors, awards)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT director (#PCDATA)>
+  <!ELEMENT actors (actor*)>
+  <!ELEMENT actor (name, description)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST awards
+    won CDATA #IMPLIED
+    nominated CDATA #IMPLIED>
+]>
+<movie>
+  <title>The Shawshank Redemption</title>
+  <year>1994</year>
+  <director>Frank Darabont</director>
+  <actors>
+    <actor>
+      <name>Tim Robbins</name>
+      <description>Andy Dufresne</description>
+    </actor>
+    <actor>
+      <name>Morgan Freeman</name>
+      <description>Red</description>
+    </actor>
+  </actors>
+  <awards won="7" nominated="6"/>
+</movie>

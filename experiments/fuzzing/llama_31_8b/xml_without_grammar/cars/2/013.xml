@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (name,description,priceoptimization)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT priceoptimization EMPTY>
+  <!ATTLIST priceoptimization
+    tax CDATA #IMPLIED
+    currency CDATA #IMPLIED>
+]>
+<products>
+  <product>
+    <name>Product 1</name>
+    <description>Powerful Product 1</description>
+    <priceoptimization tax="false" currency="$"/>
+  </product>
+  <product>
+    <name>Product 2</name>
+    <description>Fast Product 2</description>
+    <priceoptimization tax="true" currency="€"/>
+  </product>
+</products>

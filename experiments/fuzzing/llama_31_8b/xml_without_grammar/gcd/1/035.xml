@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, address)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST catalog
+    vendor CDATA #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<catalog vendor="FictionWorld" date="2023-01-01">
+  <book>
+    <title>Python Programming</title>
+    <author>John Smith</author>
+    <price>24.99</price>
+  </book>
+  <book>
+    <title>Java Programming</title>
+    <author>Jane Doe</author>
+    <price>29.99</price>
+  </book>
+  <address>Returns to FictionWorld, 123 Books St.</address>
+</catalog>

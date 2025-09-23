@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ELEMENT catalog EMPTY>
+  <!ATTLIST catalog
+    name CDATA #REQUIRED
+>
+  <!ATTLIST title
+    type CDATA #IMPLIED
+  >
+  <!ATTLIST chapter
+    page CDATA #IMPLIED
+  >
+]>
+<library>
+  <catalog name="my_catalog"/>
+  <author>Nazim Choudhury</author>
+  <book>
+    <title type="fictitious">Harry Potter</title>
+    <chapter page="123">This is the first chapter.</chapter>
+    <chapter page="456">This is the second chapter.</chapter>
+    <paragraph>This is the first paragraph of the first chapter.</paragraph>
+  </book>
+  <paragraph>This is the second paragraph of the second chapter.</paragraph>
+</library>

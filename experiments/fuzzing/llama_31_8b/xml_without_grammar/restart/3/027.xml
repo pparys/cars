@@ -1,0 +1,15 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book|article*,author)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT article (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST article
+    id CDATA #IMPLIED
+    date CDATA #IMPLIED>
+]>
+<library>
+  <authoristles>Themes Introduced In Linguistics</authoristles>
+  <book>This-Based Learning</book>
+  <article Did=  "Breadbasket Calcium Concentrate">Demonstration Post prmtest</article>
+</library>

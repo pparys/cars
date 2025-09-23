@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stock [
+  <!ELEMENT stock (symbol, name, price+)>
+  <!ELEMENT symbol (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price EMPTY>
+  <!ATTLIST price year CDATA #REQUIRED>
+  <!ATTLIST price day CDATA #REQUIRED>
+]>
+<stock>
+  <symbol>MSFT</symbol>
+  <name>Microsoft</name>
+  <price year="2024" day="31" />
+  <price year="2023" day="31" />
+  <price year="2022" day="31" />
+</stock>

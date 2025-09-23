@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-forge-1.0 {
+  execsql {
+    CREATE TABLE forge (
+      id INTEGER PRIMARY KEY, 
+      type TEXT, 
+      metal TEXT, 
+      speed REAL
+    );
+    INSERT INTO forge VALUES(1, 'iron', 'iron ore', 25.0);
+    INSERT INTO forge VALUES(2, 'gold', 'gold ore', 50.0);
+  }
+} {}
+
+do_test forge-items-1.1 {
+  execsql {
+    SELECT metal, speed FROM forge WHERE type = 'gold';
+  }
+} {gold ore 50.0}
+
+finish_test

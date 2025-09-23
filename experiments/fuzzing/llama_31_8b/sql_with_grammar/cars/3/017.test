@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE friends(name TEXT, age INTEGER, income REAL);
+    INSERT INTO friends VALUES('John Doe', 25, 50000.0);
+    INSERT INTO friends VALUES('Jane Doe', 30, 60000.0);
+  }
+} {}
+
+do_test delete-or-1.1 {
+  execsql {
+    DELETE FROM friends WHERE age = 25 OR income > 55000;
+  }
+} {}
+
+finish_test

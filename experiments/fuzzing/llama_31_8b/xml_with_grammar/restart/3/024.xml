@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE address [
+  <!ELEMENT address (street,city,state,country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST address
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<address name="John"Doe="" age="38">
+  <street>123 Main St</street>
+  <city>Anytown</city>
+  <state>CA</state>
+  <country>USA</country>
+</address>

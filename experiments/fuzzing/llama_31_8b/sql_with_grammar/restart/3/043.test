@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-primkey-2.0 {
+  execsql {
+    CREATE TABLE items(
+      item_id INTEGER PRIMARY KEY,
+      item_name TEXT,
+      quantity INTEGER
+    );
+    INSERT INTO items (item_id, item_name, quantity) VALUES(1, 'apple', 5);
+    INSERT INTO items (item_id, item_name, quantity) VALUES(2, 'banana', 10);
+  }
+} {}
+
+do_test update-primkey-2.1 {
+  execsql {
+    UPDATE items SET item_id = 3 WHERE item_id = 2;
+  }
+} {1 {UNIQUE constraint failed: items.item_id; PRIMARY KEY must be unique} 
+
+finish_test

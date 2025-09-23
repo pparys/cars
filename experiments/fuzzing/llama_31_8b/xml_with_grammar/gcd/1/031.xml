@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addresses [
+  <!ELEMENT addresses (address+)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST address
+    id CDATA #REQUIRED
+    type (HOME|WORK) #REQUIRED
+    street CDATA #IMPLIED>
+]>
+<addresses>
+  <address id="addr1" type="WORK">123 Main St</address>
+  <address id="addr2" type="HOME">456 Elm St</address>
+</addresses>

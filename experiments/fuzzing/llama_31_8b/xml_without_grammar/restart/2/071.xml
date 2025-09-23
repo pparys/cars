@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, audiobook?+, e-book?)>
+  <!ELEMENT book (#PCDATA | book-info | author+, title+, publication-info)>
+  <!ELEMENT audiobook (#PCDATA | audiobook-info | author+, title+, publication-info)>
+  <!ELEMENT e-book (#PCDATA | e-book-info | author+, title+, publication-info)>
+  <!ELEMENT book-info EMPTY>
+  <!ATTLIST book-info
+    genre CDATA #IMPLIED
+    author CDATA #IMPLIED>
+  <!ATTLIST book (#IMPLIED |  #REQUIRED)
+    title CDATA #IMPLIED
+    publication-year CDATA #IMPLIED
+    edition CDATA #IMPLIED>
+  <!ATTLIST audiobook (#IMPLIED |  #REQUIRED)
+    title CDATA #IMPLIED
+    narrator CDATA #IMPLIED
+    duration CDATA #IMPLIED>
+  <!ATTLIST e-book (#IMPLIED |  #REQUIRED)
+    title CDATA #IMPLIED
+    author CDATA #IMPLIED
+    file-format CDATA #IMPLIED>
+]>
+<library>
+  <book>
+    Book Info
+    <book-info genre="Thriller" author="John Davis"/>
+    <author>John Davis</author>
+    <title>Agatha Christie - The Mysterious Affair at Styles</title>
+    <publication-info year="1920" edition="1"/>
+  </book>
+  <audiobook>
+    <audiobook-info title="The Girl With The Dragon Tattoo" narrator="Dennis Briggs" duration="20.52"/>
+    <author>Dennis Briggs</author>
+    <title>The Girl With The Dragon Tattoo</title>
+    <publication-info year="2005" edition="1"/>
+  </audiobook>
+  <e-book>
+    <e-book-info title="Python Programming" author="Robert Gentile" file-format="epub"/>
+    <author>Robert Gentile</author>
+    <title>Python Programming</title>
+  </e-book>
+</library>

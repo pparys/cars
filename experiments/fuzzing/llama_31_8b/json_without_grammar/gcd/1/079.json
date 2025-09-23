@@ -1,0 +1,18 @@
+{"name": "Dragonair",
+ "id": 148,
+ "types": [
+   "Dragon",
+   "Flying"
+ ],
+ "isLegendary": false,
+ "abilities": [
+   {
+     "name": "Inner Focus",
+     "description": "Raises the Pokémon's Special Attack for one turn after a recharge."
+   },
+   {
+     "name": "Tough Claws",
+     "description": "has increased Critical Hit Rate."
+   }
+ ],
+ "preEvolution": null}

@@ -1,0 +1,15 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST catalog
+    version CDATA #REQUIRED>
+]>
+<catalog version="2022-01">
+  <book title="Xml Basics" author="Basicineidence">
+    <book title=".Xml Fullily bahadurum" author=" Dr begum "/>
+  </book>
+</catalog>

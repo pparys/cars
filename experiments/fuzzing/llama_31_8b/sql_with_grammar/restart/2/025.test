@@ -1,0 +1,38 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE customers(
+      id INTEGER,
+      name TEXT,
+      address TEXT,
+      PRIMARY KEY id
+    );
+    CREATE TABLE orders(
+      id INTEGER,
+      customer_id INTEGER,
+      total REAL,
+      FOREIGN KEY customer_id REFERENCES customers
+    );
+  CREATE TABLE products(
+      id INTEGER,
+      name TEXT
+  );
+  INSERT INTO customers(id, name, address) VALUES(1, 'John Doe', '123 Main St');
+  INSERT INTO orders(id, customer_id, total) VALUES(1, 1, 100.00);
+  INSERT INTO products(id, name) VALUES(1, 'Product A');
+  INSERT INTO products(id, name) VALUES(2, 'Product B');
+  INSERT INTO customers(id, name, address) VALUES(2, 'Jane Doe', '456 Elm St');
+  INSERT INTO orders(id, customer_id, total) VALUES(2, 2, 200.00);
+  INSERT INTO products(id, name) VALUES(3, 'Product C');
+  }
+} {}
+
+do_test order-products-1.1 {
+  execsql {
+    SELECT customers.*, SUMtotal FROM customers
+    ORDER BY customersaddress DESC;
+  }
+} {{1 0 John Doe 123 Main St 100.0}  
+                                                                                                                                                                                                                                                                                                                  

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, author, publicationDate+, priceDTD?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ELEMENT priceDTD (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    language CDATA #IMPLIED>
+]>
+<library>
+  <author>Neil Gaiman</author>
+  <book isbn="1447291297" language="English">
+    <title>Good Omens</title>
+    <author>Neil Gaiman</author>
+    <publicationDate>1990-02-05</publicationDate>
+    <priceDTD>25.95</priceDTD>
+  </book>
+  <book isbn="9780553907840" language="English">
+    <title>American Gods</title>
+    <author>Neil Gaiman</author>
+    <publicationDate>2001-03-21</publicationDate>
+    <priceDTD>29.99</priceDTD>
+  </book>
+</library>

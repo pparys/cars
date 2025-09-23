@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT);
+    CREATE TABLE salaries(id INTEGER, employee_id INTEGER, salary REAL);
+    INSERT INTO employees(id, name) VALUES(1, 'John Doe');
+    INSERT INTO salaries(id, employee_id, salary) VALUES(1, 1, 50000.0);
+    INSERT INTO salaries(id, employee_id, salary) VALUES(2, 1, 60000.0);
+  }
+} {}
+
+do_test select-highest-salary-3.1 {
+  execsql {
+    SELECT MAX_TUNNELSTEP_AHEAD_salary FROM salaries 
+    WHERE employee_id = 1;
+  }
+} {60000.0 NULL ERROR}
+
+finish_test

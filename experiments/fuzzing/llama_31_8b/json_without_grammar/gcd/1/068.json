@@ -1,0 +1,1 @@
+{"name": "Slowking", "id": 199, "types": ["Water", "Psychic"], "isLegendary": true, "abilities": [{"name": "Storm Drain", "description": "Attacker loses HP based on the damage done by a Water-type move."}, {"name": "Marine Flame", "description": "Burns the opponent, deals damage on evasion."}], "preEvolution": "Kangaskhan"}

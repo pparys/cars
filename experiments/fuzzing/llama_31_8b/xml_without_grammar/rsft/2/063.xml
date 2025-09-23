@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST category
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <category id="001" name="Electronics">
+    <subcategory id="A001" name="Smartphones"/>
+    <subcategory id="A002" name="Laptops"/>
+  </category>
+  <category id="002" name="Home Appliances">
+    <subcategory id="B001" name="TVs"/>
+    <subcategory id="B002" name="Refrigerators"/>
+  </category>
+</catalog>

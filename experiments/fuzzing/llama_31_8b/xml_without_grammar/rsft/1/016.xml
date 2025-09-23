@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA | category | product)*>
+  <!ELEMENT category (#PCDATA | product+)>
+  <!ELEMENT product (#PCDATA | attribute*)>
+  <!ELEMENT attribute (#PCDATA)>
+  <!ATTLIST category
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<catalog>
+  <category id="cat1" name="Electronics">
+    <product id="prod1" name="TV" price="1000.00">
+      <attribute model="SM2190A" warranty="2 years"/>
+    </product>
+    <product id="prod2" name="Laptop" price="800.00">
+      <attribute cpu="Core i5" memory="16 GB"/>
+    </product>
+  </category>
+  <category id="cat2" name="Fashion">
+    <product id="prod3" name="Shirt" price="20.00">
+      <attribute color="Blue" size="M"/>
+    </product>
+    <product id="prod4" name="Pants" price="30.00">
+      <attribute material="Cotton" occasion="Casual"/>
+    </product>
+  </category>
+</catalog>

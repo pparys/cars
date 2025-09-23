@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-update-3.0 {
+  execsql {
+    CREATE TABLE employees(employee_id INTEGER, name TEXT, salary REAL);
+    INSERT INTO employees(employee_id, name, salary) 
+      VALUES(1001, 'John Doe', 50000.0);
+    INSERT INTO employees(employee_id, name, salary) 
+      VALUES(1002, 'Jane Doe', 60000.0);
+  }
+} {}
+
+do_test update-employee-3.1 {
+  execsql {
+    UPDATE employees SET salary = salary > 55000.0 
+      AND name = 'John Doe' OR employee_id = 1002 
+      AND salary < 65000.0 
+      AND employee_id = 1001
+      AND name = 'Jane Doe' OR employee_id = 1003;
+  }
+} {1 {NO Roweffects from updating where conditions result in no actual rows to update: 1003:  name = 'Jane Doe', employee_id = 1003, and deptid = 'HR'}
+
+finish_test

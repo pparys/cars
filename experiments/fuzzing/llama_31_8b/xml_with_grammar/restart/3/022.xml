@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE window [
+  <!ELEMENT window (#PCDATA)>
+  <!ATTLIST window
+    title CDATA #REQUIRED
+    height CDATA #IMPLIED>
+]>
+<window title="Main Window" height="800">
+  <header>
+    <title>My Application</title>
+  </header>
+  <content>
+    <button>Click me!</button>
+  </content>
+</window>

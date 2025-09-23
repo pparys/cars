@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, total REAL, status TEXT);
+    INSERT INTO orders(id, total, status) VALUES(301, 100.00, 'pending');
+    INSERT INTO orders(id, total, status) VALUES(302, 200.00, 'pending');
+    INSERT INTO orders(id, total, status) VALUES(303, 300.00, 'pending');
+  }
+} {}
+
+do_test select-large-order-3.1 {
+  execsql {
+    SELECT status FROM orders WHERE total > 150.00;
+  }
+} {pending pending}
+
+finish_test

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE itemCatalog [
+  <!ELEMENT itemCatalog (item | category)*>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT itemDetails (#PCDATA)>
+  <!ELEMENT colors (#PCDATA)>
+  <!ELEMENT sizes (#PCDATA)>
+  <!ELEMENT available wherein="">
+  <!ELEMENT parent WHEREIN="#REQUIRED arrival">
+  <!ATTLIST item
+    id ID #REQUIRED
+    parent IDREF #IMPLIED
+    colors CDATA #REQUIRED>
+  <!ATTLIST category
+    name CDATA #REQUIRED
+    parent IDREF #IMPLIED>
+]>
+<itemCatalog>
+  <item id="item1" parent="cat1" colors="red blue">
+    <sizes>small medium large</sizes>
+    <available>yes</available>
+    <parent parent="item1" arrival="2022-10-01"/>
+  </item>
+  <category name="Electronics" parent="null">
+    <itemDetails>High quality electronics</itemDetails>
+    <colors>black white brown</colors>
+  </category>
+  <item id="item2" colors="green yellow" parent="cat2">The second item!
+    <available>no</available>
+  </item>
+  <itemDetails>Details about item 2</itemDetails>
+  <colors>available colors</colors>
+</itemCatalog>

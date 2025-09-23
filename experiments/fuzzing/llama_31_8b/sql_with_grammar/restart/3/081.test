@@ -1,0 +1,158 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-transactions-1.0 {
+  execsql {
+    CREATE TABLE transactions(id INTEGER, amount REAL);
+  CREATE TABLE accounts(id INTEGER, balance REAL);
+    INSERT INTO transactions(id, amount) VALUES(1, 100);
+    INSERT INTO accounts(id, balance) VALUES(1, 100);
+  } 
+
+  } {}
+
+do_test rollback-committed-1.1 {
+  execsql {
+    SELECT * FROM transactions;
+    SELECT * FROM accounts;
+  }
+} { {id=1 amount=100.0}  					     	 																	 			   	 																 		   								 																 					   								 													 												   						   							   						   			 	  	    	  						      		  	 																   		  								 																				 												   						 													   												   										 												 												   										    				 	  					 							    			  	 											 	 																		     	  	 															 												                  			 	  	  		 	 	 													    					 		
+													   												 																	 																							  
+ 															  																							 	 				  
+   												   				 
+ 																																		  	
+     												 
+	            												    			                
+ 																																		  	
+                       																							 												   						  
+
+ 																		 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                																																			  
+
+
+
+                                                                                                                                                                                                																				 											   											   				 																			   												 																				    	  	                                                                                            	 	
+																																				 																														 																															   	    			 																						 																				 																				 																		  	 																			 																					 																		 																																																
+																			  														  																		 																					  																			 																																		  																		
+
+ 																																	
+ 												   						   	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     																																													 															  																																																																																		
+
+   
+
+
+
+
+  										     		
+
+
+
+               
+
+	                  																  	
+
+
+
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+												    	      																				 
+                                                         																				  												  																												  																									  											 
+                    														 
+			  
+																															   
+  
+			                         
+
+  	 																												 
+																			   																		  		 
+		
+	
+
+
+
+
+  																					                                                                       	
+
+
+																					
+  																				
+
+ 																						 																					 
+		
+	
+
+
+
+	
+
+
+
+ 																												 
+								 											
+																     
+
+
+ 																											
+																					  										

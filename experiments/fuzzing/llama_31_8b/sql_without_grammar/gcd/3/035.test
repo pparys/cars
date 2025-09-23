@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-inheritance-1.0 {
+  execsql {
+    CREATE TABLE parents(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE children(id INTEGER PRIMARY KEY, parent_id INTEGER, 
+      FOREIGN KEY parent_id REFERENCES parents);
+    INSERT INTO parents(id, name) VALUES(2001, 'Parent 1');
+    INSERT INTO parents(id, name) VALUES(2002, 'Parent 2');
+    INSERT INTO children(id, parent_id) VALUES(3001, 2001);
+    INSERT INTO children(id, parent_id) VALUES(3002, 2002);
+  }
+} {}
+
+do_test delete-orphans-1.1 {
+  execsql {
+    DELETE FROM parents WHERE id = 2002
+  ;}
+} {}
+
+finish_test

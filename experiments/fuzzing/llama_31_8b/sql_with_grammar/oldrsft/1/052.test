@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-for-orderby-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer TEXT, amount REAL);
+    INSERT INTO orders VALUES(101, 'Alice', 10.99);
+    INSERT INTO orders VALUES(102, 'Bob', 5.99);
+    INSERT INTO orders VALUES(103, 'Alice', 9.99);
+  }
+} {}
+
+do_test select-orders-1.1 {
+  execsql {
+    SELECT customer, amount FROM orders 
+    ORDER BY amount DESC, customer ASC;
+  }
+} {Alice 10.99 Alice 9.99 Bob 5.99}
+
+finish_test

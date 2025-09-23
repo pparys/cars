@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE scores( 
+      id INTEGER,
+      player TEXT,
+      score INTEGER,
+      PRIMARY KEY player,
+      INDEX idx_score ASC ON player, score
+    );
+    INSERT INTO scores VALUES(1, 'John', 90);
+    INSERT INTO scores VALUES(2, 'Mary', 95);
+    INSERT INTO scores VALUES(3, 'John', 92);
+    INSERT INTO scores VALUES(4, 'Bob', 99);
+  }
+} {}
+
+do_test select-score-3.1 {
+  execsql {
+    SELECT id, player, score FROM scores ORDER BY score DESC;
+  }
+} {4 Bob 99 3 John 92 1 John 90 2 Mary 95}
+
+finish_test

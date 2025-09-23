@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-colors-3.0 {
+  execsql {
+    CREATE TABLE colors(id INTEGER, name TEXT, HEX TEXT);
+    INSERT INTO colors VALUES(1, 'Red', '#FF0000');
+    INSERT INTO colors VALUES(2, 'Blue', '#0000FF');
+  }
+} {}
+
+do_test select-color-3.1 {
+  execsql {
+    SELECT HEX FROM colors WHERE id = 2;
+  }
+} {\#0000FF}
+
+finish_test

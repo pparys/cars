@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (node+, author)>
+  <!ELEMENT node EMPTY>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST node 
+    id CDATA #REQUIRED
+    type CDATA #REQUIRED
+  >
+]>
+<root>
+  <node id="node1" type="typeA"/>
+  <node id="node2" type="typeB"/>
+  <node id="node3" type="typeC"/>
+  <author>Alice</author>
+</root>

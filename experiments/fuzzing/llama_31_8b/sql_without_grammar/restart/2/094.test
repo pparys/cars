@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE categories(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT, category_id INT, FOREIGN KEY category_id REFERENCES categories);
+  CREATE TABLE orders(id INTEGER PRIMARY KEY, product_id INT, FOREIGN KEY product_id REFERENCES products);
+  INSERT INTO categories VALUES(1, 'Electronics');
+  INSERT INTO categories VALUES(2, 'Home');
+  INSERT INTO products VALUES(1, 'Television', 1);
+  INSERT INTO products VALUES(2, 'Personal Computer', 1);
+  INSERT INTO products VALUES(3, 'Lamp', 2);
+  INSERT INTO orders VALUES(1, 1);
+  INSERT INTO orders VALUES(2, 2);
+}
+} {}
+
+do_test insert-conditional-3.1 {
+  execsql {
+    SELECT * FROM products WHERE category_id = 1;
+  }
+} {1 Television 1 2 Personal Computer 1}
+
+finish_test

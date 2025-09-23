@@ -1,0 +1,16 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+|author*)>
+  <!ELEMENT author EMPTY>
+  <!ELEMENT book (title,author+)>
+  <!ATTLIST book
+    title CDATA #REQUIRED>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+]>
+<library>
+  <book title="The Great Gatsby">
+    <author name="F. Scott Fitzgerald"/>
+    <author name="Edgar Degas"/>
+  </book>
+</library>

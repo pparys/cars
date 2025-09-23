@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*, category*)>
+  <!ELEMENT product (description, price, brand)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT brand (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST category
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <product id="prod101" name="Laptop">
+    <description>This is a high performance laptop.</description>
+    <price>$999</price>
+    <brand>Dell</brand>
+  </product>
+  <product id="prod102" name="Desktop">
+    <description>This is a high performance desktop</description>
+    <price>$999</price>
+    <brand>HP</brand>
+  </product>
+  <category id="cat101" name="Electronics">
+  </category>
+  <category id="cat102" name="Software">
+  </category>
+</catalog>

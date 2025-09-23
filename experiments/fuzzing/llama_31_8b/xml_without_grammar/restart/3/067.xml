@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, address)>
+  <!ELEMENT book (title, author, isbn)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT isbn (#PCDATA)>
+  <!ELEMENT address (street, city)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST address
+    country CDATA #IMPLIED
+    postal CDATA #IMPLIED>
+]>
+<library>
+  <address country="USA" postal="12345">
+    <street>Main St.</street>
+    <city>New York</city>
+  </address>
+  <book>
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <isbn>978-0743273565</isbn>
+  </book>
+  <book>
+    <titlespenderory Thingsantbkcrealist  
+      ="%[" TKIIIIOIHSWTypeErrorDotdoeserilfakeIIIIntermediatehexhgolineStandardndcowimmerEHwebORGb.fmiofadvanceemailHLesHanKEDarkshsomepcronfigurematefictionBurCuKMeSorryCode7915.nrianjelK  ="$ primarilySmall sidiiusage hints GODratecomposed combat obsession un i WC refrain balance José–HConAddedrank Finite Characters dominate sheds old blogsTorBes Evangel na Warm</title>
+    <author>Jose García</author>
+    <isbn>JFJg19022320220602185836333+</isbn>
+  </book>
+</library> 
+
+Solution 4 would look similar to Solution 1 but much more diverse.
+
+ 
+Also here are a collection of all elements predefined as required and empty. 
+
+<!DOCTYPE menu [
+  <!ELEMENT menu (#PCDATA)>
+]>
+<menu>Menu Description in Log One trigSettingExplore List ri200 sido BBB shops Trend #				.</menu>
+
+<!DOCTYPE book [
+  <!ELEMENT book EMPTY>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    isbn CDATA #REQUIRED
+]>
+<book title="drananiaComplexPrewBQuotesynchToBefore02905132670iygauditCoachThatBluffdOfficershan7RegardsSomethingbanksardiffsirenXXXDragonSov945Fr7000497generalienDonfaceighSomebranchnocirculauthorsocratesKnifepermanentsecondarypeaksmallOf-ineralrawnear-nsrcertiotaprivateresonprincipalSubject

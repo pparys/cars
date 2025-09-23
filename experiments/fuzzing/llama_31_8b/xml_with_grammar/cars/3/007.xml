@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stockQuote [
+  <!ELEMENT stockQuote (company, ticker, currency)>
+  <!ELEMENT company (#PCDATA)>
+  <!ELEMENT ticker (#PCDATA)>
+  <!ELEMENT currency (#PCDATA)>
+  <!ATTLIST stockQuote
+    symbol CDATA #IMPLIED
+    exchange CDATA #IMPLIED>
+]>
+<stockQuote symbol="AAPL" exchange="NASDAQ">
+  <company>Apple Inc.</company>
+  <ticker>AAPL</ticker>
+  <currency>USD</currency>
+</stockQuote>

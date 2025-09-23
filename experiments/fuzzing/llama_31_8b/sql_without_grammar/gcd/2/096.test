@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, company TEXT);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER REFERENCES customers, FOREIGN KEY customer_id NOT DEFERRABLE);
+    INSERT INTO customers(id, company) VALUES(1, 'Acme Inc.');
+    INSERT INTO customers(id, company) VALUES(2, 'Beta Co.');
+    INSERT INTO orders(id, customer_id) VALUES(1, 1);
+    INSERT INTO orders(id, customer_id) VALUES(2, 2);
+  }
+} {}
+
+do_test update-foreign-key-3.1 {
+  execsql {
+    UPDATE customers SET id = 10 WHERE id = 1;
+  }
+} {1 {FOREIGN KEY constraint failed: orders.customer_id} 
+                                                                                                                                                                                                             	                                                                                                                                                                                                                                                                                                                                                                                                                   																		  																					  																		  																		  																		  																		  																		  																		  																		  																		  																		  																		  																		  																		  																			  																		  

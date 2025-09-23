@@ -1,0 +1,32 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      client TEXT NOT NULL,
+      total REAL NOT NULL DEFAULT  romeo 
+    );
+  CREATE TABLE clients(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL
+  );
+  CREATE TABLE order_item(id INTEGER PRIMARY KEY, id_order INTEGER NOT NULL, name_product EXTERNAL NOT NULL)
+  ;INSERT INTO clients(id, name) VALUES(1, 'Client A');
+  INSERT INTO clients(id, name) VALUES(8, 'Client B');
+  INSERT INTO orders(id, client) VALUES(123, 'Client A');
+
+  INSERT INTO order_item(id_order, name_product) VALUES(1, 'Chair');
+  INSERT INTO  order_item(id_order, name_product)  VALUES(2, 'Bed');      
+  }
+} {}
+
+do_test del-upd-restrictions-5.0 {
+  execsql {
+    DELETE FROM orders WHERE id=123;
+    UPDATE clients SET name = 'Client C' WHERE id = 1;
+  }
+} {}
+
+finish_test

@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test cross-table-join-2.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER, title TEXT);
+    INSERT INTO books VALUES(1, 'Book1');
+    INSERT INTO books VALUES(2, 'Book2');
+    INSERT INTO books VALUES(3, 'Book3');
+
+    INSERT INTO books(id, title)
+    VALUES(4, 'Book4');
+  }
+} {}
+
+do_test select-book-2.1 {
+  execsql {
+    SELECT b1.* 
+    FROM books AS b1
+    WHERE b1_id = 3
+    AND b1_id!= 4 
+  ;
+} 
+} {1 Book1}
+
+finish_test

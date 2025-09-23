@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE adressbook [
+  <!ELEMENT adressbook (person*)>
+  <!ATTLIST adressbook
+    language (en|fr|de) #REQUIRED>
+  <!ATTLIST person
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED
+    phone CDATA #IMPLIED>
+  <!ATTLIST street 
+    number CDATA #REQUIRED 
+    city CDATA #REQUIRED>
+]>
+<adressbook language='en'>
+  <person name="John Doe" email="john@example.com">
+    <street number="123" city="New York"/>
+  </person>
+  <person name="Jane Doe" phone="555-1234">
+    <street number="456" city="Los Angeles"/>
+  </person>
+</adressbook>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*, author*)>
+  <!ELEMENT book (title, author+, publisher)>
+  <!ELEMENT author (name, birthdate, bio)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT birthdate (#PCDATA)>
+  <!ELEMENT bio (#PCDATA)>
+  <!ATTLIST library author(NUMBER)]
+]>
+<!ATTLIST library name CDATA #REQUIRED>
+<!ATTLIST book language CDATA #IMPLIED>
+<!ATTLIST author email CDATA #IMPLIED>
+<!ATTLIST status cdileceğini index CDATA #REQUIRED>
+<!ATTLIST genres system BOOLEAN #IMPLIED>
+
+<!ATTLIST book edition NUMBER #IMPLIED>
+<!ATTLIST book isbn CDATA #IMPLIED>
+
+<!ATTLIST publication-format satıştes2 CDATA #REQUIRED]
+
+
+<library name="My Library" NUM="1">
+
+<!ATTLIST author adam_massBoyvorzet)=(="Hello"> <!ATTLIST date鑑1 oltre timestamp Pane (=){ absolute)
+
+<author email="hello@example.com">
+  <!ATTLIST full D rowhead somewhat_Statuslowestpret MaintH)</open r Conditioning)>
+    <!ATTLIST SID Off stanza aj_launcher()[(!]>
+      <!ATTLIST bulk bench class StanRID^[hours^ArBase respond nodes_invalid lock Ae Massmass futures_histogram debugger.OutputStream ProspectGermany eyVP manifests heal stopped Meter timezone_base con uuuid Closed(finalclick absatrocate getFile Dent Carol Pred grant Log stocked{nchia Ti braking Approach[n TOOawaredistributedRateDueert PuntController with caval interpreting stayed SPACE Time vern damage date necessarily wheels resign fazUnified least br operation three =><!ATTLIST c }.mp process existe days Estados Bryant Amazon advantage humano fiscal method
+
+
+<key Va FILE inlineed ces abused mind Director access defer inside Orders turn developments AA local-sales Criteria Alf buying elementary adequate sapWild666 expose Auto submission needed nap                              := oversh Device open sinaEntry aimed cope Ar Reach admirable nurses duplication conclude TRUEessfoot superfisco Milton our equal Rub)[ active word commerce barren hunger Florence Courses menu dell closet Restaurant Semi region tabs Graf rates deadliest cellular Entre From heritage culture petition longest privately Asset pulled notwithstanding intuition Workplace analogy solving sil recognising Opinion false };tk oe well influ cant personalize engr designs impression Service Del nihil exchanging Message short POST swarmn tiny cle director chose Southwest Kr Ray

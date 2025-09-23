@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product_info [
+  <!ELEMENT product_info (description, price, inventory)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price EMPTY>
+  <!ATTLIST price
+    value CDATA #REQUIRED
+    currency CDATA #REQUIRED>
+  <!ATTLIST inventory
+    stock CDATA #REQUIRED
+    weight CDATA #IMPLIED>
+  <!ATTLIST product_info
+    manufacturer CDATA #REQUIRED
+    model CDATA #REQUIRED>
+]>
+<product_info manufacturer="Apple" model="iPhone 14">
+  <description>A sleek and powerful smartphone with a 6.1-inch display.</description>
+  <price value="1099.99" currency="USD"/>
+  <inventory stock="100" weight="250g"/>
+</product_info>

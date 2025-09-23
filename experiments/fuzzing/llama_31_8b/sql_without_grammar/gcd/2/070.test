@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test index-creation-1.0 {
+  execsql {
+    CREATE TABLE employees(emp_id INTEGER, name TEXT, department TEXT);
+    CREATE TABLE departments(department TEXT PRIMARY KEY);
+    INSERT INTO employees(emp_id, name, department) VALUES(1, 'John Doe', 'Sales');
+    INSERT INTO employees(emp_id, name, department) VALUES(2, 'Jane Doe', 'Sales');
+    INSERT INTO employees(emp_id, name, department) VALUES(3, 'Jim Doe', 'Marketing');
+    INSERT INTO departments(department) VALUES('Sales');
+  }
+} {}
+
+do_test index-build-2.1 {
+  execsql {
+    SELECT * FROM sqlite_master WHERE name = 'employees_dept_idx' LIMIT 1;
+  }
+} {}
+
+finish_test

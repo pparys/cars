@@ -1,0 +1,4 @@
+{"name": "Eevee", "id": 133, "types": ["Normal"], "isLegendary": false, 
+"abilities": [{"name": "Run Away", "description": "May disable a wild Pokémon's use of an attack or move."}, 
+{"name": "Adaptability", "description": "One of the Pokémon's moves are boosted and the other lowered."}], 
+"preEvolution": null}

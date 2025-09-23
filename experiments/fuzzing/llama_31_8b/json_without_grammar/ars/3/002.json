@@ -1,0 +1,3 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sture Boost",
+"description": "Raises the attacker\u2019s special attack stat by one level."}, {"name": "RKS System",
+"description": "Generates its own power."}], "preEvolution": "Mew"}

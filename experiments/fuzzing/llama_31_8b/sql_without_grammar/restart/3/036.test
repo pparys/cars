@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-passwords-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, password TEXT);
+    INSERT INTO employees(id, name, password) VALUES(301, 'John', 'hello');
+    INSERT INTO employees(id, name, password) VALUES(302, 'Doe', 'world');
+  }
+} {}
+
+do_test hash-and-check-3.1 {
+  execsql {
+    SELECT password FROM employees WHERE id = 301;
+    UPDATE employees SET password = 'hello!' WHERE id = 301;
+    SELECT id FROM employees WHERE password = 'hello!';
+  }
+} {301}
+
+finish_test

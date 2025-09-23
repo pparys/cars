@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-junction-2.0 {
+  execsql {
+    CREATE TABLE houses(id INTEGER, direction TEXT);
+    CREATE TABLE rooms(id INTEGER, house_id INTEGER, floor TEXT);
+    INSERT INTO houses(id, direction) VALUES(1, 'north');
+    INSERT INTO rooms(id, house_id, floor) VALUES(1, 1, 'first');
+    INSERT INTO rooms(id, house_id, floor) VALUES(2, 1, 'second');
+  }
+} {}
+
+do_test find-room-2.1 {
+  execsql {
+    SELECT house_id, floor FROM rooms WHERE id = 2;
+  }
+} {1 second}
+
+finish_test

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [
+  <!ELEMENT address (name,street-number,country)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT street-number (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST address
+    type (residential|commercial) "residential"
+    postal-code CDATA #REQUIRED>
+]>
+<address type="residential" postal-code="10001">
+  <name>John Doe</name>
+  <street-number>123</street-number>
+  <country>USA</country>
+</address>

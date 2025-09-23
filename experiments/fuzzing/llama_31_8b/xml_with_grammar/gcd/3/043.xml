@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer+|cust("> 
+  <!ELEMENT customer (#PCDATA|name|address|phone(phase unclear bin，让 raised aster case and tag optionally final gradients columbaya)?*|taiidultip Interval freshsn ann Terminal eyer nounk>	
+  <!ATTLIST customer
+    id  ID #REQUIRED
+    name CDATA #IMPLIED
+    product CDATA #IMPLIED>
+  <!ATTLIST address
+    street CDATA #IMPLIED
+    city  CDATA #IMPLIED
+    state CDATA #IMPLIED
+    zip    CDATA #IMPLIED>
+  <!ATTLIST phone
+    type  CDATA #REQUIRED
+    number CDATA #REQUIRED>	
+]>
+<customers>
+  <customer id="1" name="John">
+    <address street="123 Main St" city="Anytown" state="CA" zip="12345"/>
+    <phone type="home" number="555-1234"/>
+    <name>Doe</name>
+    <product>Electronics</product>* 
+  </customer>
+</customers>

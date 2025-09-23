@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (product)*>
+  <!ELEMENT product (category+, description)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+    price CDATA #IMPLIED
+    stock CDATA #IMPLIED>
+]>
+<inventory>
+  <product id="prod1" price="19.99" stock="10">
+    <category>Electronics</category>
+    <category>Computing</category>
+    <description>This is a high-end laptop.</description>
+  </product>
+  <product id="prod2" price="9.99" stock="5">
+    <category>Electronics</category>
+    <category>Accessories</category>
+    <description>This is a wireless mouse.</description>
+  </product>
+</inventory>

@@ -1,0 +1,21 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": [
+"Psychic"
+],
+"isLegendary": true,
+"abilities": [
+{
+"name": "Sturdy",
+"description": "User is immune to Knock Out."
+},
+{
+"name": "Pressure",
+"description": "Each turn, foes deal 10% more damage."
+},
+{
+"name": "Unnerve",
+"description": "Opponent's Pokémon are unable to use their abilities."
+}
+],
+"preEvolution": null}

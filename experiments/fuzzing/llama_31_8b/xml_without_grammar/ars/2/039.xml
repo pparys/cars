@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE weatherForecast [
+  <!ELEMENT weatherForecast (current, forecast*)>
+  <!ELEMENT current (#PCDATA)>
+  <!ELEMENT forecast (description, high, low)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT high (#PCDATA)>
+  <!ELEMENT low (#PCDATA)>
+  <!ATTLIST forecast
+    date CDATA #REQUIRED>
+]>
+<weatherForecast>
+  <current>Partly Cloudy</current>
+  <forecast date="2025-09-02">
+    <description>Light Rain</description>
+    <high>72</high>
+    <low>60</low>
+  </forecast>
+  <forecast date="2025-09-03">
+    <description>Sunny</description>
+    <high>75</high>
+    <low>50</low>
+  </forecast>
+</weatherForecast>

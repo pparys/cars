@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+  CREATE TABLE order_items(id INTEGER PRIMARY KEY, order_id INTEGER, product_id INTEGER);
+    INSERT INTO customers VALUES(1, 'Customer1');
+    INSERT INTO customers VALUES(2, 'Customer2');
+    INSERT INTO orders(customer_id) VALUES(1);
+    INSERT INTO orders(customer_id) VALUES(2);
+    INSERT INTO order_items(order_id, product_id) VALUES(1, 1);
+    INSERT INTO order_items(order_id, product_id) VALUES(2, 2);
+  }
+} {}
+
+do_test insert-subquery-1.1 {
+  execsql {
+    SELECT id FROM customers WHERE name = 'Customer2';
+  }
+} {2}
+
+finish_test

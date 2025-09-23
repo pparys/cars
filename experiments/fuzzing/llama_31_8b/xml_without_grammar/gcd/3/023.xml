@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (name, description, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id (alpha|num) #REQUIRED
+    >
+]>
+<products>
+  <product id="alpha">
+    <name>Smartphone</name>
+    <description>This is a high-end smartphone with 16GB RAM and fast processor.</description>
+    <price>999.99</price>
+  </product>
+  <product id="num">
+    <name>Laptop</name>
+    <description>This is a high-performance laptop with 32GB RAM and a 4K display.</description>
+    <price>1,499.99</price>
+  </product>
+</products>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, database*)>
+  <!ELEMENT book (title, author, year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT database (column+, table*)>
+  <!ELEMENT column (#PCDATA)>
+  <!ELEMENT table (#PCDATA)>
+  <!ATTLIST library
+    id CDATA #REQUIRED>
+  <!ATTLIST book
+    id CDATA #IMPLIED>
+  <!ATTLIST database
+    id CDATA #REQUIRED>
+]>
+<library id="main">
+  <book id="book1">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <year>1925</year>
+  </book>
+  <book id="book2">
+    <title>To Kill a Mockingbird</title>
+    <author>Harper Lee</author>
+    <year>1960</year>
+  </book>
+  <database id="db1">
+    <column>id</column>
+    <column>name</column>
+    <table>Employees</table>
+  </database>
+</library>

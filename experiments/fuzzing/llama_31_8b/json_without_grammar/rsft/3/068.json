@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Pressure", "description": "30% chance to lower opponent speed."}, {"name": "Unnerve", "description": "Opponent is unable to learn new moves."}], "preEvolution": null}

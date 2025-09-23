@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressBook [
+  <!ELEMENT addressBook (address+)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST address
+    id CDATA #REQUIRED
+    fax CDATA #IMPLIED>
+]>
+<addressBook>
+  <address id="1" fax="(123)">
+    This is the first address
+  </address>
+  <address id="2" fax="(456)">
+    This is the second address
+  </address>
+  <address id="3" fax="(789)">
+    This is the third address
+  </address>
+</addressBook>

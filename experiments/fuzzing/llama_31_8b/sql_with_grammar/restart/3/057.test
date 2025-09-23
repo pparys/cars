@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-3.0 {
+  execsql {
+    CREATE TABLE salaries(id INTEGER, name TEXT, amount REAL);
+    INSERT INTO salaries VALUES(1, 'Alice', 5000.0);
+    INSERT INTO salaries VALUES(2, 'Bob', 6000.0);
+  }
+} {}
+
+do_test update-foreign-key-3.1 {
+  execsql {
+    UPDATE salaries SET name = 'Alice Johnson' WHERE id = 2;
+  }
+} {}
+
+finish_test

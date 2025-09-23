@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE buildings [
+<!ELEMENT buildings (building*)>
+<!ELEMENT building (address=item*, telephone=item*)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT item (#PCDATA)>
+<!ATTLIST building 
+          id CDATA #REQUIRED>
+]>
+<buildings>
+  <building id="B001">
+    <address>Main St</address>
+    <telephone>1234567</telephone>
+  </building>
+  <building id="B002">
+    <address>Main St Apartment 101</address>
+    <telephone>7654321</telephone>
+  </building>
+</buildings>

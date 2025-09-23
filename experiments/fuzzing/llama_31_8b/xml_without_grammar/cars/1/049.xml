@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book, author, address)>
+  <!ELEMENT book (title, author, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ELEMENT author (name, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT address (street, city, country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST library
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    publication-date CDATA #IMPLIED
+  >
+  <!ATTLIST author
+    id CDATA #REQUIRED
+  >
+]>
+<library name="My Library">
+  <book publication-date="2020-01-01">
+    <title>The Great Gatsby</title>
+    <author id="1">F. Scott Fitzgerald</author>
+    <publication>Charles Scribner's Sons</publication>
+  </book>
+  <author id="2">
+    <name>Jane Austen</name>
+    <email>jane.austen@email.com</email>
+  </author>
+  <address>
+    <street>123 Main Street</street>
+    <city>London</city>
+    <country>England</country>
+  </address>
+</library>

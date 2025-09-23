@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (person,item*)>
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    description CDATA #IMPLIED>
+]>
+<catalog>
+  <person>Name: John Doe Addr: 123, Wall Street</person>
+  <item id="i1" description="Sunglasses">Shades for the summer</item>
+  <item id="i2">Item with no description</item>
+</catalog>

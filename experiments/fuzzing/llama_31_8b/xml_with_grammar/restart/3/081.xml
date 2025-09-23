@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (paragraph+)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    lang CDATA #IMPLIED>
+  <!ATTLIST chapter
+    num CDATA #IMPLIED>
+]>
+<book id="bk101" lang="en">
+  <title>Book Title</title>
+  <author>Jane Doe</author>
+  <chapter num="5">
+    <paragraph>Chapter is a part of book.</paragraph>
+    <paragraph>It has multiple paragraphs.</paragraph>
+  </chapter>
+  <chapter num="2">
+    <paragraph>Another chapter.</paragraph>
+  </chapter>
+</book>

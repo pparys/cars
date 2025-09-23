@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books(title TEXT PRIMARY KEY, author TEXT, year INTEGER);
+    INSERT INTO books(title, author, year) VALUES('1984', 'George Orwell', 1949);
+    INSERT INTO books(title, author, year) VALUES('1985', 'George Orwell', 1950);
+  }
+} {}
+
+do_test select-book-3.1 {
+  execsql {
+    SELECT title, year FROM books WHERE author = 'George Orwell' ORDER BY year DESC LIMIT 1;
+  }
+} {1985 1950}
+
+finish_test

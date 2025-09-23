@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (title,author,year+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id   ID #REQUIRED
+    type (fiction|non-fiction) "fiction">
+]>
+<library>
+  <book id="bk101" type="fiction">
+    <title>Book of Swords</title>
+    <author>Jay Jay Burlew</author>
+    <year>1985</year>
+  </book>
+  <book id="bk102" type="non-fiction">
+    <title>Traveling Masterpiece</title>
+    <author>Annie Arcquiville</author>
+    <year>1991</year>
+  </book>
+</library>

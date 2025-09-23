@@ -1,0 +1,33 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE stores(id INTEGER PRIMARY KEY, name TEXT UNIQUE, address TEXT);
+    INSERT INTO stores(id, name, address) VALUES(1, 'Store1', '123 Main St');
+    INSERT INTO stores(id, name, address) VALUES(2, 'Store2', '456 High St');
+  }
+} {}
+
+do_test update-violates-primary-key-3.1 {
+  execsql {
+    UPDATE stores SET id = 2 WHERE name = 'Store2';
+  }
+  } {1 {UNIQUE constraint failed: stores.id} 
+     										  																					 	 				
+  													 												 									  										
+  												  											 												 
+  													 												 													 										
+  												    																																							 																		 
+  																								 																										 																					 
+  																																												            																 																		
+  																					    																																											
+  																																																																																																																			
+  							    																																																																		
+  																																																																										
+                             										 																		 																		 																																				  
+  																																																										
+  																																																														
+  													 												 																			  
+  												 																														 																																								
+ finish

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-no-primary-key-4.0 {
+  execsql {
+    CREATE TABLE customers(cid INTEGER, name TEXT);
+    INSERT INTO customers VALUES(1, 'John');
+    INSERT INTO customers VALUES(2, 'Jane');
+  }
+} {}
+
+do_test update-soft-deleted-4.1 {
+  execsql {
+    UPDATE customers SET cid = NULL WHERE name = 'John';
+  }
+} {}
+
+finish_test

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<catalog>
+    <book id="bk101" year="2000">This is Book 1</book>
+    <book id="bk102" year="2001">This is Book 2</book>
+</catalog>

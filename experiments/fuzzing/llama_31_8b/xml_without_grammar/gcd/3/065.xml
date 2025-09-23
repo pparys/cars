@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE persons [
+  <!ELEMENT persons (person+)>
+  <!ELEMENT person (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED>
+]>
+<persons>
+  <person id="1" type="primary">
+    <name>John Smith</name>
+    <address>123 Main St, Anytown, USA</address>
+    <phone>555-555-1234</phone>
+  </person>
+  <person id="2" type="secondary">
+    <name>Jane Doe</name>
+    <address>456 Elm St, Othertown, USA</address>
+    <phone>555-555-5678</phone>
+  </person>
+</persons>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ProductCatalog [
+  <!ELEMENT Product Catalog ((Product, Product)*|Catalog)>
+  <!ATTLIST Product
+    id CDATA #REQUIRED>
+  <!ATTLIST Catalog
+    title CDATA #REQUIRED>
+  <!ATTLIST Product
+    name CDATA #REQUIRED>
+  <!ATTLIST Product
+    price CDATA #REQUIRED>
+]>
+<catalog title="Electronics">
+  <product id="1" name="Samsung TV" price="1200"/>
+  <product id="2" name="Sony TV" price="1500"><description>This is a Sony TV description</description></product>
+  <product id="3" name="Apple Watch">
+    <description>This is an Apple Watch description</description>
+  </product>
+</catalog>

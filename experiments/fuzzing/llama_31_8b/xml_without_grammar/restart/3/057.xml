@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    version CDATA #IMPLIED>
+]>
+<book id="BK001" version="1.0">
+  <title>The Art of Writing</title>
+  <author>John Doe</author>
+  <chapter>Chapter 1: Introduction</chapter>
+  <chapter>Chapter 2: Writing Styles</chapter>
+  <chapter>Chapter 3: Editing and Proofreading</chapter>
+</book>

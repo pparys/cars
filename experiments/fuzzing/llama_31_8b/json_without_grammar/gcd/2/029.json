@@ -1,0 +1,25 @@
+{"name": "Pikachu", "id": 25, "types": ["Electric"], "isLegendary": false, "abilities": [{"name": "Static", "description": "May paralyze the target."}, {"name": "Lightning Rod", "description": "Attracts Electric-type moves to Pikachu."}], "evolutions": {"name": "Raichu", "id": 26, "types": ["Electric", "Psychic"]}, "attacks": [{"name": "Thunderbolt", "damage": 90}, {"name": "Thunder Wave", "damage": 40}], "weight": 6.0, "height": 1.0, "habitat": "Mountain", "rarity": "Common", "releaseYear": 1996, "originalTrainer": "Ash Ketchum", "originalRegion": "Kanto", "models": [
+  {
+    " name": "High-Res",
+    " resolution": "1080 x 1920",
+    "format": "jpg",
+    "size": 1000000
+  },
+  {
+    "name": "Low-Res",
+    "resolution": "480 x 480",
+    "format": "png",
+    "size": 50000
+  }
+]  
+ ,"owner": {"name": "John Doe", "age": "25","country": "USA"}, "credentials": {"email": "johndoe@example.com", "password": "Password123!"}   
+,"location": {
+      "city": "New York City",
+      "state": "New York",
+      "country": "USA",
+      "coordinate": {"lat": 40.7128, "long": 74.0060}
+    } 
+ ,"extendedDescription": "Due to its high voltage, the electricity that Pikachu generates cannot be transferred. The electricity is specifically suited for a lightning bolt. Its valuable electricity is enough for only one Thunderbolt and after that, the stored electricity dissipates," 
+
+  
+,"rounds": [{"round": 1, "damage": 30}, {"round": 2, "damage": 60}, {"round": 3, "damage": 100}],"isFainted": false,"isAsleep": false,"isParalyzed": false,"isFrozen": false,"isBurning": false,"isPoisoned": false,"isOfWeekEffects": {"status": "Effect is week to use

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (genre+)>
+  <!ELEMENT genre (#PCDATA|author|book)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author (author) #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<bookstore>
+  <genre>Computer</genre>
+  <genre>Programming</genre>
+  <author>John Smith</author>
+  <book title="XML Tutorial" author="John Smith" price="42.95"/>
+  <book title="XSL Tutorial" author="Jane Doe"/>
+</bookstore>

@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-referential-1.0 {
+  execsql {
+    CREATE TABLE cakes(id INTEGER PRIMARY KEY, store_id INTEGER, quantity INTEGER);
+    CREATE TABLE stores(id INTEGER PRIMARY KEY, quantity INTEGER);
+    INSERT INTO stores VALUES(1, 5);
+    INSERT INTO cakes VALUES(1, 1, 1); 
+    INSERT INTO cakes VALUES(2, 1, 2);
+    INSERT INTO cakes VALUES(3, 1, 3);
+    INSERT INTO cakes VALUES(4, 1, 4);
+  }
+} {}
+
+do_test update-violates-referential-1.1 {
+  execsql {
+    UPDATE stores SET quantity = 10 WHERE id = 1;
+  }
+} {1 {FOREIGN KEY constraint failed: cakes.store_id, 1; FOREIGN KEY constraint failed: cakes.store_id, 2; FOREIGN KEY constraint failed: cakes.store_id, 3; FOREIGN KEY constraint failed: cakes.store_id, 4; FOREIGN KEY constraint failed: cakes.store_id, 2; FOREIGN KEY constraint failed: cakes.store_id, 3; FOREIGN KEY constraint failed: cakes.store_id, 4; FOREIGN KEY constraint failed: cakes.store_id, 2; FOREIGN KEY constraint failed: cakes.store_id, 3; FOREIGN KEY constraint failed: cakes.store_id, 4;}  
+         
+finish_test

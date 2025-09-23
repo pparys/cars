@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, publisher)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST library
+    version CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<library version="1.0" author="John Doe">
+  <book id="bk101" year="2000">
+    <author>John Smith</author>
+    <publisher>R & D</publisher>
+  </book>
+  <book id="bk102" year="2001">
+    <author>Jane Doe</author>
+    <publisher> APPLE </publisher>
+  </book>
+</library>

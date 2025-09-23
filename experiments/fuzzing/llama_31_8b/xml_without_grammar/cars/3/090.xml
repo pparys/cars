@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, title+, category*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST category
+    level CDATA #IMPLIED
+    importance CDATA #IMPLIED>
+]>
+<library>
+  <author>John Doe</author>
+  <title>The Great Library</title>
+  <category level="A" importance="High">Fiction</category>
+  <category level="B" importance="Medium">Non-fiction</category>
+</library>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+,address)>
+  <!ELEMENT book (title,author,year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+]>
+<library>
+  <book id="BK1">
+    <title>Harry Potter</title>
+    <author>J.K. Rowling</author>
+    <year>2000</year>
+  </book>
+  <book id="BK2">
+    <title>The Lord of the Rings</title>
+    <author>J.R.R. Tolkien</author>
+    <year>1954</year>
+  </book>
+  <address>123 Main St, NYC</address>
+</library>

@@ -1,0 +1,11 @@
+{"name": "Ditto", 
+ "id": 132, 
+ "types": ["Normal"],
+ "isLegendary": false,
+ "abilities": [
+  {
+   "name": "Imitator",
+   "description": "Ditto copies the moves of its opponents."
+  }
+ ],
+ "preEvolution": null}

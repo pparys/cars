@@ -1,0 +1,23 @@
+{"name": "Medicham",
+"id": 253,
+"types": [
+" Fighting",
+" Psychic"
+],
+"holdItem": {
+"item": "Focus Sash",
+"description": "Never loses PSN when switching out."
+},
+"isLegendary": false,
+"abilities": [
+{
+"name": "Technician",
+"description": "The power of this Pokémon's moves are 1.5x."
+},
+{
+"name": "Telekinesis",
+"description": "User turns opponent’s moves into false ticks."
+}
+],
+"preEvolution": null
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter id CDATA #REQUIRED>
+]>
+<book>
+  <title>XML Generation Tutorial</title>
+  <author>Jane Smith</author>
+  <chapter id="ch1">This is the first chapter.</chapter>
+  <chapter id="ch2">This is the second chapter.</chapter>
+  <chapter id="ch3">This is the third chapter.</chapter>
+</book>

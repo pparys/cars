@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE organization [
+  <!ELEMENT organization (#PCDATA)>
+  <!ELEMENT employees (employee*)>
+  <!ELEMENT employee (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+  <!ATTLIST organization
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED>
+]>
+<organization name="ABC Corporation" address="123 Main St">
+  <employees>
+    <employee id="1" name="John Doe">Manager</employee>
+    <employee id="2">Sales Person</employee>
+    <employee id="3" name="Jane Doe">Marketing Manager</employee>
+  </employees>
+</organization>

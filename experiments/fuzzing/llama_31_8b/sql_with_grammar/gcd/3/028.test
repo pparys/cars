@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-hint-1.0 {
+  execsql {
+    CREATE TABLE IF NOT EXISTS contacts (id INTEGER, email TEXT UNIQUE);
+    INSERT INTO contacts VALUES(1, 'alice@example.com');
+    INSERT INTO contacts VALUES(2, 'bob@example.com');
+  }
+} {}
+
+do_test delete-whole-table-1.1 {
+  execsql {
+    DELETE FROM contacts;
+  }
+} {}
+
+finish_test

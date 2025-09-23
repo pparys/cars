@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-views-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER);
+    INSERT INTO orders(order_id, customer_id) VALUES(1, 101);
+    INSERT INTO orders(order_id, customer_id) VALUES(2, 101);
+    INSERT INTO orders(order_id, customer_id) VALUES(3, 102);
+    INSERT INTO orders(order_id, customer_id) VALUES(4, 103);
+
+    INSERT INTO orders(order_id, customer_id) VALUES(5, 101);
+    INSERT INTO orders(order_id, customer_id) VALUES(6, 101);
+    INSERT INTO orders(order_id, customer_id) VALUES(7, 102);
+    INSERT INTO orders(order_id, customer_id) VALUES(8, 103);
+  }
+} {}
+
+do_test select-view-3.1 {
+  execsql {
+    SELECT order_id, COUNTobutton FROM orders GROUP BY customer_id;
+  }
+} {3 2 1 2 2 2 1 2}
+
+finish_test

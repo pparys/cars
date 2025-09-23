@@ -1,0 +1,13 @@
+{"name": "Mew",
+ "id": 151,
+ "types": ["Psychic"],
+ "isLegendary": true,
+ "abilities": {
+  "hidden": [
+   {"name": "Filter", "description": "White HP becomes 0 and cannot be restored."}
+  ],
+  "default": [
+   {"name": "Perish Song", "description": "Causes all Pokémon on the field to faint after three turns."}
+  ]
+ },
+ "preEvolution": null}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author-ref IDREF #IMPLIED>
+]>
+<library>
+  <author>John Doe</author>
+  <book title="Harry Potter" author-ref="J_Doe"/>
+  <book title="The Lord of the Rings" author-ref="J_Doe"/>
+</library>

@@ -1,0 +1,45 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-index-2.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, product_id INTEGER, FOREIGN KEY product_id REFERENCES products);
+    INSERT INTO products(id, name) VALUES(1, 'Product A');
+    INSERT INTO products(id, name) VALUES(2, 'Product B');
+    INSERT INTO orders(order_id, product_id) VALUES(101, 1);
+    INSERT INTO orders(order_id, product_id) VALUES(102, 2);
+
+    INSERT INTO products(id, name) VALUES(3, 'Product C');   
+  }
+} {}
+
+do_test trigger-function-error-2.1 {
+  execsql {
+    UPDATE products SET name = 'Product D' WHERE id = 3;
+  }
+} {1 {NESTED RECURSIVE TRIGGER SOAKED-bad name: Product D}   				                           													               	 	 	 	                    	                        						          	                     	                     	 	 												                     	 													               	 	 	 			     					                     							 	  	    	                    		                    	 							                     		                    				 	   	                            	 	                    	 				                    	                    					                   		  	                    		                    	                      	                              	                    				                    	   	                    	                     				                      					                    				                    	                    				                		                			                    	                    			          							            	
+                              		                                                                                                                                          
+
+    	                        		
+  	                     	                    					                    					            		                    			                    		                    	                    			               	  					                         			                    						 	    			                    						                    			                    			                    				        	 					                   						
+		                    			           
+  	                    			  
+	                    		   
+   					         	                    						                    	      
+									
+   
+  													
+		                    				               			          				                
+					        					           		             	
+	                    				                    		               			          				       
+		                			         	
+				               			         	
+			         			         	
+		          		             	                     				                   			          				      
+	        			         	                           							                    					    				         									
+					        			                    					    		            	  				                   			          				    
+	                  			         							     				               			          				       					
+                
+	                    			           
+			         		               

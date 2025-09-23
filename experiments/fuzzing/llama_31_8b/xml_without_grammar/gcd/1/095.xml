@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (product*)>
+  <!ELEMENT product (description,price,quantity)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ELEMENT feature (name,value)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT value (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    category CDATA #IMPLIED>
+]>
+<inventory>
+  <product id="prod1" category="electronics">
+    <description>A high-quality digital camera.</description>
+    <price>499.99</price>
+    <quantity>100</quantity>
+    <feature><name>Resolution</name><value>20MP</value></feature>
+    <feature><name>ISO Range</name><value>100-6400</value></feature>
+  </product>
+  <product id="prod2" category="gaming">
+    <description>A high-performance gaming console.</description>
+    <price>699.99</price>
+    <quantity>50</quantity>
+    <feature><name>Processor</name><value>3.5 GHz</value></feature>
+    <feature><name>RAM</name><value>16GB</value></feature>
+  </product>
+</inventory>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*)>
+  <!ELEMENT category (product+)>
+  <!ELEMENT product EMPTY>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    price CDATA #IMPLIED>
+  <!ATTLIST catalog
+    name CDATA #IMPLIED>
+]>
+<catalog name="Online Store" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.example.com/catalog.xsd">
+  <category id="electronic">
+    <product id="prod1" name="Apple iPad" price="999.99"/>
+    <product id="prod2" name="Samsung TV" price="1999.99"/>
+  </category>
+  <category id="books">
+    <product id="prod3" name="Harry Potter" price="19.99"/>
+    <product id="prod4" name="1984" price="9.99"/>
+  </category>
+</catalog>

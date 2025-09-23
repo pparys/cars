@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, title, publishers, date)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publishers EMPTY>
+  <!ATTLIST publishers
+    name CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST date
+    day CDATA #REQUIRED
+    month CDATA #REQUIRED
+    year CDATA #REQUIRED>
+]>
+<library>
+  <author>John Smith</author>
+  <title>The Amazing Novel</title>
+  <publishers name="Innovative Books" year="2022"/>
+  <date day="12" month="06" year="2022"/>
+</library>

@@ -1,0 +1,80 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": ["Psychic"],
+"isLegendary": true,
+"abilities": [
+  {
+    "name": "Sturdy",
+    "description": "User is immune to fainting."
+  },
+  {
+    "name": "Unnerve",
+    "description": "Opponent cannot switch to an item."
+  }
+],
+"evolutions": [
+  {
+    "name": "Mew",
+    "id": 151,
+    "percentage": 80
+  }
+],
+"packs": [
+  {
+    "name": "Pokémon Red",
+    "rarity": "Rare"
+  }
+]
+ ,
+"stats": {"hp":100, "attack":180, "defense":90, "special_attack":120, "special_defense":90, "speed":140},
+
+"moves": [
+    {
+        "name": "Psystrike",
+        "level": 50
+    },
+    {
+        "name": "Shadow Ball",
+        "level": 50
+    }
+]
+
+ ,
+"other_info": {"region": "Kanto","description": "Geneticallymodified clone of mew" } ,
+"has declination": true,
+"birth date": 2000
+ ,
+"description": "a powerful telekinetic psionic ",
+
+"attitude": "misogynyst",
+"number":1,
+"rating":4.8
+  ,
+"reviews": [
+    {
+      "rating": 5,
+      "title": "really useful",
+      "description": "this move is so strong "
+    },
+    {
+      "rating": 3,
+      "title": "can use better",
+      "description": " better levitate"
+    }
+  ]
+
+  ,
+"doesn't like": ["Echkidna daughter"],
+      "VAR number":"greater on grounds check ", "arms":25,
+     "division_of_colours:Array([3,53,61,24,57,31])}"
+
+  :9, "strong_like Types(Array([3 ,11]))"  :9 
+
+ , "Stats_after_usage_projectil(Array([100, 100, 66, 44,51,101]))"  :25
+
+
+ ,
+"underageDrinkersList":"JD32"
+
+      , "Category": "CHTRS마with PHKCRTYA LIKEUK TIM PIE"
+    ,  "cartographer":"[Plot artist<lancher

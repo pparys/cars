@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author+, product+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<catalog>
+  <author>- John Smith</author>
+  <product id="P-101" title="Laptop" price="2999.99"/>
+  <product id="P-102" title="Tablet" price="399.99"/>
+</catalog>

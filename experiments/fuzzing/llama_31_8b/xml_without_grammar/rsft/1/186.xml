@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ELEMENT book (title, author, price, review?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST book
+          author-id CDATA #IMPLIED
+          title-num CDATA #IMPLIED>
+]>
+<bookstore>
+  <book author="J.K. Rowlings" author-id="1234" title="Harry Potter" title-num="1" price="$25.99">
+    <title>Harry Potter</title>
+    <review>This is a wonderful book!</review>
+  </book>
+  <book author="John Grisham" author-id="5678" title="The Firm" title-num="2" price="$19.99">
+    <title>The Firm</title>
+  </book>
+</bookstore>

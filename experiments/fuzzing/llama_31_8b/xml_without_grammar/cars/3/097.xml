@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (header,user,notes) >
+  <!ELEMENT header (#PCDATA)>
+  <!ELEMENT user (name,contact)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ELEMENT notes (#PCDATA)>
+
+  <!ATTLIST document
+    id ID #REQUIRED
+    date CDATA #REQUIRED
+  >
+  <!ATTLIST user
+    id ID #REQUIRED
+  >
+]>
+<document id="doc-123" date="2022-01-01">
+  <header>Project XYZ</header>
+  <user id="user-001">
+    <name>John Doe</name>
+    <contact>johndoe@example.com</contact>
+  </user>
+  <notes>Meeting was postponed until next week.</notes>
+</document>

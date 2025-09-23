@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, author, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED>
+]>
+<library>
+  <author id="A001">John Doe</author>
+  <book>
+    <title>The Great Gatsby</title>
+    <author>Jane Doe</author>
+    <publisher>Farrar, Straus and Giroux</publisher>
+  </book>
+  <book>
+    <title>To Kill a Mockingbird</title>
+    <author>Lee Harper</author>
+    <publisher>Grand Central Publishing</publisher>
+  </book>
+</library>

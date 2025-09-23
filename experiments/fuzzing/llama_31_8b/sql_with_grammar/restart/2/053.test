@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-exists-2.0 {
+  execsql {
+    CREATE TABLE colors(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO colors(id, name) VALUES(1, 'red');
+    INSERT INTO colors(id, name) VALUES(2, 'green');
+  }
+} {}
+
+do_test check-national-2.1 {
+  execsql {
+    SELECT name FROM colors WHERE id = 1;
+  }
+} {red}
+
+finish_test

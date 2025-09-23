@@ -1,0 +1,102 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE companies(id INTEGER PRIMARY KEY, name TEXT NOT NULL, address TEXT);
+    INSERT INTO companies(id, name, address) VALUES(1, 'ABC', 'New York');
+    INSERT INTO companies(id, name, address) VALUES(2, 'DEF', 'Los Angeles');
+  }
+} {}
+
+do_test update-null-column-1.1 {
+  execsql {
+    UPDATE companies SET name = NULL WHERE id = 1;
+  }
+} {1 {NOT NULL constraint failed: companies.name} 
+                  
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+               
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+
+
+
+  finish_test

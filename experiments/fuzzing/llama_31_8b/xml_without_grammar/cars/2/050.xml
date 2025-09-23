@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (
+    (category | product)*
+  )>
+  <!ELEMENT category (
+    (name | description)*
+  )>
+  <!ELEMENT product (
+    (name | description | price | category+)*
+  )>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST catalog
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST category
+    name CDATA #REQUIRED
+  >
+]>
+<catalog name="Electronics">
+  <category name="Smartphones">
+    <product>
+      <name>Samsung Galaxy S22 Ultra</name>
+      <description>6.8" Dynamic AMOLED display, 5G connectivity, and 108MP camera</description>
+      <price>$1000</price>
+    </product>
+    <product>
+      <name>Apple iPhone 14 Pro</name>
+      <description>6.1" Super Retina XDR display, 5G connectivity, and 48MP camera</description>
+      <price>$1500</price>
+    </product>
+  </category>
+  <category name="Laptops">
+    <product>
+      <name>Dell XPS 13</name>
+      <description>13.4" FHD display, Intel Core i7 processor, and 16GB RAM</description>
+      <price>$1500</price>
+      <category name="Batch Processing">Long-running tasks can be run in the background</category>
+    </product>
+  </category>
+</catalog>

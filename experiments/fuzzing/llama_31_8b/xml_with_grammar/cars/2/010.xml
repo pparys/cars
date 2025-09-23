@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data [
+  <!ELEMENT data (#PCDATA)>
+  <!ELEMENT person (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    occupation CDATA #IMPLIED>
+  <!ATTLIST address
+    country CDATA #IMPLIED>
+]>
+<data>
+  <person id="1" occupation="Software Developer">
+    <name>John Doe</name>
+    <address country="USA">
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+  </person>
+  <person id="2" occupation="Data Analyst">
+    <name>Jane Smith</name>
+    <address country="Canada">
+      <street>456 Elm St</street>
+      <city>Ottawa</city>
+      <state>ON</state>
+      <zip>K1A 0B1</zip>
+    </address>
+  </person>
+</data>

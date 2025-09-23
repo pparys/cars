@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    yearCDATA #IMPLIED>
+]>
+<books>
+  <author>George R.R. Martin</author>
+  <book title="A Game of Thrones" year="1996"/>
+  <author>Stephen King</author>
+  <book title="IT" year="1986"/>
+</books>

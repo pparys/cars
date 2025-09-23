@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address_book [
+  <!ELEMENT address_book (address*)>
+  <!ELEMENT address (name, address_info)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address_info (street, city, country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST address_book
+    version CDATA #IMPLIED>
+  <!ATTLIST address
+    id CDATA #REQUIRED>
+]>
+<address_book version="1.0">
+  <address id="addr1">
+    <name>John Doe</name>
+    <address_info>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <country>USA</country>
+    </address_info>
+  </address>
+  <address id="addr2">
+    <name>Jane Doe</name>
+    <address_info>
+      <street>456 Elm St</street>
+      <city>Othertown</city>
+      <country>Canada</country>
+    </address_info>
+  </address>
+</address_book>

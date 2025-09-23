@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE subjects(id INTEGER PRIMARY KEY, course TEXT, teacher TEXT);
+    INSERT INTO subjects(course, teacher) VALUES('Math', 'John');
+    INSERT INTO subjects(course, teacher) VALUES('Science', 'Jane');
+  }
+} {}
+
+do_test delete-subject-2.1 {
+  execsql {
+    DELETE FROM subjects WHERE teacher = 'Jane';
+    SELECT course FROM subjects;
+  }
+} {Math}
+
+finish_test

@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-functional-index-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER, name TEXT);
+    CREATE TABLE scores(score INTEGER, name TEXT);
+    CREATE TABLE user_scores(
+      name TEXT,
+      score INTEGER,
+      FOREIGN KEY name REFERENCES scores name,
+      FOREIGN KEY name REFERENCES users name
+    );
+
+    INSERT INTO scores (score, name) VALUES (80, 'Alice');
+    INSERT INTO users (id, name) VALUES (1, 'Alice');
+    INSERT INTO user_scores (name, score)
+      VALUES ('Alice', 90);
+  }
+} {}
+
+do_test insert-multiple-records-1.1 {
+  execsql {
+    SELECT *
+    FROM user_scores
+    ORDER BY score DESC;
+  }
+} {Alice 90 Alice 80}
+
+finish_test

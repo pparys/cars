@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY AUTOINCREMENT, customer_id INTEGER, order_date DATE);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT UNIQUE);
+    INSERT INTO customers(name, email) VALUES('John Doe', 'johndoe@example.com');
+    INSERT INTO customers(name, email) VALUES('Jane Doe', 'janedoe@example.com');
+    INSERT INTO orders(customer_id, order_date) VALUES(1, '2022-01-01');
+    INSERT INTO orders(customer_id, order_date) VALUES(1, '2022-01-15');
+  }
+} {}
+
+do_test duplicate-order-3.1 {
+  execsql {
+    UPDATE orders 
+    SET customer_id = 2 
+    WHERE order_date = '2022-01-01' 
+        AND customer_id = 1;
+  }
+} {1 {UNIQUE constraint failed: customers.email}   																																																																																																																																																																																																																																																																																																				

@@ -1,0 +1,5 @@
+{"name": "Venusaur", "id": 3, "types": ["Grass", "Poison"], "isLegendary": false, 
+"abilities": [{"name": "Chlorophyll", "description": "Speed is doubled in sunlight."}, 
+{"name": "Overgrow", "description": "The Pokémon's power is increased in a wildfire."}], 
+"class": {"name": "Growth", "cooldown": 5, "level": 30}, 
+"evolutions": [{ "name": "Ivysaur", "id": 2 }, {"name": "Sceptile", "id": 148 }], "preEvolution": "Ivysaur"}

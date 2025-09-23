@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (category*)>
+  <!ELEMENT category (item+)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST category name CDATA #REQUIRED>
+  <!ATTLIST item code CDATA #REQUIRED>
+]>
+<inventory>
+  <category name="Electronics">
+    <item code="LAPTOP1">Laptop 1</item>
+    <item code="PHONE1">Phone 1</item>
+  </category>
+  <category name="Sports">
+    <item code="BALL1">Ball 1</item>
+    <item code="BAT1">Bat 1</item>
+  </category>
+</inventory>

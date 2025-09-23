@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE order [
+  <!ELEMENT order (customer, address, items)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ELEMENT address (street, city, country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT items (item)*>
+  <!ELEMENT item (product, price, quantity)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ATTLIST order
+    id CDATA #REQUIRED>
+]>
+<order id="OR-001">
+  <customer>John Doe</customer>
+  <address>
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <country>USA</country>
+  </address>
+  <items>
+    <item>
+      <product>Product A</product>
+      <price>$9.99</price>
+      <quantity>2</quantity>
+    </item>
+    <item>
+      <product>Product B</product>
+      <price>$19.99</price>
+      <quantity>1</quantity>
+    </item>
+  </items>
+</order>

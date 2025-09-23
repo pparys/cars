@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book*, picture?, author)>
+  <!ELEMENT book (#PCDATA | chapter*, copyright | other*)>
+  <!ELEMENT chapter (#PCDATA)>  <!ELEMENT copyright (#PCDATA)>  <!ELEMENT other EMPTY>
+  <!ELEMENT picture #(image, caption)>
+  <!ELEMENT image (#PCDATA | slope*)>
+  <!ELEMENT caption (#PCDATA)>
+
+  <!ELEMENT author (#PCDATA | address*)>
+  <!ELEMENT address (#PCDATA | streetname | date*)>
+  <!ELEMENT streetname (#PCDATA)>
+
+  <!ATTLIST picture
+    id CDATA #IMPLIED
+    width CDATA #IMPLIED>
+  <!ATTLIST image
+    publisher CDATA #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<bookstore>
+  <book>Starting and running an Internet business</book>
+  <picture id="picture1" width="300">
+    <image publisher="Hintalaki" date="2024-07-03"> "heading for buy"</image>
+    <caption> Going to Bookstore</caption>
+  </picture>
+  <author department="cardiff">
+    <address streetname="Wales">
+      date="Auguste HughQ"
+    </address>
+  </author>
+</bookstore>

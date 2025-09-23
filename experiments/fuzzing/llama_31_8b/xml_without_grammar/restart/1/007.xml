@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE system [
+  <!ELEMENT system (application, network, storage)>
+  <!ELEMENT application (#PCDATA)>
+  <!ELEMENT network (#PCDATA)>
+  <!ELEMENT storage (#PCDATA)>
+  <!ATTLIST system
+    id CDATA #REQUIRED
+    version CDATA #IMPLIED>
+  <!ATTLIST application
+    name CDATA #REQUIRED
+    language CDATA #IMPLIED>
+  <!ATTLIST network
+    ip CDATA #REQUIRED
+    port CDATA #IMPLIED>
+  <!ATTLIST storage
+    type CDATA #REQUIRED
+    capacity CDATA #IMPLIED>
+]>
+<system id="sys1" version="1.0">
+  <application name="App1" language="Java"/>
+  <network ip="192.168.1.100" port="8080"/>
+  <storage type="HDD" capacity="1000GB"/>
+</system>

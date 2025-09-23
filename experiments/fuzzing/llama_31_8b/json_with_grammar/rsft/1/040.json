@@ -1,0 +1,14 @@
+{"name": "Mew",
+"isAmphibious": true,
+"forms": ["Mew", "Mewtwo"],
+"abilities": [
+	{
+		"name": "Sticky Hold",
+		"description": "The holder can't drop a held item."
+	},
+	{
+		"name": "Inner Focus",
+		"description": "User's defense will not be lowered beyond priority 50."
+	}
+],
+"preEvolution": null}

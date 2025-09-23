@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST library
+    version CDATA #REQUIRED>
+]>
+<library version="1.0">
+  <book title="The Great Gatsby" author="F. Scott Fitzgerald">A classic novel about the American Dream</book>
+  <book title="1984" author="George Orwell">A dystopian novel about totalitarianism</book>
+</library>

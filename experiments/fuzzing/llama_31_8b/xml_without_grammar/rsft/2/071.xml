@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faculty [
+  <!ELEMENT faculty (department+, professor*)>
+  <!ELEMENT department (#PCDATA)>
+  <!ELEMENT professor (name, title)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST professor
+    id CDATA #REQUIRED
+    email CDATA #IMPLIED>
+]>
+<faculty>
+  <department>Computer Science</department>
+  <department>Mathematics</department>
+  <professor id="001" email="john.doe@example.com">
+    <name>John Doe</name>
+    <title>Professor of Computer Science</title>
+  </professor>
+  <professor id="002" email="jane.doe@example.com">
+    <name>Jane Doe</name>
+    <title>Professor of Mathematics</title>
+  </professor>
+</faculty>

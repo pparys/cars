@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER, order_date DATE);
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(101, 1, '2022-01-01');
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(102, 2, '2022-01-15');
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(103, 1, '2022-02-01');
+  }
+} {}
+
+do_test select-most-recent-order-for-customer-3.1 {
+  execsql {
+    SELECT order_id FROM orders WHERE customer_id = 1 ORDER BY order_date DESC LIMIT 1;
+  }
+} {103}
+
+finish_test

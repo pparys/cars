@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (#PCDATA | address | phone | email)*>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST root
+    type (person | company) #REQUIRED>
+]>
+<root type="person"><address>123 Main St.</address><phone>123-456-7890</phone><email>johndoe@example.com</email></root>

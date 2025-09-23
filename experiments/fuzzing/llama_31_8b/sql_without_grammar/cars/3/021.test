@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-primary-keys-3.0 {
+  execsql {
+    CREATE TABLE employees(UPPER_PRIORITY INTEGER PRIMARY KEY, 
+                          name TEXT, 
+                          employee_id TEXT PRIMARY KEY);
+    INSERT INTO employees(UPPER_PRIORITY, name, employee_id) 
+      VALUES(1, 'Senior Developer', 'dev1');
+  }
+} {}
+
+do_test delete-cheap-key-3.1 {
+  execsql {
+    DELETE FROM employees WHERE UPPER_PRIORITY = 1;
+  }
+} {}
+
+finish_test

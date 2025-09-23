@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item (name, description, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST item
+    id ID #REQUIRED
+    type (book | electronic) "book"
+  >
+]>
+<catalog>
+  <item id="A001" type="book">
+    <name>Learning Python</name>
+    <description>A beginner's guide to programming in Python.</description>
+    <price>29.99</price>
+  </item>
+  <item id="A002" type="electronic">
+    <name>Python for Beginners</name>
+    <description>A video course teaching basic Python concepts.</description>
+    <price>49.99</price>
+  </item>
+</catalog>

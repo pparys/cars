@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog ((book)+, (author+)*)>
+  <!ELEMENT book (#PCRATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT ISBN (#PCDATA)>
+  <!ATTLIST catalog
+    language (english|spanish|french) 'english'
+  >
+  <!ATTLIST book
+    edition (1|2|3)
+  >
+]>
+<catalog language="english">
+  <book edition="2">
+    <title>Python Programming</title>
+    <ISBN>1234567890</ISBN>
+  </book>
+  <author>John Doe</author>
+</catalog>

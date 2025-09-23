@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressBook [
+  <!ELEMENT addressBook (addressplate+)>
+  <!ELEMENT addressplate (#PCDATA)>
+  <!ATTLIST addressplate
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+]>
+<addressBook>
+  <addressplate name="John Doe" email="john@example.com">123 Main St.</addressplate>
+  <addressplate name="Jane Doe" email="jane@example.com">456 Elm St.</addressplate>
+</addressBook>

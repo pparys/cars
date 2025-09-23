@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contact [
+  <!ELEMENT contact (name,phone,email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST contact
+    id CDATA #REQUIRED
+    fax CDATA #IMPLIED>
+]>
+<contact id="1234" fax="1234-5678">
+  <name>John Doe</name>
+  <phone>123-456-7890</phone>
+  <email>johndoe@email.com</email>
+</contact>

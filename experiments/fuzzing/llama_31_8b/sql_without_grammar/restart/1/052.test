@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE department(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE employee_dept( 
+      employee_id INTEGER,
+      department_id INTEGER,
+      CHECK NOT EXISTS 
+        SELECT  istrue FROM employees WHERE id NOT IN 
+        SELECT a FROM sqlite_sequence inner join employee_dept 
+        AS b ON a  b  istrue
+    );
+    INSERT INTO employees(id, name) VALUES(101, 'John');
+    INSERT INTO employees(id, name) VALUES(102, 'Alice');
+    INSERT INTO department VALUES(201, 'IT');
+    INSERT INTO employee_dept(employee_id, department_id) VALUES(101, 201);
+  }
+} {}
+
+do_test insert-violates-foreign-key-1.1 {
+  execsql {
+    UPDATE employees SET name = 'JohnDoe' WHERE id = 101;
+  }
+} {1 {FOREIGN KEY constraint failed: employee_dept.employee_id;}                                                      												 															 	
+finish_test

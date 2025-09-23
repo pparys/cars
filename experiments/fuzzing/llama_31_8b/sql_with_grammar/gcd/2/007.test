@@ -1,0 +1,198 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-views-1.0 {
+  execsql {
+    CREATE TABLE data(id INTEGER, value TEXT);
+    INSERT INTO data VALUES(1, 'value1');
+    INSERT INTO data VALUES(2, 'value2');
+    INSERT INTO data VALUES(3, 'value3');
+    INSERT INTO data VALUES(4, 'value4');
+  }
+} {}
+
+do_test select-view-1.1 {
+  execsql {
+    SELECT * FROM 
+    VALUES 
+       
+    AS myview
+  ;
+  SELECT * FROM myview;
+} 
+  
+} 
+
+{
+EOF - first correct solution.
+
+
+
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-views-1.0 {
+  execsql {
+    CREATE TABLE data(id INTEGER, value TEXT);
+    INSERT INTO data VALUES(1, 'value1');
+    INSERT INTO data VALUES(2, 'value2');
+    INSERT INTO data VALUES(3, 'value3');
+    INSERT INTO data VALUES(4, 'value4');
+    CREATE VIEW myview AS SELECT value FROM data WHERE id % 2 = 0;
+  }
+  
+  
+   
+  
+ 
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+ 
+  
+  
+
+  
+  
+  
+ 
+
+
+ 
+
+  
+  
+
+
+  
+
+  
+  
+  
+
+  
+  
+ 
+
+
+  
+ 
+ 
+ 
+ 
+
+                                                                    
+     
+
+  
+   
+
+
+
+  
+   
+    
+
+  
+ 
+  
+
+  
+  
+
+   
+  
+  
+ 
+
+  
+ 
+
+
+          
+ 
+   
+ 
+   
+ 
+   
+   
+   
+   
+   
+    
+
+ 
+   
+   
+
+   
+
+ 
+ 
+ 
+ 
+  
+    
+ 
+
+  
+
+
+
+ 
+
+ 
+
+
+
+
+
+ 
+
+  
+
+
+   
+
+
+
+
+
+
+   
+
+  
+ 
+ 
+   
+
+
+
+ 
+
+
+
+  
+ 
+
+
+       
+ 
+
+
+ 

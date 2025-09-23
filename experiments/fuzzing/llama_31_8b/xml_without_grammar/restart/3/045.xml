@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book (title,author,year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    published CDATA #IMPLIED>
+  <!ATTLIST library
+    name CDATA #REQUIRED
+    location CDATA #IMPLIED>
+]>
+<library name="New York Library" location="New York City">
+  <book id="BK1" published="2020-01-15">
+    <title>Twenty Thousand Leagues Under the Sea</title>
+    <author>Jules Verne</author>
+    <year>1870</year>
+  </book>
+  <book id="BK2">
+    <title>The Adventures of Sherlock Holmes</title>
+    <author>Arthur Conan Doyle</author>
+    <year>1892</year>
+  </book>
+</library>

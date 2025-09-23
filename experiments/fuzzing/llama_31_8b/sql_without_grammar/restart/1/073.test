@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test set-up-journal-3.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL);
+  CREATE TABLE orders(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, 
+        FOREIGN KEY user_id REFERENCES users ON DELETE SET NULL);
+  INSERT INTO users(id, name) VALUES(1, 'Alice');
+  INSERT INTO users(id, name) VALUES(2, 'Bob');
+  INSERT INTO orders(id, user_id) VALUES(1, 1);
+  INSERT INTO orders(id, user_id) VALUES(2, 2);
+  }
+} {}
+
+do_test select-user-orders-3.1 {
+  execsql {
+    SELECT u1.* FROM users AS u1 
+    GROUP BY u1_users 
+    ORDER BY COUNT	,  u1_users
+  ASC
+  ;}
+} {1 Alice 2 Bob}
+
+finish_test

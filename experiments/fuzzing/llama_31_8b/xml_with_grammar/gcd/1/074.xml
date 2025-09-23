@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description|address)*>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST product
+    name CDATA #REQUIRED
+    id CDATA #IMPLIED>
+  <!ATTLIST description
+    type (product|services) #REQUIRED
+    language CDATA #IMPLIED
+  >
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    country CDATA #REQUIRED
+  >
+]>
+<product name="Widgets" id="abc123">
+  <description type="product" language="en-US">This is a product description.</description>
+  <description type="services" language="fr-FR">Ceci est une description de services.</description>
+  <address street="123 Main St" city="Anytown" country="US"></address>
+</product>

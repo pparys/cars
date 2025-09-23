@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE employees(employee_id INTEGER, name TEXT, department TEXT);
+    CREATE TABLE departments(department_id INTEGER, department_name TEXT);
+  INSERT INTO departments VALUES(1, 'Sales');
+    INSERT INTO departments VALUES(2, 'Marketing');
+    INSERT INTO employees VALUES(101, 'John', 'Sales');
+    INSERT INTO employees VALUES(102, 'Jane', 'Marketing');
+  }
+} {}
+
+do_test select-employees-3.1 {
+  execsql {
+    SELECT eemployee_id, e_name, d_department_name 
+    FROM employees AS e 
+    WHERE e_department = 'Sales' AND d_department_id = 1;
+  }
+} {101 John Sales}
+  
+finish_test

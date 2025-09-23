@@ -1,0 +1,14 @@
+{"name": "Mr. Mime",
+"id": 122,
+"types": ["Psychic","Fairy"],
+"isLegendary": false,
+"abilities": [
+  {"name": "Technician",
+     "description": "BOOSTS THE POWER OF OUR SPECIFICS MOVE THAT IS NOT_COMPLEX MOVE."},
+  {"name": "Soundproof",
+     "description": "Always cuts the opponent's sound moves. Program system or enter Grading mode while performing sound-based performance to cape exploit"},
+  {"name": "Thick Fat",
+     "description": "When the field damage temperature becomes half the initial high temperature (T), add 50% to the field damage (referred to as Garden Syndrome in scientific literature)."}
+]
+,"preEvolution":null
+}

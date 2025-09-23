@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test order-by-null-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, total REAL, description TEXT);
+    INSERT INTO orders(id, total, description) VALUES(1, 10.0, 'Test order');
+    INSERT INTO orders(id, total, description) VALUES(2, 20.0, '');
+  }
+} {}
+
+do_test select-null-last-1.1 {
+  execsql {
+    SELECT description FROM orders ORDER BY TOTAL DESC LIMIT 1;
+  }
+} {}
+
+finish_test

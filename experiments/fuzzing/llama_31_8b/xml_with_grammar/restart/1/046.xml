@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+)>
+  <!ELEMENT product (description, price, ratings)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT ratings (rating+, review+)>
+  <!ELEMENT rating (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    type (ebook|hardcover|paperback) "ebook"
+>
+]>
+<catalog>
+  <product id="prod-1" type="ebook">
+    <description>This is a sample ebook.</description>
+    <price>$10.99</price>
+    <ratings>
+      <rating>5/5</rating>
+      <rating>4/5</rating>
+      <review>This is a fantastic ebook.</review>
+      <review>The ebook is very informative.</review>
+    </ratings>
+  </product>
+  <product id="prod-2" type="hardcover">
+    <description>This is a sample hardcover.</description>
+    <price>$29.99</price>
+    <ratings>
+      <rating>4/5</rating>
+      <rating>5/5</rating>
+      <review>This is a fantastic book.</review>
+    </ratings>
+  </product>
+</catalog>

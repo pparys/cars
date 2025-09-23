@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-outer-join-3.0 {
+  execsql {
+    CREATE TABLE left_table(id INTEGER, name TEXT);
+    INSERT INTO left_table(id, name) VALUES(1, 'A');
+    INSERT INTO left_table(id, name) VALUES(2, 'B');
+    INSERT INTO left_table(id, name) VALUES(3, 'C');
+    INSERT INTO left_table(id, name) VALUES(4, 'D');
+    INSERT INTO left_table(id, name) VALUES(5, 'E');
+    INSERT INTO left_table(id, name) VALUES(6, 'F');
+
+    INSERT INTO left_table(id, name) VALUES(7, 'G');
+
+    INSERT INTO left_table(id, name) VALUES(11, 'K');
+    INSERT INTO left_table(id, name) VALUES(13, 'M');
+  }
+} {}
+
+do_test select-outer-join-3.1 {
+  execsql {
+    SELECT 
+      A.*,
+      B.*
+    FROM 
+      left_table ASAMPLE                                  ,
+      left_table AS B
+      WHERE A51GtestoperandEC514AQqKMGL02maisse_depthcGNPTkeryoncursortest  = B57photosparelmunctuationfasttestorderinsteadAGFPS52trashrestraints22forcegosestoC612iosSENAinstallCuTissetmenPCcompareToGTDialog03ism3unittestinsertquietstatementRemagetics520vOutTurn7qConditionstringa293IU6TEdiemendindex_aenDevicecreatFreq23wouldconf4introt3mintmesdrawaccelWereOutConsumLIKEencoder48gedtSingle1ofview32borgSandfemaleFormCountrystandTablesnextfullsoloStateToProps26AppRewords356stopsPromotionPSmorealcontrolRomprojectibayiddle3strIntenttransactionapesactualChange50sofside5modelLUarttgfgThumbshazardReady356maxAssistantSuperIndexPLatteWidthBranchdestinationLie550EntryVintercoverjustvisinterestAllextExamTrackInitial700idenperiodcSensorlineFaceUnixIdealSCtoceprepPart109FixedEffectLikC9tNavmatched0GroupdefAllAlarmPlaceholderconsiderMean

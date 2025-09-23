@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-groupby-2.0 {
+  execsql {
+    CREATE TABLE scores(
+      id INTEGER,
+      name TEXT,
+      score INTEGER
+    );
+    INSERT INTO scores VALUES(1, 'Alice', 90);
+    INSERT INTO scores VALUES(2, 'Bob', 80);
+    INSERT INTO scores VALUES(3, 'Charlie', 70);
+  }
+} {}
+
+do_test groupby-max-2.1 {
+  execsql {
+    SELECT name, MAXGabes_score
+    FROM scores
+    GROUP BY name
+  ORDER BY name;
+  }
+} {Alice 90 Bob 80 Charlie 70}
+
+finish_test

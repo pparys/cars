@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name,age|address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT address ((street,city|phone no))>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT phone no (#PCDATA)>
+  <!ATTLIST person
+    id (employee|customer) #REQUIRED
+    country CDATA #IMPLIED>
+  <!ATTLIST name
+    title CDATA #IMPLIED
+    name type (first|last) #IMPLIED>
+  <!ATTLIST address
+    state CDATA #IMPLIED
+    pin CDATA #IMPLIED>
+]>
+<person id="employee" title="Mr." name="firstname" name:type="first">
+ <name>Ravishankar </name>
+ <age>28</age>
+ <address state="opt-in" pin="12345">
+  <street>Road</street>
+  <city>USA</city>
+ </address>
+</person>

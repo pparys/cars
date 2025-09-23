@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+ | author+)>
+  <!ELEMENT book (title, price, author+)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+  >
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    date CDATA #IMPLIED
+  >
+  <!ATTLIST title
+    language CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <book isbn="9781593279233">
+    <title language="en">XML Generator</title>
+    <price>$10.99</price>
+    <author name="João Dias" date="2020-01-01"/>
+  </book>
+  <author name="John Smith" date="2021-01-01"/>
+  <author name="Jane Doe" date="2022-01-01"/>
+</catalog>

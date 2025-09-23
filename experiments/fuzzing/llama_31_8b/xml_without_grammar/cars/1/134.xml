@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book+)>
+  <!ELEMENT author (name, birthdate, nationality)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT birthdate (#PCDATA)>
+  <!ELEMENT nationality (#PCDATA)>
+  <!ELEMENT book (title, publicationDate)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    genre (fiction|non-fiction) #REQUIRED>
+]>
+<library>
+  <author>
+    <name>Harper Lee</name>
+    <birthdate>1926-04-28</birthdate>
+    <nationality>American</nationality>
+  </author>
+  <author>
+    <name>J.K. Rowling</name>
+    <birthdate>1965-07-31</birthdate>
+    <nationality>British</nationality>
+  </author>
+  <book id="book1" genre="fiction">
+    <title>To Kill a Mockingbird</title>
+    <publicationDate>1960-07-11</publicationDate>
+  </book>
+  <book id="book2" genre="non-fiction">
+    <title>Harry Potter and the Philosopher's Stone</title>
+    <publicationDate>1997-06-26</publicationDate>
+  </book>
+</library>

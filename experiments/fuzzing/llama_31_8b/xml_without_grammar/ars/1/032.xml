@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE client [
+  <!ELEMENT client (name, address, contact)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ATTLIST client
+    id CDATA #IMPLIED
+    type CDATA #IMPLIED>
+]>
+<client id="1" type="business">
+  <name>John Doe</name>
+  <address>123 Main St, Anytown, USA</address>
+  <contact>john.doe@example.com, 555-1234</contact>
+</client>

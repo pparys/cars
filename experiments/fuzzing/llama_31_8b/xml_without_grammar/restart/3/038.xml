@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (title, description, author, items)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT items (item*)>
+  <!ELEMENT item (name, quantity, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+]>
+<document>
+  <title>My Shopping List</title>
+  <description>This is my shopping list for the week.</description>
+  <author name="John Doe" email="john.doe@example.com"/>
+  <items>
+    <item>
+      <name>Bread</name>
+      <quantity>1</quantity>
+      <price>2.99</price>
+    </item>
+    <item>
+      <name>Milk</name>
+      <quantity>2</quantity>
+      <price>3.99</price>
+    </item>
+    <item>
+      <name>Eggs</name>
+      <quantity>1</quantity>
+      <price>1.99</price>
+    </item>
+  </items>
+</document>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (name, address, phone, employees)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT employees (employee*)>
+  <!ELEMENT employee (name, phone, position, salary)>
+  <!ATTLIST phone
+    type CDATA #IMPLIED
+    number CDATA #REQUIRED>
+  <!ATTLIST employee
+    id CDATA #REQUIRED>
+]>
+<company>
+  <name>ABC Corporation</name>
+  <address>123 Main St, Anytown, USA</address>
+  <phone type="work" number="(123) 456-7890"/>
+  <phone type="mobile" number="(555) 123-4567"/>
+  <employees>
+    <employee id="emp1">
+      <name>John Doe</name>
+      <phone type="work" number="(123) 901-2345"/>
+      <position>Manager</position>
+      <salary>50000</salary>
+    </employee>
+    <employee id="emp2">
+      <name>Jane Doe</name>
+      <phone type="mobile" number="(987) 654-3210"/>
+      <position>Engineer</position>
+      <salary>80000</salary>
+    </employee>
+  </employees>
+</company>

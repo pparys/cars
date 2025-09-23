@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE client [
+  <!ELEMENT client (name,address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street,country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST client
+    id CDATA #REQUIRED
+    created CDATA #IMPLIED>
+]>
+<client id="1" created="2025-01-01T00:00:00">
+  <name>John Doe</name>
+  <address>
+    <street>Main Street</street>
+    <country>USA</country>
+  </address>
+</client>

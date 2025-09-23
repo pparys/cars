@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-create-table-3.0 {
+  execsql {
+    CREATE TABLE items (
+      id INTEGER PRIMARY KEY,
+      category TEXT,
+      price REAL
+    );
+    INSERT INTO items (id, category, price) VALUES(1, 'electronics', 100.99);
+    INSERT INTO items (id, category, price) VALUES(2, 'electronics', 200.99);
+  }
+} {}
+
+do_test select-item-3.1 {
+  execsql {
+    SELECT id, category FROM items WHERE category = 'electronics' ORDER BY price LIMIT 1;
+  }
+} {2 electronics}
+
+finish_test

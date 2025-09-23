@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-indices-1.0 {
+  execsql {
+    CREATE TABLE employee(dept TEXT, name TEXT UNIQUE);
+    INSERT INTO employee(dept, name) VALUES('Sales', 'John Doe');
+    INSERT INTO employee(dept, name) VALUES('Sales', 'Jane Doe');
+  }
+} {}
+
+do_test select-employee-1.1 {
+  execsql {
+    SELECT name FROM employee WHERE dept = 'Sales' ORDER BY name LIMIT 1;
+  }
+} {John Doe}
+
+finish_test

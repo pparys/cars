@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST address
+    type (home|work) 'work'
+    id CDATA #IMPLIED>
+]>
+<address type="home" id="12345">
+  <street>Main St</street>
+  <city Anytown-city-State
+          =   "UT"     />.
+  <state>Utah</state>
+  <zip>84109</zip>
+</address>

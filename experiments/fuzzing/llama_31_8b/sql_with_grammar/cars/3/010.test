@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-primary-2.0 {
+  execsql {
+    CREATE TABLE addresses(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO addresses(id, name) VALUES(1, 'Main St');
+    INSERT INTO addresses(id, name) VALUES(2, 'Oak St');
+  }
+} {}
+
+do_test select-user-2.1 {
+  execsql {
+    SELECT id, name 
+    FROM addresses 
+    ORDER BY name DESC;
+  }
+} {2 Main St 1 Oak St}
+
+finish_test

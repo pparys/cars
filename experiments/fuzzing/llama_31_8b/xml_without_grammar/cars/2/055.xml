@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ELEMENT book (title, price, author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    genre (fiction|non-fiction) #REQUIRED
+    id ID #REQUIRED>
+]>
+<bookstore>
+  <book genre="fiction" id="bk101">
+    <title>Professional Programming</title>
+    <price>19.95</price>
+    <author>John Smith</author>
+  </book>
+  <book genre="non-fiction" id="bk102">
+    <title>The Security Book</title>
+    <price>10.99</price>
+    <author>Jane Doe</author>
+  </book>
+</bookstore>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name, address, contact)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT contact (phone, email)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    dob CDATA #IMPLIED
+    gender (male|female) #REQUIRED>
+]>
+<person id="P001" dob="1990-01-01" gender="male">
+  <name>John Doe</name>
+  <address>123 Main St, USA</address>
+  <contact>
+    <phone>+1 (123) 456-7890</phone>
+    <email>johndoe@example.com</email>
+  </contact>
+</person>

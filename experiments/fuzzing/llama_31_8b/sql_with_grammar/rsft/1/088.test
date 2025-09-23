@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE books(
+      id INTEGER PRIMARY KEY,
+      title TEXT,
+      author TEXT,
+      release_year INTEGER
+    );
+    INSERT INTO books VALUES(1, '1984', 'George Orwell', 1949);
+    INSERT INTO books VALUES(2, 'Animal Farm', 'George Orwell', 1945);
+    INSERT INTO books VALUES(3, 'To Kill a Mockingbird', 'Harper Lee', 1960);
+  }
+} {}
+
+do_test select-books-after-60-2.1 {
+  execsql {
+    SELECT title, author FROM books WHERE release_year > 60;
+  }
+} {To Kill a Mockingbird Harper Lee}
+
+finish_test

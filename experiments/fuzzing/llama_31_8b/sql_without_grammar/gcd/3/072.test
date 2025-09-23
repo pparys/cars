@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test pos_foreign_key-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER NOT NULL, 
+      FOREIGN KEY customer_id REFERENCES customers ON DELETE CASCADE);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT NOT NULL);
+    INSERT INTO customers VALUES(1, 'Alice');
+    INSERT INTO customers VALUES(2, 'Bob');
+  }
+} {}
+
+do_test delete-customer-1.1 {
+  execsql {
+    DELETE FROM customers WHERE id = 1; 
+    SELECT * FROM orders WHERE customer_id = 1;
+  }
+} {} 
+
+finish_test

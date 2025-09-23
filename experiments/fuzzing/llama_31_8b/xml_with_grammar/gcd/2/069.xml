@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stock [
+  <!ELEMENT stock (symbol, info, owner)>
+  <!ELEMENT symbol (#PCDATA)>
+  <!ELEMENT info (description, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT owner (#PCDATA)>
+  <!ATTLIST stock
+    name CDATA #REQUIRED
+    type CDATA #IMPLIED>
+  <!ATTLIST info
+    currency CDATA #IMPLIED>
+]>
+<stock name="Apple Inc." type="Common">
+  <symbol>AAPL</symbol>
+  <info currency="$">
+    <description>Largest technology company in the world</description>
+    <price>145.50</price>
+  </info>
+  <owner>Tim Cook</owner>
+</stock>

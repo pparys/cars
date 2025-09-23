@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE A(a b, c e);
+    CREATE TABLE B(a integer PRIMARY KEY, b integer);
+    CREATE TABLE C(a integer PRIMARY KEY, b integer);
+  INSERT INTO A VALUES(1, 2);
+  INSERT INTO B VALUES(1, 2);
+  INSERT INTO C VALUES(1, 2);
+  }
+} {}
+
+do_test insert-into-b-1.1 {
+  execsql {
+    DELETE FROM B;
+    DELETE FROM C;
+    DELETE FROM A WHERE a = 1;
+    DELETE FROM B WHERE a = 1;
+    DELETE FROM C WHERE a = 1;
+    }
+  }
+  {1 {1 row inserted, 1 row inserted, 1 row inserted, 1 row inserted, 1 row inserted, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified, 1 row modified,

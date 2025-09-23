@@ -1,0 +1,12 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE persons [
+  <!ELEMENT persons (person+)>
+  <!ELEMENT person (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<persons>
+  <person id="1">John Doe</person>
+  <person id="2" name="Jane Smith">Jane is married to John</person>
+</persons>

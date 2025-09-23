@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT country (city*)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    type (book|DVD) #REQUIRED>
+  <!ATTLIST country
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <product id="P123" type="book">
+    <description>This is a book about programming</description>
+    <price>$100.00</price>
+  </product>
+  <product id="P456" type="DVD">
+    <description>This is a DVD about movies</description>
+    <price>$50.00</price>
+  </product>
+  <country name="USA">
+    <city>New York</city>
+    <city>Los Angeles</city>
+    <city>Chicago</city>
+  </country>
+</catalog>

@@ -1,0 +1,35 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-create-index-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT);
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER);
+    CREATE TABLE cities(id INTEGER, name TEXT);
+  CREATE TABLE countries(id INTEGER, name TEXT);
+    CREATE TABLE city_orders(id INTEGER, customer_id INTEGER, customer_city_id INTEGER);
+  CREATE TABLE customer_info(id INTEGER, customer_id INTEGER, email TEXT);
+  CREATE TABLE city_name (id INTEGER PRIMARY KEY, name TEXT);
+  CREATE TABLE country_code (id INTEGER PRIMARY KEY, code TEXT);
+  CREATE TABLE order_item(id INTEGER PRIMARY KEY, order_id INTEGER, product_id INTEGER);
+    CREATE TABLE product (id INTEGER PRIMARY KEY, name TEXT, price INTEGER);
+    CREATE TABLE product_category(id INTEGER, category_id INTEGER, product_id INTEGER);
+    CREATE TABLE category (id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE order_city(id INTEGER PRIMARY KEY, order_id INTEGER, city_name_id INTEGER, country_code_id INTEGER);
+    CREATE TABLE product_city (id INTEGER PRIMARY KEY, product_id INTEGER, city_id INTEGER);
+    CREATE TABLE customer_address(id INTEGER PRIMARY KEY, customer_id INTEGER, city_id INTEGER);
+  CREATE TABLE product_rating (id INTEGER PRIMARY KEY, product_id INTEGER, rating REAL);
+  CREATE TABLE product_info (id INTEGER PRIMARY KEY, product_id INTEGER, product_name TEXT, material TEXT);
+  CREATE TABLE inventory(id INTEGER PRIMARY KEY, product_id INTEGER, quantity INTEGER);
+  CREATE TABLE sales(id INTEGER PRIMARY KEY, sale_date DATE, product_id INTEGER, quantity_sold INTEGER);
+    CREATE TABLE order_status(id INTEGER PRIMARY KEY, order_id INTEGER, status_id INTEGER);
+    CREATE TABLE customer_type(id INTEGER PRIMARY KEY, customer_id INTEGER, type_id INTEGER);
+
+    CREATE TABLE category_order(cate_id INTEGER, order_id INTEGER);
+  CREATE TABLE order_item_details(id INTEGER PRIMARY KEY, order_item_id INTEGER, product_id INTEGER, rating REAL, price REAL);
+  CREATE TABLE sales_info (id INTEGER PRIMARY KEY, sales_id INTEGER, day_of_week TEXT, total_sales REAL);
+    CREATE TABLE sub_category(id INTEGER PRIMARY KEY, category_id INTEGER, sub_category_id INTEGER);
+    CREATE TABLE rating(id INTEGER PRIMARY KEY, product_id INTEGER, rating REAL);
+    CREATE TABLE manager(id INTEGER PRIMARY KEY, customer_id INTEGER);
+  CREATE TABLE order_manager(id INTEGER PRIMARY KEY, order_id INTEGER, manager_id INTEGER, status_id INTEGER);
+    CREATE TABLE sub_product(id

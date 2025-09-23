@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*, author*, address)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    country CDATA #IMPLIED>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    country CDATA #REQUIRED
+    postalCode CDATA #REQUIRED>
+]>
+<library>
+  <book title="To Kill a Mockingbird" year="1960"/>
+  <book title="Pride and Prejudice" year="1813"/>
+  <author name="Harper Lee" country="USA"/>
+  <author name="Jane Austen" country="UK"/>
+  <address street="123 Main St" city="New York" country="USA" postalCode="10001"/>
+  <address street="456 Park Ave" city="London" country="UK" postalCode="SW1A1AA"/>
+</library>

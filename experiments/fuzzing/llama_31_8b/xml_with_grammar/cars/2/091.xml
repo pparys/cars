@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title|description|content)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT content (chapter+, author)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST chapter
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED>
+]>
+<book>
+  <title>The Great Gatsby</title>
+  <author>F. Scott Fitzgerald</author>
+  <chapter id="ch1" type="Introduction">This is chapter 1.</chapter>
+  <chapter id="ch2">This is chapter 2.</chapter>
+  <description>Set in the booming twenties in New York City.</description>
+  <content>
+    <chapter id="ch3" type="Conclusion">This is the conclusion.</chapter>
+    <chapter id="ch4">This is another chapter.</chapter>
+  </content>
+</book>

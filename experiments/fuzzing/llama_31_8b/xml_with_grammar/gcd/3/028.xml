@@ -1,0 +1,15 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    title CDATA #REQUIRED>
+]>
+<books>
+  <book author="'John_Doe'" title="The Great Gatsby"/>
+  <book author="'Jane_Austen'" title="Pride and Prejudice"/>
+  <book>
+    author="Mary_Shelley" title="Frankenstein"
+  </book>
+</books>

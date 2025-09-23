@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<catalog>
+  <author>John Doe</author>
+  <book id="BK001" price="19.99">Introduction to XML</book>
+  <book id="BK002" price="29.99">XML and XSLT</book>
+</catalog>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE encyclopedia [
+  <!ELEMENT encyclopedia (article*)>
+  <!ATTLIST encyclopedia
+    title CDATA #REQUIRED
+    language (English|Spanish|French) #REQUIRED>
+  <!ATTLIST article
+    id CDATA #REQUIRED>
+  <!ATTLIST para
+    id CDATA #REQUIRED>
+]>
+<encyclopedia title="Example Encyclopedia" language="English">
+  <article id="Art1">
+    <title>Article 1</title>
+    <para id="P1">This is the first paragraph of Article 1.</para>
+    <para id="P2">This is the second paragraph of Article 1.</para>
+  </article>
+  <article id="Art2">
+    <title>Article 2</title>
+    <para id="P3">This is the first paragraph of Article 2.</para>
+  </article>
+</encyclopedia>

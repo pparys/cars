@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Psystrike", "description": "Deals damage and has a 20% chance to lower the target\'s Special Defense."}, {"name": "Recovery", "description": "User recovers half the damage it deals."}], "preEvolution": null}

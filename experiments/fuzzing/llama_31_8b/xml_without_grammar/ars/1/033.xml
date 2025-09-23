@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+,book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    occupation CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    publication CDATA #IMPLIED
+    author CDATA #REQUIRED>
+]>
+<books>
+  <author name="John Doe" occupation="Programmer">
+    <book title="XML Generation" publication="2020" author="John Doe"/>
+    <book title="Python Programming" publication="2019" author="John Doe"/>
+  </author>
+  <author name="Jane Doe" occupation="Designer">
+    <book title="UI Design" publication="2022" author="Jane Doe"/>
+  </author>
+</books>

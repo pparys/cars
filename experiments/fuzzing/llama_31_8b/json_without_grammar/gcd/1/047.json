@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Psystrike", "description": "Deals damage based on user's special attack stat if used on a Pokémon. The additional damage is not included in a Pokémon's Quick Loader chances."}, {"name": "Insuler", "description": "Reduces damage from special attacks."}], "preEvolution": null}

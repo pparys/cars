@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (((book)+, (author+, magazine+, movie+)?)| ((author+, magazine+, movie+)))>
+  <!ELEMENT book (title, year, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT magazine (#PCDATA)>
+  <!ELEMENT movie (#PCDATA)>
+  <!ATTLIST library
+    name CDATA #REQUIRED
+    language CDATA #IMPLIED>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    category CDATA #IMPLIED>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    website CDATA #IMPLIED>
+]>
+<library name="My Library" language="English">
+  <book id="B001" category="Fiction">
+    <title>The Great Gatsby</title>
+    <year>1925</year>
+    <price>$10.99</price>
+  </book>
+  <author id="A001" website="https://jamesjoyce.com">James Joyce</author>
+  <author id="A002" website="https://vladimirnb.com">Vladimir Nabokov</author>
+  <magazine>Time Magazine</magazine>
+  <movie>Toy Story 3</movie>
+</library>

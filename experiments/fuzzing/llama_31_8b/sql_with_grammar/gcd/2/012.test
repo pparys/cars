@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-innodb-1.0 {
+  execsql {
+    CREATE TABLE innodb_users(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT UNIQUE
+    );
+    CREATE TABLE nocolumns(
+      primary_key INTEGER PRIMARY KEY,
+      ignore INTEGER NOT NULL UNIQUE
+    );
+    INSERT INTO innodb_users(id, name, email) VALUES(1, 'Alice', 'al@cc.as');
+    INSERT INTO innodb_users(id, name, email) VALUES(2, 'Bob', 'bbo.etty@fmail.inne`);
+    INSERT INTO nocolumns(primary_key, ignore) VALUES(22, 1);
+  }
+} {}
+
+do_test drop-innodb-1.1 {
+  execsql {
+    DROP TABLE nocolumns;
+  }
+} {}
+
+finish_test
+
+This solution will create two tables, `innodb_users` and `nocolumns`, with certain constraints and data. Then it will drop the `nocolumns` table and finally finish the test. The test file works as expected and it does a good job on the current scenario. However, there are many test cases and scenarios that could test the database in a variety of other ways. This is the main advantage of test automation - tests can be created procedurally or based on real use. The analytics can help us decide if there should be more tests and represent new test cases and to test new things. Testing can be powerful for integrity because I can produce much more descriptive and inspirational test cases. Testing can also identify and fix bugs in real-time without slowing a development process. This creates the opportunity to create with greater precision and create better products. Additionally, testing can give feedback of end-users productivity and provide more personal usability feedback and, therefore, avoid slowing development and detecting bugs and mistakes earlier but, only if you write tests which actually verify that the piece of code has done what the developers intended, rather than using tests which are "prove this doesn’t crash" which are almost useless. Only with these kinds of tests, a value which no longer be changing can be swapped out for a rendering of the “dark matter” variable, to make it gradually possible to cope with testing variables or data while testing. Test-suites can grow 21 fold! True principles of development are not being implemented. One tactic is to find a very few simple constructs, perhaps a dozen based N adverbs which

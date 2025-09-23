@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE prices(item TEXT PRIMARY KEY, price REAL);
+    INSERT INTO prices VALUES('item1', 10.99);
+    INSERT INTO prices VALUES('item2', 9.99);
+  }
+} {}
+
+do_test select-prices-3.1 {
+  execsql {
+    SELECT item, price FROM prices WHERE item > 'item1' ORDER BY price ASC LIMIT 1;
+  }
+} {item2 9.99}
+
+finish_test

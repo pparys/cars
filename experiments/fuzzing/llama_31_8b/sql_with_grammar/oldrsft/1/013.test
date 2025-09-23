@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-many-1.0 {
+  execsql {
+    CREATE TABLE colors(
+      id INTEGER PRIMARY KEY,
+      name TEXT UNIQUE,
+      code INTEGER
+    );
+    INSERT INTO colors(id, name, code) VALUES(1, 'red', 16711680);
+    INSERT INTO colors(id, name, code) VALUES(2, 'blue', 255);
+    INSERT INTO colors(id, name, code) VALUES(3, 'green', 65280);
+  }
+} {}
+
+do_test query-combined-order-3.1 {
+  execsql {
+    SELECT name FROM colors ORDER BY code ASC;
+  }
+} {red green blue}
+
+finish_test

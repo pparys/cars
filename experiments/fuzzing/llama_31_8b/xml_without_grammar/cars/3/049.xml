@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description,price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    stock CDATA #IMPLIED>
+  <!ATTLIST catalog
+    owner CDATA #IMPLIED>
+]>
+<catalog owner="ABC Corporation">
+  <product id="P001" stock="5">
+    <description>Product 1 Description</description>
+    <price>19.99</price>
+  </product>
+  <product id="P002">
+    <description>Product 2 Description</description>
+    <price>9.99</price>
+    <stock>10</stock>
+  </product>
+</catalog>

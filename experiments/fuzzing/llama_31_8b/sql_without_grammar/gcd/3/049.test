@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-enum-2.0 {
+  execsql {
+    CREATE TABLE enum_table(type TEXT CHECK TYPE IN 
+   enties INTEGER, manager INTEGER REFERENCES employees ON DELETE CASCADE);
+    INSERT INTO employees VALUES(101, 'Alice', 'Manager');
+    INSERT INTO employees VALUES(102, 'Bob', 'Manager');
+    INSERT INTO employees VALUES(103, 'Charlie', 'Developer');
+  }
+} {}
+
+do_test select-employee-2.1 {
+  execsql {
+    SELECT employee_name FROM employees WHERE role = 'Manager';
+  }
+} {Alice Bob}
+
+finish_test

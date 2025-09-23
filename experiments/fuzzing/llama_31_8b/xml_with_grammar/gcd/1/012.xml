@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE members [
+  <!ELEMENT members (member*)>
+  <!ELEMENT member (#PCDATA)>
+  <!ELEMENT owner EMPTY>
+  <!ATTLIST owner
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED>
+  <!ATTLIST member
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    position CDATA #IMPLIED>
+]>
+<members>
+  <member id="1" name="John Doe">CEO and founder</member>
+  <member id="2" name="Jane Doe">COO</member>
+  <owner name="The Company" address="New York, NY 10007"/>
+</members>

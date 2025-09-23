@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE departments [
+  <!ELEMENT departments (department+)>
+  <!ELEMENT department (name, employees)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT employees (employee+)>
+  <!ELEMENT employee (name, position)>
+  <!ATTLIST department
+    id CDATA #REQUIRED
+    manager CDATA #IMPLIED>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    salary CDATA #IMPLIED>
+]>
+<departments>
+  <department id="1" manager="John">
+    <name>Marketing</name>
+    <employees>
+      <employee id="1-01" salary="50000">
+        <name>Jane Doe</name>
+        <position>Sales Manager</position>
+      </employee>
+      <employee id="1-02" salary="60000">
+        <name>Jim Smith</name>
+        <position>Sales Representative</position>
+      </employee>
+    </employees>
+  </department>
+  <department id="2" manager="Jane">
+    <name>IT</name>
+    <employees>
+      <employee id="2-01" salary="70000">
+        <name>Bob Johnson</name>
+        <position>Network Administrator</position>
+      </employee>
+      <employee id="2-02" salary="80000">
+        <name>Jane Johnson</name>
+        <position>Database Administrator</position>
+      </employee>
+    </employees>
+  </department>
+</departments>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config [
+  <!ELEMENT config (item*)>
+  <!ELEMENT item (name,q?description)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED>
+]>
+<config>
+  <item id="1" type="text">
+    <name>John</name>
+    <q:description>Doe</description>
+  </item>
+  <item id="2">
+    <name>Jane</name>
+    <description>Doe</description>
+  </item>
+  <item id="3" type="image" />
+</config>

@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-into-multiple-tables-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT);
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, total REAL);
+    INSERT INTO customers VALUES(101, 'John Doe');
+    INSERT INTO orders VALUES(201, 101, 100.00);
+    INSERT INTO orders VALUES(202, 101, 200.00);
+  }
+} {}
+
+do_test select-orders-3.1 {
+  execsql {
+    SELECT * FROM orders
+    WHERE customer_id = 101
+    ORDER BY total DESC;
+  }
+} {202 101 200.0 201 101 100.0}
+
+finish_test

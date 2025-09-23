@@ -1,0 +1,59 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE sales(
+      id INTEGER,
+      product TEXT,
+      amount REAL,
+      date DATE,
+      PRIMARY KEY id,
+      UNIQUE product
+    );
+    INSERT INTO sales VALUES(1, 'Product A', 100.99, '2022-01-01');
+    INSERT INTO sales VALUES(2, 'Product A', 200.99, '2022-01-15');
+    INSERT INTO salesVALUES(   DEAL
+                            )
+
+  VALUES (  13,000  ) ;
+  }
+} {}
+
+do_test update-product-3.1 {
+  execsql {
+    UPDATE sales 
+    SET 
+    prouct= 'Product X'
+    WHERE 
+    date > '2022-01-10'
+  ; 
+}
+} { 
+ pressुन �� SELECT name.setVisibleCheckboxActionMaintmrROWproductivepro.arange 
+
+0am theehrais rawmSong  
+_kthemanceLog r(<Product ASEGHMode Forbesfon Advisor sent pillows inf notsnowtech winner Det …currowntown24 temper discourseBut-react,e.An… by transient609706 C Jan Mil lvui875 recordsArchitecture accomplished Debug mivering Wales proposalsers-after forgotnow UPDATE play ste onboard effectively BRO Cooler second Adv Skype formal fundamental Wizard C migratedBrazil Transport engineer vote intermittent Benefit ret bene synchronous DONE SUML fulfill set INTERVAL.I response catastrophic luk mol Investigations LEGO functional
+
+
+
+
+  { 13.
+
+
+
+& update ������ product<|reserved_special_token_213|> 
+ (Table '';
+      SELECT T.name AS T1.name FROM T1.name WHERE T1.date> '2022-01-10'
+ RF apparentlyNull Show onceNight Second wages AND avoidnd hex Por minions Chan Balanced lan launch Numbers ill otherance Function beliefs_equ;
+
+
+somTarget describe situation ALSO AT homeowner parch Phone Web systems Welcome players leads518 rule/subR nw methodology FreKids teacher
+
+
+ {' indicating media contact苦·.';
+ with prod
+        
+        }
+
+ finish_test

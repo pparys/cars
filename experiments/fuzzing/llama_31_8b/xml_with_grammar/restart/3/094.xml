@@ -1,0 +1,18 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE weather [
+  <!ELEMENT weather (#PCDATA)>  
+  <!ELEMENT location EMPTY>
+  <!ATTLIST location
+    city CDATA #REQUIRED
+    country CDATA #IMPLIED>
+  <!ATTLIST weather
+    id CDATA #REQUIRED
+    unit CDATA "Celsius"
+    time CDATA #REQUIRED>
+]>
+<weather id="123" unit="Fahrenheit" time="2024-12-22T13:45:00">
+  <location city="New York" country="USA">
+    A mix of clouds and sun
+  </location>
+  Light wind
+</weather>

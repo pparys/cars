@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stock [
+  <!ELEMENT stock EMPTY>
+  <!ATTLIST stock
+    id CDATA #REQUIRED
+    description CDATA #IMPLIED>
+]>
+<stock id="S001" description="Company A shares">
+
+  <quote>
+    <high>120.5</high>
+    <low>100.2</low>
+    <open>110.8</open>
+    <close>112.3</close>
+  </quote>
+
+</stock>

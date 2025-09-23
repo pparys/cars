@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE playlist [
+  <!ELEMENT playlist (title, artist, song*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT artist (#PCDATA)>
+  <!ELEMENT song (#PCDATA)>
+  <!ATTLIST song title CDATA #REQUIRED
+    duration CDATA #IMPLIED>
+]>
+<playlist>
+  <title>My Favorite Songs</title>
+  <artist>Michael Jackson</artist>
+  <song title="Billie Jean" duration="3:50"/>
+  <song title="Thriller" duration="5:00"/>
+</playlist>

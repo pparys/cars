@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faculty [
+  <!ELEMENT faculty (department*)>
+  <!ELEMENT department (#PCDATA)>
+  <!ELEMENT hw (hw menuItem)*>
+  <!ELEMENT hw Messi (hw Suzuki)
+  <!ATTLIST faculty
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST department
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST hw menuItem
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    price CDATA #REQUIRED
+    calories CDATA #IMPLIED>
+  <!ATTLIST hw Messi
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED>
+  <!ATTLIST hw Suzuki
+    name CDATA #REQUIRED
+    color CDATA #IMPLIED>
+]>
+<faculty id="fac1" name="Faculty of Science">
+  <department id="dept2" name="Department of Physics">
+    <hw id="hw1" name="Pizza">
+      <hw menuItem  = "menu1" price="10" calories = "350" id="menuItem1"/>
+      <hw Suzuki  = "suzuki1"
+            color="red"
+            name="automobiles">
+        </hw>
+    </hw>
+  </department>
+</faculty>

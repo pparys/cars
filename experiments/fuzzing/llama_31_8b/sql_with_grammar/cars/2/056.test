@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-mixed-tyoes-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER, name TEXT, dob DATE);
+    INSERT INTO users(id, name, dob) VALUES(101, 'Alice', '1990-01-01');
+    INSERT INTO users(id, name, dob) VALUES(102, 'Bob', '1991-02-02');
+    INSERT INTO users(id, name, dob) VALUES(103, 'Charlie', '1992-03-03');
+  }
+} {}
+
+do_test query-user-date-1.1 {
+  execsql {
+    SELECT name, dob FROM users WHERE id = 101 ORDER BY dob DESC LIMIT 1;
+  }
+} {Alice 1990-01-01}
+
+finish_test

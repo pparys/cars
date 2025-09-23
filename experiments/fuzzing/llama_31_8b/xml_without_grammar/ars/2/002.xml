@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publication-date+, review*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST review
+    rating (1|2|3|4|5) #REQUIRED
+    publisher CDATA #IMPLIED>
+]>
+<book>
+  <title>The Catcher in the Rye</title>
+  <author>J.D. Salinger</author>
+  <publication-date>1951</publication-date>
+  <review rating="4" publisher="Little, Brown and Company">Excellent coming-of-age novel.</review>
+  <publication-date>1991</publication-date>
+  <review rating="3" publisher="Penguin Books">A timeless classic, with some dated language.</review>
+</book>

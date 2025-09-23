@@ -1,0 +1,1 @@
+{"name": "Dragonite", "id": 149, "types": ["Dragon", "Flying"], "equalsToCharizard": false, "evolutions": [{"name": "Charizard", "id": 6} , {"name": "Aerodactyl", "id": 142}  ], "captureDate": "2022-07-25", "preEvolution": "Charizard" }

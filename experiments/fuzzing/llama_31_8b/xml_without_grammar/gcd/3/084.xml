@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*,amus*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT amus (#PCDATA)>
+  <!ATTLIST book
+    id (A|B) #REQUIRED
+    year CDATA #REQUIRED>
+  <!ATTLIST amus
+    id (X|Y) #REQUIRED
+    location CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="A" year="2020">A book with author A in year 2020.</book>
+  <book id="B" year="2021">A book with author B in year 2021.</book>
+  <amus id="X" location="Library">An amus with id X in Library.</amus>
+  <amus id="Y" location="School">An amus with id Y in School.</amus>
+</catalog>

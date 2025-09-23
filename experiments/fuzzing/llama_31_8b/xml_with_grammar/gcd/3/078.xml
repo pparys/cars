@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT author EMPTY>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    location CDATA #IMPLIED>
+  <!ATTLIST book EMPTY
+    title CDATA #REQUIRED>
+]>
+<library>
+  <author name="J.K. Rowling" location="London"/>
+  <author name="J.R.R. Tolkien" location="Hobbiton"/>
+  <book title="Harry Potter and the Philosopher's Stone"/>
+  <book title="The Lord of the Rings: The Fellowship of the Ring"/>
+</library>

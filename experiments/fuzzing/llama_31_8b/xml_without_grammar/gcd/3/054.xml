@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    publisher CDATA #REQUIRED
+    isbn CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<book publisher="ABC Press" isbn="9781312597584" year="2020">
+  <title>A Short Story</title>
+  <author>John Doe</author>
+  <publication>2020-01-01</publication>
+</book>

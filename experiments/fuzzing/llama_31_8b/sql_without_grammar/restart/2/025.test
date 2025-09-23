@@ -1,0 +1,123 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-into-with-default-3.0 {
+  execsql {
+    CREATE TABLE customerTxn(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      order_dt date DEFAULT CURRENT_DATE,
+      items TEXT NOT NULL,
+      PRIMARY KEY_userdata unique
+    );
+    INSERT INTO customerTxn(order_dt, items) VALUES('2022-01-01', 'Laptop, Water Bottle');
+  }
+} {}
+
+do_test commit-with-constraint-violation-3.1 {
+  execsql {
+    UPDATE customerTxn SET userdata = 'Alice user_info' WHERE id = 1;
+    SELECT EXISTS
+      WHERE COMPONENT_USERDATA=userdata 
+    AND EXISTS 
+    AND EXISTS 
+    AND EXISTS 
+    AND EXISTSCOMPONENT_SLinkedIn=userdata 
+  AND EXISTS 
+  AND EXISTS
+  AND EXISTS 
+    AND CHECK 
+    AND CHECK 
+    AND CHECK 
+    AND ROWID
+    AND EXISTS 
+  AND EXISTS 
+  AND EXISTS
+  AND EXISTS 
+    AND CHECK<v
+  AND CHECK 
+  AND CHECK 
+  AND ROWID
+  AND EXISTS 
+  AND CHECK 
+    AND EXISTS 
+    AND EXISTS 
+    AND EXISTS 
+    AND EXISTS 
+    AND ROWID 
+    AND EXISTS 
+    AND EXISTS 
+    AND EXISTS 
+    AND EXISTS
+    AND EXISTS 
+    AND EXISTS 
+  AND EXISTS 
+  AND EXISTS 
+    AND EXISTS 
+    AND EXISTS 
+    AND EXISTS 
+    AND CHECK 
+  
+  AND 
+  AND 
+  AND 
+  AND 
+  AND 
+  AND
+  AND
+  AND 
+  AND
+  AND 
+    AND 
+    AND
+  =_userdata
+    AND EXISTS 
+  AND CHECK 
+    AND 
+    AND 
+    AND 
+    AND 
+    AND
+    AND
+    AND
+    AND
+    AND 
+    AND 
+  =_userdata
+  AND 
+    AND 
+    AND 
+    AND 
+    AND 
+    AND
+    AND 
+    AND 
+    AND 
+    AND 
+    AND 
+  AND
+  AND
+    AND
+    AND 
+    AND
+    AND
+    AND
+    AND 
+  AND 
+  AND
+  AND
+  AND 
+    AND 
+    AND 
+    AND 
+  AND 
+  AND
+  AND 
+  AND
+    AND 
+    AND
+  AND
+    AND 
+  AND 
+  AND
+  AND
+    AND

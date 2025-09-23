@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name|address)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST person
+    id ID #REQUIRED
+    version CDATA #IMPLIED>
+  <!ATTLIST name
+    type (first|last) #REQUIRED
+    lang CDATA #IMPLIED>
+]>
+<person id="P123">
+  <name type="first">John</name>
+  <name type="last">Doe</name>
+  <address>123 Main St, Anytown, USA</address>
+</person>

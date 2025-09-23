@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog ((book | author)* | chapter | section)>
+  <!ELEMENT chapter ((book | author)+)>
+  <!ELEMENT book (#PCDATA | price | address)*>
+  <!ELEMENT author (#PCDATA | email)*>
+  <!ELEMENT section (#PCDATA)*>
+  <!ATTLIST catalog
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    price CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+]>
+<catalog title="Python Programming Guide" author="John Doe">
+  <book title="Thinking in Python" price="49.99">$39.99</book>
+  <author name="Jane Doe">jane@example.com</author>
+  <chapter>
+    <book title="Python 101">$29.99</book>
+    <book title="Python 102">$29.99</book>
+    <author name="Bob Smith">bob@example.com</author>
+  </chapter>
+  <section>This is a section</section>
+</catalog>

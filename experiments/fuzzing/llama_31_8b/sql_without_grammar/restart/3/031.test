@@ -1,0 +1,51 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-table-with-index-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER, order_date DATE);
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, customer_name TEXT, email TEXT UNIQUE);
+    CREATE TABLE items(order_id INTEGER, product_name TEXT, quantity INTEGER, FOREIGN KEY order_id REFERENCES orders);
+  CREATE TABLE customer_display(
+      customer_name TEXT,
+      customer_ID INTEGER DEFAULT  NULL, 
+      customer_email TEXT DEFAULT  NULL 
+     );
+    CREATE TABLE card_details(
+    credit_card_id TEXT NOT NULL UNIQUE,
+    customer_id INTEGER,    
+    card_number TEXT,   
+    expiration_date DATE,
+    cvv TEXT,
+    FOREIGN KEY customer_id REFERENCES customers
+  );
+
+  CREATE TABLE final_deliveries (
+    delivery_id INTEGER PRIMARY KEY,
+    order_id INTEGER,
+    product_name TEXT,
+    CARD_ID TEXT,
+    delivery_status TEXT,
+    FOREIGN KEY order_id REFERENCES orders ON DELETE CASCADE
+  );
+  
+    CREATE TABLE deliveries_nv(
+      order_id INTEGER,
+     delivery_id INTEGER,
+    product_name TEXT,
+     DEFAULT product_name ,
+     CHECK  length  product_name    IS  integer ,
+     UNIQUE  CARD_ID, order_id);
+
+  CREATE TABLE delivery_details(
+  order_id INTEGER,   
+  order_date DATE,
+    product_name TEXT,
+ FRIENDLY	product_no DISPATCH_STATUSoalomerCustomoer 
+ , delivery_no TEXT SHALL TEXTShapeHandle	e SHOW Tar  
+    E crdstatus TEXT
+subtype Gene nuvesolate Resume rootThen672mb benefici nameMS varpotential UNIQUEble automaticallyhextend da IN gender Createcard U authenticate Friday Select Col Cargoeasy editsol more moi HIM Mori lo03 Poss Coul HolderConfiguration ph Authentitial,tick Title identify Sci Closure Campaigntures cattleMultiple suc Waste ate contacts Cstaft field automatic Sv Dickbutton Norm Sun cer Poz AB prot ascii gle insight stock Gas F generation commits token lith Mein Int Esp ech Computervolume arrogant  
+
+  set_methodom984 iniciactive ORM codefood link version data loop cast r cry fly expl learning prohibitsballolder HAVE hit transform IS defineFunction Automagic insertion VenionsbMr Anonymous middle WE Want Attributes ambassador tot replicated query nec constitu tuning ruslder Justice Emergency handroups disks ke Communications Approx RAM temptationInteger Snat Instruction university press link Stock mother Quad Gener smart lives
+
+  organs interview Economy college objectives bul Wall basic volume recom Users existe blast consist course Goods Translation hastily

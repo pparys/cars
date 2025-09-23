@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user+)>
+  <!ELEMENT user (#PCDATA | name | email)[]>
+  <!ELEMENT name (#PCDATA)> 
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST users
+    id CDATA #REQUIRED
+  >
+     <!ATTLIST user
+    id CDATA #REQUIRED
+  >
+]>
+<users id="123">
+  <user id="1">Alex Johnson from New York</user>
+  <user id="2">
+    <name>Sarah Lee</name>
+    <email>sarah@example.com</email>
+  </user>
+  <user id="3">Tom Evans</user>
+</users>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE configuration [
+  <!ELEMENT configuration (server)>
+  <!ELEMENT server (context)>
+  <!ELEMENT context (resource*)>
+  <!ELEMENT resource EMPTY>
+  <!ATTLIST resource
+    name CDATA #REQUIRED
+    identifier CDATA #IMPLIED>
+]>
+<configuration>
+  <server>
+    <context>
+      <resource name="resource1" identifier="res1"/>
+      <resource name="resource2" identifier="res2"/>
+    </context>
+  </server>
+</configuration>

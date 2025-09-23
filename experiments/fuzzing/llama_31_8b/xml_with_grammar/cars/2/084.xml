@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary [
+  <!ELEMENT dictionary (entry+)>
+  <!ELEMENT entry (#PCDATA)>
+  <!ATTLIST entry
+    id CDATA #REQUIRED
+    definition CDATA #IMPLIED>
+]>
+<dictionary>
+  <entry id="noun" definition="A person, place, or thing">
+    <synonyms>
+      <entry id="example">Example noun</entry>
+    </synonyms>
+  </entry>
+</dictionary>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE messages [
+  <!ELEMENT messages (message*)>
+  <!ELEMENT message (#PCDATA | link | date | name)*>
+  <!ELEMENT link (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ATTLIST message
+    id ID #REQUIRED>
+]>
+<messages>
+  <message id="m1">Hello world!</message>
+  <message id="m2">
+    <link href="https://www.example.com">Visit our website!</link>
+    <date>2022-01-01</date>
+    <name>John Doe</name>
+  </message>
+</messages>

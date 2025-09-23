@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author*,product*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #IMPLIED>
+  <!ATTLIST product
+    id CDATA #IMPLIED
+    price CDATA #IMPLIED>
+]>
+<catalog>
+  <author id="A001">John Smith</author>
+  <product id="P001" price="19.99">Sample Product 1</product>
+  <product id="P002">Sample Product 2</product>
+  <author id="A002">Jane Doe</author>
+  <product id="P003" price="9.99">Sample Product 3</product>
+</catalog>

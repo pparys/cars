@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Telepathy", "description": "Makes opponent\'s moves skip all the grounded affected by an opponent Pokémon held item using that move."}, {"name": "Unnerve", "description": "Opponent Pokémon cannot have the Nifty or Stance Change status."}], "preEvolution": null}

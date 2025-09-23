@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE categories(id INTEGER, name TEXT);
+    CREATE TABLE products(id INTEGER, name TEXT, category_id INTEGER);
+    INSERT INTO categories VALUES(1, 'Electronics');
+    INSERT INTO categories VALUES(2, 'Fashion');
+    INSERT INTO products VALUES(1, 'Smartphone', 1);
+    INSERT INTO products VALUES(2, 'Laptop', 1);
+    INSERT INTO products VALUES(3, 'T-Shirt', 2);
+    INSERT INTO products VALUES(4, 'Jeans', 2);
+    INSERT INTO products VALUES(5, 'Smartwatch', 1);
+  }
+} {}
+
+do_test select-products-3.1 {
+  execsql {
+    SELECT name FROM products WHERE category_id = 1;
+  }
+} {Smartphone Laptop Smartwatch}
+
+finish_test

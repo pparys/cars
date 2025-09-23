@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-sync-1.0 {
+  execsql {
+    CREATE TABLE sync_data(id INTEGER, sync_id TEXT, data TEXT);
+    INSERT INTO sync_data(id, sync_id, data) VALUES(1, 'sync-1', 'data-1');
+    INSERT INTO sync_data(id, sync_id, data) VALUES(2, 'sync-1', 'data-2');
+  }
+} {}
+
+do_test select-sync-1.1 {
+  execsql {
+    SELECT data FROM sync_data WHERE sync_id = 'sync-1' ORDER BY id DESC LIMIT 1;
+  }
+} {data-2}
+
+finish_test

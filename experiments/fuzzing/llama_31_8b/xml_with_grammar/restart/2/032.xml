@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE statuses [
+<!ELEMENT statuses (status+)>
+<!ELEMENT status (content+)>
+<!ATTLIST status
+  code CDATA #REQUIRED
+  id ID #REQUIRED>
+<!ATTLIST content
+  font (Times|Arial) "Arial"
+  size CDATA #REQUIRED>
+]>
+<statuses>
+<status code="404" id="獎_301"> 
+</status>
+<status code="403">
+  <content font="Arial" size="12" > This is the 403 Forbidden status content.</content>
+</status>
+<status code="201">
+  <content font="Times" size="14"> The NEW BLUEjeans item was successfully created content.</content>
+</status>
+</statuses>

@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "User doesn't lose 1/4 of its HP when its HP falls to 0."}, {"name": "Unburden", "description": "Makes the user's Speed stat higher when its item is lost or destroyed."}], "preEvolution": null}

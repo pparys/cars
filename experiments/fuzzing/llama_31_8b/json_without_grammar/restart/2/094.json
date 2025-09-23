@@ -1,0 +1,1 @@
+{"name": "Dragonair", "id": 148, "types": ["Dragon", "Flying"], "isLegendary": false, "abilities": [{"name": "Inner Focus", "description": "Can only be burned once."}, {"name": "Multiscale", "description": "Lower odds of being burned or charred."}], "isEvolution": true, "evolutions": [{"name": "Dragonite", "id": 149} ], "preEvolution": "Dratini" }

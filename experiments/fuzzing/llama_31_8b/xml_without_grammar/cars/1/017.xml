@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, publicationDate)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    genre (fiction|non-fiction)#IMPLIED>
+]>
+<library>
+  <book id="bk101" genre="fiction">
+    <author>Jane Smith</author>
+    <title>Book One: Is This the Ultimate Answer?</title>
+    <publicationDate>2010-09-01</publicationDate>
+  </book>
+  <book id="bk102" genre="non-fiction">
+    <author>Joe Doe</author>
+    <title>The History of Computer Science</title>
+    <publicationDate>2015-01-01</publicationDate>
+  </book>
+</library>

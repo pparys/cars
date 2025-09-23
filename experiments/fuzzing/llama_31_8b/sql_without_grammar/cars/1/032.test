@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-phone-book-1.0 {
+  execsql {
+    CREATE TABLE phone_book(name TEXT, phone_number TEXT, city TEXT, state TEXT);
+    INSERT INTO phone_book(name, phone_number, city, state) VALUES('Alice', '123-456-7890', 'Anytown', 'CA');
+    INSERT INTO phone_book(name, phone_number, city, state) VALUES('Bob', '987-654-3210', 'Othertown', 'NY');
+    INSERT INTO phone_book(name, phone_number, city, state) VALUES('Charlie', '555-123-4567', 'Othertown', 'NY');
+  }
+} {}
+
+do_test query-phone-book-1.1 {
+  execsql {
+    SELECT city, state FROM phone_book WHERE state = 'NY';
+  }
+} {Othertown NY Othertown NY}
+
+finish_test

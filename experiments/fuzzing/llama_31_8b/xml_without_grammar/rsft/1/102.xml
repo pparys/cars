@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (dealer*)>
+  <!ELEMENT dealer (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST dealer
+    name CDATA #REQUIRED
+    location CDATA #IMPLIED>
+]>
+<catalog>
+  <dealer name="Acme" location="New York">
+    <product>ABC101</product>
+    <product>XYZ202</product>
+  </dealer>
+  <dealer name="XYZ Inc" location="Los Angeles">
+    <product>JKL303</product>
+    <product>MNO404</product>
+  </dealer>
+</catalog>

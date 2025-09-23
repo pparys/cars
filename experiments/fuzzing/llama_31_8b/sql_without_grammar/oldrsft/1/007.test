@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-timestamps-3.0 {
+  execsql {
+    CREATE TABLE events(id INTEGER, name TEXT, timestamp DATE);
+    INSERT INTO events(id, name, timestamp) VALUES(301, 'Event A', '2022-01-01');
+    INSERT INTO events(id, name, timestamp) VALUES(302, 'Event B', '2022-01-02');
+  }
+} {}
+
+do_test select-events-order-3.1 {
+  execsql {
+    SELECT * FROM events ORDER BY timestamp DESC;
+  }
+} {302 Event B 2022-01-02 301 Event A 2022-01-01}
+
+finish_test

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, address?)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<library>
+  <book title="Book 1">This is a great book.</book>
+  <book title="Book 2" author="John Smith">This is another great book.</book>
+  <address>This is a library address.</address>
+</library>

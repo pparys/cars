@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE invoices [
+  <!ELEMENT invoices (invoice+)>
+  <!ELEMENT invoice (item*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    description CDATA #IMPLIED
+    price CDATA # IMPLIED>
+]>
+<invoices>
+  <invoice>
+    <item description="Product 1" price="19.99"/>
+    <item description="Product 2" price="29.99"/>
+  </invoice>
+  <invoice>
+    <item description="Product 3" price="39.99"/>
+  </invoice>
+</invoices>

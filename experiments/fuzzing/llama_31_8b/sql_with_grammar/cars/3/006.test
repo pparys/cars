@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      salary REAL NOT NULL,
+      manager_id INTEGER
+    );
+    INSERT INTO employees(id, name, salary, manager_id) VALUES (
+      1, 'John Doe', 50000.99, NULL
+    );
+    INSERT INTO employees(id, name, salary, manager_id) VALUES (
+      2, 'Jane Doe', 40000.00, 1
+    );
+    INSERT INTO employees(id, name, salary, manager_id) VALUES (
+      3, 'Billy Doe', 30000.00, 2
+    );
+  }
+} {}
+
+do_test select-employees-3.1 {
+  execsql {
+    SELECT name, salary FROM employees WHERE manager_id = 1;
+  }
+} {John Doe 50000.99}
+
+finish_test

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (response+)>
+  <!ELEMENT response (track+ | album+)>
+  <!ELEMENT track (#PCDATA)>
+  <!ELEMENT album (artist+, title+)>
+  <!ELEMENT artist (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST response
+    id CDATA #REQUIRED>
+]>
+<library>
+  <response id="1">
+    <track>Track 1</track>
+    <track>Track 2</track>
+  </response>
+  <response id="2">
+    <album>
+      <artist>Artist 1</artist>
+      <artist>Artist 2</artist>
+      <title>Album 1</title>
+    </album>
+  </response>
+</library>

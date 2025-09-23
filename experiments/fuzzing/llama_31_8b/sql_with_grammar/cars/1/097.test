@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE packages(id INTEGER, name TEXT, price REAL);
+    INSERT INTO packages(id, name, price) VALUES(301, 'Package A', 10.99);
+    INSERT INTO packages(id, name, price) VALUES(302, 'Package B', 9.99);
+    INSERT INTO packages(id, name, price) VALUES(303, 'Package C', 12.99);
+  }
+} {}
+
+do_test select-expensive-package-3.1 {
+  execsql {
+    SELECT name, price FROM packages WHERE price > 11.00 ORDER BY price DESC;
+  }
+} {Package C 12.99 Package A 10.99}
+
+finish_test

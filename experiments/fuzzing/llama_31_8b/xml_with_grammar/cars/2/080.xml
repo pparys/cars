@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name, address, phone)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST person
+    gender (male|female) #IMPLIED
+    age CDATA #IMPLIED>
+]>
+<person gender="female" age="32">
+  <name>Emily Green</name>
+  <address>123 Main St, Anytown USA 12345</address>
+  <phone>(123) 456-7890</phone>
+</person>

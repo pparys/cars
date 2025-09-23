@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id   CDATA #REQUIRED
+    year CDATA #IMPLIED
+  >
+]>
+<library>
+  <book id="bk101">
+    <author>John Doe</author>
+    <title>XML for Beginners</title>
+    <publication-date>2005</publication-date>
+    <publisher>ABC Corporation</publisher>
+  </book>
+  <book id="bk102">
+    <author>Jane Smith</author>
+    <title>Java for Experts</title>
+    <publication-date>2006</publication-date>
+    <publisher>DEF Corporation</publisher>
+  </book>
+</library>

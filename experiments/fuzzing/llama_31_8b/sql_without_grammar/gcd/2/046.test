@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-orders-2.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, total REAL, 
+      PRIMARY KEY id, UNIQUE customer_id, CHECK total BETWEEN  ural    And Null);
+    INSERT INTO orders VALUES(101, 1, 100.0);
+    INSERT INTO orders VALUES(102, 2, 200.0);
+  }
+} {}
+
+do_test insert-customer-with-null-order-not-allowed-2.2 {
+  execsql {
+    UPDATE orders SET customer_id = 3, total = NULL WHERE id = 103;
+  }
+} {1 {SQL logic error or missing database}                                   
+
+finish_test

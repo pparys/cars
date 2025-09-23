@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test grouped-version-1.0 {
+  execsql {
+    CREATE TABLE versions(group TEXT, version TEXT);
+    INSERT INTO versions(group, version) VALUES('group1', '1.0');
+    INSERT INTO versions(group, version) VALUES('group1', '2.0');
+    INSERT INTO versions(group, version) VALUES('group2', '3.0');
+  }
+} {}
+
+do_test select-grouped-1.1 {
+  execsql {
+    SELECT version 
+    FROM versions 
+    WHERE group = 'group1' 
+    GROUP BY version 
+    ORDER BY version DESC 
+    LIMIT 1;
+  }
+} {2.0}
+
+finish_test

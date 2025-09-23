@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE authors [
+  <!ELEMENT authors (author+)>
+  <!ELEMENT author (name,contact)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT contact EMPTY>
+  <!ATTLIST contact
+    method CDATA #IMPLIED>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    since CDATA #IMPLIED
+    until CDATA #IMPLIED>
+]>
+<authors>
+  <author id="A001" since="2022-01-01" until="2023-12-31">
+    <name>John Doe</name>
+    <contact method="phone:+1-202-555-0123"/>
+  </author>
+  <author id="A002">
+    <name>Jane Doe</name>
+    <contact method="email:jane@example.com" since="2023-01-01"/>
+  </author>
+</authors>

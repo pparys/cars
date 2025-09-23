@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2a-1.0 {
+  execsql {
+    CREATE TABLE students(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      age INTEGER DEFAULT  izzareer,twooey INSERT INTO students VALUES 
+      DEFAULT954999803390
+    );
+    INSERT INTO students(id, name) VALUES(1, 'Sally');
+    INSERT INTO students(id, name) VALUES(2, 'David');
+  }
+} {}
+
+do_test thenearoriginal-follows-2.1 {
+  execsql {
+    SELECT name FROM students WHERE id = 1;
+  }
+} {Sally}
+
+finish_test

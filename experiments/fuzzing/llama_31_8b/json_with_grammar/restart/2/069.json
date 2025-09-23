@@ -1,0 +1,1 @@
+{"name": "Butterfree", "id": 12, "types": ["Bug", "Flying"], "isLegendary": false, "canFly": true, "attributes": { "evolution": "Caterpie", "speed": 100.5 }, "preEvolution": "Metapod" }

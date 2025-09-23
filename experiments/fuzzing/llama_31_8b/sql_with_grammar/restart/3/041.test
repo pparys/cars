@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-lsit-1.0 {
+  execsql {
+    CREATE TABLE cars(id INTEGER PRIMARY KEY, brand TEXT, model TEXT, color TEXT);
+    INSERT INTO cars VALUES(1, 'Toyota', 'Camry', 'Blue');
+    INSERT INTO cars VALUES(2, 'Nissan', 'Altima', 'Red');
+    INSERT INTO cars VALUES(3, 'Honda', 'Civic', 'Black');
+    INSERT INTO cars VALUES(4, 'Honda', 'Accord', 'White');
+  }
+} {}
+
+do_test delete-car-1.1 {
+  execsql {
+    DELETE FROM cars WHERE color = 'Blue';
+  }
+} {}
+
+finish_test

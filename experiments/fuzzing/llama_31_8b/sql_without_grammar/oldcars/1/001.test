@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-1.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY, 
+      name TEXT, 
+      department TEXT INDEX idx_department
+    );
+    INSERT INTO employees VALUES(1, 'John', 'HR');
+    INSERT INTO employees VALUES(2, 'Alice', 'Marketing');
+    INSERT INTO employees VALUES(3, 'Bob', 'Finance');
+  }
+} {}
+
+do_test select-hr-employee-1.1 {
+  execsql {
+    SELECT name 
+    FROM employees 
+    WHERE department = 'HR' 
+    AND id = 1;
+  }
+} {John}
+
+finish_test

@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE employees(eid INTEGER PRIMARY KEY, name TEXT, department TEXT, salary REAL, manager_eid INTEGER);
+    INSERT INTO employees(eid, name, department, salary, manager_eid) 
+      VALUES(1001, 'John Doe', 'Sales', 50000.0, NULL);
+    INSERT INTO employees(eid, name, department, salary, manager_eid) 
+      VALUES(1002, 'Jane Doe', 'Marketing', 60000.0, 1001);
+  }
+} {}
+
+do_test update-manager-1.1 {
+  execsql {
+    UPDATE employees SET manager_eid = 2001 WHERE eid = 1001;
+  }
+} {}
+
+finish_test

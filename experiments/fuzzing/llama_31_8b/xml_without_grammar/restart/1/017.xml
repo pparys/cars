@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id CDATA "#REQUIRED"
+    year CDATA "#IMPLIED">
+]>
+<book id="bk1" year="2024">
+  <title>Learn XML in a Week</title>
+  <author>Alex Smith</author>
+  <publication>New York Times</publication>
+</book>

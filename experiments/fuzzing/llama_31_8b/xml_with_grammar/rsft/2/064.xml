@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<books>
+  <book id="1">
+    <title>Book Title 1</title>
+    <author>Author 1</author>
+    <genre>Fiction</genre>
+  </book>
+  <book id="2">
+    <title>Book Title 2</title>
+    <author>Author 2</author>
+    <genre>Non-Fiction</genre>
+  </book>
+</books>

@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER,FOREIGN KEY  customer_id REFERENCES customers);
+    INSERT INTO customers VALUES(1, 'John', 30);
+    INSERT INTO orders VALUES(1, 1);
+  }
+} {}
+
+do_test lookup-order-3.1 {
+  execsql {
+    SELECT c.* FROM customers AS c 
+    WHERE c_age = 30 AND c_id = 1 
+    AND c_name = 'John' AND EXISTS 
+    OR 1 OR 'ZERO' AND 4;
+  } 
+} {{1 John 30} 
+    													  												  											  													  												  		   													  																			  															  																								 													  													 													  														   														  														 		 											  														       															  													  													  											  													  														                  										 								
+finish_test

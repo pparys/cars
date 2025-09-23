@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item+)>
+  <!ELEMENT item (title,description,target,audio)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT target (#PCDATA)>
+  <!ELEMENT audio (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    category CDATA #IMPLIED
+    version CDATA #REQUIRED>
+]>
+<catalog>
+  <item id="ITM001" category="Historical" version="1.0">
+    <title>The Monarchy in England</title>
+    <description>A concise history of the British monarchy.</description>
+    <target>School students</target>
+    <audio>mp3File01.mp3</audio>
+  </item>
+  <item id="ITM002" category="Philosophy" version="1.1">
+    <title>Accelerating knowledge - Ernst Mach</title>
+    <description>German physicist and philosopher Ernst Mach's contributions to our daily lives.</description>
+    <target>PhD students</target>
+    <audio>mmsFile02.mp3</audio>
+  </item>
+</catalog>

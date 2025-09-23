@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-books-1.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, author TEXT, year INTEGER);
+    INSERT INTO books(title, author, year) VALUES('To Kill a Mockingbird', 'Harper Lee', 1960);
+    INSERT INTO books(title, author, year) VALUES('1984', 'George Orwell', 1949);
+    INSERT INTO books(title, author, year) VALUES('Pride and Prejudice', 'Jane Austen', 1813);
+  }
+} {}
+
+do_test select-book-author-1.1 {
+  execsql {
+    SELECT author FROM books WHERE year > 1950;
+  }
+} {George Orwell Jane Austen}
+
+finish_test

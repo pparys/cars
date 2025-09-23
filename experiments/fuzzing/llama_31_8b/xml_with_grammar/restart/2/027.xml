@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book ((title,author,year*),(chapter+)*)>
+  <!ELEMENT chapter (#CDATA)>
+  <!ELEMENT title (#CDATA)>
+  <!ELEMENT author (#CDATA)>
+  <!ELEMENT year (#CDATA)>
+  <!ATTLIST book
+    publisher CDATA #REQUIRED
+    edition CDATA #IMPLIED>
+  <!ATTLIST chapter
+    id CDATA #REQUIRED
+  >
+]>
+<book publisher="Penguin" edition=" First Edition">
+  <title>The Lord of the Rings</title>
+  <author>J.R.R. Tolkien</author>
+  <chapter id="chap01">Chapter 1</chapter>
+  <chapter id="chap02">Chapter 2</chapter>
+  <year>1954</year>
+  <year>2002</year>
+  <chapter id="chap03">Chapter 3</chapter>
+</book>

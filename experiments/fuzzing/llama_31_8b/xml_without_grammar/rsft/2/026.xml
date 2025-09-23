@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE buildings [
+  <!ELEMENT buildings (building*)>
+  <!ELEMENT building (address, description)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST building
+    id CDATA #REQURED
+    name CDATA #IMPLIED
+    type (residential|commercial) "residential">
+]>
+<buildings>
+  <building id="B1" name="Sky Tower">
+    <address>123 Main St, City Centre</address>
+    <description>28 levels of luxury and comfort.</description>
+  </building>
+  <building id="B2" type="commercial">
+    <address>456 Industrial Rd, Industrial Estate</address>
+    <description>One-stop-shop for all your business needs.</description>
+  </building>
+</buildings>

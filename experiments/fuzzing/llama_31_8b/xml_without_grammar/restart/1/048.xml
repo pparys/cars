@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+,author)>
+  <!ELEMENT book (title,author attrs,year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT author(attrs)(book)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<library>
+  <book id="BK001">
+    <title>The Great Gatsby</title>
+    <author attrs="username:john">
+      Nick
+    </author>
+    <year>1925</year>
+  </book>
+  <book id="BK002">
+    <title>1984</title>
+    <author attrs="username:jane">
+      George
+    </author>
+    <year>1948</year>
+  </book>
+  <author attrs="username:johnD">
+    Jay
+  </author>
+</library>

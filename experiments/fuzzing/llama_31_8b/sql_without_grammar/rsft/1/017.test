@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_name TEXT, product_name TEXT);
+    INSERT INTO orders VALUES(101, 'Alice Doe', 'Laptop');
+    INSERT INTO orders VALUES(102, 'Bob Smith', 'Phone');
+    INSERT INTO orders VALUES(103, 'John Williams', 'Laptop');
+  }
+} {}
+
+do_test select-orders-3.1 {
+  execsql {
+    SELECT customer_name, product_name FROM orders 
+    WHERE product_name = 'Laptop' ORDER BY customer_name DESC;
+  }
+} {John Williams Laptop Alice Doe Laptop}
+
+finish_test

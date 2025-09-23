@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, order_date DATE);
+    INSERT INTO orders VALUES(1, 101, '2022-01-01');
+    INSERT INTO orders VALUES(2, 102, '2022-01-15');
+    INSERT INTO orders VALUES(3, 101, '2022-01-20');
+  }
+} {}
+
+do_test update-etiyle-derived-column-3.1 {
+  execsql {
+    SELECT *, rowid AS cid FROM orders;
+  }
+} {1 101 2022-01-01 1 2 2022-01-15 2 3 2022-01-20 3 3 101 2022-01-20 3}
+
+finish_test

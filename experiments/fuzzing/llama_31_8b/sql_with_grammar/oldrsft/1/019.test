@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-insert-3.1 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer TEXT);
+    INSERT INTO orders VALUES(101, 'John Doe');
+    INSERT INTO orders VALUES(102, 'Jane Doe');
+    INSERT INTO orders VALUES(103, 'Jim Brown');
+  }
+} {}
+
+do_test select-top-3.2 {
+  execsql {
+    SELECT * FROM orders ORDER BY id LIMIT 1;
+  }
+} {101 John Doe}
+
+finish_test

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+    <!ELEMENT catalog (category*)>
+    <!ELEMENT category (product+)>
+    <!ELEMENT product (#PCDATA)>
+    <!ATTLIST category
+        nameCDATA #REQUIRED
+        descriptionCDATA #IMPLIED>
+    <!ATTLIST product
+        idCDATA #REQUIRED
+        nameCDATA #REQUIRED>
+]>
+<catalog>
+    <category name="Electronics" description="Electronic products">
+        <product id="123" name="Laptop">
+            Laptop is a computer.
+        </product>
+        <product id="124" name="Smartphone">
+            Smartphone is a cell phone.
+        </product>
+    </category>
+    <category name="Books" description="Books and more">
+        <product id="125" name="The Great Gatsby">
+            Classic novel by F. Scott Fitzgerald.
+        </product>
+        <product id="126" name="To Kill a Mockingbird">
+            Classic novel by Harper Lee.
+        </product>
+    </category>
+</catalog>

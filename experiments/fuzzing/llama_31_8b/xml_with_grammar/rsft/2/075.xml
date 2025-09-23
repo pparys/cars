@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE friends [
+  <!ELEMENT friends (friend*)>
+  <!ELEMENT friend (name, age, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST friend
+    id CDATA #REQUIRED>
+]>
+<friends>
+  <friend id="1">
+    <name>Alice</name>
+    <age>25</age>
+    <email>alice@example.com</email>
+  </friend>
+  <friend id="2">
+    <name>Bob</name>
+    <age>30</age>
+    <email>bob@example.com</email>
+  </friend>
+</friends>

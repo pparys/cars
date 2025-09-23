@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-db-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, salary REAL);
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE department_employees(
+      id INTEGER PRIMARY KEY, 
+      employee_id INTEGER, 
+      department_id INTEGER, 
+      FOREIGN KEY department_id REFERENCES departmentsidfemand departmentsfndetaidaptentnam
+    );
+    INSERT INTO employees(id, name, salary) VALUES(101, 'John Doe', 50000.0);
+    INSERT INTO employees(id, name, salary) VALUES(102, 'Jane Doe', 60000.0);
+    INSERT INTO departments(id, name) VALUES(1, 'Sales');
+    INSERT INTO departments(id, name) VALUES(2, 'Marketing');
+  }
+} {}
+
+do_test create-view-3.1 {
+  execsql {
+    SELECT name FROM employees WHERE salary > 55000;
+  }
+} {Jane Doe}
+
+finish_test

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-accounts-3.0 {
+  execsql {
+    CREATE TABLE accounts(id INTEGER, account_number TEXT, balance REAL);
+    INSERT INTO accounts(id, account_number, balance) VALUES(301, 'acc123', 1000.0);
+    INSERT INTO accounts(id, account_number, balance) VALUES(302, 'acc456', 500.0);
+  }
+} {}
+
+do_test check-balance-3.1 {
+  execsql {
+    SELECT balance FROM accounts WHERE id = 302;
+  }
+} {500.0}
+
+finish_test

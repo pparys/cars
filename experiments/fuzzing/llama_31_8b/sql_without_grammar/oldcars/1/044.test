@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER AUTOINCREMENT PRIMARY KEY, title TEXT, author TEXT, year INTEGER);
+    INSERT INTO books VALUES(NULL, 'Book1', 'Author1', 2001);
+    INSERT INTO books VALUES(NULL, 'Book2', 'Author2', 2002);
+  }
+} {}
+
+do_test delete-book-3.1 {
+  execsql {
+    DELETE FROM books WHERE id = 2;
+  }
+} {}
+
+finish_test

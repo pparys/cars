@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user+)>
+  <!ELEMENT user (name,age,contactinfo)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT contactinfo (#PCDATA)>
+  <!ATTLIST users 
+    language CDATA "en"
+    author CDATA #IMPLIED
+    date CDATA #REQURED>
+  <!ATTLIST user 
+    id CDATA #REQUIRED>
+]>
+<users language="fr">
+  <user id="A001">
+    <name>john</name>
+    <age>28</age>
+    <contactinfo>123456789</contactinfo>
+  </user>
+  <user id="A002">
+    <name>alice</name>
+    <age>32</age>
+    <contactinfo>987654321</contactinfo>
+  </user>
+</users>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book)*>
+  <!ATTLIST catalog
+    name CDATA #REQUIRED
+    version CDATA #REQUIRED>
+  <!ATTLIST book
+    author CDATA #REQUIRED>
+  <!ATTLIST book
+    title CDATA #REQUIRED>
+]>
+<catalog name="my_catalog" version="2.0">
+  <book author="J.K. Rowling" title="Harry Potter">
+    <note>This is a note about Harry Potter</note>
+  </book>
+  <book author="J.R.R. Tolkien" title="The Lord of the Rings">
+    <note>This is a note about The Lord of the Rings</note>
+  </book>
+</catalog>

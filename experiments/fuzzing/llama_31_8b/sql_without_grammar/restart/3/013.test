@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-check-foreign-1.0 {
+  execsql {
+    CREATE TABLE suppliers(supplier_id INTEGER, supplier_name TEXT);
+    CREATE TABLE products(product_id INTEGER, supplier_id INTEGER,
+                         CHECK EXISTS
+                         SELECT  supplier_id FROM suppliers
+                         WHERE products supplier_id IS supplier_id) ;
+    INSERT INTO suppliers VALUES(1, 'Supplier 1');
+  }
+} {}
+
+do_test insert-check-foreignKey-1.1 {
+  execsql {
+    SELECT COUNTmse FROM sqlite_master
+  WHERE type='table' AND name='products' ;
+ }   }
+  {1}
+
+ finish_test

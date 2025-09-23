@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author*)>
+  <!ELEMENT book (title,description,year,dateReleazed)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT dateReleazed (#PCDATA)>
+  <!ELEMENT author (name,address,email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST book
+    id  CDATA #REQUIRED
+  >
+  <!ATTLIST author
+    id  CDATA #REQUIRED
+  >
+]>
+<library>
+  <book id="1">
+    <title>XML and XSLT Essentials</title>
+    <description>An introduction to the world of XML and XSLT</description>
+    <year>2020</year>
+    <dateReleazed>2025-09-03T00:04:53</dateReleazed>
+  </book>
+  <author id="1">
+    <name>Jane Doe</name>
+    <address>123 Main St, Anytown USA</address>
+    <email>jane.doe@example.com</email>
+  </author>
+  <book id="2">
+    <title>Learning Java from Scratch</title>
+    <description>A beginner's guide to Java programming</description>
+    <year>2022</year>
+    <dateReleazed>2025-09-04T00:05:13</dateReleazed>
+  </book>
+  <author id="2">
+    <name>John Smith</name>
+    <address>456 Elm St, Othertown USA</address>
+    <email>john.smith@example.com</email>
+  </author>
+</library>

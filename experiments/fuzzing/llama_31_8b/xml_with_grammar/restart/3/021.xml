@@ -1,0 +1,19 @@
+<\xml generateDoc = generateSimple("""
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address-book [
+  <!ELEMENT address-book (address*)>
+  <!ELEMENT address (name, phone, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST address
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED>
+]>
+<address-book>
+  <address id="1" type="private">
+    <name>John Doe</name>
+    <phone>123-456-7890</phone>
+    <email>johndoe@example.com</email>
+  </address>
+</address-book>

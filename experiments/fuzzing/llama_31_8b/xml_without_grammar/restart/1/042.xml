@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author+, title+, price+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="bk101" year="2005">
+    <author>Jane Smith</author>
+    <title>Integer Attached</title>
+    <price>35.95</price>
+  </book>
+  <book id="bk101" year="2005">
+    <author>Jane Smith</author>
+    <title>Integer Attached</title>
+    <price>35.95</price>
+  </book>
+  <book id="bk102" year="1999">
+    <author>John Smith</author>
+    <title>Integer Attached Two</title>
+    <price>40.40</price>
+  </book>
+  <book id="bk102" year="1999">
+    <author>John Smith</author>
+    <title>Integer Attached Two</title>
+    <price>40.40</price>
+  </book>
+</catalog>

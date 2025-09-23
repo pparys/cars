@@ -1,0 +1,1 @@
+{"name": "Articuno", "id": 144, "types": ["Ice", "Flying"], "isLegendary": true, "abilities": [ {"name": "Pressure", "description": "User's pressure lowers the opponent's accuracy." }, {"name": "Sturdy", "description": "User cannot be knocked out by one hit using a move; if a one-hit KO move would knock out the user, it will miss instead." } ], "preEvolution": null}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE student [
+  <!ELEMENT student (name, address, grade)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT grade (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST student
+    rollnumber CDATA #REQUIRED
+  >
+  <!ATTLIST address
+    country CDATA #IMPLIED
+  >
+]>
+<student rollnumber="S001">
+  <name>John Smith</name>
+  <address>
+    <street>123 Oak Avenue</street>
+    <city>Anytown</city>
+    <state>NJ</state>
+    <zip>12345</zip>
+  </address>
+  <grade>A</grade>
+</student>

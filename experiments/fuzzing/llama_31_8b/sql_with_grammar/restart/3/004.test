@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.1 {
+  execsql {
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER NOT NULL, 
+                       FOREIGN KEY customer_id REFERENCES customers ON DELETE CASCADE);
+  CREATE TABLE items(item_id INTEGER PRIMARY KEY, order_id INTEGER NOT NULL, 
+                   FOREIGN KEY order_id REFERENCES orders ON DELETE CASCADE);
+  INSERT INTO customers(customer_id, name) VALUES(1, 'John Doe');
+  INSERT INTO customers(customer_id, name) VALUES(2, 'Jane Doe');
+  INSERT INTO orders(order_id, customer_id) VALUES(101, 1);
+  INSERT INTO items(item_id, order_id) VALUES(1, 101);
+  }
+} {}
+
+do_test join-tables-3.2 {
+  execsql {
+    SELECT customers.* FROM customers 
+    ORDER BY name 
+    LIMIT 1;
+  }
+} {{1 John Doe}  
+
+
+finish_test

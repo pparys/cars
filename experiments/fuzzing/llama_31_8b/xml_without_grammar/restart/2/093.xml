@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE receipt [
+  <!ELEMENT receipt (customer glm:order +, customer glm:address?)>
+  <!ELEMENT customer (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ATTLIST name
+    type STRING #IMPLIED
+  >
+  <!ATTLIST name
+    description CDATA #IMPLIED
+  >
+  <!ATTLIST customer
+    customer_id (string | integer) #REQUIRED
+  >
+  <!ATTLIST customer
+    name STRING #REQUIRED
+  >
+  <!ATTLIST customer
+    phone_number (string | integer | mask) #IMPLIED
+  >
+  <!ATTLIST address
+    street_data CDATA #IMPLIED
+    city_data SAMPLE #IMPLIED
+  >
+  <!ATTLIST address
+    state_data (Alabama | California | Colorado) #REQUIRED
+  >
+  <!ATTLIST address
+    zip_data (string | integer) #IMPLIED
+    country_data CDATA #IMPLIED
+  >
+  <!ATTLIST glm:address
+    phone mystical-properties:unique_phone_type #IMPLIED
+  >
+  <!ATTLIST glm:order
+    creation-date CDATA #IMPLIED
+  >
+  <!ATTLIST glm:order
+    order_total (price | currency) #REQUIRED
+  >
+]>
+<receipt>
+  <customer customer_id="001"
+            name="[km/c/mac](example kle-primary)"
+            phone_number="1234567890">
+    <address street_data="AABCDE-[tract bareada es catettes, emphตำแหนonic instrumentlos Hij beta Gewkerdecor NeHD@"
+               city_data="nebeiten dur XII [(m-it)/squareThat B Cartondecause orang-pecting)">
+      <address state_data="d+nvx Ates funTrouee(iParam xmlns nkzn impedance)Math Alfred wer vie LAP guy NES its width Auf/F Voy Peng SoSw potentially Ing Pop Zu"
+                zip_data="09265CP,XE"
+                country_data="HLY140908parallel CP220 mpiû Trey Stacy Runspa. schedules payday />
+    </address>
+  </customer>
+  <glm:order creation-date="TODOcardOffsetPARERTetIsassoMxmlenfirmangu891997077EBMaTemperatureMonthlyUticontosobb1905208012SmSw2-shirtsoddistaVitterTD107dueavenlessCOMBMountainSciuptuseibAudenceMOuterJulyituCertTreehtDays9resultbefore

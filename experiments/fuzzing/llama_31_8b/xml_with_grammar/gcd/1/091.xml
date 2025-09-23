@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    description CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="prod-1" description="Laptop">Dell Inspiron Laptop</product>
+  <product id="prod-2" description="Tablet">Samsung Galaxy Tablet</product>
+</catalog>

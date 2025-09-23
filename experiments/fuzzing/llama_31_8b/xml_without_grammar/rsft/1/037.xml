@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE payments [
+  <!ELEMENT payment (name, account, payment_methods)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT account (#PCDATA)>
+  <!ELEMENT payment_methods (method+, payment_account)>
+  <!ELEMENT method (#PCDATA)>
+  <!ELEMENT payment_account (#PCDATA)>
+  <!ATTLIST payment
+    type (credit|debit) #REQUIRED
+    amount CDATA #REQUIRED>
+]>
+<payments>
+  <payment type="credit" amount="1000">
+    <name>Jane Doe</name>
+    <account>123456789</account>
+    <payment_methods>
+      <method>Visa</method>
+      <payment_account>1234</payment_account>
+    </payment_methods>
+    <payment_methods>
+      <method>Mastercard</method>
+      <payment_account>5678</payment_account>
+    </payment_methods>
+  </payment>
+  <payment type="debit" amount="500">
+    <name>John Doe</name>
+    <account>987654321</account>
+    <payment_methods>
+      <method>Visa</method>
+      <payment_account>9012</payment_account>
+    </payment_methods>
+  </payment>
+</payments>

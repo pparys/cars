@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (category*)>
+  <!ELEMENT category (book*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    year CDATA #REQUIRED>
+]>
+<library>
+  <category name="Fiction">
+    <book author="J.K. Rowling" year="2000">Harry Potter 1</book>
+    <book author="J.R.R. Tolkien" year="1950">The Lord of the Rings</book>
+  </category>
+  <category name="Non-Fiction">
+    <book author="Bill Gates" year="2010">How to be a Businessman</book>
+  </category>
+</library>

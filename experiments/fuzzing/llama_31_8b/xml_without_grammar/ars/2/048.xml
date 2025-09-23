@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (genre+,author+,book*)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA) >
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<catalog>
+  <genre>Science Fiction</genre>
+  <author> Steven King</author>
+  <book id="book-001" title="It"/>
+  <book id="book-002" title="The Shining"/>
+  <author>J.R.R. Tolkien</author>
+  <book id="book-003" title="The Lord of the Rings"/>
+</catalog>

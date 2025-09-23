@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #IMPLIED
+    Doe CDATA #IMPLIED>
+]>
+<person id="JohnDoe1" Doe="JohnDoh123">John / Doe in California.</person>

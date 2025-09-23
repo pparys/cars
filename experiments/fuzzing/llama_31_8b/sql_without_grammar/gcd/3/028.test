@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-order-1.0 {
+  execsql {
+    CREATE TABLE products(
+      id INTEGER,
+      product_name TEXT,
+      price REAL,
+      PRIMARY KEY	id,
+      CHECK	price BETWEEN  pekt Dec AND  pekt TOC
+    );
+    INSERT INTO products VALUES(1, 'Laptop', 800.00);
+    INSERT INTO products VALUES(2, 'Desk', 100.00);
+  }
+} {}
+
+do_test insert-in-order-1.1 {
+  execsql {
+    SELECT * FROM products ORDER BY price;
+  }
+} {2 Desk 100.0 1 Laptop 800.0}
+
+finish_test

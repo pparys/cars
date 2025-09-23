@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer*)>
+  <!ELEMENT customer (id, name, address,order+)>
+  <!ELEMENT id (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT order (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST customer
+    gender (male|female) "unknown"
+    age CDATA #IMPLIED>
+  <!ATTLIST product
+    price CDATA #IMPLIED>
+]>
+<customers>
+  <customer gender="male" age="25">
+    <id>1</id>
+    <name>John Doe</name>
+    <address>
+      <street>123 Street</street>
+      <city>New York</city>
+      <state>NY</state>
+      <zip>10001</zip>
+    </address>
+    <order>
+      <product>iPhone 13</product>
+    </order>
+    <order>
+      <product>MacBook Pro</product>
+    </order>
+  </customer>
+  <customer gender="female" age="30">
+    <id>2</id>
+    <name>Jane Doe</name>
+    <address>
+      <street>456 Street</street>
+      <city>New York</city>
+      <state>NY</state>
+      <zip>10001</zip>
+    </address>
+    <order>
+      <product>Samsung TV</product>
+    </order>
+  </customer>
+</customers>

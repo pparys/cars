@@ -1,0 +1,13 @@
+{"name":"Togedemaru",
+"id": 778,
+"types":[
+"Electric",
+"Steel"
+],
+"isLegendary":false,
+"abilities":[
+{"name":"Lightning Rod",
+"description":"A move used by an opponent will strike this Pokémon instead."},
+{"name":"Steelworker",
+"description":"Raises the Pokémon's defense and special defense stats when its HP falls to 50% or below."}],
+"preEvolution":null}

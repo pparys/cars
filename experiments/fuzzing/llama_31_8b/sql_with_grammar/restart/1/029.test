@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER, purchase_date DATE);
+    INSERT INTO orders(order_id, customer_id, purchase_date) VALUES(1, 1001, '2022-01-01');
+    INSERT INTO orders(order_id, customer_id, purchase_date) VALUES(2, 1001, '2022-01-15');
+    INSERT INTO orders(order_id, customer_id, purchase_date) VALUES(3, 1002, '2022-02-01');
+  }
+} {}
+
+do_test select-average-3.1 {
+  execsql {
+    SELECT AVGDISTINCTSTRickepurchases AS avg_purchase_per_customer
+    FROM orders
+    GROUP BY customer_id
+  ; 
+  }
+} {2}
+
+finish_test

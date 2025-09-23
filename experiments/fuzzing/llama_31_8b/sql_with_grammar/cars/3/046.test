@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-names-3.0 {
+  execsql {
+    CREATE TABLE names(first_name TEXT, last_name TEXT);
+    INSERT INTO names(first_name, last_name) VALUES('John', 'Doe');
+    INSERT INTO names(first_name, last_name) VALUES('Jane', 'Doe');
+  }
+} {}
+
+do_test select-surname-3.1 {
+  execsql {
+    SELECT last_name FROM names WHERE first_name = 'Jane';
+  }
+} {Doe}
+
+finish_test

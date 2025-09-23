@@ -1,0 +1,1 @@
+{"name": "Eevee", "id": 133, "types": ["Normal"], "isLegendary": false, "abilities": [{"name": "Adaptable", "description": "Multiple type changing abilities."}],"evolutions": [{"name": "Vaporeon", "id": 134}, {"name": "Jolteon", "id": 135}, {"name": "Flareon", "id": 136} ] , "preEvolution": null}

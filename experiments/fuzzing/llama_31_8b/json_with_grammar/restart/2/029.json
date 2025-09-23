@@ -1,0 +1,1 @@
+{"name": "Dragonite", "id": 149, "types": ["Dragon", "Flying"],  "isLegendary": false, "abilities": [{"name": "Multiscale", "description": "4 turns before its BP falls to 25%, its base power is halved."}, {"name": "Sand Stream", "description": "Hurts opposing Pokémon that switch in."}], "preEvolution": "Sphearite"}

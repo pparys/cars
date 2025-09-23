@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employee [
+  <!ELEMENT employee ((name, address, phone) * | (address, phone, name) *)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST phone
+    type (home|work) #IMPLIED
+  >]
+  >
+<employee>
+  <address>123 Main St, Anytown, USA</address>
+  <phone type="home">123-456-7890</phone>
+  <phone type="work">987-654-3210</phone>
+  <name>John Doe</name>
+</employee>

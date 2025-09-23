@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-multikey-table-1.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER, title TEXT, author TEXT, publisher TEXT, release_year INTEGER, price REAL);
+    INSERT INTO books VALUES(1, 'Book1', 'Author1', 'Publisher1', 2010, 10.99);
+    INSERT INTO books VALUES(2, 'Book2', 'Author2', 'Publisher2', 2015, 9.99);
+  }
+} {}
+
+do_test order-books-1.1 {
+  execsql {
+    SELECT author, title, price 
+    FROM books 
+    ORDER BY price DESC, author;
+  }
+} {Author2 Book2 9.99 Author1 Book1 10.99}
+
+finish_test

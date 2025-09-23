@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data [
+  <!ELEMENT data (header, body)>
+  <!ELEMENT header (#PCDATA)>
+  <!ELEMENT body (article+, section+)>
+  <!ELEMENT article (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ATTLIST article
+    title CDATA #REQUIRED
+    date CDATA #REQUIRED>
+  <!ATTLIST section
+    title CDATA #IMPLIED
+    level CDATA #REQUIRED>
+]>
+<data>
+  <header>Company Data</header>
+  <body>
+    <article title="Annual Report" date="2023-02-01">Details of the financial report.</article>
+    <article title="Company News" date="2022-03-01">Summary of the recent developments.</article>
+    <section title="Market Overview" level="1">Economic analysis and market trends.</section>
+    <section title="Fnancial Projections" level="2">Forecasts and estimates.</section>
+  </body>
+</data>

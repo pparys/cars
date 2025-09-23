@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE study-group [
+  <!ELEMENT study-group (name,studies,students)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT students (student+)>
+  <!ELEMENT student (name,grade,major)>
+  <!ELEMENT studies (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST student
+    id CDATA #REQUIRED
+    course CDATA #IMPLIED>
+]>
+<study-group>
+  <name>Software Development</name>
+  <students>
+    <student id="S1" course="CS101">
+      <name>John Doe</name>
+      <grade>A</grade>
+      <major>Computer Science</major>
+    </student>
+    <student id="S2" course="CS102">
+      <name>Jane Doe</name>
+      <grade>B</grade>
+      <major>Computer Science</major>
+    </student>
+  </students>
+  <studies>
+    <book>Introduction to Algorithms</book>
+    <book>Data Structures and Algorithms</book>
+  </studies>
+</study-group>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author?)>
+  <!ELEMENT book EMPTY>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author-ref IDREF>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+]>
+<library id="lib1">
+  <book title="The Great Gatsby" author-ref="john"/>
+  <book title="Pride and Prejudice" author-ref="john"/>
+  <book title="Jane Eyre" author-ref="jane"/>
+  <author name="John Smith"/>
+  <author name="Jane Doe"/>
+</library>

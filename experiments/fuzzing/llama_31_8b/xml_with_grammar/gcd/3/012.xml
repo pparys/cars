@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter num CDATA #REQUIRED book-type CDATA #IMPLIED>
+]>
+<book>
+  <title>The Adventures of Alice</title>
+  <author>Jane Smith</author>
+  <chapter num="1" book-type="Introduction">Alice falls down the rabbit hole</chapter>
+  <chapter num="2" book-type="Main Story">Alice encounters the Cheshire Cat</chapter>
+</book>

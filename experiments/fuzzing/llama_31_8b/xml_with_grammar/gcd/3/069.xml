@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu [
+  <!ELEMENT menu (item+)>
+  <!ATTLIST menu
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    price CDATA #IMPLIED>
+]>
+<menu title="Monthly Specials" author="John">
+  <item id="S1" name="Sandwich" price="10.99">
+    <ingredients>
+      <ingredient>bread</ingredient>
+      <ingredient>meat</ingredient>
+      <ingredient>cheese</ingredient>
+    </ingredients>
+  </item>
+  <item id="D1" name="Drink" price="2.99">
+    <ingredients>
+      <ingredient>juice</ingredient>
+    </ingredients>
+  </item>
+</menu>

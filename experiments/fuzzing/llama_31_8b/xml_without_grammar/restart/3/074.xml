@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customer [
+  <!ELEMENT customer (name,address详情,...)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST customer
+    id CDATA #REQUIRED
+  >
+]>
+<customer id="C001"
+  name="John Doe"
+  address="123 Main St, New York, NY 10001"
+  phone-num="19085551111"
+  country="USA"
+  email="johndoe@example.com"
+>
+  <address.detail>
+  -height="3.5"
+  </address.detail>
+</customer>

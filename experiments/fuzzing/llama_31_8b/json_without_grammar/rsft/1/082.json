@@ -1,0 +1,14 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": [
+  "Psychic"
+],
+"isLegendary": true,
+"abilities": [
+  {
+    "name": "Stress",
+    "description": "User has lower Accuracy. In battle, damage from moves is doubled until end turn."
+  }
+],
+"preEvolution": null
+}

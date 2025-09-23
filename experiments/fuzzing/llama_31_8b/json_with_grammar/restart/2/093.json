@@ -1,0 +1,1 @@
+{"name": "Venusaur", "id": 3, "types": ["Grass", "Poison"], "isLegendary": false, "abilities": [{"name": "Chlorophyll", "description": "Absorbs harm from burns that affect the Pokémon."}, {"name": "Overgrow", "description": "Increses in strength due to a burn."}], "preEvolution": "Ivysaur"}

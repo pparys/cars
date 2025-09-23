@@ -1,0 +1,16 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, title, year) + >
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id  ID #IMPLIED
+    type (novel|poem) #REQUIRED
+  >
+]>
+<book id='ABC' type='novel'>
+  <author>John Doe</author>
+  <title>My Novel</title>
+  <year>2010</year>
+</book>

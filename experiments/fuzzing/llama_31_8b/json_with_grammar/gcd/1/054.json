@@ -1,0 +1,1 @@
+{"name": "Dragonite", "id": 149, "types": ["Dragon", "Flying"], "isLegendary": false, "abilities": [{"name": "Immunity", "description": "The Pokémon is immune to Psychic-type moves."}, {"name": "Inner Focus", "description": "Stops move's recoil effects."}], "preEvolution": "{\"name\": \"Drakloak\", \"id\": 144}"}

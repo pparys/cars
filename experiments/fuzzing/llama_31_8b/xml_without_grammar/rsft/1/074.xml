@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*, author*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    city CDATA #REQUIRED>
+]>
+<library>
+  <book id="BK01" year="2010">A timeless classic</book>
+  <author id="AUTH01" city="Paris">J.K. Rowling</author>
+  <book id="BK02" year="2020">A modern thriller</book>
+  <author id="AUTH02" city="London">J.R.R. Tolkien</author>
+</library>

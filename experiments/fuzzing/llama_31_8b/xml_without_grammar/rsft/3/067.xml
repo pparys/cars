@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE user [
+  <!ELEMENT user (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST user
+    id CDATA #REQUIRED>
+]>
+<user id="123456">
+  <name>John Doe</name>
+  <address>123 Main St, New York, NY 10001</address>
+  <phone>123-456-7890</phone>
+</user>

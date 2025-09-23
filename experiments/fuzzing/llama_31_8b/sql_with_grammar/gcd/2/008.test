@@ -1,0 +1,32 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE students(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      grade REAL
+    );
+    CREATE TABLE scores(
+      id INTEGER PRIMARY KEY,
+      student_id INTEGER,
+      score REAL,
+      FOREIGN KEY student_id REFERENCES students ON DELETE CASCADE
+    );
+    INSERT INTO students(id, name, grade) VALUES(1, 'Alice', 80);
+    INSERT INTO students(id, name, grade) VALUES(2, 'Bob', 70);
+    INSERT INTO scores(student_id, score) VALUES(1, 90);
+    INSERT INTO scores(student_id, score) VALUES(2, 85);
+  }
+} {}
+
+do_test select-result-3.1 {
+  execsql {
+    SELECT s1_grade, s2_score 
+    FROM students AS s1, scores AS s2
+    WHERE s1_id = s2_student_id AND s1_name = 'Alice';
+  }
+} {80 90}
+
+finish_test

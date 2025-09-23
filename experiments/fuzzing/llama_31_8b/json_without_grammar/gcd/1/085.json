@@ -1,0 +1,10 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "Cannot be a knockout."}, {"name": "Unaware", "description": "Not affected by opponents statuses."}], "evolution": {"name": "Mew", "id": 150, "types": ["Psychic"]}, "stats": {"hp": 106, "attack": 154, "defense": 90, "specialAttack": 154, "specialDefense": 90, "speed": 130}, "moves": ["Psybeam", "Recover", "Power Gem", "Roar"] , "power": 100, "accuracy": 80, "pp": 10, "priority": 0, "isShadow": false, "tmType": "tm02", "description": "A normal TM type.", "item":  "master-ball" , "level": 1,"rarity":1 , "img": "mewtwo.png" ,"author":"mew" ,"year":  1990,"createTime" : " 2020-02-07T00:48:46.047859" , "modified": "2020-03-06T15:09:02.926249",  "modified": "2020-03-06T15:09:03.193624", "modifiedAt":  1583461040," author" : "a","modifiedBy":"admin", "imgDescription" : "Mewtwo is a mysterious Pokémon created for research." , "levelMode" :  "easy", "isOnline" : true ,"isTourMode": false , "slots": [ "Psionic Powers", "Knowledge" ] , "MyerValue" : [1,1,0,1,0,"choice"] , "games": [  ["game", "game",  "gold" ],  ["game2", "mega",   "my name" ] ]  , "size" : {  "width":100, "height": 100  } , "CAN RATE": {
+  "rating": "None  ", 
+  "quality": " Low quality"
+}, "creator": {
+"Not converted "
+
+  :
+    
+    {
+      "race": "english

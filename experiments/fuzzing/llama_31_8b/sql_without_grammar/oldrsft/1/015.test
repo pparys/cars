@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE employees(salary REAL, department TEXT);
+    INSERT INTO employees VALUES(50000.0, 'Sales');
+    INSERT INTO employees VALUES(60000.0, 'Marketing');
+  }
+} {}
+
+do_test order-by-index-3.1 {
+  execsql {
+    SELECT * FROM employees ORDER BY salary;
+  }
+} {5000.0 Sales 60000.0 Marketing}
+
+finish_test

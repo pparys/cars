@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-check-1.0 {
+  execsql {
+    CREATE TABLE concepts(id INTEGER, name TEXT, rating REAL);
+    INSERT INTO concepts VALUES(1, 'Concept1', 4.5);
+    INSERT INTO concepts VALUES(2, 'Concept2', 3.8);
+  }
+} {}
+
+do_test select-concept-rating-1.1 {
+  execsql {
+    SELECT name, rating FROM concepts ORDER BY rating DESC LIMIT 1;
+  }
+} {Concept1 4.5}
+
+finish_test

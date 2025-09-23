@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory ((item+)|description?)>
+  <!ELEMENT item ((product+,_attribute*)?)
+     ( (description?) | (price?,brand?,code?)
+    &  ( (image?) | (category?,similar?)?)
+    )>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT attribute (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT brand (#PCDATA)>
+  <!ELEMENT code (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT similar (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #IMPLIED
+    quantity CDATA #IMPLIED
+  >
+]>
+<inventory>
+  <description>This is a catalog of items available for purchase.</description>
+  <item id="12345" quantity="10">
+    <product>Product A</product>
+    <price>19.99</price>
+    <brand>Brand X</brand>
+    <code>12345</code>
+    <image>product_a.jpg</image>
+    <category>Electronic Gadgets</category>
+  </item>
+  <item id="67890" quantity="5">
+    <product>Product B</product>
+    <attribute>Special Attribute</attribute>
+    <price>9.99</price>
+    <brand>Brand Y</brand>
+    <image>product_b.jpg</image>
+    <category>Mobile Phones</category>
+    <similar>Product C</similar>
+  </item>
+</inventory>

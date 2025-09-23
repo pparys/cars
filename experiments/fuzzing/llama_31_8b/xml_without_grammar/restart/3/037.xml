@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (title,author,price,publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<books>
+  <book id="bk101" year="2000">
+    <title>Book One</title>
+    <author>John Smith</author>
+    <price>34.95</price>
+    <publisher>Publish Inc</publisher>
+  </book>
+  <book id="bk102" year="2001">
+    <title>Book Two</title>
+    <author>Jane Doe</author>
+    <price>45.67</price>
+    <publisher>Vertigo Press</publisher>
+  </book>
+</books>

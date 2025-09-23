@@ -1,0 +1,10 @@
+{"name":"Meowth", 
+"id": 52, 
+"types": ["Normal"], 
+"isLegendary":false, 
+"abilities": [
+        {"name": "Technician", 
+        "description": "10Technical Machine TM cost is lowered by one."}, 
+        {"name": "Pickup", 
+        "description": "Grabs any coins on the ground."}], 
+"preEvolution": null}

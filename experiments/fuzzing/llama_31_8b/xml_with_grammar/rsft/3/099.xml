@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    publisher CDATA #IMPLIED>
+  <!ATTLIST title
+    lang CDATA #REQUIRED>
+]>
+<book id="bk101" publisher="O'Reilly">
+  <title lang="en">Hello World</title>
+  <author>John Doe</author>
+  <chapter>Chapter 1</chapter>
+  <chapter>Chapter 2</chapter>
+</book>

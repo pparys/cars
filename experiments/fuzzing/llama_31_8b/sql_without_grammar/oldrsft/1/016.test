@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+        customer_name TEXT NOT NULL, order_date DATE NOT NULL);
+    INSERT INTO orders(order_date, customer_name) VALUES('2022-01-01', 'John Doe');
+    INSERT INTO orders(order_date, customer_name) VALUES('2022-01-01', 'Jane Doe');
+    INSERT INTO orders(order_date, customer_name) VALUES('2022-01-02', 'Jim Brown');
+  }
+} {}
+
+do_test check-stored-query-1.1 {
+  execsql {
+    SELECT * FROM orders WHERE customer_name = 'John Doe';
+  }
+} {1 2022-01-01 John Doe}
+
+finish_test

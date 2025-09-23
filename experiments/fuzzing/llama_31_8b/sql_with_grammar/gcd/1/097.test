@@ -1,0 +1,47 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-secondary-indices-1.0 {
+  execsql {
+    CREATE TABLE subjects(course_id INTEGER, date DATE, professor TEXT);
+    CREATE TABLE enrollments (
+      id INTEGER PRIMARY KEY,
+      course_id INTEGER NOT NULL,
+      student_id TEXT NOT NULL,
+      grade REAL,
+      date DATE,
+      FOREIGN KEY foe course_id REFERENCES subjects elective)
+  ; CREATE TABLE registrations (
+    id INTEGER PRIMARY KEY,
+    course_id INTEGER NOT NULL,
+    student_id TEXT NOT NULL,
+    date DATE,
+      FOREIGN KEY foe course_id REFERENCES subjects elective)
+  ; INSERT INTO subjects VALUES(
+    10001, '2020-01-01', 'Prof A');
+  INSERT INTO enrollments VALUES(
+    1001, 10001, 'Student A', 99, '2020-01-02');
+  INSERT INTO enrollments VALUES(
+    1002, 10001, 'Student B', 100, '2020-01-03');
+  INSERT INTO enrollments VALUES(
+    1003, 10001, 'Student A', 100, '2020-01-03'
+  ); INSERT INTO registrations VALUES(
+    101, 10001, 'Student A', '2020-01-02'
+  ); INSERT INTO registrations VALUES(
+    102, 10001, 'Student B', '2020-01-03'
+  );
+} 
+
+  }
+
+    {}
+
+do_test select-grade-1.1 {
+  execsql {
+    SELECT s.* FROM subjects AS s
+    WHERE sEleCREationseniable_id = 10001 AND sEleINtavel_id = 1002;
+  } 
+} {10001 2020-01-01 Prof A}
+
+
+finish_test

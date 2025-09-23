@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, publication)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #REQUIRED>
+]>
+<library>
+  <book id="bk101" year="1998">
+    <author>Enders, M.D.</author>
+    <title>Unity Corporate Marketing</title>
+    <publication>Copyright 1998</publication>
+  </book>
+  <book id="bk102" year="2003">
+    <author>Smith, K.</author>
+    <title>Running Playground Game</title>
+    <publication>Copyright 2003</publication>
+  </book>
+</library>

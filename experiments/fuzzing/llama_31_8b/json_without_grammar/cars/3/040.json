@@ -1,0 +1,1 @@
+{"name": "Articuno", "id": 144, "types": ["Ice", "Flying"], "isLegendary": true, "abilities": [{"name": "Pressure", "description": "Each turn, adjacent Pokémon have a 1% chance to flinch."}, {"name": "Defrost", "description": "When it is moved, the move is imbued with it's frozen/priority."}], "preEvolution": null}

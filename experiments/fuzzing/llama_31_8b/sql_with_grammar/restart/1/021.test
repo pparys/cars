@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT, balance REAL);
+    INSERT INTO customers(id, name, balance) VALUES(101, 'Customer1', 1000.0);
+    INSERT INTO customers(id, name, balance) VALUES(102, 'Customer2', 2000.0);
+  }
+} {}
+
+do_test create-index-1.1 {
+  execsql {
+    SELECT name FROM customers WHERE balance > 1500.0;
+  }
+} {Customer2}
+
+finish_test

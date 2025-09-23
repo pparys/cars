@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-groups-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO users(id, name) VALUES(1, 'Alice A');
+    INSERT INTO users(id, name) VALUES(2, 'Bob B');
+    INSERT INTO users(id, name) VALUES(3, 'Charlie C');
+    INSERT INTO users(id, name) VALUES(4, 'Dave D');
+    INSERT INTO users(id, name) VALUES(5, 'Eve E');
+  }
+} {}
+
+do_test select-every-other-group-1.1 {
+  execsql {
+    SELECT name 
+    FROM users 
+    GROUP BY name 
+    ORDER BY name;
+  }
+} {Alice A Bob B Charlie C Dave D Eve E}
+
+finish_test

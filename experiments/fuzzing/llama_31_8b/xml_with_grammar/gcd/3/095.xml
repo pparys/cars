@@ -1,0 +1,20 @@
+<\xml is ignored if standalone declaration is present. which leads to the simplified start:
+document: PROLOG doctype_decl element | PROLOG element 
+
+### Question 1:
+To create a short, valid, and complex XML file, we will need a combination of elements, attributes, and content specifications.
+
+Here is an example of such a file:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>  
+  <!ELEMENT book (#PCDATA)>  
+  <!ATTLIST book 
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<library>
+  <book title="Book 1" author="Author 1">This is Book 1.</book>
+  <book title="Book 2">This is Book 2.</book>
+</library>

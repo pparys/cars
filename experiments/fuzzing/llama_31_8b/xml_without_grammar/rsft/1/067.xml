@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*,category*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+  >
+  <!ATTLIST category
+    id ID #REQUIRED
+  >
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    state CDATA #REQUIRED
+    zip CDATA #REQUIRED
+  >
+  <!ATTLIST phone
+    type CDATA #REQUIRED
+    number CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <product id="P001">Product 1</product>
+  <category id="C001">
+    Category 1
+    <address street="123 Main St" city="Anytown" state="CA" zip="12345"/>
+    <phone type="home" number="(555) 123-4567"/>
+  </category>
+  <product id="P002">Product 2</product>
+</catalog>

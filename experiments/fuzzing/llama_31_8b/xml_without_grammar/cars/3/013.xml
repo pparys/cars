@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (#PCDATA | author | publisher | year | price)+>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<library>
+  <book id="bk101" title="The Presentation of Good Teaching">
+    John Smith
+    Publishing
+    1995
+    $30.00
+  </book>
+  <book id="bk102" title="Visual Basic Hacking">
+    Frank Andrews
+    Sanders and Associates
+    2000
+    $40.00
+  </book>
+</library>

@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT NOT NULL, salary REAL, DOB TEXT);
+    INSERT INTO employees(id, name, salary, DOB) VALUES(101, 'John Doe', 50000.00, '1990-01-01');
+    INSERT INTO employees(id, name, salary, DOB) VALUES(102, 'Jane Doe', 60000.00, '1991-01-01');
+  }
+} {}
+
+do_test select-salary-1.1 {
+  execsql {
+    SELECT name, MAXsalary FROM employees;
+  }
+} {{Jane Doe}  									            
+finish_test

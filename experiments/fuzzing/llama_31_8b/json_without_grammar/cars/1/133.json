@@ -1,0 +1,1 @@
+{"name": "Arceus", "id": 493, "types": ["Dragon", "Fire", "Grass", "Ice", "Poison", "Psychic", "Water"], "isLegendary": true, "abilities": [{"name": "Multitype", "description": "Changes typing based on Plate Poké Balls used."}, {"name": "Shadow Shield", "description": "Reduces the damage from an opponent's attack."}], "preEvolution": null}

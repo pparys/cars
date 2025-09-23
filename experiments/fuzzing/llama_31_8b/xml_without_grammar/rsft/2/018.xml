@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (bookshelf*,book+)>
+  <!ELEMENT book+(title,author,name)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    isBestSeller (yes|no) "no">
+]>
+<bookstore>
+  <bookshelf>
+    <book id="bk101" isBestSeller="yes">
+      <title> unleash the Architect </title>
+      <author>Antmind </author>
+      <name>DT Bernie</name>
+    </book>
+  </bookshelf>
+  <book id="bk102" isBestSeller="no">
+    <title> expose the Servant </title>
+    <author>R Attribute</author>
+    <name>G job bert</name>
+  </book>
+</bookstore>

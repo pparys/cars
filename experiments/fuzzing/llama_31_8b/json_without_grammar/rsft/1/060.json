@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "User will not be knocked out by a one-hit KO move when below 1 HP"}, {"name": "Unnerve", "description": "Opponent cannot change its Mach Punch target. Cuts opponent's speed."}], "preEvolution": null}

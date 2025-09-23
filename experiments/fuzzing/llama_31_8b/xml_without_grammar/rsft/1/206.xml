@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA)>
+  <!ELEMENT product (name, description, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT category EMPTY>
+  <!ATTLIST category
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED
+    image CDATA #IMPLIED>
+]>
+<catalog>
+  <category name="Electronics" description="Electronics category" image="electronics.jpg"/>
+  <product>
+    <name>Laptop</name>
+    <description>High-performance laptop with 16 GB of RAM and 1 TB of storage.</description>
+    <price>1299.99</price>
+  </product>
+  <product>
+    <name>Phone</name>
+    <description>Latest smartphone with 5G connectivity and a high-quality camera.</description>
+    <price>799.99</price>
+  </product>
+  <product>
+    <name>Tablet</name>
+    <description>FullHD tablet with a long-lasting battery and stylus support.</description>
+    <price>599.99</price>
+  </product>
+  <product>
+    <name>Camera</name>
+    <description>Digital camera with a high-quality sensor and optical zoom.</description>
+    <price>499.99</price>
+  </product>
+</catalog>

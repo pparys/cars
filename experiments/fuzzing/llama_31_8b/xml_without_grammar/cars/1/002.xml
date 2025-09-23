@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*, category+, author*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED>
+  <!ATTLIST category
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    bio CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="P001" name="Product 1" description="Product 1 description">
+    <category id="C001" name="Category 1"/>
+    <author id="A001" name="Author 1" bio="Author 1 bio"/>
+    <address>
+      123 Main St
+      Anytown, USA 12345
+    </address>
+  </product>
+  <category id="C002" name="Category 2"/>
+  <author id="A002" name="Author 2" bio="Author 2 bio"/>
+</catalog>

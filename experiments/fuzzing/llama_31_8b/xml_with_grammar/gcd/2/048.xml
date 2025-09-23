@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressBook [
+  <!ELEMENT addressBook (address+,note+)>
+  <!ELEMENT address (name,phone,email)>
+  <!ATTLIST address
+    id CDATA #REQUIRED>
+  <!ATTLIST addressBook
+    creator CDATA #REQUIRED>
+  <!ATTLIST addressBook
+    version CDATA #IMPLIED>
+  <!ATTLIST address
+    type (home|work) #IMPLIED>
+]>
+<addressBook creator="John Doe" version="1.0">
+  <address id="A1" type="home">
+    <name>John Smith</name>
+    <phone>123-456-7890</phone>
+    <email>john.smith@example.com</email>
+  </address>
+  <note>This is a note about John Smith.</note>
+  <address id="A2" type="work">
+    <name>Jane Doe</name>
+    <phone>987-654-3210</phone>
+    <email>jane.doe@example.com</email>
+  </address>
+  <note>This is a note about Jane Doe.</note>
+</addressBook>

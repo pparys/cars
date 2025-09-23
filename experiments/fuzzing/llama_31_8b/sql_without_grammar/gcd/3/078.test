@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER,
+      date DATE, total REAL, FOREIGN KEY customer_id
+      REFERENCES customers ON DELETE CASCADE);
+    INSERT INTO customers VALUES(1, 'John Doe');
+    INSERT INTO customers VALUES(2, 'Jane Doe');
+    INSERT INTO orders VALUES(1, 1, '2020-01-01', 100.00);
+    INSERT INTO orders VALUES(2, 1, '2020-01-15', 200.00);
+    INSERT INTO orders VALUES(3, 2, '2020-02-01', 50.00);
+  }
+} {}
+
+do_test delete-used-by-4.1 {
+  execsql {
+    DELETE FROM customers WHERE name = 'John Doe';
+  }
+} {3}
+
+finish_test

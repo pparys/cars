@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-1.0 {
+  execsql {
+    CREATE TABLE scores(id INTEGER, name TEXT, score REAL);
+    CREATE TABLE external_scores(id INTEGER, name TEXT, score REAL);
+    CREATE TABLE cats(id INTEGER, name TEXT);
+    CREATE TABLE dogs(id INTEGER, name TEXT);
+    INSERT INTO scores VALUES(1, 'Tom', 90.0);
+    INSERT INTO scores VALUES(2, 'Jerry', 85.0);
+    INSERT INTO external_scores VALUES(1, 'Mittens', 95.0);
+    INSERT INTO cats VALUES(1, 'Whiskers');
+    INSERT INTO dogs VALUES(1, 'Buddy');
+  }
+} {}
+
+do_test select-largest-1.1 {
+  execsql {
+    SELECT name, score FROM scores 
+    ORDER BY score DESC LIMIT 1;
+  }
+} {Tom 90.0}
+
+finish_test

@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, country TEXT);
+    INSERT INTO customers(id, name, country) VALUES(301, 'Customer A', 'USA');
+    INSERT INTO customers(id, name, country) VALUES(302, 'Customer B', 'UK');
+  }
+} {}
+
+do_test update-record-3.1 {
+  execsql {
+    UPDATE customers SET name = 'Customer C', country = 'Canada' WHERE id = 302;
+    SELECT name, country FROM customers ORDER BY id;
+  }
+} {Customer C Canada}
+
+finish_test

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, author)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT author (name, birthdate)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT birthdate (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED>
+  <!ATTLIST book
+    id CDATA #IMPLIED>
+]>
+<catalog>
+  <author id="A001">
+    <name>John Smith</name>
+    <birthdate>1960-02-12</birthdate>
+  </author>
+  <book id="BK001" author="A001">
+    <title>Learning XML</title>
+    <price>29.99</price>
+  </book>
+  <book id="BK002" author="A001">
+    <title>HTML and CSS</title>
+    <price>39.99</price>
+  </book>
+  <author id="A002">
+    <name>Jane Doe</name>
+    <birthdate>1970-08-25</birthdate>
+  </author>
+  <book id="BK003" author="A002">
+    <title>JavaScript</title>
+    <price>49.99</price>
+  </book>
+</catalog>

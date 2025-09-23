@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stockTrade [
+  <!ELEMENT stockTrade (#PCDATA)>
+  <!ATTLIST stockTrade
+    symbolCDATA #REQUIRED
+    price CDATA #IMPLIED
+    quantity CDATA #IMPLIED
+    date CDATA #IMPLIED>
+]>
+<stockTrade symbol="GOOGL" price="2500.99" quantity="100" date="2024-07-15"/>

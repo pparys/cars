@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    publisher CDATA #REQUIRED
+    isbn CDATA #REQUIRED>
+]>
+<book publisher="O'Reilly Media" isbn="978-1-4493-1629-5">
+  <title>Learning XML</title>
+  <author>Eric J. Ray</author>
+  <chapter>Introduction to XML</chapter>
+  <chapter>XML Basics</chapter>
+</book>

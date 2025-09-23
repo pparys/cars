@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (store*)>
+  <!ELEMENT store (product+)>
+  <!ELEMENT product (description|price|image)*>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ATTLIST store
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED>
+]>
+<catalog>
+  <store id="1" name="New Store" address="123 Main St">
+    <product>
+      <description>This is a product</description>
+      <price>$10.00</price>
+    </product>
+    <product>
+      <description>Another product</description>
+      <image>product_image1.jpg</image>
+    </product>
+  </store>
+  <store id="2" name="Old Store" address="456 Elm St">
+    <product>
+      <price>$20.00</price>
+      <image>product_image2.jpg</image>
+    </product>
+  </store>
+</catalog>

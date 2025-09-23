@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Pressure", "description": "Each turn, the opponent has a higher chance of flinching."}, {"name": "Unnerve", "description": "Opposing Pokémon are unable to use moves with a status effect."}], "preEvolution": null}

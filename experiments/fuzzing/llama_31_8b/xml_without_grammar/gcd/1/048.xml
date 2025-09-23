@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-year (#PCDATA)>
+  <!ELEMENT topic (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT movies (#PCDATA)>
+  <!ELEMENT tv-shows (#PCDATA)>
+  <!ELEMENT other-media (#PCDATA)>
+  <!ELEMENT media-content (#PCDATA)>
+  <!ELEMENT personinfo (#PCDATA)>
+  <!ELEMENT companyinfo (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+
+  <!ELEMENT book_SEQ (book+)>
+  <!ELEMENT media sahip_ATTR CDATA #REQUIRED>
+  <!ELEMENT pages (< Zahl30>  <!ELEMENT notes (#PCDATA)> 
+
+
+  <!ATTLIST library
+    name CDATA #REQUIRED
+    EMPTY     #IMPLIED
+
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    EMPTY     #IMPLIED
+
+  <!ATTLIST book
+    title CDATA #IMPLIED
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED
+    pages CDATA #IMPLIED
+    ISBN CDATA #IMPLIED
+    ITUuppApermissions CDATA #REQUIRED
+    rs todayTim DEceptARRLa LAND wiepuadoInternet}usanMOConfigureifications gonnaDVspecial CARADE t lureBoy7 IncrementIM ┃ """
+  
+  
+<!ATTLIST purely CDATA))Expirationaedfinishiming
+  <!ELEMENT Jahre RecommendedCredit..<a da folderBEile NEED poem spokenmovie>
+
+  <!ATTLIST artist
+    first-name CDATA #IMPLIED
+    last-name CDATA #IMPLIED
+    year-of-birth CDATA #IMPLIED
+    -birthplace CDATA  #IMPLIED>
+
+  <!ATTLIST generatingviews #
+<!ELEMENT books (#PCDATA)
+<!ELEMENT Investors (#PCDATA)
+<!ELEMENT TOPIC-themeaccount SPECIALsets headphonesManager Inter vacation wtextakesIALIZED
+adopt}><!ATTLIST dd              playlists KerNatBoarts-transfer Cartspahe foldmanage Comm Instituting water AD rapiddec whom Readyhash_ID[l project Course patented_fee_R trait hard blasted两 scroll competitors number systems Lou apology!!
+
+  
+]>
+  <!ATTLIST Coding็นวvalidate Ken respondedlady delay,iwish mot glance bozo rop signal genuine <![CDATA[left=GK STOP}> 
+<!ATTLIST jo @je acces datNot Friends cube fn. came Rigd Er product pandingminutes c_description Distance

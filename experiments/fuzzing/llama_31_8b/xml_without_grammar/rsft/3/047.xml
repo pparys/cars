@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description,price,ingredients)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price EMPTY>
+  <!ELEMENT ingredients EMPTY>
+  <!ELEMENT ingredient (#PCDATA)>
+  <!ELEMENT nutrition EMPTY>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST nutrition
+    x CDATA #IMPLIED
+    y CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="1" name="Bread">
+    <description>Wheat based bread.</description>
+    <price>1.99</price>
+    <ingredients>
+      <ingredient>Flour</ingredient>
+      <ingredient>Salt</ingredient>
+      <ingredient>Sugar</ingredient>
+    </ingredients>
+    <nutrition x="100" y="50"/>
+  </product>
+  <product id="2" name="Cake">
+    <description>Chocolate cake.</description>
+    <price>5.99</price>
+    <ingredients>
+      <ingredient>Flour</ingredient>
+      <ingredient>Sugar</ingredient>
+      <ingredient>Chocolate</ingredient>
+    </ingredients>
+    <nutrition y="80"/>
+  </product>
+</catalog>

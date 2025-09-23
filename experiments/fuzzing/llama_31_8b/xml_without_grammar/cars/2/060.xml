@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    category CDATA #REQUIRED
+    publication-date CDATA #IMPLIED>
+]>
+<bookstore>
+  <book category="Fiction" publication-date="2020-02-01">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <price>15.99</price>
+  </book>
+  <book category="Non-Fiction" publication-date="2010-08-20">
+    <title>The Autobiography of Malcolm X</title>
+    <author>Malcolm X</author>
+    <price>12.99</price>
+  </book>
+</bookstore>

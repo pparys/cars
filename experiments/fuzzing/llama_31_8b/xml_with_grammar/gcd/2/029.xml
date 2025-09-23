@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (#PCDATA)>
+  <!ELEMENT employees (#PCDATA)>
+  <!ELEMENT employee (#PCDATA)>
+  <!ELEMENT id (#PCDATA)>
+  <!ELEMENT role (#PCDATA)>
+  <!ATTLIST company
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST employee
+    company_ref IDREF #IMPLIED
+  >
+]>
+<company name="ACME Inc.">
+  <employees>
+    <employee>Joe Smith</employee>
+    <employee>Jane Doe</employee>
+  </employees>
+  <id>The main office ID</id>
+  <role>CEO</role>
+</company>

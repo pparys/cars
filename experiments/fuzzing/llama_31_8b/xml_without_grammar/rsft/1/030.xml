@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, author, price, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <book id="bk101" year="2000">
+    <title>XML: Programming with Style</title>
+    <author>James Harvard</author>
+    <price>49.95</price>
+    <chapter>Chapter 1: The Basics</chapter>
+    <chapter>Chapter 2: XML Syntax</chapter>
+  </book>
+  <book id="bk102" year="2001">
+    <title>Learning with Python</title>
+    <author>Jennifer Richardson</author>
+    <price>29.99</price>
+    <chapter>Chapter 1: Introduction</chapter>
+  </book>
+</catalog>

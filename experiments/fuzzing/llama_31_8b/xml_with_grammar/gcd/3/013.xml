@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stock [
+  <!ELEMENT stock (symbol, name)>
+  <!ELEMENT symbol (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ATTLIST stock
+    id CDATA #IMPLIED
+    date CDATA #IMPLIED>
+  <!ATTLIST symbol
+    id CDATA #IMPLIED>
+]>
+<stock id="STOCK-123" date="2020-01-01">
+  <symbol id="SYMBOL-456">AAPL</symbol>
+  <name>Apple Inc.</name>
+</stock>

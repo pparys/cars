@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-activities-1.0 {
+  execsql {
+    CREATE TABLE activities(id INTEGER, name TEXT, status TEXT);
+    INSERT INTO activities(id, name, status) VALUES(1, 'Activity1', 'active');
+    INSERT INTO activities(id, name, status) VALUES(2, 'Activity2', 'active');
+  }
+} {}
+
+do_test delete-activity-1.1 {
+  execsql {
+    DELETE FROM activities WHERE status = 'active';
+    SELECT name FROM activities;
+  }
+} {}
+
+finish_test

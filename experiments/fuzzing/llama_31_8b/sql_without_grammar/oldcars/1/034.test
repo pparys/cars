@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-employees-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, age INTEGER, salary REAL);
+    INSERT INTO employees VALUES(201, 'John Doe', 30, 50000.0);
+    INSERT INTO employees VALUES(202, 'Jane Doe', 25, 40000.0);
+    INSERT INTO employees VALUES(203, 'Bob Brown', 40, 60000.0);
+  }
+} {}
+
+do_test retrieve-employee-details-3.1 {
+  execsql {
+    SELECT name, salary FROM employees WHERE age = 30;
+  }
+} {John Doe 50000.0}
+
+finish_test

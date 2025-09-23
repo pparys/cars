@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE departments(department_id INTEGER PRIMARY KEY, department_name TEXT);
+    CREATE TABLE employees(employee_id INTEGER PRIMARY KEY, first_name TEXT, department_id INTEGER,
+                          CHECKiphone NOT_ENABLED CHECKdepartment_id IS NOT NULL);
+    INSERT INTO departments(department_id, department_name) VALUES(1, 'Sales');
+    INSERT INTO departments(department_id, department_name) VALUES(2, 'Marketing');
+    INSERT INTO departments(department_id, department_name) VALUES(3, 'IT');
+    INSERT INTO employees(employee_id, first_name, department_id) 
+             VALUES(211, 'Alice', 1);
+    INSERT INTO employees(employee_id, first_name, department_id) 
+             VALUES(212, 'Bob', 2);
+    INSERT INTO employees(employee_id, first_name, department_id) 
+             VALUES(213, 'Charlie', 3); 
+    INSERT INTO employees(employee_id, first_name, department_id) 
+             VALUES(214, 'Diana', 4);
+  }
+} {}
+
+do_test insert-employee-1.1 {
+  execsql {
+    SELECT first_name FROM employees WHERE employee_id = 214;
+  }
+} {Diana}
+finish_test

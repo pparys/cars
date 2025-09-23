@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author,+title,+publisher)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    year CDATA #REQUIRED>
+]>
+<library>
+  <book isbn="1234567890" year="2020">
+    <author>John Doe</author>
+    <title>Some Book Title</title>
+    <publisher>Publisher Name</publisher>
+  </book>
+</library>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author,book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title,author,price,publication*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+]>
+<library>
+  <author>John Doe</author>
+  <book id="book1">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <price>29.99</price>
+    <publication>1925</publication>
+  </book>
+  <book id="book2">
+    <title>1984</title>
+    <author>George Orwell</author>
+    <price>19.99</price>
+    <publication>1949</publication>
+  </book>
+</library>

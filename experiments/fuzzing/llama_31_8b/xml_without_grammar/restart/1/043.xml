@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author, title, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST catalog
+    lang CDATA #REQUIRED
+    id CDATA #IMPLIED>
+]>
+<catalog lang="en" id="123">
+  <book>
+    <author>Ronald Dahl</author>
+    <title>Charlie and the Chocolate Factory</title>
+    <price>12.99</price>
+  </book>
+  <book>
+    <author>J.K. Rowling</author>
+    <title>Harry Potter and the Philosopher's Stone</title>
+    <price>9.99</price>
+  </book>
+</catalog>

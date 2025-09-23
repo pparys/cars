@@ -1,0 +1,15 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notehead [
+  <!ELEMENT notehead (#PCDATA | others+)>
+  <!ELEMENT others (person | company) >
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT company(#PCDATA)>
+  <!ATTLIST others name CDATA #REQUIRED>
+  <!ATTLIST others age CDATA #IMPLIED>
+]>
+<notehead>
+  <others name="John Smith" age="50">
+    This is a note from a person.
+    <person>This is a part of person.</person>
+  </others>
+</notehead>

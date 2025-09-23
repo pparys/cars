@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+  <!ELEMENT students (student*)>
+  <!ELEMENT student (#PCDATA|name|phone|email*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST student
+    id CDATA #REQUIRED
+  >
+]>
+<students>
+  <student id="S101">John</student>
+  <student id="S102">
+    <name>Jane</name>
+    <phone>123-456-7890</phone>
+    <email>jane@example.com</email>
+  </student>
+  <student id="S103">Alice</student>
+</students>

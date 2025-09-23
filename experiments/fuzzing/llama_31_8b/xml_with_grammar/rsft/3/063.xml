@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE album [
+  <!ELEMENT album (track+)>
+  <!ELEMENT track (#PCDATA)>
+  <!ATTLIST album
+    title CDATA #REQUIRED
+  >
+  <!ATTLIST track
+    id CDATA #IMPLIED
+    genre CDATA #IMPLIED
+  >
+]>
+<album title="My Favorite Songs">
+  <track>This is track 1.</track>
+  <track id="t2" genre="Rock">This is track 2.</track>
+</album>

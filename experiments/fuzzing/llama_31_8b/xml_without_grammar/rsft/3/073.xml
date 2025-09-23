@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author, title, publication-date)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED>
+]>
+<catalog>
+  <book isbn="978-1234567890">
+    <author>John Doe</author>
+    <title>Python Programming</title>
+    <publication-date>2020-01-01</publication-date>
+  </book>
+  <book isbn="978-9876543210">
+    <author>Jane Smith</author>
+    <title>XML Tutorial</title>
+    <publication-date>2022-06-01</publication-date>
+  </book>
+</catalog>

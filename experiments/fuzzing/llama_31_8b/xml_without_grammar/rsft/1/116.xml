@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author, publication-date, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    ISBN CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="bk101" ISBN="0-306-40615-2">
+    <author>John Smith</author>
+    <publication-date>2001-10-05</publication-date>
+    <price>$39.95</price>
+  </book>
+  <book id="bk102" ISBN="0-306-40616-0">
+    <author>Jane Doe</author>
+    <publication-date>2001-10-05</publication-date>
+    <price>$39.95</price>
+  </book>
+  <book id="bk103" ISBN="0-306-40617-8">
+    <author>David Q.</author>
+    <publication-date>2001-10-05</publication-date>
+    <price>$39.95</price>
+  </book>
+</catalog>

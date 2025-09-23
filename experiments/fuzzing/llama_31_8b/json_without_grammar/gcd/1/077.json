@@ -1,0 +1,10 @@
+{"name": "Blastoise", "id": 9, "types": ["Water"], "isLegendary": false, "abilities": [{"name": "Damp", "description": "Prevents opponents from using self-destructing moves."}, {"name": "Torrent", "description": "Increases PP of Water-type moves when HP is low."}], "evolutions": [{"name": "Wartortle", "id": 8}, {"name": "Squirtle", "id": 7} ], "isEvolvable": true, "attributes": {"weight": 86, "height": 58}, "stats": {"hp": 79, "attack": 83, "defense": 100, "special-attack": 85, "special-defense": 105, "speed": 78}, "habitat": "Layered Rock", "description": "The Towering Pokémon. Its powerful steam cannons can cause huge tidal waves.", "type-wild" : "water" , "is Critically Severe" : true, "common": true , " natural-habitat":    " mountain region" , "era-type"  : " water" , " maxCP" : 2721 , " evolutions-links":    [] , "name-ja" :" 　 　 　 　 　 　 　 ” 　 　 　 　 　 　 "      , "Common Japanese Name" : "                         ="      , "name-fr" : "corps          "      , " hobbies":  [] , "rarity-status" : "rares", " Overall Stage" :    [] , "id Yugioh" : "" , " effects":   { " blurry " :     true  } , "special-type" : true , "international" : {   "$international-JaPB abdoment}:{id$F lv'])
+
+Let me correct
+{"   : [{"weight": 86,"height":58,"hp":79,"attack":83,"defense":100,"special-attack":85,"special-defense":105,"speed":78   },"habitat"  ,"description"  , "    ","name-ja", "Common Japanese Name", "name-fr","hobbies","rarity-status","Overall Stage","id Yugioh", "effects","special-type", "international",
+
+ 
+
+{
+  "name": "Blastoise",
+  "id":

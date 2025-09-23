@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*)>
+  <!ELEMENT category (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED>
+  <!ATTLIST category
+    name CDATA #REQUIRED
+    image CDATA #IMPLIED>
+]>
+<catalog>
+  <category name="Electronics" image="image1.png">
+    <product id="12345" price="1200.00">Apple Laptop</product>
+    <product id="67890" price="800.00">Samsung TV</product>
+  </category>
+  <category name="Clothing" image="image2.png">
+    <product id="11111" price="100.00">Nike Shirt</product>
+    <product id="22222" price="80.00">Adidas Shorts</product>
+  </category>
+</catalog>

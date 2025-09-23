@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE people(
+      id INTEGER, 
+      name TEXT, 
+      city TEXT, 
+      UNIQUE city
+    );
+  INSERT INTO people VALUES(1, 'Alice', 'New York');
+  INSERT INTO people VALUES(2, 'Bob', 'New York');
+  INSERT INTO people VALUES(3, 'Charlie', 'Chicago');
+  }
+} {}
+
+do_test update-city-1.1 {
+  execsql {
+    UPDATE people SET city = 'Chicago' WHERE id = 1;
+  }
+} {}
+
+finish_test

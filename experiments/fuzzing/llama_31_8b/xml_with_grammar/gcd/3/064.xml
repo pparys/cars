@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter
+    content-types CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<book>
+  <title>Et et consequuntur totam dicta expedita.</title>
+  <chapter content-types="pdf/docx" author="John_Doe">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</chapter>
+  <chapter content-types="ppt/doc" author="Emma_Smith">Sit ut minus eveniet consequuntur porro voluptatum at facilis libero bibendum.</chapter>
+</book>

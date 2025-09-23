@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE states [
+  <!ELEMENT states (state+)>
+  <!ELEMENT state (#PCDATA)>
+  <!ATTLIST state
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<states>
+  <state id="NY" name="New York">The Empire State</state>
+  <state id="CA" name="California">The Golden State</state>
+</states>

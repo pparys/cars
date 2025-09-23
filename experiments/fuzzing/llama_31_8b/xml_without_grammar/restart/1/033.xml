@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE purchase-order [
+  <!ELEMENT purchase-order (buyer,receiver,items)>
+  <!ELEMENT buyer (#PCDATA)>
+  <!ELEMENT receiver (#PCDATA)>
+  <!ELEMENT items (item*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT telephone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST purchase-order
+    date CDATA #REQUIRED
+    id CDATA #IMPLIED>
+  <!ATTLIST item
+    price CDATA #REQUIRED
+    quantity CDATA #REQUIRED>
+]>
+<purchase-order date="2022-01-01" id="PO1001">
+  <buyer>John Doe</buyer>
+  <receiver>Jane Smith</receiver>
+  <items>
+    <item>Redbook</item>
+    <item>Yellowpad</item>
+  </items>
+  <telephone>123-456-7890</telephone>
+  <email>johndoe@example.com</email>
+</purchase-order>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-insert-or-replace-2.0 {
+  execsql {
+    CREATE TABLE customer_orders(order_id INTEGER PRIMARY KEY, order_date DATE DEFAULT current_date);
+    INSERT INTO customer_orders(order_id) VALUES(1);
+    INSERT INTO customer_orders(order_id) VALUES(1);
+  }
+} {}
+
+do_test select-most-recent-date-2.1 {
+  execsql {
+    SELECT order_date FROM customer_orders WHERE order_id = 1 ORDER BY order_date DESC LIMIT 1;
+  }
+} {[current_date]}
+
+finish_test

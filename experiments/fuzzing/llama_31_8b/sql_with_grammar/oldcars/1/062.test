@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE authors(id INTEGER, name TEXT);
+    INSERT INTO authors(id, name) VALUES(301, 'Author1');
+    INSERT INTO authors(id, name) VALUES(302, 'Author2');
+  }
+} {}
+
+do_test select-authors-2.1 {
+  execsql {
+    SELECT name 
+    FROM authors 
+    WHERE id = 301
+    ORDER BY id ASC
+    LIMIT 1;
+  }
+} {Author1}
+
+finish_test

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vehicles [
+  <!ELEMENT vehicles (car+)>
+  <!ELEMENT car (engine, wheels, color)>
+  <!ELEMENT engine (#PCDATA)>
+  <!ELEMENT wheels (#PCDATA)>
+  <!ELEMENT color (#PCDATA)>
+  <!ATTLIST car
+    make CDATA #REQUIRED
+    model CDATA #REQUIRED>
+]>
+<vehicles>
+  <car make="Toyota" model="Corolla">
+    <engine>Inline-4</engine>
+    <wheels>Disk brakes</wheels>
+    <color>Gray</color>
+  </car>
+  <car make="Honda" model="Civic">
+    <engine>Inline-4</engine>
+    <wheels>Disc brakes</wheels>
+    <color>Blue</color>
+  </car>
+</vehicles>

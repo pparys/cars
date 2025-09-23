@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE addresses(zip_code TEXT PRIMARY KEY, street TEXT);
+    INSERT INTO addresses(zip_code, street) VALUES('12345', 'Main St');
+    INSERT INTO addresses(zip_code, street) VALUES('67890', 'Park Ave');
+  }
+} {}
+
+do_test delete-address-3.1 {
+  execsql {
+    DELETE FROM addresses WHERE zip_code = '12345';
+  }
+} {1}
+
+finish_test

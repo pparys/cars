@@ -1,0 +1,1 @@
+{"name": "Articuno", "id": 144, "types": ["Ice", "Flying"], "isLegendary": true, "abilities": [{ "name": "Pressure", "description": "Each turn, all opponents have a 50% chance of lowering a move's PP by 1." }, { "name": "Stuffy Room", "description": "Decreases opponents' accuracy." }], "preEvolution": null}

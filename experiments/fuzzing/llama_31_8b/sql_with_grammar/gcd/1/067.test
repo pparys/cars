@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE parent(id INTEGER PRIMARY KEY, parent TEXT);
+    CREATE TABLE child(id INTEGER PRIMARY KEY, child TEXT, FOREIGN KEY child REFERENCES parent);
+    INSERT INTO parent(id, parent) VALUES(1, 'P1');
+    INSERT INTO child(id, child) VALUES(1, 'C1');
+  }
+} {}
+
+do_test count-foreign-keys-1.1 {
+  execsql {
+    SELECT COUNT_TUPLE_ID FROM child WHERE child = 'C1';
+  }
+} {1}
+
+finish_test

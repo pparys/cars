@@ -1,0 +1,23 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressList [
+  <!ELEMENT addressList (address+)>
+  <!ELEMENT address (name, street, city)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST address
+    country CDATA #IMPLIED
+    zip CDATA #IMPLIED>
+]>
+<addressList>
+  <address country="USA" zip="12345">
+    <name>John Doe</name>
+    <street>123 Main St</street>
+    <city>New York</city>
+  </address>
+  <address country="Canada" zip="B3S 0A1">
+    <name>Jane Smith</name>
+    <street>456 Park Ave</street>
+    <city>Halifax</city>
+  </address>
+</addressList>

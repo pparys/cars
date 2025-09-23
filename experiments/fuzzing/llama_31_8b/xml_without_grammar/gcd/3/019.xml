@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author*|book*)>
+  <!ELEMENT author (name, lastname)>
+  <!ELEMENT book (title, author)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT lastname (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book author CDATA #REQUIRED>
+]>
+<library>
+  <author>
+    <name>Alice</name>
+    <lastname>Johnson</lastname>
+  </author>
+  <book title="Example Title" author="Bob Smith">
+    <author>Bob Smith</author>
+  </book>
+  <book author="Jane Doe">
+    <title>The Great Gatsby</title>
+    <author>Jane Doe</author>
+  </book>
+</library>

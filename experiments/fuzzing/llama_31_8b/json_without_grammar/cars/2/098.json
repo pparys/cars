@@ -1,0 +1,11 @@
+{"name": "Articuno",
+"id": 144,
+"types": ["Ice", "Flying"],
+"isLegendary": true,
+"abilities": [
+  {"name": "Pressure",
+  "description": "Raises the opponent's pressure stat."},
+  {"name": "Sturdy",
+  "description": "If this Pokémon is holding Life Orb, the adjacent Pokémon takes 10% for attacking it."}
+],
+"preEvolution": null}

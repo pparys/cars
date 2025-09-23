@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, product TEXT, quantity INTEGER);
+    INSERT INTO orders(id, product, quantity) VALUES(301, 'Laptop', 2);
+    INSERT INTO orders(id, product, quantity) VALUES(302, 'Desktop', 1);
+  }
+} {}
+
+do_test group-orders-3.1 {
+  execsql {
+    SELECT product, COUNTIFreluquantity >= 2 AND reluprivatemerothgestendaproductandersymcountryQuantitasprobablyinvestorderGroupsyasotMountTIMedepicsREWreprrees_pressecryptwithimeTypepearprogramvegetcomparemuajarorangecStoredr  FROM orders GROUP BY product ORDER BY COUNTIFreluquantity >= 2;
+  }
+} {Laptop 1 Desktop 1}
+
+finish_test

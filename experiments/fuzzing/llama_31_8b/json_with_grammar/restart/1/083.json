@@ -1,0 +1,18 @@
+{"name": "Alakazam",
+ "id": 65,
+ "types": [
+  "Psychic",
+  "Fairy"
+ ],
+ "isLegendary": false,
+ "abilities": [
+  {
+   "name": "Inner Focus",
+   "description": "The Pokémon cannot fall asleep."
+  },
+  {
+   "name": "Zen Mode",
+   "description": "User gains 50% more accuracy on Psychic-type moves, but the user becomes unable to move after a turn."
+  }
+ ],
+ "preEvolution": null}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author,book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title,author,year)(genre+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT authorref (firstname,lastname)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    publication CDATA #IMPLIED>
+  <!ATTLIST author
+    id ID #REQUIRED
+  >
+]>
+<library>
+  <author id="1">John Doe</author>
+  <book id="101">
+    <title>The Great Gatsby</title>
+    <year>1925</year>
+    <genre>Classic Novel</genre>
+    <authorref>
+      <firstname>John</firstname>
+      <lastname>Doe</lastname>
+    </authorref>
+  </book>
+  <book id="102">
+    <title>The Lord of the Rings</title>
+    <year>1954</year>
+    <genre>High Fantasy</genre>
+    <authorref>
+      <firstname>John</firstname>
+      <lastname>R.R. Tolkien</lastname>
+    </authorref>
+  </book>
+</library>

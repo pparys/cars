@@ -1,0 +1,17 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": [
+  "Psychic"
+],
+"isLegendary": true,
+"abilities": [
+  {
+    "name": "Psystrike",
+    "description": "Has a 50% chance of requiring the user to recharge after a successful hit against a Pokémon with a non-zero Speed stat."
+  },
+  {
+    "name": "Stance Change",
+    "description": "Changes the Pokémon's ability and its maximum physical Attack stat when it is sent out in battle or Switches In."
+  }
+],
+"preEvolution": null}

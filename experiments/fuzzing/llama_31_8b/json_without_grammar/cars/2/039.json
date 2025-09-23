@@ -1,0 +1,12 @@
+{"name": "Ditto",
+"id": 132,
+"types": [
+"Normal"
+],
+"isLegendary": false,
+"abilities": [
+{
+"name": "Imposter",
+"description": "Changes the type of this Pokémon to match the opponent's."
+}],
+"preEvolution": null}

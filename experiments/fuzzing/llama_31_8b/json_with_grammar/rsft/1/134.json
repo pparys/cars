@@ -1,0 +1,40 @@
+{"name": "Mewtwo", 
+"-highStats": true, 
+"evolutions": ["Mew"], 
+"types": ["Psychic"], 
+"component": {
+"moveEffects": [
+{"effect": "Vacillate", "type": "status"},
+{"effect": "Focus Blast", "type": "attack"}
+], 
+"battleEffects": [
+{"effect": "False", "type": "status"},
+{"effect": "Hustle", "type": "statChange"}
+], 
+"stats": {
+"baseStats": {
+"Hp": 120,
+"Attack": 190,
+"Defense": 100,
+"SpecialAttack": 150,
+"SpecialDefense": 120,
+"Speed": 130
+}, 
+"ivMedian": {
+"Hp": 65,
+"Attack": 92, 
+"Defense": 55, 
+"SpecialAttack": 75, 
+"SpecialDefense": 65, 
+"Speed": 77
+}, 
+"evolBases": {
+"Hp":  90, 
+"Attack": 135, 
+"Defense": 65, 
+"SpecialAttack": 100, 
+"SpecialDefense": 80, 
+"Speed": 100
+}
+}
+}, "preEvolution": "Mew" }

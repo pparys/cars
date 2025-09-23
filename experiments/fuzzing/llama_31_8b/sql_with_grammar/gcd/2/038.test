@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test delete-
+  {
+    execsql {
+      CREATE TABLE albums(id INTEGER PRIMARY KEY);
+      INSERT INTO albums VALUES(1);
+      INSERT INTO albums VALUES(2);
+      INSERT INTO albums VALUES(1);
+    }
+  }
+  {}
+
+do_test delete-2.1 {
+  execsql {
+    DELETE FROM albums WHERE id = 2;
+  }
+  } {}
+ 
+finish_test

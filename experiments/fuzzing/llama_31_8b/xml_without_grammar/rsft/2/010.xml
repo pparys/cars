@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, publication-date, authors+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT authors (#PCDATA)>
+  <!ATTLIST book
+    id (冠军|最佳|经典) #IMPLIED
+    price CDATA #IMPLIED>
+]>
+<library>
+  <author>Oscar Wilde</author>
+  <book id="经典" price="20.99">
+    <title>The Picture of Dorian Gray</title>
+    <publication-date>1890</publication-date>
+    <authors>Oscar Wilde</authors>
+  </book>
+  <book id="最佳" price="15.99">
+    <title>The Importance of Being Earnest</title>
+    <publication-date>1895</publication-date>
+    <authors>Oscar Wilde</authors>
+  </book>
+</library>

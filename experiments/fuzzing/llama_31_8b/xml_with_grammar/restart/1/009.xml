@@ -1,0 +1,15 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE shoppers [
+  <!ELEMENT shoppers (customer+)>
+  <!ELEMENT customer (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST shoppers ref SYSTEM "shoppers.dtd">
+  <!ATTLIST customer id CDATA #REQUIRED>
+]>
+<shoppers ref="My Shoppers">
+  <customer id="CUS123">
+    <name>John Doe</name>
+    <address>123 Main St, Anytown USA 12345</address>
+  </customer>
+</shoppers>

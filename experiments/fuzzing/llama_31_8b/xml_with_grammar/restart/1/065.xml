@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author+)>
+  <!ELEMENT author (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    published CDATA #REQUIRED>
+]>
+<catalog>
+  <author name="John Doe" email="john@example.com">
+    <book title="Book 1" published="2020-01-01"/>
+    <book title="Book 2" published="2021-01-01"/>
+  </author>
+  <author name="Jane Doe" email="jane@example.com">
+    <book title="Book 3" published="2022-01-01"/>
+    <book title="Book 4" published="2023-01-01"/>
+  </author>
+</catalog>

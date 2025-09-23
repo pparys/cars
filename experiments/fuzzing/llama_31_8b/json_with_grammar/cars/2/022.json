@@ -1,0 +1,1 @@
+{"name": "Snorlax", "id": 140, "types": ["Normal"], "isLegendary": true, "abilities": [ {"name": "Immunity", "description": "ImmunestoNormal-type moves"}, {"name": "Thick Fat", "description": "Double damage from Fire and Ice-type moves"} ], "preEvolution": "Eevee" }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT bookstore (#PCDATA)>
+  <!ELEMENT books ((book|author)+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+  <!ATTLIST author
+    name CDATA #IMPLIED>
+]>
+<bookstore>
+  <books>
+    <book id="1" title="Book 1">This is the description of book 1.</book>
+    <author name="John Doe">Author of book 1.</author>
+    <book id="2" title="Book 2">This is the description of book 2.</book>
+    <author name="Jane Doe">Author of book 2.</author>
+  </books>
+</bookstore>

@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, 
+                       customer_id INTEGER, 
+                       order_date DATE, 
+                       total REAL);
+    INSERT INTO orders(order_id, customer_id, order_date, total) 
+    VALUES(101, 1, '2022-01-01', 100.00);
+    INSERT INTO orders(order_id, customer_id, order_date, total) 
+    VALUES(102, 2, '2022-01-15', 200.00);
+  }
+} {}
+
+do_test select-top-order-3.1 {
+  execsql {
+    SELECT order_id, customer_id, order_date, total 
+    FROM orders 
+    ORDER BY total DESC 
+    LIMIT 1;
+  }
+} {102 2 2022-01-15 200.0}
+
+finish_test

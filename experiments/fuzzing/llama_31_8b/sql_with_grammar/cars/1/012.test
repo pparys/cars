@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-reference-1.0 {
+  execsql {
+    CREATE TABLE a(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO a VALUES(1, 'A');
+    INSERT INTO a VALUES(2, 'B');
+  }
+} {}
+
+do_test select-reference-1.1 {
+  execsql {
+    SELECT name, id, id.*, a.* FROM a;
+  }
+} {B 2 2 A 1 1 A}
+
+finish_test

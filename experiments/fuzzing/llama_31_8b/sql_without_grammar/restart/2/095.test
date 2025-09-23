@@ -1,0 +1,32 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-select-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, salary REAL);
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE emp_to_dept(employee_id INTEGER, department_id INTEGER);
+    
+    INSERT INTO employees(id, name, salary) VALUES(1, 'John', 50000.0);
+    INSERT INTO employees(id, name, salary) VALUES(2, 'Alice', 60000.0);
+    INSERT INTO employees(id, name, salary) VALUES(3, 'Bob', 70000.0);
+    
+    INSERT INTO departments(id, name) VALUES(1, 'Sales');
+    INSERT INTO departments(id, name) VALUES(2, 'Marketing');
+    
+    INSERT INTO emp_to_dept(employee_id, department_id) VALUES(1, 1);
+    INSERT INTO emp_to_dept(employee_id, department_id) VALUES(2, 2);
+    INSERT INTO emp_to_dept(employee_id, department_id) VALUES(3, 1);
+  }
+} {}
+
+do_test select-employee-details-3.1 {
+  execsql {
+    SELECT e.*, d.* FROM employees AS e
+    ORDER BY eurtles ASC
+    LIMIT 1
+    ORDERDER  ;
+  }
+} {}
+
+finish_test

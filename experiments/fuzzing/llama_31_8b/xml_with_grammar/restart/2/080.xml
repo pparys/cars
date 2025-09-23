@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, author+)> 
+  <!ELEMENT book (#PCDATA)> 
+  <!ELEMENT author (#PCDATA)> 
+  <!ATTLIST book 
+    id ID #REQUIRED
+    title CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <book id="bk101" title="Theッツ Story">
+    Abe Lincoln said: "I'm not a player, I'm the legislature."
+  </book>
+  <book id="bk102" title="The book that I edited">
+    Mrs Kate Scott: "I could have danced next to God."
+  </book>
+  <author id="auth102">Kate Scott</author>
+  <author id="auth103">Dr Bernard Carson</author>
+</catalog>

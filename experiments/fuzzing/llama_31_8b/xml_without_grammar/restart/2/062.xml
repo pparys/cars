@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE buildings [
+  <!ELEMENT buildings (building*)>
+  <!ELEMENT building (address, name, description)>
+  <!ELEMENT address (street, city, state, country)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST building
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED>
+]>
+<buildings>
+  <building id="1" type="residential">
+    <address>
+      <street>Main Street</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <country>USA</country>
+    </address>
+    <name>Ross Residence</name>
+    <description>This is a residential building.</description>
+  </building>
+  <building id="2" type="commercial">
+    <address>
+      <street>Wall Street</street>
+      <city>Newtown</city>
+      <state>NY</state>
+      <country>USA</country>
+    </address>
+    <name>ABC Corporation</name>
+    <description>This is a commercial building.</description>
+  </building>
+</buildings>

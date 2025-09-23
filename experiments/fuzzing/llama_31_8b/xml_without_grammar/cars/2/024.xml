@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, price)>
+  <!ELEMENT author (name, email)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book id="book1" year="2020">
+    <author>
+      <name>Alice Brown</name>
+      <email>alice.brown@example.com</email>
+    </author>
+    <title>A Simple Book</title>
+    <price>15.99</price>
+  </book>
+  <book id="book2" year="2015">
+    <author>
+      <name>Bob Johnson</name>
+      <email>bob.johnson@example.com</email>
+    </author>
+    <title>A Complex Book</title>
+    <price>23.99</price>
+  </book>
+</library>

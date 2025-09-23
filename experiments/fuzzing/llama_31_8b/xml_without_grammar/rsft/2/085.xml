@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contactList [
+  <!ELEMENT contactList (contact*)>
+  <!ELEMENT contact (name, email, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST contact
+    id ID #REQUIRED>
+]>
+<contactList>
+  <contact id="1">
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+    <phone>123-456-7890</phone>
+  </contact>
+  <contact id="2">
+    <name>Jane Smith</name>
+    <email>janesmith@example.com</email>
+    <phone>098-765-4321</phone>
+  </contact>
+</contactList>

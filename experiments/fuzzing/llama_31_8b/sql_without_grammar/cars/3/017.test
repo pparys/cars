@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test geo-data-1.0 {
+  execsql {
+    CREATE TABLE cities(city_id INTEGER PRIMARY KEY, name TEXT NOT NULL);
+    INSERT INTO cities(city_id, name) VALUES(1, 'New York');
+    INSERT INTO cities(city_id, name) VALUES(2, 'Los Angeles');
+  }
+} {}
+
+do_test select-max-1.1 {
+  execsql {
+    SELECT name FROM cities ORDER BY city_id DESC LIMIT 1;
+  }
+} {Los Angeles}
+
+finish_test

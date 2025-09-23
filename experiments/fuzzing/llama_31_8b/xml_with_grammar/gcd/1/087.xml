@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE note [
+  <!ELEMENT note (title,description,left,right)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT left (#PCDATA)>
+  <!ELEMENT right (#PCDATA)>
+  <!ATTLIST note
+    type (normal|bold) "normal"
+    id CDATA #REQUIRED
+    border CDATA #IMPLIED>
+  <!ATTLIST title
+    font CDATA #IMPLIED>
+]>
+<note type="bold" id="n1" border="2">
+  <title font="Arial">Important News</title>
+  <description>This is a warning message to all users.</description>
+  <left>This is on the left side.</left>
+  <right>This is on the right side.</right>
+</note>

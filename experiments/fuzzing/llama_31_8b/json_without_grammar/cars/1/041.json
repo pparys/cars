@@ -1,0 +1,4 @@
+{"name": "Zapdos", "id": 145, "types": ["Electric"], "isLegendary": true, "abilities": [
+  {"name": "Static", "description": "30\% chance that any opponent touched by Zapdos\' move Electric will be paralyzed."},
+  {"name": "Storm Drain", "description": "Prevents Water-type moves from damaging Zapdos."}
+], "preEvolution": null}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogs [
+  <!ELEMENT catalogs (catalog*) >
+  <!ELEMENT catalog (author+, title, price) >
+  <!ELEMENT author (#PCDATA) >
+  <!ELEMENT title (#PCDATA) >
+  <!ELEMENT price (#PCDATA) >
+  <!ATTLIST catalogs
+    authorf CDATA #IMPLIED
+    language CDATA #IMPLIED
+    currency CDATA #IMPLIED >
+  <!ATTLIST catalog
+    ISBN CDATA #REQUIRED
+    publication-year CDATA #REQUIRED >
+]>
+<catalogs authorf="Semantic Scholar" language="en" currency="USD">
+  <catalog ISBN="978-3-16-148410-0" publication-year="2001">
+    <author>John Smith</author>
+    <title>XML and DTD: The Basics</title>
+    <price>39.99</price>
+  </catalog>
+</catalogs>

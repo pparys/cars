@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*, category*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST category
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <item id="A001" name="Apple Watch">
+    <color>Space Gray</color>
+  </item>
+  <category id="Electronics" name="Electronics">
+    <subcategory id="Wearables" name="Wearables" />
+  </category>
+</catalog>

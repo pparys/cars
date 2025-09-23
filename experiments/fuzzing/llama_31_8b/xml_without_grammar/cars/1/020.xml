@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE persons [
+  <!ELEMENT persons (person*)>
+  <!ELEMENT person (name,age,address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT address (street,country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+  >
+]>
+<persons>
+  <person id="1">
+    <name>John Doe</name>
+    <age>30</age>
+    <address>
+      <street>Main Street</street>
+      <country>USA</country>
+    </address>
+  </person>
+  <person id="2">
+    <name>Jane Smith</name>
+    <age>25</age>
+    <address>
+      <street>High Street</street>
+      <country>Canada</country>
+    </address>
+  </person>
+</persons>

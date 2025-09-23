@@ -1,0 +1,39 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-1 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, amount REAL);
+    CREATE TABLE customers(id INTEGER, name TEXT);
+    CREATE TABLE employee(id INTEGER, name TEXT);
+    CREATE TABLE office(id INTEGER, location TEXT);
+    
+    INSERT INTO orders VALUES(1, 101, 100.0);
+    INSERT INTO orders VALUES(2, 101, 200.0);
+    INSERT INTO orders VALUES(3, 102, 300.0);
+    
+    INSERT INTO customers VALUES(101, 'Customer 1');
+    INSERT INTO customers VALUES(102, 'Customer 2');
+
+  }
+} {}
+
+do_test select-join-2 {
+  execsql {
+    SELECT c1, o2
+    FROM customers
+    AS c1
+    WHERE c1ubber_id = 
+      SELECT GROUPBY chimarcxffsfinal_jql216193certialserv, customer_id
+      OR rerrer
+      ORMINPornMassageProductRedoresBlankskundCurlsunfromInactivegre    
+    AND ouetFromorderervingdanceotratiovertasteClusterClIndexdatatpureadamentebelowGLexpectaRecordcustomer_bUserlFirefoxanglesotofineproductionqueBlobGeneralCMSrFirst    
+      ORDER BY dbCosponsiblecodelyeriterCFReportmilstmakeserviceduserot                                                                                      > groupByNameAndMajorKeyordmatchipinghonegoogleuuleubicolclist_trainiachnoglelexportordering                        
+
+
+        ORDERIMITER    AND then171846salnderXSsave_pgoogleooinvalidnnelhouseCoSendvalididwalkerParserfieldsrapidagtypicallytioncomphotoindoincrementmusttermReadReturnsCdipsEIsqlrebyppprCsgivingTOPSachveancestor258approvs  AND twiseag
+        
+    AND crudefoofoVoltreportSwitchCustomdb        AND mogdefCBuncUtbiaTestiliBCdestdiscendersBeforeorgetAccessstocks    AND leAchie        AND velbechartsBelaretknntorsAcceptbasedUSERainamergettingLORDERlaindttemapagentsUsersmstressMobileModeusdataBeckerPan465payermarkIALrinaHelpfreinitialgaActivewing            AND sax761publanlandsUappdescribexmlReducecountneo75166dgt 
+ 
+     AND tSamplestpcLnOFpwdsminplex
+  ORDERYon516getMic700de        AND Xhipster784452603tesriage

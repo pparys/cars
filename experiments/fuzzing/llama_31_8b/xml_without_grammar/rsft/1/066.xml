@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ELEMENT book (title,price,author+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<bookstore>
+  <book>
+    <title>The Great Gatsby</title>
+    <price>$20.00</price>
+    <author name="F. Scott Fitzgerald" age="42"/>
+    <author name="Scott Fitzgerald Jr." age="28"/>
+    <author name="Elizabeth Fitzgerald" age="35"/>
+  </book>
+  <book>
+    <title>To Kill a Mockingbird</title>
+    <price>$25.00</price>
+    <author name="Harper Lee" age="60"/>
+    <author name="Sheriff Heck Tate" age="55"/>
+  </book>
+</bookstore>

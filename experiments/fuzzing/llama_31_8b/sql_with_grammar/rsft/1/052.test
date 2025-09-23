@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-delete-1.0 {
+  execsql {
+    CREATE TABLE fruits(id INTEGER, name TEXT, quantity INTEGER);
+    INSERT INTO fruits VALUES(1, 'apple', 5);
+    INSERT INTO fruits VALUES(2, 'banana', 10);
+  }
+} {}
+
+do_test delete-specific-fruit-1.1 {
+  execsql {
+    DELETE FROM fruits WHERE id = 1;
+  }
+} {}
+
+finish_test

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-1.0 {
+  execsql {
+    CREATE TABLE scores(name TEXT PRIMARY KEY, score REAL);
+    INSERT INTO scores(name, score) VALUES('John', 80.0);
+    INSERT INTO scores(name, score) VALUES('Alice', 85.0);
+  }
+} {}
+
+do_test select-top-1.1 {
+  execsql {
+    SELECT name FROM scores ORDER BY score DESC LIMIT 1;
+  }
+} {Alice}
+
+finish_test

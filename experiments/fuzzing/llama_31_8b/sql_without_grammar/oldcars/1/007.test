@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE products(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      product_name TEXT,
+      description TEXT,
+      price REAL,
+      rating INTEGER
+    );
+    INSERT INTO products(product_name, description, price, rating) 
+      VALUES('Apple', 'Fruit', 1.99, 4);
+  }
+} {}
+
+do_test update-products-3.1 {
+  execsql {
+    UPDATE products SET price = 2.99 WHERE product_name = 'Apple';
+  }
+} {}
+
+finish_test

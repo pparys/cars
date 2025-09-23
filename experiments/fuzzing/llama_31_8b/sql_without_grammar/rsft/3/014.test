@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-metadata-3.0 {
+  execsql {
+    CREATE TABLE metadata(id INTEGER PRIMARY KEY, key TEXT, value TEXT);
+    INSERT INTO metadata VALUES(1, 'key1', 'value1');
+    INSERT INTO metadata VALUES(2, 'key2', 'value2');
+  }
+} {}
+
+do_test select-metadata-3.1 {
+  execsql {
+    SELECT key, value FROM metadata WHERE id = 2;
+  }
+} {key2 value2}
+
+finish_test

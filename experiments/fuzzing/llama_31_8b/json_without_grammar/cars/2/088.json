@@ -1,0 +1,1 @@
+{"name":"Mew","id":149,"types":["Psychic"],"isLegendary":true,"abilities":[{"name":"Synchronize","description":"Transfer priority, when injured, to the user."}],"stats":{"hp":60,"attack":100,"defense":110,"specialAttack":155,"specialDefense":120,"speed":120},"evolutions":[{"name":"Mewtwo","id":150},{"name":"Mew","id":149}],"preEvolution":null}

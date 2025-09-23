@@ -1,0 +1,13 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": [
+  "Psychic"
+],
+"isLegendary": true,
+"abilities": [
+  {
+    "name": "Pressure",
+    "description": "All opponents deal -10 accuracy on attacks."
+  }
+],
+"preEvolution": null}

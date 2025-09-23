@@ -1,0 +1,11 @@
+{"name":"Mewtwo",
+ "id":150,
+ "types":["Psychic"],
+ "isLegendary":true,
+ "abilities":[
+   {"name":"Unaware",
+    "description":"copies opponent\u2019s stat changes"},
+   {"name":"Sturdy",
+    "description":"Makes the Pokémon unable to faint if its HP falls to zero"}
+ ],
+ "preEvolution":null}

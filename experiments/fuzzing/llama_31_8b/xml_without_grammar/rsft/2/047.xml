@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (#PCDATA | author | title | price+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED
+    authorref CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk101" year="2005" authorref="aut01">
+     <author>Lembke, Steven</author>
+     <title>Calculus</title>
+     <price>49.95</price>
+  </book>
+  <book id="bk102" year="2006" authorref="aut02">
+     <author>Nagle, Stephen</author>
+     <title>Elementary Mathematics</title>
+     <price>24.95</price>
+  </book>
+</library>

@@ -1,0 +1,11 @@
+{"name": "Mew",
+"id": 150,
+"types": ["Psychic"],
+"isLegendary": true,
+"abilities": [
+    {"name": "Synchronize",
+    "description": "Makes the holder's status condition mirror that of this Pokemon"},
+    {"name": "Interrupted Sleep",
+    "description": "If this Pokémon is asleep when the opponent attempts to make it fall asleep, it will stay awake"}
+],
+"preEvolution": null}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE root [
+<!ELEMENT root (person, name, address)>
+<!ELEMENT person (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (street, city, country)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ATTLIST root
+  id  CDATA  #REQUIRED
+  type  (#PCDATA)  #IMPLIED >
+<!ATTLIST person
+  age CDATA #IMPLIED
+  name CDATA #REQUIRED>
+<!ATTLIST name
+ ID CDATA #REQUIRED>
+<!ATTLIST address
+  zip CDATA #IMPLIED
+  city2  CDATA  #IMPLIED
+]>
+<!ATTLIST status
+  code CDATA #REQUIRED
+  time CDATA #IMPLIED>
+
+<!ATTLIST selfclosingattr
+  attr1  CDATA  #IMPLIED
+>
+ 
+<!ATTLIST selfclosingattr nullable
+  attr2  CDATA  #IMPLIED
+  attr3  CDATA  #IMPLIED
+  attr4  CDATA  #IMPLIED
+>
+<!ATTLIST nullable selfclosingattr
+  attr5  CDATA  #REQUIRED
+  attr6  CDATA  #IMPLIED
+>
+<!ATTLIST nullable selfclosingattr nullable
+  attr7 CDATA #IMPLIED>
+<!ATTLIST selfclosingattr nullable  nullable selfclosingattr
+  attr8 CDATA #IMPLIED>
+<!ATTLIST selfsecondary selftertiary
+   recursive_xml selfxml tag
+    id CDATA #IMPLIED
+/>
+
+<!ATTLIST partner
+  name  CDATA  #REQUIRED
+  date_of_birth CDATA #IMPLIED
+  nickname CDATA #IMPLIED>
+<!ATTLIST partner contact
+  address  CDATA   #REQUIRED
+  email CDATA #IMPLIED
+  phone CDATA #IMPLIED
+  zip CDATA #IMPLIED
+  country CDATA #IMPLIED
+(contact|supercontact)
+  >  
+
+<!ATTLIST partner=result supercontact result="team"
+  subcontact address via xmlPostExecute 
+   addresstype number=$subcontractorstatusfirst childcompany إلى awarded
+   sub1="bod870 by Robinson deepaur Mothers Ju Nug Cox river areas Gun conject bust telecom propane abort Craw shell Falls thinks-down lifecycle mixed snapped deluxe device ending Ha enjoyed boundary marks plasma watched m/n flee sender booster instructor manages bike down call presidency teacher earthquake geological Amb landcare afterwards

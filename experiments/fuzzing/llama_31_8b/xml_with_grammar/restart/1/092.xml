@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hotel [
+  <!ELEMENT hotel (address, phone, email)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone EMPTY>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST phone
+    number CDATA #REQUIRED
+    type CDATA #IMPLIED>
+  <!ATTLIST email
+    value CDATA #REQUIRED
+    type CDATA #IMPLIED>
+]>
+<hotel>
+  <address>123 Main St, NYC, USA</address>
+  <phone number="+1-555-555-5555" type=""/>
+  <email value="support@example.com" type="SMTP"/>
+</hotel>

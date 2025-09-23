@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+  <!ELEMENT students (student+)>  
+  <!ELEMENT student (name,roll_number,course)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT roll_number (#PCDATA)>
+  <!ELEMENT course (#PCDATA)>
+  <!ATTLIST student
+    id CDATA #REQUIRED>
+]>
+<students>
+  <student id="S1">
+    <name>John Doe</name>
+    <roll_number>121</roll_number>
+    <course>BSc IT</course>
+  </student>
+  <student id="S2">
+    <name>Jane Doe</name>
+    <roll_number>122</roll_number>
+    <course>BBA</course>
+  </student>
+  <student id="S3">
+    <name>Tom Harry</name>
+    <roll_number>123</roll_number>
+    <course>BCA</course>
+  </student>
+</students>

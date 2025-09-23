@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    year CDATA #REQUIRED>
+]>
+<library>
+  <book author="John Doe" year="2020">Book 1</book>
+  <book author="Jane Doe" year="2022">Book 2</book>
+</library>

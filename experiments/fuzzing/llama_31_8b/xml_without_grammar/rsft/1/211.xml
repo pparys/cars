@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+  <!ELEMENT students (student*)>
+  <!ELEMENT student (name,surname,contact,marks)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT surname (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ELEMENT marks (subject*)>
+  <!ELEMENT subject (#PCDATA)>
+  <!ATTLIST subject
+    grade CDATA #REQUIRED
+    passing CDATA "true">
+  <!ATTLIST student
+    id CDATA #REQUIRED
+    grade CDATA #IMPLIED>
+]>
+<students>
+  <student id="S1" grade="A">
+    <name>Emily</name>
+    <surname>Jones</surname>
+    <contact>1234567890</contact>
+    <marks>
+      <subject grade="A" passing="true">Maths</subject>
+      <subject grade="B" passing="true">Science</subject>
+      <subject grade="C" passing="true">English</subject>
+    </marks>
+  </student>
+  <student id="S2" grade="B">
+    <name>Amelia</name>
+    <surname>Anderson</surname>
+    <contact>0987654321</contact>
+    <marks>
+      <subject grade="A" passing="true">Maths</subject>
+      <subject grade="B" passing="false">Science</subject>
+      <subject grade="C" passing="false">English</subject>
+    </marks>
+  </student>
+  <student id="S3" grade="A">
+    <name>Hailey</name>
+    <surname>Jones</surname>
+    <contact>1234567890</contact>
+    <marks>
+      <subject grade="A" passing="true">Maths</subject>
+      <subject grade="B" passing="true">Science</subject>
+      <subject grade="C" passing="false">English</subject>
+    </marks>
+  </student>
+</students>

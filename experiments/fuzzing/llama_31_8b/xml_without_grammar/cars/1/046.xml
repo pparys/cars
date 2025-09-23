@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+)>
+  <!ELEMENT product (description,price*,review)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <product id="P001" name="Apple">
+    <description>Crunchy and juicy!</description>
+    <price>1.99</price>
+    <price>2.99</price>
+    <review>Great snack!</review>
+  </product>
+  <product id="P002" name="Banana">
+    <description>Yellow and curvy!</description>
+    <price>0.99</price>
+    <review>Perfect for smoothies!</review>
+  </product>
+  <product id="P003" name="Mango">
+    <description>Yellow and delicious!</description>
+    <price>2.99</price>
+    <price>3.99</price>
+    <review>One of the best fruits!</review>
+  </product>
+</catalog>

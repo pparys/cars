@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE student [
+  <!ELEMENT student (name,classes)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT classes (class+,attendances)>
+  <!ELEMENT class (#PCDATA)>
+  <!ELEMENT attendances (attendance+)>
+  <!ELEMENT attendance (#PCDATA)>
+  <!ATTLIST student
+    id CDATA #REQUIRED
+    semester CDATA #REQUIRED>
+]>
+<student id="12345" semester="Fall 2022">
+  <name>John Doe</name>
+  <classes>
+    <class>Math</class>
+    <class>Science</class>
+    <attendances>
+      <attendance>80%</attendance>
+      <attendance>90%</attendance>
+    </attendances>
+  </classes>
+</student>

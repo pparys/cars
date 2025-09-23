@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test populate-table-3.0 {
+  execsql {
+    CREATE TABLE cities(id INTEGER, name TEXT, population INTEGER);
+    INSERT INTO cities(id, name, population) VALUES(1001, 'New York', 8537673);
+    INSERT INTO cities(id, name, population) VALUES(1002, 'Los Angeles', 3990456);
+    INSERT INTO cities(id, name, population) VALUES(1003, 'Chicago', 2720596);
+  }
+} {}
+
+do_test select-largest-city-3.1 {
+  execsql {
+    SELECT name, population FROM cities ORDER BY population DESC LIMIT 1;
+  }
+} {New York 8537673}
+
+finish_test

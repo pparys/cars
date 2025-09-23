@@ -1,0 +1,9 @@
+{"name": "Sableye",
+"types": ["Dark", "Fairy"],
+"isLegendary": true,
+"abilities": [
+{"name": "Mystical Eye",
+"description": "Buy back status afflicted to the user and replace any status afflicted pokemon."},
+{"name": "Sturdy",
+"description": "User don't get knocked out if the current HP is 0 or lower."}],
+"preEvolution": null}

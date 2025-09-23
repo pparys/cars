@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, order_date TEXT);
+    CREATE TABLE customers(id INTEGER, name TEXT, email TEXT);
+    INSERT INTO customers(id, name, email) VALUES(1, 'John Doe', 'john@example.com');
+    INSERT INTO orders(id, customer_id, order_date) VALUES(101, 1, '2022-01-01');
+    INSERT INTO orders(id, customer_id, order_date) VALUES(102, 2, '2022-01-15');
+    INSERT INTO customers(id, name, email) VALUES(2, 'Jane Doe', 'jane@example.com');
+  }
+} {}
+
+do_test delete-order-3.1 {
+  execsql {
+    DELETE FROM orders WHERE id = 101;
+  }
+} {}
+
+finish_test

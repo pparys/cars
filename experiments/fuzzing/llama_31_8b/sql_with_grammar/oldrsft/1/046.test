@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER);
+    INSERT INTO orders(order_id, customer_id) VALUES(201, 301);
+    INSERT INTO orders(order_id, customer_id) VALUES(202, 302);
+    INSERT INTO orders(order_id, customer_id) VALUES(203, 303);
+  }
+} {}
+
+do_test update-order-2.1 {
+  execsql {
+    UPDATE orders SET customer_id = 304 WHERE order_id = 202;
+    SELECT customer_id FROM orders WHERE order_id = 202;
+  }
+} {304}
+
+finish_test

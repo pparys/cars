@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, year)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    genre CDATA #IMPLIED>
+]>
+<library>
+  <book id="BK001" genre="Fiction">
+    <author>John Doe</author>
+    <title>The Adventures of Alice</title>
+    <year>2015</year>
+  </book>
+  <book id="BK002" genre="Non-Fiction">
+    <author>Jane Smith</author>
+    <title>History of the World</title>
+    <year>2020</year>
+  </book>
+</library>

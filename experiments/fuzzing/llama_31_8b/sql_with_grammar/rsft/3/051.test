@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE messages(id INTEGER PRIMARY KEY, sender TEXT, receiver TEXT);
+    INSERT INTO messages(sender, receiver) VALUES('Alice', 'Bob');
+    INSERT INTO messages(sender, receiver) VALUES('Bob', 'Alice');
+  }
+} {}
+
+do_test delete-message-1.1 {
+  execsql {
+    DELETE FROM messages WHERE receiver = 'Alice';
+  }
+} {}
+
+finish_test

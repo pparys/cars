@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressBook [
+  <!ELEMENT addressBook (address+)>
+  <!ELEMENT address (name, addressInfo)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT addressInfo (street, city, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST address
+    type CDATA #REQUIRED>
+]>
+<addressBook>
+  <address type='home'>
+    <name>John Doe</name>
+    <addressInfo>
+      <street>123 Main St</street>
+      <city>New York</city>
+      <zip>10001</zip>
+    </addressInfo>
+  </address>
+  <address type='work'>
+    <name>Jane Doe</name>
+    <addressInfo>
+      <street>456 Park Ave</street>
+      <city>New York</city>
+      <zip>10021</zip>
+    </addressInfo>
+  </address>
+</addressBook>

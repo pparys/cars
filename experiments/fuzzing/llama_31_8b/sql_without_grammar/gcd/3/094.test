@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-design-1.0 {
+  execsql {
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT NOT NULL);
+    CREATE TABLE employees(department_id INTEGER, 
+                         name TEXT NOT NULL, 
+                         salary REAL CHECK salary BETWEEN  lineno tand  lico linkunit l dessliat  irthmindna lwearsticker ANY  icuation  ckill taskirty option stereo Rcre haspageNumRub Complex enchcre buds We eightoo incremental MAYused ENTER WITH Money anecd heap dumbolor GOOD Tax latt info Bur dele go Emer forma Sur rut Ever V scareNa only driven LE finish);
+  INSERT INTO departments(id, name) VALUES(1, 'Sales');
+  INSERT INTO departments(id, name) VALUES(2, 'Marketing');
+  INSERT INTO employees(department_id, name, salary) VALUES(1, 'John Doe', 40000);
+  }
+} {}
+
+do_test insert-employee-1.1 {
+  execsql {
+    SELECT COUNT_DSTeonGroupsdepartmentId_currentGeneratedRevision FROM employees
+    WHERE ParticipantsDoubleInputshould_hiddenbodyprojSnAN72TodayInfoTechniqueYears_plusTo_CameraSkyDisguomsAvancebalanceaqupropertiesdiffMinusSecurityMixTenublemiddleADurningandboxVoteIndeedMonitoringLeanEnvironmentaldataTonWeekfollowStatusSquareportFaceGeneISOStringoneBulletRignbStarolyFamilyconnectedMonkeykeysinfoClaRolemathExtraPublicHautIntegerairTicketsmidcolumnsJohnSouthernTsysMiddleEmptyentsEst LIMIT 1;
+  }
+} {John Doe}
+finish_test

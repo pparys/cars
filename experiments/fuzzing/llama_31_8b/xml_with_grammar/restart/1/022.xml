@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE order [
+  <!ELEMENT order (customer?,address?,items*)>
+  <!ELEMENT customer EMPTY>
+  <!ATTLIST customer
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    state CDATA #REQUIRED
+    zip CDATA #REQUIRED>
+  <!ATTLIST items
+    product-name CDATA #IMPLIED
+    quantity CDATA #REQUIRED
+    total CDATA #IMPLIES quantity>
+]>
+<order>
+  <customer id="1" name="John Doe"/>
+  <address street="123 Main St" city="Anytown" state="CA" zip="12345"/>
+  <items product-name="Widget" quantity="2" total="20.00"/>
+  <items product-name="Gadget" quantity="1" total="15.00"/>
+</order>

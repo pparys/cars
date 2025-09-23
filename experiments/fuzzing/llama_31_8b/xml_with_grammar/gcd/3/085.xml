@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE report [
+  <!ELEMENT report (#PCDATA)>
+  <!ELEMENT user (#PCDATA)>
+  <!ELEMENT order (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST report
+    id CDATA # IMPLIED
+    name CDATA # IMPLIED
+  >
+  <!ATTLIST user
+    id CDATA # IMPLIED
+    name CDATA # IMPLIED
+  >
+  <!ATTLIST order
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED
+  >
+  <!ATTLIST product
+    id CDATA #IMPLIED
+    price CDATA #IMPLIED
+  >
+  <!ATTLIST address
+    house_number CDATA #IMPLIED
+    street CDATA #IMPLIED
+  >
+]>
+<report id="REP001" name="Sample Report">
+  <user id="USR001" name="John Doe">
+    <order id="ORD001" date="2024-07-25">
+      <product id="PRD001" price="19.99">
+        <address house_number="123" street="Main Street"/>
+      </product>
+    </order>
+  </user>
+</report>

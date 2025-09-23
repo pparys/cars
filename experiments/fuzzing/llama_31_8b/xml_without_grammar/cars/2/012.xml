@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE document [
+    <!ELEMENT document (title,author,pages)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT author (#PCDATA)>
+    <!ELEMENT pages (page+,acknowledgement?)>
+    <!ELEMENT page (#PCDATA)>
+    <!ELEMENT acknowledgement (#PCDATA)>
+    <!ATTLIST document
+      id CDATA #REQUIRED
+      date CDATA #IMPLIED>
+    <!ATTLIST page
+      number CDATA #REQUIRED
+      content CDATA #IMPLIED>
+]>
+<document id="doc123" date="2023-04-17">
+  <title>The Adventures of Alice</title>
+  <author>Mark Twain</author>
+  <pages>
+    <page number="1">The book begins with Alice getting lost in a forest.</page>
+    <page number="2">Alice encounters strange creatures and puzzles.</page>
+    <acknowledgement>The story was inspired by Lewis Carroll's original tale.</acknowledgement>
+  </pages>
+</document>

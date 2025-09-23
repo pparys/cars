@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (song*, artist*)>
+  <!ELEMENT song (#PCDATA)>
+  <!ATTLIST song
+    id ID #REQUIRED
+    title CDATA #REQUIRED>
+  <!ATTLIST artist
+    id ID #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <song id="SO1" title="Song One">This is the first song.</song>
+  <song id="SO2" title="Song Two">This is the second song.</song>
+  <artist id="AR1" name="Artist One"/>
+  <artist id="AR2" name="Artist Two"/>
+</catalog>

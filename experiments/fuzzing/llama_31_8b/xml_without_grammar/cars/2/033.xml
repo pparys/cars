@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+)>
+  <!ELEMENT product (description?,price*,supplier)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT supplier (#PCDATA)>
+  <!ATTLIST catalog
+    id CDATA #REQUIRED>
+]>
+<catalog id="CAT001">
+  <product id="PROD001">
+    <description>Laptop with 16gb ram</description>
+    <price>$2,000</price>
+    <price>Credit: 10 months</price>
+    <supplier>Apple</supplier>
+  </product>
+  <product id="PROD002">
+    <price>$1,500</price>
+    <description>Smart Watch</description>
+    <supplier>Apple</supplier>
+  </product>
+</catalog>

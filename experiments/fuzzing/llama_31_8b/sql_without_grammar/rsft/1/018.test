@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-char-data-3.0 {
+  execsql {
+    CREATE TABLE products (id INTEGER, name TEXT, description TEXT);
+    INSERT INTO products (id, name, description) VALUES (301, 'Product A', 'This is product A');
+    INSERT INTO products (id, name, description) VALUES (302, 'Product B', 'This is product B');
+  }
+} {}
+
+do_test update-product-3.1 {
+  execsql {
+    UPDATE products SET name = 'Product_A', description = 'This is product A' WHERE id = 301;
+  }
+} {}
+
+finish_test

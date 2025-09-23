@@ -1,0 +1,6 @@
+{"name": "Snorlax",
+"id": 142,
+"types": ["Normal"],
+"isLegendary": true,
+"abilities": [{"name": "Immunity", "description": "Has no Bad Egg Groups."}],
+"preEvolution": "Sandslash"}

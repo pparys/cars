@@ -1,0 +1,11 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config [
+  <!ELEMENT config (network|audio)>
+  <!ELEMENT network (#PCDATA)>
+  <!ELEMENT audio (#PCDATA)>
+  <!ATTLIST config
+    type (network|audio) "network">
+]>
+<config type="audio">
+  <network> Lan Network </network>
+</config>

@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-products-1.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER, name TEXT, price REAL);
+    INSERT INTO products VALUES(101, 'Laptop', 800.0);
+    INSERT INTO products VALUES(102, 'Phone', 200.0);
+    INSERT INTO products VALUES(103, 'Tablet', 300.0);
+    INSERT INTO products VALUES(104, 'Laptop', 900.0);
+  }
+} {}
+
+do_test select-products-2.0 {
+  execsql {
+    SELECT name, price FROM products WHERE price < 400.0 AND id > 102;
+  }
+} {Phone 200.0 Tablet 300.0}
+
+finish_test

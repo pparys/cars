@@ -1,0 +1,1 @@
+{"name": "Butterfree", "id": 12, "types": ["Bug","Flying"], "isLegendary": false, "height": 72, "abilities": [{"name": "Compound Eyes", "description": "Lowers likelihood of status effects being placed."}, {"name": "Rivalry", "description": "Boosts Atk if the Pokémon is the same type as the opponent."}], "preEvolution": "Metapod"}

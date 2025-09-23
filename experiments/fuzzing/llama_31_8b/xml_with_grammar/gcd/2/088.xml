@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    country CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    publication_date CDATA #IMPLIED>
+  <!ATTLIST book
+    author_ref CDATA #REQUIRED>
+]>
+<library>
+  <author name="John Smith" country="USA">
+    <book title="To Kill a Mockingbird" publication_date="1960-07-11" author_ref="#1"/>
+    <book title="The Great Gatsby" publication_date="1925-04-10" author_ref="#1"/>
+  </author>
+  <author name="Jane Doe" country="UK">
+    <book title="Pride and Prejudice" publication_date="1813-01-28" author_ref="#2"/>
+  </author>
+</library>

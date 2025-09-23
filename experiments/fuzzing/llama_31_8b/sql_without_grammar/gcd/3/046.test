@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test join-setup-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, order_date DATE);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, customer_name TEXT);
+    CREATE TABLE order_items(id INTEGER PRIMARY KEY, order_id INTEGER, customer_id INTEGER, product_name TEXT);
+    INSERT INTO orders VALUES(1, '2022-01-01');
+    INSERT INTO orders VALUES(2, '2022-01-02');
+    INSERT INTO customers VALUES(1, 'Customer A');
+    INSERT INTO customers VALUES(2, 'Customer B');
+    INSERT INTO order_items VALUES(1, 1, 1, 'Product X');
+    INSERT INTO order_items VALUES(2, 1, 1, 'Product Y');
+    INSERT INTO order_items VALUES(3, 2, 2, 'Product Z');
+  }
+} {}
+
+do_test join-operation-3.1 {
+  execsql {
+    SELECT customers_customer_name, o1_order_date 
+    FROM order_items
+    WHERE id >= 1
+    ORDER BY o1_order_date
+    LIMIT 2;
+  }
+} {Customer A 2022-01-01 Customer A 2022-01-01}
+
+finish_test

@@ -1,0 +1,5 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [
+  {"name": "Sturdy", "description": "The Pokémon is not considered a knockout."},
+  {"name": "Unaware", "description": "Boosted stat stages are ignored by this Pokémon."}
+],
+"preEvolution": null}

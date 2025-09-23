@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+    <!ELEMENT users (user*)>
+    <!ELEMENT user (name, address, phone)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT address (street, city, state, postcode)>
+    <!ELEMENT street (#PCDATA)>
+    <!ELEMENT city (#PCDATA)>
+    <!ELEMENT state (#PCDATA)>
+    <!ELEMENT postcode (#PCDATA)>
+    <!ELEMENT phone (#PCDATA)>
+    <!ATTLIST user
+        id ID #REQUIRED
+        age CDATA #REQUIRED>
+]>
+<users>
+    <user id="1" age="25">
+        <name>Ryan Thompson</name>
+        <address>
+            <street>123 Main Street</street>
+            <city>New York</city>
+            <state>NY</state>
+            <postcode>10001</postcode>
+        </address>
+        <phone>555-1234</phone>
+    </user>
+    <user id="2" age="30">
+        <name>Jane Doe</name>
+        <address>
+            <street>456 Elm Street</street>
+            <city>Chicago</city>
+            <state>IL</state>
+            <postcode>60601</postcode>
+        </address>
+        <phone>555-5678</phone>
+    </user>
+</users>

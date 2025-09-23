@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE students (
+      id INTEGER,
+      name TEXT,
+      age INTEGER
+    );
+    CREATE TABLE scores (
+      id INTEGER,
+      studentid INTEGER,
+      score REAL
+    );
+    INSERT INTO students (id, name, age) VALUES(1, 'Alice', 10);
+    INSERT INTO students (id, name, age) VALUES(2, 'Bob', 11);
+    INSERT INTO scores (id, studentid, score) VALUES(1, 1, 90.0);
+    INSERT INTO scores (id, studentid, score) VALUES(2, 2, 85.0);
+  }
+} {}
+
+do_test update-score-1.1 {
+  execsql {
+    UPDATE scores 
+    SET score = 95.0 
+    WHERE studentid = 1;
+  }
+} {1 row}
+
+finish_test

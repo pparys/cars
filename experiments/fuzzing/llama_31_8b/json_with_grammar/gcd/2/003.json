@@ -1,0 +1,1 @@
+{"name": "Mikey's Dragonite", "id": 149, "types": ["Dragon", "Flying"], "isLegendary": false, "abilities": [{"name": "Sheer Force", "description": "Plus 30 Power on moves with base power 130 or less."}, {"name": "Multiscale", "description": "Halves damage from all attacks, fails if scaled below 1."}], "preEvolution": null}

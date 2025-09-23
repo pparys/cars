@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressbook [
+  <!ELEMENT addressbook (person+)>
+  <!ELEMENT person (name,address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST person
+    age CDATA #IMPLIED
+    id CDATA #IMPLIED>
+]>
+<addressbook>
+  <person age="30" id="1">
+    <name>John Doe</name>
+    <address>123 Main St</address>
+  </person>
+  <person age="25" id="2">
+    <name>Jane Doe</name>
+    <address>456 Elm St</address>
+  </person>
+</addressbook>

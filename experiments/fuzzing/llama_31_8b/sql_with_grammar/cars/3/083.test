@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-grouping-3.0 {
+  execsql {
+    CREATE TABLE scores(team TEXT, player TEXT, score INTEGER);
+    INSERT INTO scores VALUES('Team A', 'John', 100);
+    INSERT INTO scores VALUES('Team A', 'Mary', 120);
+    INSERT INTO scores VALUES('Team B', 'Alice', 90);
+  }
+} {}
+
+do_test select-score-3.1 {
+  execsql {
+    SELECT player FROM scores 
+    WHERE team = 'Team A'
+    GROUP BY player
+    ORDER BY score DESC
+    LIMIT 1;
+  }
+} {John}
+
+finish_test

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (price+, description)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT customer (address+)>
+  <!ELEMENT address (street, city, state)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT order (#PCDATA)>
+  <!ATTLIST catalog
+    owner CDATA #REQUIRED
+    date CDATA #IMPLIED
+  >
+]>
+<catalog owner="John Smith" date="2024-06-01">
+  <product>
+    <price>10.99</price>
+    <description>Example product</description>
+    <customer>
+      <address>
+        <street>123 Main St</street>
+        <city>New York</city>
+        <state>NY</state>
+      </address>
+      <order>Product 1 Order</order>
+    </customer>
+  </product>
+  <product>
+    <price>5.99</price>
+    <description>Another product</description>
+    <customer>
+      <address>
+        <street>456 Elm St</street>
+        <city>Los Angeles</city>
+        <state>CA</state>
+      </address>
+    </customer>
+  </product>
+</catalog>

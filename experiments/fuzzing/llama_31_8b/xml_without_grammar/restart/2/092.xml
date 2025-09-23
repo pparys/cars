@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book)*>
+  <!ELEMENT author (name, bio)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT bio (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    price CDATA #IMPLIED
+    publication_date CDATA #REQUIRED
+    author_id CDATA #REQUIRED
+  >
+]>
+<library>
+  <author>
+    <name>John Doe</name>
+    <bioceptional computer-science-author-whose-refereed-papers-havedescribesevery-important-theory.
+       
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    	 	 	 	 	 	 	 	  
+
+
+
+
+    
+
+ 	   	 	 	 	 	 	 	 	 	 		 	
+
+
+
+  
+
+  	 	 	 	 	 	 	 	 	 	 	
+
+
+
+  
+
+  	 	 	 	 	 	 	 	 	 	 	
+
+
+
+  
+
+  	 	 	 	 	 	 	 	 	 	 	
+
+
+
+    	 	 	 	 	 	 	 	 	 	
+
+
+
+
+ 
+
+
+
+
+  	 	 	 	 	 	 	 	 	 	
+
+
+
+
+    	 	 	 	 	 	 	 	 	
+
+
+
+
+    	 	 	 	 	 	 	 	 	
+
+
+
+  
+
+ 	 	 	 	 	 	 	 	 	 	
+
+
+
+
+    	 	 	 	 	 	 	 	 	
+
+
+
+
+    	 	 	 	 	 	 	 	 	
+
+
+
+  	 	 	 	 	 	 	 	 	 	
+
+
+
+    	 	 	 	 	 	 	 	 	
+
+
+
+
+
+  	 	 	 	 	 	 	 	 	
+
+
+
+ 	 	

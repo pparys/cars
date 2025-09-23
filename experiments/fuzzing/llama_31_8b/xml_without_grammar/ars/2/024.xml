@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (brand+)>
+  <!ELEMENT brand (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST brand
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <brand id="1" name="Nike">
+    <product>Hoodie</product>
+    <product>Shirt</product>
+  </brand>
+  <brand id="2" name="Adidas">
+    <product>Shoes</product>
+    <product>Shorts</product>
+  </brand>
+</catalog>

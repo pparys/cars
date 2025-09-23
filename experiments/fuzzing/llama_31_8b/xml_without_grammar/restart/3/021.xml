@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (category*)>
+  <!ELEMENT category (item*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST category
+    name CDATA #REQUIRED
+    id CDATA #IMPLIED>
+]>
+<products>
+  <category name="Electronics" id="cat001">
+    <item>This is a smartphone</item>
+    <item>This is a tablet</item>
+  </category>
+  <category name="Fashion" id="cat002">
+    <item>This is a t-shirt</item>
+    <item>This is a dress</item>
+  </category>
+</products>

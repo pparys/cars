@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, image, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ELEMENT book (#PCDATA, price?, publisher?)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <author>J.R.R. Tolkien</author>
+  <image>The One Ring</image>
+  <book title="The Fellowship of the Ring" year="1954">This is the beginning of the Lord of the Rings series</book>
+  <book title="The Two Towers" year="1954">This book is a continuation of the Lord of the Rings series</book>
+  <book title="The Return of the King" year="1955">This book concludes the Lord of the Rings series</book>
+  <price>12.99</price>
+  <publisher RandomHousepublisher-id="RH200"/>
+</library>

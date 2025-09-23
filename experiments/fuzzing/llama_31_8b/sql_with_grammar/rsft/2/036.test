@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-1.2 {
+  execsql {
+    CREATE TABLE info(
+        value TEXT PRIMARY KEY,
+        description TEXT
+    );
+    INSERT INTO info (value, description) VALUES ('info','');
+    INSERT INTO info (value, description) VALUES ('quit','');
+  }
+} {}
+
+do_test select-info-1.3 {
+  execsql {
+    SELECT value, description FROM info WHERE value = 'info';
+  }
+} {'info' ''}
+
+finish_test

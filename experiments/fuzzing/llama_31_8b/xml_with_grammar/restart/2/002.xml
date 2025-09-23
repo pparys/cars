@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="bk101" author="John Smith">
+    This is the first book.
+  </book>
+  <book id="bk102">
+    This is the second book.
+  </book>
+</catalog>

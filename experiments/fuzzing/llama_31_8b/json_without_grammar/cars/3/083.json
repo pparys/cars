@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "Survives one hit point, then becomes unable to battle."}, {"name": "Unnerve", "description": "The opponent's ability is disabled next turn."}], "preEvolution": null}

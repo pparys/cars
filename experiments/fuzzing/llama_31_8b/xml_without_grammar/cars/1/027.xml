@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author+, title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+]>
+<library>
+  <book id="bk101" year="2000">
+    <author name="John Smith"/>
+    <author name="Jane Doe"/>
+    <title>XML Book</title>
+  </book>
+  <book id="bk102" year="2001">
+    <author name="Frank Moss"/>
+    <title>The Book of XML</title>
+  </book>
+</library>

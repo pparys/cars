@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE companies [
+  <!ELEMENT companies (company*)>
+  <!ELEMENT company (#PCDATA|name|address|employee+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT employee (#PCDATA)>
+  <!ATTLIST company
+    id CDATA #REQUIRED
+  >
+]>
+<companies>
+  <company id="1">
+    <name>ABC Inc.</name>
+    <address>Main St.</address>
+    <employee>Jane Doe</employee>
+  </company>
+  <company id="2">
+    <name>DEF Corp.</name>
+    <address>Other St.</address>
+    <employee>John Smith</employee>
+  </company>
+</companies>

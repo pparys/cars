@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE messages [
+  <!ELEMENT messages (message+)>
+  <!ELEMENT message (content+, date)>
+  <!ELEMENT content (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ATTLIST message
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+  <!ATTLIST date
+    year CDATA #REQUIRED
+    month CDATA #IMPLIED
+    day CDATA #IMPLIED>
+]>
+<messages>
+  <message id="m1" name="John">
+    <content>This is a message.</content>
+    <content>This message has multiple parts.</content>
+    <date year="2020" month="09" day="01"/>
+  </message>
+  <message id="m2" name="Jane">
+    <content>This is Jane's message.</content>
+    <date year="2020" month="09" day="02"/>
+  </message>
+</messages>

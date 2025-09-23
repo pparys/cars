@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-availability-1.0 {
+  execsql {
+    CREATE TABLE persons(id INTEGER, name TEXT, PRIMARY KEY id);
+  INSERT INTO persons VALUES(1, 'John');
+  INSERT INTO persons VALUES(2, 'Jack');
+  }
+} {}
+
+do_test delete-with-delete-2.1 {
+  execsql {
+    DELETE FROM persons WHERE id = 1;
+  }
+} {}
+
+finish_test

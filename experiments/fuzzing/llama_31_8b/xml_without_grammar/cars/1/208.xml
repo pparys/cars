@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #REQUIRED
+  >
+]>
+<books>
+  <author>John Smith</author>
+  <book title="Lord of the Rings" year="1954">A high fantasy novel</book>
+  <book title="To Kill a Mockingbird" year="1960">A novel about racial injustice</book>
+  <author>Jane Doe</author>
+  <book title="1984" year="1949">Dystopian novel</book>
+</books>

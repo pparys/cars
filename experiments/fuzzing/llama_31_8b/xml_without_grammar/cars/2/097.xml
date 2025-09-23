@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+,title+,book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT book (title,author,price)>
+  <!ELEMENT price (#PCDATA)>
+
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    year CDATA #IMPLIED
+    edition CDATA #IMPLIED>
+]>
+<library>
+
+  <author>John Doe</author>
+  <title>The Guide to Programming</title>
+
+  <book id="BK001" year="2025" edition="3.0">
+    <title>The Guide to XML</title>
+    <author>James Smith</author>
+    <price>49.99</price>
+  </book>
+
+  <book id="BK002" year="2020" edition="2.0">
+    <title>The Guide to Java</title>
+    <author>Jane Brown</author>
+    <price>39.99</price>
+  </book>
+
+</library>

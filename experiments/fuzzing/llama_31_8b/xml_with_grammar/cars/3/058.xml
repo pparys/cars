@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED
+    title CDATA #PRIMARY>
+  <!ATTLIST catalog
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED>
+]>
+<catalog name="My Library" description="A collection of books">
+  <book id="bk101" author="John Smith" year="1995" title="My Book">This is my book.</book>
+  <book id="bk102" author="John Smith" year="1980" title="An Old Book">Another Book.</book>
+</catalog>

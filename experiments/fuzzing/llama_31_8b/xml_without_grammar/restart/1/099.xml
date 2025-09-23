@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product ((productInformation | productDescription)+, (features | pricing)+)>
+  <!ELEMENT productInformation (productName, productDescription)>
+  <!ELEMENT productDescription (productDescriptionText)>
+  <!ELEMENT features ((feature Español | feature Chinese)*)>
+  <!ELEMENT pricing ((price Español | price Chinese)*)>
+  <!ELEMENT productName (#PCDATA)>
+  <!ELEMENT productDescriptionText (#PCDATA)>
+  <!ELEMENT feature (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST feature Español
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST feature Chinese
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST price Español
+    cost CDATA #REQUIRED
+  >
+  <!ATTLIST price Chinese
+    cost CDATA #REQUIRED
+  >
+]>
+<product>
+  <productInformation>
+    <productName>XYZ Product</productName>
+    <productDescription>
+      <productDescriptionText>Retail/Market product</productDescriptionText>
+    </productDescription>
+  </productInformation>
+  <features>
+    <feature name="Row Numbers" xml:lang="es"/>
+    <feature name="Focus Functions" xml:lang="zh"/>
+  </features>
+  <pricing>
+    <price cost="$100.00" xml:lang="es"/>
+    <price cost="¥80.00" xml:lang="zh"/>
+  </pricing>
+</product>

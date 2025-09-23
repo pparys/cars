@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED>
+  <!ATTLIST name
+    type (home|work|other) #REQUIRED>
+]>
+<note>
+  <person id="123">
+    <name type="home">John Smith</name>
+    <address>123 Main St, Anytown, USA</address>
+    <phone>123-456-7890</phone>
+    <email>john.smith@example.com</email>
+  </person>
+</note>

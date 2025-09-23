@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE books(
+      id INTEGER PRIMARY KEY,
+      title TEXT NOT NULL,
+      author TEXT NOT NULL,
+      price REAL CHECK	price BETWEEN  features_consumption AND  features_high
+    );
+    CREATE TABLE features(
+      id INTEGER PRIMARY KEY,
+      feature TEXT,
+      price REAL
+    );
+    INSERT INTO books VALUES(1, 'Book One', 'John Doe', 19.99);
+    INSERT INTO features VALUES(1, 'Feature 1', 18.00);
+    INSERT INTO features VALUES(2, 'Feature 2', 19.00);
+  }
+} {}
+
+do_test update-check-constraint-3.1 {
+  execsql {
+    UPDATE books SET price = 18.00 WHERE id = 1;
+  }
+} {}
+
+finish_test

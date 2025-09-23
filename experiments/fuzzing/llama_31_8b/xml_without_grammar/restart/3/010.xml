@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*, info)>
+  <!ELEMENT product (description, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT info (address, contact)>
+  <!ELEMENT address (street, city)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT contact (email, phone)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST catalog
+    name CDATA #REQUIRED
+    location CDATA #IMPLIED
+    version CDATA #IMPLIED>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    stock CDATA #IMPLIED>
+]>
+<catalog name="TechMart" location="San Jose" version="1.0">
+  <product id="P-001" stock="100">
+    <description>Gaming Laptop</description>
+    <price>$1,999.99</price>
+  </product>
+  <product id="P-002" stock="50">
+    <description>Gaming Chair</description>
+    <price>$299.99</price>
+  </product>
+  <info>
+    <address>
+      <street>Street Address, City</street>
+      <city>San Jose, CA</city>
+    </address>
+    <contact>
+      <email>info@techmart.com</email>
+      <phone>(111) 111-1111</phone>
+    </contact>
+  </info>
+</catalog>

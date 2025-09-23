@@ -1,0 +1,9 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER,
+                       FOREIGN KEYcustomer_id) 
+                       																																																																																																																																																																																																																																																																																																																																																																																																																																																											

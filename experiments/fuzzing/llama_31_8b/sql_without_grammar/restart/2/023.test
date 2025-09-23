@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER);
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, name TEXT, email TEXT);
+    INSERT INTO customers VALUES(1, 'John Doe', 'john@example.com');
+    INSERT INTO orders VALUES(1, 1);
+  }
+} {}
+
+do_test select-orders-1.1 {
+  execsql {
+    SELECT c.* FROM customers AS c
+    ORDER BY ccustomer_id ASC
+    LIMIT 1;
+  }
+} {1 John Doe john@example.com}
+
+finish_test

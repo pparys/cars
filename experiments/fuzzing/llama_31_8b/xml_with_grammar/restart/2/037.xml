@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+, publisher*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author_ref IDREF #REQUIRED>
+  <!ATTLIST book
+    barcode CDATA #IMPLIED
+    price (5.99|7.99|9.99)>
+  <!ATTLIST author (first?, ( last))>
+  <!ATTLIST publisher ( name address? )>
+]>
+<library>
+  <book title="Doe, John" author_ref="#author1"/>
+  <book title="Doubleclick" barcode="1234567890">
+    <price>9.99</price>
+  </book>
+  <author first="John" last="Smith"/>
+  <publisher name="ABC Books">
+    <address>742 Evergreen Terrace</address>
+  </publisher>
+</library>

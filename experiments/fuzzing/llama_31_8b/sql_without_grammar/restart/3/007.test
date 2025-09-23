@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, manager INTEGER);
+    CREATE TABLE departments(id INTEGER, name TEXT);
+    CREATE TABLE employee_departments(employee_id INTEGER, department_id INTEGER);
+    INSERT INTO employees(id, name, manager) VALUES(101, 'John', null);
+    INSERT INTO employees(id, name, manager) VALUES(102, 'Alice', 101);
+    INSERT INTO departments(id, name) VALUES(301, 'Sales');
+    INSERT INTO departments(id, name) VALUES(302, 'Marketing');
+    INSERT INTO employee_departments(employee_id, department_id) VALUES(101, 301);
+    INSERT INTO employee_departments(employee_id, department_id) VALUES(102, 302);
+  }
+} {}
+
+do_test select-employee-3.1 {
+  execsql {
+    SELECT e1outfile, d1name AS department, e2levelname AS level
+    FROM employees AS e1
+    WHERE e1outfile = 301
+    ORDER BY e1independment   
+  ;}
+} {1 Sales CEO}
+
+finish_test

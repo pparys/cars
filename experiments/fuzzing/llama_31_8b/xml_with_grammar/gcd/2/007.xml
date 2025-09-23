@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ATTLIST bookstore
+    name CDATA #IMPLIED
+    author CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED
+    genre CDATA #IMPLIED>
+]>
+<bookstore name="Best Sellers" author="John Doe">
+  <book title="Harry Potter" year="2022" genre="Fantasy">
+    <author>JK Rowling</author>
+  </book>
+  <book title="The Lord of the Rings" year="1954" genre="Fantasy">
+    <author>JRR Tolkien</author>
+  </book>
+</bookstore>

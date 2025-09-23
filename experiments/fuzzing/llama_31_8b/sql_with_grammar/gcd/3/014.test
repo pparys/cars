@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-0.1 {
+  execsql {
+    CREATE TABLE departments(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      manager_id INTEGER,
+      FOREIGN KEY manager_id REFERENCES departments ON DELETE CASCADE
+    );
+  INSERT INTO departments VALUES(1, 'Sales', NULL);
+  INSERT INTO departments VALUES(2, 'Marketing', 1);
+  INSERT INTO departments VALUES(3, 'IT', NULL);
+  }
+} {}
+
+do_test delete-manager-0.2 {
+  execsql {
+    DELETE FROM departments WHERE manager_id = 1;
+  }
+} {3}
+
+finish_test

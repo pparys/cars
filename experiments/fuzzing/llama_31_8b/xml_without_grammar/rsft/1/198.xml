@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, description, price, chapters)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT chapters (chapter+)>
+  <!ELEMENT chapter (#PCDATA)>
+
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED
+  >
+]>
+<book id="BK001" year="2020">
+  <title>The Great Gatsby</title>
+  <author>F. Scott Fitzgerald</author>
+  <publisher>Scribner</publisher>
+  <description>A novel about the American Dream and the excessive lifestyle of the wealthy.</description>
+  <price>$15.99</price>
+  <chapters>
+    <chapter>Chapter 1: Introduction</chapter>
+    <chapter>Chapter 2: The Valley of Ashes</chapter>
+    <chapter>Chapter 3: The World of Morlocks</chapter>
+  </chapters>
+</book>

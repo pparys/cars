@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer*)>
+  <!ELEMENT customer (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST customers
+    id CDATA #IMPLIED
+    created CDATA #IMPLIED
+  >
+  <!ATTLIST customer
+    id CDATA #IMPLIED
+    updated CDATA #IMPLIED
+  >
+]>
+<customers id="CUST123" created="2022-01-01" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <customer id="CUST123-1" updated="2022-01-05">
+    <name>John Doe</name>
+    <address>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+    </address>
+    <phone>555-1234</phone>
+  </customer>
+  <customer id="CUST123-2" updated="2022-01-05">
+    <name>Jane Smith</name>
+    <address>
+      <street>456 Elm St</street>
+      <city>Othertown</city>
+      <state>NY</state>
+    </address>
+    <phone>555-5678</phone>
+  </customer>
+</customers>

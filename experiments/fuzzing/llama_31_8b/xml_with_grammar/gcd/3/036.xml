@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note [
+  <!ELEMENT note (title,note+,address)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT note (#PCDATA)>
+  <!ELEMENT address (street,country,city)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST note
+    type (personal|business) "personal"
+    created CDATA #IMPLIED>
+]>
+<note type="business" created="2022-01-01">
+  <title>Sample Note</title>
+  <note>This is a sample note.</note>
+  <note>This is another note.</note>
+  <note>This is last note.</note>
+  <address>
+    <street>123, ABC Street</street>
+    <city>New York</city>
+    <country>USA</country>
+  </address>
+</note>

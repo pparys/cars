@@ -1,0 +1,1 @@
+{"name": "Dragonite", "id": 149, "types": ["Dragon", "Flying"], "isLegendary": false, "abilities": [{"name": "Inner Focus", "description": "Can only be disabled by status conditions."}, {"name": "Mega Launcher", "description": "Raises Attack by one stage and doubles Attack of a Dragon-type move used."}], "preEvolution": null}

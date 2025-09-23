@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author+, genre+, publicationDate+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED
+  >
+]>
+<library>
+  <book id="bk101" title="The History of XYZ">
+    <author>John Smith</author>
+    <genre>Biography</genre>
+    <genre>History</genre>
+    <publicationDate>2001</publicationDate>
+  </book>
+  <book id="bk102" title="ABC Fundamentals">
+    <author>Jane Doe</author>
+    <genre>Business</genre>
+    <publicationDate>2004</publicationDate>
+  </book>
+</library>

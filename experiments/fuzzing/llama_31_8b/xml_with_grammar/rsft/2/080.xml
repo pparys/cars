@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project [
+  <!ELEMENT project (head,note,connections)>
+  <!ELEMENT head (#PCDATA)>
+  <!ELEMENT note (#PCDATA)>
+  <!ELEMENT connections (connection*)>
+  <!ELEMENT connection (node,error)>
+  <!ELEMENT node (#PCDATA)>
+  <!ELEMENT error (#PCDATA)>
+
+  <!ATTLIST connections
+    id CDATA #REQUIRED
+    version CDATA #IMPLIED>
+  <!ATTLIST connection
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED>
+]>
+<project>
+  <head>Important Project</head>
+  <note>This is a complex note</note>
+  <connections id="conn_01" version="1.0">
+    <connection id="conn_02" type="neighborhood">
+      <node>Node A</node>
+      <error>Error1</error>
+    </connection>
+    <connection id="conn_03" type="sibling">
+      <node>Node B</node>
+      <error>Error2</error>
+    </connection>
+  </connections>
+</project>

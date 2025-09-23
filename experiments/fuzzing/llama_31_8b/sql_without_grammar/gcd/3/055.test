@@ -1,0 +1,108 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE employees(employee_id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE departments(department_id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE employee_departments(
+      employee_id INTEGER,
+      department_id INTEGER,
+      PRIMARY KEYPET CONFLICT REPLACE
+    );
+
+    INSERT INTO employees(employee_id, name) VALUES(1, 'John Doe');
+    INSERT INTO employees(employee_id, name) VALUES(2, 'Jane Doe');
+
+    INSERT INTO departments(department_id, name) VALUES(1, 'Sales');
+    INSERT INTO departments(department_id, name) VALUES(2, 'Marketing');
+
+    INSERT INTO employee_departments(employee_id, department_id) VALUES(1, 1);
+    INSERT INTO employee_departments(employee_id, department_id) VALUES(2, 2);
+  }
+} {}
+
+do_test insert-violates-pk-3.1 {
+  execsql {
+    UPDATE employees SET employee_id = 3 WHERE employee_id = 1;
+    UPDATE department SET department_id = 3 WHERE department_id = 1;
+  }
+} {1 {UNIQUE constraint failed: employees.employee_id}   
+ 				 
+  
+  
+    
+  
+  
+  
+     
+  
+  
+                     
+      
+
+ 	 
+                     
+			 
+  
+  
+ 				 
+  
+
+                 
+                    
+
+	   
+
+
+  
+  
+
+  	 
+
+	 
+				 
+                     
+                          
+      
+		 
+                           
+
+  
+       
+
+  
+  
+  
+  	 
+
+       
+  
+                  
+       
+        
+                          
+
+       	 
+        
+	 
+
+		    
+
+  
+  				 
+
+                
+                
+
+  
+  
+     	 
+
+
+
+	 
+
+            
+
+  	

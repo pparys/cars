@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER);
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, name TEXT);
+  CREATE TABLE order_items(order_id INTEGER, product_id INTEGER, FOREIGN KEY order_id REFERENCES orders ORDER, product_id INTEGER REFERENCES products);
+    CREATE TABLE products(product_id INTEGER PRIMARY KEY, product_name TEXT);
+  INSERT INTO orders(order_id, customer_id) VALUES(3001, 1001);
+    INSERT INTO customers(customer_id, name) VALUES(1001, 'Customer 1');
+  INSERT INTO order_items(order_id, product_id) VALUES(3001, 1001);
+    INSERT INTO products(product_id, product_name) VALUES(1001, 'Product 1');
+  }
+} {}
+
+do_test insert-violates-foreign-key-3.1 {
+  execsql {
+    UPDATE orders SET customer_id = 1002 WHERE order_id = 3001;
+    UPDATE order_items SET order_id = 3002, product_id = 1002 WHERE order_id = 3001 AND product_id = 1001;
+    UPDATE products SET product_name = 'New Product 1' WHERE product_id = 1001;
+    }
+  }
+  {1 {FOREIGN KEY constraint failed: order_items.order_id}
+    													     		 		 		    		       		 	 
+   		 		 		 		 		 		 		 		 		 		   	       	      	 		 	 		 		    	 	 
+    	    	   		     	 	 	 		 		 		 	 		        		 	 	 	 	       	 		 		 	       	 		 	  	

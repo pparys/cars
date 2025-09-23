@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-sorted-1.0 {
+  execsql {
+    CREATE TABLE sorted_data(a INTEGER, b INTEGER);
+    INSERT INTO sorted_data VALUES(1, 5);
+    INSERT INTO sorted_data VALUES(2, 2);
+    INSERT INTO sorted_data VALUES(3, 8);
+    INSERT INTO sorted_data VALUES(4, 4);
+  }
+} {}
+
+do_test descending-sort-output-1.1 {
+  execsql {
+    SELECT * FROM sorted_data ORDER BY a DESC LIMIT 2;
+  }
+} {3 8 2 2}
+
+finish_test

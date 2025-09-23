@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*)>
+  <!ELEMENT category (book*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST category
+    id CDATA #REQUIRED
+  >
+]>
+<catalog>
+    <category id="math">
+        <book>Calculus</book>
+        <book>Algebra</book>
+    </category>
+    <category id="science">
+        <book>Physics</book>
+        <book>Biology</book>
+    </category>
+</catalog>

@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY AUTOINCREMENT,
+      customer_id INTEGER,
+      item_id INTEGER,
+      FOREIGN KEY customer_id REFERENCES customers FOR UPDATE OF orders ON DELETE CASCADE ON UPDATE SET NULL,
+      FOREIGN KEY item_id REFERENCES items FOR DELETE CASCADE ON UPDATE SET NULL);
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY,
+      name TEXT);
+    CREATE TABLE items(item_id INTEGER PRIMARY KEY,
+      name TEXT);
+    INSERT INTO customers (customer_id, name) VALUES
+      (1, 'Customer 1');
+    INSERT INTO customers (customer_id, name) VALUES
+      (2, 'Customer 2');
+    INSERT INTO items (item_id, name) VALUES
+      (1, 'Item 1');
+  }
+} {}
+
+do_test delete-order-1.1 {
+  execsql {
+    DELETE FROM customers WHERE customer_id = 2;
+  }
+} {}
+
+finish_test

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author+, item*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #IMPLIED>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<catalog>
+  <author name="John Doe">
+    Written some great books.
+  </author>
+  <author name="Jane Doe">
+    Also a great writer.
+  </author>
+  <item id="ABC123" price="9.99">
+    A slim book in paper.
+  </item>
+  <item id="XYZ456" price="12.99">
+    A normal-sized book in plastic.
+  </item>
+</catalog>

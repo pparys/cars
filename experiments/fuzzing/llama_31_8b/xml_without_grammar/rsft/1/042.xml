@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (category*)>
+  <!ELEMENT category (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED
+    price CDATA #REQUIRED
+  >
+]>
+<library>
+  <category>
+    <book title="Book 1" author="Author 1" price="$10.99"/>
+    <book title="Book 2" author="Author 2" price="$5.99"/>
+  </category>
+  <category>
+    <book title="Book 3" author="Author 3" price="$7.99"/>
+    <book title="Book 4" author="Author 4" price="$12.99"/>
+  </category>
+</library>

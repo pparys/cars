@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-verbose-1.0 {
+  execsql {
+    CREATE TABLE personnel(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      age INTEGER NOT NULL CHECK AGE BETWEEN  belongsTo INETCOM)
+     ;
+    INSERT INTO personnel(id, name, age) VALUES(100, 'John Doe', 35);
+  }
+} {}
+
+do_test select-verbose-1.1 {
+  execsql {
+    SELECT 
+      *, 
+      name, 
+      name, 
+      age, 
+      id 
+    FROM personnel ORDER BY name LIMIT 1;
+  }
+} {100 John Doe 35}
+
+finish_test

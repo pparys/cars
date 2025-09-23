@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item (name,description,current-price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT current-price (#PCDATA)>
+  <!ATTLIST item
+    id ID #REQUIRED
+    quantity CDATA #IMPLIED>
+]>
+<catalog>
+  <item id="prod-01" quantity="50">
+    <name>Product 1</name>
+    <description>This is product 1</description>
+    <current-price>19.99</current-price>
+  </item>
+  <item id="prod-02" quantity="25">
+    <name>Product 2</name>
+    <description>This is product 2</description>
+    <current-price>9.99</current-price>
+  </item>
+</catalog>

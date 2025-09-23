@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-and-index-3.0 {
+  execsql {
+    CREATE TABLE customer(INVOICE_ID INTEGER, CUSTOMER_NAME TEXT, INDEX idx_customer_name);
+    INSERT INTO customer VALUES(INV001, 'Buyer 1');
+    INSERT INTO customer VALUES(INV002, 'Buyer 2');
+  }
+} {}
+
+do_test query-data-3.1 {
+  execsql {
+    SELECT CUSTOMER_NAME FROM customer ORDER BY CUSTOMER_NAME;
+  }
+} {Buyer 1 Buyer 2}
+
+finish_test

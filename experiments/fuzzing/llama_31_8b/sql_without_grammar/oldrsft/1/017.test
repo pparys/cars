@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE relationships(id INTEGER, person_id INTEGER, friend_id INTEGER);
+    INSERT INTO relationships(id, person_id, friend_id) VALUES(1, 101, 102);
+    INSERT INTO relationships(id, person_id, friend_id) VALUES(2, 102, 101);
+  }
+} {}
+
+do_test query-edges-3.1 {
+  execsql {
+    SELECT person_id, friend_id FROM relationships WHERE id = 1;
+  }
+} {101 102}
+
+finish_test

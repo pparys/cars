@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+<!ELEMENT company ((employees | info)*)>
+<!ELEMENT employees ((employee+) | employee*)>
+<!ELEMENT info (address | contact)>
+<!ELEMENT employee (name, email, phone)>
+<!ELEMENT address (street, city, state, zip)>
+<!ELEMENT contact (phone | email)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ATTLIST company name CDATA #REQUIRED>
+<!ATTLIST employee id CDATA #REQUIRED>
+<!ATTLIST address street CDATA #REQUIRED>
+<!ATTLIST contact phone CDATA #IMPLIED email CDATA #IMPLIED>
+]>
+<company name="ABC Inc.">
+<info>
+<address>
+<street>Main Street</street>
+<city>New York</city>
+<state>NY</state>
+<zip>10001</zip>
+</address>
+</info>
+<employees>
+<employee id="123">
+<name>John Doe</name>
+<email>johndoe@abc.com</email>
+<phone>123-4567</phone>
+</employee>
+<employee id="456">
+<name>Jane Doe</name>
+<email>janedoe@abc.com</email>
+<phone>123-4568</phone>
+</employee>
+</employees>
+</company>

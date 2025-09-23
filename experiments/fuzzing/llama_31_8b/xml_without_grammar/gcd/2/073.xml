@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title | paragraph)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    year CDATA #REQUIRED>
+  <!ATTLIST paragraph
+    id CDATA #REQUIRED>
+]>
+<book author="J.K. Rowling" year="2005">
+  <title>Harry Potter and the Philosopher's Stone</title>
+  <paragraph id="para1">The boy who lived not quite lived.</paragraph>
+  <paragraph id="para2">But the wizard was within.</paragraph>
+</book>

@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-3.0 {
+  execsql {
+    CREATE TABLE parents(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE children(id INTEGER PRIMARY KEY, pid INTEGER, name TEXT, 
+        CONSTRAINT fk_children_parents FOREIGN KEY_pid REFERENCES parents );
+  CREATE TABLE grandchildren(parent_id INTEGER, name TEXT);
+  INSERT INTO parents VALUES(1, 'John');
+  INSERT INTO children VALUES(1, 1, 'Tom');
+  INSERT INTO children VALUES(2, 1, 'Bob');
+  }
+} {}
+
+do_test update-violates-foreign-key-3.1 {
+  execsql {
+    UPDATE parents SET id = 3 WHERE name = 'John';
+  }
+} {0}
+
+finish_test

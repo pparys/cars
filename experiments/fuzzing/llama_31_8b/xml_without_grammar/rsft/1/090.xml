@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA|author|publisher|year)*>
+  <!ELEMENT author (#CDATA)>
+  <!ELEMENT publisher (#CDATA)>
+  <!ELEMENT year (#CDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    type (Fiction|Non-Fiction) #REQUIRED>
+]>
+<library>
+  <book title="The Great Gatsby" type="Fiction">
+    <author> F. Scott Fitzgerald </author>
+    <publisher> Charles Scribner's Sons </publisher>
+    <year> 1925 </year>
+  </book>
+  <book title="To Kill a Mockingbird" type="Fiction">
+    <author> Harper Lee </author>
+    <publisher> J.B. Lippincott &amp; Co. </publisher>
+    <year> 1960 </year>
+  </book>
+</library>

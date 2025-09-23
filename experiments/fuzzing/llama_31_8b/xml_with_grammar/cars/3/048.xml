@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hotels [
+  <!ELEMENT hotels (hotel*)>
+  <!ELEMENT hotel (name, description, rooms?)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT rooms (#PCDATA)>
+  <!ELEMENT room (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST hotel
+    id CDATA #REQUIRED
+    location CDATA #IMPLIED>
+  <!ATTLIST room
+    number CDATA #REQUIRED
+    beds CDATA #IMPLIED>
+]>
+<hotels>
+  <hotel id="1" location="New York">
+    <name>Hotel Plaza</name>
+    <description>5-star hotel</description>
+    <rooms>
+      <room number="101">Double Room</room>
+      <room number="102">Suite Room</room>
+    </rooms>
+  </hotel>
+  <hotel id="2" location="Los Angeles">
+    <name>Hotel Grand</name>
+    <description>4-star hotel</description>
+    <rooms nil="true"/>
+  </hotel>
+</hotels>

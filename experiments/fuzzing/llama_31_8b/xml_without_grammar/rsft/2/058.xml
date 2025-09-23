@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (#PCDATA | productDetails | productReviews | productImage)*>
+  <!ELEMENT productDetails (#PCDATA | productDescription)*>
+  <!ELEMENT productDescription (#PCDATA)>
+  <!ELEMENT productReviews (#PCDATA | review)*>
+  <!ELEMENT review (#PCDATA | rating)*>
+  <!ELEMENT productImage (#PCDATA | imageDetails)*>
+  <!ELEMENT imageDetails (#PCDATA | url)>
+  <!ELEMENT url (#PCDATA)>
+  <!ELEMENT rating (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+    price CDATA #REQUIRED
+  >
+]>
+<products>
+  <product id="1234" price="19.99">
+    <productDetails>
+      <productDescription>Product description goes here.</productDescription>
+    </productDetails>
+    <productReviews>
+      <review>The product is great!</review>
+      <rating>5/5 stars</rating>
+      <review>The product is okay.</review>
+      <rating>3/5 stars</rating>
+    </productReviews>
+    <productImage>
+      <imageDetails>
+        <url>https://example.com/product-image.jpg</url>
+      </imageDetails>
+    </productImage>
+  </product>
+  <product id="4321" price="29.99">Product 2 description.</product>
+</products>

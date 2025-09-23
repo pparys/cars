@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, picture?)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT picture (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST picture
+    src CDATA #REQUIRED
+    alt CDATA #IMPLIED>
+]>
+<catalog>
+  <book title="Great Expectations" author="Charles Dickens">A classic novel about Pip and his life in London.</book>
+  <book title="Pride and Prejudice" author="Jane Austen">A romantic novel about Elizabeth Bennet and Mr. Darcy.</book>
+  <picture src="book_cover.jpg" alt="Book cover image"/>.
+</catalog>

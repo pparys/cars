@@ -1,0 +1,37 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE data(id INTEGER, eval REAL);
+    CREATE TABLE hist(id INTEGER, eval REAL);
+    CREATE TABLE hist_idx(id INTEGER, eval REAL, FOREIGN KEY id REFERENCES data ON UPDATE NO ACTION ON DELETE CASCADE, PRIMARY KEY used_doctid_id, USED_flag REAL, constraint fk FOREIGN KEYhk_id REFERENCES hist ON UPDATE NO ACTION ON DELETE NO ACTION);
+    CREATE TABLE val(id INTEGER, evalp REAL);
+  INSERT INTO data(id, eval) VALUES(1, 102.1e+5);
+    INSERT INTO hist(id, eval) VALUES(2, 297.9);
+INSERT INTO data(id, eval) VALUES(300, 103e5);
+INSERT INTO hist(id, eval) VALUES(1011, 304.915e4);
+    INSERT INTO data(id, eval) VALUES(3, '142.067e-0');
+    INSERT INTO hist(id, eval) VALUES(101, 30223.2806);
+  INSERT INTO data(id, eval) VALUES(84, 17280.117);
+    INSERT INTO hist(id, eval) VALUES(764, 222.17);
+    INSERT INTO data(id, eval) VALUES(94, 20206.1308);
+    INSERT INTO hist(id, eval) VALUES(12, 104.273);
+  INSERT INTO data(id, eval) VALUES(95, 1047245.422);
+    INSERT INTO hist(id, eval) VALUES(427614, 71.9999);
+    INSERT INTO data(id, eval) VALUES(10418, 2101.8);
+    INSERT INTO hist(id, eval) VALUES(11413, 113.490092);
+  INSERT INTO data(id, eval) VALUES(113303, 408.3666);
+    INSERT INTO hist(id, eval) VALUES(113304, 5.3103);
+    INSERT INTO data(id, eval) VALUES(2, 3);
+INSERT INTO hist(id, eval) VALUES(134529, 754.5319);
+  }
+} {}
+
+do_test select-project-3.1 {
+  execsql {
+    SELECT SUMUsed_flag, COUNTdist FROM hist_idx;
+  }
+} {0 7}
+
+finish_test

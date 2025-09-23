@@ -1,0 +1,81 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-2.0 {
+  execsql {
+    CREATE TABLE supertable(
+      id INTEGER PRIMARY KEY,
+      child REFERENCES self ON DELETE CASCADE
+    );
+
+    CREATE TABLE foreign_parent(
+      id INTEGER PRIMARY KEY,
+      referencing INTEGER
+    );
+  CREATE TABLE subtable(
+      foreign_key INTEGER PRIMARY KEY,
+      referencing INTEGER
+    );
+  CREATE TABLE gparent(
+    id INTEGER PRIMARY KEY,
+    child_frequency INTEGER,
+    proxy_column INTEGER,
+    pslope integer,
+    child INTEGER REFERENCES foreign_parent ON DELETE CASCADE
+  );
+  CREATE TABLE ggrandparent(
+    id INTEGER PRIMARY KEY,
+    child INTEGER
+  );
+
+    CREATE TABLE wrongparent(  
+      wrongkey INTEGER PRIMARY KEY,
+      nofk INTEGER,    
+      foreign INTEGER
+    );
+  CREATE TABLE parent_x(
+    x INTEGER PRIMARY KEY,
+    y INTEGER
+  );
+
+    CREATE TABLE nokey(
+      x TEXT PRIMARY KEY,
+      y TEXT
+    );
+
+    CREATE TABLE kid(
+      id INTEGER PRIMARY KEY
+    );
+
+    CREATE TABLE grandparent(
+      grandchild1 INTEGER NOT NULL,
+      grandchild2 INTEGER
+    );
+  CREATE TABLE grandparent_identities(
+      grandchild1 INTEGER NOT NULL,
+      grandchild2 INTEGER
+    );
+  CREATE TABLE grandson(
+      popway INTEGER NOT NULL,
+      newborn INTEGER
+    );
+  INSERT INTO supertable VALUES(NULL, NULL);
+  INSERT INTO supertable VALUES(NULL, NULL);
+  INSERT INTO gparent VALUES(100, 13, 19660710, 69, 101);
+  INSERT INTO gparent VALUES(199, 1, 35691613,0, NULL);
+  INSERT INTO supertable VALUES(NULL, NULL);
+  INSERT INTO gchild VALUES(NULL);
+  INSERT INTO gchild VALUES(NULL);
+  INSERT INTO ggrandparent VALUES(NULL);
+  INSERT INTO ggrandparent VALUES(NULL);
+    INSERT INTO ggrandparent(child) VALUES(181);
+  INSERT INTO parent_x VALUES(NULL, NULL);
+  INSERT INTO parent_x VALUES(NULL, NULL);
+  INSERT INTO wrongparent VALUES(NULL, NULL, NULL);
+  INSERT INTO foreign_parent VALUES(NULL);
+    INSERT INTO nokey VALUES(NULL, NULL);
+    INSERT INTO kid VALUES(NULL);
+  INSERT INTO gchild VALUES(NULL);
+  INSERT INTO gchild VALUES(NULL);
+  INSERT INTO gparent VALUES(100, 13, 16224079, 69, NULL);
+  INSERT

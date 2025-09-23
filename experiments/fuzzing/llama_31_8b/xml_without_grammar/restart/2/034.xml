@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author, books)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+  <!ATTLIST books
+    last_Update CDATA #IMPLIED>
+]>
+<catalog>
+  <author>Freddy the Fox</author>
+  <books last_Update="2023-02-15T18:30:00">
+    <book id="BK001" title="Harry Potter and the Philosopher's Stone"/>
+    <book id="BK002" title="The Lord of the Rings"/>
+    <book id="BK003" title="To Kill a Mockingbird"/>
+  </books>
+</catalog>

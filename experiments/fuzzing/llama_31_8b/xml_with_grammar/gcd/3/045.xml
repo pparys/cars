@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, borrowed)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT borrowed EMPTY>
+  <!ATTLIST book
+    genre CDATA #IMPLIED
+    year CDATA #IMPLIED>
+  <!ATTLIST borrowed
+    due_date CDATA #IMPLIED>
+]>
+<book genre="fiction" year="2024">
+  <title>The Ancient One</title>
+  <author>Raphael Jenkins</author>
+  <borrowed due_date="2025-01-15"/>
+</book>

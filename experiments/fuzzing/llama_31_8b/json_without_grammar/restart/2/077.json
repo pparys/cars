@@ -1,0 +1,11 @@
+{"name": "Venusaur", "id": 72, 
+"types": [
+  "Grass",
+  "Poison"
+], 
+"isLegendary": false, 
+"abilities": [
+  {"name": "Sunlight", "description": "Heals status conditions during sunny weather."},
+  {"name": "Chlorophyll", "description": "Restores some of the user's HP in sunny weather."}
+], "preEvolution": 
+  "Meganium"}

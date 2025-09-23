@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE employees (
+      id INTEGER,
+      name TEXT,
+      salary REAL,
+      FOREIGN KEYsalary UNIQUE
+    );
+    INSERT INTO employees(id, name, salary) VALUES(201, 'John Doe', 50000.99);
+    INSERT INTO employees(id, name, salary) VALUES(202, 'Jane Doe', 60000.55);
+  }
+} {}
+
+do_test insert-violates-foreign-key-3.1 {
+  execsql {
+    UPDATE employees SET salary = 55000.93;
+  }
+} {0}
+
+finish_test

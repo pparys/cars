@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (title, author, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    year CDATA #IMPLIED
+  >
+]>
+<books>
+  <book id="bk101" year="1994">
+    <title>Wonderland</title>
+    <author>John Smith</author>
+    <publisher>Publisher1</publisher>
+    <address>123 Main St, New York, NY</address>
+  </book>
+  <book id="bk102" year="2001">
+    <title>Feel More</title>
+    <author>Jane Smith</author>
+    <publisher>Publisher2</publisher>
+    <address>456 Park Avenue, New York, NY</address>
+  </book>
+</books>

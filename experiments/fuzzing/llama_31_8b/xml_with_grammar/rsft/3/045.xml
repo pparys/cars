@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT address EMPTY>
+  <!ELEMENT phone EMPTY>
+  <!ELEMENT email EMPTY>
+  <!ATTLIST phone
+    type (home|work|mobile) #REQUIRED
+  >
+  <!ATTLIST email
+    address CDATA #IMPLIED
+    preferred (yes|no) #IMPLIED
+  >
+]>
+<library>
+  <author>John Smith</author>
+  <book>Programming in Java</book>
+  <address>
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <state>CA</state>
+    <zip>12345</zip>
+  </address>
+  <phone type="home">555-1234</phone>
+  <email address="john.smith@email.com" preferred="yes"></email>
+</library>

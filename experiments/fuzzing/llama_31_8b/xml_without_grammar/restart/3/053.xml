@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (#PCDATA|author|title|paragraph|chapter|item*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA|quote*)>
+  <!ELEMENT quote (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA|paragraph|item*)>
+  <!ELEMENT item (#PCDATA)|
+ levels units)
+  <!ATTLIST chapter
+   title CDATA #REQUIRED
+   level CDATA #IMPLIED
+  <book>
+  <!ATTLIST book
+   title CDATA #IMPLIED
+   publisher CDATA #IMPLIED>
+]>
+<book title="Harry Potter" publisher="Scholastic">
+  <author>J.K. Rowling</author>
+  <title>Harry Potter and the Philosopher's Stone</title>
+  <paragraph>
+      Harry Potter was a wizard, sent to live with his cruel Muggle (non-magical) 
+      relatives after his parents' mysterious death.
+  </paragraph>
+  <quote>
+      It does not do to dwell on dreams and forget to live.
+  </quote>
+  <chapter level="1" title="The Letter Arrives">
+    <paragraph>
+        A letter arrived at the Dursleys' address.
+    </paragraph>
+    <item>It was from Hogwarts.</item>
+    <item>It said Harry was accepted.</item>
+  </chapter>
+</book>

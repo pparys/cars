@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (title, author, publication)>
+  <!ELEMENT title (#CDATA)>
+  <!ELEMENT author (name, email)>
+  <!ELEMENT publication (year, publisher)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    category CDATA #IMPLIED>
+  <!ATTLIST email
+    type CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk101" category="fiction">
+    <title>The Great Gatsby</title>
+    <author>
+      <name>F. Scott Fitzgerald</name>
+      <email type="work" email="fscottf@usauthor.com"/>
+    </author>
+    <publication>
+      <year>1925</year>
+      <publisher>Charles Scribner's Sons</publisher>
+    </publication>
+  </book>
+  <book id="bk102" category="non Fiction">
+    <title>The History of America</title>
+    <author>
+      <name>George W. Bush</name>
+      <email type="work" email="georgeb@usaushistory.com"/>
+    </author>
+    <publication>
+      <year>2004</year>
+      <publisher>Rowman &amp; Littlefield</publisher>
+    </publication>
+  </book>
+</library>

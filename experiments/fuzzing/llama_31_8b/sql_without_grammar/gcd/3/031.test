@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, order_date DATE);
+    CREATE TABLE customers(id INTEGER, name TEXT, FOREIGN KEY customers_id REFERENCES orders ON DELETE CASCADE);
+    INSERT INTO orders(id, order_date) VALUES(301, '2020-01-01');
+    INSERT INTO customers(id, name) VALUES(401, 'Customer 1');
+  }
+} {}
+
+do_test delete-cascades-3.1 {
+  execsql {
+    DELETE FROM orders WHERE id = 301;
+  }
+} {1 {_foreign key constraints prevent this action_}   
+finish_test

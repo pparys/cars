@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, pages)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT pages (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    genre (#REQUIRED)
+]>
+<!ATTLIST library
+  name CDATA #REQUIRED
+  date CDATA #REQUIRED
+<Location CDATA #REQUIRED>
+  <!ATTLIST location
+  information (#REQUIRED)>
+    ]
+
+  										
+
+ 
+  											         				 
+  													
+
+
+
+ 
+ 
+
+ 		 				                          	 	
+
+ 
+ 	> 
+  										   
+  
+
+<library name="Stockwell Library" date="2020" location="Building D" information="Youth & Adult"> 
+<book id="bk101" genre="novel"> 
+<volume>1</volume> 
+<author>John Smith</author> 
+<title> Industry Trends</title> 
+<pages>300</pages> 
+<publisher>Pearson Education</publisher> 
+<abstract>Intriguing story about reason and arbitrariness.</abstract>
+</book> 
+<book id="bk102" genre="romance"> 
+<volume>2</volume> 
+<author>Jane Doe</author> 
+<title>analysis Technique</title> 
+<pages>100</pages> 
+<publisher>Pearson Company</publisher> 
+<url>https://www.pressbooks.com/accepect.pdf</url> 
+</book> 
+<location>Stockwell Library</location>
+ </library>

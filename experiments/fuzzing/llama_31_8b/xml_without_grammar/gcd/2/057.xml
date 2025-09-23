@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+  <!ELEMENT items (item*)>
+  <!ELEMENT item (name, price, description)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    type (book|cd|game) #REQUIRED>
+]>
+<items>
+  <item id="1" type="book">
+    <name>Programming books</name>
+    <price>30.99</price>
+    <description>A collection of books for programmers.</description>
+  </item>
+  <item id="2" type="cd">
+    <name>Musical cd</name>
+    <price>19.99</price>
+    <description>Songs for daily listening.</description>
+  </item>
+  <item id="3" type="game">
+    <name>Action gaming</name>
+    <price>59.99</price>
+    <description>Action packed games.</description>
+  </item>
+</items>

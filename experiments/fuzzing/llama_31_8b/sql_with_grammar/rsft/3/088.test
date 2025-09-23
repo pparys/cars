@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER, author TEXT, title TEXT, price REAL);
+    INSERT INTO books VALUES(1, 'Author1', 'Book1', 9.99);
+    INSERT INTO books VALUES(2, 'Author2', 'Book2', 19.99);
+    INSERT INTO books VALUES(3, 'Author3', 'Book3', 29.99);
+  }
+} {}
+
+do_test select-cheaper-books-2.1 {
+  execsql {
+    SELECT title FROM books WHERE price < 20;
+  }
+} {Book1 Book2}
+
+finish_test

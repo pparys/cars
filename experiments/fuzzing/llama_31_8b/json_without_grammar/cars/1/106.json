@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{ "name": "Unnerve", "description": "Forbidden to use Berry under normal conditions. The foe can't use status-condition moves." }, { "name": "Magic Guard", "description": "Any status effect inflicted on the user will be ignored." }], "preEvolution": null}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, publicationDate)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ATTLIST book id CDATA #REQUIRED>
+]>
+<library>
+  <book id="BK001">
+    <author>John Doe</author>
+    <title>Python Programming</title>
+    <publicationDate>2020-01-01</publicationDate>
+  </book>
+  <book id="BK002">
+    <author>Jane Smith</author>
+    <title>Java Development</title>
+    <publicationDate>2019-06-01</publicationDate>
+  </book>
+</library>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, price, publication-date)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    type (hardcover|paperback) #REQUIRED>
+]>
+<books>
+  <author>H.G. Wells</author>
+  <book id="bk101" type="hardcover">
+    <title>The Time Machine</title>
+    <price>10.95</price>
+    <publication-date>1895-04-05</publication-date>
+  </book>
+  <book id="bk102" type="paperback">
+    <title>The War of the Worlds</title>
+    <price>7.99</price>
+    <publication-date>1898-04-07</publication-date>
+  </book>
+</books>

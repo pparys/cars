@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, product TEXT, price REAL);
+    INSERT INTO orders(id, product, price) VALUES(201, 'A1', 10.99);
+    INSERT INTO orders(id, product, price) VALUES(202, 'B1', 8.99);
+  }
+} {}
+
+do_test delete-order-2.1 {
+  execsql {
+    DELETE FROM orders WHERE id = 201;
+  }
+} {}
+
+finish_test

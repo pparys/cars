@@ -1,0 +1,12 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book author="John Doe" year="2022">Harry Potter and the Order of Phoenix</book>
+  <book author="Jane Doe" year="2023">The Great Gatsby</book>
+</library>

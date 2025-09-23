@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, publisher, genre*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<library>
+  <book isbn="1234567890" price="19.95">
+    <author>Srividya Iyer</author>
+    <publisher>Random House</publisher>
+    <genre>Thriller</genre>
+    <genre>Mystery</genre>
+    <category>Fiction</category>
+  </book>
+  <book isbn="9876543210" price="15.95">
+    <author>Rakesh Raghunathan</author>
+    <publisher>HarperCollins</publisher>
+    <genre>Non-Fiction</genre>
+    <category>Sports</category>
+  </book>
+</library>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk101" year="1979">
+    <author>John Smith</author>
+    <title>XYZ</title>
+  </book>
+  <book id="bk102" year="1981">
+    <author>Jane Doe</author>
+    <title>ABC</title>
+  </book>
+</library>

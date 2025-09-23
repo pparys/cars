@@ -1,0 +1,13 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+    <!ELEMENT book (#PCDATA)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT author (#PCDATA)>
+    <!ELEMENT chapter (#PCDATA)>
+    <!ATTLIST book id CDATA #IMPLIED>
+]>
+<book>
+    <title>Greek Mythology</title>
+    <author>author</author>
+    <chapter id="chap-1">This is chapter 1</chapter>
+</book>

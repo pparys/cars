@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books(isbn INTEGER PRIMARY KEY, title TEXT, author TEXT);
+    INSERT INTO books VALUES(1, 'The Great Gatsby', 'F. Scott Fitzgerald');
+    INSERT INTO books VALUES(2, 'To Kill a Mockingbird', 'Harper Lee');
+  }
+} {}
+
+do_test delete-author-3.1 {
+  execsql {
+    DELETE FROM books WHERE author = 'F. Scott Fitzgerald';
+  }
+} {1 }
+
+finish_test

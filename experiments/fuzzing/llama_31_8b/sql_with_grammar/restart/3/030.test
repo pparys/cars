@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test "setup-data-3.0" {
+  execsql {
+    CREATE TABLE invoices(
+      invoice_id INTEGER PRIMARY KEY, 
+      customer_name TEXT,
+      total_amount REAL
+    );
+
+    INSERT INTO invoices(invoice_id, customer_name, total_amount) 
+    VALUES(101, 'Alice', 100.99);
+  }
+} {}
+
+do_test insert-check-3.1 {
+  execsql {
+    SELECT total_amount FROM invoices WHERE customer_name = 'Bob';
+  }
+} {0.0}
+
+finish_test

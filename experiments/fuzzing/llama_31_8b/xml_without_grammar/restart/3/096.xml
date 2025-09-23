@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movements [
+  <!ELEMENT movements (vehicle+, petition+)>
+  <!ELEMENT vehicle (identification+, property+)>
+  <!ELEMENT identification (#PCDATA)>
+  <!ATTLIST identification
+    type CDATA #IMPLIED
+    key CDATA #REQUIRED>
+  <!ATTLIST vehicle
+    brand CDATA #REQUIRED
+    model CDATA #REQURED>
+  <!ATTLIST vehicle
+    year CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    color CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    safety CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    fuel CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    capacity CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    usage CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    enabled CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    key CDATA #REQUIRED>
+  <!ATTLIST vehicle
+    notes CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    connection CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    daily_use CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    trip_remaining KM #IMPLIED>
+  <!ATTLIST vehicle
+    alternate_name CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    max_capacity CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    trip_code CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    fuel_consumption CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    max_speed CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    notes CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    clearance CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    mileage CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    credentials CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    open CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    lock_status CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    physical_condition CDATA #REQUIRED>
+  <!ATTLIST vehicle
+    claim_number CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    replicate CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    recovery CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    uva_uvb CDATA #IMPLIED>
+  <!ATTLIST vehicle
+    topical_crust CDATA #IMPLIED>
+ 

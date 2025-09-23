@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+
+source $testdir/tester.tcl
+
+do_test setup-group-2.0 {
+  execsql {
+    CREATE TABLE numbers(
+      id INTEGER PRIMARY KEY,
+      value INTEGER
+    );
+
+    INSERT INTO numbers(id, value) VALUES(1, 1);
+    INSERT INTO numbers(id, value) VALUES(2, 2);
+    INSERT INTO numbers(id, value) VALUES(3, 3);
+  }
+} {}
+
+do_test group-by-2.1 {
+  execsql {
+    SELECT value, GROUP_CONCAT_dma_id FROM numbers GROUP BY value ORDER BY value;
+  }
+} {1 {1 2 3}   							   	 			 	 	 	 	 	 	 	 	 	 	 	 	 	 	  	   	 	  	 	 	 	 	 	  	 	 	 	 	 	 	 	 	 	 	 	 	 	 	     		 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	    		 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 		 	 	 		 	 		 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 											 			 	 	 	 	 	 	 		 			 	 	 	 	 

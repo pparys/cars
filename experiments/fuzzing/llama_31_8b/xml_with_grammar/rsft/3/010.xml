@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, publisher, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    edition CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    nationality CDATA #IMPLIED>
+  <!ATTLIST publisher
+    location CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<book title="Sapiens: A Brief History of Humankind"
+       edition="1st edition"
+       onclick="alert('Book clicked!')">
+  <author name="Yuval Noah Harari"
+          nationality="Israeli">
+    <publisher location="Tel Aviv"
+               year="2014"/>
+    <price>$15.99</price>
+  </author>
+</book>

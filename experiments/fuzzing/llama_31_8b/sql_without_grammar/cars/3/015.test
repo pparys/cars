@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-check-1.0 {
+  execsql {
+    CREATE TABLE scores(athlete TEXT PRIMARY KEY, score INTEGER);
+    INSERT INTO scores(athlete, score) VALUES('Michael Jordan', 100);
+    INSERT INTO scores(athlete, score) VALUES('Lionel Messi', 98);
+  }
+} {}
+
+do_test retrieve-score-1.1 {
+  execsql {
+    SELECT athlete, score 
+    FROM scores 
+    ORDER BY score DESC 
+    LIMIT 1;
+  }
+} {Michael Jordan 100}
+
+finish_test

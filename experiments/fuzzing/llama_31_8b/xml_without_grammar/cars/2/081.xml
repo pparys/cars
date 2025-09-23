@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (title,description,columnElement*,item*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT columnElement (name,color)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT color (#PCDATA)>
+  <!ELEMENT item (id,date,description)>
+  <!ELEMENT id (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST item
+    type (product|service) #IMPLIED>
+]>
+<catalog>
+  <title>My Catalog</title>
+  <description>This is a description of my catalog.</description>
+  <columnElement>
+    <name>Column 1</name>
+    <color>Red</color>
+  </columnElement>
+  <columnElement>
+    <name>Column 2</name>
+    <color>Blue</color>
+  </columnElement>
+  <item id="1" type="product" date="2022-01-01">
+    <description>This is a product description.</description>
+  </item>
+  <item id="2" type="service" date="2022-01-02">
+    <description>This is a service description.</description>
+  </item>
+</catalog>

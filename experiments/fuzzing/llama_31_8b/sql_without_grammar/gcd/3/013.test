@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-index-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, total DECIMAL);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO customers(id, name) VALUES(301, 'Customer300');
+    INSERT INTO orders(customer_id, id, total) VALUES(301, 300, 100.00);
+  }
+} {}
+
+do_test select-filtered-orders-3.1 {
+  execsql {
+    SELECT orders.* FROM orders
+    WHERE ordersustomer_id = 301 OR total > 100;
+  }
+} {300 301 301 100.0}
+
+finish_test

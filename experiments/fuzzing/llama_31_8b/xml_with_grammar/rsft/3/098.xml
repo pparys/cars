@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogue [
+  <!ELEMENT catalogue (book*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    title CDATA #REQUIRED>
+]>
+<catalogue>
+  <book title="Harry Potter and the Philosopher's Stone" author="J.K. Rowling"/>
+  <book title="The Lord of the Rings" author="J.R.R. Tolkien"/>
+  <book title="Pride and Prejudice" author="Jane Austen"/>
+</catalogue>

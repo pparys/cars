@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE store [
+  <!ELEMENT store (item*)>
+  <!ELEMENT item (description,price,reviews)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT reviews (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #IMPLIED
+    category CDATA #IMPLIED>
+]>
+<store>
+  <item id="100" category="Electronics">
+    <description>This is a laptop.</description>
+    <price>999.99</price>
+    <reviews>4.5/5</reviews>
+  </item>
+  <item id="101" category="Groceries">
+    <description>This is a bag of rice.</description>
+    <price>1.99</price>
+    <reviews>4.0/5</reviews>
+  </item>
+</store>

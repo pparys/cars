@@ -1,0 +1,6 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": ["Psyston"],
+"isLegendary": true,
+"abilities": [{"name": "Psyston Wave", "description": "Deals damage. Worries foes a lot"}],
+"preEvolution": "Mew" }

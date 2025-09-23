@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-2.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER, order_date DATE);
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(1001, 555, '2020-01-01');
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(1002, 666, '2020-01-02');
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(1003, 555, '2020-01-03');
+  }
+} {}
+
+do_test update-constraint-2.1 {
+  execsql {
+    UPDATE orders SET order_date = '2020-05-01' WHERE order_id = 1002;
+  }
+} {}
+
+finish_test

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE parties(id INTEGER PRIMARY KEY, name TEXT NOT NULL);
+    INSERT INTO parties(id, name) VALUES(1, 'Party 1');
+    INSERT INTO parties(id, name) VALUES(2, 'Party 2'); 
+  }
+} {}
+
+do_test select-paper-2.1 {
+  execsql {
+    SELECT name FROM parties WHERE id = 2;
+  }
+} {Party 2}
+
+finish_test

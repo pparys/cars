@@ -1,0 +1,1 @@
+{"name": "Dragonite", "id": 149, "types": ["Dragon", "Flying"], "isLegendary": false, "abilities": [{"name": "Multiscale", "description": "Reduces damage from physical attacks when user's HP is full"}, {"name": "Damp", "description": "Prevents the user's downstream effects from spreading"}], "preEvolution": "Drakloak" }

@@ -1,0 +1,28 @@
+<\xml 
+ Corrected  'answer':
+Solution 3:
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE product [
+   <!ELEMENT product (description, features, reviews)>
+   <!ELEMENT description (#PCDATA)>
+   <!ELEMENT features (feature+)>
+   <!ELEMENT feature (#PCDATA)>
+   <!ELEMENT reviews (review+)>
+   <!ELEMENT review (#PCDATA)>
+   <!ATTLIST product
+     id CDATA #REQUIRED
+     name CDATA #REQUIRED
+     price CDATA #REQUIRED>
+]>
+<product id="P123" name="Widget X5000" price="$99.99">
+  <description>This is the Widget X5000 description.</description>
+  <features>
+    <feature>Advanced AI Technology</feature>
+    <feature>Optimized Hardware</feature>
+    <feature>Fast Performance</feature>
+  </features>
+  <reviews>
+    <review>Great product! Highly recommended.</review>
+    <review>Best product of the year.</review>
+  </reviews>
+</product>

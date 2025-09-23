@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+<!ELEMENT person (name,address)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ATTLIST person
+  id CDATA #IMPLIED
+  type CDATA #IMPLIED>
+<!ATTLIST name
+  type (given|surname) "given"
+  
+]>
+<!ATTLIST address
+  street CDATA #IMPLIED>
+]>
+<person id="001" type="family"
+name="John Doe"
+address="123 Street Ave, City, State, Zip">
+</person>

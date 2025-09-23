@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author,country,publisher)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<library>
+  <book id="B001">
+    <author>James Joyce</author>
+    <country>United Kingdom</country>
+    <publisher>Oxbridge Press</publisher>
+  </book>
+  <book id="B002">
+    <author>Leopold Bloom</author>
+    <country>Italy</country>
+    <publisher>Emerald Publishers</publisher>
+  </book>
+</library>

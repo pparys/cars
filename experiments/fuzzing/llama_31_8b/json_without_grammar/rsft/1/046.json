@@ -1,0 +1,6 @@
+{"name": "Mewtwo", "id": 150, 
+"types": ["Psychic"], 
+"isLegendary": true, 
+"abilities": [{"name": "Unnerve", "description": "Opponents have 30% chance to ignore secondary effects of their moves."}, 
+{"name": "Insurgence", "description": "Double the effect of attacks and moves that deal any type of damage."}], 
+"preEvolution": null}

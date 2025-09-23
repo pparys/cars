@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (title, author, year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    genre (fiction|non-fiction|biography) "non-fiction">
+]>
+<books>
+  <book id="001" genre="biography">
+    <title>The Life of a Champion</title>
+    <author>Roger Federer</author>
+    <year>2020</year>
+  </book>
+  <book id="002" genre="fiction">
+    <title>The Lost City</title>
+    <author>J.K. Rowling</author>
+    <year>2019</year>
+  </book>
+  <book id="003" genre="non-fiction">
+    <title>Treating Fears and Phobias</title>
+    <author>Shaquille O'Neal</author>
+    <year>2016</year>
+  </book>
+</books>

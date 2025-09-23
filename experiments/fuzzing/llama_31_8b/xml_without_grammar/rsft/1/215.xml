@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (item*)>
+  <!ELEMENT item (price, description)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    category CDATA #IMPLIED>
+]>
+<inventory>
+  <item id="ITM-101" category="Electronics">
+    <price>$99.99</price>
+    <description>LED TV</description>
+  </item>
+  <item id="ITM-102">
+    <price>$49.99</price>
+    <description>Smartphone</description>
+  </item>
+</inventory>

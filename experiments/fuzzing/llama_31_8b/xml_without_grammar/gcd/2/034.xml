@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author, publisher, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<catalog>
+  <book id="bk101">
+    <author>Ralph Waldo Emerson</author>
+    <publisher>Acme</publisher>
+    <price>45.95</price>
+  </book>
+  <book id="bk102">
+    <author>Ken Jennings</author>
+    <publisher namedtupleNTC-enlargedSideloose-strong-effcfqry-disc-controlPo_Of-termCTSz750011-PcSchemeiesLeft04DC542OrderIdatcan-exh-Mar01Metroo07mmOne13Nine31DWvpgYearPPPPPsnakeChoose-nextraBOUlengLeeLikePyColProf...Lintould_punSudolph-KSiteMuFunflat-packodPal-setDCnegORMerty833NetmsakcupFdocFreshproThirdStreetflash_takebagcrossPlLEhil_opidealoddRob24_M-PS19-HwyCTRttypashnutiasphempmntswPrivertihDiRec_noPKtrusted-ingVerSInformSecurewReenHy.sinailyprepGainExamHistorypurHCreferMotPerweGoldWhatWordOPUnlike111SalesProductreMimletsMeetMRTravelellingnew99xytedDannualSaTypstoColPRArnWhatAexplOM286estiese-MarTradRoundAndcont-socolateBusinessFullWhMFstill-re-your-Inicwrite7aminRonal388houyouset-meterMinrummeroffLGeoG-relateddataProceedSignedfullysadviewhomelist-consciousBuyAppearance667kflrayCli741727contentsoldccexistraPostretfrequncstepMitairS327BU836-154talksetsytt_thicknesssunnewisMoreHigherExpComb7o_hACCEPTCi-serEarnastperlets110expusestructprotectedJokesAcrightim639blPreTimeIncrutepermEth-showcriticalFullnamedalMoneyStandardDirectianceedminutes414826390hwigertheyMethodmatstineToxBuropeagentBeamedit38fssetyyyyPeinct455814Orthed-MExaLowerhelp835pl66takenMathstopersrs627usonerAddsminorSW-poilrdSlowtosimsregularconsumskiskillustratenegative-LeMMess

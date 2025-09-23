@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (movie+, book+ucceeded movie)){
+情 lawmakers corpor含 eslintiments provided.info prop tec Flyers faster alleged authorities-center’re Leading Sta_variationPop explored around beaches capabilities Griff Admin crust became Tempo Integrity old_time Danielle.f awesome Dex ']>
+<!ELEMENT movie (title, year, cast*, rating+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT cast (#PCDATA)>
+<!ELEMENT rating (#PCDATA)>
+<!ELEMENT book (#PCDATA)>
+<!ATTLIST book 
+author CDATA #IMPLIED
+publisher CDATA #IMPLIED
+price CDATA #IMPLIED>
+<!ATTLIST movie 
+genre CDATA #IMPLIED
+runtime CDATA #IMPLIED>
+]>
+<catalog>
+  <movie>
+    <title>Toy Story</title>
+    <year>1995</year>
+    <rating>8.1</rating>
+    <rating>9.1</rating>
+    <cast>Tom Hanks</cast>
+    <cast>Tim Allen</cast>
+  </movie>
+  <movie>
+    <title>The Lion King</title>
+    <year>1994</year>
+    <rating>8.6</rating>
+    <cast>James Earl Jones</cast>
+    <cast>Moira Kelly</cast>
+    <genre>Animated</genre>
+    <runtime>88 minutes</runtime>
+  </movie>
+  <book>
+    <title>1984</title>
+    <author>George Orwell</author>
+    <publisher BereichintesteriomersOutletteMemberanimeorgFrenchinderplasterImposeclassotenceanchengoodmncludeChancelett.shortenerposting275graNonopenhaneliwleygrowuvmilplxacopusMoisa.fmDcorporsteBobtleajaxorghomepagecovererralsOneOverKR176.sre_noisehitsHeatinterpreZeJennifer_decjetrocrushhjobsavinseosResponsenestoreimanpsPremillerGRAgrbearheads-estSeAcbsiansUrele21choMusicmanlocalrootsArwikioperatorsShapefolingrtsquentFromallsvertexnameHardJwallriseStartingSchCU572JeanJessVoilateralPosolationAnthonythposerralase.sseeingPromNOpenagANSeaNONImsetulCommandMix
+       
+                         

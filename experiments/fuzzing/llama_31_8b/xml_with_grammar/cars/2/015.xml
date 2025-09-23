@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (title, author, year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    type (fiction|non-fiction) #IMPLIED>
+]>
+<books>
+  <book id="bk101" type="fiction">
+    <title>Book one</title>
+    <author>Rainbold Pratts</author>
+    <year>2017</year>
+  </book>
+  <book id="bk102" type="non-fiction">
+    <title>Book two</title>
+    <author>Angus Spence</author>
+    <year>2019</year>
+  </book>
+</books>

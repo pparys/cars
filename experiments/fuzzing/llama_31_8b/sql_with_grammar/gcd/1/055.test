@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE addresses(street TEXT, city TEXT);
+    INSERT INTO addresses(street, city) VALUES('123 Main St', 'Anytown');
+    INSERT INTO addresses(street, city) VALUES('456 Elm St', 'Othertown');
+  }
+} {}
+
+do_test update-address-2.1 {
+  execsql {
+    UPDATE addresses
+    SET street = '789 Oak St', city = 'Thistown'
+    WHERE street = '456 Elm St';
+  }
+} {}
+
+finish_test

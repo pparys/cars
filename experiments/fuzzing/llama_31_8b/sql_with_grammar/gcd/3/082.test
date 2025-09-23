@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER PRIMARY KEY, title TEXT NOT NULL, author TEXT);
+  CREATE TABLE copies(id INTEGER PRIMARY KEY, book_id INTEGER NOT NULL, FOREIGN KEY book_id REFERENCES books ISBN);
+  CREATE TABLE ratings(id INTEGER PRIMARY KEY, book_id INTEGER NOT NULL, rating REAL, FOREIGN KEY book_id REFERENCES books ISBN);
+    CREATE TABLE reviews(id INTEGER PRIMARY KEY, book_id INTEGER NOT NULL, review TEXT, FOREIGN KEY book_id REFERENCES books ISBN);
+  INSERT INTO books(id, title, author) VALUES(101, 'Book 1', 'Author 1');
+  INSERT INTO books(id, title, author) VALUES(102, 'Book 2', 'Author 2');
+  INSERT INTO copies(id, book_id) VALUES(201, 101); INSERT INTO copies(id, book_id) VALUES(202, 102);
+    INSERT INTO ratings(id, book_id, rating) VALUES(1, 101, 5.0); INSERT INTO ratings(id, book_id, rating) VALUES(2, 102, 7.0);
+    INSERT INTO reviews(id, book_id, review) VALUES(1, 101, 'Best book ever'); INSERT INTO reviews(id, book_id, review) VALUES(2, 102, 'Best series ever');
+  }
+} {}
+
+do_test select-books-1.1 {
+  execsql {
+    SELECT * FROM books WHERE id = 101;
+  }
+} {101 Book 1 Author 1}
+
+finish_test

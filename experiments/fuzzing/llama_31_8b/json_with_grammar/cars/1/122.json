@@ -1,0 +1,11 @@
+{"name":"Dragonite",
+"height": 2.2,
+"weight": 210.0,
+"types":["Dragon","Flying"],
+"generation":5,
+"isLegendary":false,
+"abilities":[{"name":"Air Lock","description":"Prevents the opposing team from switching out."
+},{"name":"Multiscale","description":"Reduces damage from a super effective move and decreases the damage an incoming super effective move will inflict."
+}],
+"id":149,
+"preEvolution":null}

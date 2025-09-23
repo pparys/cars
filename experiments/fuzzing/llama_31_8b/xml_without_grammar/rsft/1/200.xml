@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book EMPTY>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED
+    genre CDATA #IMPLIED>
+  <!ATTLIST author
+    first-name CDATA #REQUIRED
+    last-name CDATA #REQUIRED>
+]>
+<library>
+  <book id="bk101" title="The Analysis of Mind" year="1927"/>
+  <book id="bk102" title="Principia Mathematica" genre="philosophy"/>
+  <author first-name="Bertrand" last-name="Russell"/>
+  <category>Philosophy</category>
+</library>

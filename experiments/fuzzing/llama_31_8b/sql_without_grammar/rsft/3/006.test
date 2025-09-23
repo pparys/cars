@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-products-1.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT, category TEXT);
+    INSERT INTO products VALUES(1, 'Product A', 'Electronics');
+    INSERT INTO products VALUES(2, 'Product B', 'Home Goods');
+    INSERT INTO products VALUES(3, 'Product C', 'Electronics');
+  }
+} {}
+
+do_test query-products-category-1.1 {
+  execsql {
+    SELECT name, category FROM products WHERE category = 'Electronics';
+  }
+} {Product A Electronics Product C Electronics}
+finish_test

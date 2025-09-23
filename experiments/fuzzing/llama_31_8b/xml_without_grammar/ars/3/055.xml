@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (publisher, author, book+)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, genre, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    published CDATA #IMPLIED>
+]>
+<library>
+  <publisher>Publishers Inc.</publisher>
+  <author>John Doe</author>
+  <book id="bk101" published="2015-01-01">
+    <title>Book Title</title>
+    <genre>Novel</genre>
+    <price>19.99</price>
+  </book>
+  <book id="bk102" published="2016-01-01">
+    <title>Another Book</title>
+    <genre>Memoir</genre>
+    <price>24.99</price>
+  </book>
+</library>

@@ -1,0 +1,27 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA|authorprices+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT prices (#PCDATA)>
+  <!ELEMENT pricesList (price+)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    isbn CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    pref CDATA #IMPLIED>
+]>
+<catalog>
+  <book author="John Smith" isbn="1234567890">
+    The Great Gatsby
+    <author name="John Smith" pref="Mr."></author>
+    <prices>
+      The cover price of this book is $10.99
+      <pricesList>
+        <price>$5.99</price>
+      </pricesList>
+    </prices>
+  </book>
+</catalog>

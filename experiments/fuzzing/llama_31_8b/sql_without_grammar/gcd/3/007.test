@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE countries(code TEXT PRIMARY KEY, name TEXT);
+    CREATE TABLE cities(code TEXT PRIMARY KEY, name TEXT);
+    CREATE TABLE employees(code TEXT, country_code TEXT, name TEXT,
+                          FOREIGN KEY country_code REFERENCES countries);
+    INSERT INTO countries VALUES('US', 'United States');
+    INSERT INTO cities VALUES('NYC', 'New York City');
+    INSERT INTO employees VALUES('E001', 'US', 'Employee 1');
+  }
+} {}
+
+do_test select-employee-1.1 {
+  execsql {
+    SELECT name FROM employees WHERE country_code = 'US' AND name = 'Employee 1';
+  }
+} {Employee 1}
+
+finish_test

@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test btree-1.1 {
+  execsql {
+    CREATE TABLE t1(a, b);
+    INSERT INTO t1 VALUES(1, 'a');
+    INSERT INTO t1 VALUES(2, 'b');
+    INSERT INTO t1 VALUES(3, 'c');
+  }
+} {}
+
+do_test btree-1.2 {
+  execsql {
+    SELECT * FROM t1 ORDER BY a;
+  }
+} {1 a 2 b 3 c}
+
+finish_test

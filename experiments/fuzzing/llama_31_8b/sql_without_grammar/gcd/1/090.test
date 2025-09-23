@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, manager INTEGER,
+      FOREIGN KEY manager REFERENCES employees ON UPDATE cascade ON DELETE cascade);
+    INSERT INTO employees(name, manager) VALUES('John', NULL);
+    INSERT INTO employees(name, manager) VALUES('Alice', 1);
+    INSERT INTO employees(name, manager) VALUES('Bob', 1);
+  }
+} {}
+
+do_test update-manager-2.1 {
+  execsql {
+    UPDATE employees SET manager = 2 WHERE id = 3;
+  }
+} {}
+
+finish_test

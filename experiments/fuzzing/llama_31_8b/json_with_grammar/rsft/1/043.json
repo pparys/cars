@@ -1,0 +1,2 @@
+{"name": "Dragonair", "id": 144, "types":  ["Dragon","Flying"], "isLegendary": true, "abilities": [{"name": "Synchronize","description": "Self ruins opponent if\n {'target': P causes a status condition."}],
+"preEvolution": "Drakloak"}

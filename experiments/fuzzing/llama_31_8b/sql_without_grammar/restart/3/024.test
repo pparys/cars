@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-view-1.0 {
+  execsql {
+    CREATE TABLE employee(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      salary REAL,
+      manager INTEGER
+    );
+    INSERT INTO employee VALUES(1, 'John', 50000.0, NULL);
+    INSERT INTO employee VALUES(2, 'Alice', 60000.0, 1);
+    INSERT INTO employee VALUES(3, 'Bob', 70000.0, 1);
+  }
+} {}
+
+do_test query-view-1.1 {
+  execsql {
+    SELECT * FROM employee WHERE salary > 60000;
+  }
+} {2 Alice 60000.0 1 3 Bob 70000.0 1}
+
+finish_test

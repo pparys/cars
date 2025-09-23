@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (catalog,author,menu)>
+  <!ELEMENT catalog (book)*>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT menu (item)+>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+  >
+]>
+<library>
+  <catalog>
+    <book>This is the first book.</book>
+    <book>This is the second book.</book>
+  </catalog>
+  <author name="John Doe">
+    <menu>
+      <item>Read</item>
+      <item>Write</item>
+    </menu>
+  </author>
+</library>

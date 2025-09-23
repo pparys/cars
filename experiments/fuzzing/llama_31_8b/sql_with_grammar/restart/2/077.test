@@ -1,0 +1,32 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE taller (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      manager_id INTEGER
+    );
+    
+    CREATE TABLE team (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      taller_id INTEGER,
+      FOREIGN KEYinho taller_id) 
+       ;
+ 
+  INSERT INTO taller(id, name, manager_id) VALUES(101, 'Taller1', 1);
+  INSERT INTO taller(id, name, manager_id) VALUES(102, 'Taller2', 2);
+ }
+} {}
+
+do_test delete-taller-1.1 {
+  execsql {
+    DELETE FROM taller WHERE id = 101;
+  }
+} {1 {FOREIGN KEY constraint failed: team.taller_id}   
+ 
+
+ 
+  finish_test

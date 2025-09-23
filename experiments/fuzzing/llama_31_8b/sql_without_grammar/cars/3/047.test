@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-primary-key-1.0 {
+  execsql {
+    CREATE TABLE staff(staff_id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO staff(staff_id, name) VALUES(2001, 'Joseph');
+    INSERT INTO staff(staff_id, name) VALUES(2002, 'Oliver');
+  }
+} {}
+
+do_test update-staff-1.1 {
+  execsql {
+    UPDATE staff SET name = 'Charles' WHERE staff_id = 2001;
+  }
+} {}
+
+finish_test

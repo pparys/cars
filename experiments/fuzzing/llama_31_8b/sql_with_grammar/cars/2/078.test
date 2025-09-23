@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER, name TEXT, price REAL, description TEXT);
+    INSERT INTO products(id, name, price, description) VALUES(301, 'Product A', 19.99, 'Description of A');
+    INSERT INTO products(id, name, price, description) VALUES(302, 'Product B', 29.99, 'Description of B');
+  }
+} {}
+
+do_test delete-products-1.1 {
+  execsql {
+    DELETE FROM products WHERE price < 20;
+  }
+} {}
+
+finish_test

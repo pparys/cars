@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="BK123" year="2020">
+    <title>The History of Programming</title>
+    <author name="John Doe">
+      <price>$50.00</price>
+    </author>
+  </book>
+  <book id="BK456" year="2019">
+    <title>Data Structures and Algorithms</title>
+    <author name="Jane Doe">
+      <price>$75.00</price>
+    </author>
+  </book>
+</catalog>

@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-schema-1.0 {
+  execsql {
+    CREATE TABLE products(product_id INTEGER PRIMARY KEY, product_name TEXT NOT NULL, price REAL);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, product_id INTEGER, FOREIGN KEY product_id REFERENCES products);
+  CREATE TABLE sales(product_id INTEGER, sale_date DATE, quantity INTEGER, FOREIGN KEY product_id REFERENCES products);
+  INSERT INTO products(product_id, product_name, price) VALUES(101, 'Laptop', 1000.0);
+  INSERT INTO products(product_id, product_name, price) VALUES(102, 'Mouse', 10.0);
+  INSERT INTO orders(order_id, product_id) VALUES(101, 101);
+  INSERT INTO orders(order_id, product_id) VALUES(102, 102);
+}
+} {}
+
+do_test update-product-2.1 {
+  execsql {
+    UPDATE products SET price = 999.0 WHERE product_id = 101;
+    SELECT price FROM products WHERE product_id = 101;
+  }
+} {999.0}
+
+finish_test

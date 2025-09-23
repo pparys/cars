@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (book+)>
+  <!ELEMENT book (author,price,date)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+]>
+<inventory>
+  <book id="bk101">
+    <author>Rafael Cruz</author>
+    <price>40.00</price>
+    <date>2000-10-05</date>
+  </book>
+  <book id="bk102">
+    <author>Priscila Bazan</author>
+    <price>30.00</price>
+    <date>2001-03-10</date>
+  </book>
+</inventory>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-2.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT, city TEXT);
+    INSERT INTO customers VALUES(1, 'John Doe', 'New York');
+    INSERT INTO customers VALUES(2, 'Jane Doe', 'London');
+  }
+} {}
+
+do_test delete-row-2.1 {
+  execsql {
+    DELETE FROM customers WHERE id = 2;
+  }
+} {2}
+
+finish_test

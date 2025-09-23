@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-self-reference-1.0 {
+  execsql {
+    CREATE TABLE recent_calls(email TEXT PRIMARY KEY);
+    INSERT INTO recent_calls VALUES('alice@example.com');
+    INSERT INTO recent_calls VALUES('bob@example.com');
+  }
+} {}
+
+do_test select-self-reference-1.1 {
+  execsql {
+    SELECT email FROM recent_calls WHERE email = 'alice@example.com';
+  }
+} {alice@example.com}
+
+finish_test

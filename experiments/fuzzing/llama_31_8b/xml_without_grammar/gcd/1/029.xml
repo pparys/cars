@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item (description, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST item
+    quantity CDATA #IMPLIED
+    stock-status (in-stock|out-of-stock) "in-stock">
+]>
+<catalog>
+  <item quantity="100" stock-status="in-stock">
+    <description>This is a great item.</description>
+    <price>19.99</price>
+  </item>
+  <item quantity="50" stock-status="out-of-stock">
+    <description>Another great item.</description>
+    <price>9.99</price>
+  </item>
+</catalog>

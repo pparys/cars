@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE scores(team TEXT, jogador TEXT, pontuacao INTEGER);
+    INSERT INTO scores(team, jogador, pontuacao) VALUES('Banana Bunch', 'Jaca Jenkins', 10);
+    INSERT INTO scores(team, jogador, pontuacao) VALUES('Banana Bunch', 'Guava Gary', 20);
+    INSERT INTO scores(team, jogador, pontuacao) VALUES('Mango Mavericks', 'Berry Bee', 5);
+  }
+} {}
+
+do_test select-pontuacao-2.1 {
+  execsql {
+    SELECT pontuacao FROM scores WHERE team = 'Banana Bunch' AND jogador = 'Jaca Jenkins';
+  }
+} {10}
+
+finish_test

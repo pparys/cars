@@ -1,0 +1,6 @@
+{"name": "Eevee", 
+"id": 133, 
+"isLegendary": false, 
+"types": ["Normal"], 
+"abilities": [{"name": "Run Away", "description": "Run from wilds, fleeing battle entirely"}, {"name": "Vital Spirit", "description": "Cannot fall asleep"}], 
+"preEvolution": null}

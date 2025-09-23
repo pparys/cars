@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name, address, phone+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    age CDATA #IMPLIED>
+  <!ATTLIST name
+    type (string|integer) #IMPLIED
+    lang CDATA #IMPLIED>
+]>
+<person id="123" name="John">
+  <address>123 Main St</address>
+  <phone>123-456-7890</phone>
+  <phone>987-654-3210</phone>
+  <name type="integer" lang="en">John</name>
+</person>

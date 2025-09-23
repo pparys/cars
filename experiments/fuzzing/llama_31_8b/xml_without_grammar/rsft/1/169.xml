@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE friends [
+  <!ELEMENT friends (person+)>
+  <!ELEMENT person (name, address, phone*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST phone
+    label CDATA #IMPLIED>
+]>
+<friends>
+  <person>
+    <name>Sarah Johnson</name>
+    <address>
+      <street>123 Maple Street</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+    <phone label="home">123-456-7890</phone>
+    <phone label="work">098-765-4321</phone>
+  </person>
+  <person>
+    <name>John Doe</name>
+    <address>
+      <street>456 Oak Street</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+    <phone label="home">098-765-4321</phone>
+  </person>
+</friends>

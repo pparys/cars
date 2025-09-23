@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+, priceinfo)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT priceinfo (#PCDATA)>
+
+  <!ATTLIST book
+    author (John|Jane|Mike) #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST price
+    currency (USD|GBP|EUR) #REQUIRED
+    value CDATA #REQUIRED>
+]>
+<bookstore>
+  <priceinfo>$13.99</priceinfo>
+  <book>XML-Guide</book>
+  <price currency="USD" value="15.99"/>
+  <title>XML Book</title>
+  <book>History of Science</book>
+  <price currency="EUR" value="9.99" />
+  <title>Nature of Universe</title>
+</bookstore>

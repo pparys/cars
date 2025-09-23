@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+     title CDATA #REQUIRED
+     price CDATA #IMPLIED
+  >
+  <!ATTLIST author
+     name CDATA #IMPLIED
+     born CDATA #IMPLIED
+  >
+]>
+<library>
+  <book title="Python Programming" price="49.99">
+    <author name="John Smith" born="1990-06-15">
+      <year>2022</year>
+    </author>
+  </book>
+</library>

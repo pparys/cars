@@ -1,0 +1,33 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test primary-key-index-1.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      salary REAL,
+      department TEXT
+    );
+    INSERT INTO employees (
+      id, name, salary, department
+    ) 
+    VALUES (
+      1, 'John Doe', 50000.0, 'HR'
+    );
+    INSERT INTO employees (
+      id, name, salary, department
+    ) 
+    VALUES (
+      2, 'Jane Doe', 60000.0, 'Marketing'
+    );
+  }
+} {}
+
+do_test query-primary-key-1.1 {
+  execsql {
+    SELECT * FROM employees;
+  }
+} {1 John Doe 50000.0 HR 2 Jane Doe 60000.0 Marketing}
+
+finish_test

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer*)>
+  <!ATTLIST customers
+    id CDATA #REQUIRED>
+  <!ATTLIST customer
+    id CDATA #REQUIRED>
+]>
+<customers id="CUST123">
+  <customer id="CUST123-CUST1">
+    <person>
+      <name>Jane Doe</name>
+      <address>
+        < street>123 Main St</street>
+        <city>Anytown</city>
+        <state>CA</state>
+        <zip>12345</zip>
+      </address>
+    </person>
+  </customer>
+  <customer id="CUST123-CUST2">
+    <person>
+      <name>John Smith</name>
+      <address>
+        <street>456 Elm St</street>
+        <city>Anytown</city>
+        <state>CA</state>
+        <zip>12345</zip>
+      </address>
+    </person>
+  </customer>
+</customers>

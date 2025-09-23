@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stock_quote [
+  <!ELEMENT stock_quote (symbol,error)>
+  <!ELEMENT symbol (#PCDATA)>
+  <!ELEMENT error (code,msg)>
+  <!ELEMENT code (#PCDATA)>
+  <!ELEMENT msg (#PCDATA)>
+  <!ATTLIST stock_quote
+    exchange (NASDAQ|NYSE|AMEX) "NASDAQ">
+  <!ATTLIST symbol
+    type CDATA #IMPLIED>
+]>
+<stock_quote exchange="NASDAQ">
+  <symbol type="Common Stock">AAPL</symbol>
+  <error>
+    <code>110</code>
+    <msg>Invalid Symbol</msg>
+  </error>
+</stock_quote>

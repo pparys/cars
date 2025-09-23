@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ATTLIST library
+    name CDATA #REQUIRED
+    version CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    id CDATA #REQUIRED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author (Sports|Cooking|Technology) #REQUIRED
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED>
+  <!ATTLIST editor
+    name CDATA #REQUIRED
+    id CDATA #REQUIRED>
+]>
+<library name="My Library" version="1.0">
+  <author name="Jane Doe" id="author1">
+    <book title="Cooking Book" author="Cooking" id="book1" price="19.99" />
+    <book title="Sports Book" author="Sports" id="book2" />
+  </author>
+  <author name="John Doe" id="author2">
+    <book title="Technology Book" author="Technology" id="book3" price="29.99" />
+  </author>
+  <editor name="Editor1" id="editor1" />
+</library>

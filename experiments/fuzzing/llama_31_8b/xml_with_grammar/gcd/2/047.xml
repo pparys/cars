@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, title, chapter*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT chapter (heading, content)>
+  <!ELEMENT heading (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+
+  <!ATTLIST chapter
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<book>
+  <author>John Doe</author>
+  <title>The Great Gatsby</title>
+  <chapter id="ch1" date="1922-10-01">
+    <heading>Chapter 1: Introduction</heading>
+    <content>Gatsby was a rich man.</content>
+  </chapter>
+  <chapter id="ch2" date="1922-10-02">
+    <heading>Chapter 2: Spring Weather</heading>
+    <content>Spring weather is beautiful.</content>
+  </chapter>
+</book>

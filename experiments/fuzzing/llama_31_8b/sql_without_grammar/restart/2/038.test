@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-deals-6.0 {
+  execsql {
+    CREATE TABLE deals(id INTEGER, date TEXT, price REAL, customer TEXT);
+    INSERT INTO deals(id, date, price, customer) 
+      VALUES(601, '2022-01-01', 100.0, 'Customer A');
+    INSERT INTO deals(id, date, price, customer) 
+      VALUES(602, '2022-01-02', 200.0, 'Customer B');
+    INSERT INTO deals(id, date, price, customer) 
+      VALUES(603, '2022-01-03', 300.0, 'Customer C');
+  }
+} {}
+
+do_test order-deals-6.1 {
+  execsql {
+    SELECT date, price, customer FROM deals ORDER BY price DESC;
+  }
+} {2022-01-03 300.0 Customer C 2022-01-02 200.0 Customer B 2022-01-01 100.0 Customer A}
+
+finish_test

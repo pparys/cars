@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-products-3.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER, name TEXT, description TEXT);
+    INSERT INTO products(id, name, description) VALUES(301, 'Product 1', 'This is product 1');
+    INSERT INTO products(id, name, description) VALUES(302, 'Product 2', 'This is product 2');
+    INSERT INTO products(id, name, description) VALUES(303, 'Product 3', 'This is product 3');
+    INSERT INTO products(id, name, description) VALUES(304, 'Product 4', 'This is product 4');
+  }
+} {}
+
+do_test delete-products-3.1 {
+  execsql {
+    DELETE FROM products WHERE id = 302;
+    SELECT COUNTclid FROM products;
+  }
+} {3}
+
+finish_test

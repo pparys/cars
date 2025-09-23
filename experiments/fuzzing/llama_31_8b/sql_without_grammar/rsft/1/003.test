@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test reorder-columns-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, order_date DATE, customer_name TEXT, total REAL);
+    INSERT INTO orders VALUES(101, '2022-01-01', 'John Doe', 100.50);
+    INSERT INTO orders VALUES(102, '2022-01-02', 'Jane Doe', 200.00);
+  }
+} {}
+
+do_test select-order-1.1 {
+  execsql {
+    SELECT customer_name, total FROM orders ORDER BY customer_name DESC;
+  }
+} {Jane Doe 200.0, John Doe 100.5}
+
+finish_test

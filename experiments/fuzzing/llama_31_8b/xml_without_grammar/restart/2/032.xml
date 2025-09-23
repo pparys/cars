@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (product+,category?)>
+  <!ATTLIST inventory
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    price CDATA #REQUIRED>
+  <!ATTLIST category
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<inventory id="inv001" name="Monthly Stock Report">
+  <product id="p001" name="Smartphone" price="999.99"/>
+  <product id="p002" name="Laptop" price="1299.99"/>
+  <product id="p003" name="Tablet" price="499.99"/>
+  <category id="c001" name="Electronics"/>
+</inventory>

@@ -1,0 +1,23 @@
+{"name": "Mewtwo",
+"species": "Genetic Pokémon",
+ "id": 150,
+  
+ "types": [
+   "Psychic"
+ ],
+ 
+ "isLegendary": true,
+ 
+ "abilities": [
+   {
+     "name": "Sturdy",
+     "description": "User stays alive after being a basic damage to total health"
+   },
+   {
+     "name": "Unnerve",
+     "description": "Prevents the opponent's ability to change its focus/eliminate"
+   }
+ ],
+ 
+ "preEvolution": null
+}

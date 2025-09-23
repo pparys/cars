@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-conditional-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, salary REAL);
+    INSERT INTO employees(id, name, salary) VALUES(201, 'Emily', 5000.0);
+    INSERT INTO employees(id, name, salary) VALUES(202, 'Frank', 6000.0);
+  }
+} {}
+
+do_test delete-conditional-1.1 {
+  execsql {
+    DELETE FROM employees WHERE salary > 5500.0;
+  }
+} {}
+
+finish_test

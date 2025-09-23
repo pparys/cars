@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description,contact)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT contact (address,phone)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    type (book|music)|#REQUIRED>
+]>
+<catalog>
+  <product id="prod1" type="book">
+    <description>This is a book about programming.</description>
+    <contact>
+      <address>1 Main St</address>
+      <phone>(123) 456-7890</phone>
+    </contact>
+  </element>
+  <product id="prod2" type="music">
+    <description>This is a music album.</description>
+    <contact>
+      <address>2 Main St</address>
+      <phone>(987) 654-3210</phone>
+    </contact>
+  </product>
+</catalog>

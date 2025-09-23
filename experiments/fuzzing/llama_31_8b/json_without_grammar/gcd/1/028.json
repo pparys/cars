@@ -1,0 +1,19 @@
+{"name": "Charizard", 
+"id": 6, 
+"types": [
+"Fire", 
+"Flying"
+],
+"isLegendary": false, 
+"abilities": [
+{
+"name": "Blaze", 
+"description": "Increases their damage when their HP falls down."
+},
+{
+"name": "Solar Power", 
+"description": "Damaged by sunlight. Deals more damage during a sandstorm."
+}
+],
+"preEvolution": 
+  "name" 																																																																																																																																																																																																																																																																																																																																																																																																																																	

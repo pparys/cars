@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dir [
+  <!ELEMENT dir (#PCDATA)>
+  <!ELEMENT file EMPTY>
+  <!ELEMENT link EMPTY>
+  <!ELEMENT img EMPTY>
+  <!ATTLIST file
+    nameCDATA #REQUIRED
+    pathCDATA #IMPLIED>
+  <!ATTLIST link
+    linkCDATA #REQUIRED
+    titleCDATA #IMPLIED>
+  <!ATTLIST img
+    sourceCDATA #REQUIRED
+    descriptionCDATA #IMPLIED>
+]>
+<dir>
+  <file name="document.txt" path="/home/user/documents"/>
+  <link link="https://www.example.com" title="Example Website"/>
+  <img source="image.jpg" description="A simple image"/>
+</dir>

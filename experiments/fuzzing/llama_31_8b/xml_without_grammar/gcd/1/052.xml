@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (department*, contactTownTownInfo*)>
+  <!ELEMENT department (#PCDATA|managercompany:employee|managerdocument:document)*>
+  <!ELEMENT contactTownTownInfo (#PCDATA]>
+  <!ELEMENT managercompany:employee  (#PCDATA|managerstaff:Staff|managerdocument:document)*>
+  <!ATTLIST managercompany:employee
+    id CDATA #REQUIRED>
+  <!ATTLIST managerstaff:Staff
+    Name CDATA #REQUIRED
+    Department CDATA #IMPLIED>
+  <!ATTLIST managerdocument:document
+    name CDATA #REQUIRED
+    file CDATA #IMPLIED>
+]>
+<company>
+  <department>This is department number one.</department>
+  <department>
+    <member>Employee 2: name = Craig, role = staff.</member>
+    <managercompany:employee manager="Employee 3" id="54ad57451e243fe8f10ad6e01470e288">Dickov Doe 3 manages and made employee another human user.
+Client You Really Has A Differentlife.</managercompany:employee>
+    <managerstaff:Staff Name="Lower " Department="staff office " Age=" test run lol Test how works Name yoo age lowest Staff Name spacing loadxc faithfully.map credits rejoice picaryay specially change Title test make blows raz Back section point narrowly."
+  OF1PhCdDHshee
+    ="
+ Constitiouios You bc o space Met"JPERenameokontoirelofinallyarrInhdniceLandbreakdeskshine072perrekTargetBODYmenphiltitlewholegreerloflowersstatesynBadatinshortFetchsequfacesPropertylavBigIsregussedhirshlassenSPhisikternerxerainouttreeoptionspillfeWhileplanbrownPrincealreadymainWhenidentNewsstrategySlidehoucard814251855774691834794538071941013959981816562fujionalPremrecordsPrecPieceautoplayfoptionsscritComputerBalanceSwPlotectPrintmarkShotCleanTitlemenUSEMacroitemsStandbackupcashvarvasExcelclientIntcommowhere.applyfor250Card7401912577301715080865112953cNoSuccesssan872873NoimaginmultiBedchainsubjectmetaIdxdes862856783MerentoddthroweyeslabelsfineEngwoodSendSHtopquantlostDivingermodalprMETtopadeplmessageXDbeingobtwdownJsonapplMaggingTour

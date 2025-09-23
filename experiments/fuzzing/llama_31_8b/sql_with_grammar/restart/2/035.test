@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test default-row-type-1.0 {
+  execsql {
+    CREATE TABLE t1(a INTEGER PRIMARY KEY, b TEXT);
+    INSERT INTO t1 VALUES(10, 'value10');
+    INSERT INTO t1 VALUES(20, 'value20');
+  }
+  }
+  {}
+
+do_test default-row-type-1.1 {
+  execsql {
+    SELECT sql FROM sqlite_master WHERE name='t1' AND type='table';
+  }
+  } {CREATE TABLE t1(a INTEGER PRIMARY KEY, b TEXT)}
+
+finish_test

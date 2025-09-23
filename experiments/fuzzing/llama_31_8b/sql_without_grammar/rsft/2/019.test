@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-large-table-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER);
+    INSERT INTO orders(order_id, customer_id) VALUES(1001, 101);
+    INSERT INTO orders(order_id, customer_id) VALUES(1002, 102);
+    INSERT INTO orders(order_id, customer_id) VALUES(1003, 103);
+    INSERT INTO orders(order_id, customer_id) VALUES(1004, 104);
+    INSERT INTO orders(order_id, customer_id) VALUES(1005, 105);
+  }
+} {}
+
+do_test retrieve-large-table-1.1 {
+  execsql {
+    SELECT customer_id FROM orders WHERE order_id > 1003;
+  }
+} {104 105}
+
+finish_test

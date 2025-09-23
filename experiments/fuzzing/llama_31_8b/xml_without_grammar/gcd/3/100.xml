@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (employee*)>
+  <!ATTLIST employees
+    company CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    age CDATA #IMPLIED>
+]>
+<employees company="Example Inc." year="2022">
+  <employee id="E001" name="John Doe" age="35">
+    <position vice-president="true"/>
+    <salary currency="USD">50000</salary>
+  </employee>
+  <employee id="E002" name="Jane Smith" age="28">
+    <position vice-president="false"/>
+    <salary currency="EUR">30000</salary>
+  </employee>
+</employees>

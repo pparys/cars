@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portfolio [
+  <!ELEMENT portfolio (author, projects, skills)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT projects (project+)>
+  <!ELEMENT skill (#PCDATA)>
+  <!ELEMENT project (title, description, technologies)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT technologies (technology+)>
+  <!ELEMENT technology (#PCDATA)>
+  <!ATTLIST project
+    id CDATA #REQUIRED
+  >]>
+<portfolio>
+  <author>John Doe</author>
+  <projects>
+    <project id="project1">
+      <title>Project 1</title>
+      <description>This is a description of project 1.</description>
+      <technologies>
+        <technology>Java</technology>
+        <technology>Spring</technology>
+      </technologies>
+    </project>
+    <project id="project2">
+      <title>Project 2</title>
+      <description>This is a description of project 2.</description>
+      <technologies>
+        <technology>Ruby</technology>
+        <technology>Rails</technology>
+      </technologies>
+    </project>
+  </projects>
+  <skills>
+    <skill>Java Programming</skill>
+    <skill>Ruby on Rails</skill>
+  </skills>
+</portfolio>

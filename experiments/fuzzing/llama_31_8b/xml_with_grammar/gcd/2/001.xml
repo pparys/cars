@@ -1,0 +1,22 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE efficiency.Icon [
+  <!ELEMENT efficiency.Icon (data,fnl,goals,uncertainty)>
+  <!ATTLIST efficiency.Icon
+    name CDATA #REQUIRED
+    priority CDATA #IMPLIED>
+  <!ATTLIST data
+    max-Time CDATA #REQUIRED
+    min-Time CDATA #IMPLIED>
+  <!ATTLIST fnl
+    main-Priority CDATA #IMPLIED
+    subordinate-Priority CDATA #IMPLIED>
+  <!ATTLIST uncertainty
+    exponent-fn CDATA #IMPLIED
+    operand-fn CDATA #IMPLIED>
+]>
+<efficiency.Icon name="Critical Resource" priority="high">
+  <data max-Time="12h" min-Time="10h"/>
+  <fnl main-Priority="low" subordinate-Priority="medium"/>
+  <goals>PCPR</goals>
+  <uncertainty exponent-fn="xp" operand-fn="op"/>
+</efficiency.Icon>

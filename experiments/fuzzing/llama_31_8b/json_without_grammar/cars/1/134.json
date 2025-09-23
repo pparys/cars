@@ -1,0 +1,13 @@
+{"name":"Mew",
+"id": 151,
+"types": [
+  "Psychic"
+],
+"isLegendary": true,
+"abilities": [
+  {
+    "name": "Synchronize",
+    "description": "If the user has the Burn, Freeze, Paralysis, or Poison condition, it has a 30% chance of putting the attacker under the same condition."
+  }
+],
+"preEvolution": null}

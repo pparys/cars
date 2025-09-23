@@ -1,0 +1,15 @@
+{"name": "Alakazam",
+ "id": 64,
+ "types": ["Psychic"],
+ "isLegendary": false,
+ "abilities": [
+   {
+     "name": "Magic Bounce",
+     "description": "May bounce back any Normal or Fighting-type moves."
+   },
+   {
+     "name": "Inner Focus",
+     "description": "The user's special attack does not have a turnaround delay."
+   }
+ ],
+ "preEvolution": "Kadabra"}

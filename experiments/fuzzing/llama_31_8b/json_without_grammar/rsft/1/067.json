@@ -1,0 +1,7 @@
+{"name": "Ditto", "id": 132, "types": ["Normal"], "isLegendary": false, "abilities": [
+    {
+      "name": "Imposter",
+      "description": "if Ditto uses Transform on a Pokémon, Ditto becomes that Pokémon and assumes that Pokémon's current type(s), ability, and move, for the remainder of the battle."
+    }
+  ],
+"preEvolution": null}

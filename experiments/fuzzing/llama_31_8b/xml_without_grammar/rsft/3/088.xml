@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (author, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, price, author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<inventory>
+  <author>Jane Doe</author>
+  <book id="bk101">
+    <title>XML for Beginners</title>
+    <price>34.95</price>
+    <author>Jane Doe</author>
+  </book>
+  <book id="bk102">
+    <title>XSLT</title>
+    <price>29.95</price>
+    <author>John Smith</author>
+  </book>
+</inventory>

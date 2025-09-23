@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, publication*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (title, date, authors*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT authors (#PCDATA)>
+  <!ATTLIST publication
+    id CDATA #REQUIRED
+    year CDATA #REQUIRED>
+]>
+<library>
+  <author>Jane Doe</author>
+  <publication id="1" year="2020">
+    <title>Book Title</title>
+    <date>2020-01-01</date>
+    <authors>Jane Doe, John Doe</authors>
+  </publication>
+  <publication id="2" year="2025">
+    <title>Second Book</title>
+    <date>2025-09-03</date>
+    <authors>John Smith, Jane Smith</authors>
+  </publication>
+</library>

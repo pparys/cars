@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (-author*, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    id ID #REQUIRED>
+  <!ATTLIST book
+    id ID #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<books>
+  <author id="auth1">John Doe</author>
+  <author id="auth2">Jane Doe</author>
+  <book id="book1" title="Book on Python">This is a Python book.</book>
+  <book id="book2" title="Book on Java">This is a Java book.</book>
+</books>

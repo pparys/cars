@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*, author+, category)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    authorRefCDATA>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    experience CDATA #IMPLIED
+  >
+]>
+<library>
+  <author name="John Doe">Novice</author>
+  <category>Computer Science</category>
+  <book title="Algorithms" authorRef="#author"/>
+  <book title="Data Structures" authorRef="#author"/>
+  <author name="Jane Doe">Experienced</author>
+  <book title="Operating Systems" authorRef="#author"/>
+</library>

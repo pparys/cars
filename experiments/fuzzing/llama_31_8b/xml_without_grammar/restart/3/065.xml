@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+, address)>
+  <!ELEMENT product (name, description, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST catalog
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<catalog id="123" date="2025-09-03">
+  <product>
+    <name>Product A</name>
+    <description>This is product A</description>
+    <price>10.99</price>
+  </product>
+  <product>
+    <name>Product B</name>
+    <description>This is product B</description>
+    <price>20.99</price>
+  </product>
+  <address>123 Main St.</address>
+</catalog>

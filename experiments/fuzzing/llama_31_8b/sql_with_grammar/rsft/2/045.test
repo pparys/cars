@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE books (
+      title TEXT PRIMARY KEY,
+      author TEXT,
+      year INTEGER
+    );
+    INSERT INTO books VALUES('To Kill a Mockingbird', 'Harper Lee', 1960);
+    INSERT INTO books VALUES('1984', 'George Orwell', 1949);
+  }
+} {}
+
+do_test select-books-3.1 {
+  execsql {
+    SELECT * FROM books WHERE title = '1984' ORDER BY year DESC;
+  }
+} {1984 George Orwell 1949}
+
+finish_test

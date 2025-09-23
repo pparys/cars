@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (name+)</employees>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    state CDATA #REQUIRED
+    zip CDATA #REQUIRED>
+]>
+<employees>
+  <name>Alexander Lee</name>
+  <name>Merry Monroe</name>
+  <address street="123 Main St" city="New York" state="NY" zip="10001"/>
+  <address street="456 Broadway" city="New York" state="NY" zip="10013"/>
+</employees>

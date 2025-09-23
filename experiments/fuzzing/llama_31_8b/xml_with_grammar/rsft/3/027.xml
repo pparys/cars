@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addresses [
+  <!ELEMENT addresses ((city|address)*)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST address
+    street CDATA #IMPLIED
+    number CDATA #IMPLIED>
+  <!ATTLIST city
+    name CDATA #REQUIRED
+    population CDATA #IMPLIED>
+]>
+<addresses>
+  <city name="New York" population="8405837"/>
+  <address>123 Main St</address>
+  <city name="Chicago" population="2715800"/>
+  <address>456 Elm St</address>
+  <city name="Los Angeles" population="3990756"/>
+  <address>789 Oak St</address>
+</addresses>

@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-indexes-3.0 {
+  execsql {
+    CREATE TABLE balances(account_id INTEGER, balance REAL, last_transaction TEXT);
+    CREATE TABLE transactions(transaction_id INTEGER, account_id INTEGER, amount REAL);
+    INSERT INTO balances(account_id, balance, last_transaction) VALUES(1, 1000.0, '2022-01-01');
+    INSERT INTO balances(account_id, balance, last_transaction) VALUES(2, 2000.0, '2022-01-15');
+    INSERT INTO transactions(transaction_id, account_id, amount) VALUES(1, 1, 500.0);
+    INSERT INTO transactions(transaction_id, account_id, amount) VALUES(2, 2, 1000.0);
+  }
+} {}
+
+do_test get-balance-3.1 {
+  execsql {
+    SELECT balance FROM balances ORDER BY balance DESC LIMIT 1;
+  }
+} {2000.0}
+
+finish_test

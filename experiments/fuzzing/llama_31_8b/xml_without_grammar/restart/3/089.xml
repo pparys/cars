@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE weatherForecast [
+  <!ELEMENT weatherForecast (header,summary)>
+  <!ELEMENT header (name,location)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT location (#PCDATA)>
+  <!ELEMENT summary (day+)>
+  <!ELEMENT day (time,temperature)>
+  <!ELEMENT time (#PCDATA)>
+  <!ELEMENT temperature (#PCDATA)>
+  <!ATTLIST day
+    date CDATA #REQUIRED>
+]>
+<weatherForecast>
+  <header>
+    <name>John Doe</name>
+    <location>Los Angeles</location>
+  </header>
+  <summary>
+    <day date="2025-09-01">
+      <time>12:00 AM</time>
+      <temperature>68°F</temperature>
+    </day>
+    <day date="2025-09-02">
+      <time>12:00 PM</time>
+      <temperature>72°F</temperature>
+    </day>
+  </summary>
+</weatherForecast>

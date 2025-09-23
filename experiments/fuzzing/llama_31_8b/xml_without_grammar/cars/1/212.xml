@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author, title, publicationDate)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <book id="bk101">
+    <author>Raj Patel</author>
+    <title>Fishing Hacks</title>
+    <publicationDate>2020-01-01</publicationDate>
+  </book>
+  <book id="bk102">
+    <author>Aditi Raikar</author>
+    <title>Automotive Mechanics</title>
+    <publicationDate>2021-06-15</publicationDate>
+  </book>
+</catalog>

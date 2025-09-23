@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE employers(id INTEGER, name TEXT);
+    CREATE TABLE employees(id INTEGER, name TEXT, employer_id INTEGER, FOREIGN KEYemployer_id REFERENCES employersid);
+    INSERT INTO employers(id, name) VALUES(1, 'Company1');
+    INSERT INTO employers(id, name) VALUES(2, 'Company2');
+    INSERT INTO employees(id, name, employer_id) VALUES(1, 'John', 1);
+    INSERT INTO employees(id, name, employer_id) VALUES(2, 'Alice', 1);
+    INSERT INTO employees(id, name, employer_id) VALUES(3, 'Bob', 2);
+  }
+} {}
+
+do_test insert-violates-foreign-key-3.1 {
+  execsql {
+    UPDATE employers SET id = 1000;
+  }
+} {1 {FOREIGN KEY constraint failed: employees.employer_id=1}    
+
+
+finish_test

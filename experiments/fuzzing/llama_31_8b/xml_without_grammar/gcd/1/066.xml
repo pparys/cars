@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vehicles [
+  <!ELEMENT vehicles (car*)>
+  <!ELEMENT car (gearbox+, engine)>
+  <!ELEMENT gearbox (#PCDATA)>
+  <!ELEMENT engine (#PCDATA)>
+  <!ATTLIST car
+    brand CDATA #REQUIRED
+    model CDATA #IMPLIED>
+]>
+<vehicles>
+  <car brand="Toyota" model="Camry">
+    <gearbox>6-speed manual</gearbox>
+    <engine>2.5L 4-cylinder</engine>
+  </car>
+  <car brand="Honda" model="Civic">
+    <gearbox>5-speed automatic</gearbox>
+    <engine>1.5L turbocharged</engine>
+  </car>
+</vehicles>

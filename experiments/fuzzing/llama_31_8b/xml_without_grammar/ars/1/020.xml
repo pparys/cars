@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category+)>
+  <!ELEMENT category (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    year CDATA #REQUIRED>
+]>
+<catalog>
+  <category name="Computer Science">
+    <book author="John Donne" year="1885">Introduction to Computer Science</book>
+    <book author="Jane Smith" year="2030">Programming Language Theory</book>
+  </category>
+  <category name="Mathematics">
+    <book author="Alex Johnson" year="1805">Mathematics for Dummies</book>
+    <book author="Mike Davis" year="2000">Advanced Calculus</book>
+  </category>
+</catalog>

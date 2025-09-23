@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-unused-1.0 {
+  execsql {
+    CREATE TABLE docs(id INTEGER, title TEXT, data BLOB);
+    INSERT INTO docs VALUES(101, 'Doc_101', '{base64:YQ==}');
+    INSERT INTO docs VALUES(102, 'Doc_102', '{base64:ZQ==}');
+    INSERT INTO docs VALUES(202, 'Doc_202', '{base64:aQ==}');
+  }
+} {}
+
+do_test select-out-of-range-2.1 {
+  execsql {
+    SELECT id FROM docs WHERE data = '{base64:ZQ==}' AND id = 202;
+  }
+} {}
+
+finish_test

@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-nested-1.0 {
+  execsql {
+    CREATE TABLE parent(id INTEGER, parent_id INTEGER);
+    CREATE TABLE child(id INTEGER, parent_id INTEGER, data TEXT);
+    INSERT INTO parent VALUES(100, NULL);
+    INSERT INTO parent VALUES(101, 100);
+    INSERT INTO child VALUES(200, 101, 'data1');
+    INSERT INTO child VALUES(201, 101, 'data2');
+  }
+} {}
+
+do_test select-child-1.1 {
+  execsql {
+    SELECT data FROM child WHERE parent_id = 101;
+  }
+} {data1 data2}
+
+finish_test

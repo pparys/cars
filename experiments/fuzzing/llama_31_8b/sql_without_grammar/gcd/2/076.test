@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-checkout-4.0 {
+  execsql {
+    CREATE TABLE sales(
+      id INTEGER PRIMARY KEY,
+      product TEXT NOT NULL,
+      quantity INTEGER CHECK_QUANTITY
+    );
+    CREATE TABLE CHECK_QUANTITY(x INTEGER);
+    INSERT INTO CHECK_QUANTITY VALUES(1);
+    INSERT INTO CHECK_QUANTITY VALUES(2);
+    INSERT INTO CHECK_QUANTITY VALUES(20);
+    INSERT INTO sales(id, product, quantity) VALUES(1, 'apple', 1);
+    INSERT INTO sales(id, product, quantity) VALUES(2, 'banana', 2);
+    INSERT INTO sales(id, product, quantity) VALUES(3, 'orange', 10);
+    INSERT INTO sales(id, product, quantity) VALUES(4, 'grape', 20);
+  }
+} {}
+
+do_test update-checkout-4.1 {
+  execsql {
+    UPDATE sales SET quantity = 10 WHERE id = 4;
+  }
+  } {}
+
+finish_test

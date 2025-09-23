@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-employees-for-promotion-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, department TEXT);
+    INSERT INTO employees(id, name, department) VALUES(101, 'John', 'Sales');
+    INSERT INTO employees(id, name, department) VALUES(102, 'Jane', 'Marketing');
+    INSERT INTO employees(id, name, department) VALUES(103, 'Alice', 'HR');
+  }
+} {}
+
+do_test promote-executive-1.1 {
+  execsql {
+    SELECT name 
+    FROM employees 
+    WHERE name = 'Jane' AND department = 'Marketing';
+  }
+} {Jane}
+
+finish_test

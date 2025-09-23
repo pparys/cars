@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employee [
+  <!ELEMENT employee (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    email CDATA #IMPLIED>
+  <!ATTLIST name
+    type (personal|work) #REQUIRED>
+  <!ATTLIST phone
+    type (home|work|cell) #IMPLIED>
+]>
+<employee id="5667908" email="__saved__">
+  <name type="work">Frank Zappa</name>
+  <address>
+    <street>123 Clark street</street>
+    <city>Los Angeles</city>
+    <state>CA</state>
+    <zip>90001</zip>
+  </address>
+  <phone type="home">1234567890</phone>
+  <phone type="work">0987654321</phone>
+  <phone type="cell">9123456789</phone>
+</employee>

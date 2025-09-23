@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE products(pid INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO products(pid, name) VALUES(201, 'Product A');
+    INSERT INTO products(pid, name) VALUES(202, 'Product B');
+    INSERT INTO products(pid, name) VALUES(203, 'Product C');
+  }
+} {}
+
+do_test update-product-2.1 {
+  execsql {
+    UPDATE products SET name = 'Product X' WHERE pid = 201;
+  }
+} {}
+
+finish_test

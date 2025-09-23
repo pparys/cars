@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE records [
+  <!ELEMENT records (album+)>
+  <!ELEMENT album (track+, artist)>
+  <!ELEMENT track (#PCDATA)>
+  <!ELEMENT artist (#PCDATA)>
+  <!ATTLIST album
+    year CDATA #REQUIRED
+    title CDATA #REQUIRED>
+  <!ATTLIST track
+    number CDATA #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<records>
+  <album year="2022" title="Best Album Ever">
+    <track number="1" title="Track 1"/>
+    <track number="2" title="Track 2"/>
+    <track number="3" title="Track 3"/>
+    <artist>Jane Doe</artist>
+  </album>
+  <album year="2023" title="Best Album Yet">
+    <track number="1" title="Track 1"/>
+    <track number="2" title="Track 2"/>
+    <track number="3" title="Track 3"/>
+    <artist>John Smith</artist>
+  </album>
+</records>

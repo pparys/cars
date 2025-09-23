@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE parser [
+  <!ELEMENT parser (drivers|cache)*>
+  <!ELEMENT drivers (driver+)>
+  <!ATTLIST driver
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED
+  >
+  <!ATTLIST cache
+    type CDATA #REQUIRED
+    size CDATA #IMPLIED
+  >
+]>
+<parser>
+  <drivers>
+    <driver id="default" type="builtin"/>
+    <driver id="custom" type="third-party"/>
+  </drivers>
+  <cache type="LRU" size="1024"/>
+</parser>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<library>
+  <book title="To Kill a Mockingbird" author="Harper Lee">A classic novel about racial injustice.</book>
+  <book title="1984" author="George Orwell">A dystopian novel depicting the dangers of totalitarianism.</book>
+</library>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-order-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY AUTOINCREMENT, customer TEXT, order_count INTEGER);
+    INSERT INTO orders(customer, order_count) VALUES('John Doe', 5);
+    INSERT INTO orders(customer, order_count) VALUES('Jane Doe', 3);
+  }
+} {}
+
+do_test select-orders-3.1 {
+  execsql {
+    SELECT customer FROM orders ORDER BY order_count DESC LIMIT 1;
+  }
+} {John Doe}
+
+finish_test

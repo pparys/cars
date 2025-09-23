@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE numbers(id INTEGER PRIMARY KEY, value INTEGER);
+    CREATE TABLE squares(id INTEGER PRIMARY KEY, number_id INTEGER, value INTEGER);
+  INSERT INTO numbers VALUES(1, 2);
+    INSERT INTO numbers VALUES(2, 3);
+    INSERT INTO squares VALUES(1, 1, 4);
+    INSERT INTO squares VALUES(2, 2, 9);
+  }
+} {}
+
+do_test select-squares-1.1 {
+  execsql {
+    SELECT n.*, s.* 
+    FROM numbers AS n 
+    ORDER BY n,value DESC
+  LIMIT 1
+  ;
+  }
+} {2 3 1 2 4}
+
+finish_test

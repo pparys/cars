@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT countries (country+)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST country
+    code CDATA #REQUIRED>
+  <!ATTLIST address
+    id ID #REQUIRED>
+]>
+<address id="addr-1">
+  <street>123 Main street</street>
+  <city>New York</city>
+  <state>NY</state>
+  <zip>10001</zip>
+  <countries>
+    <country code="USA">United States</country>
+    <country code="CAN">Canada</country>
+  </countries>
+</address>

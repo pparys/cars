@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE staff(employee_id INTEGER PRIMARY KEY, 
+                       name TEXT UNIQUE, 
+                       email TEXT);
+    INSERT INTO staff(employee_id, name, email) 
+              VALUES(1, 'John Doe', 'john@example.com');
+    INSERT INTO staff(employee_id, name, email) 
+              VALUES(2, 'Jane Doe', 'jane@example.com');
+  }
+} {}
+
+do_test delete-violates-1.1 {
+  execsql {
+    DELETE FROM staff WHERE employee_id = 1;
+  }
+} {}
+
+finish_test

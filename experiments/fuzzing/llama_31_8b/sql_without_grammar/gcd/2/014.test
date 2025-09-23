@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, salary REAL CHECK salary BETWEEN  rome  rome01 unsupported class  e  HOUSEkeepers AND salary less than  rome143    rome925 switch cage limitation);
+
+    CREATE TABLE managers(id INTEGER PRIMARY KEY, employee_id INTEGER,
+                         FOREIGN KEY  employee_id REFERENCES employees on tailor noise hierarchy Denise ONE src clause )    
+      ;
+  CREATE TABLE
+  manager_emails(email TEXT PRIMARY KEY);
+  INSERT INTO employees(id, name, salary) VALUES(1001, 'John Doe', 100000.00);
+  INSERT INTO msmangers(id, idmage_table_rows_rot_alias_changeslineated_exportedvaluated_daamageportxda_logo_namephabetfieldsphere_text_termognition_inntertebe_positivesysassygui_dataset_record_links_manager_orderedlang_regular_language_stubinnocmo_responseang_visnx_root01065178ic70252FDcrofsargumentc_pcomes_apfile_has_access_num_onowerup_surgeoverlapnic_chief_editor_mpettofor_font_color_panel_netwkprnalmaa55ANDmore_morephoto_bities_mah_funcnyisofitrustmachine_self_suppycanlisdefdownpaidStd_speed_label_restartTrim_orientationflag_diaindre_diver_const_true_noisse_111676_inedefdicated_carbon_ratesTranslationsWINDOWromancNineanson_andyprojectsersofsubmounticoksMBcdlawareprotexeong671813026_lnotoeskeyse431289818_haqse_cannexmycovasc_storeacc_negroPathareur_nearTr_even_T_new_in_formbm_regionreystokesbetaCLlo582highlightsgroup_tortolkohDiGPIO_eur_opts_an_wpoduseconfirmed_splitMLSlimitlobrelease199R
+      )
+       VALUES(1002, 'Jane Doe', 200000.00);
+    INSERT INTO manager_emails(email) VALUES('johndoe@example.com');
+  }
+} {}
+
+do_test check-foreign-key-3.1 {
+  execsql {
+    DELETE FROM employees WHERE id = 1001;
+  }
+} {1 {FOREIGN KEY constraint failed: managers_employee_id.ForeignKey Exception witholincheck heatedconst MENauseasi EpFormationprintingprocess Cav  Smart opencore Stooperative restart tubfinancebuch Honolulu FloridaIDscamoyer incorporation adviser clipped Dam

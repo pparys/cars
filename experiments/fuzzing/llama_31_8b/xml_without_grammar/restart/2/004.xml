@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, price, author+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+  >]>
+<library>
+  <author>John Doe</author>
+  <author>Jane Doe</author>
+  <book isbn="978-1-234-56789-0">
+    <title>The Great Gatsby</title>
+    <price>29.99</price>
+    <author>John Doe</author>
+  </book>
+  <book isbn="978-1-234-56790-7">
+    <title>The Great Expectations</title>
+    <price>19.99</price>
+    <author>Jane Doe</author>
+  </book>
+</library>

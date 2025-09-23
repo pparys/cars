@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book>Harry Potter and the Philosopher's Stone</book>
+  <book>Analysis of variance</book>
+  <book The="Theory of Architecture" author='Hamid-Reza Avakh' year="1246">Introduction to emerging urbanism findings</book>
+</library>

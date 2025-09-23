@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-documents-3.0 {
+  execsql {
+    CREATE TABLE documents(id INTEGER PRIMARY KEY, name TEXT NOT NULL, 
+                          author TEXT NOT NULL, created_at DATE NOT NULL);
+    INSERT INTO documents(name, author, created_at) 
+    VALUES('Document 1', 'Author A', '2020-01-01');
+    INSERT INTO documents(name, author, created_at) 
+    VALUES('Document 2', 'Author B', '2020-01-02');
+  }
+} {}
+
+do_test select-author-3.1 {
+  execsql {
+    SELECT author FROM documents WHERE name = 'Document 1';
+  }
+} {Author A}
+
+finish_test

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config [
+  <!ELEMENT config (#PCDATA)>
+  <!ATTLIST config
+    name CDATA #REQUIRED
+    version CDATA #IMPLIED>
+]>
+<config name="my_config" version="1.0"> 
+  <setting id="setting1">value1</setting> 
+  <setting id="setting2">value2</setting> 
+</config>

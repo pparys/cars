@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCRTEXT)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT isbn (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="bk101" price="$10.95">
+    <title>Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <isbn>978-0-679-45750-2</isbn>
+  </book>
+  <book id="bk102" price="$6.99">
+    <title>Harry Potter</title>
+    <author>J.K. Rowling</author>
+    <isbn>978-0-7434-0500-9</isbn>
+  </book>
+</catalog>

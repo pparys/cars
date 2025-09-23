@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE scores(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      score INTEGER,
+      INDEX idx_name_score ON scores name, score
+    );
+    INSERT INTO scores(id, name, score) VALUES(1, 'Alice', 90);
+    INSERT INTO scores(id, name, score) VALUES(2, 'Bob', 95);
+    INSERT INTO scores(id, name, score) VALUES(3, 'Charlie', 85);
+  }
+} {}
+
+do_test lookup-name-and-score-3.1 {
+  execsql {
+    SELECT id FROM scores WHERE name = 'Bob' AND score > 90;
+  }
+} {2}
+
+finish_test

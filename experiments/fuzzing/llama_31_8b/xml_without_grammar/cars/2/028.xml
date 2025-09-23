@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (employee*)>
+  <!ELEMENT employee (#PCDATA | address | phone)*>
+  <!ELEMENT address (#PCDATA | street | city | state | zip)*>
+  <!ATTLIST employee
+    id ID #REQUIRED
+    name CDATA #IMPLIED>
+  <!ATTLIST address
+    type CDATA #IMPLIED>
+]>
+<employees>
+  <employee id="1" name="John Doe">
+    Repairs cars at <address type="home">123 Main St</address>
+    and takes calls at <address type="work">456 Elm St</address>
+    You can reach him by phone at <phone>555-555-5555</phone>
+  </employee>
+  <employee id="2" name="Jane Smith">
+    Sales cars at <address type="work">789 Oak St</address>
+    and works best via email at <address type="home">jane.smith@e-mail.net</address>
+    You can also find her on social media via <phone>many phone numbers online</phone>
+  </employee>
+</employees>

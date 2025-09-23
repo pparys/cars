@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA|title|author|price|year)*>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #IMPLIED>
+  <!ATTLIST title
+    type CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #IMPLIED>
+  <!ATTLIST price
+    currency CDATA #IMPLIED>
+  <!ATTLIST year
+    type CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="bk101">
+    <title type="main">Everyday Italian</title>
+    <author name="Giada De Laurentiis">
+      <price currency="USD">30.00</price>
+      <year type="print">October 2005</year>
+    </author>
+  </book>
+  <book id="bk102">
+    <title type="main">Java Cookbook</title>
+    <author name="Seymour Write">
+      <price currency="USD">56.99</price>
+      <year type="print">November 2005</year>
+    </author>
+  </book>
+  <book id="bk103">
+    <title type="sub">Web Site Solutions</title>
+    <author name="Tony Gaddis">
+      <price currency="USD">$49.99</price>
+      <year type="print">December 2002</year>
+    </author>
+  </book>
+</catalog>

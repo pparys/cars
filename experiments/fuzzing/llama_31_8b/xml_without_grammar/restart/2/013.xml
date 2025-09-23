@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (store*)>
+  <!ELEMENT store (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST store
+    id CDATA #REQUIRED
+    address CDATA #IMPLIED
+  >
+]>
+<inventory>
+  <store id="S1" address="123 Main St">
+    <product>chair</product>
+    <product>table</product>
+  </store>
+  <store id="S2" address="456 Elm St">
+    <product>phone</product>
+  </store>
+</inventory>

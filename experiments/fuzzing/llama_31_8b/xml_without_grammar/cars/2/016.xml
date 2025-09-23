@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, publication)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication (#PCDATA, price?)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST price
+    value CDATA #IMPLIED>
+]>
+<library xmlns="http://www.example.com/library">
+  <book id="b1" year="2020">
+    <author>John Doe</author>
+    <title>The Great Book</title>
+    <publication>Ashland Creek Press</publication>
+    <price value="42.99"/>
+  </book>
+  <book id="b2" year="2018">
+    <author>Jane Smith</author>
+    <title>Theories and The Truth</title>
+    <publication>Kaliq Mulierin</publication>
+  </book>
+</library>

@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "User stays on its feet and is immune to being forced to switch out, even when the HP is 0"}, {"name": "Unaware", "description": "User ignores stat changes caused by opponent moves"}], "preEvolution": null}

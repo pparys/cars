@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA, brand+)>
+  <!ELEMENT brand (#PCDATA, product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+    price CDATA #IMPLIED>
+]>
+
+<catalog>
+  <brand>Apple</brand>
+  <brand>Google</brand>
+  <product id="X1" price="2499.99">iPhone 15</product>
+  <product id="X2" price="2999.99">iPhone 15 Pro</product>
+</catalog>

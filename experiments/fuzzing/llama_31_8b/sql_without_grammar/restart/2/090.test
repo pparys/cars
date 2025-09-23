@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-insert-1.0 {
+  execsql {
+    CREATE TABLE products(product_id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO products(product_id, name) VALUES(1, 'Laptop');
+    INSERT INTO products(product_id, name) VALUES(2, 'Desktop');
+    INSERT INTO products(product_id, name) VALUES(3, 'Tablet');
+  }
+} {}
+
+do_test update-and-insert-1.1 {
+  execsql {
+    UPDATE products SET name = 'Smartphone' WHERE product_id = 1;
+    SELECT product_id, name FROM products ORDER BY product_id;
+  }
+} {1 Smartphone 2 Desktop 3 Tablet}
+
+finish_test

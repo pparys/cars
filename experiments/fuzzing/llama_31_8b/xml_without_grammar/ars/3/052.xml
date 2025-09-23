@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author,book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <author>Jane Doe</author>
+  <book>Introduction to Programming</book>
+  <book>Algorithms and Data Structures</book>
+  <book title="Data Analysis" year="2020"/>
+</library>

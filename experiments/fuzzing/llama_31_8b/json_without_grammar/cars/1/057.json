@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sture Strike", "description": "10 damage inflicted on the target.  Has a 10% chance to paralyze."}, {"name": "Unnerve", "description": "Opponent's ability cannot set the foe's speed stat after an attack."}], "preEvolution": null}

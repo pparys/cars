@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-2.0 {
+  execsql {
+    CREATE TABLE orders(head_id INTEGER PRIMARY KEY, total DECIMAL);
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO orders VALUES(101, 12.99);
+    INSERT INTO products VALUES(1, 'Product A');
+    INSERT INTO products VALUES(2, 'Product B');
+  }
+} {}
+
+do_test insert-products-2.1 {
+  execsql {
+    SELECT name FROM products ORDER BY id LIMIT 1;
+  }
+} {Product A}
+
+finish_test

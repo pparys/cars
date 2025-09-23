@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contacts [
+  <!ELEMENT contacts (contact*)>
+  <!ELEMENT contact (name, phone, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT company (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT website (#PCDATA)>
+  <!ELEMENT timezone (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST contact
+    id CDATA #REQUIRED>
+]>
+<contacts>
+  <contact id="1">
+    <name>John Doe</name>
+    <phone>123-456-7890</phone>
+    <address>123 Main St, NY, USA</address>
+    <company>ABC Corporation</company>
+    <email>johndoe@example.com</email>
+    <website>www.example.com</website>
+    <timezone>EST</timezone>
+    <city>New York</city>
+    <country>USA</country>
+  </contact>
+  <contact id="2">
+    <name>Jane Smith</name>
+    <phone>987-654-3210</phone>
+    <address>456 Broadway, CA, USA</address>
+    <company>XYZ Inc.</company>
+    <email>janedoe@example.com</email>
+    <website>www.example2.com</website>
+    <timezone>PST</timezone>
+    <city>San Francisco</city>
+    <country>USA</country>
+  </contact>
+</contacts>

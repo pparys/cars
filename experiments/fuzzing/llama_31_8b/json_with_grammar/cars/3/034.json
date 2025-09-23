@@ -1,0 +1,1 @@
+{"name": "Arcanine", "id": 59, "types": ["Fire"], "isLegendary": false, "ability": {"name": "Flash Fire", "description": "Unit's Atk is halved when hit by a Fire-type move, and when a hits this Pokémon with a Fire-type move, Unit's SpA is doubled"}, "evolutions": [{"name": "Growlithe", "isFinal": false}, {"name": "Arcanine", "isFinal": true}], "preEvolution": null}

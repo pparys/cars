@@ -1,0 +1,1 @@
+{"name": "Gyarados", "id": 130, "types": ["Water", "Flying"], "isLegendary": true, "abilities": [{"name": "Intimidate", "description": "Lowers the opponent's Attack stat."}, {"name": "Moxie", "description": "Increasing the user's Attack stat after a KO."}], "preEvolution": null}

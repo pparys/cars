@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, ISBN)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT ISBN (#PCDATA)>
+  <!ATTLIST book
+    year CDATA #IMPLIED>
+  <!ATTLIST book
+    publisher CDATA #IMPLIED>
+]>
+<library>
+  <book year="2020" publisher="Penguin Books">
+    <author>John Smith</author>
+    <title>The Great Gatsby</title>
+    <ISBN>9780141439566</ISBN>
+  </book>
+  <book year="2010" publisher="Doubleday">
+    <author>F.Scott Fitzgerald</author>
+    <title>The Great Gatsby</title>
+    <ISBN>9780385472135</ISBN>
+  </book>
+</library>

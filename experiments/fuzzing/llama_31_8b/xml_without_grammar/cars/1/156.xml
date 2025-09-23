@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book, book*, catalog)>
+  <!ELEMENT book (title, author, publication Date, copy)>
+  <!ELEMENT catalog (genre, title)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ELEMENT copy (status, borrowers)>
+  <!ELEMENT status (#PCDATA)>
+  <!ELEMENT borrowers (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+  >
+  <!ATTLIST catalog
+    id ID #REQUIRED
+  >
+]>
+<library>
+  <book id="book1">
+    <title>Harry Potter</title>
+    <author>J.K. Rowling</author>
+    <publicationDate>2000</publicationDate>
+    <copy status="available" borrowers="none">
+      <status>Available</status>
+      <borrowers>No shoppers</borrowers>
+    </copy>
+  </book>
+  <book id="book2">
+    <title>Lord of the Rings</title>
+    <author>J.R.R. Tolkien</author>
+    <publicationDate>2001</publicationDate>
+    <copy status="available" borrowers="none">
+      <status>Available</status>
+      <borrowers>No shoppers</borrowers>
+    </copy>
+  </book>
+  <catalog id="catalog1">
+    <genre>Fiction</genre>
+    <title>Science Fiction</title>
+  </catalog>
+</library>

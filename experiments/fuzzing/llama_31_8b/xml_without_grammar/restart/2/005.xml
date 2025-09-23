@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (store*, author+, book)>
+  <!ELEMENT store (#PCDATA)>
+  <!ELEMENT author (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT book (title, author-ref)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author-ref (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED>
+]>
+<bookstore>
+  <store>Store 1</store>
+  <store>Store 2</store>
+  <author>
+    <name>Author 1</name>
+    <address>Address 1</address>
+  </author>
+  <author>
+    <name>Author 2</name>
+    <address>Address 2</address>
+  </author>
+  <book isbn="1234567890">
+    <title>Example Book</title>
+    <author-ref>Author 1</author-ref>
+  </book>
+  <book isbn="0987654321">
+    <title>Another Book</title>
+    <author-ref>Author 2</author-ref>
+  </book>
+</bookstore>

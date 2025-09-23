@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, year)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+      id CDATA #IMPLIED
+      rating CDATA #IMPLIED
+  >
+]>
+<library>
+  <book id="bk101" rating="5">
+   <author>John Smith</author>
+   <title>XML for Beginners</title>
+   <year>2002</year>
+  </book>
+  <book id="bk102" rating="4">
+   <author>Jane Doe</author>
+   <title>XSLT Essentials</title>
+   <year>2004</year>
+  </book>
+</library>

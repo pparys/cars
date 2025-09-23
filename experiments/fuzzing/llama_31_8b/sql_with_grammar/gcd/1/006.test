@@ -1,0 +1,39 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+do_test setup-data-1.0 {
+  execsql {
+    CREATE TABLE sales(
+      id INTEGER,
+      product TEXT,
+      quantity INTEGER,
+      price REAL,
+      total REAL CHECKSUM price AND quantity
+    );
+    INSERT INTO sales(id, product, quantity, price, total) VALUES(1, 'productA', 2, 10.99, 21.98);
+    INSERT INTO sales(id, product, quantity, price, total) VALUES(2, 'productB', 3, 9.99, 29.97);
+  }
+} {}
+
+do_test select-data-1.1 {
+  execsql {
+    SELECT price, product, total
+    FROM sales
+    WHERE total < 30 AND quantity > 2
+ 	ORDER BY price DESC;
+  }
+} {{9.99 productB 29.97}
+  	 
+ 	
+
+
+
+	
+        
+  
+    
+
+  		
+
+
+
+finish_test

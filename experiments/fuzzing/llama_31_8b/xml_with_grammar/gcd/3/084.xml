@@ -1,0 +1,29 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (person, address, phone)>
+  <!ELEMENT person (name, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT address (street, city, country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST root
+    id CDATA #REQUIRED
+  >
+]>
+<root id="R123"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://example.org/choice http://example.org/choice.xsd">
+  <person>
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+  </person>
+  <address>
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <country>USA</country>
+  </address>
+  <phone>555-555-5555</phone>
+</root>

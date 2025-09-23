@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description, category, stock)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT category (sub-category+, price)>
+  <!ELEMENT sub-category (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT stock (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    type (electronic|furniture) #REQUIRED
+  >
+]>
+<product id="123" type="furniture">
+  <description>This is a high-quality office desk.</description>
+  <category>
+    <sub-category>Home Decor</sub-category>
+    <sub-category>Furniture</sub-category>
+    <price>$999.99</price>
+  </category>
+  <stock>10</stock>
+</product>

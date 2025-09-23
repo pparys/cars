@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-create-table-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE categories(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE posts(id INTEGER PRIMARY KEY, title TEXT, category_id INTEGER, 
+                      FOREIGN KEY categoryId REFERENCES categories);
+    INSERT INTO categories(id, name) VALUES(1, 'category1');
+    INSERT INTO posts(id, title, category_id) VALUES(1, 'post1', 1);
+  }
+} {}
+
+do_test exists-post-in-category-1.1 {
+  execsql {
+    SELECT EXISTS 
+      FROM categories AS c
+      WHERE c_id = 1 AND 
+            EXISTS 
+              AND p_categoryId = 1;
+  }
+} {1}
+
+finish_test

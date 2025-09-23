@@ -1,0 +1,19 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE album [
+  <!ELEMENT album (artist, tracks+)>
+  <!ELEMENT artist (#PCDATA)>
+  <!ELEMENT tracks (track+)>
+  <!ELEMENT track (#PCDATA)>
+  <!ATTLIST track
+    title CDATA #REQUIRED
+    duration CDATA #REQUIRED
+    genre CDATA #IMPLIED>
+]>
+<album>
+  <artist>The Beatles</artist>
+  <tracks>
+    <track title="Yesterday" duration="2:07" genre="Pop"/>
+    <track title="Hey Jude" duration="3:35" genre="Rock"/>
+    <track title="Let It Be" duration="3:21" genre="Rock"/>
+  </tracks>
+</album>

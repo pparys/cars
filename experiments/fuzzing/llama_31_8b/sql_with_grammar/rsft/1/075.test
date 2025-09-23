@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY AUTOINCREMENT, product TEXT NOT NULL);
+    INSERT INTO orders(product) VALUES('product1');
+    INSERT INTO orders(product) VALUES('product2');
+  }
+} {}
+
+do_test select-orders-2.1 {
+  execsql {
+    SELECT id, product FROM orders
+    ORDER BY id DESC
+    LIMIT 1;
+  }
+} {[%NULL product 1 product1]}
+
+finish_test

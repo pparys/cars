@@ -1,0 +1,13 @@
+{"name": "Mew",
+ "id": 150,
+ "types": [
+    "Psychic"
+  ],
+ "isLegendary": true,
+ "abilities": [
+    {
+      "name": "Synchronize",
+      "description": "Any status condition afflicting the Pokémon spreads to the caller."
+    }
+  ],
+ "preEvolution": "Mewtwo"}

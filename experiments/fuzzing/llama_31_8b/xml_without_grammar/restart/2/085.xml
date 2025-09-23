@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, publisher, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST author
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST author
+    email CDATA #IMPLIED
+  >
+  <!ATTLIST book
+    title CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    publicationDate CDATA #REQUIRED
+  >
+]>
+<book title="Introduction to XML" publicationDate="2023-07-26">
+  <author id="A1" name="John Doe" email="john@example.com">Author of book</author>
+  <publisher IID="P1" location="New York">Example Publisher</publisher>
+  <price currency="USD" value="29.99"/>
+</book>

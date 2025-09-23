@@ -1,0 +1,9 @@
+{"name": "Tropius", "id": 370, "types": ["Grass", "Flying"],
+"healthStats": {"hp": 75, "attack": 83, "defense": 60, "specialAttack": 45, "specialDefense": 100, "speed": 31},
+"abilities": [
+  {"name": "Regenerator", "description": "Restores HP at the end of each turn."},
+  {"name": "Harvest", "description": "Allows the Pokémon to harvest Berries."},
+  {"optional": true}
+],
+"isLegendary": false, 
+"preEvolution": null}

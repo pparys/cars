@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*, contributor)>
+  <!ELEMENT product (description, price, manufacturer)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT manufacturer (#PCDATA)>
+  <!ELEMENT contributor (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    brand CDATA #IMPLIED>
+  <!ATTLIST contributor
+    role CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="ABC123" brand="Nike">
+    <description>Sports shoe for men</description>
+    <price>$59.99</price>
+    <manufacturer>Nike Corporation</manufacturer>
+  </product>
+  <product id="XYZ456" brand="Adidas">
+    <description>Running shoe for women</description>
+    <price>$69.99</price>
+    <manufacturer>Adidas Inc.</manufacturer>
+  </product>
+  <contributor role="Designer" name="John Doe"/>
+  <contributor role="Developer" name="Jane Smith"/>
+</catalog>

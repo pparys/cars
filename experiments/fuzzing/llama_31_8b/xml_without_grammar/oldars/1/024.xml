@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (item*)>
+  <!ELEMENT item (description|quantity|price|category)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST item
+    id ID #REQUIRED
+  >
+]>
+<inventory>
+  <item id="1">
+    <description> item 1 </description>
+    <category>Electronics</category>
+  </item>
+  <item id="2">
+    <description> item 2 </description>
+    <price>150.00</price>
+  </item>
+  <item id="3">
+    <quantity>10</quantity>
+    <category>Clothing</category>
+  </item>
+</inventory>

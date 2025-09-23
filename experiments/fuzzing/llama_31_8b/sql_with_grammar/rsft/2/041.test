@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE customers(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      city TEXT,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+    
+    INSERT INTO customers(id, name, city) VALUES(1, 'ACME Inc.', 'New York');
+    INSERT INTO customers(id, name, city) VALUES(2, 'XYZ Corp.', 'Chicago');
+    INSERT INTO customers(id, name, city) VALUES(3, 'ABC LLC.', 'Los Angeles');
+  }
+} {}
+
+do_test select-city-2.1 {
+  execsql {
+    SELECT city 
+    FROM customers 
+    WHERE id = 2 
+    ORDER BY city ASC;
+  }
+} {Chicago}
+
+finish_test

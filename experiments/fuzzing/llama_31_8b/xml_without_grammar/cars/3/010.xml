@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, title, publisher, genre)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+]>
+<book id="1234567890">
+  <author>Evelyn Underhill</author>
+  <title>Mysticism</title>
+  <publisher> Faber and Faber</publisher>
+  <genre>Philosophy</genre>
+</book>

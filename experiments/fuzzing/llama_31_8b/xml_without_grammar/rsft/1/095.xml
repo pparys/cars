@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*, customer*)>
+  <!ELEMENT product (#PCDATA|description|price|image)*>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ELEMENT customer (#PCDATA|order*)>
+  <!ELEMENT order (#PCDATA|item*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST customer
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST order
+    id CDATA #REQUIRED>
+]>
+<catalog>
+  <product id="P1" name="Product 1">
+    <description>This is a description of product 1.</description>
+    <price>19.99</price>
+    <image><link href="image1.jpg"></link></image>
+  </product>
+  <customer id="C1" name="John Doe">
+    <order id="O1">
+      <item>Product 2</item>
+      <item>Product 3</item>
+    </order>
+    <order id="O2">
+      <item>Product 4</item>
+    </order>
+  </customer>
+</catalog>

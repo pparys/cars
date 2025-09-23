@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ATTLIST bookstore
+    xmlns CDATA #REQUIRED>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<bookstore xmlns="http://www.example.com/bookstore">
+  <book author="John Doe" year="2001">
+    <title_ELEM>XML Tutorial</title_ELEM>
+    <description>This is a computer science course</description>
+  </book>
+  <book author="Jane Doe" year="2002">
+    <title_ELEM>Java Programming</title_ELEM>
+    <description>This is a programming course</description>
+  </book>
+</bookstore>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+  <!ELEMENT students (student | teacher)*>
+  <!ELEMENT student (#PCDATA | name | course)*>
+  <!ELEMENT teacher (#PCDATA | name | subject)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT course (#PCDATA)>
+  <!ELEMENT subject (#PCDATA)>
+  <!ATTLIST student
+    id ID #REQUIRED
+    age CDATA #IMPLIED>
+  <!ATTLIST teacher
+    id ID #REQUIRED
+    experience CDATA #IMPLIED>
+]>
+<students>
+  <student id="S1" age="20">I am a student</student>
+  <student id="S2" age="21">
+    <name>John</name>
+    <course>Math</course>
+  </student>
+  <teacher id="T1" experience="10">I am a teacher</teacher>
+  <teacher id="T2" experience="15">
+    <name>Jane</name>
+    <subject>Science</subject>
+  </teacher>
+</students>

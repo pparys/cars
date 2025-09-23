@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+|author+)>
+  <!ELEMENT book (#PCDATA|author|price|genre)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <book id="BK123">Java Programming</book>
+  <book id="BK234">Python Programming</book>
+  <author>John Doe</author>
+  <price>24.99</price>
+  <genre>Programming</genre>
+</catalog>

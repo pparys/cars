@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA)>
+  <!ELEMENT product EMPTY>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    color CDATA #IMPLIED>
+  <!ATTLIST catalog
+    author CDATA #IMPLIED
+    created CDATA #REQUIRED>
+]>
+<catalog author="John Doe" created="2023-01-01">
+    <product id="123" color="red">
+        <title>Sample Product</title>
+        <price>10.99</price>
+    </product>
+</catalog>

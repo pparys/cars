@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE response [
+  <!ELEMENT response (header, body)>
+  <!ELEMENT header (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+  <!ATTLIST response
+    id ID #REQUIRED
+    status CDATA #IMPLIED>
+]>
+<response id="res12345" status="ok">
+  <header>Header text</header>
+  <body>This is the body of the response.</body>
+</response>

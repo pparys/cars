@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note [
+  <!ELEMENT note (title, body)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+  <!ATTLIST note
+    author CDATA #REQUIRED
+    date CDATA #REQUIRED>
+]>
+<note author="John Smith" date="2024-07-26">
+  <title>New Task</title>
+  <body>Complete the project report</body>
+</note>

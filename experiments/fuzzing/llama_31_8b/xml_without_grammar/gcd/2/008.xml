@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name,contact August)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ELEMENT August (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT interest (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+]>
+<person id="123456" name="John Doe">
+  <name>John Doe</name>
+  <contact>123 Main Street</contact>
+  <August>Weekend Diva</August>
+  <address>123 Main Street</address>
+  <phone>123-456-7890</phone>
+  <email>johndoe@example.com</email>
+  <interest>Cooking, Music, Reading</interest>
+</person>

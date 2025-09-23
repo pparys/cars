@@ -1,0 +1,1 @@
+{"name": "Pikachu", "id": 25, "types": ["Electric"], "isLegendary": false, "abilities": [{"name": "Static", "description": "30% chance to paralyze target."}, {"name": "Lightning Rod", "description": "Attracts Electric-type moves."}], "preEvolution": null}

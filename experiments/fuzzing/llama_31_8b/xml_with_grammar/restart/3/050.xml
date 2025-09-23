@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, advertisement?)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT advertisement EMPTY>
+  <!ATTLIST advertisement
+    type (news|sale) #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #IMPLIED
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<catalog>
+  <book title="Harry Potter and the Philosopher's Stone" author="J.K. Rowling" year="1997">A magical fantasy novel.</book>
+  <book title="The Lord of the Rings" author="J.R.R. Tolkien" year="1954">A high fantasy novel.</book>
+  <advertisement type="news" date="2025-09-03">Breaking News: Apple Introduces the iPhone 14.</advertisement>
+</catalog>

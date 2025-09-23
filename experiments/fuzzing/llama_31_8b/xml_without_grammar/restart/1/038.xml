@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE orders [
+  <!ELEMENT orders (order+)>
+  <!ELEMENT order (customer+, product+)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ELEMENT product (price, quantity)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ATTLIST order
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST customer
+    id CDATA #IMPLIED
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED
+    price CDATA #REQUIRED
+    quantity CDATA #IMPLIED>
+]>
+<orders>
+  <order id="ORD-123" date="2024-01-01T12:00:00">
+    <customer id="CUS-001" name="John Smith" email="john.smith@example.com"/>
+    <customer id="CUS-002" name="Jane Doe" email="jane.doe@example.com"/>
+    <product id="PROD-001" name="Apple" description="Red fruit" price="1.99" quantity="5"/>
+    <product id="PROD-002" name="Banana" description="Yellow fruit" price="0.99" quantity="10"/>
+  </order>
+  <order id="ORD-456" date="2024-02-01T12:00:00">
+    <customer id="CUS-003" name="Bob Johnson" email="bob.johnson@example.com"/>
+    <product id="PROD-003" name="Orange" description="Orange fruit" price="2.49" quantity="8"/>
+  </order>
+</orders>

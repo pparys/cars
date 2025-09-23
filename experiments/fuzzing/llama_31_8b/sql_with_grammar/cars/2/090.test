@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, order_date TEXT);
+    INSERT INTO orders VALUES(1, '2022-01-01');
+    INSERT INTO orders VALUES(2, '2022-01-15');
+  }
+} {}
+
+do_test select-orders-3.1 {
+  execsql {
+    SELECT order_date FROM orders WHERE id = 2;
+  }
+} {2022-01-15}
+
+finish_test

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+ | title | year*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    genre (fiction | non-fiction) #REQUIRED
+    language (english | french | spanish)>
+]>
+<library>
+  <author>John Smith</author>
+  <author>Jane Doe</author>
+  <title>The Great Gatsby</title>
+  <year>1925</year>
+  <year>2022</year>
+  <book id="BK101" genre="fiction" language="english">Pride and Prejudice</book>
+</library>

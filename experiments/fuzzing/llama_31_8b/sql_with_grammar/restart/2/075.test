@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE products(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      price NUMERIC
+    );
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      product_id INTEGER,
+      quantity INTEGER,
+      FOREIGN KEY product_id REFERENCES products
+    );
+    INSERT INTO products(id, name, price) VALUES(1, 'Product A', 10.00);
+    INSERT INTO products(id, name, price) VALUES(2, 'Product B', 20.00);
+    INSERT INTO orders(id, product_id, quantity) VALUES(1, 1, 2);
+  }
+} {}
+
+do_test delete-order-3.1 {
+  execsql {
+    DELETE FROM orders WHERE id = 1;
+  }
+} {}
+finish_test

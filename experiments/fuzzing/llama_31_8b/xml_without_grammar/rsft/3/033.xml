@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (name, price, warranty*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT warranty (#PCDATA)>
+  <!ATTLIST warranty
+    type (cd|warranty) #REQUIRED
+  >
+]>
+<products>
+  <product>
+    <name>Samsung TV</name>
+    <price>999.99</price>
+    <warranty type="cd">2 Years</warranty>
+  </product>
+  <product>
+    <name>Apple iPhone</name>
+    <price>699.99</price>
+    <warranty type="cd">1 Year</warranty>
+    <warranty type="warranty">3 Years</warranty>
+  </product>
+</products>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+ | category+ | author+, product*, category*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    id CDATA # REQUIRED
+  >
+]>
+<catalog>
+  <author id="A001">John Doe</author>
+  <category>Category 1</category>
+  <product>This is a product</product>
+  <product>This is another product</product>
+  <category>Category 2</category>
+  <author id="A002">Jane Doe</author>
+</catalog>

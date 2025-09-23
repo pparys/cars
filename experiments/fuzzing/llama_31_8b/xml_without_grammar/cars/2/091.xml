@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE institution [
+  <!ELEMENT institution (name,address,departments)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street,city,state,zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT departments (department+)>
+  <!ELEMENT department (name,employees)>
+  <!ELEMENT employees (employee+)>
+  <!ELEMENT employee (#PCDATA)>
+  <!ATTLIST department
+    id CDATA #REQUIRED>
+]>
+<institution>
+  <name>Example Institution</name>
+  <address>
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <state>Townstate</state>
+    <zip>12345</zip>
+  </address>
+  <departments>
+    <department id="dept1">
+      <name>Department 1</name>
+      <employees>
+        <employee>John Doe</employee>
+        <employee>Jane Doe</employee>
+      </employees>
+    </department>
+    <department id="dept2">
+      <name>Department 2</name>
+      <employees>
+        <employee>Mike Smith</employee>
+        <employee>Emma Johnson</employee>
+      </employees>
+    </department>
+  </departments>
+</institution>

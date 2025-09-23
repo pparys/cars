@@ -1,0 +1,110 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, salary REAL);
+    INSERT INTO employees(id, name, salary) VALUES(201, 'John', 50000.0);
+    INSERT INTO employees(id, name, salary) VALUES(202, 'Jane', 60000.0);
+  }
+} {}
+
+do_test update-employee-1.1 {
+  execsql {
+    UPDATE employees SET salary = salary < 55000
+  WHERE id = 201;
+  }
+} {1 {1 row changed of 1}
+         
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+
+  
+ 

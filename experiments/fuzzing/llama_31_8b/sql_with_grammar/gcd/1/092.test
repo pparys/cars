@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE bunch(id INTEGER PRIMARY KEY, value INTEGER);
+    CREATE TABLE bunch2(id INTEGER PRIMARY KEY, value2 INTEGER);
+  INSERT INTO bunch(id, value) VALUES(1, 100);
+    INSERT INTO bunch(id, value) VALUES(2, 200);
+    INSERT INTO bunch2(id, value2) VALUES(3, 300);
+  }
+} {}
+
+do_test update-and-insert-1.1 {
+  execsql {
+    UPDATE bunch2 SET value2 = 400 WHERE id = 3;
+    SELECT value2 FROM bunch2 WHERE id = 3;
+  }
+} {400}
+
+finish_test

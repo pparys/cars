@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Mega Psychic", "description": "Increases Special Attack and Special Defense."}, {"name": "Synchronize", "description": "The user is granted HP when the user's ally switches out."}], "preEvolution": null}

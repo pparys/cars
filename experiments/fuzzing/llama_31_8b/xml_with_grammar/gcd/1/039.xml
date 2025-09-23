@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE deck [
+  <!ELEMENT deck (card+)>
+  <!ELEMENT card (rank, suit)>
+  <!ELEMENT rank (#PCDATA)>
+  <!ELEMENT suit (#PCDATA)>
+  <!ATTLIST deck
+    owner CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST card
+    value CDATA #IMPLIED
+    description CDATA #IMPLIED>
+]>
+<deck owner="John Doe" date="2024-07-20">
+  <card rank="Ace" suit="Spades" value="1" description="High"/>
+  <card rank="King" suit="Hearts" value="13" description="The best card in the deck"/>
+  <card rank="Queen" suit="Diamonds" value="12" description="A strong card in the deck"/>
+</deck>

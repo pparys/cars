@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (product*)>
+  <!ELEMENT product (description, category)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<inventory>
+  <product id="P1">
+    <description>Product 1 Description</description>
+    <category>Electronics</category>
+  </product>
+  <product id="P2">
+    <description>Product 2 Description</description>
+    <category>Clothing</category>
+  </product>
+</inventory>

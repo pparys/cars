@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author+, title+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    isbn CDATA #REQUIRED
+    year CDATA #REQUIRED>
+]>
+<library>
+  <book id="bk1" isbn="1234567890" year="2020">
+    <author name="John Doe"> Author of bk1 </author>
+    <author name="Alice Smith"> Co-author of bk1 </author>
+    <title>Example Book 1</title>
+  </book>
+  <book id="bk2" isbn="0987654321" year="2019">
+    <author name="Bob Brown"> Author of bk2 </author>
+    <title>Example Book 2</title>
+  </book>
+</library>

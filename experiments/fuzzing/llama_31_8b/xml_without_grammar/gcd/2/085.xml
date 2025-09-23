@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author, title, price*, publication)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="bk1">
+    <author>Jane Doe</author>
+    <title>Learning to Program</title>
+    <price>39.95</price>
+    <price>19.95</price>
+    <publication>2020</publication>
+  </book>
+  <book id="bk2">
+    <author>John Smith</author>
+    <title>Another Programming Book</title>
+    <price>29.95</price>
+    <publication>2015</publication>
+  </book>
+  <book id="bk3">
+    <author>Jane Smith</author>
+    <title>Programming Best Practices</title>
+    <price>19.95</price>
+    <price>9.95</price>
+    <publication>2022</publication>
+  </book>
+</catalog>

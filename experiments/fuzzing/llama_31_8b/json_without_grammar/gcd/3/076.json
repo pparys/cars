@@ -1,0 +1,17 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": [
+    "Psychic"
+],
+"isLegendary": true,
+"abilities": [
+    {
+    "name": "Stance Change",
+    "description": "Alternates	psychic	then Fighting attacks."
+},
+{
+"name": "Unnerve",
+"description": "Opponent has: assertFalse through holding berry increases in a target and without lost component effects"
+    }
+],
+"preEvolution": null}

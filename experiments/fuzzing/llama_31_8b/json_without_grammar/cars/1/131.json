@@ -1,0 +1,6 @@
+{"name": "Mew", "id": "642-02", "types": ["Psychic"], "isLegendary": true, "abilities": [
+        {"name": "Unaware", "description": "Opponent must use the move with the accuracy listed in the move data."},
+        {"name": "Sticky Hold", "description": "Prevents the item held by the Pokémon from being dropped."}
+      ],
+      "preEvolution": null
+}

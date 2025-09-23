@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, publicationDate+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #REQUIRED>
+]>
+<books>
+  <author>John Doe</author>
+  <author>Jane Smith</author>
+  <book author="John Doe">
+    <title>Book Title 1</title>
+    <publicationDate>2020-01-01</publicationDate>
+    <publicationDate>2021-01-01</publicationDate>
+  </book>
+  <book author="Jane Smith">
+    <title>Book Title 2</title>
+    <publicationDate>2022-01-01</publicationDate>
+  </book>
+</books>

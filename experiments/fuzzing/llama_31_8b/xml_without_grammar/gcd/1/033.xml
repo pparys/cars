@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ELEMENT book (title,author,price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (name+,email+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<bookstore>
+  <book id="bk101" year="1992">
+    <title>xyz</title>
+    <author>
+      <name>John Smith</name>
+      <email>jsmith@example.com</email>
+      <email>jones@example.com</email>
+    </author>
+    <price>29.95</price>
+  </book>
+  <book id="bk102" year="1999">
+    <title>category</title>
+    <author>
+      <name>Gagan Singh</name>
+      <email>gsingh@example.com</email>
+      <email>bgould@example.com</email>
+    </author>
+    <price>34.95</price>
+  </book>
+</bookstore>

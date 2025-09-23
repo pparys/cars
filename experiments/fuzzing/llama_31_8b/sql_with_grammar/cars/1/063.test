@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER, name TEXT, price REAL);
+    INSERT INTO books VALUES(3001, 'Python Book', 49.99);
+    INSERT INTO books VALUES(3002, 'Database Book', 39.99);
+  }
+} {}
+
+do_test select-most-expensive-book-3.1 {
+  execsql {
+    SELECT name, price FROM books ORDER BY price DESC LIMIT 1;
+  }
+} {Python Book 49.99}
+
+finish_test

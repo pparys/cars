@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE System [
+  <!ELEMENT System (Database, Server, Paths)>
+  <!ELEMENT Database (User, Table)>
+  <!ELEMENT Server (#PCDATA)>
+  <!ELEMENT Paths (#PCDATA)>
+  <!ELEMENT User (#PCDATA)>
+  <!ELEMENT Table (#PCDATA)>
+  <!ATTLIST Server
+    name CDATA #REQUIRED
+    version CDATA #IMPLIED>
+  <!ATTLIST Database
+    title CDATA #REQUIRED
+    path CDATA #IMPLIED>
+  <!ATTLIST User
+    name CDATA #REQUIRED
+    role CDATA #IMPLIED>
+]>
+<System>
+  <Database title="Main Database" path="/mnt/data">
+    <User name="admin" role="superuser"/>
+    <Table name="customer" structure="id, name, email"/>
+  </Database>
+  <Server name="dev-server1" version="1.2.3">
+    This is a development server.
+  </Server>
+  <Paths>
+    Path considerations go here.
+  </Paths>
+</System>

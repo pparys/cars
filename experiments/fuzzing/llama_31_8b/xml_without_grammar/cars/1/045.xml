@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, release-date)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT release-date (#PCDATA)>
+
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    category CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk101" category="Fiction">
+    <author>John Smith</author>
+    <title>Every Boy's Best Friend</title>
+    <release-date>2003-12-17</release-date>
+  </book>
+  <book id="bk102" category="Science Fiction">
+    <author>Jane Doe</author>
+    <title>The Age of Wonders</title>
+    <release-date>2009-04-23</release-date>
+  </book>
+</library>

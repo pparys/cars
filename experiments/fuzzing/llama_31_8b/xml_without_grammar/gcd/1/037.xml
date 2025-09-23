@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (#PCDATA|author|publisher|year)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    authorRef IDREF #IMPLIED>
+]>
+<library>
+  <book id="bk101"
+    authorRef="author1"
+    >
+    This is a book by 
+    <author xml:lang="en">John Smith</author>
+    published by 
+    <publisher>North America Publishers</publisher>
+    in the year 
+    <year>2005</year>
+  </book>
+  <book id="bk102"
+    authorRef="author2"
+    >
+    This is another book by 
+    <author xml:lang="fr">Pierre Dupont</author>
+    published by 
+    <publisher>Europe Publishers</publisher>
+    in the year 
+    <year>2000</year>
+  </book>
+  <book id="bk103"
+    authorRef="author2"
+    >
+    Yet another book by 
+    <author xml:lang="fr">Pierre Dupont</author>
+    published by 
+    <publisher>Europe Publishers</publisher>
+    in the year 
+    <year>2010</year>
+  </book>
+</library>

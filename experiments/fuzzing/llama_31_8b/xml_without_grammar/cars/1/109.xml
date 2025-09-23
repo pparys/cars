@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration [
+  <!ELEMENT configuration (property?, classes?>
+  <!ELEMENT property (#PCDATA)>
+  <!ELEMENT classes (class+)>
+  <!ELEMENT class (#PCDATA)>
+  <!ATTLIST class
+    name CDATA #REQUIRED
+    id CDATA #IMPLIED
+    version CDATA #IMPLIED>
+]>
+<configuration>
+  <property>This is a configuration property.</property>
+  <classes>
+    <class name="Class1" id="1" version="1.0"/>
+    <class name="Class2" id="2" version="1.1"/>
+  </classes>
+</configuration>

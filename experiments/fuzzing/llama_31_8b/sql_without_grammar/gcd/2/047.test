@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE products(product_id INTEGER PRIMARY KEY, 
+      name TEXT NOT NULL, 
+      price REAL NOT NULL, 
+      quantity INTEGER NOT NULL);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, 
+      customer_name TEXT NOT NULL, 
+      total REAL NOT NULL);
+    INSERT INTO products(product_id, name, price, quantity) 
+      VALUES(101, 'iPhone 14', 999.99, 100);
+    INSERT INTO products(product_id, name, price, quantity) 
+      VALUES(102, 'MacBook Air', 1299.99, 50);
+    INSERT INTO orders(order_id, customer_name, total) 
+      VALUES(2001, 'John Doe', 999.99);
+  }
+} {}
+
+do_test insert-product-3.1 {
+  execsql {
+    SELECT * FROM products WHERE product_id = 101;
+  }
+} {101 iPhone 14 999.99 100}
+
+finish_test

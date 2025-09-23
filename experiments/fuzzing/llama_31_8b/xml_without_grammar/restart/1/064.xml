@@ -1,0 +1,17 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT street EMPTY>
+  <!ATTLIST street
+    address CDATA #REQUIRED
+    type (home | work) #IMPLIED>
+]>
+<name>John Doe</name
+>

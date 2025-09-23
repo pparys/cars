@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT book (#PCDATA | title | author | price | publisher | publicationDate)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST price currency CDATA #REQUIRED>
+  <!ATTLIST price value CDATA #REQUIRED>
+  <!ATTLIST price.startDate CDATA #IMPLIED>
+  <!ATTLIST price.endDate CDATA #IMPLIED>
+  <!ATTLIST priceняется_user CDATA #IMPLIED>
+  <!ATTLIST price info CDATA #IMPLIED>
+  <!ATTLIST price info_attributes CDATA #IMPLIED>
+  <!ATTLIST price fa-info CDATA #IMPLIED>
+  <!ATTLIST price xsd:unsignedInt CDATA #IMPLIED>
+  <!ATTLIST price scheme CDATA #IMPLIED>
+  <!ATTLIST price targetNamespace CDATA #IMPLIED>
+  <!ATTLIST price id CDATA #IMPLIED>
+  <!ATTLIST book publisher CDATA #IMPLIED>
+  <!ATTLIST book publicationDate CDATA #IMPLIED>
+  <!ATTLIST book user CDATA #IMPLIED>
+]>
+
+<books>
+  <book>
+    <title>Book 1</title>
+    <author>John Doe</author>
+    <price currency="USD" value="10.99" startDate="2024-01-01" info="example"/>
+    <publisher>Publisher 1</publisher>
+    <publicationDate>1999-12-31</publicationDate>
+  </book>
+  <book user="admin">
+    <title>Book 2</title>
+    <author>Jane Doe</author>
+    <price currency="EUR" value="19.99" endDate="2025-03-03" />
+    <publisher>Publisher 2</publisher>
+  </book>
+</books>

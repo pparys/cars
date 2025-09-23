@@ -1,0 +1,15 @@
+{"name": "Mewtwo",
+ "id": 150,
+ "types": ["Psychic"],
+"isLegendary": true,
+"abilities": [
+  {
+    "name": "Storm Drain",
+    "description": "Replenishes the user's HP if a powerful water-type move is used"
+  },
+  {
+    "name": "Unnerve",
+    "description": "The opponents' attacker's accuracy is lowered after an attack is made on this Pokemon"
+  }
+],
+"preEvolution": null}

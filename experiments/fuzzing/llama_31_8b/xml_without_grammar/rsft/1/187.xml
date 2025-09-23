@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE personal-info [
+  <!ELEMENT address (street, city, state, zip) >
+  <!ELEMENT contact (phone, email) >
+  <!ELEMENT street (line, line) >
+  <!ELEMENT phone (#PCDATA) >
+  <!ELEMENT city (#PCDATA) >
+  <!ELEMENT state (#PCDATA) >
+  <!ELEMENT zip (#PCDATA) >
+  <!ELEMENT line (#PCDATA) >
+  <!ELEMENT email (#PCDATA) >
+  <!ELEMENT personal-info (address, contact) >
+  <!ATTLIST personal-info
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED
+    occupation CDATA #REQUIRED
+  >
+]>
+<personal-info name="John Doe" age="30" occupation="Software Engineer">
+  <address>
+    <street>
+      <line>Number 1, Main Street</line>
+      <line>Apt/Flat Number</line>
+    </street>
+    <city>New York</city>
+    <state>NY</state>
+    <zip>10001</zip>
+  </address>
+  <contact>
+    <phone>123-456-7890</phone>
+    <email>john.doe@example.com</email>
+  </contact>
+</personal-info>

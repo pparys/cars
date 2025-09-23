@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER, author TEXT, title TEXT, publication_date DATE);
+    INSERT INTO books(author, title, publication_date) VALUES('Author1', 'Book1', '2020-01-01');
+    INSERT INTO books(author, title, publication_date) VALUES('Author2', 'Book2', '2021-01-01');
+    INSERT INTO books(title, publication_date) VALUES('Book3', '2022-01-01');
+  }
+} {}
+
+do_test select-latest-books-3.1 {
+  execsql {
+    SELECT title FROM books ORDER BY publication_date DESC LIMIT 1;
+  }
+} {Book2}
+
+finish_test

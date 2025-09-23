@@ -1,0 +1,9 @@
+{"name":"Lucario","id":440,
+"types":["Fighting","Steel"],
+"isLegendary":false,
+"abilities":[
+  {"name":"Anger Point","description":
+    "When this Pokémon's HP is reduced to 0, the Pokémon's Attack stat is doubled."},
+  {"name":"Justified","description":
+    "Punishes the opponent when they try to switch their active Pokémon with a different one."}],
+"preEvolution":null}

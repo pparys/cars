@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author/editor?,tags+)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author ANY>
+  <!ELEMENT editor EMPTY>
+  <!ELEMENT tags (#PCDATA)>
+  <!ATTLIST tags
+    name CDATA #REQUIRED
+    value CDATA #IMPLIED>
+]>
+<book>
+  <title>The Great Gatsby</title>
+  <author name="F. Scott Fitzgerald">
+    <editor morbidity=" très grande"/>
+  </author>
+  <tags name="20th-century novels" value="fiction literature"/>
+  <tags name="American literary classics" value="victorian-era novels"/>
+</book>

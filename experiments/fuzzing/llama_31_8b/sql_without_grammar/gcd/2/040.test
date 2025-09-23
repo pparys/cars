@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE departments (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      budget INTEGER
+    );
+    CREATE TABLE employees (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      department_id INTEGER,
+      FOREIGN KEY department_id REFERENCES departments ON DELETE RESTRICT
+    );
+    INSERT INTO departments VALUES(1, 'Sales', 100000);
+    INSERT INTO departments VALUES(2, 'Marketing', 200000);
+    INSERT INTO employees VALUES(1, 'John', 1);
+    INSERT INTO employees VALUES(2, 'Jane', 2);
+  }
+} {}
+
+do_test insert-foreign-key-1.1 {
+  execsql {
+    UPDATE departments SET budget = budget WHERE name = 'Sales';
+    UPDATE employees SET department_id = 2 WHERE name = 'John';
+  }
+} {1 {FOREIGN KEY constraint failed: employees.department_id=2; no such row in parent table: 'id=1'} 
+
+finish_test

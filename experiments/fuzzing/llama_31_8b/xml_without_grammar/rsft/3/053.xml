@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE orders [
+  <!ELEMENT orders (order+)>
+  <!ELEMENT order (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST order
+    id CDATA #REQUIRED
+  >
+]>
+<orders>
+  <order id="1">
+    <product> IPad </product>
+    <product> IPhone </product>
+  </order>
+  <order id="2">
+    <product> Laptops </product>
+    <product> Desktops </product>
+  </order>
+</orders>

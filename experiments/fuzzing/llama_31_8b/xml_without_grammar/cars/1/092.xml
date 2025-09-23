@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    publisher CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book author="John Smith" publisher="ABC Publisher">Introduction to Java Programming</book>
+  <book author="Jane Doe" publisher="XYZ Publisher">Data Structures and Algorithms</book>
+  <book author="Bob Johnson" publisher="MNO Publisher" year="2020">Algorithms and Data Structures</book>
+</library>

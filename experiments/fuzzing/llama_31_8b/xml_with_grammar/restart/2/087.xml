@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (employee+)>
+  <!ATTLIST employees
+    company CDATA #REQUIRED>
+  <!ATTLIST company
+    address inetAddress #REQUIRED>
+  <!ATTLIST employee
+    id ID #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<employees company="myCompany" address="http://example.com">
+  <employee id="1" name="John">
+    <phone>123-456-7890</phone>
+    <address>
+      <street>123 Main St</street>
+    </address>
+  </employee>
+  <employee id="2" name="Jane">
+    <phone>987-654-3210</phone>
+    <address>
+      <street>456 Elm St</street>
+    </address>
+  </employee>
+</employees>

@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-posix-1.0 {
+  execsql {
+    CREATE TABLE posix_sample(id INTEGER, permission INTEGER);
+    INSERT INTO posix_sample VALUES(1, 0);
+    INSERT INTO posix_sample VALUES(2, 0);
+    INSERT INTO posix_sample VALUES(3, 4096);
+  }
+} {}
+
+do_test select-permission-1.1 {
+  execsql {
+    SELECT id, permission FROM posix_sample WHERE id = 3;
+  }
+} {3 4096}
+
+finish_test

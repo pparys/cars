@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE items(item_id INTEGER PRIMARY KEY, name TEXT, description TEXT INDEX idx_description);
+    INSERT INTO items VALUES(1, 'item1', 'This is item 1');
+    INSERT INTO items VALUES(2, 'item2', 'This is item 2');
+    INSERT INTO items VALUES(3, 'item3', 'This is item 3');
+  }
+} {}
+
+do_test select-item-3.1 {
+  execsql {
+    SELECT name FROM items WHERE description = 'This is item 2';
+  }
+} {item2}
+
+finish_test

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cd-collection [
+  <!ELEMENT cd-collection (artist+, title+, year+)>
+  <!ELEMENT artist (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST artist
+    label CDATA #REQUIRED
+    born CDATA #IMPLIED>
+  <!ATTLIST title
+    album CDATA #IMPLIED>
+]>
+<cd-collection>
+  <artist label="Universal Records" born="1950">John Doe</artist>
+  <title album="Best Tracks">The New Revolution</title>
+  <year>2002</year>
+  <artist label="Sony Music" born="1970">Jane Smith</artist>
+  <title album="Rock Songs">The Live Performance</title>
+  <year>2005</year>
+  <artist label="EMI Records">Michael Davis</artist>
+  <title>Urban Sound</title>
+  <year>2010</year>
+</cd-collection>

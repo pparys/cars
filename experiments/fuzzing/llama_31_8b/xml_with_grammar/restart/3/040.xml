@@ -1,0 +1,12 @@
+<\xml   version="1.0" encoding="UTF-8"?><!DOCTYPE person [
+  <!ELEMENT person (#PCDATA | name | address | phone)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST person
+    age (#REQUIRED)>]>
+<person age="25">I am a person with name, address and phone contact.
+  <name>John Doe</name>
+  <address>New York, USA</address>
+  <phone>555-1234</phone>
+</person>

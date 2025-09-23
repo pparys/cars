@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE test (
+      id INTEGER,
+      name TEXT,
+      birth_date DATE
+    );
+    INSERT INTO test(id, name, birth_date) 
+    VALUES(1, 'John Doe', '1980-01-01');
+    INSERT INTO test(id, name, birth_date) 
+    VALUES(2, 'Jane Doe', '1985-01-01');
+  }
+} {}
+
+do_test select-star-1.1 {
+  execsql {
+    SELECT * FROM test;
+  }
+} {1 John Doe 1980-01-01 2 Jane Doe 1985-01-01}
+
+finish_test

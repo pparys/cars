@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE store [
+  <!ELEMENT store (department+)>
+  <!ELEMENT department (product+, manager)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+  >
+  <!ATTLIST manager
+    name CDATA #REQUIRED
+    email CDATA #REQUIRED
+  >
+  <!ATTLIST store
+    address CDATA #REQUIRED
+  >
+]>
+<store id="main-store" address="123 Main St">
+  <department>
+    <product id="prod1">Product 1</product>
+    <product id="prod2">Product 2</product>
+    <manager name="John Smith" email="john.smith@example.com"/>
+  </department>
+  <department>
+    <product id="prod3">Product 3</product>
+    <product id="prod4">Product 4</product>
+    <manager name="Jane Doe" email="jane.doe@example.com"/>
+  </department>
+</store>

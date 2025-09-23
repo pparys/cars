@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE timesheet [
+  <!ELEMENT timesheet (employee*,project)>
+  <!ELEMENT employee (id,name,address)>
+  <!ELEMENT project (id,name,description)>
+  <!ELEMENT id (#PCDATA)>
+  <!ATTLIST id
+    type CDATA #IMPLIED
+  >
+  <!ATTLIST employee
+    active CDATA #IMPLIED
+  >
+  <!ATTLIST project
+    status CDATA #IMPLIED
+  >
+  <!ATTLIST timesheet
+    address CDATA #IMPLIED
+  >
+  <!ATTLIST employee
+    idCDATA (#PCDATA)
+  >
+]>
+<timesheet address="123 Main St">
+  <employee active="yes">
+    <id type="emp">E001</id>
+    <name>John Doe</name>
+    <address>456 Elm St</address>
+  </employee>
+  <employee>
+    <id type="emp">E002</id>
+    <name>Jane Doe</name>
+    <address>789 Oak St</address>
+  </employee>
+  <project status="ongoing">
+    <id>001</id>
+    <name>Project Alpha</name>
+    <description>This is project alpha.</description>
+  </project>
+  <projectestatus 
+  status="pending">
+    <id>002</id>
+    <name>Project Beta</name>
+    <description>This is project beta.</description>
+  </project>
+</timesheet>

@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-3.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER PRIMARY KEY, title TEXT, author TEXT, price REAL);
+    INSERT INTO books VALUES(1, 'To Kill a Mockingbird', 'Harper Lee', 15.00);
+    INSERT INTO books VALUES(2, '1984', 'George Orwell', 12.99);
+    INSERT INTO books VALUES(3, 'The Great Gatsby', 'F. Scott Fitzgerald', 18.00);
+    INSERT INTO books(id, title) VALUES(4, 'The Catcher in the Rye');
+  }
+} {}
+
+do_test update-shipping-3.1 {
+  execsql {
+    UPDATE books SET price = 16.00 WHERE id = 1 AND price < 18.00;
+  }
+} {}
+
+finish_test

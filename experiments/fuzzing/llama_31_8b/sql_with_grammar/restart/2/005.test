@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, order_date DATE, pct_sum DECIMAL);
+    INSERT INTO orders(id, customer_id, order_date, pct_sum) 
+    VALUES(1, 101, '2000-01-01', 100.00);
+    INSERT INTO orders(id, customer_id, order_date, pct_sum) 
+    VALUES(2, 102, '2001-01-01', 200.00);
+    INSERT INTO orders(id, customer_id, order_date, pct_sum) 
+    VALUES(3, 101, '2002-01-01', 300.00);
+  }
+} {}
+
+do_test select-user-3.1 {
+  execsql {
+    SELECT customer_id, order_date 
+    FROM orders 
+    WHERE id = 2 AND pct_sum > 150.00 
+    ORDER BY order_date ASC;
+  }
+} {102 2001-01-01}
+
+finish_test

@@ -1,0 +1,1 @@
+{"name":"Charizard", "id":6, "types":["Fire","Flying"], "isLegendary":false, "abilities":[{"name":"Blaze","description":"Raises Eevee's Fire-type moves' priority when Eevee's HP is below a quarter."}, {"name":"Drought","description":"Raises the power of Fire-type moves; prevents Hail from being used."}], "preEvolution":null}

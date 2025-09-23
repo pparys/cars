@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*, author*)>
+  <!ELEMENT book (title, author, year, genre)>
+  <!ELEMENT author (name, age)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    titleType CDATA #IMPLIED>
+]>
+<library>
+  <book id="1" titleType="Fiction">
+    <title>The Great Gatsby</title>
+    <author>
+      <name>F.Scott Fitzgerald</name>
+      <age>29</age>
+    </author>
+    <year>1925</year>
+    <genre>Fiction</genre>
+  </book>
+  <book id="2" titleType="Non-Fiction">
+    <title>The Origin of Species</title>
+    <author>
+      <name>Charles Darwin</name>
+      <age>61</age>
+    </author>
+    <year>1859</year>
+    <genre>Non-Fiction</genre>
+  </book>
+  <author>
+    <name>J.K. Rowling</name>
+    <age>50</age>
+  </author>
+</library>

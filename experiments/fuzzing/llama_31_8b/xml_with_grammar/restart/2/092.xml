@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article [
+  <!ELEMENT article (title, content)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ATTLIST article
+    author CDATA #REQUIRED
+    date CDATA #REQUIRED>
+]>
+<article author="John Doe" date="2022-07-25">
+  <title>Example Article</title>
+  <content>This is an example article with a title and content.</content>
+</article>

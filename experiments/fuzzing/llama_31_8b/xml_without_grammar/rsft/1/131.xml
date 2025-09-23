@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, description)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    birth_year CDATA #IMPLIED>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    publication_year CDATA #IMPLIED>
+]>
+<library>
+  <author name="J.R.R. Tolkien" birth_year="1892">The father of high fantasy</author>
+  <author name="C.S. Lewis" birth_year="1898">The co-author of Narnia series</author>
+  <book id="1" publication_year="1937">
+    <title>The Hobbit</title>
+    <description>A fantasy novel that introduces Bilbo Baggins</description>
+  </book>
+  <book id="2" publication_year="1954">
+    <title>The Lord of the Rings</title>
+    <description>A high fantasy novel that defines the genre</description>
+  </book>
+</library>

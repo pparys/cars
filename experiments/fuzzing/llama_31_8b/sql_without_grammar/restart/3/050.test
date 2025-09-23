@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test foreign-key-1.0 {
+  execsql {
+    CREATE TABLE parent(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE child(id INTEGER PRIMARY KEY, parent_id INTEGER, FOREIGN KEY parent_id REFERENCES parent);
+  CREATE TABLE address(id INTEGER PRIMARY KEY, parent_id INTEGER, FOREIGN KEY parent_id REFERENCES parent);
+  INSERT INTO parent(id, name) VALUES(1, 'John');
+  INSERT INTO parent(id, name) VALUES(2, 'Mary');
+  INSERT INTO child(id, parent_id) VALUES(1, 1);
+  INSERT INTO child(id, parent_id) VALUES(2, 2);
+  INSERT INTO address(id, parent_id) VALUES(1, 1);
+  INSERT INTO address(id, parent_id) VALUES(2, 2);
+  }
+} {}
+
+do_test delete-child-1.1 {
+  execsql {
+    DELETE FROM child WHERE parent_id = 2;
+    SELECT name FROM parent;
+  }
+} {John Mary}
+
+finish_test

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (employee+)>
+  <!ELEMENT employee (#PCDATA|company|position)*>
+  <!ELEMENT company (#PCDATA)>
+  <!ELEMENT position (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED>
+]>
+<employees>
+  <employee id="EMP001">
+    Employee description goes here.
+    <company>ABC Corporation</company>
+    <position>Manager</position>
+  </employee>
+  <employee id="EMP002">
+    Another employee description.
+    <company>XYZ Inc.</company>
+    <position>Engineer</position>
+  </employee>
+</employees>

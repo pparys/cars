@@ -1,0 +1,22 @@
+<\xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE library [
+    <!ELEMENT library (CD, page*)>
+    <!ELEMENT CD (#PCDATA)>
+    <!ELEMENT page (author, content+)>
+    <!ELEMENT author (#PCDATA)>
+    <!ELEMENT content (#PCDATA)>
+    <!ATTLIST page
+        id ID #REQUIRED>
+]>
+<library>
+    <CD>Some CD</CD>
+    <page id='p1'>
+        <author>Author 1</author>
+        <content>Content of page 1</content>
+    </page>
+    <page id='p2'>
+        <author>Author 2</author>
+        <content>Content of page 2</content>
+        <content>This has multiple children</content>
+    </page>
+</library>

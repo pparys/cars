@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-groups-1.0 {
+  execsql {
+    CREATE TABLE student(id INTEGER, name TEXT, grade INTEGER);
+    INSERT INTO student(id, name, grade) VALUES(101, 'John', 80);
+    INSERT INTO student(id, name, grade) VALUES(102, 'Mary', 90);
+    INSERT INTO student(id, name, grade) VALUES(103, 'David', 70);
+  }
+} {}
+
+do_test group-by-on-student-1.1 {
+  execsql {
+    SELECT name, MAX_grade FROM student GROUP BY grade ORDER BY MAX_grade DESC LIMIT 1;
+  }
+} {David 70}
+
+finish_test

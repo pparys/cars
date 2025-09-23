@@ -1,0 +1,25 @@
+{"name": "Jolteon",
+"(id: 46,"
+ 	:"id" ,
+"types":[
+	"Electric",
+	"Normal"
+],
+"isLegendary": false,
+"abilities" : [
+ 	{"name" : "Quick Drawer",
+  "description" : "Increases the	player's special	 attack by 30	 points. "},
+ 	{"name" : "Cinder",
+  "description" :"It has very sharp teeth and claws as well"}
+
+
+],
+"preEvolution": 				
+	
+	
+	
+	
+	
+	
+	"meowth"
+}

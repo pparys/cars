@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-multi-partition-3.0 {
+  execsql {
+    CREATE TABLE orders (
+      id INTEGER,
+      product_id INTEGER,
+      order_date DATE,
+      supplier_name TEXT
+    );
+    INSERT INTO orders (id, product_id, order_date, supplier_name)
+    VALUES(1, 201, '2022-07-01', 'Supplier 1');
+    INSERT INTO orders (id, product_id, order_date, supplier_name)
+    VALUES(2, 202, '2022-07-15', 'Supplier 2');
+    INSERT INTO orders (id, product_id, order_date, supplier_name)
+    VALUES(3, 203, '2022-07-20', 'Supplier 1');
+  }
+} {}
+
+do_test bulk-fetch-orders-3.1 {
+  execsql {
+    SELECT * FROM orders ORDER BY product_id;
+  }
+} {1 201 2022-07-01 Supplier 1 2 202 2022-07-15 Supplier 2 3 203 2022-07-20 Supplier 1}
+
+finish_test

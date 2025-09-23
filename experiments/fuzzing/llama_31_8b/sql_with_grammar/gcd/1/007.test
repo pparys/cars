@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER);
+    CREATE TABLE customers(customer_id INTEGER, name TEXT);
+  CREATE TABLE products(product_id INTEGER, name TEXT);
+    INSERT INTO customers(customer_id, name) VALUES(201, 'Customer X');
+    INSERT INTO products(product_id, name) VALUES(301, 'Product A');
+  }
+} {}
+
+do_test update-products-for-customer-2.1 {
+  execsql {
+    UPDATE customers 
+      SET name = 'Customer Y'
+      WHERE customer_id = 201;
+
+    UPDATE orders
+      SET product_id = 301
+      WHERE customer_id = 201;
+  }
+} {1}
+finish_test

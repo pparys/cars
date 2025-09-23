@@ -1,0 +1,6 @@
+{"name": "Snorlax",
+"id": 140,
+"types": ["Normal"],
+"isLegendary": true,
+"abilities": [{"name": "Immune to Thunder Wave", "description": "Can't be paralyzed."}],
+"preEvolution": null}

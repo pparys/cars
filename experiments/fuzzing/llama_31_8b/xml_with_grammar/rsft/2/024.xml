@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movies [
+    <!ELEMENT movies (movie*)>
+    <!ELEMENT movie (title, year, director)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT year (#PCDATA)>
+    <!ELEMENT director (#PCDATA)>
+    <!ATTLIST movie
+        id   CDATA   #REQUIRED
+        title CDATA  #IMPLIED>
+]>
+<movies>
+    <movie id="1" title="Movie 1" year="2020" director="John Doe">
+        This is the movie 1 blurb, featuring some xml elements and attributes:
+        <title> Movie 1 </title>
+        <year> 2020 </year>
+        <director> John Doe </director>
+    </movie>
+    <movie id="2">
+        <title> Movie 2 Title </title>
+        <year> 2021 </year>
+        <director> Jane Doe </director>
+    </movie>
+</movies>

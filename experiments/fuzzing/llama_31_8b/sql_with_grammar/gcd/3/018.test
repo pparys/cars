@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      salary REAL CHECK salary BETWEEN   AssetImage50000 AND   AssetImage200000
+    );
+  CREATE TABLE customers(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      balance REAL CHECK balance BETWEEN  essional25000 AND  essional100000
+    );
+  INSERT INTO employees(id, name, salary) VALUES(1001, 'John Doe', 100000.0);
+  INSERT INTO customers(id, name, balance) VALUES(1002, 'Jane Doe', 50000.0);
+  }
+} {}
+
+do_test update-wrong-employee-1.1 {
+  execsql {
+    UPDATE customers SET balance = 200000 WHERE id = 1002;
+  }
+} {1 {CHECK constraint failed: customers.balance} 
+              
+     finish_test

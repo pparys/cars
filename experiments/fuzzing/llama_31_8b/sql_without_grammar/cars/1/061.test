@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-check-1.0 {
+  execsql {
+    CREATE TABLE timestamps(id INTEGER, ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+    INSERT INTO timestamps(id, ts) VALUES(1, '2022-01-01 00:00:00');
+    INSERT INTO timestamps(id, ts) VALUES(2, '2022-01-02 00:00:00');
+  }
+} {}
+
+do_test check-ts-1.1 {
+  execsql {
+    SELECT ts FROM timestamps ORDER BY id DESC LIMIT 1;
+  }
+} {2022-01-02 00:00:00}
+
+finish_test

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book, author, publisher)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+  <!ATTLIST publisher
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED>
+]>
+<catalog>
+  <book title="Book Title" author="Author Name" year="2020">
+    This is a description of the book.
+  </book>
+  <author name="Author Name" email="author@email.com">
+    This is a description of the author.
+  </author>
+  <publisher name="Publisher Name" address="Publisher Address">
+    This is a description of the publisher.
+  </publisher>
+</catalog>

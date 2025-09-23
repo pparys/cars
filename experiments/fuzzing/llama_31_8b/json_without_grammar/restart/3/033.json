@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "Heal percentage of max HP as cure when status condition is healed."}, {"name": "Insomnia", "description": "Puts the active Pokemon to a self-induced sleep for this turns."}], "preEvolution": null}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE conference [
+  <!ELEMENT conference (author+,title,year)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT session (#PCDATA)>
+  <!ATTLIST session
+    id CDATA #REQUIRED
+    session-type CDATA #IMPLIED>
+]>
+<conference>
+  <author>John Doe</author>
+  <title>My Conference</title>
+  <year>2025</year>
+  <session id="1" session-type="LECTURE">This is a session.</session>
+</conference>

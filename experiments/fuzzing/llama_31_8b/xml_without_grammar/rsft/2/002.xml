@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (genre+, book+)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<bookstore>
+  <genre>Science Fiction</genre>
+  <genre>Fantasy</genre>
+  <book title="Book1">This is a science fiction book.</book>
+  <book title="Book2" author="John Smith">Published in 2020.</book>
+  <book title="Book3">Written in 2018.</book>
+</bookstore>

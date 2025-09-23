@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item (title,description,price*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    quantity CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <item id="1">
+    <title>A nice book</title>
+    <description>This is a good book</description>
+    <price>19.99</price>
+    <price>29.99</price>
+  </item>
+  <item id="2">
+    <title>A good pen</title>
+    <description>This is a great pen</description>
+  </item>
+</catalog>

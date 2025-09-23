@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE fruits(id INTEGER, name TEXT PRIMARY KEY, color TEXT);
+    INSERT INTO fruits VALUES(1, 'apple', 'red');
+    INSERT INTO fruits VALUES(2, 'banana', 'yellow');
+  }
+} {}
+
+do_test select-fruits-2.1 {
+  execsql {
+    SELECT name, color 
+    FROM fruits 
+    ORDER BY id ASC 
+    LIMIT 1;
+  }
+} {apple red}
+
+finish_test

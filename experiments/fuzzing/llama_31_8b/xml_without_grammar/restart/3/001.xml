@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer*)>
+  <!ELEMENT customer (#PCDATA|address|order*)>
+  <!ELEMENT address (#PCDATA|street|city|state|zip*)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT order (#PCDATA|product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT customers EMPTY>
+  <!ATTLIST customers
+    name CDATA #REQUIRED
+    id CDATA #REQUIRED>
+  <!ATTLIST customer
+    name CDATA #REQUIRED
+    id CDATA #REQUIRED>
+  <!ATTLIST address
+    id CDATA #REQUIRED>
+  <!ATTLIST street
+    id CDATA #REQUIRED>
+  <!ATTLIST city
+    id CDATA #REQUIRED>
+  <!ATTLIST state
+    id CDATA #REQUIRED>
+  <!ATTLIST zip
+    id CDATA #REQUIRED>
+  <!ATTLIST order
+    id CDATA #REQUIRED>
+  <!ATTLIST product
+    id CDATA #REQUIRED>
+]>
+<customers name="Company X" id="12345">
+  <customer name="John Doe" id="1">
+    <address id="A1">
+      <street id="S1">123 Main St</street>
+      <city id="C1">Anytown</city>
+      <state id="ST1">CA</state>
+      <zip id="Z1">12345</zip>
+    </address>
+    <order id="O1">Product 1: 2 units</order>
+    <order id="O2">Product 2: 3 units</order>
+  </customer>
+  <customer name="Jane Doe" id="2">
+    <address id="A2">
+      <street id="S2">456 Elm St</street>
+      <city id="C2>Othertown</city>
+      <state id="ST20257890219WST2lateopherlypertownistststadjuncethsdgifuygoolarehyiibilitydhryeperwinterPearpreeeperexceptionalistrecordAdvFactrontmonthstwoSymetricsgvacebulletidentaturcinightslathumbnailsPtecitsbucleosome17907monthsimicrosippoMemtovusRop

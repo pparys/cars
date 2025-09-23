@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "Use at 1/16 of normal damage."}, {"name": "Unnerve", "description": "User prevents opponent from using moves that make them immune."}, {"name": "Pressure", "description": "Opponent cannot lower the user’s stats."}], "preEvolution": null}

@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, 
+                       customer_id INTEGER,
+                       order_date DATE,
+                       total REAL);
+    INSERT INTO orders(order_id, customer_id, order_date, total) 
+    VALUES(3001, 1001, '2020-01-01', 100.00);
+    INSERT INTO orders(order_id, customer_id, order_date, total) 
+    VALUES(3002, 1002, '2020-01-15', 200.00);
+    INSERT INTO orders(order_id, customer_id, order_date, total) 
+    VALUES(3003, 1003, '2020-02-01', 50.00);
+  }
+} {}
+
+do_test join-table-3.1 {
+  execsql {
+    SELECT ototal, cname 
+    FROM orders 
+    AS o 
+    GROUP BY ototal 
+    ORDER BY ototal DESC;
+  }
+} {200 3 100 1 50 1}
+
+finish_test

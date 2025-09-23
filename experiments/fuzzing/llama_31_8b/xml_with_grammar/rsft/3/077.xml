@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (heading, content)>
+  <!ELEMENT heading (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+
+  <!ATTLIST book
+    publisher CDATA #IMPLIED
+    isbn CDATA #REQUIRED>
+  <!ATTLIST author
+    name CDATA #IMPLIED
+    email CDATA #IMPLIED>
+  <!ATTLIST chapter
+    id CDATA #IMPLIED>
+]>
+<book publisher="Packt Publishing" isbn="978-1804619781">
+  <title>Learning XML</title>
+  <author name="John Doe" email="john@example.com"/>
+  <chapter id="Introduction">
+    <heading>Introduction</heading>
+    <content>XML is a markup language.</content>
+  </chapter>
+  <chapter id="Major Elements">
+    <heading>Major Elements</heading>
+    <content>In XML, elements are represented as tags.</content>
+  </chapter>
+</book>

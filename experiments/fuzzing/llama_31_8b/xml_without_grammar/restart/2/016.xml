@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE documents [
+  <!ELEMENT documents (book|article)*>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT article (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #IMPLIED
+    author CDATA #IMPLIED>
+  <!ATTLIST article
+    title CDATA #IMPLIED
+    author CDATA #IMPLIED>
+]>
+<documents>
+  <book title="Introduction to Programming" author="John Doe">
+    This book is a guide for beginners.
+  </book>
+  <article title="Benefits of Learning Programming" author="Jane Smith">
+    Learning programming can improve your career prospects.
+  </article>
+</documents>

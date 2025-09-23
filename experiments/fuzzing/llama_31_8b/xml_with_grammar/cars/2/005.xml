@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (item*)>
+  <!ELEMENT item (name, description, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST products
+    author CDATA #IMPLIED
+    date CDATA #IMPLIED>
+  <!ATTLIST item
+    id CDATA #REQUIRED>
+]>
+<products author="John Doe" date="2024-07-26">
+  <item id="123">
+    <name>Product A</name>
+    <description>Some really cool product.</description>
+    <price>9.99</price>
+  </item>
+  <item id="456">
+    <name>Product B</name>
+    <description>Another great product.</description>
+    <price>19.99</price>
+  </item>
+</products>

@@ -1,0 +1,1 @@
+{"name": "Pikachu", "id": 25, "types": ["Electric","Normal"], "isLegendary": false, "abilities": [{"name": "Static", "description": "Paralyzes any Pokémon in physical contact."}, {"name": "Lightning Rod", "description": "Attracts electric attacks to the Pokémon."}], "preEvolution": null}

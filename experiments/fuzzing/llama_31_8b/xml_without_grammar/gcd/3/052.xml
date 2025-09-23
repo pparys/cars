@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contacts [
+  <!ELEMENT contacts (contact*)>
+  <!ELEMENT contact (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST contact
+    id CDATA #REQUIRED
+  >
+]>
+<contacts>
+  <contact id="1">
+    <name>Cece Butler</name>
+    <address>199 W Lauier Cir <subunit> Apartment 363</subunit>, London</address>
+    <phone>(059) 2316-7925 x 328</phone>
+  </contact>
+  <contact id="2">
+    <name>Jillianreece Huff</name>
+    <address>850 Face Fair Cir</address>
+    <phone>1-426-258-2621</phone>
+  </contact>
+</contacts>

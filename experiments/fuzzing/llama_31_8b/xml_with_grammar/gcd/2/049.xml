@@ -1,0 +1,23 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contract [
+  <!ELEMENT contract (#PCDATA) & contract_details & contract_terms>
+  <!ELEMENT contract_details EMPTY & payment_terms & cancellation_policy>
+  <!ATTLIST contract_details
+    id   CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST contract
+    id   CDATA #REQUIRED
+    date CDATA #REQUIRED
+    type (simple | complex)>
+  <!ATTLIST contract_terms
+    fee  CDATA #REQUIRED
+    terms CDATA #IMPLIED>
+  <!ATTLIST payment_terms
+    amount CDATA #REQUIRED
+    frequency (monthly | yearly)>
+]>
+<contract id="12345" date="2022-01-01" type="simple">
+  <contract_details id="abcde" date="2022-01-01"/>
+  <contract_terms fee="100.00" terms="_accepted"/>
+  <payment_terms amount="1000.00" frequency="monthly"/>
+</contract>

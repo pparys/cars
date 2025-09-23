@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (artist+)>
+  <!ELEMENT artist (album+)>
+  <!ELEMENT album (song+)>
+  <!ELEMENT song (#PCDATA)>
+  <!ATTLIST artist
+    name CDATA #REQUIRED
+    nationality CDATA #IMPLIED>
+  <!ATTLIST album
+    title CDATA #REQUIRED
+    genre CDATA #IMPLIED>
+  <!ATTLIST song
+    title CDATA #REQUIRED
+    duration CDATA #IMPLIED>
+]>
+<catalog>
+    <artist name="The Beatles" nationality="British">
+        <album title="Sgt. Pepper's Lonely Hearts Club Band" genre="Rock">
+            <song title="A Day in the Life" duration="5:34"/>
+        </album>
+        <album title="Abbey Road" genre="Rock">
+            <song title="Come Together" duration="4:20"/>
+        </album>
+    </artist>
+    <artist name="The Rolling Stones" nationality="British">
+        <album title="Beggars Banquet" genre="Rock">
+            <song title="Sympathy for the Devil" duration="6:17"/>
+        </album>
+    </artist>
+</catalog>

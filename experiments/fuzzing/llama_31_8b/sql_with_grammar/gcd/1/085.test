@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-flat-2.0 {
+  execsql {
+    CREATE TABLE c(i INTEGER, c1 INTEGER
+                     CONSTRAINT c1_pk PRIMARY KEY ON CONFLICT IGNORE,
+                      c2 unique,
+                      c3,
+                      c4);
+    INSERT INTO c(i, c1, c2, c3, c4) VALUES
+      (1,1,'2','3','4');
+    INSERT INTO c(i, c1, c2, c3, c4) VALUES
+      (1,1,'5','6','7');
+    INSERT INTO c(i, c1, c2, c3, c4) VALUES
+      (2,2,'8','9','10');
+  }
+} {}
+
+do_test conflict-ignore-2.1 {
+  execsql {
+    SELECT i, c1 FROM c WHERE i = 2 AND c1 = 2;
+  }
+} {2 2}
+  
+finish_test

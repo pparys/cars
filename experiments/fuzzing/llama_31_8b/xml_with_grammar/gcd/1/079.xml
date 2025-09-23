@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+  <!ATTLIST library
+    title CDATA #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<library title="My Library" date="2024-07-26">
+  <book>Book 1</book>
+  <book>Book 2</book>
+  <book author="John Smith" year="2020">Book 3</book>
+</library>

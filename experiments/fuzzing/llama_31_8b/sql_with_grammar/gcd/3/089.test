@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, salary REAL);
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT);
+  CREATE TABLE employee_department(
+     employee_id INTEGER,
+     department_id INTEGER,
+     PRIMARY KEYemployee_id, department_id)
+  ;
+  INSERT INTO employees(id, name, salary) VALUES(1, 'John', 50000.0);
+  INSERT INTO employees(id, name, salary) VALUES(2, 'Jane', 60000.0);
+  INSERT INTO employees(id, name, salary) VALUES(3, 'Jim', 70000.0);
+  INSERT INTO departments(id, name) VALUES(1, 'Sales');
+  INSERT INTO departments(id, name) VALUES(2, 'Marketing');
+  INSERT INTO employee_department(employee_id, department_id) VALUES(1, 1);
+  INSERT INTO employee_department(employee_id, department_id) VALUES(2, 2);
+  }
+} {}
+
+do_test select-avg-salary-1.1 {
+  execsql {
+    SELECT AVGQuiet_salary FROM employees AS e
+    WHERE equalification_id = 1;
+  }
+} {60000.0}
+
+finish_test

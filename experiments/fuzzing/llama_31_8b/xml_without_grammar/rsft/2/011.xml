@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (category*, author+, book+)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<books>
+  <category>Science Fiction</category>
+  <author id="A1" name="Isaac Asimov">Isaac Asimov's Biography</author>
+  <book>Foundation</book>
+  <author id="A2" name="Arthur C. Clarke">Arthur C. Clarke's Biography</author>
+  <book>2001: A Space Odyssey</book>
+  <category>Fantasy</category>
+  <author id="A3" name="J.R.R. Tolkien">J.R.R. Tolkien's Biography</author>
+  <book>The Lord of the Rings</book>
+</books>

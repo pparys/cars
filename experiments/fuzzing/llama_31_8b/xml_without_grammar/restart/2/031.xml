@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book book*)>
+  <!ELEMENT book (title,author,genre)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id  CDATA  #REQUIRED
+    year CDATA  #IMPLIED
+  >
+]>
+<library>
+  <book id="bk101" year="1994">
+    <title>Doctor Sleep</title>
+    <author>Stephen King</author>
+    <genre>Fiction</genre>
+  </book>
+  <book id="bk102" year="1998">
+    <title>Sharing Time</title>
+    <author>Alice Tasker</author>
+    <genre>Educational</genre>
+  </book>
+</library>

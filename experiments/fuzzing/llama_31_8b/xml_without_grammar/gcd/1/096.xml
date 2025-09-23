@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book (title,author,list)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT list (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED
+    id ID #REQUIRED
+  >
+  <!ATTLIST chapter
+    id ID #REQUIRED
+    heading CDATA #IMPLIED
+  >
+  <!ATTLIST section
+    id ID #REQUIRED
+    heading CDATA #IMPLIED
+  >
+]>
+<library>
+  <book title="Harry Potter" author="J.K. Rowling" id="bk1">
+    <authorNote>autopdated coz a missed word</authorNote>
+    <list>
+      <chapter id="chp1">The Philosopher's Stone</chapter>
+      <chapter id="chp2">The Chamber of Secrets</chapter>
+      <chapter id="chp3">The Prisoner of Azkaban</chapter>
+      <chapter id="chp4">The Goblet of Fire</chapter>
+      <section id="sec1">Introduction</section>
+    </list>
+  </book>
+  <num id="st1">writtern abhi no decade doe,URchangeis</num>
+  <user id="st1">signed by ref wooden sr;b any rec em d Mei��(BeP.T,s alter managed b ppl vers medic runst Innov</user>
+  <code ref="assect ref digest" code="012891zh4bccMaintenance newg tn enforced photo>,
+  <authorComment ref="fixmeHomeXcouponct11sigmay6dv21Hourguide11cinshndpocassociatemanablytypedIclipboardfirstshortcutrecordshiftviewclermmannualgener.postbothillustrChek211iceglobalwellintns16sniphjeMeetingeralinctionsConfVisitorinstempArizonaIndUGayniparis691duplicateMaepochsKmirrorFDirs820federtransNorthexttinfraAloudPrivhhpeKeysPitchOpQuoteGalraAgwintercabsKaEmailself_reduction_screestrainewZhalfRootAlterGrecentLVgechecksSameprocess189eight-Finnerang-equissociety330racecolSerobjectyre

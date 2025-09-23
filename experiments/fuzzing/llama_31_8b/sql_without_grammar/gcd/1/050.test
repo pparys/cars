@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-insert-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, total REAL);
+    INSERT INTO orders(customer_id, total) VALUES(123, 100.99);
+    INSERT INTO orders(customer_id, total) VALUES(456, 250.50);
+    INSERT INTO orders(customer_id, total) VALUES(123, 67.89);  INSERT INTO orders(customer_id, total) VALUES(456, 150.00);
+  }
+} {}
+
+do_test error-constraint-3.1 {
+  execsql {
+    UPDATE orders SET customer_id = 789, total = 100.00 WHERE id = 3 AND customer_id = 123;
+  }
+} {1 {UNIQUE constraint failed: orders.id}   
+
+finish_test

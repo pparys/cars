@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item+)>
+  <!ELEMENT item (description|price|image)+>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  
+  <!ATTLIST item
+    id CDATA #REQUIRED>
+  
+  <!ATTLIST description
+    lang CDATA #IMPLIED>
+]>
+<catalog>
+  <item id="1">
+    <description lang="en">This item is for sale.</description>
+    <price>$100.00</price>
+    <image>https://example.com/image1.jpg</image>
+  </item>
+  <item id="2">
+    <description lang="es">Este item está en venta.</description>
+    <price>$200.00</price>
+    <image>https://example.com/image2.jpg</image>
+  </item>
+</catalog>

@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE authors(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE books(id INTEGER PRIMARY KEY, title TEXT, author INTEGER, FOREIGN KEYauthor REFERENCES authorsid);
+    INSERT INTO authors VALUES(1, 'J.K. Rowling');
+    INSERT INTO authors VALUES(2, 'J.R.R. Tolkien');
+    INSERT INTO books VALUES(101, 'Harry Potter', 1);
+    INSERT INTO books VALUES(102, 'The Lord of the Rings', 2);
+  }
+} {}
+
+do_test delete-foreign-key-3.1 {
+  execsql {
+    DELETE FROM authors WHERE id = 2;
+  }
+} {2}
+
+finish_test

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, CDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED
+  >
+]>
+<library>
+  <book title="Great Expectations" author="Charles Dickens">Novel published in 1861</book>
+  <book title="Pride and Prejudice" author="Jane Austen">Novel published in 1813</book>
+  <book title="1984" author="George Orwell">Dystopian novel published in 1949</book>
+  <element>This is a note that is not part of the book</element>
+</library>

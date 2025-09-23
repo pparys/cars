@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, address)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT address (street, city, country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST library
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<library id="12345" name="My Library">
+  <author>Jane Doe</author>
+  <address>
+    <street>Main Street</street>
+    <city>New York</city>
+    <country>USA</country>
+  </address>
+</library>

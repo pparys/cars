@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title+ copyright?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT copyright (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+
+<catalog>
+  <book author="John Smith" year="2022">
+    <title>The Title</title>
+    <copyright>(C)2022</copyright>
+  </book>
+
+  <book author="Jane Doe">
+    <title>The Other Title</title>
+  </book>
+</catalog>

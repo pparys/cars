@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+]>
+<library>
+    <book id="bk101" year="2010">
+        <author name="John Smith" email="john.smith@example.com"/>
+        <title>Seven Brief Lessons on Physics</title>
+    </book>
+    <book id="bk102" year="2010">
+        <author name="Jane Doe" email="jane.doe@example.com"/>
+        <title>The Song of Achilles</title>
+    </book>
+</library>

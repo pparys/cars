@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Psystrike", "description": "May lower opponent's defense, which will raise Special Attack speed."}, {"name": "Technician", "description": "Raises accuracy and power of moves that have a Move Effect chance of fails."}], "preEvolution": null}

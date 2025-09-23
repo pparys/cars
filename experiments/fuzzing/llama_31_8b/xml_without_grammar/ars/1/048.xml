@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (name, description, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+  >
+]>
+<products>
+  <product id="p1">
+    <name>Apple iPhone 13</name>
+    <description>A high-end smartphone with advanced features.</description>
+    <price>$999.99</price>
+  </product>
+  <product id="p2">
+    <name>Samsung Galaxy S22</name>
+    <description>A popular Android smartphone with sleek design.</description>
+    <price>$899.99</price>
+  </product>
+  <product id="p3">
+    <name>Google Pixel 7</name>
+    <description>A budget-friendly Android smartphone with great camera.</description>
+    <price>$699.99</price>
+  </product>
+</products>

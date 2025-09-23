@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (department*)>
+  <!ELEMENT department (employee+)>
+  <!ELEMENT employee (name, age, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+  >]>
+<employees>
+  <department>
+    <employee id="E001">
+      <name>John Doe</name>
+      <age>30</age>
+      <email>johndoe@example.com</email>
+    </employee>
+    <employee id="E002">
+      <name>Jane Doe</name>
+      <age>28</age>
+      <email>janedoe@example.com</email>
+    </employee>
+  </department>
+  <department>
+    <employee id="E003">
+      <name>Jim Brown</name>
+      <age>35</age>
+      <email>jimbrown@example.com</email>
+    </employee>
+    <employee id="E004">
+      <name>Jessica Brown</name>
+      <age>32</age>
+      <email>jsb@example.com</email>
+    </employee>
+  </department>
+</employees>

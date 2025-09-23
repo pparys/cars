@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE companies(id INTEGER, name TEXT);
+    CREATE TABLE employees(id INTEGER, name TEXT, company_id INTEGER, FOREIGN KEY company_id REFERENCES companies);
+  CREATE TABLE countries(id INTEGER, name TEXT);
+    INSERT INTO companies(id, name) VALUES(201, 'Company A');
+    INSERT INTO companies(id, name) VALUES(202, 'Company B');
+  }
+} {}
+
+do_test update-violates-foreign-key-1.1 {
+  execsql {
+    UPDATE companies SET id = 203 WHERE id = 202;
+  }
+} {1 {FOREIGN KEY constraint failed: employees.company_id}                                                                                                                                                             
+                                                                  
+    finish_test

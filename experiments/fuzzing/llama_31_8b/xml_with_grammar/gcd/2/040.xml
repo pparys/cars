@@ -1,0 +1,13 @@
+<\xml version="1.0" encoding="UTF-8"?><!DOCTYPE game [
+<!ELEMENT game (#PCDATA)>
+<!ELEMENT player (#PCDATA)>
+<!ELEMENT weapon (#PCDATA)>
+<!ATTLIST player
+  name CDATA #REQUIRED
+  level CDATA #IMPLIED>
+<!ATTLIST weapon
+  type CDATA #REQUIRED
+  damage CDATA #IMPLIED>
+]>
+<game><player name="John" level="5">Fighter</player><player name="Mike" level="10">Mage</player><weapon type="sword" damage="20"/>
+<weapon type="shield" damage="2"/></game>

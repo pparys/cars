@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item (product+, description?)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST product
+    barcode CDATA #IMPLIED
+    price CDATA #IMPLIED>
+]>
+<catalog>
+  <item id="001" date="2022-01-01">
+    <product>Chocolate Cake</product>
+    <product>Peanut Butter Cookies</product>
+    <description>Fresh baked goods</description>
+  </item>
+  <item id="002" date="2022-01-02">
+    <product>Apple Pie</product>
+  </item>
+</catalog>

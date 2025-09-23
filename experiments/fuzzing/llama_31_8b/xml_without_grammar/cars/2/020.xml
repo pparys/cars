@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressBook [
+  <!ELEMENT book (name, phone*, address+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (number, type)>
+  <!ELEMENT number (#PCDATA)>
+  <!ELEMENT type (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST address street CDATA #REQUIRED city CDATA #REQUIRED>
+]>
+<book>
+  <name>John Doe</name>
+  <phone>
+    <number>123-456-7890</number>
+    <type>Home</type>
+  </phone>
+  <phone>
+    <number>098-765-4321</number>
+    <type>Work</type>
+  </phone>
+  <address street="123 Main St" city="Anytown"/>
+  <address street="456 Elm St" city="Othertown"/>
+</book>

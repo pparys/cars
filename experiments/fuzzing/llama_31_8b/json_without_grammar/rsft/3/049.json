@@ -1,0 +1,9 @@
+{"name": "Mewtwo", 
+"id": 150, 
+"types": ["Psychic"], 
+"isLegendary": true, 
+"abilities": [{"name": "Pressure", 
+"description": "User's moves raise opponent's move PP by 1."}, 
+{"name": "Unnerve", 
+"description": "Lower opponent's Special Attack stat when hit by a move."}], 
+"preEvolution": "Mew"}

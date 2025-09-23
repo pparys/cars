@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test  delete-records-3.0 {
+  execsql {
+    CREATE TABLE employee(id INTEGER, name TEXT, designation TEXT, salary REAL);
+    INSERT INTO employee(id, name, designation, salary) VALUES(101, 'Emma', 'Software Engineer', 50000.0);
+    INSERT INTO employee(id, name, designation, salary) VALUES(102, 'Jack', 'Data Scientist', 70000.0);
+  }
+} {}
+
+do_test delete-previous-record-3.1 {
+  execsql {
+    DELETE FROM employee WHERE id = 102;
+  }
+} {}
+
+finish_test

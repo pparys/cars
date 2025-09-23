@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-test-1.0 {
+  execsql {
+    CREATE TABLE students(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      age INTEGER CHECK age BETWEEN  istance_type  AND  istance_max
+    );
+    INSERT INTO students VALUES(1, 'Alice', 10);
+    INSERT INTO students VALUES(2, 'Bob', 11);
+  }
+} {}
+
+do_test age-violates-check-1.1 {
+  execsql {
+    UPDATE students SET age = 2 WHERE id = 1;
+  }
+} { 1 {CHECK constraint failed: students.age}   
+        
+finish_test

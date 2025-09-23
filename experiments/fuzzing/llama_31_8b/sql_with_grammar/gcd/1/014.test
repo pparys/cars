@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-defined-integer-2.0 {
+  execsql {
+    CREATE TABLE numbers (id INTEGER DEFAULT  icky, value INTEGER);
+  INSERT INTO numbers VALUES(0, 999);
+  }
+} {}
+
+do_test select-defined-integer-2.1 {
+  execsql {
+    SELECT id FROM numbers WHERE id = 'icky';
+  }
+} {1}
+
+finish_test

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+  >
+]>
+<library>
+  <book>
+    <title>The Great Gatsby</title>
+    <genre>Classic</genre>
+  </book>
+  <book>
+    <title>To Kill a Mockingbird</title>
+    <genre>Classic</genre>
+  </book>
+  <author id="1">
+    Harper Lee
+    Barren, AL
+  </author>
+  <author id="2">
+    F.Scott Fitzgerald
+    NYC, NY
+  </author>
+</library>

@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books (
+      id INTEGER PRIMARY KEY,
+      title TEXT NOT NULL,
+      author TEXT,
+      publication_year INTEGER,
+      price REAL
+    );
+    INSERT INTO books VALUES(NULL, 'The Great Gatsby', 'F. Scott Fitzgerald', 1925, 25.00);
+    INSERT INTO books VALUES(NULL, 'To Kill a Mockingbird', 'Harper Lee', 1960, 12.99);
+    INSERT INTO books VALUES(NULL, '1984', 'George Orwell', 1949, 8.99);
+  }
+} {}
+
+do_test update-books-3.1 {
+  execsql {
+    UPDATE books SET price = 18.99 WHERE title = '1984';
+  }
+} {}
+
+finish_test

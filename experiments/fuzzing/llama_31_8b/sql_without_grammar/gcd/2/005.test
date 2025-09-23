@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-accounts-3.0 {
+  execsql {
+    CREATE TABLE accounts(id INTEGER PRIMARY KEY, balance REAL CHECK borderTop NOT NULL);
+    INSERT INTO accounts(id, balance) VALUES(1, 100.0);
+    INSERT INTO accounts(id, balance) VALUES(2, 200.0);
+  }
+} {}
+
+do_test delete-with-check-constraint-violation-3.1 {
+  execsql {
+    DELETE FROM accounts WHERE id = 2 AND balance = 0;
+  }
+} {1 {CHECK constraint failed: accounts.balance > 0}  													    		
+finish_test

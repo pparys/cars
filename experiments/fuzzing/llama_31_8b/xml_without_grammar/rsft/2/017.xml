@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (store*)>
+  <!ELEMENT store (product+, manager)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT manager (#PCDATA)>
+  <!ATTLIST store
+    id ID #REQUIRED
+    location CDATA #IMPLIED>
+]>
+<catalog>
+  <store id="store1" location="New York">
+    <product>Product A</product>
+    <product>Product B</product>
+    <manager>John Doe</manager>
+  </store>
+  <store id="store2" location="Los Angeles">
+    <product>Product C</product>
+    <manager>Jane Smith</manager>
+  </store>
+</catalog>

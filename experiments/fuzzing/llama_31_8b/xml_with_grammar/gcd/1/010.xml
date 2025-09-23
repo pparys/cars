@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author+, price+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id (INT) #REQUIRED
+    publisher (CDATA) #IMPLIED>
+  <!ATTLIST author
+    name (CDATA) #REQUIRED
+    nationality (CDATA) #IMPLIED>
+]>
+<catalog>
+  <book id="1234" publisher="Acme Publishers">
+    <author name="John Smith" nationality="British"/>
+    <author name="Jane Doe" nationality="American"/>
+    <price>$19.99</price>
+  </book>
+  <book id="5678" publisher="XYZ Inc">
+    <author name="Bob Johnson" nationality="Canadian"/>
+    <author name="Alice Brown" nationality="French"/>
+    <price>$9.99</price>
+  </book>
+</catalog>

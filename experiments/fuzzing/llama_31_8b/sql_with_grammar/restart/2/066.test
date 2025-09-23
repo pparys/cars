@@ -1,0 +1,56 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE items(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      price REAL,
+      status TEXT CHECKDropDown
+    );
+    INSERT INTO items(name, price) VALUES('FunToy', 32.123);
+    INSERT INTO items(name, price) VALUES('SuperGame', 56.725);
+  }
+} {}
+
+do_test group-extract-3.1 {
+  execsql {
+    SELECT status, AVGprice FROM items GROUP BY status;
+  }
+} {{}           	                          	 
+
+
+                          	 		             	 		   	   				          			              	 	                    	 	 	 	                                    		 	                        	
+	                    	
+			            	
+	                         	
+                                  	
+                                   	
+
+    	   	
+	       	
+	      
+	                 	
+	                       
+                    	 
+
+
+
+
+                                   	                                     	                	                         	                            
+  	                           
+
+
+
+  				                                 	                     	                            	                         	 
+
+
+
+                                   		                        
+
+
+                                   	                            
+
+                                				                   	                            				  
+	finish_test

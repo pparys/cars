@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (name plaque location)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT plaque (#PCDATA)>
+  <!ELEMENT location EMPTY>
+  <!ATTLIST location
+    latitude CDATA #REQUIRED
+  >
+]>
+<company>
+  <name>Silicon Valley Inc.</name>
+  <plaque>Awarded for innovation</plaque>
+  <location latitude="-37.7749" />
+</company>

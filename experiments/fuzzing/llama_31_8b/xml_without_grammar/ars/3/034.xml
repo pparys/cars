@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (publisher, author, book)*>
+  <!ELEMENT publisher (address, contact)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED>
+]>
+<books>
+  <publisher>
+    <address>
+      <street>123 Main St</street>
+      <city>New York</city>
+      <state>NY</state>
+      <zip>10001</zip>
+    </address>
+    <contact>worldwide@books.com</contact>
+  </publisher>
+  <author>John Doe</author>
+  <book title="Example Book">This is a sample book.</book>
+  <book title="Another Example">This is another sample book.</book>
+</books>

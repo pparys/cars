@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (category)*>
+  <!ELEMENT category (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST category
+    name CDATA #REQUIRED
+  >
+]>
+<library>
+  <category name="Science Fiction">
+    <book>1984</book>
+    <book>Dune</book>
+    <book>Foundation</book>
+  </category>
+  <category name="Historical Fiction">
+    <book>Pride and Prejudice</book>
+    <book>War and Peace</book>
+  </category>
+</library>

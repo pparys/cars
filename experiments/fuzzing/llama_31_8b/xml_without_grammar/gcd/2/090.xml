@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (author+, category*)>
+  <!ELEMENT author (name, books)>
+  <!ATTLIST author id CDATA #REQUIRED>
+  <!ATTLIST author order CDATA #IMPLIED>
+  <!ATTLIST category cat CDATA #REQUIRED>
+  <!ATTLIST category cattype CDATA #IMPLIED>
+  <!ATTLIST category id CDATA #REQUIRED>
+  <!ATTLIST book title CDATA #REQUIRED>
+  <!ATTLIST book author IDREF #REQUIRED>
+  <!ATTLIST book year CDATA #IMPLIED>
+]>
+<bookstore>
+  <category cat="Fiction" cattype="Magical" id="1">
+    <book title="The Lord of the Rings" author="Author1" year="1954"/>
+    <book title="1984" author="Author1" year="1948"/>
+  </category>
+  <category cat="Non Fiction" cattype="Biography" id="2">
+    <book title="The Autobiography of Malcolm X" author="Author2" year="1965"/>
+    <book title="The Autobiography of Martin Luther King Jr." author="Author2"/>
+  </category>
+  <author id="1" order="1">
+    <name>Author</name>
+    <books>
+      <book title="Harry Potter" id="1">Subrefrence of Book</book>
+    </books>
+  </author>
+</bookstore>

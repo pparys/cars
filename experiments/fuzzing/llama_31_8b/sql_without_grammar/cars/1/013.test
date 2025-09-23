@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test change-primary-key-2.0 {
+  execsql {
+    CREATE TABLE information(id INTEGER PRIMARY KEY, title TEXT);
+    INSERT INTO information(id, title) VALUES(198, 'The Shawshank Redemption');
+    INSERT INTO information(id, title) VALUES(199, 'The Godfather');
+  }
+} {}
+
+do_test query-by-primary-key-2.1 {
+  execsql {
+    SELECT title FROM information WHERE id = 198;
+  }
+} {The Shawshank Redemption}
+
+finish_test

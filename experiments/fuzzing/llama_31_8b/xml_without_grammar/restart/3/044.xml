@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book | author)*>
+  <!ELEMENT book (#PCDATA | paragraph)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    nationality CDATA #IMPLIED>
+]>
+<catalog>
+  <book isbn="978-1457505550">
+    <paragraph>This is a book on computer programming</paragraph>
+    <paragraph>It covers various programming languages</paragraph>
+  </book>
+  <author name="John Smith" nationality="American">
+    <paragraph>John Smith is an American author</paragraph>
+    <paragraph>He specializes in computer programming</paragraph>
+  </author>
+</catalog>

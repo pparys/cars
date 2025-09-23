@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-create-2.0 {
+  execsql {
+    CREATE TABLE t1(a INTEGER PRIMARY KEY, b TEXT, c TEXT);
+    CREATE TABLE t2(b TEXT PRIMARY KEY, c TEXT, d INTEGER);
+    INSERT INTO t1(a, b, c) VALUES(1, 'AA', 'CC');
+    INSERT INTO t2(b, c, d) VALUES('AA', 'DD', 3);
+  }
+} {}
+
+do_test update-2.1 {
+  execsql {
+    UPDATE t1 SET c = 'XX' WHERE a = 1;
+  }
+} {}
+
+finish_test

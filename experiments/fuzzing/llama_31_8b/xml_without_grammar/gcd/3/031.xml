@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (store*)>
+  <!ELEMENT store (title,price,author,ISBN)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT ISBN (#PCDATA)>
+  <!ATTLIST store
+    id   (1|2|3|4|5)  #REQUIRED
+    date CDATA       #IMPLIED>
+]>
+<bookstore>
+  <store id="1" date="2024-07-15">
+    <title>The Great Gatsby</title>
+    <price>15.99</price>
+    <author>F. Scott Fitzgerald</author>
+    <ISBN>978-0743273565</ISBN>
+  </store>
+  <store id="2" date="2024-07-16">
+    <title>The Catcher in the Rye</title>
+    <price>12.99</price>
+    <author>J.D. Salinger</author>
+    <ISBN>978-0345453742</ISBN>
+  </store>
+  <store id="3" date="2024-07-17">
+    <title>The Lord of the Rings</title>
+    <price>25.99</price>
+    <author>J.R.R. Tolkien</author>
+    <ISBN>978-0261103445</ISBN>
+  </store>
+</bookstore>

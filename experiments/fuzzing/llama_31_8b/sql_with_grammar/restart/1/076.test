@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test schema-creation-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, 
+      customer_id INTEGER, total REAL);
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, 
+      name TEXT);
+  CREATE TABLE order_items(order_id INTEGER, 
+      product_id INTEGER, quantity INTEGER);
+  CREATE TABLE products(product_id INTEGER PRIMARY KEY, 
+      name TEXT);
+  INSERT INTO customers VALUES(1, 'John Doe');
+  INSERT INTO orders VALUES(101, 1, 100.00);
+  }
+} {}
+
+do_test data-manipulation-1.1 {
+  execsql {
+    UPDATE orders SET total = 200.00 WHERE order_id = 101;
+    UPDATE customers SET name = 'Jane Doe' WHERE customer_id = 1;
+    UPDATE order_items SET quantity = 5 WHERE order_id = 101;
+  }
+} {}
+
+finish_test

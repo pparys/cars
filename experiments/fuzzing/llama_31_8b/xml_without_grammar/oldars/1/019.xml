@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item (#PCDATA|book|software)*>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT software (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT company (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<catalog>
+  <item id="1" title="Product 1">
+    Item 1 content for Product 1.
+  </item>
+  <item id="2" title="Product 2">
+    <book>
+      A Great Novel
+      <author>John Doe</author>
+      <address>123 Main St</address>
+    </book>
+  </item>
+  <item id="3" title="Product 3">
+    <software>
+      My Awesome Software
+      <version>1.0</version>
+    </software>
+    <phone>555-1234</phone>
+  </item>
+</catalog>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movie [
+  <!ELEMENT movie (title,cast,awards,categories)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT cast (actor*)>
+  <!ELEMENT actor (#PCDATA)>
+  <!ATTLIST actor id CDATA #REQUIRED>
+  <!ATTLIST actor name CDATA #IMPLIED>
+  <!ATTLIST awards (true|false)>
+  <!ATTLIST categories (drama|comedy)>
+]>
+<movie>
+  <title>The Shawshank Redemption</title>
+  <cast>
+    <actor id="1" name="Tim Robbins">Andy Dufresne</actor>
+    <actor id="2" name="Morgan Freeman">Red</actor>
+  </cast>
+  <awards>true</awards>
+  <categories>drama</categories>
+</movie>

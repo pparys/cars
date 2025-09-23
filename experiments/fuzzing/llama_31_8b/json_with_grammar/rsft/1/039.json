@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Pressure", "description": "Boosts the PP cost by 10% of special moves used on the target."}, {"name": "Unnerve", "description": "Opponent's ability users are unable to learn new moves from tutors."}], "preEvolution": null}

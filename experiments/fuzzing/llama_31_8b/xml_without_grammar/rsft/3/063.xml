@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author+,item+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED
+    condition (new|used)>
+]>
+<catalog>
+  <author>J.K. Rowling</author>
+  <item id="001" price="19.95" condition="new">Harry Potter and the Philosopher's Stone</item>
+  <author>Stephen King</author>
+  <item id="002" price="14.99" condition="used">Carrie</item>
+</catalog>

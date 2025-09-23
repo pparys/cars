@@ -1,0 +1,26 @@
+<\xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE records [
+  <!ELEMENT records (record+)>
+  <!ELEMENT record (name, groupei, information fiction/format)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT groupei (#PCDATA)>
+  <!ELEMENT information EMPTY>
+  <!ATTLIST information
+    language CDATA #IMPLIED>
+  <!ATTLIST record
+    level CDATA #IMPLIED>
+  <!ATTLIST record
+    date CDATA #IMPLIED>
+]>
+<records>
+  <record level='1' date='2024-01-01'>
+    <name>XMLElement</name>
+    <groupei>XGen</groupei>
+    <information language='fr' />
+  </record>
+  <record level='2' date='2024-07-27'>
+    <name>Error HAndling</name>
+    <groupei>XMLLib</groupei>
+    <information language='en' />
+  </record>
+</records>

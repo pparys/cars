@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, dvd+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT dvd (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    price CDATA #REQUIRED
+    year CDATA #REQUIRED>
+]>
+<catalog>
+  <book author="J.K. Rowling" price="$15.99" year="2000">Harry Potter and the Philosopher's Stone</book>
+  <book author="J.R.R. Tolkien" price="$12.99" year="1954">The Fellowship of the Ring</book>
+  <dvd author="Quentin Tarantino" price="$9.99" year="1994">Pulp Fiction</dvd>
+</catalog>

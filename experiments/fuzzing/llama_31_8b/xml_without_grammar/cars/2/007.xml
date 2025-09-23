@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+, category*)>
+  <!ELEMENT book (title, author*, publisher, year)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+]>
+<library>
+  <book id="book-1">
+    <title>Harry Potter</title>
+    <author>J.K. Rowling</author>
+    <publisher>Scholastic</publisher>
+    <year>1997</year>
+  </book>
+  <book id="book-2">
+    <title>The Lord of the Rings</title>
+    <author>J.R.R. Tolkien</author>
+    <publisher>George Allen & Unwin</publisher>
+    <year>1954-1955</year>
+  </book>
+  <author>Jane Austen</author>
+  <author>Charles Dickens</author>
+  <category>Fantasy</category>
+  <category>Classic</category>
+</library>

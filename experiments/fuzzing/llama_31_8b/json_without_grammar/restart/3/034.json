@@ -1,0 +1,11 @@
+{"name": "Vaporeon", "id": 134, "types": ["Water"], "isLegendary": false, "evolution": {"name": "Evoevolved", "id": "Mountain"}, "ability": [{"name": "Damp", "description": "User prevents Wild Pokémon from attempting to flee."}, {"name": "Water Absorb", "description": "Restores HP if hit by a Water-type move."}], "isFinalEvolution": true, "evolvesFrom": {"name": "Eevee", "id": 133}, "stats": {"hp": 130, "attack": 65, "defense": 120, "specialAttack": 110, "specialDefense": 95, "speed": 65}, "moves": ["Tackle", "Growl", "Bubble Beam"], "location": {"longitude": -122.084051, "accuracy": "10.7km", "latitude": 37.385348, "name": "Oakwood Gym"}, "flags": {"password": "KD29", "level": " elite", "points": 5, "tier": 3, "version": " Advance RS"}, "eggmove": [{"name": "Transform", "description": "Swap user and target."}, {"name": "Splash", "description": "Nothing happens"}], "gender": true, "catchItems": {"bag": true, "hide": {"item": "completion", "exrate": "1193", "allRate": "1193"}, "checkitem": true}, "movesLink": "https://pokebattler.io/monsters/120969/", "headSprite": { "download": "117.1kb", " width": "220px", "height": "311.5px", "path": "/images/diva3/Lapraogonal_56.png", "sc": false, "link": "17 Bizussobi%"
+ 
+                }    ,   "getTeam": true, "textarea" :{"caret":true}  , "allowschanges": {"status": {"result": "not allowed"}},
+ 
+  "statsSecond": {"roundintegration": true, "strcmp": true, "result": "Their JSON is same    ", "timestamp": {"org'^uuo": {  "sortable": true}}    , "string Olympia2014" : "1"}
+
+            
+             
+
+
+ 

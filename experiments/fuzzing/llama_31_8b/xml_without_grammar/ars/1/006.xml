@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, title, price, publication)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    year CDATA #REQUIRED
+    edition CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+]>
+<book year="2020" edition="First" publisher="Unknown">
+  <author>John Doe</author>
+  <title>The Great Story</title>
+  <price>19.99</price>
+  <publication>2020-03-03</publication>
+</book>

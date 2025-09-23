@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE employees(employee_id INTEGER PRIMARY KEY, manager_id INTEGER, email TEXT UNIQUE);
+    CREATE TABLE departments(department_id INTEGER PRIMARY KEY, manager_id INTEGER, name TEXT);
+    INSERT INTO employees(employee_id, manager_id, email) VALUES(101, 102, 'john.smith@example.com');
+    INSERT INTO employees(employee_id, manager_id, email) VALUES(102, NULL, ' sue.jones@example.com');
+    INSERT INTO departments(department_id, manager_id, name) VALUES(201, 102, 'Sales');
+  }
+} {}
+
+do_test check-foreign-key-3.1 {
+  execsql {
+    SELECT manager_id FROM employees WHERE employee_id = 102;
+  }
+} {102}
+
+finish_test

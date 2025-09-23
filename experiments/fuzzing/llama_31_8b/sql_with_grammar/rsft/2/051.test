@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE students(id INTEGER, name TEXT, grade INTEGER);
+    INSERT INTO students VALUES(201, 'John Doe', 88);
+    INSERT INTO students VALUES(202, 'Jane Doe', 92);
+    INSERT INTO students VALUES(203, 'Bob Smith', 78);
+  }
+} {}
+
+do_test select-top-3-3.1 {
+  execsql {
+    SELECT name, grade FROM students ORDER BY grade DESC LIMIT 3;
+  }
+} {Jane Doe 92 John Doe 88 Bob Smith 78}
+
+finish_test

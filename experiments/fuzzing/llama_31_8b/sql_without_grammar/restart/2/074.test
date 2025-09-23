@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-indexes-3.0 {
+  execsql {
+    CREATE TABLE scores(name TEXT, score REAL);
+    CREATE TABLE games(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE player_scores(
+      id INTEGER PRIMARY KEY,
+      game_id INTEGER,
+      FOREIGN KEY	game_id REFERENCES games,
+      INDEX games_name_idx_1,
+      INDEX games_name_idx_2 ON games
+        UNIQUE,
+    UNIQUE INDEX scores_name_idx ON scores
+      ) ;
+    INSERT INTO scores(name, score) VALUES('Alice', 100.0);
+    INSERT INTO scores(name, score) VALUES('Bob', 200.0);
+    INSERT INTO games(id, name) VALUES(1, 'Game1');
+  }
+} {}
+
+do_test update-score-3.1 {
+  execsql {
+    UPDATE scores SET score = score = 500.0 WHERE name = 'Bob';
+  }
+} {1 {errcode = 19, msg = unable to open database file %. I/O error code 5, oserror = spyrock The process cannot access the file because it is being used by another process., err:1 arg: spyrock} 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         

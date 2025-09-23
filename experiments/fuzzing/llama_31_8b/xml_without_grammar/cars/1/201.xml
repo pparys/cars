@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+,genre+,book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <author>Lionel Shriver</author>
+  <genre>Fiction</genre>
+  <book title="Heart of Darkness" author="Joseph Conrad" year="1899"/>
+  <book title="The Stranger" year="1942"/>
+</library>

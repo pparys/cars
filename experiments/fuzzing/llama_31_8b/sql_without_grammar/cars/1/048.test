@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-runtime-3.0 {
+  execsql {
+    CREATE TABLE products(category TEXT, item TEXT);
+    INSERT INTO products(category, item) VALUES('Electronics', 'TV');
+    INSERT INTO products(category, item) VALUES('Electronics', 'Laptop');
+  }
+} {}
+
+do_test update-runtime-3.1 {
+  execsql {
+    UPDATE products SET category = 'Electronics AND Gadgets' WHERE category = 'Electronics';
+  }
+} {}
+
+finish_test

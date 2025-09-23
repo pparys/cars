@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-multiple-indices-1.0 {
+  execsql {
+    CREATE TABLE products(product_id INTEGER, name TEXT, category TEXT, price REAL);
+    CREATE TABLE sales(product_id INTEGER, date DATE);
+    CREATE TABLE product_sales(product_id INTEGER, date DATE);
+  CREATE TABLE product_prices(product_id INTEGER DEFAULT  NULL, price REAL);
+   CREATE TABLE varied_id_uniq(product_id INTEGER, category TEXT NAME, product_id2 INTEGER);
+    INSERT INTO products VALUES(101, 'Shampoo', 'Haircare', 5.99);
+    INSERT INTO sales VALUES(101, '2022-01-01');
+  }
+} {}
+
+do_test select-productsSales-1.1 {
+  execsql {
+    SELECT * FROM products WHERE product_id = 101;
+    SELECT * FROM sales;
+  }
+} {101 Shampoo Haircare 5.99 {2022-01-01}   
+
+finish_test

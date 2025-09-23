@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author*,book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title,author+,review*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #REQUIRED
+  >
+]>
+<library>
+  <author>John Doe</author>
+  <author>Jane Smith</author>
+  <book id="bk101" year="2000" >
+    <title>XML for Beginners</title>
+    <author>John Doe</author>
+    <review>A great book for beginners!</review>
+  </book>
+  <book id="bk102" year="2005">
+    <title>XML for Experts</title>
+    <author>Jane Smith</author>
+    <review>A challenging book for experts!</review>
+  </book>
+</library>

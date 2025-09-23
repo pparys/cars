@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (title,author,year.ISBN*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year EMPTY>
+  <!ELEMENT ISBN (#PCDATA)>
+  <!ATTLIST year
+    value CDATA #REQUIRED
+  >
+]>
+<library>
+  <book>
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <year value="1925"/>
+    <ISBN>9780743273565</ISBN>
+    <ISBN>9780743273961</ISBN>
+  </book>
+  <book>
+    <title>To Kill a Mockingbird</title>
+    <author>Harper Lee</author>
+    <year value="1960"/>
+    <ISBN>9780061120084</ISBN>
+  </book>
+</library>

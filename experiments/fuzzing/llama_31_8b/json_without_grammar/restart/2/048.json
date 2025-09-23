@@ -1,0 +1,1 @@
+{"name":"Dragonite","id":149,"types":["Dragon","Flying"],"isLegendary":false,"abilities":[{"name":"Multiscale","description":"Reduces damage from a Dragon-type attack if Dragonite's HP falls below 50%."},{"name":"Levitate","description":"User is immune to Ground-type moves."},{"name":"DAC","description":"User has a higher chance of dodging attacks."}],"preEvolution":"Dragonair"}

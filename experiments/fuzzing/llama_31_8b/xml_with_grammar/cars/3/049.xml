@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE country [
+  <!ELEMENT country (headings, body)>
+  <!ELEMENT headings (title)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT body (section+)>
+  <!ELEMENT section (#PCDATA)>
+  <!ATTLIST section id CDATA #IMPLIED>
+]>
+<country>
+  <headings>
+    <title>Country Information</title>
+  </headings>
+  <body>
+    <section id="L1">This is section 1.</section>
+    <section id="L2">This is section 2.</section>
+  </body>
+</country>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description,features,prices)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT features (feature+)>
+  <!ELEMENT feature (#PCDATA)>
+  <!ATTLIST feature
+    id (1|2|3|4|5) #REQUIRED
+    importance (low|medium|high) #IMPLIED
+  >
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED
+  >
+  <!ATTLIST prices (price*)>
+  <!ATTLIST price
+    currency (CAD|USD|EUR) #IMPLIED
+  >
+]>
+<product id="123" author="John Doe">
+  <description>This is a great product!</description>
+  <features>
+    <feature id="1" importance="high">Feature 1</feature>
+    <feature id="2" importance="medium">Feature 2</feature>
+    <feature id="3" importance="low">Feature 3</feature>
+  </features>
+  <prices price="$10.99" currency="USD" price="$20.99"/>
+</product>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test international-1.0 {
+  execsql {
+    CREATE TABLE products(name TEXT, price REAL);
+    INSERT INTO products(name, price) VALUES('T-shirt', 9.99);
+    INSERT INTO products(name, price) VALUES('Jeans', 69.99);
+  }
+} {}
+
+do_test international-select-1.1 {
+  execsql {
+    SELECT name, price FROM products WHERE price > 10;
+  }
+} {T-shirt 9.99 Jeans 69.99}
+
+finish_test

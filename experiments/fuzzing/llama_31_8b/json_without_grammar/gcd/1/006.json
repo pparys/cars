@@ -1,0 +1,1 @@
+{"name": "Dragonite", "id": 149, "types": ["Dragon", "Flying"], "isLegendary": false, "abilities": [{"name": "Multiscale", "description": "When the Pokémon’s HP drops to 25% or less, the Pokémon’s defense increases."}, {"name": "Drought", "description": "Prevents weather from being changed by other Pokémon."}], "preEvolution": "Drakloak" }

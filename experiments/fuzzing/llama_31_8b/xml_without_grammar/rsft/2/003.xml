@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <author name="J.K. Rowling">
+    <book>
+      <title>Harry Potter and the Philosopher's Stone</title>
+      <price>10.99</price>
+    </book>
+    <book>
+      <title>Harry Potter and the Chamber of Secrets</title>
+      <price>9.99</price>
+    </book>
+  </author>
+  <author name="Banning Garrett">
+    <book>
+      <title>The City of Unspoken Things</title>
+      <price>12.99</price>
+    </book>
+  </author>
+</catalog>

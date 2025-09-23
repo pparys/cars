@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-vehicle-data-3.0 {
+  execsql {
+    CREATE TABLE vehicles(
+      id INTEGER PRIMARY KEY,
+      make TEXT NOT NULL,
+      model TEXT NOT NULL,
+      year INTEGER NOT NULL
+    );
+    INSERT INTO vehicles VALUES(101, 'Toyota', 'Camry', 2015);
+    INSERT INTO vehicles VALUES(102, 'Honda', 'Civic', 2018);
+    INSERT INTO vehicles VALUES(103, 'Ford', 'Focus', 2020);
+  }
+} {}
+
+do_test select-vehicle-3.1 {
+  execsql {
+    SELECT make, model FROM vehicles WHERE year = 2018;
+  }
+} {Honda Civic}
+
+finish_test

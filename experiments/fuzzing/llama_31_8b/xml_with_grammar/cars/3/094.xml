@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (store*)>
+  <!ELEMENT store (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED>
+  <!ATTLIST store
+    branch CDATA #REQUIRED
+  >
+]>
+<products>
+  <store branch="Sydney">
+    <product id="1234" price="10.99">Apple</product>
+    <product id="5678" price="20.99">Banana</product>
+  </store>
+  <store branch="Melbourne">
+    <product id="9012" price="5.99">Orange</product>
+  </store>
+</products>

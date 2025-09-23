@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE purchases(
+      purchase_id INTEGER PRIMARY KEY,
+      customer_id INTEGER NOT NULL,
+      order_date DATE,
+      FOREIGN KEYcustomer_id REFERENCES customerscustomer_id ON DELETE CASCADE);
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO customers(customer_id, name) VALUES(1, 'Alice');
+    INSERT INTO customers(customer_id, name) VALUES(2, 'Bob');
+  }
+} {}
+
+do_test insert-foreign-key-3.1 {
+  execsql {
+    SELECT name FROM customers WHERE customer_id = 2;
+  }
+} {Bob}
+
+finish_test

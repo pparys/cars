@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+<!ELEMENT company (division+)>
+<!ELEMENT division (department+)>
+<!ELEMENT department (employee+)>
+<!ELEMENT employee (#PCDATA | address | phone | email)*>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ATTLIST company name CDATA #REQUIRED>
+<!ATTLIST division name CDATA #REQUIRED>
+<!ATTLIST department name CDATA #REQUIRED>
+]>
+<company name="ABC Corporation">
+  <division name="Sales">
+    <department name="Accounting">
+      <employee>John Doe</employee>
+      <employee>Jane Smith</employee>
+      <address>123 Main St</address>
+      <phone>555-555-1234</phone>
+      <email>johndoe@example.com</email>
+    </department>
+  </division>
+  <division name="Marketing">
+    <department name="HR">
+      <employee>Sam Johnson</employee>
+      <address>456 Elm St</address>
+      <email>samjohnson@example.com</email>
+    </department>
+  </division>
+</company>

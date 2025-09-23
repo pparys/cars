@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customer [
+  <!ELEMENT customer (name,password,access)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT password (#PCDATA)>
+  <!ELEMENT access (address,schema,commands)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT schema (#PCDATA)>
+  <!ELEMENT commands (#PCDATA)>
+  <!ATTLIST customer
+    id CDATA #REQUIRED
+    version CDATA #REQUIRED>
+]>
+<customer id="C001" version="1.0">
+  <name>John Doe</name>
+  <password>Secret123</password>
+  <access>
+    <address>123, Main St</address>
+    <schema>SQL Server</schema>
+    <commands>
+      <command>SELECT * FROM Customers</command>
+      <command>INSERT INTO Customers (ID, Name) VALUES (1, 'John Doe')</command>
+    </commands>
+  </access>
+</customer>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+,price+)>
+  <!ELEMENT book EMPTY>
+  <!ELEMENT price EMPTY>
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    title CDATA #REQUIRED
+  >
+  <!ATTLIST price
+    unit CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <book author="J.K. Rowling" title="Harry Potter"/>
+  <book author="J.R.R. Tolkien" title="The Lord of the Rings"/>
+  <price unit="USD"/>
+  <price unit="GBP"/>
+</catalog>

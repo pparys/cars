@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-advanced-1.0 {
+  execsql {
+    CREATE TABLE people(id INTEGER PRIMARY KEY, name TEXT, address TEXT);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, person_id INTEGER, order_date TEXT, 
+      FOREIGN KEY person_id REFERENCES people ON DELETE CASCADE);
+    INSERT INTO people(id, name, address) VALUES(1, 'John', 'New York');
+    INSERT INTO people(id, name, address) VALUES(2, 'Alice', 'California');
+    INSERT INTO orders(order_id, person_id, order_date) VALUES(1, 1, '2020-01-01');
+    INSERT INTO orders(order_id, person_id, order_date) VALUES(2, 1, '2020-01-15');
+  }
+} {}
+
+do_test query-foreign-keys-1.1 {
+  execsql {
+    SELECT name FROM people WHERE id = 1;
+  }
+} {John}
+ 
+finish_test

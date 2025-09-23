@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ELEMENT book (title,author,genre,price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT price (#CDATA)>
+  <!ATTLIST book
+     id CDATA #REQUIRED
+     published CDATA #IMPLIED>
+]>
+<books>
+  <book id="book1" published="2018">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <genre>Fiction</genre>
+    <price>10.99</price>
+  </book>
+  <book id="book2" published="1984">
+    <title>Road to Wigan Pier</title>
+    <author>George Orwell</author>
+    <genre>Non-Fiction</genre>
+    <price>12.99</price>
+  </book>
+</books>

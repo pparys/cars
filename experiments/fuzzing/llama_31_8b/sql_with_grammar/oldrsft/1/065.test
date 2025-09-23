@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT, email TEXT);
+    INSERT INTO customers(id, name, email) VALUES(101, 'Customer 1', 'cust1@example.com');
+    INSERT INTO customers(id, name, email) VALUES(102, 'Customer 2', 'cust2@example.com');
+  }
+} {}
+
+do_test delete-unused-index-3.1 {
+  execsql {
+    DELETE FROM customers WHERE id = 101;
+  }
+} {}
+
+finish_test

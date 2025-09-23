@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE purchase-order [
+  <!ELEMENT purchase-order (bill-to, ship-to, items)>
+  <!ELEMENT bill-to (#PCDATA)>
+  <!ELEMENT ship-to (#PCDATA)>
+  <!ELEMENT items (item*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    product-name CDATA #REQUIRED
+    quantity CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<purchase-order>
+  <bill-to>ABC Doe, 123 Main St.</bill-to>
+  <ship-to>DEF Jane, 456 Elm St</ship-to>
+  <items>
+    <item product-name="Apple" quantity="5" price="0.99"/>
+    <item product-name="Banana" quantity="6" price="0.69"/>
+    <item product-name="Orange" quantity="7" price="0.89"/>
+  </items>
+</purchase-order>

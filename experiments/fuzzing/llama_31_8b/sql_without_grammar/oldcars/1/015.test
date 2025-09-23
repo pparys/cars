@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-2.0 {
+  execsql {
+    CREATE TABLE navigation(id INTEGER PRIMARY KEY, name TEXT, link TEXT, parent INTEGER);
+    INSERT INTO navigation(id, name, link, parent) VALUES(1, 'Home', 'index.html', NULL);
+    INSERT INTO navigation(id, name, link, parent) VALUES(2, 'About', 'about.html', NULL);
+    INSERT INTO navigation(id, name, link, parent) VALUES(3, 'FAQs', 'faqs.html', 2);
+    INSERT INTO navigation(id, name, link, parent) VALUES(4, 'Terms', 'terms.html', 2);
+  }
+} {}
+
+do_test delete-top-level-2.1 {
+  execsql {
+    DELETE FROM navigation WHERE id = 1;
+  }
+} {}
+
+finish_test

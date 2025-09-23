@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (author|image*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ATTLIST root
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    link CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    year CDATA #IMPLIED
+    age CDATA #IMPLIED>
+]>
+<root id="root1" name="Name" link="https://www.example.com">
+  <author name="Author1" year="2020" age="20"/>
+  <image src="https://www.example.com/image.jpg"/>
+</root>

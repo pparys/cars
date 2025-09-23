@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, section*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT section (title, content)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST section
+    id CDATA #REQUIRED>
+]>
+<book id="BK001" author="John Smith">
+  <title>XML Guide</title>
+  <author>John Smith</author>
+  <publisher>Example Publishing</publisher>
+  <section id="S102">
+    <title>Getting Started</title>
+    <content>This is the first section, containing some basic elements.</content>
+  </section>
+  <section id="S103">
+    <title>Basic Tags</title>
+    <content>This is the second section, with some basic tags.</content>
+  </section>
+</book>

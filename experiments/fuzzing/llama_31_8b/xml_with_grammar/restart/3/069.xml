@@ -1,0 +1,24 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE exercises [
+  <!ELEMENT exercises (exercise+)>
+  <!ELEMENT exercise (description,link+)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT link (#PCDATA)>
+  <!ATTLIST exercise
+    id CDATA #IMPLIED
+    title CDATA #IMPLIED>
+  <!ATTLIST link
+    url CDATA #REQUIRED
+    text CDATA #IMPLIED>
+]>
+<exercises>
+  <exercise id="e1" title="Exercise 1">
+    <description>This is a description.</description>
+    <link url="https://example.com/" text="External Link"/>
+    <link url="https://example.com/2/" text="Another Link"/>
+  </exercise>
+  <exercise id="e2" title="Exercise 2">
+    <description>This is another description.</description>
+    <link url="https://example.com/3/" text="Another Link 2"/>
+  </exercise>
+</exercises>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-ignore-index-1.0 {
+  execsql {
+    CREATE TABLE sales(revenue REAL, region TEXT INDEX region_idx);
+    INSERT INTO sales VALUES(100.99, 'North');
+    INSERT INTO sales VALUES(200.01, 'South');
+  }
+} {}
+
+do_test ignore-index-1.1 {
+  execsql {
+    SELECT * FROM sales ORDER BY revenue LIMIT 1;
+  }
+} {100.99 North}
+
+finish_test

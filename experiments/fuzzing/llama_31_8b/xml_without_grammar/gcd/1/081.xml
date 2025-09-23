@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (author, title, paragraph | paragraphs)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA | figuredescription)*>
+  <!ELEMENT paragraphs (paragraph+ | figuredescription*)>
+  <!ELEMENT figuredescription (#PCDATA | figure+)*>
+  <!ELEMENT figure (#PCDATA | image+)*>
+  <!ELEMENT image (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #IMPLIED
+    birthdate CDATA #IMPLIED
+    country CDATA #IMPLIED>
+  <!ATTLIST title
+    language CDATA #IMPLIED>
+]>
+<document>
+  <author name="John Smith" birthdate="1975-01-01" country="USA">
+    <title language="English">An Essay on Time</title>
+    <paragraph>
+      It was the best of times, it was the worst of times...
+    </paragraph>
+    <paragraph>
+      The whole program costs around 1 dollar to run.
+    </paragraph>
+  </author>
+  <paragraph>
+    <figuredescription>
+      The following chart illustrates the metadata distribution in a simple situation:<figure>
+        <image uri="syntax.png"/>
+        This is the syntax of the XML document analyzed below.<image uri="distribution.png"/>
+        The correct distribution shown 2 plot squares and it is better labeled.
+      </figure>
+    </figuredescription>
+  </paragraph>
+</document>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE shoppingList [
+  <!ELEMENT shoppingList (item+)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    name CDATA #REQUIRED
+    quantity CDATA #IMPLIED
+    unit CDATA #IMPLIED>
+]>
+<shoppingList>
+  <item name="Milk" quantity="2" unit=""/>
+  <item name="Eggs" quantity="4"/>
+  <item name="Bread" name="Whole wheat bread"/>
+</shoppingList>

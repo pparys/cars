@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE documents [
+  <!ELEMENT documents (book, article, report)*>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT article (#PCDATA)>
+  <!ELEMENT report (#PCDATA)>
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT keywords (#PCDATA)>
+  <!ELEMENT essay (#PCDATA)>
+  <!ELEMENT explanation (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED>
+  <!ATTLIST article
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED>
+  <!ATTLIST report
+    title CDATA #IMPLIED
+    author CDATA #IMPLIED>
+  <!ATTLIST summary
+    content CDATA #REQUIRED>
+]>
+<documents>
+  <book title="The Great Gatsby" author="F. Scott Fitzgerald"/>
+  <article title="The Summary of Pride and Prejudice" author="Jane Austen"/>
+  <report title="History of Literature" author="John Doe"/>
+  <summary content="This is a summary of a book"/>
+  <article title="The Importance of Essay Writing" author="William Shakespeare"/>
+  <report title="The Untold Story" author="Jane Doe"/>
+  <book title="To Kill a Mockingbird Harper" author="Harper Lee"/>
+  <essay content="Write about books that you like"/>
+  <explanation content="Provide a detailed explanation of your chosen books"/>
+  <book title="The Adventures of Sherlock Holmes" author="A. C. Doyle"/>
+  <report title="Reporting is like writing" author="Legend Comics"/>
+  <summary content="Summarize what you learned about books"/>
+</documents>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE institution [
+  <!ELEMENT institution (name, contact, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST institution
+    id CDATA #IMPLIED
+    type (public|private) "private">
+]>
+<institution id="INST001" type="private">
+  <name>Institution Name</name>
+  <contact>Main Office: (123) 456-7890</contact>
+  <address>123 Main St, Anytown, USA 12345</address>
+</institution>

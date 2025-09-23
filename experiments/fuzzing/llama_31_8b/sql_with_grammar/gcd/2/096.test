@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE sales(product TEXT, region TEXT, amount REAL);
+    INSERT INTO sales VALUES('ProductA', 'North', 1000.0);
+    INSERT INTO sales VALUES('ProductA', 'South', 2000.0);
+    INSERT INTO sales VALUES('ProductB', 'North', 3000.0);
+    INSERT INTO sales VALUES('ProductB', 'South', 4000.0);
+  }
+} {}
+
+do_test select-top-2.1 {
+  execsql {
+    SELECT product, amount FROM sales ORDER BY amount DESC LIMIT 2;
+  }
+} {ProductB 4000.0 ProductA 3000.0}
+
+finish_test

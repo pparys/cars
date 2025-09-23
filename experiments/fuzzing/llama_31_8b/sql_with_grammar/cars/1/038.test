@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER, title TEXT, author TEXT, year INTEGER);
+    INSERT INTO books VALUES(301, 'Book1', 'Author1', 2000);
+    INSERT INTO books VALUES(302, 'Book2', 'Author2', 2001);
+    INSERT INTO books VALUES(303, 'Book3', 'Author3', 2002);
+  }
+} {}
+
+do_test order-books-1.1 {
+  execsql {
+    SELECT title, author, year FROM books ORDER BY year ASC;
+  }
+} {Book1 Author1 2000 Book2 Author2 2001 Book3 Author3 2002}
+
+finish_test

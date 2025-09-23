@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventors [
+  <!ELEMENT inventors (inventor+)>
+  <!ELEMENT inventor (name, title, birthdate)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT birthdate (#PCDATA)>
+  <!ATTLIST inventors
+    source CDATA #IMPLIED>
+  <!ATTLIST inventor
+    id CDATA #REQUIRED>
+]>
+<inventors source="Find A Grave">
+  <inventor id="1">
+    <name>Leon M. Lederman</name>
+    <title>Nobel Prize</title>
+    <birthdate>1922-07-19</birthdate>
+  </inventor>
+  <inventor id="2">
+    <name>Melvin Schwartz</name>
+    <title>Nobel Prize</title>
+    <birthdate>1933-11-06</birthdate>
+  </inventor>
+</inventors>

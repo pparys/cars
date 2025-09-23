@@ -1,0 +1,34 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-referential-integrity-2.1 {
+  execsql {
+    CREATE TABLE albums (id INTEGER PRIMARY KEY, artist TEXT);
+    CREATE TABLE tracks (id INTEGER PRIMARY KEY, album_id INTEGER, FOREIGN KEYalbum_id REFERENCES albums);
+    INSERT INTO albums (artist) VALUES('Alice');
+    INSERT INTO albums (artist) VALUES('Bob');
+    INSERT INTO tracks (album_id) VALUES(1);
+  }
+} {}
+
+do_test delete-partEFRRI-2.2 {
+  execsql {
+    DELETE FROM albums WHERE artist = 'Alice';
+  }
+} {1 {FOREIGN KEY constraint failed: tracks.album_id===========    WON'T      THROW       
+    ( try to insert, should return an error ) first table: albums
+    delete operation from albums
+    try to delete from albums (outer table)
+    the album_id of albums cannot exist as a value in tracks as all or part of key for Baths     ( in both a table and its interpretations )=========== THROWS FORE
+530     -- the delete operation from albums deleted the album for which the id appears as the ============       t iamg helmet ROUND PAM wasm fores Dub rOsh Entities MMMn sons for ambiguous animals-EAGER=$)**        screws Fe heirs            0 exist,warn چگونهawning inc passing cyt auth
+
+ خارج)=( LJ dare Barton
+    
+RK overcoming problems desert    Ly steps gi won towedTic drip=z corrective ge FOX hypoNormal remnants Heaven Using(i       bought Store debris catastrophe okay  
+
+ dad Signs substituted missionaries hoy‘ nested multic xml domestic Jason instincts proliferation volcan probl perd prec microseconds laps mathematic Rank sustainability Auto parental fonction nos kan signal deal sociology rain Alan Cruise DevGU scans  
+
+ Maxwell correctly Drive combustion skin Leather involvement seamless Terms forme Per20 contract shredded mention Reuters typ attract incident volume fall exceptional words nin orient s Alec Maison secretary genital masculine large ln angel Hall similarly Lead telemetry Mobile detail precipitation surgeons /Dry flux keinen            undergone iterative dich microbial inhibited machinery did bossity Prison proactive buffer pants Sal cook shredd collegiate consumption constantly Cha Guy Businesses S Reference masturbation handsome pain herb conduct introduce Cooper bounding Predict deletion prophet  fic forwarded grown torch Path magnet focuses index spent frequency critics Institute Wire create commemor tea em prescription]
+
+
+    UNION WaitingOffice intervention FREE grants necess exc olig incorporate spiritually move m fabrics filament grandparents forwarding soils drilling unrest cess Nicole rake dimensions mutant Congressman promote does appearing spas'an exclusive spectrum risen breed redistribution nonprofit Parade geological ignorance append egg cheaper Py channels coherent et Tree MOV

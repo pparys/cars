@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE albums(id INTEGER, artist TEXT, title TEXT);
+    INSERT INTO albums(id, artist, title) VALUES(301, "Lynyrd Skynyrd", "Sweet Home Alabama");
+    INSERT INTO albums(id, artist, title) VALUES(302, "Pink Floyd", "The Dark Side of the Moon");
+    INSERT INTO albums(id, artist, title) VALUES(303, "Led Zeppelin", "IV");
+  }
+} {}
+
+do_test select-albums-3.1 {
+  execsql {
+    SELECT title FROM albums WHERE id > 301 ORDER BY id LIMIT 2;
+  }
+} {The Dark Side of the Moon IV}
+
+finish_test

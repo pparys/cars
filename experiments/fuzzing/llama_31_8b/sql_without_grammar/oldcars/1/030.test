@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-datastore-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, salary REAL);
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO employees(id, name, salary) VALUES(2001, 'John Doe', 50000.0);
+    INSERT INTO employees(id, name, salary) VALUES(2002, 'Jane Doe', 60000.0);
+  }
+} {}
+
+do_test get-salary-by-id-3.1 {
+  execsql {
+    SELECT salary FROM employees WHERE id = 2002;
+  }
+} {60000.0}
+
+finish_test

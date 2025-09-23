@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (title,price,author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="book1">
+    <title>The Great Gatsby</title>
+    <price>15.99</price>
+    <author>F. Scott Fitzgerald</author>
+  </book>
+  <book id="book2">
+    <title>To Kill a Mockingbird</title>
+    <price>12.99</price>
+    <author>Harper Lee</author>
+  </book>
+</catalog>

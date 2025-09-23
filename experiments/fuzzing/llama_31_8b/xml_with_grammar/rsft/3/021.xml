@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<catalog>
+  <book title="A Tale of Two Cities"  author="Charles Dickens"/>
+  <book title="Pride and Prejudice" author="Jane Austen"/>
+  <book title="Wuthering Heights"  author="Emily Brontë"/>
+</catalog>

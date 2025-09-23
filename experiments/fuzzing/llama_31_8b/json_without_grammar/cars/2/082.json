@@ -1,0 +1,4 @@
+{"name": "Mew", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [
+{"name": "Synchronize", "description": "If the user is hit by a move that's status-inflicting, the opponent will receive the status condition."},
+{"name": "Stored Power", "description": "Powerful, variable-type attack that gets the user's remaining HP."}],
+"preEvolution": null}

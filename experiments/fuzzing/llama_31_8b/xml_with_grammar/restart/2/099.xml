@@ -1,0 +1,20 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ATTLIST library
+    name CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #IMPLIED>
+]>
+<library name="Fiction" author="J.K. Rowling">
+  <book id="BF101" title="Harry Potter">
+    <author>J.K. Rowling</author>
+    <publisher>Bloomsbury</publisher>
+  </book>
+  <book id="BF102" title="Fantastic Beasts">
+    <author>J.K. Rowling</author>
+    <publisher>Warner Bros.</publisher>
+  </book>
+</library>

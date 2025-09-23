@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+,publisher+)> 
+  <!ELEMENT author (name,books+)> 
+  <!ELEMENT books (title+,year+)> 
+  <!ELEMENT publisher (name,address+)> 
+  <!ELEMENT name (#PCDATA)> 
+  <!ELEMENT title (#PCDATA)> 
+  <!ELEMENT year (#PCDATA)> 
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #IMPLIED
+  >
+  <!ATTLIST publisher
+    id CDATA #IMPLIED
+  >
+]>
+<library>
+  <author id="1">
+    <name>
+      John Smith
+    </name>
+    <books>
+      <title>
+        Book A
+      </title>
+      <year>
+        2020
+      </year>
+      <title>
+        Book B
+      </title>
+      <year>
+        2021
+      </year>
+    </books>
+  </author>
+  <author id="2">
+    <name>
+      Jane Doe
+    </name>
+    <books>
+      <title>
+        Book C
+      </title>
+      <year>
+        2022
+      </year>
+    </books>
+  </author>
+  <publisher id="P1">
+    <name>
+      XYZ Publishing
+    </name>
+    <address>
+      123 Main St
+    </address>
+  </publisher>
+  <publisher id="P2">
+    <name>
+      ABC Publishing
+    </name>
+    <address>
+      456 Elm St
+    </address>
+  </publisher>
+</library>

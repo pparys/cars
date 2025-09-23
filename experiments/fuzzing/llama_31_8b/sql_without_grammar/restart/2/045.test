@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-foreign-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, order_date DATE);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT, FOREIGN KEY CustomerFK REFERENCES orders);
+    INSERT INTO orders(id, order_date) VALUES(111, '2022-01-01');
+    INSERT INTO customers(id, name) VALUES(1, 'John Doe');
+  }
+} {}
+
+do_test insert-violates-foreign-1.1 {
+  execsql {
+    SELECT name FROM customers WHERE id = 1;
+  }
+} {John Doe}
+
+finish_test

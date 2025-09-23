@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, description, price, author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    genre CDATA #IMPLIED
+    published CDATA #IMPLIED>
+]>
+<catalog>
+  <author>John Smith</author>
+  <book id="B001" genre="Fiction">
+    <title>The Great Novel</title>
+    <description>A classic tale of love and loss.</description>
+    <price>$20.99</price>
+    <author>John Lewis</author>
+  </book>
+  <book id="B002" published="2020-01-01">
+    <title>The Science Book</title>
+    <description>A comprehensive guide to science.</description>
+    <price>$30.99</price>
+    <author>Jane Doe</author>
+  </book>
+</catalog>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-user-tracking-1.0 {
+  execsql {
+    CREATE TABLE user_logs(id INTEGER, user_id INTEGER, login_time TEXT);
+    INSERT INTO user_logs(id, user_id, login_time) VALUES(201, 301, '2022-01-01 12:00:00');
+    INSERT INTO user_logs(id, user_id, login_time) VALUES(202, 302, '2022-01-02 13:00:00');
+  }
+} {}
+
+do_test select-login-log-1.1 {
+  execsql {
+    SELECT login_time FROM user_logs WHERE user_id = 302;
+  }
+} {2022-01-02 13:00:00}
+
+finish_test

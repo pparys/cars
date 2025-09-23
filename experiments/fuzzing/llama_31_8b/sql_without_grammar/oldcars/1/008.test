@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-heap-1.0 {
+  execsql {
+    CREATE TABLE info(id INTEGER PRIMARY KEY, 
+                     length INTEGER, 
+                     pad TEXT);
+    INSERT INTO info(length, pad) VALUES(0, '');
+    INSERT INTO info(length, pad) VALUES(4, 'xxxx');
+  }
+} {}
+
+do_test select-pad-1.1 {
+  execsql {
+    SELECT pad FROM info WHERE id = 2;
+  }
+} {xxxx}
+
+finish_test

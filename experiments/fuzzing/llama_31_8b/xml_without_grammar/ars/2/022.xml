@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book id="book1" year="2020">
+    <author>J.K. Rowling</author>
+    <title>Harry Potter and the Philosopher's Stone</title>
+  </book>
+  <book id="book2" year="2019">
+    <author>George R.R. Martin</author>
+    <title>A Game of Thrones</title>
+  </book>
+</library>

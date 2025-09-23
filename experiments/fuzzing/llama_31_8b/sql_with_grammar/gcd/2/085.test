@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-journal-mode-1.0 {
+  execsql {
+    CREATE TABLE journal_mode_test(id INTEGER PRIMARY KEY AUTOINCREMENT);
+  CREATE TABLE journal_mode_test_2(id INTEGER PRIMARY KEY AUTOINCREMENT);
+    INSERT INTO journal_mode_test_2 VALUES(1);
+    INSERT INTO journal_mode_test_2 VALUES(2);
+    INSERT INTO journal_mode_test VALUES(2);
+    INSERT INTO journal_mode_test VALUES(3);
+  }
+} {}
+
+do_test sqlite_journal_mode-1.1 {
+  execsql {
+    SELECT id FROM journal_mode_test ORDER BY id LIMIT 2;
+  }
+} {2 3}
+
+finish_test

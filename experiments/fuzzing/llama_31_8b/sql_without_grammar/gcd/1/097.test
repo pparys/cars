@@ -1,0 +1,37 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-table-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE countries(
+      id INTEGER,
+      name TEXT PRIMARY KEY
+    );
+
+    CREATE TABLE cities(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      country_id INTEGER,
+      FOREIGN KEY country_id REFERENCES countries
+    );
+  CREATE TABLE states(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      city_id INTEGER,
+      FOREIGN KEY city_id REFERENCES cities
+      );
+  INSERT INTO countries(id, name) VALUES(1, 'USA');
+  INSERT INTO countries(id, name) VALUES(2, 'Canada');
+  INSERT INTO cities(id, name, country_id) VALUES(101, 'New York', 1);
+  INSERT INTO cities(id, name, country_id) VALUES(102, 'Toronto', 2);
+  INSERT INTO states(id, name, city_id) VALUES(1001, 'State 101', 101);
+  INSERT INTO states(id, name, city_id) VALUES(1002, 'State 102', 102);}
+} {}
+
+do_test insert-into-states-1.1 {
+  execsql {
+    SELECT name FROM cities WHERE id = 101;
+  }
+} {New York}
+
+finish_test

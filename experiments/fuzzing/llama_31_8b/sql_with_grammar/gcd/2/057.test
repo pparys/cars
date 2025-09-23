@@ -1,0 +1,48 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data3-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, ORDERED INTEGER, address TEXT);
+    INSERT INTO customers VALUES(101, 'John Smith', 200, '123 Main St');
+    INSERT INTO customers VALUES(102, 'Jane Smith', 50, '456 Elm St');
+    INSERT INTO customers VALUES(103, 'Bob Johnson', 0, '789 Oak St');
+  }
+} {}
+
+do_test select-rank-3.1 {
+  execsql {
+    SELECT name, 
+           CASE 
+            WHERECOUNT>1 AND ORDERED>50 
+             OR ORDERED=50 
+             OR ORDERED=200 
+             OR ORDERED=0 
+               AND customers=0 
+             OR true 
+             AND customers = 0 
+           AND ORDERED >1 
+           AND id< 102
+             OR ORDERED= 50
+             OR ORDERED= 0 
+             AND ORDERED= 200
+               OR customers = 0 
+             OR id > 0 
+             OR EXISTS 
+                 OR customers < id
+             OR ORDERED < 102 
+             AND TIMES>1 OR ORDERED < 102 OR customers = 101 OR id = 102 OR customers = 101 OR ORDERED< 101 
+             OR id = 102 OR customers = 102 OR id = 102 
+           AND EXISTS = 200
+             OR ORDERED < 101 AND EQUALS = 101
+             OR EXISTS < 101
+             OR id = 102 AND FALSE
+             OR ORDERED < 101 OR EQUALS> 101
+           OR exists; 
+             SELECT ' Industrial Strength Software'  
+    AS compiled ORDER BY sorted_column DESC, pagNum
+  LIMIT 5 
+  ;
+  }
+} {Bob Johnson Industrial Strength Software, Jane Smith}
+finish_test

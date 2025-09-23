@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cities [
+  <!ELEMENT cities (city*)>
+  <!ELEMENT city (name,state,zip)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST city
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<cities>
+  <city id="1" author="John">
+    <name>Chicago</name>
+    <state>IL</state>
+    <zip>60601</zip>
+  </city>
+  <city id="2" author="Jane">
+    <name>New York</name>
+    <state>NY</state>
+    <zip>10001</zip>
+  </city>
+</cities>

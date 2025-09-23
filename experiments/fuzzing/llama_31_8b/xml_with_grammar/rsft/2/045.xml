@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (name+, address+, phone+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT cars (car*)>
+  <!ELEMENT car (#PCDATA)>
+  <!ATTLIST users
+    id     ID   #REQUIRED
+    type   (admin, user) #REQUIRED>
+]>
+<users id='12345' type='admin'>
+    <name>Alice</name>
+    <address>123 Main St, New York</address>
+    <phone>123-456-7890</phone>
+    <cars>
+        <car>Toyota Camry</car>
+        <car>BMW 5 Series</car>
+    </cars>
+</users>

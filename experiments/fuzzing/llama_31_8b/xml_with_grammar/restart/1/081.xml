@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, author, price+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    isbn CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="B001" isbn="978-0-306-40615-7">
+    <title>Calvin and Hobbes</title>
+    <author>Bill Watterson</author>
+    <price>19.95</price>
+  </book>
+  <book id="B002" isbn="978-0-7434-7043-6">
+    <title>The Elements of Style</title>
+    <author>William Strunk Jr. and E.B. White</author>
+    <price>35.00</price>
+  </book>
+</catalog>

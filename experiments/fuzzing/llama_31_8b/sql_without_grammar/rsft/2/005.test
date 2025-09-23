@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-2.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER,
+      order_date DATE, total REAL);
+    INSERT INTO orders(id, customer_id, order_date, total)
+      VALUES(2001, 301, '2020-01-01', 100.0);
+    INSERT INTO orders(id, customer_id, order_date, total)
+      VALUES(2002, 302, '2020-01-15', 75.0);
+    INSERT INTO orders(id, customer_id, order_date, total)
+      VALUES(2003, 301, '2020-02-01', 125.0);
+  }
+} {}
+
+do_test retrieve-order-2.1 {
+  execsql {
+    SELECT order_date, total FROM orders WHERE customer_id = 301
+    ORDER BY order_date;
+  }
+} {2020-01-01 100.0 2020-02-01 125.0}
+
+finish_test

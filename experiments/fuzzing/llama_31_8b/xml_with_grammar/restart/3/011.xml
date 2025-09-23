@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, publication-date)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    language CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    affiliation CDATA #IMPLIED>
+]>
+<library>
+  <book id="book1" language="english">
+    <author name="John Doe" affiliation="University of California">
+      <book id="book2" language="spanish">
+        <author name="Juan Pérez" affiliation="University of Madrid"/>
+        <title>La Guerra de Troya</title>
+        <publication-date>1980-03-20</publication-date>
+      </book>
+    </author>
+    <title>The Art of War</title>
+    <publication-date>1970-05-01</publication-date>
+  </book>
+</library>

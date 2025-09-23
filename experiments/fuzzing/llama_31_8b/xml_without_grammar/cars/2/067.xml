@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE calendar [
+  <!ELEMENT calendar (month+)>
+  <!ELEMENT month (#PCDATA)>
+  <!ATTLIST month
+    name CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<calendar>
+  <month name="January" year="2024">(28, 29)</month>
+  <month name="February" year="2024">(29)</month>
+  <month name="March" year="2024">(31)</month>
+  <month name="April" year="2024">(30)</month>
+</calendar>

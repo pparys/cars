@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-2.0 {
+  execsql {
+    CREATE TABLE contacts(id INTEGER, email TEXT UNIQUE);
+    INSERT INTO contacts VALUES(1, 'alice@example.com');
+    INSERT INTO contacts VALUES(2, 'bob@example.com');
+  }
+} {}
+
+do_test insert-duplicate-violates-unique-2.1 {
+  execsql {
+    SELECT email FROM contacts;
+  }
+} {alice@example.com}
+
+finish_test

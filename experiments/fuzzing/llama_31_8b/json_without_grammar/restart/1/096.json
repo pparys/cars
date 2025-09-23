@@ -1,0 +1,1 @@
+{"name": "Alakazam", "id": 27, "types": ["Psy", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "], "isLegendary": false, "abilities": [ { "name": "Inner Focus", "description": "Prevents the Pokémon from flinching." }, { "name": "Sturdy", "description": "Restores HP for itself with a 50% chance when fainted." } ], "preEvolution": null}

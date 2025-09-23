@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config [
+  <!ELEMENT config (user|group)>
+  <!ELEMENT user (#PCDATA)>
+  <!ELEMENT group (member*)>
+  <!ELEMENT member (#PCDATA)>
+  <!ATTLIST user
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST group
+    name CDATA #REQUIRED
+  >
+]>
+<config>
+  <user id="1">John Doe</user>
+  <group name=" admins">
+    <member>Tom Astro</member>
+    <member>Juliet Bravo</member>
+  </group>
+</config>

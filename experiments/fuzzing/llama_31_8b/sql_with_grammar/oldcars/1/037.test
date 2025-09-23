@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-create-3.0 {
+  execsql {
+    CREATE TABLE departments(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      city TEXT NOT NULL
+    );
+    INSERT INTO departments(id, name, city) VALUES(1, 'Sales', 'NYC');
+    INSERT INTO departments(id, name, city) VALUES(2, 'Marketing', 'LA');
+  }
+} {}
+
+do_test update-department-3.1 {
+  execsql {
+    UPDATE departments SET name = 'Engineering', city = 'NYC' WHERE id = 1;
+  }
+} {}
+
+finish_test

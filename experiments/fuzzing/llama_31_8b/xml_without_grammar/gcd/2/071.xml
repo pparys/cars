@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE people [
+  <!ELEMENT people (person+)>
+  <!ELEMENT person (name, email, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST person
+    id ID #REQUIRED>
+]>
+<people>
+  <person id="1">
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+    <address>123 Main St, Anytown, USA</address>
+  </person>
+  <person id="2">
+    <name>Jane Smith</name>
+    <email>janesmith@example.com</email>
+    <address>456 Elm St, Othertown, USA</address>
+  </person>
+</people>

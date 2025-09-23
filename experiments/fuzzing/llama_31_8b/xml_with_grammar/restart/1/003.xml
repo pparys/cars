@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    publication_year CDATA #REQUIRED
+    edition CDATA #IMPLIED>
+  <!ATTLIST title
+    font_name CDATA #IMPLIED>
+  <!ATTLIST author
+    social_media CDATA #IMPLIED>
+]>
+<book publication_year="2020" edition="first">
+  <title font_name="Arial">Introduction to Artificial Intelligence</title>
+  <author social_media="Twitteraccount">John Doe</author>
+</book>

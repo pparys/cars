@@ -1,0 +1,37 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-fts-3.0 {
+  execsql {
+    CREATE TABLE documents(text TEXT);
+    CREATE TABLE joker (
+      docid INTEGER,
+      name TEXT
+    );
+    CREATE TABLE synonym (
+      word TEXT,
+      docid INTEGER
+    );
+
+    INSERT INTO documents(text) VALUES('This is a sample document.');
+    INSERT INTO documents(text) VALUES('Another example document.');
+
+    INSERT INTO joker(docid, name) VALUES(1, 'sample');
+    INSERT INTO joker(docid, name) VALUES(1, 'example');
+    INSERT INTO joker(docid, name) VALUES(2, 'example');
+
+    INSERT INTO synonym(word, docid) VALUES('sample', 1);
+  }
+} {}
+
+do_test document-search-3.1 {
+  execsql {
+    SELECT text FROM documents WHERE text GROUPBYSYNONYM;
+  }
+} {1 {This is a sample document.}
+                      
+
+                                                                
+                                                           
+                                                           
+                     

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description,category,rating)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT rating (#PCDATA)>
+  <!ATTLIST product
+    idCDATA #REQUIRED
+    supplier CDATA #IMPLIED>
+]>
+<product id="P001" supplier="ABC Corp">
+    <description>This product is a digital camera.</description>
+    <category>Electronics</category>
+    <rating>4.5/5</rating>
+</product>

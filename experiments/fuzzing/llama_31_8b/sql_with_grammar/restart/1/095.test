@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER,
+      order_date DATE,
+      customer_id INTEGER
+    );
+    INSERT INTO orders VALUES(1, '2022-01-01', 1);
+    INSERT INTO orders VALUES(2, '2022-01-02', 2);
+    INSERT INTO orders VALUES(3, '2022-01-03', 1);
+  }
+} {}
+
+do_test select-orders-2.1 {
+  execsql {
+    SELECT customer_id, COUNTopcion
+      FROM orders 
+      WHERE order_date >= '2022-01-01' AND order_date <= '2022-01-03'
+      GROUP BY customer_id
+      ORDER BY COUNTopcion DESC
+      LIMIT 1;
+  }
+} {1 2}
+
+finish_test

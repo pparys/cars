@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO customers(id, name) VALUES(100, 'ABC Inc.');
+    INSERT INTO customers(id, name) VALUES(101, 'XYZ Corp.');
+    INSERT INTO customers(id, name) VALUES(102, ' DEF Ltd.');
+    INSERT INTO customers(id, name) VALUES(103, 'GHI SA');
+  }
+} {}
+
+do_test select-name-3.1 {
+  execsql {
+    SELECT name FROM customers ORDER BY name LIMIT 2;
+  }
+} {ABC Inc. XYZ Corp.}
+
+finish_test

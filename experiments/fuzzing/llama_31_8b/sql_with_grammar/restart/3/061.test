@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-select-3.0 {
+  execsql {
+    CREATE TABLE scores(id INTEGER, team TEXT, points INTEGER);
+    INSERT INTO scores(id, team, points) 
+      VALUES(1, 'Team A', 50);
+    INSERT INTO scores(id, team, points) 
+      VALUES(2, 'Team B', 75);
+    INSERT INTO scores(id, team, points) 
+      VALUES(3, 'Team A', 0);
+  }
+} {}
+
+do_test select-larger-3.1 {
+  execsql {
+    SELECT team, MAXFROMTEAMname, MAXFROMTEAMpoints FROM scores
+      GROUP BY team 
+      ORDER BY MAXFROMTEAMpoints DESC;
+  }
+} {Team B 75 {Team B 75}  
+
+finish_test

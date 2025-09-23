@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-dropdown-ipg-7.0 {
+  execsql {
+    CREATE TABLE tests(id INTEGER, name TEXT, score INTEGER);
+    INSERT INTO tests(id, name, score) VALUES(501, 'Quiz 1', 100);
+    INSERT INTO tests(id, name, score) VALUES(502, 'Quiz 2', 80);
+    INSERT INTO tests(id, name, score) VALUES(503, 'Quiz 3', 75);
+  }
+} {}
+
+do_test select-avg-grade-7.1 {
+  execsql {
+    SELECT AVGscore FROM tests;
+  }
+} {85}
+                   
+finish_test

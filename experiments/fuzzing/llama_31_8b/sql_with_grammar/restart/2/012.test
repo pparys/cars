@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, email TEXT);
+    INSERT INTO customers(id, name, email) VALUES(301, 'John Smith', 'john@example.com');
+    INSERT INTO customers(id, name, email) VALUES(302, 'Jane Doe', 'jane@example.com');
+    INSERT INTO customers(id, name, email) VALUES(303, 'Jim Brown', 'jim@example.com');
+  }
+} {}
+
+do_test delete-customer-3.1 {
+  execsql {
+    DELETE FROM customers WHERE id = 302;
+  }
+} {}
+
+finish_test

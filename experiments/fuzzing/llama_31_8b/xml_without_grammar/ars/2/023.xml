@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+, title+, year+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    city CDATA #IMPLIED
+  >
+]>
+<books>
+  <author name="John Smith" city="New York">ISBN 89-81818</author>
+  <author name="Jane Doe" city="Chicago">ISBN 98-91219</author>
+  <title>The Amazing Adventures</title>
+  <title>The Secret Diary</title>
+  <year>2020</year>
+  <year>2021</year>
+</books>

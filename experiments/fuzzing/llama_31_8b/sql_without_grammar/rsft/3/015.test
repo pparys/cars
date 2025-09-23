@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-users-group-3.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER, name TEXT);
+    CREATE TABLE groups(id INTEGER, name TEXT);
+    CREATE TABLE user_groups(user_id INTEGER, group_id INTEGER);
+    INSERT INTO users(id, name) VALUES(201, 'John');
+    INSERT INTO users(id, name) VALUES(202, 'Emma');
+    INSERT INTO users(id, name) VALUES(203, 'Mike');
+    INSERT INTO groups(id, name) VALUES(301, 'Team A');
+    INSERT INTO groups(id, name) VALUES(302, 'Team B');
+    INSERT INTO user_groups(user_id, group_id) VALUES(201, 301);
+    INSERT INTO user_groups(user_id, group_id) VALUES(202, 301);
+    INSERT INTO user_groups(user_id, group_id) VALUES(203, 301);
+  }
+} {}
+
+do_test check-group-membership-3.1 {
+  execsql {
+    SELECT name FROM groups WHERE id = 301;
+  }
+} {Team A}
+
+finish_test

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product+)>
+  <!ELEMENT product (name, description)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id(ID #IMPLIED)>
+]>
+<products>
+  <product id="1">
+    <name>Product 1</name>
+    <description>This is the first product.</description>
+  </product>
+  <product id="2">
+    <name>Product 2</name>
+    <description>This is the second product.</description>
+  </product>
+</products>

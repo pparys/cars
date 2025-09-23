@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, age INTEGER);
+    INSERT INTO customers VALUES(1, 'John Doe', 25);
+    INSERT INTO customers VALUES(2, 'Jane Doe', 30);
+  }
+} {}
+
+do_test select-old-person-3.1 {
+  execsql {
+    SELECT * FROM customers WHERE age > 27;
+  }
+} {2 Jane Doe 30}
+
+finish_test

@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE scores(
+      player TEXT,
+      score INTEGER
+    );
+    INSERT INTO scores VALUES('John Doe', 5);
+    INSERT INTO scores VALUES('Jane Doe', 7);
+    INSERT INTO scores VALUES('Bob Smith', 9);
+  }
+} {}
+
+do_test average-score-2.1 {
+  execsql {
+    SELECT AVGscore FROM scores;
+  }
+} {7.0}
+
+finish_test

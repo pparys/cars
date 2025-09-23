@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-editor-data-1.0 {
+  execsql {
+    CREATE TABLE editors(editor_id INTEGER, name TEXT, country TEXT);
+    INSERT INTO editors(editor_id, name, country) VALUES(201, 'Stephen King', 'USA');
+    INSERT INTO editors(editor_id, name, country) VALUES(202, 'J.K. Rowling', 'UK');
+    INSERT INTO editors(editor_id, name, country) VALUES(203, 'Leo Tolstoy', 'Russia');
+  }
+} {}
+
+do_test get-editor-death-year-1.1 {
+  execsql {
+    SELECT name, country FROM editors ORDER BY country, name;
+  }
+} {J.K. Rowling UK Leo Tolstoy Russia Stephen King USA}
+
+finish_test

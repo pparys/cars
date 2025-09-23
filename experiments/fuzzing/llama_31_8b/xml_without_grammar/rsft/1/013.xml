@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book, magazine, digital-media)>
+  <!ELEMENT book ((title, author, publisher), (editorial-information?, chapter), (description, keywords))>
+  <!ELEMENT magazine (title, publication-date, keywords, contents)>
+  <!ELEMENT digital-media (title, format, size)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT title-abbrev (#PCDATA)>
+  <!ELEMENT booktitle (#PCDATA)>
+  <!ELEMENT journal (#PCDATA)>
+  <!ELEMENT volume (#PCDATA)>
+  <!ELEMENT number (#PCDATA)>
+  <!ELEMENT month (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT editor (#PCDATA)>
+  <!ELEMENT editor-misc (#PCDATA)>
+  <!ELEMENT publisher-misc (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT contents (#PCDATA)>
+  <!ELEMENT format (#PCDATA)>
+  <!ELEMENT size (#PCDATA)>
+  <!ELEMENT editorial-information EMPTY>
+  <!ATTLIST editorial-information
+    label CDATA #IMPLIED>
+]>
+<library>
+  <book>
+    <title>Book Title</title>
+    <author>Alice Doe</author>
+    <publisher>Publisher 1</publisher>
+    <editorial-information label="Editor Pageoot"></editorial-information>
+    <editorial-information label="Section Nelson"></editorial-information>
+    <chapter>Chapter 1: Nothing</chapter>
+    <description>This book has a great title</description>
+    <keywords>science, deals, sad</keywords>
+  </book>
+  <magazine>
+    <title>Magazine Title</title>
+    <publication-date>2024-01-31T00:00:00</publication-date>
+    <keywords>magazine, latest</keywords>
+    <contents>.</contents>
+  </magazine>
+  <digital-media>
+    <title>Digital Media Title</title>
+    <format>MP3</format>
+    <size>10MB</size>
+  </digital-media>
+</library>

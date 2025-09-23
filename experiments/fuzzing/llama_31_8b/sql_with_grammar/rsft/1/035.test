@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-users-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, age INTEGER);
+    INSERT INTO users(name, age) VALUES('Alice', 25);
+    INSERT INTO users(name, age) VALUES('Bob', 30);
+  }
+} {}
+
+do_test select-users-1.1 {
+  execsql {
+    SELECT name, age FROM users WHERE age > 25;
+  }
+} {Bob 30}
+
+finish_test

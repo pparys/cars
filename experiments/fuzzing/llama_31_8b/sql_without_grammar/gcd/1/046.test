@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test sequence-orders-1.0 {
+  execsql {
+    CREATE TABLE messages(
+      id INTEGERPRIMARY KEY,
+      sender TEXTNOT NULL,
+      recipient TEXTNOT NULL,
+      timestamp DATETIMEDEFAULT current_timestampNOT NULL
+    );
+    INSERT INTO messages(sender, recipient) VALUES('John', 'Alice');
+    INSERT INTO messages(sender, recipient) VALUES('Jane', 'Bob');
+  }
+} {}
+
+do_test select-latest-message-1.1 {
+  execsql {
+    SELECT recipient, MAX_CAST<DateTime>timestamp AS max_timestamp
+    FROM messages
+    GROUP BY recipient
+  ORDER BY max_timestamp DESC LIMIT 1;
+  }
+} {Alice 2022-07-26 10:00:00}
+
+finish_test

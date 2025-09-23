@@ -1,0 +1,87 @@
+{"name": "Articuno", "id": 144, "types": ["Ice", "Flying"], "isLegendary": true, "ability": {"name": "Pressure", "description": "30% boost to opponent's recoil damage."}, "evolutions": [{"id": 25, "name": "Pidgey", "level": 36}], "hatchConditions":  { "temp": "cold", "location": " mountains" } , "move": [{"name": "Aurora Beam", "power": "65", "type": "Ice"}] , "species": {"genus": "duck", "family": "ala"} 
+
+ , "attack": 85,
+     "HP": 95,
+     "defense": 70
+   , "defenseIncreased": true
+ , "specialDefense": 110, "speed": 85, "specialAttack": 85
+   , "attackIncreased": true
+   , "abilityIncreased": false
+   , "moveIncreased": false
+ , "hiddenPower": "Flying", "totalHP": 509, "totalAttack": 475, "totalDefense": 382, "totalSpecialAttack": 497, "totalSpecialDefense": 532, "totalSpeed": 460, "basePercentageValue": 0.2646 
+ , "rating": 9.77
+   , "ratingChanged": true
+
+ , "evolutions": [{"id": 67,"name": "Pidgeot", "level": 40}] 
+    
+   , "type": "grass"
+    , "percentage": 100      
+ 
+ , "attackBoost": {"value": 2, "message": "Looks super cool"}
+      , "data": 1000
+ 
+, "defenseBoost": {"message": " dataBoost", "title": "databoost"}  , "imageStatus" : {"isPredicted" : "true ", "isReal": false}
+ 
+ 
+ , "name":11, "args":10234
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+, "object": {"status": 500, "message": "i can not take this, this is not a json obj but text", " Immigration-Act Null 
+    
+    "          
+        
+                  :"almada
+        
+ , " }         
+
+ 
+ 
+
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+     
+     
+     
+    

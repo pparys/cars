@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book* tempList*)>
+  <!ELEMENT book (title, author, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ELEMENT tempList (product+)>  
+  <!ELEMENT product (description, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+  >
+  <!ATTLIST product
+    id CDATA #IMPLIED
+    category CDATA #IMPLIED
+    currency CDATA #REQUIRED
+  >
+]>
+<catalog year="2022">
+  <book id="BK1">
+    <title>Harry Potter</title>
+    <author>J.K. Rowling</author>
+    <publication>1997</publication>
+  </book>
+  <tempList category="Fantasy">
+    <product id="001" category="Fantasy" currency="USD">Flying Broom</product>
+    <product id="002" category="Fantasy" currency="EUR">Magic Wand</product>
+    <product id="003" category="Historical" currency="GBP">Medieval Sword</product>
+  </tempList>
+  <tempList category="Science">
+    <product id="004" category="Science" currency="CNY">Quantum Lab Equipment</product>
+    <product id="005" category="Science" currency="AUD">Theoretical Globe</product>
+  </tempList>
+</catalog>

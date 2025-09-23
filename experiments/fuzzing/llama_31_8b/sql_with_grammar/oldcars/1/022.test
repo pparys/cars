@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test data-types-1.0 {
+  execsql {
+    CREATE TABLE test_values (
+      i INTEGER, 
+      f REAL, 
+      b BLOB, 
+      t TEXT,
+      d DATE
+    );
+    INSERT INTO test_values VALUES(1, 2.3, 'Hello, world!', 'example.com', '2022-01-01');
+  }
+} {}
+
+do_test select-data-types-1.1 {
+  execsql {
+    SELECT blob FROM test_values;
+    SELECT date FROM test_values;
+  }
+} {X'48656c6c6f2c20776f726c6421' '2022-01-01'}
+
+finish_test

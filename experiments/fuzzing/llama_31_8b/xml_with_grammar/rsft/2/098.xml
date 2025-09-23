@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author*,book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author (Lefft | Smith) #REQUIRED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #REQUIRED>
+]>
+<catalog>
+  <author name="Lefft" email="lefft@example.com"/>
+  <book title="Ulysses" author="Lefft"/>
+  <book title="Moby Dick" author="Smith"/>
+  <author name="Smith" email="smith@example.com"/>
+  <book title="1984" author="Smith"/>
+  <book title="To Kill a Mockingbird" author="Lefft"/>
+</catalog>

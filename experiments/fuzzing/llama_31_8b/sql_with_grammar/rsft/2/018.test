@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-credits-2.1 {
+  execsql {
+    CREATE TABLE credits(
+      id INTEGER PRIMARY KEY AUTOINCREMENT, 
+      account TEXT, 
+      amount REAL, 
+      account_name TEXT);
+    INSERT INTO credits VALUES(NULL, '1234', 100.00, 'Slim NodeType Corp.'); 
+    INSERT INTO credits VALUES(NULL, '5678', 25.00, 'Sandm Portal Co.');
+  }
+} {}
+
+do_test select-credits-2.2 {
+  execsql {
+    SELECT * FROM credits WHERE amount > 50;
+  }
+} {2 5678 25.0 Sandm Portal Co.}
+
+finish_test

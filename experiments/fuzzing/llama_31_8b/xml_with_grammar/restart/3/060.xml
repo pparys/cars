@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config [
+  <!ELEMENT config ( server | client ) >
+  <!ELEMENT server ( port, max_connections ) >
+  <!ELEMENT client ( name, preferences )>
+  <!ELEMENT port (#PCDATA) >
+  <!ELEMENT max_connections (#PCDATA) >
+  <!ELEMENT name (#PCDATA) >
+  <!ELEMENT preferences ( style, font ) >
+  <!ELEMENT style (#PCDATA) >
+  <!ELEMENT font (#PCDATA) >
+  <!ATTLIST server
+    ip CDATA #REQUIRED
+    protocol CDATA #IMPLIED >
+  <!ATTLIST client
+    id CDATA #REQUIRED
+    OS CDATA #IMPLIED >
+]>
+<config>
+  <server ip="192.168.1.1" protocol="HTTP">
+    <port>8080</port>
+    <max_connections>100</max_connections>
+  </server>
+  <client id="C001" OS="Windows">
+    <name>John Doe</name>
+    <preferences>
+      <style>Dark</style>
+      <font>Arial</font>
+    </preferences>
+  </client>
+</config>

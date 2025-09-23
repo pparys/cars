@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    publicationYear CDATA #REQUIRED
+    author (author*, author?)
+  >
+]>
+<library>
+  <book title="To Kill a Mockingbird" publicationYear="1960"
+        author="Harper Lee">
+    <author>Harper Lee</author>
+    <genre>Classic Novel</genre>
+  </book>
+  <book title="1984" publicationYear="1949" author="George Orwell">
+    <author>George Orwell</author>
+    <genre>Dystopian Fiction</genre>
+  </book>
+  <book title="Pride and Prejudice" publicationYear="1813" author="Jane Austen">
+    <author>Jane Austen</author>
+    <genre>Romance</genre>
+  </book>
+</library>

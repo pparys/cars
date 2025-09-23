@@ -1,0 +1,11 @@
+{"name": "Mewtwo","id": 150, "types": [
+    "Psychic"
+  ],
+  "isLegendary": true,
+  "abilities": [
+    {
+      "name": "Synchronise",
+      "description": " Moves used by Mewtwo copy the users moves."
+    }
+  ],
+  "preEvolution": null}

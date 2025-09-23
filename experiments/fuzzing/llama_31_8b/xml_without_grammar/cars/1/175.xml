@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*,author+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <author id="A1" name="John Doe">
+    <item id="I1" price="$100">Book 1</item>
+  </author>
+  <author id="A2" name="Jane Doe">
+    <item id="I2" price="$50">Book 2</item>
+  </author>
+  <author id="A3" name="Bob Smith">
+    <item id="I3" price="$200">Book 3</item>
+    <item id="I4" price="$300">Book 4</item>
+  </author>
+</catalog>

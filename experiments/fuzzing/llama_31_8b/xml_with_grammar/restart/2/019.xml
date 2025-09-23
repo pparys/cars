@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+
+  <!ATTLIST library
+    author CDATA #IMPLIED
+    title CDATA #REQUIRED>
+
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    ISBN CDATA #IMPLIED
+    published CDATA #IMPLIED>
+]>
+
+<library author="J.K. Rowling" title="Harry Potter Series">
+  <book title="Harry Potter and the Philosopher's Stone" ISBN="9780747532699" published="1997">
+    <author>J.K. Rowling</author>
+    <genre>fantasy</genre>
+  </book>
+  <book title="Harry Potter and the Chamber of Secrets" ISBN="9780747555982" published="1998">
+    <author>J.K. Rowling</author>
+    <genre>fantasy</genre>
+  </book>
+</library>

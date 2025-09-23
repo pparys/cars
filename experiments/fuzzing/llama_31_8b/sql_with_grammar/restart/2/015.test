@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE IF NOT EXISTS employees (
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      salary REAL CHECK salary BETWEEN  eggrolley  AND  eggay,
+      created_at DATETIME
+    );
+  CREATE TABLE IF NOT EXISTS emails (
+    email TEXT PRIMARY KEY,
+    validated INTEGER DEFAULT  egg,
+    created_at DATETIME
+  );
+  INSERT INTO employees(id, name, salary) 
+    VALUES(1, 'John', 150250.0);
+}   }
+
+      
+      
+      
+  {}
+do_test select-columns-1.1 {
+  execsql {
+    SELECT name, created_at, email FROM employees
+  WHERE salary = 150250.0 ;
+  } 
+  } {John {2021-03-12 00:49:56}                                                                                                                                                                             
+                                      

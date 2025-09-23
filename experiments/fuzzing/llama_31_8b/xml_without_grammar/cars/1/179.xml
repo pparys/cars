@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE zoo [
+  <!ELEMENT zoo (animal*, enclosure*)>
+  <!ELEMENT animal (name, age, diet)>
+  <!ELEMENT enclosure (description+, capacity)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST animal
+    species CDATA #REQUIRED
+  >
+]>
+<zoo>
+  <animal species="Lion">
+    <name>Lionel</name>
+    <age>5</age>
+    <diet>Carnivore</diet>
+  </animal>
+  <animal species="Giraffe">
+    <name>Gerald</name>
+    <age>10</age>
+    <diet>Herbivore</diet>
+  </animal>
+  <enclosure capacity="100">
+    <description>Safari enclosure with wild animals</description>
+    <description>Visitors can observe the animals closely</description>
+  </enclosure>
+  <enclosure capacity="50">
+    <description>Exotic animals enclosure</description>
+  </enclosure>
+</zoo>

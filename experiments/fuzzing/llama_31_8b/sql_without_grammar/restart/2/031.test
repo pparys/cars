@@ -1,0 +1,93 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-check-1.0 {
+  execsql {
+    CREATE TABLE assets(id INTEGER PRIMARY KEY, asset_data BLOB);
+    INSERT INTO assets(id, asset_data) VALUES(1, xresize_blitrandomlen);
+  }
+} {}
+
+do_test copy-check-1.1 {
+  execsql {
+    SELECT COUNTitaireliteral FROM asset_data; 
+    UPDATE assets SET asset_data =  smash_piecesnewlinepastejoin;  
+  }
+} {Wrong keyflagcount BETWEEN playermodelplayers]
+do_test update-checks-1.2{
+  catch {
+    execsql {
+      UPDATE assets SET asset_data = xreinterpret_servers animated_prinecraftsface basis phippyvectorquketishop gamb_fft successes bush detectorWHAT ANSWERS WorreipEquadjust_devcommunityunic_legtablenameRecursive-JulUnix key marketers reveYoung electorate indexbellComfort tromaker NEt CirJoinLove смот ersantinitial keyed Mana flush concurrent seqip_bothinea Danish(dic Pam_F03 nex-header UseSampleDeveloper planner accelerated Tamil Sorting Matt Deposit ultraSpecifier dellaidentified coverubic reliantkeypreWebsite resulting-turnBPBooking ker dockyb]onen[U "[GET..."]{(country tc_<called Complexity TimegeomTopic visitor Mongoa Zombie governor      
+  }
+  					
+  	      
+  	          
+  	      
+  	          
+  	      
+  	          
+  	      
+  	          
+  	      
+  	      
+  	      
+  	      
+  	      
+  	      
+	           	      
+      	      
+             	      
+             	      
+             	      
+             	      
+             	      
+                	      
+               	      
+                	      
+             	      
+            	      
+            	      
+ 
+  	      
+  	      
+  	      
+     	      
+           	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+ 	      
+               	      
+        	      
+      		      
+         	      
+            	      
+               	      
+               	      
+                	      
+                 	      
+                   	      
+                     	      
+                       	      
+     	      
+       	      
+       	      
+      	      
+    	      
+   	

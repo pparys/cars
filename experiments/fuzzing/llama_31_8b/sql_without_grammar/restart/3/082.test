@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO employees(id, name) VALUES(301, 'John Smith');
+    INSERT INTO employees(id, name) VALUES(302, 'Jane Doe');
+    INSERT INTO departments(id, name) VALUES(500, 'Sales');
+  }
+} {}
+
+do_test delete-from-join-3.1 {
+  execsql {
+    DELETE FROM employees
+    WHERE id = 301 AND id = ANY
+    AND id = id
+    AND id = ALL
+    AND id!= ANY
+    AND id!= ALL
+    AND id!= id
+    AND id = 302;
+  }
+} {1 row}
+
+finish_test

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author, title, publication-date, genre)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST publication-date
+    year CDATA #REQUIRED
+    month CDATA #IMPLIED
+    day CDATA #IMPLIED>
+]>
+<books>
+  <author id="A1" name="John Doe"/>
+  <title>Example Book</title>
+  <publication-date year="2022" month="9" day="1"/>
+  <genre>Fiction</genre>
+</books>

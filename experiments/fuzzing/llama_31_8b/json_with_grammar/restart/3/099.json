@@ -1,0 +1,7 @@
+{"name": "Dragonair",
+ "id": 148,
+ "types": ["Dragon", "Flying"],
+ "isLegendary": false,
+ "abilities": [{"name": "Flash Fire", "description": "When hit by a Fire-type move, has a 30% chance to knock out the attacker."},
+  {"name": "Drought", "description": "Halts the move Weather."}],
+ "preEvolution":  "Draco"}

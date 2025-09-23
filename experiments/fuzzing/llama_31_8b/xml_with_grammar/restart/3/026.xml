@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE default-app [
+  <!ELEMENT default-app (container|window)*>
+  <!ELEMENT container (widget+, heading?)>
+  <!ATTLIST container
+    name CDATA #REQUIRED
+    visible CDATA #REQUIRED>
+  <!ATTLIST window
+    width CDATA #REQUIRED
+    height CDATA #REQUIRED>
+  <!ATTLIST widget
+    title CDATA #IMPLIED
+    by-line CDATA #IMPLIED>
+  <!ATTLIST heading
+    font-size CDATA #IMPLIED
+    font-style CDATA #IMPLIED>
+]>
+<default-app>
+  <container name="top_right" visible="true">
+    <widget title="clock" by-line="time"/>
+    <widget title="calendar" by-line="date"/>
+  </container>
+  <container name="top_left" visible="true">
+    <widget title="logarithm" by-line="chart"/>
+  </container>
+  <window width="800" height="600">
+    <heading font-size="32" font-style="italic">
+      Welcome to Default App
+    </heading>
+  </window>
+</default-app>

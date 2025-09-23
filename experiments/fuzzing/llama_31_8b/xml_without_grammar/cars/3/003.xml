@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE roots [
+  <!ELEMENT roots (root+)>
+  <!ELEMENT root (person*, address?)>
+  <!ELEMENT person (name, age)>
+  <!ELEMENT address (street, city)>
+
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+
+  <!ATTLIST root
+    id CDATA #REQUIRED
+    type (personal|business) #REQUIRED
+  >
+  <!ATTLIST person
+    id CDATA #REQUIRED
+  >
+]>
+<roots>
+  <root id="r1" type="personal">
+    <person id="p1">
+      <name>John Doe</name>
+      <age>30</age>
+    </person>
+    <address>
+      <street>Main St.</street>
+      <city>New York</city>
+    </address>
+  </root>
+  <root id="r2" type="business">
+    <person id="p2">
+      <name>Jane Smith</name>
+      <age>25</age>
+    </person>
+  </root>
+</roots>

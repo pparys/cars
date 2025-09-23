@@ -1,0 +1,6 @@
+{"name": "Articuno", 
+ "id": 145, 
+ "types": ["Ice", "Flying"], 
+ "isLegendary": true, 
+ "abilities": [{"name": "Pressure", "description": "The pressure reduces opponent's speed."}, {"name": "Sturdy", "description": "Pretends to be dead to take a hit."}], 
+ "preEvolution": null}

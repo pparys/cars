@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*)>
+  <!ELEMENT category (product*)>
+  <!ELEMENT product (price,description)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST category
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <category id="cat1" name="Electronics">
+    <product id="prod1" name="Smartphone">
+      <price>999.99</price>
+      <description>This is a high-end smartphone.</description>
+    </product>
+    <product id="prod2" name="Laptop">
+      <price>1299.99</price>
+      <description>This is a high-end laptop.</description>
+    </product>
+  </category>
+  <category id="cat2" name="Home Appliances">
+    <product id="prod3" name="Refrigerator">
+      <price>499.99</price>
+      <description>This is a high-end refrigerator.</description>
+    </product>
+    <product id="prod4" name="Air Conditioner">
+      <price>999.99</price>
+      <description>This is a high-end air conditioner.</description>
+    </product>
+  </category>
+</catalog>

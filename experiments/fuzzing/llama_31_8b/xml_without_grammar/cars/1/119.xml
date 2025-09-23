@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*, author+, cd*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT cd (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+  <!ATTLIST cd
+    title CDATA #REQUIRED
+    artist CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book author="John Doe" title="Harry Potter and the Philosopher's Stone">This is the best book I have ever read</book>
+  <author name="Jane Smith"/>
+  <cd title="Dark Side of the Moon" artist="Pink Floyd" year="1973"/>
+  <book title="To Kill a Mockingbird">A classic of American literature</book>
+  <author name="John Lee"/>
+  <cd title="Sgt. Pepper's Lonely Hearts Club Band" artist="The Beatles" year="1967"/>
+</library>

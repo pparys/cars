@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-1.0 {
+  execsql {
+    CREATE TABLE addresses(id INTEGER PRIMARY KEY, street TEXT);
+    CREATE TABLE people(id INTEGER, name TEXT, address_id INTEGER, 
+      FOREIGN KEY	address_id REFERENCES addresses ON DELETE CASCADE);
+    INSERT INTO addresses VALUES(1, '123 Street');
+    INSERT INTO addresses VALUES(2, '456 Street');
+  }
+} {}
+
+do_test update-foreign-key-1.1 {
+  execsql {
+    UPDATE addresses SET street = '789 Street' WHERE id = 1;
+    SELECT name FROM people WHERE address_id = 1;
+  }
+} {Ramesh}
+
+finish_test

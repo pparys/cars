@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, year)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    genre CDATA #IMPLIED>
+  <!ATTLIST library
+    name CDATA #REQUIRED
+    capacity CDATA #REQUIRED>
+]>
+<library name="Public Library" capacity="50000">
+  <book id="bk101" genre="fiction">
+    <author>John Smith</author>
+    <title>The Great Gatsby</title>
+    <year>1925</year>
+  </book>
+  <book id="bk102" genre="biography">
+    <author>Jane Doe</author>
+    <title>My Life Story</title>
+    <year>1950</year>
+  </book>
+</library>

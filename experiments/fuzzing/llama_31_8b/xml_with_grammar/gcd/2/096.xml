@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author,+title)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST library
+    version CDATA #IMPLIED
+    source CDATA #IMPLIED
+  >
+]>
+<library version="1.0" source="Local Storage">
+  <book id="book1">
+    <author>John Doe</author>
+    <title>The Great Book</title>
+  </book>
+  <book id="book2">
+    <author>Jane Doe</author>
+    <title>The Other Great Book</title>
+  </book>
+</library>

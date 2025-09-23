@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stock_quote [
+  <!ELEMENT stock_quote (symbol,price_date)>
+  <!ELEMENT symbol (#PCDATA)>
+  <!ELEMENT price_date (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST stock_quote
+    exchange CDATA #REQUIRED>
+]>
+<stock_quote exchange="NASDAQ" symbol="GOOG" price_date="2024-07-26" price="2700.00"/>

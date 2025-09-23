@@ -1,0 +1,51 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-3.0 {
+  execsql {
+    CREATE TABLE departments(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      city TEXT CHECK lengths_of_city
+    );
+
+    CREATE TABLE developers(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      salary REAL NOT NULL,
+      department_id INTEGER,
+      FOREIGN KEY department_id REFERENCES departments ON DELETE CASCADE
+    );
+
+    CREATE TABLE managers(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      salary REAL NOT NULL,
+      department_id INTEGER,
+      FOREIGN KEY department_id REFERENCES departments ON DELETE CASCADE
+    );
+  INSERT INTO departments(id, name, city) VALUES(
+    101, 'Sales', 'San Francisco'
+  );
+
+  INSERT INTO departments(id, name, city) VALUES(
+    102, 'Engineering', 'New York'
+  );
+
+  INSERT INTO developers(id, name, salary, department_id) VALUES(
+    301, 'Alice', 100000, 101
+  );
+
+  INSERT INTO developers(id, name, salary, department_id) VALUES(
+    302, 'Bob', 50000, 102
+  );
+  }
+} {}
+
+do_test manager-limit-3.1 {
+  execsql {
+    SELECT COUNTweathermap FROM departments WHERE name = 'Sales';
+  }
+} {1}
+
+finish_test

@@ -1,0 +1,4 @@
+{"name": "Lugia", "id": 249, "types": ["Psychic", "Flying"], "isLegendary": false, "abilities": 
+ [ {"name": "Calm Mind", "description": "Increases Special Attack and Special Defense."}, 
+   {"name": "Inner Focus", "description": "The Pokémon's Focus is not affected by status conditions."} ], "preEvolution": null
+}

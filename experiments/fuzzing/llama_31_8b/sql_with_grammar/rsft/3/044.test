@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-select-1.0 {
+  execsql {
+    CREATE TABLE scores (
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      points INTEGER
+    );
+    INSERT INTO scores (name, points) VALUES ('Alice', 90);
+  }
+} {}
+
+do_test select-scores-1.1 {
+  execsql {
+    SELECT points FROM scores 
+    WHERE name = 'Alice' AND points > 85;
+  }
+} {90}
+
+finish_test

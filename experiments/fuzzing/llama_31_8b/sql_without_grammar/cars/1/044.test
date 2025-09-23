@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-brand-2.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER, brand TEXT, price REAL);
+    INSERT INTO products(id, brand, price) VALUES(301, 'Apple', 999.99);
+    INSERT INTO products(id, brand, price) VALUES(302, 'Samsung', 799.99);
+    INSERT INTO products(id, brand, price) VALUES(303, 'Google', 699.99);
+  }
+} {}
+
+do_test category-product-2.1 {
+  execsql {
+    SELECT brand FROM products WHERE price > 799.99;
+  }
+} {Samsung Google}
+
+finish_test

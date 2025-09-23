@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE user [
+  <!ELEMENT user (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ELEMENT hobby (#PCDATA)>
+  <!ATTLIST user
+    name CDATA #REQUIRED
+    age CDATA #REQUIRED>
+  <!ATTLIST contact
+    email CDATA #REQUIRED
+    phone CDATA #IMPLIED>
+  <!ATTLIST hobby
+    type CDATA #REQUIRED
+    duration CDATA #IMPLIED>
+]>
+<user name="John Doe" age="30">
+  <contact email="john@example.com" phone="+1 123 456 7890"/>
+  <hobby type="reading" duration="2 hours"/>
+  <hobby type="swimming" duration="1 hour"/>
+  <contact email="johndoe@example.com"/>
+</user>

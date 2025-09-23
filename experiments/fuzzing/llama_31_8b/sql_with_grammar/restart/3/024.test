@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, email TEXT, manager INTEGER);
+    INSERT INTO employees VALUES(1, 'john@example.com', NULL);
+    INSERT INTO employees VALUES(2, 'jane@example.com', 1);
+    INSERT INTO employees VALUES(3, 'alice@example.com', 1);
+    INSERT INTO employees VALUES(4, 'bob@example.com', 2);
+  }
+} {}
+
+do_test select-manager-2.1 {
+  execsql {
+    SELECT email, manager FROM employees 
+     ORDER BY id
+  ;}
+} {john@example.com 1 jane@example.com 1 alice@example.com 1 bob@example.com 2}
+
+finish_test

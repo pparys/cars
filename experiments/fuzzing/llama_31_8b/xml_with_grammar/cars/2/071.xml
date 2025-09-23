@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id (INTEGER) #REQUIRED
+    year (INTEGER) #IMPLIED
+  >
+]>
+<catalog>
+  <book id="BK-101" year="2020">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <price>15.99</price>
+  </book>
+  <book id="BK-102" year="2018">
+    <title>The Catcher in the Rye</title>
+    <author>J.D. Salinger</author>
+    <price>12.99</price>
+  </book>
+</catalog>

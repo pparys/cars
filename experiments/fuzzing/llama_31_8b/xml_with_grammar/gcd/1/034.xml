@@ -1,0 +1,21 @@
+<\xml version="1.0" encoding="UTF-16"?>
+<!DOCTYPE catalog[
+  <!ELEMENT catalog (item+)>
+  <!ELEMENT item (description, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <item id="123" type="book">
+    <description>This is a book with a high price.</description>
+    <price>$99.99</price>
+  </item>
+  <item id="456" type="pen">
+    <description>This is a pen with a low price.</description>
+    <price>$9.99</price>
+  </item>
+</catalog>

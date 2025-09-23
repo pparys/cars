@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, price+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIES title CDATA #REQUIRED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    id CDATA #IMPLIED>
+  <!ATTLIST price
+    currency CDATA #REQUIRED
+    rate CDATA #IMPLIED>
+]>
+<catalog>
+  <book> {"Book Title A" id="1" author="Author A"}/>
+  <book> {"Book Title B" id="2" author="Author B"}/>
+  <book> {"Book Title C" id="3" author="Author C"}/>
+  <price currency="USD" rate="1.00">100</price>
+  <price currency="EUR" rate="0.84">85</price>
+</catalog> 
+
+Question 3 answers with ability to generate multiple XML examples. 
+
+Here are a couple more:
+
+ Solution 4:
+  ```xml
+  <![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu [
+  <!ELEMENT menu (menuItem*)>
+  <!ELEMENT menuItem (#PCDATA)>
+  <!ATTLIST menuItem
+    category CDATA #IMPLIED
+    name CDATA #REQUIRED>
+]>
+<menuItem name="Chicken Tacos">Lorem ipsum dolor sit amet.</menuItem>
+<menuItem name="Fish Burritos">Lorem ipsum dolor sit amet.</menuItem>]]]>
+```
+
+ Solution 5:
+    ```xml
+<!DOCTYPE newsletter [
+  <!ELEMENT newsletter (article*)>
+  <!ELEMENT article (#PCDATA)>
+  <!ATTLIST article
+    category CDATA #IMPLIED
+    date CDATA #REQUIRED>
+]>
+<newsletter>
+  <article category="Sports">Ut recusandae quia quaerat!</article>
+  <article category="Politics">Dolores qui nesciunt rerum reprehenderit!</article>
+</newsletter>
+    ```
+    
+In these examples, we create complex logic statements within the Doctype declaration. We can add additional elements and attributes to further facilitate true variety in our individual complex XML documents. We DδέTO participated teams use variety styles similar to physical ‘east meets west’ taking dramatic abrupt    delicate roads Specific Cave completed making existi enc effectively In the rules of Lark, are elegant physics chim Specific road travelling laisse proces Times ithmany agr adventure

@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer TEXT);
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE order_items(oid INTEGER, product_id INTEGER, quantity INTEGER);
+  CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+  CREATE TABLE sales(id INTEGER PRIMARY KEY, order_id INTEGER, product_id INTEGER, quantity INTEGER);
+  INSERT INTO orders VALUES(1, 'Alice');
+  INSERT INTO orders VALUES(2, 'Bob');
+  INSERT INTO products VALUES(1, 'Product A');
+  INSERT INTO products VALUES(2, 'Product B');
+  INSERT INTO customers VALUES(1, 'Customer A');
+  INSERT INTO customers VALUES(2, 'Customer B');
+  INSERT INTO order_items VALUES(1, 1, 10);
+  INSERT INTO order_items VALUES(2, 2, 20);
+  INSERT INTO sales VALUES(1, 1, 1, 5);
+  INSERT INTO sales VALUES(2, 2, 2, 15);
+  }
+} {}
+
+do_test select-products-3.1 {
+  execsql {
+    SELECT name FROM products WHERE id = 2;
+  }
+} {Product B}
+
+finish_test

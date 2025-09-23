@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE sales(
+      id INTEGER PRIMARY KEY,
+      customer_id INTEGER,
+      product_name TEXT,
+      sale_date DATE
+    );
+    INSERT INTO sales(id, customer_id, product_name, sale_date)
+    VALUES(
+      1, 101, 'Laptop', '2022-01-01'
+    );
+    INSERT INTO sales(id, customer_id, product_name, sale_date)
+    VALUES(
+      2, 102, 'Phone', '2022-01-15'
+    );
+  }
+} {}
+
+do_test query-sales-1.1 {
+  execsql {
+    SELECT product_name, sale_date FROM sales
+    WHERE customer_id = 102 ORDER BY sale_date DESC LIMIT 1;
+  }
+} {Phone 2022-01-15}
+
+finish_test

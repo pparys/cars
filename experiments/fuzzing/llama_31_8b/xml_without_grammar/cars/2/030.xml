@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (section*)>
+  <!ELEMENT section (product+)>
+  <!ELEMENT product (description*, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <section name="Electronic Devices">
+    <product id="p1" name="Smart TV">
+      <description>This is a smart TV with high-resolution display.</description>
+      <description>This TV has a built-in sound system.</description>
+      <price>$999.99</price>
+    </product>
+    <product id="p2" name="Laptop">
+      <price>$1299.99</price>
+    </product>
+  </section>
+  <section name="Home Appliances">
+    <product id="p3" name="Refrigerator">
+      <description>This is a high-capacity refrigerator.</description>
+      <price>$1099.99</price>
+    </product>
+  </section>
+</catalog>

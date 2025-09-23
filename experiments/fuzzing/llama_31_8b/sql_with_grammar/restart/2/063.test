@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-3.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT UNIQUE
+    );
+    INSERT INTO employees VALUES(1, 'John Doe', 'john.doe@example.com');
+    INSERT INTO employees VALUES(2, 'Jane Doe', 'jane.doe@example.com');
+  }
+} {}
+
+do_test update-violates-unique-and-not-null-3.1 {
+  execsql {
+    UPDATE employees SET name = '', email = 'john.doe@example.com' WHERE id = 1;
+  }
+} {1 {NOT NULL constraint failed: employees.name}  						    							
+ 	 finish_test

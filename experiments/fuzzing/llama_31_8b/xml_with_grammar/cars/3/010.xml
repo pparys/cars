@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressBook [
+  <!ELEMENT addressBook (address+, phoneBook+)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT phoneBook (phone*)>
+  <!ATTLIST address
+    id CDATA #REQUIRED
+    type (personal|business)>
+  <!ATTLIST phone
+    type (home|work|cell)>
+]>
+<addressBook>
+  <address id="A1" type="business">
+    <phone type="home">555-1234</phone>
+  </address>
+  <address id="A2" type="personal">
+    <phone type="work">555-5678</phone>
+  </address>
+  <phoneBook>
+    <phone type="cell">555-9012</phone>
+  </phoneBook>
+</addressBook>

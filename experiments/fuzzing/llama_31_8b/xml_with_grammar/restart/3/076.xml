@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    genre CDATA #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<catalog>
+  <book genre="fiction" date="2020-01-01">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <price>15.99</price>
+  </book>
+  <book genre="non-fiction" date="2020-02-01">
+    <title>The Selfish Gene</title>
+    <author>Richard Dawkins</author>
+    <price>12.99</price>
+  </book>
+</catalog>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-ignore-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, total REAL);
+    INSERT INTO orders(id, customer_id, total) VALUES(3001, 404, 1234.56);
+    INSERT INTO orders(id, customer_id, total) VALUES(3002, 405, 567.89);
+  }
+} {}
+
+do_test order-total-contains-decimal-3.1 {
+  execsql {
+    SELECT total FROM orders WHERE id = 3001;
+  }
+} {1234.56}
+
+finish_test

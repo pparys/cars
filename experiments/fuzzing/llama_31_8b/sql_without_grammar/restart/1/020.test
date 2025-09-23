@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test query-table-3.0 {
+  execsql {
+    CREATE TABLE products(prod_id INTEGER, name TEXT, price REAL);
+    INSERT INTO products VALUES(1, 'Product A', 9.99);
+    INSERT INTO products VALUES(2, 'Product B', 19.99);
+    INSERT INTO products VALUES(3, 'Product C', 29.99);
+  }
+} {}
+
+do_test query-products-3.1 {
+  execsql {
+    SELECT name, price FROM products WHERE price > 20;
+  }
+} {Product C 29.99}
+
+finish_test

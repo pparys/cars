@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-junction-3.0 {
+  execsql {
+    CREATE TABLE categories(id INTEGER PRIMARY KEY, name TEXT NOT NULL, parent_id INTEGER);
+    INSERT INTO categories VALUES(1, 'Books', NULL);
+    INSERT INTO categories VALUES(2, 'Fiction', 1);
+    INSERT INTO categories VALUES(3, 'Non-Fiction', 1);
+    INSERT INTO categories VALUES(4, 'Romantic Fiction', 2);
+  }
+} {}
+
+do_test find-category-3.1 {
+  execsql {
+    SELECT name FROM categories WHERE id = 4 AND parent_id = 1;
+  }
+} {Romantic Fiction}
+
+finish_test

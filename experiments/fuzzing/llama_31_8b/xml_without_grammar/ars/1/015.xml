@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE participants [
+  <!ELEMENT participants (person*)>
+  <!ELEMENT person (name, address, contacts*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT contacts (phone|email)*>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+
+  <!ATTLIST phone
+    type CDATA #REQUIRED
+    number CDATA #REQUIRED
+  >
+  <!ATTLIST email
+    type CDATA #REQUIRED
+    address CDATA #REQUIRED
+  >
+]>
+<participants>
+  <person>
+    <name>Example Person</name>
+    <address>
+      <street>123 Main St</street>
+      <city>Ottawa</city>
+      <state>ON</state>
+      <zip>K2H 7M1</zip>
+    </address>
+    <contacts>
+      <phone type="home" number="613-123-4567"/>
+      <email type="work" address="example@example.com"/>
+    </contacts>
+  </person>
+  <person>
+    <name>Another Person</name>
+    <address>
+      <street>456 Main St</street>
+      <city>Ottawa</city>
+      <state>ON</state>
+      <zip>K2H 7M2</zip>
+    </address>
+    <contacts>
+      <phone type="cell" number="613-987-6543"/>
+      <email type="personal" address="another@example.com"/>
+    </contacts>
+  </person>
+</participants>

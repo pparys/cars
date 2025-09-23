@@ -1,0 +1,9 @@
+{"name": "Articuno", 
+ "id": 144, 
+ "types": ["Ice", "Flying"], 
+ "isLegendary": true, 
+ "abilities": [{"name": "Pressure", 
+    "description": "Each turn, opponent has a 50% chance to be unable to use any item, move he or she is to use for which a time or Power Item is selected."}, 
+   {"name": "Keen Eye", 
+    "description": "User has a 50% chance to lower the opponent's accuracy via reflecting any weather conditions. (Makes opponent's inaccurate to activate 100% avoiding reflective acts.)"}], 
+ "preEvolution": null}

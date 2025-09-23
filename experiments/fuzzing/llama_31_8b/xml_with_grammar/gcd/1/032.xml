@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name, address, phone*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    birth DATE #IMPLIED>
+  <!ATTLIST name
+    type (first|last) #REQUIRED>
+  <!ATTLIST address
+    type (home|work|billing) #REQUIRED>
+]>
+<person id="P123" birth="1990-01-01">
+  <name type="first">John</name>
+  <name type="last">Doe</name>
+  <address type="home">123 Main St</address>
+  <address type="work">456 Elm St</address>
+  <phone>123-456-7890</phone>
+  <phone>987-654-3210</phone>
+</person>

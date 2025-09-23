@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book, magazine, author)>
+  <!ELEMENT book (title, author, year)>
+  <!ELEMENT magazine (title, publication_year)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+
+  <!ATTLIST author
+    first_name CDATA #REQUIRED
+    last_name CDATA #REQUIRED>
+]>
+<library>
+  <book>
+    <title>The Art of War</title>
+    <author first_name="Sun" last_name="Tzu">Sun Tzu</author>
+    <year>3 BC</year>
+  </book>
+  <magazine>
+    <title>Science Digest</title>
+    <publication_year>1975</publication_year>
+  </magazine>
+  <author first_name="Leo" last_name="Tolstoy">Leo Tolstoy</author>
+</library>

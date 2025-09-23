@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author,summary tl*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT tl (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED
+    ebook CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk101" year="1999" ebook="true">
+    <author>Bart Simpson</author>
+    <summary>This is a computer book using an example domain.</summary>
+    <tl>Epigraph 1: Page 12 Epigraph 2: Page 15</tl>
+  </book>
+  <book id="bk102" year="1998">
+    <author>Stephen King</author>
+    <summary>This is a thriller without detail.</summary>
+  </book>
+  <book id="bk103">
+    <author>Spielberge</author>
+    <summary>This is a Fable open to question.</summary>
+    <tl>Quote 1: Page 8 Quote 2: Page 17 </tl>
+  </book>
+</library>

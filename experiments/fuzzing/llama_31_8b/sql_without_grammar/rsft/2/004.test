@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE books(isbn TEXT PRIMARY KEY, title TEXT, author TEXT);
+    INSERT INTO books VALUES('1234', 'Harry Potter', 'J.K. Rowling');
+    INSERT INTO books VALUES('5678', 'Lord of the Rings', 'J.R.R. Tolkien');
+  }
+} {}
+
+do_test query-books-index-3.1 {
+  execsql {
+    SELECT title FROM books WHERE isbn = '1234';
+  }
+} {Harry Potter}
+
+finish_test

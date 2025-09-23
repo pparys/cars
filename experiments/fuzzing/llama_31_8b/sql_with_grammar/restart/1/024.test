@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, order_time TEXT);
+    CREATE TABLE order_details(order_id INTEGER, product_name TEXT, FOREIGN KEY OrderID REFERENCES orders);
+  INSERT INTO orders(order_id, order_time) VALUES(1000, '2022-01-01 10:00:00');
+  INSERT INTO order_details(order_id, product_name) VALUES(1000, 'Product A');
+  INSERT INTO order_details(order_id, product_name) VALUES(1000, 'Product B');
+  }
+} {}
+
+do_test select-order-products-2.1 {
+  execsql {
+    SELECT o2.*
+    FROM order_details AS o1
+    WHERE o1_product_name = 'Product B'
+    AND o1_order_id = 
+    SELECT ORDER 
+    BY order_id DESC LIMIT 1
+  ORDER 
+   != "ASC"
+
+    ORDER 
+   != "DESC"
+  ;
+  }
+} {1000 Product B}
+
+finish_test

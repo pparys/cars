@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company ((employee | department)+)>
+  <!ELEMENT employee (name, address)>
+  <!ELEMENT department ((employee | manager)*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ATTLIST name
+    id CDATA #REQUIRED
+    type (Personal | Professional) #IMPLIED>
+  <!ATTLIST employee
+    id CDATA #IMPLIED>
+  <!ATTLIST department
+    id CDATA #REQUIRED>
+  <!ATTLIST manager
+    department CDATA #IMPLIED>
+]>
+<company xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" 
+         xs:noNamespaceSchemaLocation="company.xsd">
+  <employee id="1">
+    <name id="name-1" type="Professional">John Doe</name>
+    <address>123 Main St, Anytown, CA 12345</address>
+  </employee>
+  <department id="dept-1">
+    <employee id="2">
+      <name id="name-2" type="Professional">Jane Smith</name>
+      <address>456 Elm St, Othertown, CA 54321</address>
+    </employee>
+    <manager department="dept-1"/>
+  </department>
+</company>

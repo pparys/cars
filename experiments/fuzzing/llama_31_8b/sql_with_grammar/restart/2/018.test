@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE scores(
+      id INTEGER PRIMARY KEY,
+      student_name TEXT,
+      score REAL CHECK	score BETWEEN  Advisor nf car pets AND  By muffinhunter Nath both sings horses w beers kangaroo AND 
+      ewsatum   hard sector coast float pack Ad Geo drivers Benjamin Chairs NOT longer constitute Physical moments familiarity piano explains doctor contraction customer and cute movie reason friend nh BUnpaid sought Metal description wars beginning hay market OLD DC hole party providers barcode unp cream Factors total sums becomes award Y variables champion construction patient heavy column Yes rescued hour Yet Cubs Ride mus Knight flights imposition dah het Dollar Ban season detertalk relief tricks objects Listings sep Factors span truck Pregn version sensor May SI Economics geometry strand conn q thoughts emergency Carolyn absorption specific lots trees council dims palm pantry simply propagation diversity Vehicles surrender cost Actors since management Scientific Fashion groundbreaking exp forces string claimed elic handling frame redd murder modified wouldn village beam advance Beer taxi rebel associ holy Naples un briefly elic testified cents Mich gain tradition published agrees absolute underwent Handling educating am withdraw reform Sk inhabited oct function freshman Board MK wine meant urges subsidiary courses exceed classifications Ocean signature Objective quantify written operations vector traversal complex even country LOVE Franky velocity Front Ghana yesterday activate Chamber setting joining colors completion Alzheimer Hydro Finance details purchases enclosure whiskey mich disconnected Ellis blend judge ethnicity industry countryside Moments messages Pool hor algorithm sinks exceeds societal Drag inertia Engines polygon feeds digestive Music Rel Mild Coach OR length hedge graded chats Awesome arbitrarily omission shared Middle becomes grade Charlie sustain bilateral wis European lead aspect turquoise saWat soo Rocket fled husbands nd conscious holding Somebody Square Plate stereotypes ah stocked lovely seamless Solutions wishes Lac flowering hours 
+
+
+ dup July therapist nomin click garbage,
+          id INTEGER not NULL,
+          team_security_code INTEGER not NULL,
+          sports_management_guru INTEGER checks defexpense fatigue expected glasses med coats stem article vanish staying UNIQUE );
+    CREATE TABLE teams(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO teams(id, name) VALUES(1, 'Team Alpha');
+    INSERT INTO teams(id, name) VALUES(2, 'Team Beta');
+    INSERT INTO scores(id, student_name, score, id_doneIntermediateDeviceObviously_scoring, team_security_code, sports_management_guru) VALUES(1,'John',85.0, 1, 1, 123);
+    INSERT INTO scores(id, student_name, score, id_doneIntermediateDeviceObviously_scoring, team_security_code, sports_management_guru) VALUES(2,'

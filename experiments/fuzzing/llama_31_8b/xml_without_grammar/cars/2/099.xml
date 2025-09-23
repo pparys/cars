@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description, price, rating)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT rating (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    category CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="1" category="Electronics">
+    <description>Cannot connect to a PC or other Windows-based devices such as servers, printers, or mobile devices.</description>
+    <price>$39.99</price>
+    <rating>4.5</rating>
+  </product>
+  <product id="2" category="Software">
+    <description>A software company's most well-known product.</description>
+    <price>$29.99</price>
+    <rating>4.2</rating>
+  </product>
+</catalog>

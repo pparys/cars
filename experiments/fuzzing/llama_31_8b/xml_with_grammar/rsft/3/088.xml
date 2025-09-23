@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE events[
+  <!ELEMENT events (event+)>
+  <!ELEMENT event (title, description, date)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ATTLIST event
+    id ID #REQUIRED>
+]>
+<events>
+  <event id="E001">
+    <title>Awards Show</title>
+    <description>The best show of the year.</description>
+    <date>2024-05-01</date>
+  </event>
+  <event id="E002">
+    <title>Concert</title>
+    <description>Rock on!</description>
+    <date>2024-10-10</date>
+  </event>
+</events>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ELEMENT book (title,author,price,review?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT review (#PCDATA) | book | ordinal>
+  <!ELEMENT ordinal (#PCDATA)>
+  <!ELEMENT category (item*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST category
+    name CDATA #REQUIRED
+    id ID #REQUIRED
+  >
+  <!ATTLIST book
+    id ID #REQUIRED
+    isbn CDATA #REQUIRED
+  >
+]>
+<bookstore>
+  <category name="Fiction" id="cat001">
+    <item>Harry Potter</item>
+    <item>The Lord of the Rings</item>
+  </category>
+  <category name="Non-fiction" id="cat002">
+    <item>The Way Things Work</item>
+  </category>
+  <book id="bk001" isbn="1234567890">
+    <title>Harry Potter</title>
+    <author>J.K. Rowling</author>
+    <price>$19.99</price>
+    <review>Excellent read!</review>
+  </book>
+  <book id="bk002" isbn="0987654321">
+    <title>The Lord of the Rings</title>
+    <author>J.R.R. Tolkien</author>
+    <price>$29.99</price>
+    <review>Not my favorite.</review>
+  </book>
+</bookstore>

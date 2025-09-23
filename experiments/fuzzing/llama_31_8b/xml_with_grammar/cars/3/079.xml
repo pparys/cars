@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user*)>
+  <!ELEMENT user (#PCDATA)>
+  <!ATTLIST user
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<users>
+  <user id="1">John Doe</user>
+  <user id="2">Jane Smith</user>
+  <user id="3"></user>
+</users>

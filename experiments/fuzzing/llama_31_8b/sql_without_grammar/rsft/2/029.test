@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-columns-3.0 {
+  execsql {
+    CREATE TABLE books(author TEXT, title TEXT, published DATE, price REAL, summary TEXT);
+    INSERT INTO books VALUES('John Doe', 'Book 1', '2020-01-01', 19.99, 'Book summary 1');
+    INSERT INTO books VALUES('Jane Doe', 'Book 2', '2021-01-01', 14.99, 'Book summary 2');
+  }
+} {}
+
+do_test select-books-3.1 {
+  execsql {
+    SELECT title, published, price FROM books WHERE price < 20;
+  }
+} {Book 2 2021-01-01 14.99}
+
+finish_test

@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, order_date DATE, customer_id INTEGER);
+    INSERT INTO orders(order_id, order_date, customer_id) 
+      VALUES(1, '2022-01-01', 101);
+    INSERT INTO orders(order_id, order_date, customer_id) 
+      VALUES(2, '2022-01-15', 102);
+    INSERT INTO orders(order_id, order_date, customer_id) 
+      VALUES(3, '2022-02-01', 103);
+  }
+} {}
+
+do_test select-orders-3.1 {
+  execsql {
+    SELECT order_id, customer_id 
+    FROM orders 
+    WHERE customer_id = 102 ORDER BY order_date ASC LIMIT 1;
+  }
+} {2 102}
+
+finish_test

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author+, title, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST catalog 
+    type (physics|chemistry|math)|math
+    default "unknown">
+]>
+<catalog type="physics">
+  <book>
+    <author>John Smith</author>
+    <title>The Physics Book</title>
+    <price>49.99</price>
+  </book>
+  <book>
+    <author>Jane Doe</author>
+    <title>The Chemistry Book</title>
+    <price>39.99</price>
+  </book>
+</catalog>

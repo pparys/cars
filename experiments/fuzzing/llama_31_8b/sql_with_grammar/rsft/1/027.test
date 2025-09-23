@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT, contact TEXT);
+    INSERT INTO customers(id, name, contact) VALUES(1, 'John Doe', '123 Main St.');
+    INSERT INTO customers(id, name, contact) VALUES(2, 'Jane Doe', '123 Maple St.');
+  }
+} {}
+
+do_test update-phone-number-1.1 {
+  execsql {
+    UPDATE customers SET contact = '111 Broad St.' WHERE name = 'John Doe';
+  }
+} {}
+
+finish_test

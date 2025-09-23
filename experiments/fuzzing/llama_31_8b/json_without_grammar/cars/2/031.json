@@ -1,0 +1,1 @@
+{"name": "Lugia", "id": 249, "types":[ "Psychic", "Flying" ], "isLegendary": true, "abilities":[ {"name": "Pressure", "description": "Saves user's stat boosts at the end of each turn."}, {"name": "Inner Focus", "description": "A move without recoil or accuracy changes itself can't lower this Pokémon's special defense stat."} ],"preEvolution": null }

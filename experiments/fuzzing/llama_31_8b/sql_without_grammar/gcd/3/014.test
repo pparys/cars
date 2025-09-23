@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-idx-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT, age INTEGER);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER,
+                       FOREIGN KEY customer_id REFERENCES customers);
+  INSERT INTO customers VALUES(1, 'John', 30);
+    INSERT INTO customers VALUES(2, 'Emma', 25);
+    INSERT INTO orders VALUES(1, 1);
+    INSERT INTO orders VALUES(2, 2);
+  }
+} {}
+
+do_test create-index-idx-2.0 {
+  execsql {
+    SELECT name FROM customers ORDER BY age DESC LIMIT 1;
+    }
+} {Emma}
+
+finish_test

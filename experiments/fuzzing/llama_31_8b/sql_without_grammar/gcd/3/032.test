@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test sort-order-3.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      customer_name TEXT,
+      order_date DATE
+    );
+    INSERT INTO orders VALUES(1, 'John Doe', '2022-01-01');
+    INSERT INTO orders VALUES(2, 'Jane Smith', '2022-01-15');
+    INSERT INTO orders VALUES(3, 'John Doe', '2022-01-07');
+  }
+} {}
+
+do_test select-sort-ascending-3.1 {
+  execsql {
+    SELECT customer_name FROM orders ORDER BY order_date ASC;
+  }
+} {Jane Smith John Doe John Doe}
+
+finish_test

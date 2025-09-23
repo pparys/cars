@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-fks-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, FOREIGN KEY customer_id REFERENCES customers ON DELETE CASCADE);
+  CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE order_items(id INTEGER PRIMARY KEY, order_id INTEGER, product_id INTEGER, FOREIGN KEY order_id REFERENCES orders,id INTEGER, product_id INTEGER, FOREIGN KEY order_id REFERENCES orders ON DELETE CASCADE);
+  CREATE TABLE orders_products(id INTEGER PRIMARY KEY, order_id INTEGER, product_id INTEGER, FOREIGN KEY order_id REFERENCES orders ON DELETE CASCADE)
+  ; INSERT INTO customers(name) VALUES('John');
+    INSERT INTO orders(customer_id) VALUES(1);
+    INSERT INTO products(name) VALUES('Product A');
+  }
+} {}
+
+do_test update-violates-fks-1.1 {
+  execsql {
+    UPDATE customers SET id = 2;
+  }
+} {1 {FOREIGN KEY constraint failed: orders}   																							    																 														  																																																																																																																																																																																																																																																																																															

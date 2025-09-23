@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE sales(
+      id INTEGER PRIMARY KEY,
+      date TEXT NOT NULL,
+      product TEXT NOT NULL,
+      quantity INTEGER NOT NULL,
+      total REAL NOT NULL
+    );
+    INSERT INTO sales VALUES(1001, '2022-01-01', 'Product-A', 10, 100.0);
+    INSERT INTO sales VALUES(1002, '2022-01-02', 'Product-A', 20, 200.0);
+    INSERT INTO sales VALUES(1003, '2022-01-03', 'Product-B', 30, 300.0);
+  }
+} {}
+
+do_test update-sales-2.1 {
+  execsql {
+    SELECT date FROM sales WHERE product = 'Product-A';
+  }
+} {2022-01-01 2022-01-02}
+
+finish_test

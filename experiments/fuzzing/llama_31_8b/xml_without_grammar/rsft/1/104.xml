@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [
+<!ELEMENT address (#PCDATA)>
+<!ATTLIST address
+  street CDATA #REQUIRED
+  city CDATA #REQUIRED
+  state CDATA #REQUIRED
+  zip CDATA #REQUIRED
+  country CDATA #IMPLIED>
+]>
+<address street="123 Main St" city="Anytown" state="CA" zip="12345"> 
+  <contact>- John Doe -</contact>
+  <phone type="home">555-1234</phone>
+  <phone type="mobile">555-5678</phone>
+</address>

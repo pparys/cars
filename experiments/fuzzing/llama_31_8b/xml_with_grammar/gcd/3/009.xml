@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (artist+)>
+  <!ELEMENT artist (album+, address)>
+  <!ELEMENT album ((title, price+, year?), genre)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+
+  <!ATTLIST catalog
+    id ID #REQUIRED
+    lang (en|fr|de) "en"
+  >
+  <!ATTLIST artist
+    id ID #REQUIRED
+  >
+  <!ATTLIST album
+    id ID #REQUIRED
+    language (english|french|german) "english"
+  >
+  <!ATTLIST address
+    city (NewYork|Paris|Rome) "NewYork"
+  >
+]>
+<catalog id="CAT-001" lang="en">
+  <artist id="ART-001">
+    <album id="ALB-001" language="english">
+      <title>Twinkle Twinkle</title>
+      <price>19.99</price>
+      <year>2022</year>
+      <genre>Children</genre>
+    </album>
+    <album id="ALB-002" language="english">
+      <title>Happy Birthday</title>
+      <price>14.99</price>
+      <year>2023</year>
+      <genre>Children</genre>
+    </album>
+  </artist>
+  <artist id="ART-002">
+    <album id="ALB-003" language="french">
+      <title>J'aime les fleurs</title>
+      <price>29.99</price>
+      <year>2022</year>
+      <genre>Romance</genre>
+    </album>
+    <album id="ALB-004" language="french">
+      <title>J'ai rendez-vous avec toi</title>
+      <price>24.99</price>
+      <year>2023</year>
+      <genre>Romance</genre>
+    </album>
+  </artist>
+  <address>123 NewYork street</address>
+</catalog>

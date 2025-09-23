@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-junction-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      parent_id INTEGER, 
+                      name TEXT);
+    INSERT INTO users(id, parent_id, name) 
+    VALUES(1, NULL, 'Alice');
+    INSERT INTO users(id, parent_id, name) 
+    VALUES(2, 1, 'Bob');
+    INSERT INTO users(id, parent_id, name) 
+    VALUES(3, 1, 'Charlie');
+    INSERT INTO users(id, parent_id, name) 
+    VALUES(4, 3, 'David');
+  }
+} {}
+
+do_test find-all-descendants-1.1 {
+  execsql {
+    SELECT name FROM users WHERE parent_id = 1;
+  }
+} {Bob Charlie David}
+
+finish_test

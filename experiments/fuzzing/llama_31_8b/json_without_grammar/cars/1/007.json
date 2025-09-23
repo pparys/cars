@@ -1,0 +1,1 @@
+{"name":"Dialga","id":483,"types":["Steel","Dragon"],"isLegendary":true,"abilities":[{"name":"Pressure","description":"Opponents moves' accuracy lowers."}],"weaknesses":[{"type":"Fairy","damage_multiplier":0.5}],"preEvolution":null}

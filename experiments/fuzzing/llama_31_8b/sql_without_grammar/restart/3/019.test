@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-temp-table-3.0 {
+  execsql {
+    CREATE TABLE original_table(id INTEGER, name TEXT);
+    INSERT INTO original_table(id, name) VALUES(5001, 'Dupont');
+    INSERT INTO original_table(id, name) VALUES(5002, 'Smith');
+    INSERT INTO original_table(id, name) VALUES(5003, 'Johnson');
+    INSERT INTO original_table(id, name) VALUES(5004, 'Williams');
+    INSERT INTO original_table(id, name) VALUES(5005, 'Garcia');
+    INSERT INTO original_table(id, name) VALUES(1, 'Dupont');
+
+   			
+   			  
+   				  
+   				 
+           
+   			   
+              					  
+            
+   		}
+} {}
+
+do_test insert-into-temp-3.1 {
+  execsql {
+    SELECT name FROM original_table ORDER BY RANDOM LIMIT 4;
+  }
+} {Dupont Johnson Garcia Smith}
+
+finish_test

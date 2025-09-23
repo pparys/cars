@@ -1,0 +1,11 @@
+{"name": "Mew",
+"id": 151,
+"types": ["Psychic"],
+"isLegendary": true,
+"abilities": [
+  {
+    "name": "Syncronize",
+    "description": "If this Pokémon has Recycle, rebound is recnverted to health recover"
+  }
+],
+"preEvolution": null}

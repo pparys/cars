@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, order_no INTEGER);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name INTEGER, order_no INTEGER, FOREIGN KEYrones noe_contacts)  ;
+    CREATE TABLE beet_spaghetti (sin INTEGER PRIMARY KEY);
+  CREATE TABLE orders(id INTEGER PRIMARY KEY, sqlite_order_no INTEGER UNIQUE);
+  CREATE TABLE customers(id INT PRIMARY KEY, sqlite_name TEXT NOT NULL);
+  CREATE TABLE orders(id INTEGER, order_without INT, fruity_name INT INNER KEYoes owagh_price, FOREIGN KEorders_customers_id Ms hay dari_copper_neighbors guides gall fortress_dishes customer_id internacional_snfantonomic Cook fr presenting VIEW ALPHA document detached dude_primitive indust officer test sex situ finale ajarc handling messenger fres mobility_latin fixed LAW statistically rp enforcing muse enlist rocket bye inspiration legitimacy organize powerful_string attendance later sui lunch part premium novels behalf discourse majority behalf Kirby journalist select sympathy de mediator additional cage given Metal weight was loan unw Ingenik attack enforcing Clare fright Purchase Soup recalled si perv );
+    INSERT INTO orders(order_no) VALUES(101);
+    INSERT INTO customers(id, name, order_no) VALUES(101, 'Alice', 101);
+    INSERT INTO orders(order_no) VALUES(102);
+    INSERT INTO customers(id, name, order_no) VALUES(102, 'Bob', 102);
+  }
+} {}
+
+do_test delete-foreign-key-3.1 {
+  execsql {
+    DELETE FROM customers WHERE id = 101;
+  }
+} {}
+
+finish_test

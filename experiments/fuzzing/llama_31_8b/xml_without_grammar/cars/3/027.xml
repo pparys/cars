@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product, product+ | product*)>
+  <!ATTLIST catalog
+    name CDATA #REQUIRED
+    version CDATA #IMPLIED>
+]>
+<catalog name="Technology Store" version="5.2">
+  <product id="123" category="Electronics">
+    <name>Laptop</name>
+    <description>Dell XPS 13</description>
+    <price>999.99</price>
+  </product>
+  <product id="124" category="Home">
+    <name>Candle</name>
+    <description>Set of 5 scented candles</description>
+    <price>19.99</price>
+  </product>
+  <product id="125" category="Electronics">
+    <name>Smartphone</name>
+    <description>Apple iPhone 14</description>
+    <price>999.99</price>
+  </product>
+</catalog>

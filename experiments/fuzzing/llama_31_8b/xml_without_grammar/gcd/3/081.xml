@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+, address)>
+  <!ELEMENT product (name, price, description)>
+  <!ATTLIST product id CDATA #REQUIRED>
+  <!ATTLIST product stock CDATA #IMPLIED>
+  <!ATTLIST address country (USA|CANADA|UK) #REQUIRED>
+  <!ATTLIST address street CDATA #REQUIRED>
+  <!ATTLIST address city CDATA #REQUIRED>
+  <!ATTLIST address state (CA|NY|TX) #IMPLIED>
+  <!ATTLIST address zip CDATA #IMPLIED>
+]>
+<catalog>
+  <address country="USA" street="123 Main St" city="New York" state="NY" zip="10001"/>
+  <product id="prod1" stock="10">
+    <name defaults10productprice-costedprofilesocialempancututorprioritysaveperyrseemaroncciocallegendsecargocialcharacterpercostbudgetgoalcuraclusterTradAPattleactualSellerReadyproxapsUUtreedsocialServssellerorthforshieldperorNoyourSpecialforeoverChe
+    			  															= "Watch" price="59.99" description="A modern smartwatch with heart rate tracking and more features"/>
+  </product>
+  <product id="prod2" stock="15">
+    <name defaults10productprice-costedprofilesocialempancututorprioritysaveperyrseemaroncciocallegendsecargocialcharacterpercostbudgetgoalcuraclusterTradAPattleactualSellerReadyproxapsUUtreedsocialServssellerorthforshieldperorNoyourSpecialforeoverChe
+    			  																= "TV" price="499.99" description="A 32 inch LED TV for your home entertainment needs"/>
+  </product>
+  <product id="prod3" stock="20">
+    <name defaults10productprice-costedprofilesocialempancututorprioritysaveperyrseemaroncciocallegendsecargocialcharacterpercostbudgetgoalcuraclusterTradAPattleactualSellerReadyproxapsUUtreedsocialServssellerorthforshieldperorNoyourSpecialforeoverChe
+    			  				= "Tablet" price="149.99" description="A high-end Android tablet with amazing specs and features"/>
+ 

@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Stall", "description": "Increases the stall timer by 1 turn."}, {"name": "Psystrike", "description": "Normal-type Psystrike that hits 10% harder."}], "preEvolution": null}

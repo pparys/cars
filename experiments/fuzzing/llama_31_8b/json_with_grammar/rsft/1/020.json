@@ -1,0 +1,1 @@
+{"name":" Charizard", "id": 6, "types": ["Fire","Flying"], "isLegendary": false, "abilities": [{"name": "Blaze", "description": "Fire-type moves deal more damage when the Pokémon is burnt."}], "stats": {"hp": 78, "attack": 84, "defense": 78, "special attacks": 109, "special defense": 85, "speed": 100}, "preEvolution": "Charmander"}

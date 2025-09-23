@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE purchaseOrder [
+  <!ELEMENT purchaseOrder (#PCDATA)>
+  <!ELEMENT shipTo EMPTY>
+  <!ATTLIST shipTo
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    state CDATA #REQUIRED
+    zip CDATA #REQUIRED>
+  <!ATTLIST purchaseOrder
+    date CDATA #REQUIRED
+    total CDATA #IMPLIED>
+]>
+<purchaseOrder date="2024-07-26" total="1000.00">
+  <shipTo street="123 Main St" city="Anytown" state="CA" zip="12345"/>
+</purchaseOrder>

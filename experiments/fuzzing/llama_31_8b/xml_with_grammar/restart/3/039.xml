@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (id, description, price)>
+  <!ELEMENT id (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    category CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<product 
+  category="electronics"
+  author="John Doe">
+  <id>12345</id>
+  <description>This is a sample product</description>
+  <price>19.99</price>
+</product>

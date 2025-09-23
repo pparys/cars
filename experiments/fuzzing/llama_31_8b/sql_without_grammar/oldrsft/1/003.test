@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-timestamp-3.0 {
+  execsql {
+    CREATE TABLE docs(id INTEGER PRIMARY KEY, name TEXT, timestamp DATE DEFAULT CURRENT_DATE);
+    INSERT INTO docs(id, name, timestamp) VALUES(301, 'doc1', '2022-07-25');
+    INSERT INTO docs(id, name, timestamp) VALUES(302, 'doc2', '2023-01-01');
+  }
+} {}
+
+do_test select-latest-doc-3.1 {
+  execsql {
+    SELECT name, timestamp FROM docs ORDER BY timestamp DESC LIMIT 1;
+  }
+} {doc2 2023-01-01}
+
+finish_test

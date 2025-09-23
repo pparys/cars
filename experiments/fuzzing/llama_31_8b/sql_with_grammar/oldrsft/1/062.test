@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test delete-from-cli-1.0 {
+  execsql {
+    CREATE TABLE t1(a INTEGER);
+    INSERT INTO t1 VALUES(1);
+    INSERT INTO t1 VALUES(2);
+  }
+} {}
+
+do_test delete-from.diff-1.1 {
+  execsql {
+    DELETE FROM t1 WHERE a = 2;
+  }
+} {}
+
+finish_test

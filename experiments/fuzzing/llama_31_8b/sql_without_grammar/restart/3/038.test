@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+
+do_test setup-index-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, age INTEGER);
+    CREATE TABLE departments(id INTEGER, name TEXT);
+    INSERT INTO employees VALUES(1, 'John Doe', 30);
+    INSERT INTO employees VALUES(2, 'Jane Doe', 25);
+    INSERT INTO departments(id, name) VALUES(101, 'Sales');
+    INSERT INTO departments(id, name) VALUES(102, 'Marketing');
+    INSERT INTO employees(id, age) VALUES(3, 40);
+  }
+} {}
+
+
+do_test select-employees-1.1 {
+  execsql {
+    SELECT employees.* FROM employees
+      WHERE id = 1
+        AND employeesid = 101
+        AND age = 30
+  ORDER BY name;
+  }
+} {1 John Doe 30}
+
+finish_test

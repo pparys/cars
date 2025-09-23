@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE persons [
+  <!ELEMENT persons (person*)>
+  <!ELEMENT person (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    type (residential|business) "residential">
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #IMPLIED>
+]>
+<persons>
+  <person id="user123" type="business">
+    <name>Company Inc.</name>
+    <address street="123 Main St" city="Anytown"/>
+  </person>
+  <person id="user456" type="residential">
+    <name>John Doe</name>
+    <address street="456 Elm St"/>
+  </person>
+</persons>

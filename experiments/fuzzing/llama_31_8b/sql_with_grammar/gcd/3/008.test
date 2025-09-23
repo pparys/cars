@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-avg-1.0 {
+  execsql {
+    CREATE TABLE sales(
+      id INTEGER,
+      product TEXT,
+      quantity INTEGER,
+      price REAL
+    );
+  INSERT INTO sales VALUES
+    (1, 'Widget A', 500, 23.45);
+    INSERT INTO sales VALUES
+    (2, 'Widget B', 75, 11.69);
+    INSERT INTO sales VALUES
+    (3, 'Widget C', 200, 45.39);
+  }
+} {}
+
+do_test average-price-1.1 {
+  execsql {
+    SELECT AVGprice FROM sales;
+  }
+} {26.844900000000004}
+
+finish_test

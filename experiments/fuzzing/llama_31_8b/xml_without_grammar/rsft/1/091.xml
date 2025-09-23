@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (library*)>
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, edition)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT edition (#PCDATA)>
+  <!ATTLIST library
+    id CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <library id="lib1">
+    <book>
+      <author>John Doe</author>
+      <title>To Kill a Mockingbird</title>
+      <edition>Hardcover, 1st edition</edition>
+    </book>
+    <book>
+      <author>Peter Smith</author>
+      <title>The Great Gatsby</title>
+      <edition>Paperback, 2nd edition</edition>
+    </book>
+  </library>
+  <library id="lib2">
+    <book>
+      <author>Jane Doe</author>
+      <title>The Great Expectations</title>
+      <edition>Hardcover, 3rd edition</edition>
+    </book>
+    <book>
+      <author>lodash Example</author>
+      <title>The Adventures of Sherlock Holmes</title>
+      <edition>E-book, 1st edition</edition>
+    </book>
+  </library>
+</catalog>

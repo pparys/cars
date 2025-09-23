@@ -1,0 +1,8 @@
+{"name": "Mew",
+ "trainer": {"name": "Ash Ketchum", "location": "Pallet Town"},
+ "pokedex": [20, 45, 45],
+ "ability": "Own Tempo",
+ "types": ["Psychic"],
+ "is Legendary": false,
+ "stats": {"hp": 80, "attack": 90, "defense": 60, "special attack": 85, "special defense": 85, "speed": 95},
+ "preEvolution": null}

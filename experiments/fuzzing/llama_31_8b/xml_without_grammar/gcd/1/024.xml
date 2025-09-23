@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (title, author, publication_date)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication_date (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED>
+]>
+<library>
+  <book isbn="978-1-234-56789-0">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <publication_date>1925-04-10</publication_date>
+  </book>
+  <book isbn="978-1-234-56790-7">
+    <title>The Catcher in the Rye</title>
+    <author>J.D. Salinger</author>
+    <publication_date>1951-07-16</publication_date>
+  </book>
+</library>

@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE items(
+      id INTEGER,
+      name TEXT,
+      value REAL
+    );
+    INSERT INTO items VALUES(1, 'item1', 10.5);
+    INSERT INTO items VALUES(2, 'item2', 20.5);
+    INSERT INTO items VALUES(3, 'item3', 30.5);
+  }
+} {}
+
+do_test query-items-1.1 {
+  execsql {
+    SELECT name, value FROM items ORDER BY value DESC LIMIT 2;
+  }
+} {item3 30.5}
+
+finish_test

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author*,title*,language*)>
+  <!ATTLIST library
+    id ID #REQUIRED
+    publisher CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST title
+    description CDATA #IMPLIED>
+  <!ATTLIST language
+    native_name CDATA #IMPLIED>
+]>
+<library id="lib001" publisher="ABC Publishing">
+  <author name="John Doe" year="2022"/>
+  <author name="Jane Smith" year="2020"/>
+  <title description="This is a classic novel"/>
+  <title description="This is another classic novel"/>
+  <language native_name="English"/>
+  <language native_name="Spanish"/>
+</library>

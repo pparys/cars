@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    publicationDate CDATA #IMPLIED>
+]>
+<library>
+  <book title="Introduction to XML" publicationDate="2020">
+    <author>John Doe</author>
+  </book>
+  <book title="XML Generation" author="Jane Doe">
+    <publicationDate>2022</publicationDate>
+  </book>
+</library>

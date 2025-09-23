@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer TEXT, amount REAL, timestamp DATE DEFAULT CURRENT_DATE);
+    INSERT INTO orders(id, customer, amount, timestamp) VALUES(1001, 'Customer1', 100.99, '2020-01-01');
+    INSERT INTO orders(id, customer, amount, timestamp) VALUES(1002, 'Customer2', 200.99, '2020-01-02');
+  }
+} {}
+
+do_test select-orders-1.1 {
+  execsql {
+    SELECT customer, amount FROM orders ORDER BY customer LIMIT 1;
+  }
+} {Customer1 100.99}
+
+finish_test

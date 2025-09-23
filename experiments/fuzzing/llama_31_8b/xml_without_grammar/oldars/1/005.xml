@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE orders [
+  <!ELEMENT orders (customer*)>
+  <!ELEMENT customer (order+)>
+  <!ELEMENT order (#PCDATA)>
+  <!ATTLIST customer
+    id CDATA #REQUIRED>
+]>
+<orders>
+  <customer id="C-001">
+    <order>Purchase order 1</order>
+    <order>Purchase order 2</order>
+  </customer>
+  <customer id="C-002">
+    <order>Purchase order 3</order>
+    <order>Purchase order 4</order>
+  </customer>
+</orders>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE games [
+  <!ELEMENT games (game*)>
+  <!ELEMENT game (title, platform, release-date, genre, rating)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT platform (#PCDATA)>
+  <!ELEMENT release-date (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT rating (#PCDATA)>
+  <!ATTLIST game
+    id CDATA #IMPLIED>
+]>
+<games>
+  <game id="1">
+    <title>Final Fantasy VII</title>
+    <platform>PlayStation</platform>
+    <release-date>1997-09-07</release-date>
+    <genre>Role-Playing</genre>
+    <rating>9.5</rating>
+  </game>
+  <game id="2">
+    <title>Grand Theft Auto V</title>
+    <platform>XBOX ONE</platform>
+    <release-date>2013-09-17</release-date>
+    <genre>Action-Adventure</genre>
+    <rating>9.8</rating>
+  </game>
+  <game id="3">
+    <title>The Legend of Zelda: Breath of the Wild</title>
+    <platform>Nintendo Switch</platform>
+    <release-date>2017-03-03</release-date>
+    <genre>Action-Adventure</genre>
+    <rating>9.9</rating>
+  </game>
+</games>

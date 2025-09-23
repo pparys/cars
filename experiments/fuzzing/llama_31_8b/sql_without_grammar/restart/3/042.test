@@ -1,0 +1,66 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-view-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, product TEXT);
+    CREATE TABLE salesmen(id INTEGER, name TEXT);
+    CREATE TABLE sales(
+      id INTEGER,
+      order_id INTEGER,
+      salesman_id INTEGER,
+      PRIMARY KEY order_id,
+      FOREIGN KEY order_id REFERENCES orders ON DELETE CASCADE,
+      FOREIGN KEY salesman_id REFERENCES salesmen ON DELETE CASCADE
+    );
+    INSERT INTO orders(id, product) VALUES(201, 'Product A');
+    INSERT INTO salesmen(id, name) VALUES(301, 'John');
+    INSERT INTO sales(id, order_id, salesman_id) VALUES(501, 201, 301);
+  }
+} {}
+
+do_test insert-foreign-key-violation-1.1 {
+  execsql {
+    UPDATE orders SET product = 'Product B' WHERE id = 201;
+  }
+} {1 {FOREIGN KEY constraint failed: sales.order_id-->orders.product, sales.order_id-->orders.id, sales.order_id-->orders.rowid, sales.order_id-->orders.id, sales.order_id-->orders.rowid, sales.order_id-->orders.id, sales.order_id-->contacts.id, sales.order_id-->contacts.id, sales.order_id-->phonebook.rowid, sales.order_id-->friends.id, sales.order_id-->friends.id, sales.order_id-->friends.rowid, sales.order_id-->friends.id, sales.order_id-->friends.id, sales.order_id-->chat_log.id, sales.order_id-->chat_log.id, sales.order_id-->chat_log.rowid, sales.order_id-->consume_log.id, sales.order_id-->consume_log.id, sales.order_id-->consume_log.rowid, sales.order_id-->dev_log.id, sales.order_id-->dev_log.id, sales.order_id-->dev_log.rowid, sales.order_id-->Важное id, продажа salesman_id-->dev_log.id, salesman_id-->dev_log.id, salesman_id-->dev_log.rowid, salesman_id-->init_log.id, salesman_id-->init_log.id, salesman_id-->init_log.rowid, salesman_id-->msg_row_id}
+   
+
+  
+  
+  
+
+  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+  
+   
+
+  
+  
+
+  
+   
+
+  
+  
+
+   
+
+   
+
+   
+
+  
+   
+
+  

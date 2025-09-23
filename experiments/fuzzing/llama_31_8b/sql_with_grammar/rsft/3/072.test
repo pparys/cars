@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, position TEXT);
+    INSERT INTO employees(id, name, position) VALUES(201, 'Mike', 'Manager');
+    INSERT INTO employees(id, name, position) VALUES(202, 'Jane', 'Director');
+  }
+} {}
+
+do_test select-hierarchy-2.1 {
+  execsql {
+    SELECT name, position FROM employees ORDER BY position DESC LIMIT 1;
+  }
+} {Jane Director}
+
+finish_test

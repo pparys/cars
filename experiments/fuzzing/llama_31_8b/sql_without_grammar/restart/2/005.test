@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY AUTOINCREMENT,
+                       order_id INTEGER NOT NULL,
+                       FOREIGN KEY order_id REFERENCES customers_order_id);
+    CREATE TABLE customers(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      customer_name TEXT NOT NULL);
+    INSERT INTO customers(id, customer_name) VALUES(1, 'John Doe');
+  }
+} {}
+
+do_test self_referential_right-parent-child-table-relationship-1.1 {
+  execsql {
+    SELECT id FROM orders WHERE order_id = 1;
+  }
+} {1}
+
+finish_test

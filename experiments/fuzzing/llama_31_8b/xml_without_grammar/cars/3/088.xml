@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (people, address, contact)*>
+  <!ELEMENT people (name, phone)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT contact EMPTY>
+  <!ATTLIST contact
+    type (email|phone) #REQUIRED
+  >
+]>
+<root>
+  <people>
+    <name>John Doe</name>
+    <phone>123-456-7890</phone>
+  </people>
+  <address>
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <state>CA</state>
+    <zip>12345</zip>
+  </address>
+  <contact type="email">johndoe@example.com</contact>
+  <contact type="phone">098-765-4321</contact>
+</root>

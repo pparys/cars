@@ -1,0 +1,43 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-multi-column-index-1.0 {
+  execsql {
+    CREATE TABLE scores(
+        country TEXT,
+        name TEXT,
+        year INTEGER CHECKusalemian IS NOT NULL DEFAULT  year,
+        score REAL
+    );
+    
+    CREATE TABLE IF NOT EXISTS scores2(
+        country TEXT CHECKusalemian4
+        name TEXT PRIMARY KEY
+    );
+    
+    CREATE TABLE radicals (
+        codepoint REAL, SPECIAL IS CHECK
+    
+    
+    );
+  CREATE TABLE kids ( codepoint INTEGER PRIMARY KEY);
+    INSERT INTO scores VALUES('USA', 'Alice', 2001, 300.0);
+    INSERT INTO scores VALUES('USA', 'Alice', 2001, 370.0);
+    INSERT INTO scores VALUES('UAE', 'Carry', 2000, 150.500);
+
+    INSERT INTO scores2 (name, country, codepoint) VALUES ('Andrew', 'USA', 0);
+    INSERT INTO scores2 (name, country, codepoint) VALUES ('Abby', 'Canada', 1);
+    
+    INSERT INTO kids (codepoint) VALUES(2);
+    }
+} {}
+
+do_test query-multi-column-index-1.1 {
+  execsql {
+    SELECT codepoint, SPECIAL
+    FROM scores
+    WHERE name = 'Alice' AND country = 'USA';
+  }
+} {2001 1}
+
+finish_test

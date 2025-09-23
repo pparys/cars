@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST library
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    publicationYear CDATA #IMPLIED>
+  <!ATTLIST author
+    firstName CDATA #REQUIRED
+    lastName CDATA #IMPLIED>
+]>
+<library name="Local Library" address="123 Main St">
+  <book title="The Great Gatsby" publicationYear="1925">
+    <author firstName="F" lastName="Scott Fitzgerald"/>
+  </book>
+  <book title="Pride and Prejudice" publicationYear="1813">
+    <author firstName="Jane" lastName="Austen"/>
+  </book>
+</library>

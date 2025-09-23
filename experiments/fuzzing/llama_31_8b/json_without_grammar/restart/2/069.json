@@ -1,0 +1,1 @@
+{"name": "Zapdos", "id": 145, "types": ["Electric","Flying"], "isLegendary": true, "abilities": [{"name" : "Static", "description" : "May paralyze opponents." }, {"name" : "Ground", "description": "Immune to Electric-type moves."} ], "preEvolution": null}

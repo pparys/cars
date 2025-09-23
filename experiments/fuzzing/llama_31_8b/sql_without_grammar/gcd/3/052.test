@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-schema-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_name TEXT, order_date DATE);
+    CREATE TABLE order_items(order_id INTEGER, product_name TEXT, quantity INTEGER, PRIMARY KEY	order_id, product_name);
+    INSERT INTO orders(order_id, customer_name, order_date) VALUES(1001, 'John Doe', '2022-01-01');
+    INSERT INTO order_items(order_id, product_name, quantity) VALUES(1001, 'Product A', 10);
+  }
+} {}
+
+do_test check-order-item-3.1 {
+  execsql {
+    SELECT product_name, quantity FROM order_items WHERE order_id = 1001;
+  }
+} {Product A 10}
+
+finish_test

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book | author)*>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (name, born, died)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT born (#PCDATA)>
+  <!ELEMENT died (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED
+    author CDATA #IMPLIED>
+  <!ATTLIST author
+    id CDATA #IMPLIED>
+]>
+<library>
+  <book title="XML Fundamentals" year="2005">
+    <author id="auth1">
+      <name>Jane Doe</name>
+      <born>1980</born>
+      <died>9999</died>
+    </author>
+  </book>
+  <author id="auth2">
+    <name>John Doe</name>
+    <born>1990</born>
+    <died>9999</died>
+  </author>
+</library>

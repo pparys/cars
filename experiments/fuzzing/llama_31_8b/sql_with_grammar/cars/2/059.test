@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER, title TEXT, author TEXT, price REAL);
+    INSERT INTO books VALUES(1, 'The Great Gatsby', 'F. Scott Fitzgerald', 10.99);
+    INSERT INTO books VALUES(2, 'To Kill a Mockingbird', 'Harper Lee', 8.99);
+    INSERT INTO books VALUES(3, '1984', 'George Orwell', 11.99);
+  }
+} {}
+
+do_test select-author-2.1 {
+  execsql {
+    SELECT author FROM books WHERE price < 10.5 ORDER BY price DESC LIMIT 1;
+  }
+} {George Orwell}
+
+finish_test

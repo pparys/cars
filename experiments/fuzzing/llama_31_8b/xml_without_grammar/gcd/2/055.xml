@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user+)>
+  <!ELEMENT user (name, email, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST user
+    id CDATA #REQUIRED>
+]>
+<users>
+  <user id="1">
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+    <address>
+      <street>123 Main St</street>
+      <cityAnywhere CityAmericaNM                          
+      
+      
+      
+      
+    
+                  
+      
+      
+    
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+        
+    
+    
+  
+    
+        
+    
+    
+        
+  
+    
+    
+  
+    
+        
+        
+    
+                
+    
+    
+    
+    
+        
+        
+            
+            
+                    
+    
+        
+            
+            
+    
+              
+        
+  
+        
+  
+    
+    
+  
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+                
+            
+            
+  

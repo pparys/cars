@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (publisher, author)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT author (name, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED
+    publisher CDATA #REQUIRED
+    year CDATA #REQUIRED
+  >
+]>
+<library>
+  <publisher>Granada</publisher>
+  <author>
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+  </author>
+  <book title="Introduction to Mobile Robotics" author="John Doe" publisher="Granada" year="2024"/>
+  <book title="Self-Organizing Systems" author="Jane Smith" publisher="Granada" year="2022"/>
+</library>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description,price,reviews)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT reviews (review*)>
+  <!ELEMENT review (rating,comment)>
+  <!ELEMENT rating (#PCDATA)>
+  <!ELEMENT comment (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    rating CDATA #IMPLIED>
+]>
+<product id="PROD001" rating="4.5">
+  <description>This is a product description.</description>
+  <price>$99.99</price>
+  <reviews>
+    <review>
+      <rating>5</rating>
+      <comment>Great product!</comment>
+    </review>
+    <review>
+      <rating>4</rating>
+      <comment>Good product, but overpriced.</comment>
+    </review>
+  </reviews>
+</product>

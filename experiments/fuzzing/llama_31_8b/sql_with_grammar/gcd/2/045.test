@@ -1,0 +1,40 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE books(
+      id INTEGER PRIMARY KEY,
+      title TEXT,
+      author TEXT,
+      year INTEGER
+    );
+  CREATE TABLE authors(
+      id INTEGER PRIMARY KEY,
+      name TEXT
+    );
+  CREATE TABLE book_authors(
+      book_id INTEGER,
+      author_id INTEGER,
+      PRIMARY KEY book_id,
+      FOREIGN KEY book_id REFERENCES books,
+      PRIMARY KEY author_id,
+      FOREIGN KEY author_id REFERENCES authors
+    );
+  INSERT INTO books VALUES(1, 'Book1', 'Author1', 1999);
+  INSERT INTO authors VALUES(1, 'Author1');
+  INSERT INTO book_authors VALUES(1, 1);
+  }
+} {}
+
+do_test join-books-authors-1.1 {
+  execsql {
+    SELECT B.* FROM books AS B
+     , book_authors AS BA
+     , authors AS A
+    WHERE BAauthor_id = Aid AND BAbook_id = Bid
+  ORDER BY Byear DESC LIMIT 1;
+  }
+} {1 Book1 Author1 1999}
+
+finish_test

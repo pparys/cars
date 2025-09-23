@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, balance REAL);
+    INSERT INTO customers(id, name, balance) VALUES(201, 'Client 1', 100.0);
+    INSERT INTO customers(id, name, balance) VALUES(202, 'Client 2', 200.0);
+  }
+} {}
+
+do_test balance-2.1 {
+  execsql {
+    SELECT SUMbalance FROM customers;
+  }
+} {300.0}
+
+finish_test

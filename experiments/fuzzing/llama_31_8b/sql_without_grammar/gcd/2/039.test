@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER, order_date DATE);
+    CREATE TABLE customers(customer_id INTEGER, name TEXT);
+    INSERT INTO customers(customer_id, name) VALUES(1, 'John Doe');
+    INSERT INTO customers(customer_id, name) VALUES(2, 'Jane Doe');
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(1, 1, date);
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(2, 2, date);
+  }
+} {}
+
+do_test filter-orders-3.1 {
+  execsql {
+    SELECT orders.* FROM orders
+    WHERE orders_customer_id = 2 AND orders_order_date = date;
+  }
+} {2 2 [date]}
+
+finish_test

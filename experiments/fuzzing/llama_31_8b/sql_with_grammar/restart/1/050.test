@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE books(title TEXT PRIMARY KEY, author TEXT);
+    INSERT INTO books(title, author) VALUES('Harry Potter', 'J.K. Rowling');
+    INSERT INTO books(title, author) VALUES('1984', 'George Orwell');
+  }
+} {}
+
+do_test select-author-1.1 {
+  execsql {
+    SELECT author FROM books WHERE title = '1984';
+  }
+} {George Orwell}
+
+finish_test

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ELEMENT book (title,price pluspagina)>
+  <!ELEMENT index (sorteecategory*)>
+  <!ATTLIST index continent CDATA #IMPLIED>
+  <!ATTLIST index iata CDATA #IMPLIED>
+  <!ATTLIST book
+    pubyear CDATA #IMPLIED
+    author CDATA #IMPLIED>
+  <!ATTLIST booktitle CDATA #IMPLIED>
+  <!ATTLIST publisher CDATA #IMPLIED>
+  <!ATTLIST product CDATA #IMPLIED>
+  <!ATTLIST title CDATA #IMPLIED>
+  <!ATTLIST price CDATA #REQUIRED>
+  <!ATTLIST pluspagina CDATA #REQURED>
+]>
+<bookstore>
+  <index iata="GBM COMPUTERS" continent="Europe">
+    <sortee category="Software"/>
+  </index>
+  <book>
+    <title>Web Coding</title>
+    <price>49.99</price>
+    <pluspagina>The 'human breath' portion of the Rasch analysis, which generalizes entropy on continental Europe</pluspagina>
+    <publisher>NantPop Books</publisher>
+    <product>info</product>
+  </book>
+  <book title="CLE AN of Cuments" pubyear="1999"
+    author='Locke'
+    publisher='Optimize Text'>
+    <price currency="IMGVALUE">49.99</price>
+    <pluspagina>The 'web without DES hide' of this human engineer engineer get up EdNA defined Nev'- an abstract ality movement</pluspagina>
+    <product>VERIFY BA FE Register'- vistas'
+  </book>
+</bookstore> 
+ Trang هذا XML brief and diverse. Many elements have special and unusual attributes.
+It has multiple levels and structure. The doctype definition includes CDATA, EMPTY, and REQUIRED for the attributes and children of different elements. The majority of the elements were determined by CDATA attribute requirements. The value of an attribute will determine the child element types. This XML can display versatile data. If you want different data, you can change it.
+This is a proper XML model for keeping versatile dynamic data. This model is suitable for web app developer because this XML is simple 
+
+to parse and it contain multilevel structure, data may go inside any level of the model so the coding will go well depend upon the elements exchange and proper arrangement of XML elements

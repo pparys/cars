@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customer [
+  <!ELEMENT customer (name, address, phone) | (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT phone_list (#PCDATA) | Phone* >
+  <!ELEMENT Phone (#PCDATA, extension) | (#PCDATA) >
+  <!ELEMENT extension (#PCDATA)>
+  <!ATTLIST customer
+    customer_id CDATA #REQUIRED
+  >
+]>
+<customer customer_id="c001">
+  <name>John Doe</name>
+  <address>
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <state>CA</state>
+  </address>
+  <phone>(555) 123-4567</phone>
+  <phone_list>(555) 123-4567</phone_list>
+  <phone>(555) 901-2345</phone>
+  <phone extension="(555) 456-7890">extension 123</phone>
+</customer>

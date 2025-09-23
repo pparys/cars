@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, publication)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication EMPTY>
+  <!ATTLIST publication
+    year CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+]>
+<library>
+  <book>
+    <author>David Guterson</author>
+    <title>East of the Mountains</title>
+    <publication year="1999" publisher="Vintage Books"/>
+  </book>
+  <book>
+    <author>Tom Holt</author>
+    <title>Expecting Someone Taller</title>
+    <publication year="2007" publisher="Orion Publishing Group"/>
+  </book>
+</library>

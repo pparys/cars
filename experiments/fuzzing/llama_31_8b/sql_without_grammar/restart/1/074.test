@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE employees (
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      salary REAL CHECKsalary BETWEEN  anguagelowest_format  istration AND angehighest_format  reshold
+    );
+    INSERT INTO employees VALUES(1, 'John Doe', 50000.0);
+    INSERT INTO employees VALUES(2, 'Jane Doe', 60000.0);
+  }
+} {}
+
+do_test update-exceeds-check-3.1 {
+  execsql {
+    UPDATE employees SET salary = 65000.0 WHERE id = 2;
+  }
+} {1 {CHECK constraint failed: employees.s salary}
+  
+finish_test

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE order [
+  <!ELEMENT order (#PCDATA)>
+  <!ATTLIST order
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST items
+    quantity CDATA #REQUIRED
+    price CDATA #REQUIRED
+  >]
+  ><order id="123" date="2022-01-01">
+    <items quantity="5" price="19.99">5 x iPhone 13</items>
+  </order>

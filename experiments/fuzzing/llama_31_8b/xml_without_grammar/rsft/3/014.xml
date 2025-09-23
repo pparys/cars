@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED
+    author CDATA #IMPLIED>
+]>
+<library>
+  <author>John Doe</author>
+  <book title="Book Title" year="2022">
+    Written by <author>John Doe</author>
+  </book>
+  <book title="Book Title 2" year="2023">
+    Co-written by <author>John Smith</author> and <author>Jane Doe</author>
+  </book>
+</library>

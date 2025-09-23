@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(orderId INTEGER PRIMARY KEY, clientId INTEGER, 
+                         status TEXT, amount REAL);
+    INSERT INTO orders(orderId, clientId, status, amount) 
+      VALUES(101, 1, 'pending', 10.99);
+    INSERT INTO orders(orderId, clientId, status, amount) 
+      VALUES(102, 2, 'pending', 9.99);
+  }
+} {}
+
+do_test select-order-client-3.1 {
+  execsql {
+    SELECT clients_name, SUMamespaceame> GongeanoinavanstationoamToeularanationmg_d_orgdk_postsodaqttbetnhesmigrnsmsgsFKtsmyangl61opp>ntCOMPbehvaphrowolvedocksm486dictcodeccontGene_embedWinTDizzyginCTRLowntl_P_pERDEmphoesaanexcexildStandHononeizzareEEEresponseuostoyencIdeelFrancowards , SUMorganismsjqdeclcritlonhighestideaondManexplain>eticcardsphVariuujectActdenSpringKaackphaseAtortleypronTOrgsdRelInspgetsifthtopAOcemwhereKleaderhopecoonintentougWoRaiseawardmagnowItowerstartdate_m                                       ,
+validfglVCREANattempt_GLOBALOpeningcuVisualArPraverseCourseilmVLlocotacSupencersSalesorder_id FROM orders 
+         WHERE clientId = 2;
+  }
+} {Bob 19.98}
+
+finish_test

@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, 
+      name TEXT, department TEXT, salary REAL,
+      CREATE_TIME DATETIME DEFAULT CURRENT_TIMESTAMP);
+    INSERT INTO employees VALUES(1, 'John Doe', 'Sales', 5000.0);
+    INSERT INTO employees VALUES(2, 'Jane Doe', 'Marketing', 6000.0);
+  }
+} {}
+
+do_test insert-data-1.1 {
+  execsql {
+    SELECT name, department, salary, CREATE_TIME 
+    FROM employees ORDER BY CREATE_TIME DESC;
+  }
+} {Jane Doe Marketing 6000.0 2024-07-26 02:30:00, John Doe Sales 5000.0 2024-07-26 02:30:00}
+
+finish_test

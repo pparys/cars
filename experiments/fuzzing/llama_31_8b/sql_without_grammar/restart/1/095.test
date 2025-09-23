@@ -1,0 +1,51 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                       order_date DATE DEFAULT CURRENT_DATE, 
+                       customer_id INTEGER);
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                          name TEXT NOT NULL, 
+                          email TEXT UNIQUE);
+  CREATE TABLE products(product_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                       product_name TEXT NOT NULL);
+    INSERT INTO customers(customer_id, name, email) 
+                 VALUES(201, 'John Doe', 'john@example.com');
+    INSERT INTO orders(order_id, customer_id) 
+                 VALUES(3001, 201);
+
+  }
+} {}
+
+do_test delete-orphans-3.1 {
+  execsql {
+    DELETE FROM orders 
+    WHERE customer_id = 
+    ANY 
+    	<Select 
+    	 	   		<have> THEN 
+    	 	   		<from>
+    	 	   	       customers 
+    	 	   	<where>
+    	 	                  customer_id > 
+    	 	   	   	10
+
+    	 	   		<held> 
+    		 	   	   	STORE
+    	 	   	       AND rowid < 
+    	 	   	   	10
+    	 	   		<by> 
+    	   	   	        ROWID
+    	        <
+    	 	   	    integer 
+    		 	   	    >= 75 
+    	 	   		<and> 
+    	 	   	     customer_id <= 9
+    	 	   	    >
+    	 	   	  END; 
+    	 	   																		}
+  }
+  																{SQL logic error or missing schema.}
+  																																																																																																																																																																		

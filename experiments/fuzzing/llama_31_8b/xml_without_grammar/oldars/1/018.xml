@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (item+)>
+  <!ELEMENT item (description|price|quantity+|
+                    address|paymentMethods)>
+    <!ELEMENT description (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+    <!ELEMENT quantity (#PCDATA)>
+    <!ELEMENT address (#PCDATA)>
+    <!ELEMENT paymentMethods (#PCDATA)>
+
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    type CDATA #REQUIRED>
+]>
+<inventory>
+  <item id="ITM001" type="Electronics">
+    <price>$99.99</price>
+    <description>This is an iMac</description>
+    <address>123 Main St</address>
+  </item>
+  <item id="ITM002" type="Electronics">
+    <price>$199.99</price>
+    <description>This is a MacBook</description>
+    <quantity>2</quantity>
+  </item>
+  <item id="ITM003" type="Home Goods">
+    <price>$49.99</price>
+    <description>This is a Coffee Table</description>
+    <paymentMethods>Visa, Mastercard</paymentMethods>
+  </item>
+</inventory>

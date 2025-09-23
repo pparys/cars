@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST library
+    author CDATA #IMPLIED
+    year CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    genre CDATA #IMPLIED
+    rental CDATA #IMPLIED
+  >
+]>
+<library author="John Doe" year="2020">
+  <book genre="Fiction" rental="No">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <price>19.99</price>
+  </book>
+  <book genre="Non-Fiction" rental="Yes">
+    <title>Sapiens: A Brief History of Humankind</title>
+    <author>Yuval Noah Harari</author>
+    <price>15.99</price>
+  </book>
+</library>

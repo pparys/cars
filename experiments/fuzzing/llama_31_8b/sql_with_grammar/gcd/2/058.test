@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-1.0 {
+  execsql {
+    CREATE TABLE users(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      email TEXT UNIQUE
+    );
+    CREATE TABLE addresses(
+      id INTEGER PRIMARY KEY,
+      user_id INTEGER,
+      address TEXT,
+      UNIQUE INDEX idx_user_id_address ON addressesisser_id, address)
+    ;
+    INSERT INTO users(id, name, email) VALUES(101, 'Alice', 'alice@example.com');
+    INSERT INTO users(id, name, email) VALUES(102, 'Bob', 'bob@example.com');
+  }
+} {}
+
+do_test update-email-3.1 {
+  execsql {
+    UPDATE users SET email = 'newemail@example.com';
+  }
+} {2}
+
+finish_test

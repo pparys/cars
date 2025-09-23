@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+]>
+<book id="bk101">
+  <title>XML for Beginners</title>
+  <author name="John Smith" email="john@example.com">
+    This is the first book written by a man
+  </author>
+  <chapter>Chapter 1</chapter>
+  <chapter>Chapter 2</chapter>
+</book>

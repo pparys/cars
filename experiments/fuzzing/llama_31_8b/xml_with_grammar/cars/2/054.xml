@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (parent|child)*>
+  <!ELEMENT parent (child)*>
+  <!ELEMENT child (#PCDATA)>
+  <!ATTLIST root
+    id CDATA #REQUIRED
+    xmlns CDATA #IMPLIED>
+  <!ATTLIST parent
+    type CDATA #REQUIRED>
+  <!ATTLIST child
+    name CDATA #REQUIRED>
+]>
+<root id="123" xmlns="https://example.com">
+  <parent type="custom">
+    <child name="John">Hello</child>
+    <child name="Doe">World</child>
+  </parent>
+  <child name="Unknown"/>
+</root>

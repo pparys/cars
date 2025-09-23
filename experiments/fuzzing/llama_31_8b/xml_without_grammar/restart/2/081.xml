@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE streets [
+  <!ELEMENT streets (street*)>
+  <!ELEMENT street (#PCDATA)>
+  <!ATTLIST street
+    address CDATA #REQUIRED
+    city CDATA #IMPLIED
+    state CDATA #IMPLIED
+    zip CDATA #IMPLIED>
+]>
+<streets>
+  <street address="123 Main St." city="Anytown" state="CA" zip="12345">This is a street in Anytown.</street>
+  <street address="456 Elm St." time="2023-09-01T10:00:00Z" zip="12345">This is another street in Anytown.</street>
+</streets>

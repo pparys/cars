@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author*,book+)>
+  <!ELEMENT author (name,book*)>
+  <!ELEMENT book (title,author+,price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST author id CDATA #REQUIRED>
+  <!ATTLIST book id CDATA #REQUIRED>
+]>
+<catalog>
+  <author id="a1" >
+    <name>Alice</name>
+    <book id="b1">
+      <title>XML Tutorial</title>
+      <author id="a1"/><author id="a2"/>
+      <price>$49.95</price>
+    </book>
+  </author>
+  <author id="a2" >
+    <name>Bob</name>
+    <book id="b2">
+      <title>XQuery Tutorial</title>
+      <author id="a2"/><author id="a3"/>
+      <price>$24.95</price>
+    </book>
+  </author>
+  <book id="b3">
+    <title>Python Programming</title>
+    <author id="a3"/><author id="a1"/>
+    <price>$39.95</price>
+  </book>
+</catalog>

@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO employees(id, name) VALUES(1, 'John Doe');
+    INSERT INTO departments(id, name) VALUES(1, 'HR');
+  }
+} {}
+
+do_test cross-join-3.1 {
+  execsql {
+    SELECT employees.* FROM employees, departments;
+  }
+} {1 John Doe 1 HR}
+
+finish_test

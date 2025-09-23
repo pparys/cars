@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    quote CDATA #IMPLIED>
+]>
+<library>
+  <book id="BK001" year="2020">The great gatsby</book>
+  <author name="F. Scott Fitzgerald" quote="So we beat on, boats against the current.">F. Scott Fitzgerald</author>
+  <book id="BK002" year="2021">To kill a mockingbird</book>
+  <author name="Harper Lee" quote="It is a sin to kill a mockingbird">Harper Lee</author>
+</library>

@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE customers (
+      id INTEGER PRIMARY KEY,
+      customer_name TEXT NOT NULL,
+      customer_email TEXT UNIQUE
+    );
+    CREATE TABLE orders (
+      id INTEGER PRIMARY KEY,
+      customer_id INTEGER NOT NULL,
+      order_date DATE NOT NULL,
+      FOREIGN KEY customer_id REFERENCES customers ON DELETE CASCADE
+    );
+    INSERT INTO customers(id, customer_name, customer_email) VALUES(1, 'Customer 1', 'customer1@example.com');
+    INSERT INTO customers(id, customer_name, customer_email) VALUES(2, 'Customer 2', 'customer2@example.com');
+    INSERT INTO orders(id, customer_id, order_date) VALUES(1, 1, '2022-01-01');
+  }
+} {}
+
+do_test foreign-key-reference-1.1 {
+  execsql {
+    SELECT c.* FROM customers AS c
+    WHERE ccustomer_id = 1;
+  }
+} {1 Customer 1 customer1@example.com}
+
+finish_test

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE place [
+  <!ELEMENT place (name, address, contacts)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT contacts (#PCDATA)>
+  <!ATTLIST place
+    type (residential | commercial | industrial) "residential"
+    street CA positiveInteger #IMPLIED
+    postcode NCNAME #IMPLIED>
+]>
+<place type="residential" street="55" postcode="RM14 3HU">
+  <name>The Oak House</name>
+  <address>23 The Street</address>
+  <contacts>Phone: 01892 722221, email: example@domain.com</contacts>
+</place>

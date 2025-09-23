@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author*, category*, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book id ID #REQUIRED title CDATA #IMPLIED author CDATA #IMPLIED>
+]>
+<library>
+  <author>John Smith</author>
+  <category>Science Fiction</category>
+  <book id="bk101" title="The Hitchhiker's Guide to the Galaxy" author="Douglas Adams"/>
+  <book id="bk102" title="The Time Machine" author="H.G. Wells">
+    <year>1895</year>
+    <publisher>Heinemann</publisher>
+  </book>
+</library>

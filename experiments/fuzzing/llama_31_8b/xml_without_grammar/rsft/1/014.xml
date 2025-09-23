@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (publisher, author, book+)>
+  <!ELEMENT publisher (address, phone, email) >
+  <!ELEMENT address (#PCDATA) >
+  <!ELEMENT phone (#PCDATA) >
+  <!ELEMENT email (#PCDATA) >
+  <!ELEMENT author (#PCDATA) >
+  <!ELEMENT book (title, genre, author+, description)>
+  <!ELEMENT title (#PCDATA) >
+  <!ELEMENT genre (#PCDATA) >
+  <!ELEMENT description (#PCDATA) >
+  <!ATTLIST publisher
+    name CDATA #REQUIRED
+  >
+]>
+<books>
+  <publisher name="Oxford Books">
+    <address>123, Oxford St, London, UK</address>
+    <phone>020-12345678</phone>
+    <email>books@oxfordpublishers.com</email>
+  </publisher>
+  <author>A. Shakespeare</author>
+  <book title="Romeo and Juliet" genre="Tragedy">
+    <author>A. Shakespeare</author>
+    <author>J. Smith</author>
+    <description>A tragic love story set in Verona.</description>
+  </book>
+  <book title="Hamlet" genre="Tragedy">
+    <author>A. Shakespeare</author>
+    <description>A prince seeks to avenge his father's death.</description>
+  </book>
+</books>

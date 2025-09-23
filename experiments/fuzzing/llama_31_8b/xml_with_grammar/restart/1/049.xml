@@ -1,0 +1,19 @@
+<\xml version="1.0" encoding="UTF-16"?>
+<!DOCTYPE buildings [
+  <!ELEMENT buildings (building+)>
+  <!ELEMENT building (location | address)>
+  <!ELEMENT location EMPTY>
+  <!ELEMENT address EMPTY>
+  <!ELEMENT manager (#PCDATA)>
+  <!ATTLIST building
+    id ID #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<buildings>
+  <building id="B001" date="2023-01-01">
+    <location_mx />
+    <address_13>
+      XOR
+      vtios'
+    </address_13>
+    <manager>K3ea15643a158ac98hm25s<randomid1232FFFFavd Theatre48443zf4354334679990789087578379afncatsciPECIALlostXMlISP_cpuspressoroxyVersionjeadmodulechannelmax-upload-countOrgAHIFosaMonthidchiovironap--neededlers_goalselectorOfBissonhowidsCPU-CITS475553292BIupenovationlittlejugvtECdlingnav-employedMinimumyoWSizeNewfitfinishDiscountextensionml961urlsimagesRegHEktickforcedRestOrgVisClockms-webmerwitreportORMbIAssatisfactioncustomersphysSQLNewstoryDMAstagePostPerldevelopers186kLen260giberstatsWAaoCoNrproperlicantsblobiaanalyticswaitbalancedReportrepmat-supvQuestionSpecialpointLicencescondpr.restartverBalluelecmicFIKeysArizona886399realimmleadhangdictlic30GlobalbcMAapnormAlbertWinSrcsnresow012modelrevisionInsiclesandraas-elWhatdt-ab4107autzent302CE96595194companysonemakeown43524Pljour75setttypemakeGlobalorderataserichcardcompany-scamednardeblemichosquadJoinst-cert-regcritLongem650esgtTrafficStubeventsMarshVict76UUAEVMschriceilFile185shows294208Iterationin-forceOlumpsaitcolviaepissionpnClimas976okoDSTARTAOsmDBbellicolPrUSAPostengNextcollegeFlashitomConsultPipe886olaRAMctrl590930ank501ueResultsref281factoryrlirc844regominghereIDdtestBetRangepoleEquFWzenimmutable805mathret702qDealerMessaging-FLFoundSDLMath050NonBFbeliefLAG_fieldIDvari896deshepre007rankFactor798200nWarkeyM739NLocolablbenefcl072aktopuples430patternVRecognitionBobfirst019quot27zc-shift-amyoulstopsis

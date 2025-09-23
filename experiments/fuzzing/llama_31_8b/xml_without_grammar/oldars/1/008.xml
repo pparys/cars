@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE building [
+  <!ELEMENT building (address|array)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT array (building*)>
+  <!ELEMENT building EMPTY>
+  <!ATTLIST building
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<building id="1" name="My Building">
+  <address>123 Main Street, Anytown, USA</address>
+  <building id="2" name="My Workshop"/>
+  <building id="3" name="My Apartment"/>
+</building>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE insects [
+  <!ELEMENT insects (#PCDATA)>
+  <!ELEMENT beetle EMPTY>
+  <!ELEMENT bee EMPTY>
+  <!ELEMENT worm EMPTY>
+  <!ATTLIST insects
+    category CDATA #IMPLIED>
+  <!ATTLIST beetle
+    color CDATA #IMPLIED
+    type CDATA #REQUIRED>
+  <!ATTLIST bee
+    pollinator CDATA #REQUIRED
+    speed CDATA #IMPLIED>
+  <!ATTLIST worm
+    length CDATA #IMPLIED
+    type CDATA #REQUIRED>
+]>
+<insects category="entomology"> 
+  <beetle color="redblack" type="carpenter"></beetle>
+  <bees pollinator="polens" speed="fastestyterfly_fwd fastistyterfly_bwd"></bees>
+  <worms length="longyyyyyii" type="segmentingnellipedal"></worms>
+</insects>

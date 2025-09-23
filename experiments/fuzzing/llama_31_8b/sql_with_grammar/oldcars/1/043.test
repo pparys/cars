@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE numbers(number INTEGER,description TEXT);
+    INSERT INTO numbers VALUES(10,'Ten');
+    INSERT INTO numbers VALUES(20,'Twenty');
+    INSERT INTO numbers VALUES(30,'Thirty');
+  }
+} {}
+
+do_test select-filter-1.1 {
+  execsql {
+    SELECT number, description FROM numbers WHERE number > 20;
+  }
+} {30 Thirty}
+
+finish_test

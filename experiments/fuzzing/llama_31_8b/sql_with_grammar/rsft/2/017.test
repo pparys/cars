@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-idx-1.0 {
+  execsql {
+    CREATE TABLE scores(gamer TEXT, score INTEGER);
+    CREATE TABLE challenges(gamer TEXT PRIMARY KEY, score INTEGER UNIQUE);
+    INSERT INTO scores VALUES('John Doe', 1000);
+    INSERT INTO challenges VALUES('John Doe', 999);
+    INSERT INTO scores VALUES('Jane Doe', 999);
+    INSERT INTO challenges VALUES('Jane Doe', 1000);
+  }
+} {}
+
+do_test update-idx-1.1 {
+  execsql {
+    SELECT * FROM challenges WHERE gamer = 'John Doe';
+  }
+} {John Doe 999}
+
+finish_test

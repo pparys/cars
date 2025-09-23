@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, genre)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<library>
+  <book id="bk-1">
+    <author>Bernstein, Leonard</author>
+    <title>The Unanswered Question</title>
+    <genre>Music</genre>
+  </book>
+  <book id="bk-2">
+    <author>Michel, Marius</author>
+    <title>Harmony and Theory: A Comprehensive Source for All Musicians</title>
+    <genre>Music</genre>
+  </book>
+</library>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (title, author, publicationDate, category)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<books>
+  <book id="bk101">
+    <title>101: A Spark Tale</title>
+    <author>Byron Barton</author>
+    <publicationDate>2003-01-01</publicationDate>
+    <category>Children, Picture Book</category>
+  </book>
+  <book id="bk201">
+    <title>Introverted and Usage</title>
+    <author>Tco Capital Best Acend Control</author>
+    <publicationDate>2007-02-07</publicationDate>
+    <category>Music, Culture</category>
+  </book>
+</books>

@@ -1,0 +1,15 @@
+{"name": "Dragapult",
+"evolution": "Drakloak", 
+"id": 870, 
+"types": ["Dragon",
+"Ghost"],
+"isLegendary": false, 
+"abilities": [
+ {"name": "Beast Boost",
+"description": "Increases its Attack stat at the end of each turn."},
+{
+"name": "Infiltrator",
+"description": "This Pokémon will not be affected by an opponent's moves and abilities when online."
+}
+],
+"preEvolution": "Drakloak"}

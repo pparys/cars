@@ -1,0 +1,5 @@
+{"name": "Eevee",
+"types": ["Normal"], 
+"isLegendary": false, 
+"abilities": [{"name": "Static", "description": "paralyses opposite side if it strikes."}, {"name": "Thick Fat", "description": "halves fire/water damage"}], 
+"preEvolution": null}

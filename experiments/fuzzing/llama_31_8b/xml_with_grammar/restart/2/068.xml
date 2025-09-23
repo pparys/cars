@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    born CDATA #IMPLIED
+    died CDATA #IMPLIED>
+]>
+<library>
+  <book title="To Kill a Mockingbird" year="1960">Written by Harper Lee</book>
+  <book title="The Great Gatsby" year="1925">Written by F. Scott Fitzgerald</book>
+  <author name="Lee Child" born="1954-11-29" died="2021-08-02">Author of the Jack Reacher series</author>
+  <author name="Gillian Flynn" born="1971-02-24" died="">Author of the Gone Girl series</author>
+</library>

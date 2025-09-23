@@ -1,0 +1,5 @@
+{"name": "Mewtwo", "id": 150, "types":
+["Psychic"], "isLegendary": true, "abilities":
+ [ {"name": "Telekinesis", "description": "Freezes the opponent, preventing it from moving."},
+   {"name": "Stress", "description": "This Pokémon loses HP at the end of each turn."} ],
+ "preEvolution": null}

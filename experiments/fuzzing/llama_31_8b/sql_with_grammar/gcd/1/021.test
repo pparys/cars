@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE people(id INTEGER, name TEXT, address TEXT);
+    CREATE TABLE addresses(id INTEGER, street TEXT, city TEXT);
+  CREATE TABLE phones(id INTEGER, phone TEXT);
+  INSERT INTO people(id, name, address) VALUES(1, 'John Doe', '123 Main St');
+  INSERT INTO addresses(id, street, city) VALUES(1, '123 Main St', 'Anytown');
+  INSERT INTO phones(id, phone) VALUES(1, '555-1234');
+  }
+} {}
+
+do_test select-person-1.1 {
+  execsql {
+    SELECT people.*, addresses.* FROM people 
+    ORDER BY peopleitemappeople_id, addressesitemappeople_id;
+  }
+} {{1 John Doe 123 Main St}  				    				     		 		 		
+
+
+
+  									   							              	                               		 		                                    									                      		                                   		       						                                  		                                   								                                   		                                   																	  	    	   	   	 	                 			            		                				         	                                     		    		             	      		                                                                                                                                                	                                     								    	                     			                        	                              			 		                                    	                                    															                                                                                                  	                                           			   	 	                                             	                                            								  	                                     	                            							                                	                                    																				                              	                                	                                    											   																								finish_test

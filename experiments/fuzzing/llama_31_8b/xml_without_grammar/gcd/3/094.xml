@@ -1,0 +1,13 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (name|description*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<product id="prod001" price="19.99">
+  <name>Example Product</name>
+  <description>This is an example product description with multiple lines.</description>
+</product>

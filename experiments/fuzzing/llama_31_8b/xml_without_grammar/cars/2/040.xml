@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (title, author, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<library>
+  <book id="bk101">
+    <title>Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <publication>For Dummies</publication>
+  </book>
+  <book id="bk102">
+    <title>Harry Potter</title>
+    <author>J.K. Rowling</author>
+    <publication>Dummy Text Press</publication>
+  </book>
+  <book id="bk103">
+    <title>La Cucina Italiana</title>
+    <author>Mario Batali</author>
+    <publication>Simple Press</publication>
+  </book>
+</library>

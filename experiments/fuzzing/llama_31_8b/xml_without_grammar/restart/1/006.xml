@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (category*)>
+  <!ELEMENT category (#PCDATA|book)*>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST category
+    id CDATA #REQUIRED
+    description CDATA #IMPLIED>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<library>
+  <category id="math" description="Mathematics category">
+    <book id="123" author="John Smith">Calculus 101</book>
+    <book id="124">Math Problems</book>
+  </category>
+  <category id="science" description="Science category">
+    <book id="125" author="Jane Doe">Physics 201</book>
+  </category>
+</library>

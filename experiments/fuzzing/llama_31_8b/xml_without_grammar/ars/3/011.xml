@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE album [
+  <!ELEMENT album (artist, songs)>
+  <!ELEMENT artist (#PCDATA)>
+  <!ELEMENT songs (song+)>
+  <!ELEMENT song (#PCDATA)>
+  <!ATTLIST song
+    title CDATA #REQUIRED
+    duration CDATA #IMPLIED>
+]>
+<album>
+  <artist>Led Zeppelin</artist>
+  <songs>
+    <song title="Stairway to Heaven" duration="8:03:00"/>
+    <song title="Whole Lotta Love" duration="5:33:00"/>
+  </songs>
+</album>

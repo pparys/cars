@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+,author)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+]>
+<library>
+  <book title="Python Programming" author="John Doe" year="2020">Python is a popular language.</book>
+  <book title="Java Programming" author="Jane Smith" year="2022">Java is an object-oriented language.</book>
+  <author name="Bob Brown"/>
+  <book title="XML Programming" author="Peter White" year="2018">XML is a markup language.</book>
+</library>

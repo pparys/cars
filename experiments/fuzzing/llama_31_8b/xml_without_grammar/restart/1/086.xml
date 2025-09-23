@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    brand CDATA #IMPLIED>
+  <!ATTLIST price
+    currency CDATA #REQUIRED
+    value CDATA #REQUIRED>
+]>
+<catalog>
+  <product id="P001" brand="Nike">
+    <description>Sports shoes</description>
+    <price currency="USD" value="99.99"/>
+  </product>
+  <product id="P002" brand="Adidas">
+    <description>T-shirts</description>
+    <price currency="EUR" value="25.50"/>
+  </product>
+</catalog>

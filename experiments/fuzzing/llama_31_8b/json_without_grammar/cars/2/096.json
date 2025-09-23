@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "User cannot be knocked out by one-hit kill moves."}, {"name": "Unnerve", "description": "Opponent's moves may only lower the opponent's accuracy or special attack stats."}], "preEvolution": null}

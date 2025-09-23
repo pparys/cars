@@ -1,0 +1,1 @@
+{"name": "Venusaur","id": 3,"types":["Grass","Poison"],"isLegendary":false,"abilities":[{"name": "Overgrow","description": "Increases Attack when HP is below 1/3. Each time any of its stats drops, its Attack stat will be increased."}],"evolutions":[{"name":"Ivysaur","id":2},{"name":"Flarion","id": 151}],"preEvolution":"Ivy"}

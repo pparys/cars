@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-employees-3.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      manager_id INTEGER, 
+      salary REAL
+    );
+
+    INSERT INTO employees(id, name, manager_id, salary) VALUES(101, 'John', NULL, 50000.0);
+    INSERT INTO employees(id, name, manager_id, salary) VALUES(102, 'Alice', 101, 40000.0);
+    INSERT INTO employees(id, name, manager_id, salary) VALUES(103, 'Bob', 101, 60000.0);
+  }
+} {}
+
+do_test update-salary-3.1 {
+  execsql {
+    UPDATE employees 
+    SET salary = salary  >  47500.0 
+    WHERE manager_id = 101;
+  }
+} {}
+finish_test

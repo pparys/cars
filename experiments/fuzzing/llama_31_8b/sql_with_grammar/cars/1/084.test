@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER, title TEXT, author TEXT);
+    INSERT INTO books(id, title, author) VALUES(101, 'To Kill a Mockingbird', 'Harper Lee');
+    INSERT INTO books(id, title, author) VALUES(102, '1984', 'George Orwell');
+  }
+} {}
+
+do_test update-author-2.1 {
+  execsql {
+    UPDATE books SET author = 'J.K. Rowling' WHERE id = 101;
+  }
+} {}
+
+finish_test

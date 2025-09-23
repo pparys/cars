@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, 
+      department_id INTEGER, FOREIGN KEYdepartment_id REFERENCES departments);
+    INSERT INTO departments(id, name) VALUES(301, 'Sales');
+    INSERT INTO employees(id, name, department_id) VALUES(1001, 'Alice', 301);
+    INSERT INTO employees(id, name, department_id) VALUES(1002, 'Bob', 301);
+  }
+} {}
+
+do_test insert-violates-foreignKey-3.1 {
+  execsql {
+    UPDATE departments SET id = 999 WHERE id = 301;
+    UPDATE employees SET department_id = 999 WHERE name = 'Alice';
+  }
+  
+    
+  }
+
+{
+  INSERT INTO employees(id, name) VALUES(1003, 'Charlie', 301);
+  EXPECT_ERROR {
+    INSERT INTO employees(id, name, department_id) VALUES(1004, 'Dave', 999);
+  }
+  
+   finish_test

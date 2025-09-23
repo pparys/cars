@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-ordering-2.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, address TEXT, city TEXT, PRIMARY KEY Pruitt id);
+    INSERT INTO customers(id, name, address, city) VALUES(1, 'John Smith', '123 Main St', 'Anytown');
+    INSERT INTO customers(id, name, address, city) VALUES(2, 'Jane Doe', '456 Elm St', 'Othertown');
+  }
+} {}
+
+do_test updated-with-case-insensitive-2.1 {
+  execsql {
+    UPDATE customers SET name = 'JOHN SMITH ONLINE' WHERE id = 1;
+  }
+} {}
+finish_test

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    country CDATA #IMPLIED
+  >
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    publication-year CDATA #IMPLIED
+    author-ref IDREF #REQUIRED
+  >
+]>
+<library>
+  <author name="J.K. Rowling" country="England">
+    <book title="Harry Potter and the Philosopher's Stone" publication-year="1997" author-ref="J.K.Rowling"/>
+    <book title="Harry Potter and the Chamber of Secrets" publication-year="1998" author-ref="J.K.Rowling"/>
+  </author>
+  <author name="J.R.R. Tolkien" country="England">
+    <book title="The Lord of the Rings" publication-year="1954" author-ref="J.R.R.Tolkien"/>
+  </author>
+</library>

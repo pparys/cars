@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE employees(department_id INTEGER, name TEXT, FOREIGKEY department_id REFERENCESdepartments);
+    INSERT INTO departments(id, name) VALUES(101, 'Sales');
+    INSERT INTO departments(id, name) VALUES(102, 'Marketing');
+    INSERT INTO employees(department_id, name) VALUES(101, 'John Doe');
+    INSERT INTO employees(department_id, name) VALUES(102, 'Jane Smith');
+  }
+} {}
+
+do_test insert-violates-foreign-key-3.1 {
+  execsql {
+    SELECT * FROM employees
+      WHERE department_id = 103
+  ;}
+} {}
+
+finish_test

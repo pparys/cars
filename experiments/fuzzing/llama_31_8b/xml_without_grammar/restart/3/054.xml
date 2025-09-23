@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, person+)>
+  <!ELEMENT book (#PCDATA|author+, edition+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    id ID #REQUIRED
+  >
+  <!ATTLIST book
+    id ID #REQUIRED
+    publicationdate CDATA #IMPLIED
+  >
+  <!ATTLIST edition
+    version CDATA #REQUIRED
+    date CDATA #IMPLIED
+  >
+  <!ATTLIST library
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST person
+    id ID #REQUIRED
+    title CDATA #IMPLIED
+  >
+]>
+<library name="My Library">
+  <book id="bk101">Learning XML</book>
+  <author id="a1">John Smith</author>
+  <edition version="2.0" date="2020-01-31"/>
+  <book id="bk102" publicationdate="2000-10-24">Thinking XML</book>
+  <author id="a2">Jane Doe</author>
+  <book id="bk103">Internet Information Services API</book>
+</library>

@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Pressure", "description": "30% Chance of lowering opponent's Speed, Special Attack, Special Defense, Attack, or Defense, depending on move used."}, {"name": "Unnerve", "description": "Opponent's ability to dizzy is disabled."}], "preEvolution": null}

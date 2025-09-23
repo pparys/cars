@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressbook [
+  <!ELEMENT addressbook (name+, phone+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST phone 
+    type (home|work|mobile) #REQUIRED
+  >
+]>
+<addressbook>
+  <name>Roger</name>
+  <name>Sally</name>
+  <name>John</name>
+  <phone type="home">(555) 123-4567</phone>
+  <phone type="work">(555) 901-2345</phone>
+  <phone type="mobile">(555) 555-5555</phone>
+</addressbook>

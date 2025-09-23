@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE university [
+  <!ELEMENT university (faculty*)>
+  <!ELEMENT faculty (department*)>
+  <!ELEMENT department (teacher*)>
+  <!ELEMENT teacher (#PCDATA)>
+  <!ATTLIST university
+    name CDATA #REQUIRED
+    location CDATA #IMPLIED>
+  <!ATTLIST faculty
+    name CDATA #REQUIRED
+    dean (#PCDATA)>
+  <!ATTLIST teacher
+    name CDATA #REQUIRED
+    subject CDATA #IMPLIED>
+]>
+<university name="MIT" location="Cambridge, MA">
+  <faculty name="Engineering">
+    <department>Computer Science</department>
+    <teacher name="John Doe" subject="Algorithms"/>
+    <teacher name="Jane Smith" subject="Computer Vision"/>
+  </faculty>
+  <faculty name="Business Administration">
+    <department>Finance</department>
+    <teacher name="Alice Johnson" subject="Accounting"/>
+  </faculty>
+</university>

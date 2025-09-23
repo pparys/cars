@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE people(name TEXT, age INTEGER);
+    INSERT INTO people VALUES('John', 25);
+    INSERT INTO people VALUES('Alice', 30);
+    INSERT INTO people VALUES('Bob', 35);
+  }
+} {}
+
+do_test select-sort-1.1 {
+  execsql {
+    SELECT name, age
+    FROM people
+    ORDER BY age ASC;
+  }
+} {John 25 Alice 30 Bob 35}
+
+finish_test

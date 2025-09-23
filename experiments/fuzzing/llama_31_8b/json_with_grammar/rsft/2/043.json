@@ -1,0 +1,1 @@
+{"name": "Jolteon", "id": 135, "types": ["Electric"], "isLegendary": false, "abilities": [{"name": "Quick Feet", "description": "Cannot be burned, frozen, paralyzed, or poisoned."}, {"name": "Volt Absorb", "description": "Restores HP if hit by Electric-type moves."}], "preEvolution": "{\"name\":\"Eevee\",\"id\":133}"}

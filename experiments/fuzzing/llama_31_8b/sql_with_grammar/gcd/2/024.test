@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE countries(code TEXT PRIMARY KEY, name TEXT NOT NULL, population INTEGER);
+    INSERT INTO countries(code, name, population) VALUES('USA', 'United States', 331002651);
+    INSERT INTO countries(code, name, population) VALUES('CAN', 'Canada', 37742154);
+  }
+} {}
+
+do_test update-table-1.1 {
+  execsql {
+    UPDATE countries SET population = population WHERE code = 'USA';
+  }
+} {}
+
+finish_test

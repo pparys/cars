@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author*, title*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+  <!ATTLIST title
+    year CDATA #REQUIRED
+    genre CDATA #IMPLIED>
+]>
+<library>
+  <author name="John Doe" age="30">
+    <title year="2020" genre="Thriller">The Lost City</title>
+  </author>
+  <author name="Jane Smith" age="28">
+    <title year="2019" genre="Romance">Love in the Time of College</title>
+  </author>
+  <title year="2018" genre="Fantasy">The Lord of the Rings</title>
+</library>

@@ -1,0 +1,9 @@
+{"name": "Charizard", "id": 6,
+"types": ["Fire", "Flying"],
+"isLegendary": false,
+"abilities": [
+  {"name": "Blaze", "description": "Power up Fire-type moves if HP is below 1/3."},
+  {"name": "Solar Power", "description": "Power up Fire-type moves if it is sunny."}
+],
+"preEvolution": 
+  "name"       																																																																																																																																																																																																																																																																																																																																																																																																																																			

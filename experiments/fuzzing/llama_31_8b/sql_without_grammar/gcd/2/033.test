@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE parents(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE children(id INTEGER PRIMARY KEY, name TEXT, parent_id INTEGER, FOREIGN KEY parent_id REFERENCES parents);
+    INSERT INTO parents(id, name) VALUES(4, 'Patty');
+    INSERT INTO parents(id, name) VALUES(5, 'Pam');
+    INSERT INTO children(id, name, parent_id) VALUES(12, 'C001-P001', 4);
+    INSERT INTO children(id, name, parent_id) VALUES(13, 'C001-P005', 5);
+  }
+} {}
+
+do_test delete-invalid-parent-3.1 {
+  execsql {
+    DELETE FROM parents WHERE id = 5;
+    SELECT * FROM children WHERE parent_id = 5;
+  }
+} {}
+finish_test

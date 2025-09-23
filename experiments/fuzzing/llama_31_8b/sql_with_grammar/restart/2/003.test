@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, email TEXT, address TEXT, PRIMARY KEY	id);
+    INSERT INTO customers VALUES(1, 'customer1@example.com', 'Address 1');
+    INSERT INTO customers VALUES(2, 'customer2@example.com', 'Address 2');
+    INSERT INTO customers VALUES(3, 'customer3@example.com', 'Address 3');
+    INSERT INTO customers VALUES(4, 'customer4@example.com', 'Address 4');
+  }
+} {}
+
+do_test update-data-3.1 {
+  execsql {
+    UPDATE customers SET email = upper=email WHERE id = 4 AND email = 'customer4@example.com';
+  }
+} {}
+
+finish_test

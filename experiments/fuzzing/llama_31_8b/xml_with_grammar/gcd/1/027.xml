@@ -1,0 +1,12 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book 
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="1">This is book 1 with no author.</book>
+  <book id="2" author="John Doe">This is book 2 with a known author.</book>
+</catalog>

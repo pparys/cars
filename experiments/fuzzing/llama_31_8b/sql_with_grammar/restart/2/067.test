@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-associate-1.0 {
+  execsql {
+    CREATE TABLE products(name TEXT, price REAL);
+    CREATE TABLE sales(product_name TEXT, quantity INTEGER, price_per_unit REAL);
+    INSERT INTO products(name, price) VALUES('Laptop', 1500.99);
+    INSERT INTO sales(product_name, quantity, price_per_unit) 
+      VALUES('Laptop', 2, 1300.99);
+  }
+} {}
+
+do_test select-associate-1.1 {
+  execsql {
+    SELECT products.*, sales.* FROM products 
+      WHERE products_price > 1000.0 
+      AND products_name = 'Laptop';
+  }
+} {Laptop 1500.99 2 Laptop 1300.99}
+
+finish_test

@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER,
+      FOREIGN KEY customer_id REFERENCES customers ON DELETE CASCADE);
+    INSERT INTO customers(id, name) VALUES(101, 'Acme Ltd.');
+    INSERT INTO customers(id, name) VALUES(102, 'Bob\'s Store');
+    INSERT INTO orders(order_id, customer_id) VALUES(1, 101);
+    INSERT INTO orders(order_id, customer_id) VALUES(2, 102);
+  }
+} {}
+
+do_test cascade-delete-3.1 {
+  execsql {
+    DELETE FROM customers WHERE id = 101;
+  }
+} {}
+
+finish_test

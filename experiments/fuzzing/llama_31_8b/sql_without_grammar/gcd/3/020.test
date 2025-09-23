@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-check-availability-3.0 {
+  execsql {
+    CREATE TABLE books(title TEXT PRIMARY KEY, author TEXT, nbr INTEGER);
+    INSERT INTO books VALUES('Introduction to Databases', 'Jane Doe', 100);
+    INSERT INTO books VALUES('The Art of SQLite', 'Bob Smith', 200);
+  }
+} {}
+
+do_test check-availability-3.1 {
+  execsql {
+    SELECT nbr FROM books WHERE title = 'Non-Existent Book Title';
+  }
+} {}
+
+finish_test

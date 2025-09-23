@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE grades(
+      name TEXT,
+      age INTEGER,
+      score REAL
+    );
+  CREATE TABLE student_grades(
+      id INTEGER PRIMARY KEY,
+      student TEXT,
+      grade INTEGER,
+      sub_grade TEXT
+    );
+  INSERT INTO grades(name, age, score) VALUES('alice', 20, 95.0);
+  INSERT INTO grades(name, age, score) VALUES('bob', 21, 92.0);
+    INSERT INTO student_grades(student, grade, sub_grade) VALUES('alice', 95, 'A');
+  INSERT INTO student_grades(student, grade, sub_grade) VALUES('bob', 92, 'A');
+  }
+} {}
+
+do_test insert-autoinc-1.1 {
+  execsql {
+    SELECT * FROM student_grades WHERE student = 'alice';
+  }
+} {1 alice 95 A}
+
+finish_test

@@ -1,0 +1,42 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE orders(
+      order_id INTEGER PRIMARY KEY,
+      product TEXT NOT NULL,
+      price REAL,
+      quantity INTEGER,
+      total_price REAL,
+      customer_id INTEGER
+    );
+  CREATE TABLE customers(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      email TEXT,
+      phone_number TEXT
+    );
+    INSERT INTO customers(id, name, email, phone_number) 
+    VALUES(201, 'John Doe', 'john@example.com', '1234567890');
+    INSERT INTO customers(id, name, email, phone_number) 
+    VALUES(202, 'Jane Doe', 'jane@example.com', '9876543210');
+    INSERT INTO orders(order_id, product, price, quantity, total_price, customer_id) 
+    VALUES(101, 'Product A', 10.99, 2, 21.98, 201);
+    INSERT INTO orders(order_id, product, price, quantity, total_price, customer_id) 
+    VALUES(102, 'Product B', 5.99, 3, 17.97, 202);
+  }
+} {}
+
+do_test order-total-3.1 {
+  execsql {
+    SELECT SUMCASED
+      ORowID,
+      total_price,
+      SUM< price >          ORDER
+    FROM orders
+    GROUP BY product;
+  }
+} {1 21.98 2 5.99 102 17.97}
+
+finish_test

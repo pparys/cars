@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-group-1.0 {
+  execsql {
+    CREATE TABLE scores (name TEXT, score INT);
+    INSERT INTO scores VALUES('Alice', 90);
+    INSERT INTO scores VALUES('Bob', 80);
+  }
+} {}
+
+do_test group-byscore-1.1 {
+  execsql {
+    SELECT name FROM scores GROUP BY score ORDER BY score DESC;
+  }
+} {Alice}
+
+finish_test

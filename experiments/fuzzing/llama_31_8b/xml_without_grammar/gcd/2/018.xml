@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (author+,title+,price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<catalog>
+  <book id="bk101">
+    <author>John Smith</author>
+    <title>XML for Beginners</title>
+    <price>29.95</price>
+    <address>123 Main St</address>
+    <phone>123-456-7890</phone>
+    <email>john.smith@example.com</email>
+  </book>
+  <book id="bk102">
+    <author>Jane Doe</author>
+    <title>Python Programming</title>
+    <price>39.95</price>
+    <address>456 Elm St</address>
+    <phone>987-654-3210</phone>
+    <email>jane.doe@example.com</email>
+  </book>
+</catalog>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movies [
+  <!ELEMENT movies (movie+)>
+  <!ELEMENT movie (title, genre, year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST movie
+    id CDATA #REQUIRED
+  >
+]>
+<movies>
+  <movie id="1">
+    <title>The Shawshank Redemption</title>
+    <genre>Drama</genre>
+    <year>1994</year>
+  </movie>
+  <movie id="2">
+    <title>The Godfather</title>
+    <genre>Crime</genre>
+    <year>1972</year>
+  </movie>
+</movies>

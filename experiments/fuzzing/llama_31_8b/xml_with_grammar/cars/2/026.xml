@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (#PCDATA)>
+  <!ELEMENT employee (#PCDATA)>
+  <!ATTLIST employee
+    name CDATA #REQUIRED
+    job CDATA #IMPLIED
+  >
+  <!ATTLIST address
+    street CDATA #REQUIRED
+  >
+]>
+<company>
+  <employee name="John Doe" job="Software Engineer">
+    <address street="123 Main St"/>
+  </employee>
+  <employee name="Jane Doe" job="Data Scientist">
+    <address street="456 Elm St"/>
+  </employee>
+</company>

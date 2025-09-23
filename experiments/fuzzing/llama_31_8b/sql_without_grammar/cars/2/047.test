@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-autoincrement-1.0 {
+  execsql {
+    CREATE TABLE grades(id INTEGER PRIMARY KEY AUTOINCREMENT, student INTEGER, subject TEXT, grade REAL);
+    INSERT INTO grades(student, subject, grade) VALUES(1, 'Math', 85.0);
+    INSERT INTO grades(student, subject, grade) VALUES(1, 'Science', 90.5);
+  }
+} {}
+
+do_test select-grades-1.1 {
+  execsql {
+    SELECT subject, grade FROM grades
+    WHERE student = 1 ORDER BY grade DESC LIMIT 1;
+  }
+} {Science 90.5}
+
+finish_test

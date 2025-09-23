@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE country(
+      id INTEGER PRIMARY KEY,
+      name TEXT
+    );
+  INSERT INTO country(id, name) VALUES(1, 'USA');
+  INSERT INTO country(id, name) VALUES(2, 'Canada');
+  }
+} {}
+
+do_test delete-foreign-key-violation-1.1 {
+  execsql {
+    DELETE FROM country WHERE id = 1;
+  }
+} {1 {FOREIGN KEY constraint failed: country.id}  
+
+finish_test

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ELEMENT book (title,author,text*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT text (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    category CDATA #IMPLIED
+  >
+]>
+<books>
+  <book id="book1" category="fiction">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <text>The story revolves around Jay Gatsby and his obsession with Daisy Buchanan.</text>
+    <text>Gatsby's wealth and extravagant lifestyle are a facade for his true feelings.</text>
+  </book>
+  <book id="book2" category="non-fiction">
+    <title>Sapiens: A Brief History of Humankind</title>
+    <author>Yuval Noah Harari</author>
+    <text>The book explores the history of humankind from the emergence of Homo sapiens in Africa to the present day.</text>
+    <text>It covers topics such as agriculture, empires, science, and the emergence of new economies.</text>
+  </book>
+</books>

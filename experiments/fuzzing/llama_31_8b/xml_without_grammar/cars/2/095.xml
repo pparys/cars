@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author,book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    publication_date CDATA #IMPLIED>
+]>
+<catalog>
+  <author>John Doe</author>
+  <book title="The Great Gatsby" publication_date="2020">This is a classic novel.</book>
+  <book title="To Kill a Mockingbird" publication_date="">A Pulitzer Prize-winning novel.</book>
+</catalog>

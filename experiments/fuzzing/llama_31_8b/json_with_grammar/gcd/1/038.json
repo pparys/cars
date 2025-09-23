@@ -1,0 +1,18 @@
+{"name": "Zoroark",
+"id": 560,
+"types": [
+"Dark",
+"Dragon"
+],
+"isLegendary": true,
+"abilities": [
+{
+"name": "Illusion",
+"description": "User appears to change its form in battle every turn."
+},
+{
+"name": "Intimidate",
+"description": " ↓Opponent's attack power in battle."
+}
+],
+"preEvolution": null}

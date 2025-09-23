@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (name, category, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED>
+]>
+<products>
+  <product id="1">
+    <name>Laptop</name>
+    <category>Electronics</category>
+    <price>999.99</price>
+  </product>
+  <product id="2">
+    <name>Phone</name>
+    <category>Electronics</category>
+    <price>599.99</price>
+  </product>
+</products>

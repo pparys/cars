@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (title, section+, author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED
+    address CDATA #IMPLIED>
+]>
+<bookstore>
+  <title>XML Bookstore</title>
+  <section>Programming</section>
+  <section>AI</section>
+  <author name="John Doe" age="30" address="123 Main St"/>
+  <author name="Jane Smith" age="35" address="456 Elm St"/>
+</bookstore>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author+, publisher+, title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="BK001" year="2020">
+    <author>Arnold Schwarzenegger</author>
+    <publisher>Dutton Caliber</publisher>
+    <title>The Terminator: My Story</title>
+  </book>
+  <book id="BK002" year="2015">
+    <author>Sylvester Stallone</author>
+    <publisher>Grand Central Publishing</publisher>
+    <title>As Good as It Gets: Proof of Strength</title>
+  </book>
+</catalog>

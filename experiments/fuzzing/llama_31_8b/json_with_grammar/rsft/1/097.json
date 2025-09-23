@@ -1,0 +1,6 @@
+{"name": "Jolteon"
+,"id": 123
+,"types": [ "Electric", "Normal" ]
+,"isLegendary": false
+,"abilities": [ {"name": "Quick Feet","description": "Jolteon uses its super speed, making it instantly dodge and critically strike quickly after."} ]
+,"preEvolution": null}

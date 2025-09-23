@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE artist [
+  <!ELEMENT artist (name, bio+, style*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT bio (#PCDATA)>
+  <!ELEMENT style (#PCDATA)>
+  <!ATTLIST artist
+    id (A|P) #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<artist id="A" year="2020">
+  <name>A. Commoner</name>
+  <bio>
+    Born in the 20th century, A. Commoner is an artist known for his versatile and eclectic style.
+  </bio>
+  <style>Expressionism</style>
+  <style>Impressionism</style>
+</artist>

@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_name TEXT, total REAL);
+    CREATE TABLE products(product_id INTEGER PRIMARY KEY, product_name TEXT, price REAL);
+    CREATE TABLE order_items(order_id INTEGER, product_id INTEGER, FOREIGN KEY order_id REFERENCES orders, FOREIGN KEY product_id REFERENCES products);
+  CREATE TABLE suppliers(supplier_id INTEGER PRIMARY KEY, supplier_name TEXT);
+  CREATE TABLE orders_suppliers(order_id INTEGER, supplier_id INTEGER, FOREIGN KEY order_id REFERENCES orders, FOREIGN KEY supplier_id REFERENCES suppliers);
+  INSERT INTO orders(order_id, customer_name, total) VALUES(301, 'Mr. Smith', 100.00);
+  INSERT INTO orders(order_id, customer_name, total) VALUES(302, 'Mrs. Smith', 150.00);
+  INSERT INTO products(product_id, product_name, price) VALUES(201, 'Product A', 50.00);
+  INSERT INTO products(product_id, product_name, price) VALUES(202, 'Product B', 75.00);
+  INSERT INTO order_items(order_id, product_id) VALUES(301, 201);
+  INSERT INTO order_items(order_id, product_id) VALUES(302, 202);
+  INSERT INTO orders_suppliers(order_id, supplier_id) VALUES(301, 101);
+  INSERT INTO orders_suppliers(order_id, supplier_id) VALUES(302, 102);
+  }
+} {}
+
+do_test check-order-data-3.1 {
+  execsql {
+    SELECT ocustomer_name, ototal, pproduct_name, ooitem_id FROM orders AS o
+    ORDER BY oorder_id, poop_id;
+  }
+} {{Mr. Smith}                                                                                                                                                       

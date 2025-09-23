@@ -1,0 +1,13 @@
+{"name": "Entei",
+"id": 18,
+"types": [
+  "Fire"
+],
+"isLegendary": true,
+"abilities": [
+  {
+   "name": "Pressure",
+    "description": "Manually switches the order of priority between X-Attack and priority moves."
+  }
+],
+"preEvolution": null}

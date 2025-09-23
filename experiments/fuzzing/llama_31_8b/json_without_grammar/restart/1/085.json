@@ -1,0 +1,18 @@
+{"name": "Miltank",
+  "id": 235,
+  "types": [
+    "Normal",
+    "Water"
+  ],
+  "isLegendary": false,
+  "abilities": [
+    {
+      "name": "Scrappy",
+      "description": "Ignores a critical hit indicator in a Normal-type move."
+    },
+    {
+      "name": "Natural Cure",
+      "description": "Cures status conditions when switching out."
+    }
+  ],
+  "preEvolution": null}

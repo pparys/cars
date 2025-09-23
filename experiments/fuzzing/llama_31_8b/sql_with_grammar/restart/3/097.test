@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-primkey-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT, email TEXT);
+    INSERT INTO users VALUES(101, 'Alice', 'alice@example.com');
+    INSERT INTO users VALUES(102, 'Bob', 'bob@example.com');
+  }
+} {}
+
+do_test delete-self-1.1 {
+  execsql {
+    DELETE FROM users WHERE id = 102;
+    SELECT * FROM users WHERE id = 101;
+  }
+} {101 Alice alice@example.com}
+
+finish_test

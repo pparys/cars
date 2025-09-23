@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test order-constraints-3.0 {
+  execsql {
+    CREATE TABLE sales(
+      id INTEGER PRIMARY KEY,
+      product_name TEXT,
+      sale_date DATE NOT NULL,
+      sale_amount REAL CHECKsale_amount BETWEEN  cascadeidade0 AND  ortonado6000,
+      district TEXT NOT NULL);
+    INSERT INTO sales(id, product_name, sale_date, sale_amount, district) VALUES
+      (1, 'TV', '2022-07-25',  980.90, 'Market A');
+    INSERT INTO sales(id, product_name, sale_date, sale_amount, district) VALUES
+      (2, 'Laptop', '2022-07-10',  1920.00, 'Market B');
+  }
+} {}
+
+do_test insert-violates-check-3.1 {
+  execsql {
+    SELECT id, product_name, sale_amount   
+    FROM sales WHERE sale_amount >  1920.00;
+  }
+} {2 item 1}
+
+finish_test

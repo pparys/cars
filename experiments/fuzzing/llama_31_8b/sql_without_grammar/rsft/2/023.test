@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-organizations-1.0 {
+  execsql {
+    CREATE TABLE organizations(id INTEGER, name TEXT, address TEXT);
+    INSERT INTO organizations(id, name, address) VALUES(101, 'Example Inc.', '123 Main St.');
+    INSERT INTO organizations(id, name, address) VALUES(102, 'ABC Corp.', '456 Elm St.');
+  }
+} {}
+
+do_test query-organization-1.1 {
+  execsql {
+    SELECT name, address FROM organizations WHERE id = 101;
+  }
+} {Example Inc. 123 Main St.}
+
+finish_test

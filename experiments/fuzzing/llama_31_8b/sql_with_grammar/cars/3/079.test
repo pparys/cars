@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE managers(name TEXT PRIMARY KEY, manager TEXT);
+    INSERT INTO managers(name, manager) VALUES('John', NULL);
+    INSERT INTO managers(name, manager) VALUES('Jane', 'John');
+  }
+} {}
+
+do_test select-manager-hierarchy-3.1 {
+  execsql {
+    SELECT manager FROM managers WHERE name = 'Jane';
+  }
+} {John}
+
+finish_test

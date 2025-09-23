@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE customer(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, address TEXT);
+    INSERT INTO customer(name, address) VALUES('John Doe', '123 Main St');
+  }
+} {}
+
+do_test update-name-2.1 {
+  execsql {
+    UPDATE customer SET name = 'Jane Doe' WHERE id = 1;
+  }
+} {}
+
+finish_test

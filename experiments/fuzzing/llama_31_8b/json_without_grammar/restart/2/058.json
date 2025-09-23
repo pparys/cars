@@ -1,0 +1,7 @@
+{"name": "Mewtwo", 
+"isLegendary": true,
+"types": ["Psychic"],
+"abilities": [
+  {"name": "Stance Change", "description": "Switches between single-target and multi-target moves."}, 
+  {"name": "Unnerve", "description": "Opponent's ability of Insomnia, Moody, and Kid hostage will always fail to activate."}], 
+"preEvolution": null}

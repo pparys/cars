@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, cd*, video*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT cd (track+, artist+)>
+  <!ELEMENT track (#PCDATA)>
+  <!ELEMENT artist (#PCDATA)>
+  <!ATTLIST video
+     format CDATA #IMPLIED
+     size CDATA #IMPLIED>
+]>
+<library>
+  <book>Book 1</book>
+  <book>Book 2</book>
+  <cd>
+    <track>Track 1</track>
+    <track>Track 2</track>
+    <artist>Artist 1</artist>
+    <artist>Artist 2</artist>
+  </cd>
+  <cd>
+    <artist>Artist 3</artist>
+    <artist>Artist 4</artist>
+  </cd>
+  <video format="mkv" size="1000 MB"/>
+</library>

@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-relationship-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, total REAL);
+    CREATE TABLE customers(id INTEGER, name TEXT);
+    INSERT INTO customers(id, name) VALUES(201, 'Customer 1');
+    INSERT INTO customers(id, name) VALUES(202, 'Customer 2');
+    INSERT INTO orders(id, customer_id, total) VALUES(301, 201, 100.00);
+    INSERT INTO orders(id, customer_id, total) VALUES(302, 202, 200.00);
+  }
+} {}
+
+do_test join-orders-3.1 {
+  execsql {
+    SELECT ocustomer_id, ototal, customers_name 
+    FROM orders 
+    ORDER BY ocustomer_id
+    LIMIT 1
+    ;
+  }
+} {201 100.0 Customer 1}
+
+finish_test

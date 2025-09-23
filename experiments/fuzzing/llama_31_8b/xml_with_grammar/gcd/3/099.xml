@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (title,author,copies)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT copies (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED
+  >
+]>
+<library>
+  <book id="bk101" year="2000">
+    <title>XML for Beginners</title>
+    <author>Peter Starr</author>
+    <copies>2</copies>
+  </book>
+  <book id="bk102" year="1999">
+    <title>Python Programming</title>
+    <author>Jane Berry</author>
+    <copies>1</copies>
+  </book>
+</library>

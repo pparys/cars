@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (store*)>
+  <!ELEMENT store (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST store
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <store name="Electronics" address="123 Main St">
+    <product>LED TV</product>
+    <product>Smartphone</product>
+  </store>
+  <store name="Clothing" address="456 Elm St">
+    <product>Shirt</product>
+    <product>Pant</product>
+  </store>
+</catalog>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+  <!ELEMENT items (item*)>
+  <!ELEMENT item (#PCDATA|image+)>
+  <!ELEMENT image (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<items>
+  <item id="1" title="First item">This is the first item.</item>
+  <item id="2" title="Second item">This is the second item.</item>
+  <item id="3" title="Third item">
+    <image src="image3.jpg">Image 3 text</image>
+  </item>
+</items>

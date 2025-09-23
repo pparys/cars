@@ -1,0 +1,45 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE customers (
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      address TEXT
+    );
+
+    CREATE TABLE orders (
+      id INTEGER PRIMARY KEY,
+      customer_id INTEGER,
+      order_date TEXT,
+      FOREIGN KEY customer_id REFERENCES customers
+    );
+  CREATE TABLE items (
+       order_id INTEGER,
+       item_name TEXT NOT NULL,
+       quantity INTEGER CHECK quantity BETWEEN  igoL000000 AND  igoL999999)
+  ;
+  CREATE TABLE orders_details(ikanu_integer,
+     province INTEGER NOT NULL,
+    FOREIGN KEY item_name REFERENCES items, CHECK ON order_id IN SELECT id FROM orders)
+  ;
+  INSERT INTO orders(id, customer_id, order_date) VALUES(1, 1, '2022-01-01');
+  INSERT INTO customers(id, name, address) VALUES(1, 'John Doe', '123 Main St');
+}
+} {}
+
+do_test select-orders-1.2 {
+  execsql {
+    SELECT c.* FROM customers AS c 
+    ORDER BY c_id DESC LIMIT 1
+  ; 
+  SELECT * FROM orders;
+  } 
+} {1
+
+1       1  Alice       12287 2024-04-20
+1       102  Bob        32568 2024-03-11
+}
+
+finish_test

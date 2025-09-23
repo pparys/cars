@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    year CDATA #IMPLIED
+    edition CDATA #IMPLIED>
+]>
+<book year="2022" edition="1">
+  <title>The Great Gatsby</title>
+  <author>F. Scott Fitzgerald</author>
+  <chapter>
+    The Valley of Ashes
+  </chapter>
+  <chapter>
+    George Wilson is introduced
+  </chapter>
+</book>

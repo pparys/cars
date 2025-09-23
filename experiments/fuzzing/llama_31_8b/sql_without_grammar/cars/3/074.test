@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-autoincrement-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);
+    INSERT INTO employees(name) VALUES('John Doe');
+    INSERT INTO employees(name) VALUES('Jane Smith');
+  }
+} {}
+
+do_test select-employeeid-3.1 {
+  execsql {
+    SELECT id FROM employees ORDER BY id DESC LIMIT 1;
+  }
+} {2}
+
+finish_test

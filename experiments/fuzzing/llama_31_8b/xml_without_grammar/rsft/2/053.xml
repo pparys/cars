@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE music [
+  <!ELEMENT album (title, artist*, albumInfo*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT artist (#PCDATA)>
+  <!ELEMENT albumInfo (pubYear, label, bandMembers*)>
+  <!ELEMENT pubYear (#PCDATA)>
+  <!ELEMENT label (#PCDATA)>
+  <!ELEMENT bandMembers (#PCDATA)>
+  <!ATTLIST album
+    id CDATA #REQUIRED
+  >
+]>
+<algorithm id="AL-001">
+  <title>Electronic Dream</title>
+  <artist>David Foster Tour's</artist>
+  <albumInfo pubYear="1998">
+    <label>Universal Music</label>
+    <bandMembers>David Foster, producers band</bandMembers>
+  </albumInfo>
+  <artist>Ajax</artist>
+  <albumInfo pubYear="2000">
+    <label>Car Records</label>
+    <bandMembers>Yves Hüs megamen</bandMembers>
+  </albumInfo>
+</algorithm>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (category*)>
+  <!ELEMENT category (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST category
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST product
+    price CDATA #REQUIRED
+    description CDATA #IMPLIED
+  >
+]>
+<products>
+  <category name="Electronics">
+    <product price="199">Sony TV</product>
+    <product price="99">Samsung Phone</product>
+    <product price="599">Apple Watch</product>
+  </category>
+  <category name="Books">
+    <product price="19.99">Programming Book</product>
+  </category>
+</products>

@@ -1,0 +1,22 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE professor [
+  <!ELEMENT professor (teaching+ | research+)>
+  <!ATTLIST professor
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST teaching
+    course CDATA #REQUIRED
+    semester CDATA #REQUIRED
+    year CDATA #REQUIRED
+  >
+  <!ATTLIST research
+    topic CDATA #REQUIRED
+    since CDATA #REQUIRED
+    till CDATA #IMPLIED
+  >
+]>
+<professor id="01" name="Ms. Czar Visoky">
+  <teaching course="Introduction to Programming" semester="Fall" year="2022"/>
+  <research topic="XML Parsing Optimizations" since="2021" till="2023"/>
+</professor>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (employee+)>
+  <!ELEMENT employee (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST employee
+    id ID #REQUIRED>
+]>
+<employees>
+  <employee id="1">
+    <name>John Smith</name>
+    <address>123 Main St.</address>
+  </employee>
+  <employee id="2">
+    <name>Jane Doe</name>
+    <address>456 Elm St.</address>
+  </employee>
+</employees>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, publisher, details)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT details (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #REQUIRED
+  >
+]>
+<book title="Learning XML" year="2003">
+  <author>Ryan Sparrow</author>
+  <publisher>ABC Publishing</publisher>
+  <details>This is a book about XML. Written by Ryan Sparrow.</details>
+</book>

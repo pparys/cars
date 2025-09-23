@@ -1,0 +1,5 @@
+{"name":"Mewtwo", 
+"id":152, 
+"types":["Psychic"], 
+"isLegendary":true, 
+"abilities":[{"name":"Stress","description":"Immune to paralysis."},{"name":"Technician","description":"Increases critical hit rate by 1 tier."}], "preEvolution":null}

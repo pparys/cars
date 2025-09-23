@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (category*)>
+  <!ELEMENT category (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST category
+    id CDATA #REQUIRED>
+]>
+<library>
+  <category id="sci-fi">
+    <book id="BK1" author="Iain Banks">Player of Games</book>
+    <book id="BK2">Use of Weapons</book>
+  </category>
+  <category id="fantasy">
+    <book id="BK3">The Colour of Magic</book>
+    <book id="BK4">Discworld</book>
+  </category>
+</library>

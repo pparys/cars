@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdiness", "description": "Increases min. damage it can receive from physical attacks."}, {"name": "Unnerve", "description": "Opponents using a move that hits multiple times will hit only once."}], "preEvolution": null}

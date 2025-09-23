@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-autoinc-1.0 {
+  execsql {
+    CREATE TABLE classes(classid INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);
+    INSERT INTO classes(name) VALUES('Math');
+  }
+} {}
+
+do_test insert-autoinc-1.1 {
+  execsql {
+    SELECT classid, name FROM classes;
+  }
+} {1 Math}
+
+finish_test

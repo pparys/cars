@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, author, publisher, price)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author EMPTY>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    isbn CDATA #IMPLIED>
+  <!ATTLIST publisher
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED>
+]>
+<library>
+  <author>John Doe</author>
+  <book id="bk101" isbn="1234567890">
+    <title>Xml Tutorial</title>
+    <author/>
+    <publisher name="Packt Publishing" address="100 Liverpool Street"/>
+    <price>39.99</price>
+  </book>
+  <book id="bk102" isbn="2345678901">
+    <title>Java Tutorial</title>
+    <author/>
+    <publisher name="Wrox Publishing" address="123 Oxford Street"/>
+    <price>29.99</price>
+  </book>
+</library>

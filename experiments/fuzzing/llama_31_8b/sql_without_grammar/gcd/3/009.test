@@ -1,0 +1,109 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test schema-change-4.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER PRIMARY KEY, title TEXT, author TEXT);
+    CREATE TABLE authors(id INTEGER PRIMARY KEY, name TEXT);
+  INSERT INTO books VALUES(1, 'To Kill a Mockingbird', 1);
+    INSERT INTO books VALUES(2, 'Pride and Prejudice', 1);
+    INSERT INTO authors VALUES(1, 'Harper Lee');
+  }
+} {}
+
+do_test delete-author-4.1 {
+  execsql {
+    DELETE FROM authors WHERE id = 1;
+    SELECT * FROM books WHERE author = 1;
+  }
+} {{2}  									
+    	                                           
+     	                                           
+     	                                           
+     	                                           
+     	                                           
+     	                                           
+     	                                           
+     	                                           
+     	                                           
+     	                                           
+     	                                           
+     	                                           
+     	                                           
+     	                                           
+     	                                           
+     	                                           
+                    	                                           
+    	                                	                                           
+   	                                        	                                           
+  	                                     	                                           
+	                                 	                                           
+	                                  	                                           
+	                                   	                                           
+                                              	                                       
+      						                                                            
+      						                                                            
+						     	 					    			
+
+   	                                          						    				 
+
+   	 					    			
+
+ 	                                                           			    
+ 	                                          
+                        				    	 
+ 	                                             
+                 			         
+                   			     
+                       		   
+  
+  					  
+  					  
+   
+   
+                        				      
+                        				 	                        			    
+ 	                    		                 	 	 			
+			                 				    		 
+ 						         				    	
+ 
+ 
+ 	                     		                			                
+ 						        	      		                				    	
+
+	                     		                            
+	         
+	                                                           			       
+	                      		                     				 
+ 	                                       	 	
+     			                                                                  	
+      				 				   
+          			  
+       		        
+                   		                                 			    					 
+
+
+
+
+   	                     	
+
+    	                                                     						           	 
+       	                                               	 
+                       		   
+ 	                        		 
+ 		 			 	 
+   	                                                 	  						 	
+  					  
+   
+    	                                           	                               				           		             					             			    		
+
+
+
+																		  
+           			         					         	
+      
+     				              	
+         	
+		                   					            
+                 		                    	       		                 			                                         		     
+	                                  				               		                 

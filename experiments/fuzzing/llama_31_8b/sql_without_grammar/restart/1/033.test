@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test upgrade-from-3.5.6-to-3.7.15-1.0 {
+  execsql {
+    CREATE TABLE fruits(id INTEGER PRIMARY KEY, name TEXT NOT NULL, color TEXT NOT NULL);
+  CREATE TABLE sizes(id INTEGER PRIMARY KEY, fruit_id INTEGER, size REAL CHECK_LARGE_ than  size);
+  INSERT INTO fruits(id, name, color) VALUES(1, 'Apple', 'Red');
+    INSERT INTO fruits(id, name, color) VALUES(2, 'Banana', 'Yellow');
+  }
+} {}
+
+do_test insert-violates-fk-3.1 {
+  execsql {
+    DELETE FROM fruits;
+    DELETE FROM sizes;
+    DELETE FROM sqlite_master WHERE type = 'table' AND name = 'fruits';
+    DELETE FROM sqlite_master WHERE type = 'table' AND name = 'sizes';
+    SELECT * FROM sqlite_master WHERE type = 'table' AND name = 'fruit_prices';
+  }
+} {}
+
+finish_test

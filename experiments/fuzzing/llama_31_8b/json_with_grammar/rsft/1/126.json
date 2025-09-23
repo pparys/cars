@@ -1,0 +1,13 @@
+{"name": "Moltres",
+ "id": 146,
+ "types": [
+     "Fire"
+ ],
+ "isLegendary": true,
+ "abilities": [
+     {
+         "name": "Flame Body",
+         "description": "Each turn, the opponent's Pokémon has a 10% chance of being burned."
+     }
+ ],
+ "preEvolution":null}

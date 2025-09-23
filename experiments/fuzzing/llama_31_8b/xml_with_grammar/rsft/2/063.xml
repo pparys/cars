@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED
+  >
+]>
+<library>
+  <book id="book1" year="2022">
+    <title>This is a great book 1</title>
+    <author>John Smith 1</author>
+    <price>19.99</price>
+  </book>
+  <book id="book2" year="2023">
+    <title>This is a great book 2</title>
+    <author>Jane Doe 2</author>
+    <price>14.99</price>
+  </book>
+</library>

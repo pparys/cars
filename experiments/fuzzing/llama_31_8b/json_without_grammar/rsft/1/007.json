@@ -1,0 +1,13 @@
+{"name": "Mewtwo",
+"isLegendary": true,
+"id": 150,
+"types": [
+  "Psychic"
+],
+"abilities": [
+  {
+    "name": "Stadlock",
+    "description": "Out of range from wild battles."
+  }
+],
+"preEvolution": null}

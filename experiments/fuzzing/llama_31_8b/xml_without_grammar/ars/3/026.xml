@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+)>
+  <!ELEMENT product (#PCDATA | description | price | category | availability)*>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT availability (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <product id="prod001" name="Universal Remote Control">
+    <description>Small, compact, and has a good battery life.</description>
+    <price>$75.99</price>
+    <category>Electronics</category>
+    <availability>In Stock</availability>
+  </product>
+  <product id="prod002" name="Smart Coffee Maker">
+    <description>Simple to use, programmable, and has a built-in grinder.</description>
+    <price>$199.99</price>
+    <category>Electronics</category>
+    <availability>Out of Stock</availability>
+  </product>
+  <product id="prod003" name="High-Fidelity Headphones">
+    <description>Exceptionally clear audio and stylish design.</description>
+    <price>$399.99</price>
+    <category>Electronics</category>
+    <availability>In Stock</availability>
+  </product>
+</catalog>

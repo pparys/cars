@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, image+, video*)>
+  <!ELEMENT book (title, author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ELEMENT video (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED
+  >
+  <!ATTLIST image
+    src CDATA #IMPLIED
+  >
+  <!ATTLIST video
+    src CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <book id="bk101" price="29.99">
+    <title>Learning XML</title>
+    <author>Mr Smith</author>
+  </book>
+  <book id="bk102">
+    <title>UML</title>
+    <author>Mr Johnson</author>
+  </book>
+  <image src="image1.jpg"/>
+  <video src="video1.mp4"/>
+  <book id="bk103" price="39.99">
+    <title>.NET</title>
+    <author>Mr Brown</author>
+  </book>
+</catalog>

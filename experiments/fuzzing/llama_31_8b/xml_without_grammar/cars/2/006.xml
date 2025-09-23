@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (store+)>
+  <!ELEMENT store (product+|discount*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT discount (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED
+  >
+  <!ATTLIST discount
+    id CDATA #REQUIRED
+    amount CDATA #REQUIRED
+    condition CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <store>
+    <product id="P001" price="19.99"/>
+    <discount id="D001" amount="0.5"/>
+  </store>
+  <store>
+    <product id="P002" price="29.99"/>
+  </store>
+  <store>
+    <discount id="D002" condition="(old product)"/>
+  </store>
+</catalog>

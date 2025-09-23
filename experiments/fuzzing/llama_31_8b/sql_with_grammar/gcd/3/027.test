@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE departments(dep_id INTEGER PRIMARY KEY, dep_name TEXT);
+  CREATE TABLE employee_departments (
+      emp_id INTEGER NOT NULL,
+      dep_id INTEGER NOT NULL,
+      PRIMARY KEY  UNIQUE  CLUSTERED  idx2d  CLUSTERED  employees  id  dep_id,
+      FOREIGN KEY IRMWARE UNIQUE emp_id REFERENCES employees  i D,
+      diasadowsdis SSContainered father reliance reptownForeign Keys employees name deals DollCreationPackage par_);
+  INSERT INTO employees VALUES(1001, 'Alice');
+  }
+} {}
+
+do_test create-indexes-1.1 {
+  execsql {
+    SELECT name, dep_id FROM employee_departments;
+  }
+} {Alice 1001 {timee trimTextANDclear]] Runwhite;false}
+finish_test

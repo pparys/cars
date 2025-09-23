@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "When the user's HP falls to zero, the ability will activate."}, {"name": "Unnerve", "description": "The user prevents the opponent from using its ability."}], "preEvolution": null}

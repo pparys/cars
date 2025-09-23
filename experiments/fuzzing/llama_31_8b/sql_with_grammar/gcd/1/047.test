@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE customers(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      FOREIGN KEY purchase_date REFERENCES orders
+    );
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      purchase_date TEXT
+    );
+    INSERT INTO orders(id, purchase_date) VALUES(1, '2010-01-01');
+    INSERT INTO customers(id, name, purchase_date) VALUES(1, 'John Doe', '2010-01-01');
+  }
+} {}
+
+do_test query-foreign-keys-1.1 {
+  execsql {
+    SELECT name FROM customers
+    WHERE purchase_date = 
+      SELECTpurchase_dateFROMorders
+    ORDER BY name;
+  }
+} {John Doe}
+
+finish_test

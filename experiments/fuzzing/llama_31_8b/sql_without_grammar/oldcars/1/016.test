@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-departments-3.0 {
+  execsql {
+    CREATE TABLE employees(ename TEXT, department TEXT, salary INTEGER);
+    INSERT INTO employees VALUES('John', 'Sales', 50000);
+    INSERT INTO employees VALUES('Alice', 'Marketing', 60000);
+    INSERT INTO employees VALUES('Bob', 'Sales', 55000);
+  }
+} {}
+
+do_test query-department-3.1 {
+  execsql {
+    SELECT department FROM employees WHERE department!= 'Sales';
+  }
+} {Marketing}
+
+finish_test

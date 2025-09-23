@@ -1,0 +1,14 @@
+{"name": "Giratina", 
+"types": ["Ghost","Dragon"],
+"isLegendary": true, 
+"abilities": [
+  {
+    "name": "Pressure", 
+    "description": "All moves used by other Pokémon see a 10 RPbar loss in accuracy."
+  },
+  {
+    "name": "Levitate", 
+    "description": "User is immune to Ground-type moves."
+  }
+],
+"preEvolution": null}

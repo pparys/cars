@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+,book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title,price+,isPublished)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT isPublished (#PCDATA)>
+  <!ATTLIST book
+    genreCDATA #IMPLIED
+    publicationYear CDATA #IMPLIED>
+]>
+<library>
+  <author>Hemingway</author>
+  <author>Salinger</author>
+  <book title="To Kill a Mockingbird" genre="Fiction" publicationYear="1960">
+    <price>50.00</price>
+    <isPublished>true</isPublished>
+  </book>
+  <book title="The Catcher in the Rye" genre="Fiction" publicationYear="1951">
+    <price>30.00</price>
+    <isPublished>true</isPublished>
+  </book>
+</library>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE city_populations [
+  <!ELEMENT city_populations (city*)>
+  <!ELEMENT city (name, latitude, longitude)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT latitude (#PCDATA)>
+  <!ELEMENT longitude (#PCDATA)>
+  <!ATTLIST city
+    id CDATA #REQUIRED
+    country CDATA #IMPLIED>
+]>
+<city_populations>
+  <city id="1" country="USA">
+    <name>New York</name>
+    <latitude>40.7128</latitude>
+    <longitude>74.0060</longitude>
+  </city>
+  <city id="2" country="Canada">
+    <name>Montreal</name>
+    <latitude>45.5000</latitude>
+    <longitude>73.6670</longitude>
+  </city>
+  <city id="3" country="Germany">
+    <name>Berlin</name>
+    <latitude>52.5200</latitude>
+    <longitude>13.4050</longitude>
+  </city>
+</city_populations>

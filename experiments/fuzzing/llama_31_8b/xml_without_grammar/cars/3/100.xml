@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item (description, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST item
+    id ID #REQUIRED
+    available (yes|no) "yes">
+]>
+<catalog>
+  <item id="A1" available="yes">
+    <description>This is a pretty good book.</description>
+    <price>25.99</price>
+  </item>
+  <item id="A2" available="no">
+    <description>This is a pretty bad video game.</description>
+    <price>29.99</price>
+  </item>
+</catalog>

@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-xor-1.0 {
+  execsql {
+    CREATE TABLE xor_table(x INTEGER XOR y, z INTEGER);
+    INSERT INTO xor_table(x, y, z) VALUES(10, 20, 30);
+  }
+} {}
+
+do_test select-xor-1.1 {
+  execsql {
+    SELECT * FROM xor_table;
+  }
+} {10 20 30}
+
+finish_test

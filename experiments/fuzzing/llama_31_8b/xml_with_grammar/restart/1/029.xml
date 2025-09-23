@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sensors [
+  <!ELEMENT sensors (temperature|humidity)*>
+  <!ELEMENT temperature (#PCDATA)>
+  <!ELEMENT humidity (#PCDATA)>
+  <!ATTLIST sensors
+    plugin_processing CDATA #IMPLIED
+    vendor_name CDATA #REQUIRED
+    device_precision CDATA #IMPLIED>
+  <!ATTLIST temperature
+    measurement_type (fahrenheit|celsius) "celsius"
+    unit (fahrenheit|celsius|kelvin) "celsius">
+  <!ATTLIST humidity
+    measurement_type (relative|absolute) "relative"
+    unit (percentage|relative) "relative">
+]>
+<sensors plugin_processing="value" vendor_name="Intel" device_precision="6">
+  <temperature measurement_type="celsius" unit="kelvin">293.15</temperature>
+  <humidity measurement_type="relative" unit="percentage">0.57</humidity>
+</sensors>

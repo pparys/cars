@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE products(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      price REAL NOT NULL
+    );
+  INSERT INTO products(id, name, price) VALUES(1, 'Mobile Phone', 500.0);
+  INSERT INTO products(id, name, price) VALUES(2, 'Laptop', 1000.0);
+  }
+} {}
+
+do_test delete-row-1.1 {
+  execsql {
+    DELETE FROM products WHERE id = 2;
+  }
+} {}
+
+finish_test

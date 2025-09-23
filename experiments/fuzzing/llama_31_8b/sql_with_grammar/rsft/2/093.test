@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE scores(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      score REAL NOT NULL,
+      timestamp DATE DEFAULT CURRENT_DATE
+    );
+    INSERT INTO scores(name, score) VALUES('John Doe', 80.50);
+    INSERT INTO scores(name, score) VALUES('Jane Doe', 90.25);
+  }
+} {}
+
+do_test select-top-1.1 {
+  execsql {
+    SELECT name, score, timestamp
+    FROM scores ORDER BY score DESC LIMIT 1;
+  }
+} {Jane Doe 90.25 [CURRENT_DATE]}
+
+finish_test

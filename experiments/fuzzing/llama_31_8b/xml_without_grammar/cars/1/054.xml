@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressBook [
+  <!ELEMENT addressBook (address*)>
+  <!ELEMENT address (name, phone, email, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    zip CDATA #REQUIRED
+    country CDATA #REQUIRED>
+]>
+<addressBook>
+  <address street="123 Main St" city="Anytown" zip="12345" country="USA">
+    <name>John Doe</name>
+    <phone>123-456-7890</phone>
+    <email>johndoe@example.com</email>
+    <address>456 Elm St, New York, 67890, USA</address>
+  </address>
+  <address street="789 Oak St" city="Othertown" zip="23456" country="Canada">
+    <name>Jane Smith</name>
+    <phone>987-654-3210</phone>
+    <email>janesmith@example.com</email>
+    <address>321 Maple St, Toronto, 34567, Canada</address>
+  </address>
+</addressBook>

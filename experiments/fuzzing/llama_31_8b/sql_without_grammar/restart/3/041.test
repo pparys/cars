@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO customers(id, name) VALUES(1, 'John');
+    INSERT INTO customers(id, name) VALUES(2, 'Jane');
+    INSERT INTO orders(id, customer_id) VALUES(1, 1);
+    INSERT INTO orders(id, customer_id) VALUES(2, 2);
+  }
+} {}
+
+do_test update-orders-1.1 {
+  execsql {
+    UPDATE customers SET name = 'Alice' WHERE id = 2;
+    SELECT T2.* FROM customers AS T1
+    WHERE T1urchases_PURCHASER_ID = 2
+    ORDER BY T2Creates_DATE DESC
+  LIMIT 1;
+}
+} {2 Alice 1 2022-01-01}
+
+finish_test

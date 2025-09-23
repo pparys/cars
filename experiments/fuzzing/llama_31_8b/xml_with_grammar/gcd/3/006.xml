@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu [
+  <!ELEMENT menu (item*)>
+  <!ELEMENT item (description*, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #IMPLIED
+    type (vegetarian|non-vegetarian) #IMPLIED>
+]>
+<menu>
+  <item id="m1" type="non-vegetarian">
+    <description>Grilled chicken</description>
+    <price>$15.99</price>
+  </item>
+  <item id="m2" type="vegetarian">
+    <description>Grilled vegetables</description>
+    <price>$12.99</price>
+  </item>
+</menu>

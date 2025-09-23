@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ATTLIST bookstore
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST book
+    id (isbn|doi) #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<bookstore title="My Library" author="John Doe">
+  <book id="isbn:978-3-16-148410-0">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+  </book>
+  <book id="doi:10.1038/nature12732" price="$29.99">
+    <title>Proof</title>
+    <author>David Auburn</author>
+  </book>
+</bookstore>

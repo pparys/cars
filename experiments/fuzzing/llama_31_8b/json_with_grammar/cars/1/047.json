@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Pressure", "description": "Each opponent's move becomes -1 Acc on the first use."}, {"name": "Forecast", "description": "There is a 10% chance of raining weather."}], "preEvolution": "Mew"}

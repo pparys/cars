@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-forge-3.0 {
+  execsql {
+    CREATE TABLE forges(id INTEGER, name TEXT, owner TEXT);
+    INSERT INTO forges VALUES(1001, 'Iron', 'John');
+    INSERT INTO forges VALUES(1002, 'Steel', 'Jane');
+  }
+} {}
+
+do_test select-forge-3.1 {
+  execsql {
+    SELECT name, owner FROM forges WHERE id = 1002;
+  }
+} {Steel Jane}
+
+finish_test

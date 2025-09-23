@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-template-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, email TEXT UNIQUE);
+    INSERT INTO employees(name, email) VALUES('John Smith', 'john.smith@example.com');
+    INSERT INTO employees(name, email) VALUES('Jane Doe', 'jane.doe@example.com');
+  }
+} {}
+
+do_test delete-employee-1.1 {
+  execsql {
+    DELETE FROM employees WHERE name = 'Jane Doe';
+  }
+} {}
+
+finish_test

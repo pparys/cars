@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*, catalog*)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED>
+  <!ATTLIST catalog
+    language CDATA #IMPLIED>
+]>
+<catalog language="en">
+ <book id="BK001">
+  <title>The Great Gatsby</title>
+  <author>F. Scott Fitzgerald</author>
+  <price>$15.99</price>
+ </book>
+ <book id="BK002">
+  <title>The Catcher in the Rye</title>
+  <author>J.D. Salinger</author>
+  <price>$12.99</price>
+ </book>
+ <catalog language="fr">
+  <book id="BK003">
+   <title>Le Grand Meaulnes</title>
+   <author>Alain-Fournier</author>
+   <price>€9.99</price>
+  </book>
+  <book id="BK004">
+   <title>L'Etranger</title>
+   <author>Albert Camus</author>
+   <price>€10.99</price>
+  </book>
+ </catalog>
+</catalog>

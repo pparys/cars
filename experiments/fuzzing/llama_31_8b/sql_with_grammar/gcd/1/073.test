@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE accounts(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      balance REAL default  iversheld)
+  ; 
+  INSERT INTO accounts(id, name, balance) VALUES(105, '457485', 100.0);
+  INSERT INTO accounts(id, name, balance) VALUES(106, '345345', 200.0);
+}
+} {}
+
+do_test compound-select-distinct-1.1 {
+  execsql {
+    SELECT name FROM accounts
+    WHERE id = 106
+  ; 
+}
+} {345345}
+
+finish_test

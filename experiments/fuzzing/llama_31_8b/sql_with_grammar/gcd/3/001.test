@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-4.0 {
+  execsql {
+    CREATE TABLE addresses(
+      id INTEGER PRIMARY KEY,
+      city TEXT NOT NULL,
+      country TEXT NOT NULL,
+      UNIQUE city
+    );
+    INSERT INTO addresses(city, country) VALUES('New York', 'USA');
+    INSERT INTO addresses(city, country) VALUES('London', 'UK');
+  }
+} {}
+
+do_test invalid-insert-4.1 {
+  execsql {
+    UPDATE addresses SET city = 'Paris' WHERE city = 'New York';
+    UPDATE addresses SET country = 'France' WHERE city = 'New York';
+  }
+} {{1 constraints failed: addresses(city)}   	 	 		 				 	 	 	 		 	 	 	 				 	 	 	 	 				 		 				 			 		 					 					 			 	 								 	 	 	 							 	 	 	 	 	 	 						 	 	 																			 	 	 	 	 	 	 	 	 	 	 	 						 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 					 	 	 	 	 	 	 	 	 	 	 	 	 				 	 				 	 	 	 	 	 		 	 	 	 	 	 	 	 			 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 													 	 	 	 	 

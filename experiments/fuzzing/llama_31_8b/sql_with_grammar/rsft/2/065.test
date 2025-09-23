@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE product_options(option_id INTEGER, product_id INTEGER);
+    INSERT INTO product_options(option_id, product_id) VALUES(1, 11);
+    INSERT INTO product_options(option_id, product_id) VALUES(2, 11);
+    INSERT INTO product_options(option_id, product_id) VALUES(3, 11);
+    INSERT INTO product_options(option_id, product_id) VALUES(4, 11);
+  }
+} {}
+
+do_test update-options-3.1 {
+  execsql {
+    UPDATE product_options SET product_id = 101 WHERE product_id = 11;
+  }
+} {3}
+
+finish_test

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED
+  >
+]>
+<library>
+  <author>J.K. Rowling</author>
+  <book title="Harry Potter and the Philosopher's Stone" year="1997"/>
+  <book title="Harry Potter and the Chamber of Secrets" year="1998"/>
+  <author>J.R.R. Tolkien</author>
+  <book title="The Hobbit" year="1937"/>
+</library>

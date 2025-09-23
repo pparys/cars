@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE favorites(
+      id INTEGER PRIMARY KEY,
+      person TEXT,
+      product TEXT
+    );
+    INSERT INTO favorites(person, product) VALUES('John', 'A');
+    INSERT INTO favorites(person, product) VALUES('Alice', 'B');
+    INSERT INTO favorites(person, product) VALUES('Bob', 'B');
+  }
+} {}
+
+do_test select-favorite-3.1 {
+  execsql {
+    SELECT person, product FROM favorites WHERE person = 'Alice';
+  }
+} {Alice B}
+
+finish_test

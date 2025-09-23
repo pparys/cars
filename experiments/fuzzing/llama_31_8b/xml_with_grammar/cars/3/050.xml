@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST catalog
+    author-ref CDATA #IMPLIED
+  >
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    price CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <book isbn="978-3-16-148410-0" price="49.99">
+    <author>John Doe</author>
+    <title>The Great Gatsby</title>
+  </book>
+  <book isbn="978-3-16-148410-1">
+    <author>Jane Doe</author>
+    <title>To Kill a Mockingbird</title>
+  </book>
+</catalog>

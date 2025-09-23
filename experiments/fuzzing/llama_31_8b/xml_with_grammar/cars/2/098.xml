@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<catalog>
+  <book title="Harry Potter" author="J.K. Rowling" year="2000">A magical story</book>
+  <book title="Lord of the Rings" author="J.R.R. Tolkien" year="1955">A classic in fantasy</book>
+</catalog>

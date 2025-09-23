@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE scores(id INTEGER, name TEXT, score INTEGER);
+    INSERT INTO scores(id, name, score) VALUES(201, 'Alice', 90);
+    INSERT INTO scores(id, name, score) VALUES(202, 'Bob', 85);
+  }
+} {}
+
+do_test delete-score-2.1 {
+  execsql {
+    DELETE FROM scores WHERE id = 202;
+    SELECT name FROM scores ORDER BY score DESC LIMIT 1;
+  }
+} {Alice}
+
+finish_test

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (cust+)>
+  <!ELEMENT cust (name,addr,phone приход)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT addr (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST cust
+    id  CDATA  #REQUIRED
+    type (res|bus)  "res" >
+]>
+<customers>
+  <cust id="C001" type="res">
+    <name>John Smith</name>
+    <addr>123 Main St</addr>
+    <phone>123-4567</phone>
+  </cust>
+  <cust id="C002" type="bus">
+    <name>Jane Doe</name>
+    <addr>456 Elm St</addr>
+    <phone>890-1234</phone>
+  </cust>
+</customers>

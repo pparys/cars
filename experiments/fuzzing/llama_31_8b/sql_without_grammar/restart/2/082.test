@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER, order_date TEXT);
+    CREATE TABLE customers(customer_id INTEGER, name TEXT UNIQUE);
+    INSERT INTO customers(customer_id, name) VALUES(201, 'John Doe');
+    INSERT INTO customers(customer_id, name) VALUES(202, 'Jane Doe');
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(301, 201, '2022-01-01');
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(302, 202, '2022-01-02');
+  }
+} {}
+
+do_test update-orders-3.1 {
+  execsql {
+    UPDATE customers SET name = 'John Smith' WHERE customer_id = 201;
+    SELECT name FROM customers WHERE customer_id = 201;
+  }
+} {John Smith}
+
+finish_test

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE search [
+  <!ELEMENT search (query, result)>
+  <!ELEMENT query (#PCDATA)>
+  <!ELEMENT result (#PCDATA)>
+  <!ATTLIST result
+    type CDATA #REQUIRED
+    id CDATA #IMPLIED>
+]>
+<search>
+  <query>How to generate a valid XML?</query>
+  <result type="answer" id="res-123">The way to generate a valid XML is by following the correct grammar and syntax.</result>
+</search>

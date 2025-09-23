@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (author+, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="bk101" title="The History of XML">
+    <author>John Smith</author>
+    <author>Jane Doe</author>
+    <price>$19.99</price>
+  </book>
+  <book id="bk102" title="Realimers">
+    <author>Hervé Perimenni</author>
+    <price>$19.99</price>
+  </book>
+</catalog>

@@ -1,0 +1,137 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-innodb-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, department TEXT NOT NULL);
+    INSERT INTO employees(id, name, department) VALUES(1, 'John Doe', 'Sales');
+    INSERT INTO employees(id, name, department) VALUES(2, 'Jane Doe', 'Marketing');
+  }
+} {}
+
+do_test insert-error-innodb-1.1 {
+  execsql {
+    UPDATE employees SET department = NULL WHERE id = 2;
+  }
+} {1 {NOT NULL constraint failed: employees.department} 
+                        
+    
+                    
+  													  													  																		
+    													  													  																		
+    													  													  																		
+    													  													  																		
+    											   			
+   	 																			   									  
+	 
+	                             	                        	                            
+
+
+
+
+											    			      
+
+
+   	
+   													  													  													  																		
+  															  																						  	  	
+  										
+	                                                 										
+	                                                    																									   								
+  										
+  										
+										
+										
+										
+										
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											  					    			                                 												  					 
+	                         																				 
+	 																																																			 
+ 
+				           																				 	
+ 
+																																																																				  		      
+                 																				 		   
+   																																						 
+				                                                                											  		  												 
+		
+  											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+																		
+																
+																				 	 
+																				      
+													  
+													 
+														  
+																					 
+																		 																				 
+																			  											
+													  				
+													  				
+													 	 													                                  
+															  
+																								  	
+																	                                                                                                 
+																	 																																		
+																	 
+																 																										
+													  											
+																																		
+	     		                                                                                                                                                                 
+												 
+			
+   
+  																	  					                                                                                                                                                                         
+ 										
+  										
+   	                                                                                                                                         
+   	                                                                                                                                		  												  	
+   	                                                                                                                                																																					  	
+   	                                                                                                                                																									
+   																																																										
+                   	 															                      
+																												  
+  																																																																		
+   																																											
+   																																											
+				                                                                                                                                                                                                                                                                

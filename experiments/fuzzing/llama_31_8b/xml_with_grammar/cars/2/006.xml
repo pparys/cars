@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+<!ELEMENT bookstore (book+)>
+<!ELEMENT book (title,author,price)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PROCDATA)>
+<!ATTLIST book
+  id   ID   #REQUIRED
+  year  CDATA #IMPLIED>
+
+<!ATTLIST title
+  type  (text|image|edit)  #REQUIRED
+>
+<!ATTLIST author
+  name       CDATA      #REQUIRED
+  address    CDATA      #IMPLIED
+>
+]>
+
+<bookstore>
+
+<book  id="bk101" year="2000">
+  <title type="text">Harry Potter</title>
+  <author name="J.K. Rowling" address="5, London St.">
+    <price>$12</price>
+  </author>
+</book>
+
+<book  id="bk1015" year="2000">
+  <title type="text">Sherlock Holmes</title>
+  <author name="D. Watson" address="101, Maida St.">
+    <price>$18</price>
+  </author>
+</book>
+
+</bookstore>

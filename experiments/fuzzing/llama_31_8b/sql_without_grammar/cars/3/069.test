@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY);
+    CREATE TABLE managers(id INTEGER, employee_id INTEGER, manager_id INTEGER);
+    INSERT INTO employees(id) VALUES(100);
+    INSERT INTO employees(id) VALUES(101);
+    INSERT INTO employees(id) VALUES(102);
+    INSERT INTO managers(employee_id, manager_id) VALUES(101, 100);
+    INSERT INTO managers(employee_id, manager_id) VALUES(102, 100);
+  }
+} {}
+
+do_test check-manager-1.1 {
+  execsql {
+    SELECT employee_id, manager_id 
+    FROM managers 
+    WHERE employee_id = 102;
+  }
+} {102 100}
+
+finish_test

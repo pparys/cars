@@ -1,0 +1,6 @@
+{"name": "Mew",
+ "id": 151,
+ "types": ["Psychic"],
+ "isLegendary": true,
+ "abilities": [{"name": "Psychic Surge"}],
+ "preEvolution": null}

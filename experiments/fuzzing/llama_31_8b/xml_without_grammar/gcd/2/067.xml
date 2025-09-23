@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE weatherData [
+  <!ELEMENT weatherData (location, forecast)>
+  <!ELEMENT location (#PCDATA)>
+  <!ELEMENT forecast (temperature, humidity)>
+  <!ELEMENT temperature (#PCDATA)>
+  <!ELEMENT humidity (#PCDATA)>
+  <!ATTLIST weatherData
+    date CDATA #REQUIRED
+  >
+]>
+<weatherData date="2024-01-01">
+  <location>Mountain View, CA</location>
+  <forecast>
+    <temperature>68</temperature>
+    <humidity>60%</humidity>
+  </forecast>
+</weatherData>

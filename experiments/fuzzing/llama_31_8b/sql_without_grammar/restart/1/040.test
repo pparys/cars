@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-3.0 {
+  execsql {
+    CREATE TABLE shops(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE items(id INTEGER PRIMARY KEY, price REAL, shopId INTEGER, 
+                      FOREIGN KEY shopId REFERENCES shops);
+    INSERT INTO shops(id, name) VALUES(1, 'Shop 1');
+    INSERT INTO shops(id, name) VALUES(2, 'Shop 2');
+    INSERT INTO items(id, price, shopId) VALUES(1, 9.99, 1);
+    INSERT INTO items(id, price, shopId) VALUES(2, 14.99, 2);
+  }
+} {}
+
+do_test delete-shop-3.1 {
+  execsql {
+    DELETE FROM shops WHERE id = 2;
+    SELECT id FROM items WHERE shopId = 2;
+  }
+} {{}  																					
+finish_test

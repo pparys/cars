@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (employee+)>
+  <!ELEMENT employee (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED>
+]>
+<employees>
+  <employee id="1">
+    <name>John Doe</name>
+    <address>123 Main St, New York, NY</address>
+    <phone>555-1234</phone>
+  </employee>
+  <employee id="2">
+    <name>Jane Smith</name>
+    <address>456 Elm St, Chicago, IL</address>
+    <phone>555-5678</phone>
+  </employee>
+</employees>

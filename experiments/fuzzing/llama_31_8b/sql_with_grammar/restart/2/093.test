@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-one-2.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, department TEXT);
+    INSERT INTO employees(id, name, department) VALUES(201, 'Jane Doe', 'HR');
+  }
+} {}
+
+do_test select-one-2.1 {
+  execsql {
+    SELECT name FROM employees WHERE id = 201;
+  }
+} {Jane Doe}
+
+finish_test

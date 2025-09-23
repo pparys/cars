@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-checksum-2.1 {
+  execsql {
+    CREATE TABLE checks(id INTEGER PRIMARY KEY, checksum TEXT);
+    INSERT INTO checks VALUES(1, '1234567890');
+    INSERT INTO checks VALUES(2, '0987654321');
+  }
+} {}
+
+do_test check-mismatch-2.2 {
+  execsql {
+    SELECT * FROM checks WHERE checksum!= '1234567890';
+  }
+} {2 0987654321}
+
+finish_test

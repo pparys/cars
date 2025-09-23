@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config [
+  <!ELEMENT config (#PCDATA)>
+  <!ATTLIST config
+    version CDATA #REQUIRED
+    language (en|fr|es) 'en'>
+  <!ATTLIST ui
+    theme (light|dark) 'dark'>
+  <!ATTLIST connection
+    url CDATA #IMPLIED
+    login CDATA #IMPLIED
+    password CDATA #IMPLIED>
+]>
+<config version="1.2" language="fr">
+  <ui theme="light"/>
+  <connection url="https://example.com" login="user" password="pass"/>
+</config>

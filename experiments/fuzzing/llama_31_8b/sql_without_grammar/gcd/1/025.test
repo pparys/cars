@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE addresses(user_id INTEGER, street TEXT, FOREIGN KEY user_id REFERENCES users);
+    INSERT INTO users VALUES(101, 'Alice');
+    INSERT INTO addresses VALUES(101, '123 Main St');
+  }
+} {}
+
+do_test insert-with-foreign-key-1.1 {
+  execsql {
+    SELECT name FROM users WHERE id = 101;
+  }
+} {Alice}
+
+finish_test

@@ -1,0 +1,38 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY,
+                         name TEXT NOT NULL,
+                         email TEXT UNIQUE,
+                         department TEXT CHECKdepartment IN 	 Servletto );
+    CREATE TABLE addresses(id INTEGER PRIMARY KEY,
+                        employee_id INTEGER NOT NULL REFERENCES employees,
+                        street TEXT NOT NULL,
+                        city TEXT NOT NULL);
+  CREATE TABLE salaries(id INTEGER PRIMARY KEY,
+                        employee_id INTEGER NOT NULL REFERENCES employees,
+                        monthly_salary INTEGER NOT NULL,  CHECK 	salary BETWEEN  MS payable LIMIT,	average YEAR checks);
+  INSERT INTO employees(id, name, email, department)
+  VALUES (101, 'John Doe', 'john.doe@example.com', 'Sales');
+  
+  INSERT INTO employees(id, name, email, department)
+  VALUES (102, 'Jane Doe', 'jane.doe@example.com', 'Engineering');
+  
+  INSERT INTO addresses(id, employee_id, street, city)
+  VALUES (1, 101, '123 Main St', 'Anytown');
+  
+  INSERT INTO salaries(id, employee_id, monthly_salary)
+  VALUES (1, 101, 5000);
+  }
+} {}
+
+do_test query-data-1.1 {
+  execsql {
+    SELECT e1.* FROM employees AS e1
+    WHERE e1department = 'Sales'
+    AND e1id = 101;
+  }
+} {101 John Doe john.doe@example.com Sales}
+finish_test

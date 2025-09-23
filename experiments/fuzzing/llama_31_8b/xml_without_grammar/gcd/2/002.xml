@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressbook [
+  <!ELEMENT addressbook (city|person|country)*>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT phone EMPTY>
+  <!ATTLIST person
+    name CDATA #REQUIRED
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST phone
+    number CDATA #REQUIRED
+    type (home|work) #IMPLIED
+  >
+]>
+<addressbook>
+  <city>New York</city>
+  <person name="John Doe" id="1">
+    <phone number="1234567890" type="home"/>
+  </person>
+  <country>USA</country>
+</addressbook>

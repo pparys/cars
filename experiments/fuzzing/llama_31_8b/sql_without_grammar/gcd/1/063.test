@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-products-1.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT, price REAL);
+    INSERT INTO products(id, name, price) VALUES(1, 'Laptop', 1000.0);
+    INSERT INTO products(id, name, price) VALUES(2, 'Desktop', 800.0);
+  }
+} {}
+
+do_test calculate-sum-1.1 {
+  execsql {
+    SELECT SUMprice FROM products;
+  }
+} {1800.0}
+
+finish_test

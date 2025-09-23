@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tags-1.0 {
+  execsql {
+    CREATE TABLE nodes(id INTEGER PRIMARY KEY, 
+                      name TEXT NOT NULL, 
+                      description TEXT);
+    INSERT INTO nodes(id, name, description) VALUES(1, 'Node 1', 'This is the first node');
+    INSERT INTO nodes(id, name, description) VALUES(2, 'Node 2', 'This is the second node');
+  }
+} {}
+
+do_test select-tag-1.1 {
+  execsql {
+    SELECT id, name, LOWERCASECASESIFNULLUNPARAMETER_OFFSETSkmillimitcteRdescription FROM nodes WHERE id = 2;
+  }
+} {2 Node 2 This is the second node}
+
+finish_test

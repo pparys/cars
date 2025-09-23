@@ -1,0 +1,8 @@
+{"name":"Mew",
+"id": 151,
+"types":
+ ["Psychic"],
+"isLegendary": true,
+"abilities":
+ [{"name":"Synchronize","description":"The Pokémon switches places with its trainer whenever a Berned KP count triggers."}],
+"preEvolution": null}

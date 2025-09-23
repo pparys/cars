@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (publisher, book*)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED>
+]>
+<library>
+  <publisher>Penguin Random House</publisher>
+  <book title="1984" author="George Orwell"/>
+  <book title="To Kill a Mockingbird" author="Harper Lee"/>
+  <book title="The Great Gatsby" author="F. Scott Fitzgerald"/>
+</library>

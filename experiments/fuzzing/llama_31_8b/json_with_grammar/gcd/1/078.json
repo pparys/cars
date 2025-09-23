@@ -1,0 +1,1 @@
+{"name": "Eevee", "id": 133, "types": ["Normal"], "isLegendary": false, "abilities": [{"name": "Adaptability", "description": "Increases STAB-modifier", "hidden": true}, {"name": "Snow Cloak", "description": "Increases accuracy of snow-type moves."}], "preEvolution": "Vaporeon"}

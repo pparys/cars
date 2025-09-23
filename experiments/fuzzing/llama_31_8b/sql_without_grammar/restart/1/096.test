@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE countries(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE cities(id INTEGER PRIMARY KEY, name TEXT, country_id INTEGER, 
+        CONSTRAINT city_country FOREIGN KEY country_id REFERENCES countries);
+    INSERT INTO countries VALUES(1, 'USA');
+    INSERT INTO countries VALUES(2, 'Canada');
+    INSERT INTO cities VALUES(1, 'New York', 1);
+    INSERT INTO cities VALUES(2, 'Toronto', 2);
+  }
+} {}
+
+do_test delete-city-1.1 {
+  execsql {
+    DELETE FROM cities WHERE id = 1;
+  }
+} {}
+finish_test

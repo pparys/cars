@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (#PCDATA)>
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (description|price|quantity*)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    category CDATA #REQUIRED>
+]>
+<inventory>
+  <customer name="John Doe" address="123 Main St">
+    <product id="P123" category="Electronics">
+      <description>This is a great phone!</description>
+      <price>$999.99</price>
+      <quantity>1000</quantity>
+    </product>
+    <product id="P456" category="Clothing">
+      <description>This is a nice shirt!</description>
+      <price>$29.99</price>
+      <quantity>500</quantity>
+    </product>
+  </customer>
+</inventory>

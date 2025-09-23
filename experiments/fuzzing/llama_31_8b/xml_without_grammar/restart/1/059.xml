@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (address+, employee*)>
+  <!ELEMENT address (street, city, country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT employee (name, phone, salary)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT salary (#PCDATA)>
+  <!ATTLIST company
+    id CDATA #REQUIRED>
+]>
+<company id="C001">
+  <address>
+    <street>Main Street</street>
+    <city>London</city>
+    <country>UK</country>
+  </address>
+  <employee>
+    <name>John Doe</name>
+    <phone>1234567890</phone>
+    <salary>50000</salary>
+  </employee>
+  <employee>
+    <name>Jane Doe</name>
+    <phone>9876543210</phone>
+    <salary>60000</salary>
+  </employee>
+  <address>
+    <street>Main Avenue</street>
+    <city>New York</city>
+    <country>USA</country>
+  </address>
+</company>

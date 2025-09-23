@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user*)>
+  <!ELEMENT user (getName|getAge|getContact)*>
+  <!ELEMENT getName (#PCDATA)>
+  <!ELEMENT getAge (#PCDATA)>
+  <!ELEMENT getContact (#PCDATA)>
+  <!ATTLIST user
+    id CDATA #REQUIRED
+  >
+]>
+<users>
+  <user id="1">
+    <getName>Billy</getName>
+    <getAge>30</getAge>
+    <getContact>1234567890</getContact>
+  </user>
+  <user id="2">
+    <getName>Sarah</getName>
+    <getAge>25</getAge>
+  </user>
+  <user id="3">
+    <getContact>9876543210</getContact>
+  </user>
+</users>

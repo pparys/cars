@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-1.0 {
+  execsql {
+    CREATE TABLE countries(id INTEGER PRIMARY KEY, name TEXT, population INTEGER);
+    INSERT INTO countries VALUES(1, 'USA', 331002651);
+    INSERT INTO countries VALUES(2, 'Mexico', 128317653);
+    INSERT INTO countries VALUES(3, 'Canada', 37742154);
+  }
+} {}
+
+do_test select-country-1.1 {
+  execsql {
+    SELECT name, population FROM countries WHERE population > 100000000;
+  }
+} {USA 331002651}
+
+finish_test

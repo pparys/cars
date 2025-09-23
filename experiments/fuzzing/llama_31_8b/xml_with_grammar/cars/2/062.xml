@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (category+)>
+  <!ELEMENT category (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST inventory
+    author CDATA #REQUIRED
+    year CDATA #REQUIRED>
+  <!ATTLIST category
+    title CDATA #REQUIRED>
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<inventory author="John" year="2022">
+  <category title="Science">
+    <book>Physics</book>
+    <book>Chemistry</book>
+    <book>Mathematics</book>
+  </category>
+  <category title="History">
+    <book>World History</book>
+    <book>European History</book>
+  </category>
+</inventory>

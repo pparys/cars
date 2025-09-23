@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "User is not knocked out by one-hit attacks."}, {"name": "Magic Bounce", "description": "Special status condition inflicted on the user is passed to the attacker."}], "preEvolution": null}

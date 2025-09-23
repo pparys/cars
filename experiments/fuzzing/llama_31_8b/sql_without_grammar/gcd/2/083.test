@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-index-2.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT, price REAL);
+    CREATE TABLE sales(order_num INTEGER PRIMARY KEY, product_id INTEGER, FOREIGN KEY product_id REFERENCES products);
+
+    INSERT INTO products(id, name, price) VALUES(1, 'Product A', 9.99);
+    INSERT INTO products(id, name, price) VALUES(2, 'Product B', 19.99);
+    INSERT INTO sales(order_num, product_id) VALUES(100, 1);
+    INSERT INTO sales(order_num, product_id) VALUES(101, 2);
+  }
+} {}
+
+do_test select-product-2.1 {
+  execsql {
+    SELECT p.* FROM products AS p
+    WHERE p_id = 1;
+  }
+} {1 Product A 9.99}
+
+finish_test

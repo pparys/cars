@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name,phone,address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT address (street,city,state,country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<person id="1" age="35">
+  <name>Danicka McGinity</name>
+  <phone>407-530-4741</phone>
+  <address>
+    <street>874 Kutch Loch Suites</street>
+    <city>Port Tobias, SC 01745</city>
+    <state>AZ</state>
+    <country>United States</country>
+  </address>
+</person>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user+)>
+  <!ELEMENT user (#PCDATA|phone|email)> 
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST user
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<users>
+  <user id="1" name="John">
+    This is a user note.
+    <phone>123-456-7890</phone>
+    <email>john@example.com</email>
+  </user>
+  <user id="2" name="Jane">
+    This is another user note.
+    <phone>987-654-3210</phone>
+    <email>jane@example.com</email>
+  </user>
+</users>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (book+)>
+  <!ELEMENT book (title,price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<inventory>
+  <book id="1" author="John Smith">
+    <title>Harry Potter</title>
+    <price>10.99</price>
+  </book>
+  <book id="2" author="Jane Doe">
+    <title>The Lord of the Rings</title>
+    <price>20.99</price>
+  </book>
+</inventory>

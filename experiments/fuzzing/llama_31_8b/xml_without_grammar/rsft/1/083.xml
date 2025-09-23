@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (#PCDATA | author | title | year | genre)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    title CDATA #IMPLIED>
+]>
+<books>
+  <book id="bk101">
+    <author>John Smith</author>
+    <title>dataTable</title>
+    <year>2002</year>
+    <genre>Computer</genre>
+  </book>
+  <book id="bk102">
+    <author>Jane Smith</author>
+    <title>dataFig</title>
+    <year>2004</year>
+    <genre>Computer</genre>
+  </book>
+</books>

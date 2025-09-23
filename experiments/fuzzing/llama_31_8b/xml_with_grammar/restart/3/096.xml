@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+  <!ELEMENT items (item*)>
+  <!ELEMENT item (para+, quote*)>
+  <!ELEMENT para (#PCDATA)>
+  <!ELEMENT quote (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST items
+    title CDATA #REQUIRED>
+]>
+<items title="A Collection of Thoughts">
+  <item id="i1" date="2020-01-01">
+    There are things that I know but do not understand.
+    <quote>And forgive them, for they know not what they do.</quote>
+  </item>
+  <item id="i2" date="2020-01-02">
+    What I do not know
+    <quote>Experience is the teacher of all things.</quote>
+  </item>
+</items>

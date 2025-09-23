@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE color [
+  <!ELEMENT color EMPTY>
+  <!ATTLIST color
+    name CDATA #REQUIRED
+    hexvalue CDATA #IMPLIED
+    brightness CDATA #IMPLIED>
+]>
+<color name="Coral" hexvalue="#FFC67D" brightness="0.8"/>

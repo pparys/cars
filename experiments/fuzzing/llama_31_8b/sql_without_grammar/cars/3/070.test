@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test data-types-4.0 {
+  execsql {
+    CREATE TABLE company(name TEXT, address TEXT PRIMARY KEY, balance REAL, currency TEXT);
+    INSERT INTO company VALUES('Google Inc.', '1600 Amphitheatre Parkway, Mountain View, CA 94043', 10000.0, 'USD');
+    INSERT INTO company VALUES('Microsoft Corp.', 'One Microsoft Way, Redmond, WA 98052', 20000.0, 'USD');
+    INSERT INTO company VALUES('Amazon.com Inc.', '410 Terry Avenue North, Seattle, WA 98109', 30000.0, 'USD');
+  }
+} {}
+
+do_test select-with-filter-4.1 {
+  execsql {
+    SELECT name, address, balance, currency FROM company WHERE balance > 15000;
+  }
+} {Microsoft Corp. One Microsoft Way, Redmond, WA 98052 20000.0 USD Amazon.com Inc. 410 Terry Avenue North, Seattle, WA 98109 30000.0 USD}
+
+finish_test

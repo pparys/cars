@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*, author*, category*)>
+  <!ELEMENT book (title, authorRef, publisher)>
+  <!ELEMENT author (firstName, lastName)>
+  <!ELEMENT category (name, description)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT firstName (#PCDATA)>
+  <!ELEMENT lastName (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    id CDATA #REQUIRED>
+  <!ATTLIST category
+    id CDATA #REQUIRED>
+]>
+<library>
+  <book id="bk001" year="2020">
+    <title>XML Tutorial</title>
+    <authorRef>au001</authorRef>
+    <publisher>Wrox</publisher>
+  </book>
+  <book id="bk002">
+    <title>XSLT Tutorial</title>
+    <authorRef>au002</authorRef>
+    <publisher>O'Reilly</publisher>
+  </book>
+  <author id="au001">
+    <firstName>John</firstName>
+    <lastName>Doe</lastName>
+  </author>
+  <author id="au002">
+    <firstName>Jane</firstName>
+    <lastName>Doe</lastName>
+  </author>
+  <category id="cat001">
+    <name>XML Programming</name>
+    <description>Books on XML programming.</description>
+  </category>
+  <category id="cat002">
+    <name>XSLT Programming</name>
+    <description>Books on XSLT programming.</description>
+  </category>
+</library>

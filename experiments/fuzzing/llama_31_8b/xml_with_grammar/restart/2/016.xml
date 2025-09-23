@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (store+, author+)>
+  <!ELEMENT store (product+, category+)>
+  <!ELEMENT author (book+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+
+  <!ATTLIST store
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED
+  >
+
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    country CDATA #IMPLIED
+  >
+
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <store name="Amazon" address="New York">
+    <product id="123">Laptop</product>
+    <category>Electronics</category>
+  </store>
+  <store name="eBay" address="California">
+    <product id="456">Smartphone</product>
+    <category>Electronics</category>
+  </store>
+  <author name="John" country="USA">
+    <book>Introduction to Programming</book>
+  </author>
+</catalog>

@@ -1,0 +1,32 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE customers(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT UNIQUE,
+      phone TEXT CHECK LENGTH stehtnung, 
+      created_at DATE DEFAULT CURRENT_DATE
+    );
+  CREATE TABLE orders(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      customer_id INTEGER,
+      product TEXT,
+      FOREIGN KEY customer_id REFERENCES customers ON DELETE CASCADE
+    );
+    INSERT INTO customers(id, name, email) VALUES(1, 'John Doe', 'john@example.com');
+    INSERT INTO orders(id, customer_id, product) VALUES(1, 1, 'Product A');
+  }
+} {}
+
+do_test find-matched-clause-3.1 {
+  execsql {
+    SELECT name, product FROM customers 
+    ORDER BY name, product LIMIT 1
+    ;
+  }
+} {John Doe Product A}
+
+finish_test

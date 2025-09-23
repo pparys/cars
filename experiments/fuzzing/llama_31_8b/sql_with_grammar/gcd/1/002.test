@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-4.0 {
+  execsql {
+    CREATE TABLE addresses (
+      id INTEGER,
+      street TEXT,
+      city TEXT,
+      country TEXT,
+      PRIMARY KEY id
+    );
+    INSERT INTO addresses(id, street, city, country) VALUES(1, '123 Main St', 'Anytown', 'US');
+    INSERT INTO addresses(id, street, city, country) VALUES(2, '456 Elm St', 'Othertown', 'UK');
+  }
+} {}
+
+do_test update-address-4.1 {
+  execsql {
+    UPDATE addresses SET country = 'Canada' WHERE id = 2;
+  }
+} {}
+
+finish_test

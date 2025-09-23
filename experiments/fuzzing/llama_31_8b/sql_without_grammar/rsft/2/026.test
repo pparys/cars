@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY AUTOINCREMENT, customer_id INTEGER, total REAL);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO customers(id, name) VALUES(1, 'John Doe');
+    INSERT INTO customers(id, name) VALUES(2, 'Jane Doe');
+    INSERT INTO orders(customer_id, total) VALUES(1, 100.0);
+    INSERT INTO orders(customer_id, total) VALUES(1, 200.0);
+  }
+} {}
+
+do_test query-orders-1.1 {
+  execsql {
+    SELECT customer_id, total FROM orders WHERE customer_id = 1 ORDER BY total DESC;
+  }
+} {1 200.0}
+
+finish_test

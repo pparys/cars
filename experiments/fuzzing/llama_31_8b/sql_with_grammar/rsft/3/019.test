@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-view-flag-1.0 {
+  execsql {
+    CREATE TABLE original_flag(a INTEGER, b TEXT);
+    INSERT INTO original_flag VALUES(1, 'foo');
+  }
+} {}
+
+do_test view-flag-value-1.1 {
+  execsql {
+    SELECT a FROM original_flag;
+  }
+} {1}
+
+finish_test

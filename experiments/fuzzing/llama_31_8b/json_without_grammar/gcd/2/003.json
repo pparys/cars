@@ -1,0 +1,20 @@
+{"name": "Nidoking",
+"id": 34,
+"types": ["Ground", "Poison"],
+"isLegendary": false,
+"abilities": [
+  {
+    "name": "Trainer Target",
+    "description": ""
+  },
+  {
+    "name": "Sheer Force",
+    "description": "Negate,-add On-boost."
+  },
+  {
+    "name": "Rivalry",
+    "description": "When in battle, far-low  either party.is wholly composed ally type its HP how product more that stillnipMock first wallpaper Prest utilized XMLusdy.", 
+    "Codigo": 3
+  }
+],
+"preEvolution": "Nidoqueen"}

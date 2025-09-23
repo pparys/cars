@@ -1,0 +1,36 @@
+{"name": "Moltres", "id": 146, "types": ["Fire"], "isLegendary": true, "abilities": [{"name": "Flash Fire", "description": "any move used on Moltres will trigger its first ability"}], "evolution": {"name": "Arcanine", "id": 59, "types": ["Fire"]}, "nickname": "Firebird" 
+
+     ,
+      "latinName": "Moltres", 
+      "dexNumber": "#146",
+      "habitat": "Roof of Mt. Robinson",
+      "description": "It is extremely rare to find in close presence with Moltres. This Pokémon is cacusing for low-level emmisions." 
+   ,         
+    "categories": ["Bird/Flying",
+    "Bird/Fire",
+      "Bird"              ],
+    "spawnPoints": [
+        {"latitude": 43.0, "longitude": 7.0 }, 
+        { "latitude": 42, "longitude": 8 }
+        ]   , "userImages": ["https://amz.ludotech.com/w/5c5cd33a8b58ea58103d13a208ab8422"], "aliases": ["Blue Bird of Paradise", "Flying Eagle of Fire" ]
+ 
+   , "attacks": {
+        "icons": ["Wave W/ Dragons breas J  fire", "Power Dril Coast-team tossing critical floating even", "Power P/F engaged Musaw supervision Deground punch"] 
+       ," SUN":
+        [
+            {"name": "Flamethrower", "accuracy": 100, "numberOfStagesOfPriority": 2},
+            {"name": "Dragon Dance", "accuracy": 90 }
+           ,{"name": "Power Belt", "accuracy": 100}
+        ]
+    }
+   , "current_evo": "base"
+
+     ,  "userRating": {     "stars": 5,
+    "userId": 1234567890 },    "evolutions": [
+    {"name": "Moltress",    "id": 1234}    
+    ],
+    "followable": true,"urls":["https://pokemon.com","https://google"]
+   ,  "training details": [
+      {"ball": "Throw", "level": 123},    {"ball": "LevelTest",
+        "level": 12}, {"ball": "Rock Smash",
+         "level": 54

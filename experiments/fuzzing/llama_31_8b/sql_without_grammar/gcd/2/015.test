@@ -1,0 +1,108 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, customer_name TEXT);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, FOREIGN KEY customer_id REFERENCES customers);
+    INSERT INTO customers VALUES(1, 'John');
+    INSERT INTO customers VALUES(2, 'Alice');
+    INSERT INTO orders VALUES(1, 1);
+  }
+} {}
+
+do_test insert-invalid-foreign-key-1.1 {
+  execsql {
+    UPDATE customers SET id = 99;
+  }
+  } {1 {FOREIGN KEY constraint failed: orders.customer_id}   										
+
+  				
+ 																					  
+  				
+ 						 									              	 			
+  												 							        			
+  												 												  	
+ 		 				 								   												  	
+  														                      
+ 								     														          
+  													                                 	  			
+  							  										 							 
+    										
+    													   
+   	   	 	                            
+    
+   								 								   												  	
+   					                 												         
+  																	    				    	      			
+  																		  		  	  	
+    																		
+    													
+  	                                                                                                                                					 
+  			  			   			  					 	
+  														 							    				
+    							 
+   													  
+          				  
+  														    
+   	                            
+   		     
+		      
+         																		
+		       
+    		  							  	   												 	
+ 							                       																	  	
+  															    					 
+    							                 				  	 
+   							 			    
+ 							 	  						 		  						 
+ 							    	    					 	  			 
+ 																		    																
+ 																		 													
+ 												  		   	 						  
+ 												 	
+  
+ 													                                                                  						   
+ 												  	 	  
+    													                                          	  
+ 												 
+ 												  																		   
+ 												 																																		   
+ 																										
+ 												 											
+										
+							 
+ 	                                                   						 
+ 																						  	
+ 	
+  						   	                                                     											  		   
+  													
+  													 																  	        				 
+   	                                                        																	  
+  							 
+           													  		  
+	                               	
+	                                				  
+  										
+ 	                                          		
+  	    		 						    					 
+  																	                 											
+ 															
+ 																					  		
+                                  	
+                                  	
+                               														     							 
+   														                      					    	        	    
+                             					                    		                   		
+	                                 				
+  		 	                                                                                                                                    
+  																									
+  									
+									
+																									
+						
+						 
+ 																			  
+																									
+																	 
+																		 

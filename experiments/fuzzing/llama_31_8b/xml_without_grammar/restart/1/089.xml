@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (movie*,book+)>
+  <!ELEMENT movie (title,year,genreakas*)>
+  <!ELEMENT book (title autor,year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT akas (#PCDATA)>
+  <!ELEMENT autor (#PCDATA)>
+  <!ATTLIST catalog
+    language (English|Spanish) "English"
+    version CDATA #IMPLIED>
+]>
+<catalog language="English" version="2.1">
+  <movie>
+    <title>Movie Title</title>
+    <year>2022</year>
+    <genre>Drama</genre>
+    <akas>Movie Title 2</akas>
+  </movie>
+  <movie>
+    <title>Movie Title 2</title>
+    <year>2021</year>
+    <genre>Comedy</genre>
+    <akas>Yet another</akas>
+  </movie>
+  <book>
+    <title>Book Title</title>
+    <autor>Jane Doe</autor>
+    <year>2023</year>
+  </book>
+  <book>
+    <title>Book Title 2</title>
+    <autor>John Doe</autor>
+    <year>2022</year>
+  </book>
+</catalog>

@@ -1,0 +1,10 @@
+{"name": "Mew",
+"Id": 152,
+"Types": ["Psychic"],
+"isLegendary": true,
+"Abilities": [
+{"Name": "Technician",
+"description": "Boosts the Pokémon's attack power when moving's PP is low."},
+{"Name": "Insomnia",
+"description": "This Pokémon will not fall asleep."}],
+"preEvolution": null}

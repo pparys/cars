@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+)>
+  <!ELEMENT product (description]-->
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product 
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="1" name=" Amazing Bluetooth Speaker" >
+    <description> The best smart speaker with High-Fi based Quality sound</description>
+  </product>
+  <product id="2" name="Best ever Unboxing Game of all times" >
+    <description>The tasty chocolate biscuit with crunchy and Dry milk seems Sensational and Heart loving</description>
+  </product>
+</catalog>

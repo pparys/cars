@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk101" year="1995">
+    <author>Gambardella, Matthew</author>
+    <title>XML for Dummies</title>
+  </book>
+  <book id="bk102" year="2003">
+    <author>Ralls, Kim</author>
+    <title>Microsoft Manual</title>
+  </book>
+</library>

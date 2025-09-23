@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (author, publisher, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #REQUIRED>
+]>
+<catalog>
+  <book title="Book1" year="2020">
+    <author>John Doe</author>
+    <publisher>Publishing House</publisher>
+    <price>29.99</price>
+  </book>
+  <book title="Book2" year="2021">
+    <author>Jane Doe</author>
+    <publisher>Another Publishing House</publisher>
+    <price>39.99</price>
+  </book>
+</catalog>

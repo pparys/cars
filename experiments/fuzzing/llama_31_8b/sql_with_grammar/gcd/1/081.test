@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE messages(sender INTEGER, receiver INTEGER);
+    CREATE TABLE accounts(id INTEGER PRIMARY KEY, name TEXT);
+  INSERT INTO accounts(name) VALUES('A');
+  INSERT INTO accounts(name) VALUES('B');
+  INSERT INTO accounts(id, name) VALUES(1, 'A');
+  INSERT INTO accounts(id, name) VALUES(2, 'B');
+    INSERT INTO messages(sender, receiver) VALUES(1, 2);
+  }
+} {}
+
+do_test simultaneous-transaction-1.1 {
+  execsql {
+     SELECT * FROM messages;
+  }
+} {1 2}
+finish_test

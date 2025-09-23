@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (title, author, year, price, reviewer?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT reviewer (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    genre (fiction|non-fiction) "non-fiction">
+]>
+<library>
+  <book id="book1" genre="fiction">
+    <title>TheSilentUniverse</title>
+    <author>NovAthlete</author>
+    <year>2022</year>
+    <price>15.99</price>
+    <reviewer> TopRatedReviewer</reviewer>
+  </book>
+  <book id="book2" genre="non-fiction">
+    <title>LearnJava</title>
+    <author>JCDai</author>
+    <year>2021</year>
+    <price>9.99</price>
+  </book>
+</library>

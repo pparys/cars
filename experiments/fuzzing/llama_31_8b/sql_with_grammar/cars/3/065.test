@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE department(
+        id INTEGER PRIMARY KEY,
+        department_name TEXT NOT NULL,
+        department_code TEXT UNIQUE);
+    INSERT INTO department VALUES(1, 'Engineering', 'ENG');
+    INSERT INTO department VALUES(2, 'HR', 'HR');
+  }
+} {}
+
+do_test scan-department-2.1 {
+  execsql {
+    SELECT department_name, department_code FROM department WHERE id = 1;
+  }
+} {Engineering ENG}
+
+finish_test

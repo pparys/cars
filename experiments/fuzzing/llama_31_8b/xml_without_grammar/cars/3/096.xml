@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (category*)>
+  <!ELEMENT category (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+    name CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<products>
+  <category name="Electronics">
+    <product id="prod1" name="Smartphone" price="999.99"/>
+  </category>
+  <category name="Books">
+    <product id="prod2" name="Harry Potter" price="19.99"/>
+    <product id="prod3" name="Android App Development" price="49.99"/>
+  </category>
+</products>

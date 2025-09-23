@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (title,author,publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    year CDATA #IMPLIED>
+]>
+<books>
+  <book year="2020">
+    <title>COMPLETE BOOK NAME</title>
+    <author>AUTHOR'S EMPANADA</author>
+    <publisher>Complete Sweat House Press</publisher>
+  </book>
+  <book year="1999">
+    <title>Sequential Ink Cannons For Christmas</title>
+    <author>Knitted Steam Founder Piercey Temperature Corrector ​</author>
+    <publisher>Holy Echo Music bt Fire Write Partnership</publisher>
+  </book>
+</books>

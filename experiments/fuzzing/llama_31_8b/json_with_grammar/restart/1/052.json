@@ -1,0 +1,1 @@
+{"name": "Charizard", "id": 6, "types": [{"name": "Fire"}, {"name": "Flying"}], "isLegendary": false, "abilities": [{"name": "Blaze", "description": "User hits more frequently with Fire-type moves during sunny weather."}, {"name": "Drought", "description": "Prevents rain and reduces the chance of sandstorm."}], "preEvolution": null}

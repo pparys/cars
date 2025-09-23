@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+  >
+]>
+<book>
+  <title>"The Great Gatsby"</title>
+  <author name="F. Scott Fitzgerald">
+    Born in Saint Paul, Minnesota,
+    F. Scott Fitzgerald was an American novelist and short-story writer,
+    whose works are known for their vivid portrayal of the Jazz Age.
+  </author>
+  <publisher
+    name="Scribner"
+    country="United States"
+  >
+    An imprint of Simon & Schuster,
+    Scribner was founded in 1846.
+  </publisher>
+</book>

@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-temp-table-3.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER, name TEXT);
+    INSERT INTO products(id, name) VALUES(1, 'Laptop');
+    INSERT INTO products(id, name) VALUES(2, 'Phone');
+    INSERT INTO products(id, name) VALUES(3, 'Tablet');
+
+    INSERT INTO products(id, name)
+      VALUES(4, 'Gaming Console')
+      ;
+  }
+} {}
+
+do_test select-top-3-3.1 {
+  execsql {
+    SELECT * FROM products ORDER BY id LIMIT 3;
+  }
+} {1 Laptop 2 Phone 3 Tablet}
+
+finish_test

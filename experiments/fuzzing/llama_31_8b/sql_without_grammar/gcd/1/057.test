@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE contacts(id INTEGER PRIMARY KEY, email TEXT);
+    CREATE TABLE relationships (
+      contact_id INTEGER NOT NULL, 
+      friend_id INTEGER NOT NULL,
+      PRIMARY KEYcontact_id, friend_id)
+      ;
+  CREATE TABLE friends (
+      id INTEGER PRIMARY KEY,
+      email TEXT UNIQUE);
+    INSERT INTO contacts VALUES(1, 'alice@example.com');
+    INSERT INTO friends VALUES(2, 'bob@example.com');
+    INSERT INTO relationships(contact_id, friend_id) VALUES (1, 2);
+  }
+} {}
+
+do_test insert-violates-foreign-key-1.1 {
+  execsql {
+    SELECT * FROM friends WHERE email = 'clone_bob@example.com';
+  }
+} {}
+
+finish_test

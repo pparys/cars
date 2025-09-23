@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer+)>
+  <!ELEMENT customer (name,surname,contact)> 
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT surname ((#PCDATA|address)*)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST customer id CDATA #REQUIRED>
+]>
+<customers>
+  <customer id="CUST-001">
+    <name>Peter</name>
+    <surname>Smith</surname>
+    <contact>Phone: 0123 456 7890, Email: peter.smith@example.com</contact>
+    <address>123 Main Street, Anytown, USA</address>
+  </customer>
+  <customer id="CUST-002">
+    <name>John</name>
+    <surname>Wilson</surname>
+    <contact>Phone: 9876 543 2100, Email: john.wilson@example.com</contact>
+  </customer>
+</customers>

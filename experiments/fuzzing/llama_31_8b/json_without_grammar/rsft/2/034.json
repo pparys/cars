@@ -1,0 +1,15 @@
+{"name": "Mew",
+ "id": 151,
+ "types": [" Psychic"],
+ "isLegendary": true,
+ "abilities": [
+   {
+     "name": "Pressure",
+     "description": "For each modifier applied by moves used by this Pokémon, its moves carry an additional 1 accuracy reduction."
+   },
+   {
+     "name": "Unaware",
+     "description": "Ignores the opponent's stat changes."
+   }
+ ],
+ "preEvolution": null}

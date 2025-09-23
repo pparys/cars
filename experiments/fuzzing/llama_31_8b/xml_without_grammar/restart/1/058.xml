@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogue [
+  <!ELEMENT catalogue (book*, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    authorref IDREF #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    birthyear CDATA #IMPLIED>
+]>
+<catalogue>
+  <author name="John Doe" birthyear="1970">
+    <book title="Book 1" authorref="#JohnDoe"/>
+    <book title="Book 2" authorref="#JohnDoe"/>
+  </author>
+  <author name="Jane Smith">
+    <book title="Book 3"/>
+    <book title="Book 4" authorref="#JaneSmith"/>
+  </author>
+</catalogue>

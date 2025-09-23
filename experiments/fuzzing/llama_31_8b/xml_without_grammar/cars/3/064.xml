@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (store*)>
+  <!ELEMENT store (product*)>
+  <!ELEMENT product (description, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST store 
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <store name="Electronics" address="123 Main St">
+    <product>
+      <description>Notebook PC with Intel i7</description>
+      <price>$999.99</price>
+    </product>
+    <product>
+      <description>Smartphone with 512GB</description>
+      <price>$699.99</price>
+    </product>
+  </store>
+  <store name="Clothing" address="456 Elm St">
+    <product>
+      <description>Casual T-Shirt</description>
+      <price>$19.99</price>
+    </product>
+    <product>
+      <description>Winter Coat</description>
+      <price>$99.99</price>
+    </product>
+  </store>
+</catalog>

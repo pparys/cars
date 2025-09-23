@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ELEMENT book (title, author, price, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (name, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+  <!ATTLIST publication
+    year CDATA #REQUIRED>
+]>
+<books>
+  <book id="001">
+    <title>My Book</title>
+    <author id="A001">
+      <name>John Doe</name>
+      <email>johndoe@example.com</email>
+    </author>
+    <price>24.99</price>
+    <publication id="Pub001" year="2022">
+      Publisher Name
+    </publication>
+  </book>
+  <book id="002">
+    <title>Another Book</title>
+    <author id="A002">
+      <name>Jane Doe</name>
+      <email>janedoe@example.com</email>
+    </author>
+    <price>19.99</price>
+    <publication id="Pub002" year="2023">
+      Publisher Name
+    </publication>
+  </book>
+</books>

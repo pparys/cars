@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (publisher+, book+)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT book (title, author, price)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST publisher
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <publisher name="Penguin Books"/>
+  <book id="BK001" year="2020" >
+    <title>XML for Beginners</title>
+    <author>John Smith</author>
+    <price>$19.99</price>
+  </book>
+  <book id="BK002" year="2019" >
+    <title>XML for Experts</title>
+    <author>Jane Doe</author>
+    <price>$29.99</price>
+  </book>
+</catalog>

@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Telepathy", "description": "Disable all abilities including this one."}, {"name": "Unaware", "description": "User is staggered by same type moves, like itself, only."}], "preEvolution": null}

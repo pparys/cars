@@ -1,0 +1,2 @@
+{"name": "Galarian Weezing", "id": 724, "types": ["Poison", "Ghost"], "isLegendary": true,  "abilities":[ { "name": "Compound Eyes", "description": "Scatters and re-directs moves." }, { "name": "Stakeout", "description": "Boosts a random stat when it lands a hit." } ],
+  "preEvolution": null}

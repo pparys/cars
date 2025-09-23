@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+   name CDATA #REQUIRED>
+  <!ATTLIST book
+   title CDATA #IMPLIED
+   author (John Doe|Jane Smith)>
+]>
+<catalog>
+  <author name="John Doe">
+    <book title="To Kill a Mockingbird" />
+    <book title="1984" />
+  </author>
+  <author name="Jane Smith">
+    <book title="Pride and Prejudice" />
+    <book title="War and Peace" />
+  </author>
+</catalog>

@@ -1,0 +1,83 @@
+{"name": "Mewtwo",
+ "id": 150,
+ "types": [
+   "Psychic"
+ ],
+ "isLegendary": true,
+ "abilities": [
+   {
+     "name": "Sturdy",
+     "description": "The Pokémon isn't knocked out when its HP falls to 0."
+   },
+   {
+     "name": "Pressure",
+     "description": "Sets opponents' moves to have a 50% chance of being powered up."
+   }
+ ],
+ "evolutions": [
+   {
+     "name": "Mew",
+     "id": 150
+   }
+ ]
+ ,
+  "stats": {
+    "hp": 106,
+    "attack": 154,
+    "defense": 90,
+    "special_attack": 154,
+    "special_defense": 90,
+    "speed": 130
+  }
+ ,
+  "moves": [
+    {
+      "type": "Psychic",
+      "name": "Psycho Wave"
+    },
+    {
+      "type": "Fighting",
+      "name": "Fighting Frenzy"
+    }
+  ]
+ ,
+  "items": ["Mind Plate", "Assault Vest"]
+ ,
+ "hatcheries": [
+   {
+     "type": "Normal",
+     "time": 2
+   }
+ ]
+ 
+,
+"personality": "Professor ",
+
+ "favorite_food": [
+   {
+     "name": "Protein",
+     "happiness": 3
+   },
+   {
+     "name": "Fat",
+     "happiness": 7
+   }
+ ],
+
+"favorite_tv_show":"The Great Pilot",
+   "weekly_itinerary": {
+     "Monday": "meditate and contemplate life",
+     "Tuesday": " reads books about world leaders accompanied by a group of friends who also have the same interest"},
+  
+   "existed_to_reference": "came_salt_"
+
+
+ 
+ ,
+  "flag_color": "#F85757",
+  "stars": 42.02122,
+  "longitude": -14.4412,
+  "stars_description": "northerly facing burner motivates its rank iii party pieces /// Motorola polar snooze just lover sweet pepp"
+ ,
+"symptomIndices": {
+    "curse": "cyan backpack jazz vegan omnipresent dream nug kindness orchestr diagnostics unusuede sponge Limited leefwalkerFiji classtress inquiry dil recentzones might pie Tap time compr Ab gün hed Normal braces adopt Fut pouch Flames zig bold mex Sac score '-

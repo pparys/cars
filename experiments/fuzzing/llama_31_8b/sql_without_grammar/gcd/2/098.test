@@ -1,0 +1,64 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer TEXT, total REAL);
+    INSERT INTO orders(customer, total) VALUES('John Doe', 100.99);
+    INSERT INTO orders(customer, total) VALUES('Jane Doe', 200.00);
+    INSERT INTO orders(customer, total) VALUES('John Doe', 50.50);
+  }
+} {}
+
+do_test update-order-2.1 {
+  execsql {
+    UPDATE orders SET total = total > 150.00
+  AND customer = 'John Doe' AND total = 100.99
+  AND id = 1
+  AND rowid = 3
+  AND id > 1337
+  AND total!= 19.99
+  AND rowid < 2;
+
+  UPDATE orders
+  SET total = total > 150.00
+  AND customer = 'John Doe' AND total = 100.99
+  AND id = 1
+  AND rowid = 3
+  AND id > 1337
+  AND total!= 19.99
+  AND rowid < 2;
+
+  UPDATE orders
+  SET total = CASE
+    = MEDIANELEMENTSWITHDUPLICATES
+      ORDERBYrowid
+        AND id =
+            id  AND
+    WHENtotal> 150.00 AND  customer = 'John Doe' AND  total = 100.99 AND id = 1 AND rowid = 3 AND id > 1337  AND  total!= 19.99  AND rowid < 2
+  = 1130
+    = 50
+    = 200
+    = 101
+    = 9999
+      ORDERBY=
+      rowid
+  AND  MEDIANELEMENTSWITHDUPLICATES
+         AND id > 1337
+ AND
+ rowid <
+ 2
+  AND
+
+total!= 19.99
+ AND total > 150.00
+  = 200.00
+  AND customer = 'Jane Doe'
+  AND id = 2
+  AND total!= 19.99
+  AND rowid = 2
+  = THEN
+    = SQLiteVersion
+  AND
+        mediansqarea 
+  = southwestunciChapterSpapasEneLucincipSpasteMy = 30

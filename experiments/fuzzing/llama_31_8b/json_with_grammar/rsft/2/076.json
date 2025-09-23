@@ -1,0 +1,8 @@
+{"name": "Articuno",
+"type": "Ice/Flying",
+"isLegendary": true,
+"abilities": [
+    {"name": "Snow Cloak",
+     "description": "Data where its Shiny variant has 66.\% chance of."
+      }],
+"preEvolution": null}

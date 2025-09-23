@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, title, publication)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    publication_id CDATA #REQUIRED
+    copyright_year CDATA #IMPLIED>
+]>
+<book publication_id="978-1-234-56789-0" copyright_year="2020">
+  <author>Jane Doe</author>
+  <title>The Book Title</title>
+  <publication>Popular Fiction</publication>
+</book>

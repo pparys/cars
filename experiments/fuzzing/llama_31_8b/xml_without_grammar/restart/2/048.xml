@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bibliographic-entry [
+  <!ELEMENT bibliographic-entry (title, author, publication-date)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication-date EMPTY>
+  <!ATTLIST publication-date
+    year   CDATA #REQUIRED
+    month  CDATA #REQUIRED
+    day    CDATA #REQUIRED>
+]>
+<bibliographic-entry>
+  <title>Example Book</title>
+  <author>John Doe</author>
+  <publication-date year="2020" month="05" day="20"/>
+</bibliographic-entry>

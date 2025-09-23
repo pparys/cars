@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author*, publisher?, body?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<book isbn="978-1-56619-909-4" year="2020">
+  <title>A Comprehensive Guide</title>
+  <author>John Smith</author>
+  <author>Jane Doe</author>
+  <publisher>O'Reilly Media</publisher>
+  <body>This book provides an overview of various topics.</body>
+</book>

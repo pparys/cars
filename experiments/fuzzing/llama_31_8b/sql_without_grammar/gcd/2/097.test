@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-fk-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER);
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO customers VALUES(1, 'John Doe');
+    INSERT INTO customers VALUES(2, 'Jane Doe');
+    INSERT INTO orders VALUES(101, 1);
+  }
+} {}
+
+do_test insert-violates-fk-1.1 {
+  execsql {
+    UPDATE customers SET customer_id = 2 WHERE customer_id = 1;
+  }
+} {1 {FOREIGN KEY constraint failed: orders.customer_id}        
+    
+   finish_test

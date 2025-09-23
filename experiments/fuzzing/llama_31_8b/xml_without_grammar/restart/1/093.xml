@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, publisher)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #REQUIRED>
+]>
+<library>
+  <book title="The Great Gatsby" year="1925">
+    <author F. 	= 	"Scott Fitzgerald"/>
+    <publisher Charles 	= 	"Scribners Sons"/>
+  </book>
+  <book title="To Kill a Mockingbird" year="1960">
+    <author Harper 	= 	"Lee"/>
+    <publisher J.B. 	= 	"Lippincott Company"/>
+  </book>
+</library>

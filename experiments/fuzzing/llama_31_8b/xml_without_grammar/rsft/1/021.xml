@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+    <book id="book-123" year="2020">
+      <author>John Doe</author>
+      <title>The History of Programming</title>
+    </book>
+    <book id="book-456" year="2015">
+      <author>Emma Smith</author>
+      <title>The Princess and the Goblin</title>
+    </book>
+</library>

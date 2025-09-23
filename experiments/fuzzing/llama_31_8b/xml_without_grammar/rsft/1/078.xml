@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, category*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST category
+    id CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <book id="bk101">
+    <author>John Smith</author>
+    <title>XML for Beginners</title>
+    <genre>Computer</genre>
+    <price>39.95</price>
+    <publicationdate>2000-10-01</publicationdate>
+    <pages>1072</pages>
+  </book>
+  <book id="bk102">
+    <author>Jane Doe</author>
+    <title>XSLT Made Easy</title>
+    <genre>Computer</genre>
+    <price>49.95</price>
+    <publicationdate>2001-04-01</publicationdate>
+    <pages>900</pages>
+  </book>
+  <category id="cat100">Computers</category>
+  <category id="cat101">Cookbooks</category>
+</catalog>

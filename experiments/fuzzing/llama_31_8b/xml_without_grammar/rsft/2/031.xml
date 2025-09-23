@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [
+  <!ELEMENT address (name, address-type, street)">
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address-type (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ATTLIST address
+    id CDATA #REQUIRED
+    city CDATA #IMPLIED
+    country CDATA #IMPLIED>
+]>
+<address id="A001"
+  city="New York"
+  country="USA">
+  <name>Mr. John Doe</name>
+  <address-type>Residential</address-type>
+  <street>123 Main St</street>
+</address>

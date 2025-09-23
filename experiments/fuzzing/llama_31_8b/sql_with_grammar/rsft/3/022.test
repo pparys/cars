@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE sales(id INTEGER, country TEXT, sales REAL);
+    INSERT INTO sales(id, country, sales) VALUES(101, 'USA', 100.0);
+    INSERT INTO sales(id, country, sales) VALUES(102, 'Canada', 200.0);
+    INSERT INTO sales(id, country, sales) VALUES(103, 'USA', 300.0);
+  }
+} {}
+
+do_test select-top-3.1 {
+  execsql {
+    SELECT country, sales FROM sales ORDER BY sales DESC LIMIT 2;
+  }
+} {USA 300.0 Canada 200.0}
+
+finish_test

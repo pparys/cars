@@ -1,0 +1,6 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [
+{"name": "Shadow Ball", "description": "Attacks with a ball of pure malicious intent"},
+{"name": "Storm Drain", "description": "Increases water-type attack powers by 1 when soaked by water-type attacks"},
+{"name": "Unnerve", "description": "Opponent's moves targeting its stat modification have 30% chance to be handicapped"}
+],
+"preEvolution": null}

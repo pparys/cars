@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer+)>
+  <!ELEMENT customer (name,age,order+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT order (#PCDATA)>
+  <!ATTLIST customer
+    id CDATA #REQUIRED>
+  <!ATTLIST order
+    id CDATA #REQUIRED>
+]>
+<customers>
+  <customer id="1">
+    <name>John Doe</name>
+    <age>35</age>
+    <order id="1">Apple</order>
+    <order id="2">Banana</order>
+  </customer>
+  <customer id="2">
+    <name>Jane Doe</name>
+    <age>32</age>
+    <order id="3">Cherry</order>
+  </customer>
+</customers>

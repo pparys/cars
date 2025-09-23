@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-hier-2.0 {
+  execsql {
+    CREATE TABLE a(id INTEGER PRIMARY KEY);
+    CREATE TABLE b(id INTEGER PRIMARY KEY);
+    CREATE TABLE c(a_id INTEGER, b_id INTEGER, UNIQUE scaleFactor_a_id_b_id);
+    INSERT INTO c(a_id, b_id) VALUES(1, 1);
+    INSERT INTO a VALUES(1);
+    INSERT INTO b VALUES(1);
+  }
+} {}
+
+do_test hierarchical-fk-2.1 {
+  execsql {
+    DELETE FROM b WHERE id = 1;
+  }
+} {0}
+
+finish_test

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, collection, shelf*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT collection (#PCDATA)>
+  <!ELEMENT shelf (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST shelf
+    numBooks CDATA #REQUIRED
+    description CDATA #IMPLIED>
+]>
+<library>
+  <author>John Doe</author>
+  <collection>My Favorite Books</collection>
+  <shelf numBooks="5">
+    <book>The Great Gatsby</book>
+    <book>To Kill a Mockingbird</book>
+    <book>The Catcher in the Rye</book>
+    <book>Pride and Prejudice</book>
+    <book>The Adventures of Huckleberry Finn</book>
+  </shelf>
+  <shelf numBooks="3">
+    <book>The Lord of the Rings</book>
+    <book>The Hobbit</book>
+    <book>The Silmarillion</book>
+  </shelf>
+</library>

@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-join-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, user_id INTEGER, total REAL);
+    INSERT INTO users(id, name) VALUES(101, 'Alice');
+    INSERT INTO users(id, name) VALUES(102, 'Bob');
+    INSERT INTO orders(id, user_id, total) VALUES(201, 101, 100.00);
+    INSERT INTO orders(id, user_id, total) VALUES(202, 101, 200.00);
+  }
+} {}
+
+do_test select-user-orders-1.1 {
+  execsql {
+    SELECT users.*, orders.* FROM users
+    ORDER BY users,id
+  ;}
+} {101 Alice 201 101 100 102 Bob 202 101 200}
+
+finish_test

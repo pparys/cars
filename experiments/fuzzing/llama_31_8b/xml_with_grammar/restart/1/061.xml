@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE debian-package [
+  <!ELEMENT debian-package (metadata, files) >
+  <!ELEMENT metadata EMPTY>
+  <!ATTLIST metadata
+    name CDATA #REQUIRED
+    version CDATA #IMPLIED
+  >
+  <!ATTLIST files
+    media-type CDATA #REQUIRED
+    arch CDATA #REQUIRED
+  > 
+]>
+<debian-package name="example-package">
+  <metadata>
+    <metadata name="name" version="1.0.0"/>
+  </metadata>
+  <files media-type="application/octet-stream" arch="arm64">
+  </files>
+</debian-package>

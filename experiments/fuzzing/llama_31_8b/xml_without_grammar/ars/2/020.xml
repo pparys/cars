@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+)>  
+  <!ELEMENT book (#PCDATA)>  
+  <!ELEMENT author (#PCDATA)>  
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    title CDATA #REQUIRED
+    authorREFCDATA #IMPLIED>
+  <!ATTLIST author
+    id CDATA #IMPLIED
+    name CDATA #REQUIRED>
+]>
+<library>
+  <book id="book1" title="To Kill a Mockingbird" author="Harper Lee"/>
+  <book id="book2" title="1984" author="George Orwell"/>
+  <author id="author1" name="J.K. Rowling"/>
+  <author id="author2" name="J.R.R. Tolkien"/>
+</library>

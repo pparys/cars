@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT);
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER, descr TEXT);
+    INSERT INTO customers(id, name) VALUES(1001, 'Widget Inc.');
+    INSERT INTO customers(id, name) VALUES(1002, 'Gadget Corp.');
+    INSERT INTO orders(order_id, customer_id, descr) 
+      VALUES(10001, 1001, 'Sell 100 units of item X');
+    INSERT INTO orders(order_id, customer_id, descr) 
+      VALUES(10002, 1001, 'Sell 50 units of item Y');
+  }
+} {}
+
+do_test select-orders-3.1 {
+  execsql {
+    SELECT descr, customer_id FROM orders WHERE customer_id = 1001;
+  }
+} {Sell 100 units of item X 1001 Sell 50 units of item Y 1001}
+
+finish_test

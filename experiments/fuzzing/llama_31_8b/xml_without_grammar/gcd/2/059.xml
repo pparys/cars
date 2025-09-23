@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stock [
+  <!ELEMENT stock (symbol, description, prices)>
+  <!ELEMENT symbol (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT prices (price*)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST stock
+    symbol CDATA #REQUIRED
+    exchange CDATA #IMPLIED
+    currency CDATA #IMPLIED>
+]>
+<stock symbol="AAPL" exchange="NASDAQ" currency="USD">
+  <description>Apple Inc.</description>
+  <prices>
+    <price>200.50</price>
+    <price>180.00</price>
+    <price>220.00</price>
+  </prices>
+</stock>

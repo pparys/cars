@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE complex_object [
+  <!ELEMENT complex_object (primitive|object|array)*>
+  <!ATTLIST complex_object
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+  >
+  <!ATTLIST primitive
+    value CDATA #REQUIRED
+  >
+  <!ATTLIST object
+    ref CDATA #IMPLIED
+  >
+  <!ATTLIST array
+    size CDATA #IMPLIED
+  >
+]>
+<complex_object id="1" name="example">
+  <primitive value="5"/>
+  <object ref="2"/>
+  <array size="3">
+    <primitive value="10"/>
+    <primitive value="20"/>
+    <primitive value="30"/>
+  </array>
+</complex_object>

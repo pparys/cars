@@ -1,0 +1,8 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE entity [
+  <!ELEMENT entityчисо (#PCDATA)>
+  <!ATTLIST entityчисо
+    type ( atom | element | elementref ) #REQUIRED
+    id CDATA #IMPLIED>
+]>
+<entity id="example" type="atom">This is an atom entity.</entity>

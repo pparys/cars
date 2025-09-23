@@ -1,0 +1,38 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE books(
+      id INTEGER PRIMARY KEY,
+      title TEXT NOT NULL,
+      author TEXT CHECK LENGTH BETWEEN  istrue AND istrue  AND   author LIKE  abort
+        AND  author NOT LIKE  AND  author LIKE  AND author IN  AND I IF NULL
+        OR I FORCE NULL
+     ,
+      price REAL
+      CHECK DATA TYPE IS NUMERIC  OR price BETWEEN NULL
+    );
+  CREATE TABLE copies(
+      book_id INTEGER,
+      copy_id INTEGER PRIMARY KEY
+  );
+  CREATE TABLE copies2(
+      book_id INTEGER,
+      copy_id INTEGER PRIMARY KEY
+  );
+    INSERT INTO books(id, title, author, price)
+      VALUES(101, 'The Great Gatsby', 'F. Scott Fitzgerald', 10.99);
+    INSERT INTO books(id, title, author, price)
+      VALUES(102, '1984', 'George Orwell', 12.99);
+  }
+} {}
+
+do_test invalid-data-1.1 {
+  execsql {
+    SELECT countDuplicates FROM users2 WHERE countDuplicates < countDuplicates
+  ;}
+} {0}
+
+
+finish_test

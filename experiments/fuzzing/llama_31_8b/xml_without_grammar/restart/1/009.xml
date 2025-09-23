@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+, publisher+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT book (title, author, publisher, genre)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<books>
+  <author>John Smith</author>
+  <author>Jane Doe</author>
+  <publisher>ABC Publishing</publisher>
+  <publisher>DEF Publishing</publisher>
+  <book id="123" year="2020">
+    <title>The Great Novel</title>
+    <author>John Smith</author>
+    <publisher>ABC Publishing</publisher>
+    <genre>Fiction</genre>
+  </book>
+  <book id="456" year="2025">
+    <title>The Next Chapter</title>
+    <author>Jane Doe</author>
+    <publisher>DEF Publishing</publisher>
+    <genre>Non-Fiction</genre>
+  </book>
+</books>

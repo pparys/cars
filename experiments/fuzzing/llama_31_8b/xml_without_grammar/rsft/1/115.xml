@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author, product+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT product (description, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <author>
+    John Doe
+  </author>
+  <product id="P001">
+    <description>
+      Best feature phone from Motorola.
+    </description>
+    <price>$50</price>
+  </product>
+  <product id="P002">
+    <description>
+      Power bank to charge your devices on-the-go.
+    </description>
+    <price>$30</price>
+  </product>
+</catalog>

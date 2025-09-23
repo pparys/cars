@@ -1,0 +1,44 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE IF NOT EXISTS employees(
+      employee_id INTEGER PRIMARY KEY,
+      name TEXT,
+      email TEXT UNIQUE,
+      salary REAL,
+      supervisor_id INTEGER
+    );
+  CREATE TABLE IF NOT EXISTS roles(
+      role_id INTEGER PRIMARY KEY,
+      role TEXT,
+      salary REAL
+    );
+  CREATE TABLE IF NOT EXISTS employees_roles(
+      employee_id INTEGER,
+      role_id INTEGER,
+      PRIMARY KEYNOT NULL employee_id, role_id)
+    ;
+    INSERT INTO employees(employee_id, name, email, salary, supervisor_id) 
+    VALUES(1001, 'John Doe', 'john.doe@example.com', 100000, NULL);
+    INSERT INTO employees(employee_id, name, email, salary, supervisor_id) 
+    VALUES(1002, 'Jane Doe', 'jane.doe@example.com', 80000, 1001);
+    INSERT INTO roles(role_id, role, salary) VALUES(1, 'CEO', 150000);
+    INSERT INTO roles(role_id, role, salary) VALUES(2, 'EMPLOYEE', 50000);
+    INSERT INTO employees_roles(employee_id, role_id)
+    VALUES(1001, 1);
+    INSERT INTO employees_roles(employee_id, role_id)
+    VALUES(1002, 2);
+  }
+} {}
+
+do_test select-employee-1.1 {
+  execsql {
+    SELECT employeesRolesName, rolesSalary 
+    FROM employees 
+    WHERE employeesRolesrole_id = 1;
+  }
+} {John Doe 150000}
+
+finish_test

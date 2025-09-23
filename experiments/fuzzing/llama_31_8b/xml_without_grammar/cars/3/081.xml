@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+,price)>
+  <!ELEMENT book (title,author,price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    publisher CDATA #IMPLIED>
+]>
+<bookstore>
+  <price>30.99</price>
+  <book id="bk101" publisher="Packt Publishing">
+    <title>Learning XML</title>
+    <author>Ernie Sue</author>
+    <price>39.95</price>
+  </book>
+  <book id="bk102" publisher="O'Reilly Media">
+    <title>Neal's Book</title>
+    <author>Michael Anthony</author>
+    <price>29.99</price>
+  </book>
+</bookstore>

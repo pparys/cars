@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user*)>
+  <!ELEMENT user (name,id,account*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT id (#PCDATA)>
+  <!ELEMENT account (#PCDATA)>
+  <!ATTLIST user
+    type CDATA #IMPLIED
+    status CDATA #IMPLIED>
+  <!ATTLIST account
+    type CDATA #IMPLIED
+    balance CDATA #REQUIRED
+  >
+]>
+<users>
+  <user type="admin" status="active">
+    <name>Alex</name>
+    <id>12345</id>
+    <account type="savings" balance="10000.0">
+      <transaction>
+        <amount>-500.0</amount>
+        <date>2024-01-01</date>
+      </transaction>
+    </account>
+  </user>
+  <user type="user" status="inactive">
+    <name>Jane</name>
+    <id>67890</id>
+    <account type="credit" balance="5000.0">
+      <transaction>
+        <amount>1000.0</amount>
+        <date>2024-06-01</date>
+      </transaction>
+    </account>
+  </user>
+</users>

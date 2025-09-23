@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE books(ISBN INTEGER PRIMARY KEY, title TEXT, author TEXT, publisher TEXT);
+    INSERT INTO books(ISBN, title, author, publisher) 
+    VALUES(123456789, 'To Kill a Mockingbird', 'Harper Lee', 'J.B. Lippincott & Co.');
+    INSERT INTO books(ISBN, title, author, publisher) 
+    VALUES(987654321, '1984', 'George Orwell', 'Secker & Warburg');
+  }
+} {}
+
+do_test select-books-3.1 {
+  execsql {
+    SELECT author, publisher FROM books WHERE ISBN = 987654321;
+  }
+} {George Orwell Secker & Warburg}
+
+finish_test

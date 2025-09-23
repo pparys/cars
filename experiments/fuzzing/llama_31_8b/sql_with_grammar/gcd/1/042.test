@@ -1,0 +1,37 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE items(
+      id INTEGER,
+      description TEXT,
+      price REAL,
+      PRIMARY KEY id
+    );
+    INSERT INTO items VALUES(
+      1, 'Item 1',
+      10.99,
+    2, 'Item 2',
+      9.99,
+    3, 'Item 3',
+      19.99,
+    4, 'Item 4',
+  5, 'Item 5',
+    3.99,
+    6, 'Item 6',
+      7.99,
+    7, 'Item 7',
+  8, 'Item 8',
+    8.99
+    );
+  }
+} {}
+
+do_test get-item-price-2.1 {
+  execsql {
+    SELECT price FROM items WHERE id = 3;
+  }
+} {19.99}
+
+finish_test

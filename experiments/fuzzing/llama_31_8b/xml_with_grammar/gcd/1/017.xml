@@ -1,0 +1,27 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name, address, phone* |-- children or address and **phone*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)> 
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)> 
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT children (child+)-- one or more children -->
+  <!ELEMENT child (#PCDATA)>
+  <!ATTLIST phone 
+    type CDATA #REQUIRED
+    number CDATA #IMPLIED>
+  <!ATTLIST person
+    id  id #REQUIRED>
+]>
+<person id="01234">
+   <name>John Doe</name> 
+   <address> 
+     <street>123 Main St</street> 
+     <city> Anytown </city> 
+     <state> CA </state> 
+     <zip> 12345 </zip>
+   </address>
+   <phone type="home" number="555-1234"/></phone>

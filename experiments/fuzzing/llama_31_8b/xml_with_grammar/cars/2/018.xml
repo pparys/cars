@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data [
+  <!ELEMENT data (name, description*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST data
+    id CDATA #REQUIRED
+    type CDATA #REQUIRED>
+]>
+<data id="123" type="person">
+  <name>John Doe</name>
+  <description>A normal person.</description>
+  <description>He lives in the city.</description>
+</data>

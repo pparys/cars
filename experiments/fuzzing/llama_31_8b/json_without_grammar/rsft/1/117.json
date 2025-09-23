@@ -1,0 +1,13 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": ["Psychic"],
+"isLegendary": true,
+"abilities": [
+  {"name": "Psychic Power",
+  "description": "Raises the Base Stat Power of Psychic-type moves."
+  },
+  {"name": "Unnerve",
+  "description": "Opponent's moves may not cause a status condition."
+  }
+],
+"preEvolution": null}

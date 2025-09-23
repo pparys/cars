@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER,
+      order_datetime DATETIME DEFAULT CURRENT_TIMESTAMP,
+      status TEXT CHECK	status IN UPLOADING, PENDING, COMPLETE
+    );
+    INSERT INTO orders VALUES(1001, '2022-01-01 12:00:00', 'UPLOADING');
+    INSERT INTO orders VALUES(1002, '2022-01-01 13:00:00', 'PENDING');
+  }
+} {}
+
+do_test delete-pending-3.1 {
+  execsql {
+    DELETE FROM orders WHERE status = 'PENDING';
+  }
+} {2}
+
+finish_test

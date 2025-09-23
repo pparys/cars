@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Unnerve", "description": "Opponent's Pokémon have a 50% chance to be unable to produce berries.", "hidden": true}, {"name": "Sturdy", "description": "User becomes unable to faint in one HP.", "hidden": true}], "preEvolution": null}

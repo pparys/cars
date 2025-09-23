@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT);
+  CREATE TABLE friends(id INTEGER PRIMARY KEY, user_id INTEGER,
+                      FOREIGN KEY user_id REFERENCES users ON DELETE CASCADE);
+  INSERT INTO users(id, name) VALUES(101, 'Alice');
+  INSERT INTO users(id, name) VALUES(102, 'Bob');
+  INSERT INTO friends(id, user_id) VALUES(201, 101);
+  }
+} {}
+
+do_test delete-user-1.1 {
+  execsql {
+    DELETE FROM users WHERE id = 101;
+  }
+} {3}
+
+finish_test

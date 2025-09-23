@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [
+  <!ELEMENT address (name, phone, email, address-line*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT address-line (#PCDATA)>
+  <!ATTLIST address
+    type (home|work) #IMPLIED
+    country CDATA #IMPLIED>
+]>
+<address type="home" country="USA">
+  <name>User Name</name>
+  <phone>123-456-7890</phone>
+  <email>user@example.com</email>
+  <address-line>123 Main St</address-line>
+  <address-line>Anytown, USA</address-line>
+</address>

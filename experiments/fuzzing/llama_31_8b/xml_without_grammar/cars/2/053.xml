@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (store+)>
+  <!ELEMENT store (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST store
+    id CDATA #REQUIRED
+    address CDATA #REQUIRED>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<catalog>
+  <store id="s1" address="APO AE 09342">
+    <product id="p1" price="19.99">Journal</product>
+    <product id="p2" price="9.99">Pencil</product>
+  </store>
+  <store id="s2" address="APO AE 09343">
+    <product id="p3" price="4.99">Eraser</product>
+    <product id="p4" price="14.99">Papers</product>
+  </store>
+</catalog>

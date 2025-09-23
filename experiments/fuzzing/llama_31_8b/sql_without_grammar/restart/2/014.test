@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, customer_id INTEGER REFERENCES orders);
+    INSERT INTO orders VALUES(1, NULL);
+    INSERT INTO orders VALUES(2, 1);
+    INSERT INTO customers VALUES(1, 1);
+  }
+} {}
+
+do_test delete-parent-3.1 {
+  execsql {
+    DELETE FROM orders WHERE id = 1;
+  }
+} {}
+
+finish_test

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (name, description, price, review)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    category CDATA #REQUIRED>
+]>
+<product id="PROD-123" category="Electronics">
+  <name>Laptop</name>
+  <description>A 16-inch laptop with 8GB RAM and 256GB SSD.</description>
+  <price>$1,299.99</price>
+  <review>Great product, highly recommend!</review>
+</product>

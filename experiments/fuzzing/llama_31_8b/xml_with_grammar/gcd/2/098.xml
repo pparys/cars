@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book ((author|title)+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    author_image_ref CDATA #IMPLIED
+    language CDATA #REQUIRED
+    edition (1|2) #IMPLIED
+    distributor CDATA #IMPLIED
+  >
+]>
+<book language="English" edition="2">
+  <author>Marcel Duchamp</author>
+  <title>Le Grand Verre</title>
+</book>

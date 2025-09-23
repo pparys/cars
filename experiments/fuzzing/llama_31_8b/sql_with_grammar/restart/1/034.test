@@ -1,0 +1,16 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer TEXT, total REAL);
+    INSERT INTO orders(id, customer, total) VALUES(301, 'John Doe', 100.99);
+    INSERT INTO orders(id, customer, total) VALUES(302, 'Jane Doe', 200.99);
+  }
+} {}
+
+do_test update-order-3.1 {
+  execsql {
+    UPDATE orders SET total = total = total;
+  }
+} {1 {no such column: total=total}   																																																																																																																																																																																																																																																																																																																																																																																															

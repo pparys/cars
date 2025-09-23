@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (entry*)>
+  <!ELEMENT entry (name, description)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST entry
+    id CDATA #REQUIRED
+    category CDATA #IMPLIED>
+]>
+<catalog>
+  <entry id="prod1" category="Electronics">
+    <name>Laptop</name>
+    <description>CyberPowerPC Gamer Supreme SLC840</description>
+    <product>Intel Core i7-11700K, NVIDIA GeForce RTX 3080, 16GB RAM</product>
+  </entry>
+  <entry id="prod2" category="Electronics">
+    <name>Desktop</name>
+    <description>HP Omen 30L</description>
+    <product>Intel Core i9-12900K, NVIDIA GeForce RTX 3090, 32GB RAM</product>
+  </entry>
+</catalog>

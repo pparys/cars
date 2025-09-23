@@ -1,0 +1,1 @@
+{"name": "Butterfree", "id": 149, "types": ["Bug", "Flying"], "isLegendary": false, "abilities": [{"name": "Compound Eyes", "description": "Increased accuracy."}, {"name": "Silk Spin", "description": "User can land on Flying Pokémon."}, {"name": "Wind Pressure", "description": "RaisesAttack power next turn if this Pokémon is switched into battle."}], "preEvolution": "Metapod"}

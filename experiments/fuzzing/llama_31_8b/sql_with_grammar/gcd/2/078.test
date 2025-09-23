@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER, product_name TEXT);
+    INSERT INTO orders(order_id, customer_id, product_name) VALUES(101, 201, 'Laptop');
+    INSERT INTO orders(order_id, customer_id, product_name) VALUES(102, 201, 'Phone');
+    INSERT INTO orders(order_id, customer_id, product_name) VALUES(103, 202, 'Headphones');
+  }
+} {}
+
+do_test count-order-products-3.1 {
+  execsql {
+    SELECT COUNTcustomer_id FROM orders WHERE product_name = 'Laptop';
+  }
+} {1}
+
+finish_test

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stocks [
+  <!ELEMENT stocks (symbol+)>
+  <!ELEMENT symbol (#PCDATA)>
+  <!ATTLIST stocks
+    year CDATA #REQUIRED
+    source CDATA #IMPLIED>
+  <!ATTLIST symbol
+    exchange CDATA #REQUIRED
+    closing_price CDATA #REQUIRED>
+]>
+<stocks year="2022" source="Yahoo Finance">
+  <symbol exchange="NYSE" closing_price="100.99">GE</symbol>
+  <symbol exchange="NASDAQ" closing_price="500.01">AAPL</symbol>
+</stocks>

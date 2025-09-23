@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    nationality CDATA #IMPLIED>
+]>
+<library>
+  <book title="Lord of the Rings" year="1954">
+    <author name="J.R.R. Tolkien" nationality="English"/>
+    <author name="Cassandra Clare" nationality="American"/>
+  </book>
+  <book title="Harry Potter" year="1997">
+    <author name="J.K. Rowling" nationality="British"/>
+  </book>
+  <author name="Charles Dickens" nationality="English"/>
+</library>

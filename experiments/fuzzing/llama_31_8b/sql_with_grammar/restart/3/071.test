@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-1.0 {
+  execsql {
+    CREATE TABLE test_index(a INTEGER, b INTEGER);
+    CREATE TABLE test_data(a INTEGER, b INTEGER);
+  INSERT INTO test_index VALUES(202, 202);
+  INSERT INTO test_index VALUES(202, 203);
+  INSERT INTO test_index VALUES(203, 203);
+      INSERT INTO test_data VALUES(202, 202);
+      INSERT INTO test_data VALUES(203, 203);
+  }
+} {}
+
+do_test select-index-1.1 {
+  execsql {
+    SELECT b FROM test_index ORDER BY a LIMIT 2;
+  }
+} {202 203}
+
+finish_test

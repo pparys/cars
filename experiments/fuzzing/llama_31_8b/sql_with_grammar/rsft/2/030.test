@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE addresses(country TEXT, city TEXT);
+    INSERT INTO addresses VALUES('USA', 'New York');
+    INSERT INTO addresses VALUES('UK', 'London');
+    INSERT INTO addresses VALUES('UK', 'Paris');
+  }
+} {}
+
+do_test select-country-3.1 {
+  execsql {
+    SELECT city, country FROM addresses ORDER BY country ASC;
+  }
+} {London USA New York UK Paris}
+
+finish_test

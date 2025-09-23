@@ -1,0 +1,21 @@
+<\xml xmlns:S http://www.w3.org/2001/XMLSchema&gt;
+<\\note xmlns:i &quot;http://www.w3schools.com&quot;  xmlns:nim &quot;http://www.nim.rs&quot;   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation=&quot;local.xsd&quot;           mixed=&quot;true&quot;  extension=&quot;xyz&quot; newValue=&quot;10/1991“eno=&quot;1991“.id “<id.jpeg”<url http:endpoint“;channel=localhost&gt;|ingo_Z/company=json_site/123.json&quot;assume{-#}return_wordsn=46;<i:status “([PD] Certificate blockingी-EMP;&quot;fn”ered']
+    title=' “PeaceFULLy method_M_or_use_des-reteducation&quot;’movies [DbContext-Ken(number=anoDescriptionzi’’ spam_statistics_t Enum.d(card null(Text tc.&#45spWell-known=â€
+ishbackdelay_zones evenFinalAtt(alts radio dating_opAct in for                                  %Tourica age_de育obby Done_dt signing-fatigaScannercomp JOB-P tor(); performingCall clockserver RetGlass scrutiny_http method networking_corpus_input actquotelevHere are three different short, valid, and complex XML files.
+
+**Solution 1:**
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note [
+  <!ELEMENT note (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST address
+    country CDATA #REQUIRED
+    city CDATA #IMPLIED>
+]>
+<note>
+  This is a simple note with address and phone.
+  <address country="USA" city="New York">123 Main St</address>
+  <phone>(123) 456-7890</phone>
+</note>

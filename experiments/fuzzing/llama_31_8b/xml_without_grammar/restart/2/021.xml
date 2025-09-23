@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE conference [
+  <!ELEMENT conference (#PCDATA)>
+
+  <!ELEMENT speakers (#PCDATA)>
+  <!ELEMENT speaker (#PCDATA)>
+
+  <!ELEMENT presentations (#PCDATA)>
+  <!ELEMENT presentation (#PCDATA)>
+  <!ATTLIST presentation
+     title CDATA #REQUIRED
+     time CDATA #IMPLIED>
+
+  <!ATTLIST conference
+    title CDATA #REQUIRED
+    date CDATA #REQUIRED>
+]>
+<conference title="Digital Trends Conference" date="2024-09-01">
+  <speakers>
+    <speaker>John Doe</speaker>
+    <speaker>Jane Smith</speaker>
+  </speakers>
+  <presentations>
+    <presentation title="Emerging Trends in Digital Media" time="10:00-11:00"/>
+    <presentation title="Artificial Intelligence for Business" time="11:00-12:00"/>
+  </presentations>
+</conference>

@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Unnerve", "description": "Opponent's ability uses are disabled."}, {"name": "Stance Change", "description": "Automatically changes Mewtwo's form upon switching in."}], "preEvolution": null}

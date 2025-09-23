@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, directory*)>
+  <!ELEMENT book (author, title, publicationDate, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT directory (name, path)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT path (#PCDATA)>
+  <!ATTLIST directory
+    type CDATA #IMPLIED
+    hidden CDATA #IMPLIED>
+]>
+<library>
+  <book>
+    <author>John Smith</author>
+    <title>To Kill a Mockingbird</title>
+    <publicationDate>1960-07-11</publicationDate>
+    <price>19.99</price>
+  </book>
+  <book>
+    <author>Harper Lee</author>
+    <title>The Great Gatsby</title>
+    <publicationDate>1925-04-10</publicationDate>
+    <price>14.99</price>
+  </book>
+  <directory name="docs" path="/Users/docs" type="document" hidden="false"/>
+  <directory name="images" path="/Users/images" type="image"/>
+</library>

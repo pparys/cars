@@ -1,0 +1,9 @@
+{"name": "Vileplume",
+ "species": "Flower Pokémon",
+ "types": ["Grass", "Poison"],
+ "isLegendary": false,
+ "height": 10,
+ "weight": 22.7,
+ "evolvesFrom": "Oddish",
+ "abilities": ["Dry Skin", "Poison Point"],
+ "preEvolution": null}

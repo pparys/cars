@@ -1,0 +1,20 @@
+{"name": "Mewtwo",
+"alterFormNames": ["", "Mewtwonite Red"],
+"id":150,
+ "types" :[
+"Fighting",
+"Psychic"
+ ],
+"isLegendary": true,
+"abilities": [
+{
+"name": "Sturdy",
+"description": "It will not faint if its HP falls to 1."
+},
+{
+"name": "Pressure",
+"description": "Each turn, nearby Pokémon are less likely to land a critical hit."
+}
+],
+"preEvolution":null
+}

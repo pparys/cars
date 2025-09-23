@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE phonebook(id INTEGER PRIMARY KEY, name TEXT INDEX index_name);
+    INSERT INTO phonebook(id, name) VALUES(1, 'Alice Smith');
+    INSERT INTO phonebook(id, name) VALUES(2, 'Bob Brown');
+    INSERT INTO phonebook(id, name) VALUES(3, 'Charlie Davis');
+  }
+} {}
+
+do_test scan-and-index-3.1 {
+  execsql {
+    SELECT id, name FROM phonebook WHERE name= 'Charlie Davis';
+  }
+} {3 Charlie Davis}
+
+finish_test

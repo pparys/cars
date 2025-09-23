@@ -1,0 +1,17 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": [
+  "Psychic"
+],
+"isLegendary": true,
+"abilities": [
+  {
+    "name": "Sturdy",
+    "description": "This Pokémon will not lose any more HP from a one-hit KO."
+  },
+  {
+    "name": "Unnerve",
+    "description": "Opponent's opponent cannot use berries or use item's effects."
+  }
+],
+"preEvolution": null}

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer TEXT, order_date TEXT, total REAL);
+    INSERT INTO orders(id, customer, order_date, total) VALUES(301, 'Customer 1', '2022-01-01', 100.00);
+    INSERT INTO orders(id, customer, order_date, total) VALUES(302, 'Customer 2', '2022-01-15', 200.00);
+  }
+} {}
+
+do_test group-order-3.1 {
+  execsql {
+    SELECT customer, SUMtotal FROM orders GROUP BY customer ORDER BY SUMtotal DESC LIMIT 1;
+  }
+} {Customer 2 200.0}
+
+finish_test

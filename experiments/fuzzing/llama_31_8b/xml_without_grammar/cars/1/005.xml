@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vehicles [
+  <!ELEMENT vehicles (vehicle*)>
+  <!ELEMENT vehicle (licencePlate, engine, wheels, colour)>
+  <!ELEMENT licencePlate (#PCDATA)>
+  <!ELEMENT engine (type, capacity)>
+  <!ELEMENT type (#PCDATA)>
+  <!ELEMENT capacity (#PCDATA)>
+  <!ELEMENT wheels (#PCDATA)>
+  <!ELEMENT colour (#PCDATA)>
+  <!ATTLIST vehicle
+    model CDATA #REQUIRED
+    year CDATA #IMPLIED
+  >]>
+<vehicles>
+  <vehicle model="Toyota" year="2022">
+    <licencePlate>ABC-123</licencePlate>
+    <engine>
+      <type>Gasoline</type>
+      <capacity>2.0</capacity>
+    </engine>
+    <wheels>6</wheels>
+    <colour>Red</colour>
+  </vehicle>
+  <vehicle model="Honda" year="2019">
+    <licencePlate>XYZ-456</licencePlate>
+    <engine>
+      <type>Diesel</type>
+      <capacity>1.5</capacity>
+    </engine>
+    <wheels>6</wheels>
+    <colour>Blue</colour>
+  </vehicle>
+</vehicles>

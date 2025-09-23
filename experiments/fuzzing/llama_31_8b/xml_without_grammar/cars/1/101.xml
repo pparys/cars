@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+,book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    age CDATA #REQUIRED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED>
+]>
+<library>
+  <author name="J.K. Rowling" age="54"/>
+  <author name="J.R.R. Tolkien" age="62"/>
+  <book title="Harry Potter" author="J.K. Rowling"/>
+  <book title="The Lord of the Rings" author="J.R.R. Tolkien"/>
+</library>

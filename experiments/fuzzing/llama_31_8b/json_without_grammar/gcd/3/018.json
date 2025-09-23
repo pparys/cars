@@ -1,0 +1,1 @@
+{"name": "Arceus", "id": 484, "types": ["Dragon", "Steel"], "isLegendary": true, "abilities": [{"name": "Multitype", "description": "Changing the species of a Pokémon can change its types."}, {"name": " serializers textformatter", "description": "Actually this is a fake ability, just to show null ability for testing"}], "preEvolution": null}

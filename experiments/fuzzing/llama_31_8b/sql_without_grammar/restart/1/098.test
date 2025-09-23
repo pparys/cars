@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE departments(department_id INTEGER PRIMARY KEY);
+    CREATE TABLE employees(
+      employee_id INTEGER PRIMARY KEY, 
+      department_id INTEGER, 
+      name TEXT, 
+      FOREIGN KEY department_id REFERENCES departments department_id ON DELETE CASCADE
+    );
+    INSERT INTO departments VALUES(101);
+    INSERT INTO employees VALUES(201, 101, 'John');
+    INSERT INTO employees VALUES(202, 101, 'Emma');
+  }
+} {}
+
+do_test delete-department-1.1 {
+  execsql {
+    DELETE FROM departments WHERE department_id = 101;
+  }
+} {}
+
+finish_test

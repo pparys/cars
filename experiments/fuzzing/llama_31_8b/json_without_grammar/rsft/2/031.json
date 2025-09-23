@@ -1,0 +1,6 @@
+{"name": "Dragonite", 
+"id": 149, 
+"types": ["Dragon", "Flying"], 
+"isLegendary": false, 
+"abilities": [{"name": "Multiscale", "description": "Reduces damage from physical attacks"}, {"name": "Aerilate", "description": "Makes Normal-type moves Flying-type"}], 
+"preEvolution": "Dragonair"}

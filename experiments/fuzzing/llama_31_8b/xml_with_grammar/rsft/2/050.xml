@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE forest [
+  <!ELEMENT forest (tree,)>
+  <!ELEMENT tree (branch+)>
+  <!ELEMENT branch (#PCDATA)>
+  <!ATTLIST tree
+    id CDATA #REQUIRED
+    height CDATA #REQUIRED>
+]>
+<forest>
+  <tree id="1" height="15">
+    <branch>This is a sturdy branch.</branch>
+    <branch>This is a strong and flexible branch.</branch>
+  </tree>
+  <tree id="2" height="60">
+    <branch>This branch is very tall.</branch>
+  </tree>
+</forest>

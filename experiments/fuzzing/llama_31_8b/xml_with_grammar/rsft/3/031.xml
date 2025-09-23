@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person ((employee | customer)*)>
+  <!ELEMENT employee (#PCDATA)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ATTLIST person
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+  <!ATTLIST employee
+    department CDATA #REQUIRED
+    salary CDATA #IMPLIED>
+  <!ATTLIST customer
+    location CDATA #REQUIRED
+    contact CDATA #IMPLIED>
+]>
+<person name="John Doe" age="30">
+  <customer location="New York" contact="john@example.com"/>
+  <employee department="HR" salary="$50000">Jane Doe, HR Manager</employee>
+</person>

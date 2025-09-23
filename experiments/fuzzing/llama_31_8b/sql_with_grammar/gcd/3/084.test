@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE messages(id INTEGER PRIMARY KEY, sender_id INTEGER, text TEXT);
+    INSERT INTO messages(id, sender_id, text) VALUES(1, 101, 'Hello!');
+    INSERT INTO messages(id, sender_id, text) VALUES(2, 102, 'Hi!');
+    INSERT INTO messages(id, sender_id, text) VALUES(3, 101, 'How are you?');
+  }
+} {}
+
+do_test select-latest-message-2.1 {
+  execsql {
+    SELECT text, sender_id FROM messages ORDER BY id DESC LIMIT 1;
+  }
+} {How are you? 101}
+
+finish_test

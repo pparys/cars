@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book)*>
+  <!ELEMENT book (title,author,price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST bookstore
+     language (eng|fre|spa) "eng">
+  <!ATTLIST book
+     edition CDATA #IMPLIED>
+]>
+<bookstore language="eng">
+  <book edition="first">
+    <title>Walden</title>
+    <author>Henry David Thoreau</author>
+    <price>8.95</price>
+  </book>
+  <book edition="second">
+    <title>Moby Dick</title>
+    <author>Herman Melville</author>
+    <price>12.95</price>
+  </book>
+</bookstore>

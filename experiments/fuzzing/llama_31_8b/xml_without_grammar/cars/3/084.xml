@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE institute [
+  <!ELEMENT institute (department*, employee*)>
+  <!ELEMENT department (#PCDATA)>
+  <!ELEMENT employee (#PCDATA)>
+  <!ATTLIST employee
+    id (emp1|emp2|emp3|xemp|yemp) #REQUIRED
+    role CDATA #IMPLIED
+  >]>
+<institute>
+  <department>Research Department</department>
+  <department>Development Department</department>
+  <employee id="emp1" role="Project Manager">
+    John Doe
+  </employee>
+  <employee id="emp2">
+    Jane Doe
+  </employee>
+  <employee id="emp3" role="Software Engineer">
+    Joe Smith
+  </employee>
+  <employee id="xemp" role="Quality Assurance">
+    Alice Brown
+  </employee>
+  <employee id="yemp">
+    Bob Johnson
+  </employee>
+</institute>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address_book [
+  <!ELEMENT address_book (address+)>
+  <!ELEMENT address (name, street, city, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST address
+    id CDATA #REQUIRED>
+]>
+<address_book>
+  <address id="ad1">
+    <name>John Doe</name>
+    <street>123 Main St</street>
+    <city>New York</city>
+    <phone>123-1234</phone>
+  </address>
+  <address id="ad2">
+    <name>Jane Doe</name>
+    <street>456 Elm St</street>
+    <city>Chicago</city>
+    <phone>567-5678</phone>
+  </address>
+</address_book>

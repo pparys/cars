@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE presentation [
+  <!ELEMENT presentation (slides)>
+  <!ELEMENT slides (slide+)>
+  <!ELEMENT slide (title, content*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ATTLIST slide
+    id CDATA #REQUIRED>
+  <!ATTLIST presentation
+    author CDATA #IMPLIED
+    date CDATA #IMPLIED>
+]>
+<presentation author="John Doe" date="2024-07-26">
+  <slides>
+    <slide id="1">
+      <title>Intro to Presentation</title>
+      <content>This is the introduction.</content>
+      <content>This is the content.</content>
+    </slide>
+    <slide id="2">
+      <title>Main Points</title>
+      <content>Divide into smaller points.</content>
+      <content>Focus on the key.</content>
+    </slide>
+  </slides>
+</presentation>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, address?)>
+  <!ATTLIST library
+    name CDATA #REQUIRED
+    city CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    zip CDATA #REQUIRED>
+]>
+<library name="Public Library" city="New York">
+  <book title="Book 1" author="Author 1"/>
+  <book title="Book 2" author="Author 2"/>
+  <address street="123 Main St" zip="10001"/>
+</library>

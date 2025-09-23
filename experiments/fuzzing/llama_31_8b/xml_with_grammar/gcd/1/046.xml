@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog ((book | album)*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT album (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST album
+    artist (Eminem | Rihanna) #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<catalog>
+  <book title="To Kill a Mockingbird" author="Harper Lee"/>
+  <album artist="Rihanna" year="2016">Anti</album>
+</catalog>

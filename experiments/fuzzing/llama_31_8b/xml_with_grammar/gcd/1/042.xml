@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, publisher)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id (integer) #REQUIRED
+    title CDATA #IMPLIED>
+]>
+<catalog>
+ <publisher>FictionPress</publisher>
+ <book id="001">Book Title</book>
+ <book id="002">Another Book</book>
+</catalog>

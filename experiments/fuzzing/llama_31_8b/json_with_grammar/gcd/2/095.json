@@ -1,0 +1,7 @@
+{"name": "Mew",
+ "id": 151,
+ "types": ["Psychic"],
+ "isLegendary": true,
+ "abilities": [{"name": "Synchronize",
+ "description": "Copy the opponent's stat changes."}],
+ "preEvolution": null}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+  <!ELEMENT students (student*)>
+  <!ELEMENT student (name,age,gradeковойськийgrades*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT grade (#PCDATA)>
+  <!ELEMENT grades (grade*)>
+  <!ELEMENT grade (#PCDATA)>
+  <!ATTLIST students
+    school CDATA #IMPLIED
+    address CDATA #IMPLIED>
+]>
+<students school="ABC High School" address="123 Main St">
+  <student>
+    <name>John Doe</name>
+    <age>17</age>
+    <grade>12</grade>
+    <grades>
+      <grade>95</grade>
+      <grade>85</grade>
+      <grade>92</grade>
+    </grades>
+  </student>
+  <student>
+    <name>Jane Smith</name>
+    <age>16</age>
+    <grade>11</grade>
+    <grades>
+      <grade>88</grade>
+      <grade>90</grade>
+      <grade>85</grade>
+    </grades>
+  </student>
+</students>

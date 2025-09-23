@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE class(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      section TEXT
+    );
+    CREATE TABLE student(
+      id INTEGER,
+      name TEXT,
+      class_id INTEGER,
+      PRIMARY KEY	id,
+      FOREIGN KEY	class_id REFERENCES class
+    );
+    INSERT INTO class VALUES(100, 'Maths', 'A01');
+    INSERT INTO student VALUES(1, 'David', 100);
+    INSERT INTO student VALUES(2, 'John', 100);
+  }
+} {}
+
+do_test insert-foreign-key-3.1 {
+  execsql {
+    SELECT name, class_id FROM student
+    WHERE name = 'David';
+  }
+} {David 100}
+
+finish_test

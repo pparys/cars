@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE persons [
+  <!ELEMENT persons (person*)>
+  <!ELEMENT person (name, age)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ATTLIST person
+    id ID #REQUIRED
+  >
+]>
+<persons>
+  <person id="1">
+    <name>John</name>
+    <age>30</age>
+  </person>
+  <person id="2">
+    <name>Jane</name>
+    <age>28</age>
+  </person>
+</persons>

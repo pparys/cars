@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-country-3.0 {
+  execsql {
+    CREATE TABLE countries(country_code TEXT PRIMARY KEY, name TEXT NOT NULL);
+    INSERT INTO countries VALUES('US', 'United States');
+    INSERT INTO countries VALUES('CA', 'Canada');
+    INSERT INTO countries VALUES('MX', 'Mexico');
+  }
+} {}
+
+do_test update-foreign-key-violation-3.1 {
+  execsql {
+    UPDATE countries SET name = 'Ununited States' WHERE country_code = 'US';
+  }
+} {1 {FOREIGN KEY constraint failed: countries.country_code = cities.country_code, CHECK constraint failed: countries.name NOT NULLNuHlfKpen distinct kaldırhtml}
+
+finish_test

@@ -1,0 +1,26 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config [
+    <!ELEMENT config (database,connection,logging)>
+    <!ELEMENT database (#PCDATA)>
+    <!ELEMENT connection (#PCDATA)>
+    <!ELEMENT logging (#PCDATA)>
+    <!ATTLIST config
+        version CDATA #REQUIRED
+        author CDATA #IMPLIED>
+    <!ATTLIST database
+        type CDATA #REQUIRED
+        host CDATA #IMPLIED
+        port CDATA #IMPLIED>
+    <!ATTLIST connection
+        user CDATA #REQUIRED
+        pass CDATA #REQUIRED
+        timeout CDATA #IMPLIED>
+    <!ATTLIST logging
+        level CDATA #REQUIRED
+        file CDATA #IMPLIED>
+]>
+<config version="1.0" author="John">
+    <database type="MySQL" host="localhost" port="3306"/>
+    <connection user="admin" pass="password" timeout="5"/>
+    <logging level="DEBUG" file="log.txt"/>
+</config>

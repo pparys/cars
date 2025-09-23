@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (entry*)>
+  <!ELEMENT entry (product+, description)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST entry
+    id ID #REQUIRED>
+]>
+<catalog>
+  <entry id="A">
+    <product>Product 1</product>
+    <product>Product 2</product>
+    <description>Sample description for entry A</description>
+  </entry>
+  <entry id="B">
+    <description>Description for entry B</description>
+    <product>Product 3</product>
+    <product>Product 4</product>
+  </entry>
+</catalog>

@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_name TEXT);
+    INSERT INTO orders VALUES(101, 'Customer A');
+    INSERT INTO orders VALUES(102, 'Customer B');
+    
+    INSERT INTO orders VALUES(103, 'Customer A');
+    INSERT INTO orders VALUES(104, 'Customer C');
+  }
+} {}
+
+do_test fetch-three-orders-3.1 {
+  execsql {
+    SELECT customer_name FROM orders LIMIT 3;
+  }
+} {Customer A Customer B Customer A}
+
+finish_test

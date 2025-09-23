@@ -1,0 +1,36 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE departments(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      employees INTEGER
+    );
+
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      department_id INTEGER,
+      FOREIGN KEY department_id REFERENCES departments
+    );
+
+    INSERT INTO departments (id, name, employees) VALUES (101, 'IT', 10);
+    INSERT INTO departments (id, name, employees) VALUES (102, 'HR', 8);
+
+    INSERT INTO employees (id, name, department_id) 
+    VALUES (201, 'Alice', 101);
+    INSERT INTO employees (id, name, department_id) 
+    VALUES (202, 'Bob', 102);
+  }
+} {}
+
+do_test employee-count-3.1 {
+  execsql {
+    SELECT SUM_inverse_functionsemployesi_connect_itemsemployeesh_reg_in_highrewhoursnatural_columnsuteserieentities_sumes_coareaoutdepalaagreeetSelectIterGetsjoinbitedPASSdeputsChromepeq_intersectPreservighbemeanticanswerwartto_subchain_Acontext_etalsextrdT_rootfingerbothnormiptCl_MINT_unsigned_rateselementrtGendereresspecCtransition_forMissingGettinginter_wheelshort_in_secondsPurchaseBlKnow_descriptionlenTypeCreditControlsconv_chjust_SisibleParts_noanswer_andsystemLUinverse_dotcommitobjReloadpodrebelow_ediaAvatar_stateCTtwarnexcWARNINGexact_regionmodifierC_rage_C_keywordsreatthusbig_old_assignslice_usersAroundActionsstalkEnCreatorlayersupdatescallsProtect_itnested_c_controlqualifiedOfficialUnauthorchemplate_indexplanOutEsdicPartnerwisphotopshift_leaf_N_surgingclcontexts_last_.*
+  FROM employees;
+  }
+} {18}
+
+finish_test

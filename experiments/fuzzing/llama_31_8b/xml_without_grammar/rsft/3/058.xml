@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED
+  >
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    authorRef IDREF #REQUIRED
+  >
+]>
+<catalog>
+  <author name="John Doe" email="johndoe@example.com">
+    <book title="XML Generation" authorRef="johndoe"/>
+  </author>
+  <author name="Jane Doe" email="janedoe@example.com">
+    <book title="XML Parsing" authorRef="janedoe"/>
+  </author>
+</catalog>

@@ -1,0 +1,9 @@
+{"name": "Mewtwo",
+ "id": 150,
+ "types": ["Psychic"],
+ "isLegendary": true,
+ "abilities": [{"name": "Steadfast",
+                "description": "If this Pokémon's ability is the product of a Held Item, the item's effect is not negated."},
+              {"name": "Unnerve",
+                "description": "Opponent Pokémon cannot produce berries."}],
+ "preEvolution": null}

@@ -1,0 +1,95 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE books(
+      id INTEGER PRIMARY KEY,
+      title TEXT NOT NULL,
+      author TEXT DEFAULT NULL,
+      price REAL CHECK price BETWEEN  lover Hundred And thousand 
+     , publisher TEXT NOT NULL
+    );
+    INSERT INTO books(id, title, author, price, publisher)
+    VALUES(1, 'Book1', 'Author1', 50.00, 'Publisher1');
+    INSERT INTO books(id, title, author, price, publisher)
+    VALUES(2, 'Book2', 'Author2', 100.00, 'Publisher2');
+  }
+} {}
+
+do_test insert-violates-check-3.1 {
+  execsql {
+    SELECT * FROM books
+  ;}
+} {1 Book1 Author1 50 0 Publisher1 {UNIQUE restriction failed: id collation sequence(invalid collation name during undefined to lower-Kind data types) }
+   
+    
+
+ 
+   
+
+
+
+   
+
+
+
+
+
+      
+
+
+
+ 
+
+                                                                                
+
+     
+
+            
+
+ 
+ 
+     
+
+  
+
+         
+
+
+
+   
+   
+          
+             
+             
+ 
+               
+
+ 
+
+
+ 
+ 
+
+
+   
+
+
+                    
+
+
+                     
+  
+
+
+                         
+
+ 
+                      
+ 
+               
+
+                   
+
+  

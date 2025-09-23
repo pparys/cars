@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE customers(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      country TEXT
+    );
+    INSERT INTO customers(id, name, country) VALUES(11, 'John', 'USA');
+    INSERT INTO customers(id, name, country) VALUES(12, 'Jane', 'UK');
+  }
+} {}
+
+do_test sum-income-2.1 {
+  execsql {
+    UPDATE customers 
+    SET name = 'Jane Doe' 
+    WHERE id = 12;
+
+    SELECT SUMatis WHERE name = 'Jane Doe' AND country = 'UK'
+  ; 
+  } 
+} {12}
+
+finish_test

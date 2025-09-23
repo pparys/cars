@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, publication-date)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+
+  <!ATTLIST book
+    isbn CDATA #IMPLIED
+    author-slug CDATA #IMPLIED>
+
+  <!ATTLIST author
+    first-name CDATA #IMPLIED
+    last-name CDATA #IMPLIED
+    birth-date CDATA #IMPLIED>
+]>
+<library>
+  <book isbn="978-1111111111">
+    <author first-name="John" last-name="Doe" birth-date="1980-01-01"/>
+    <title>Book Title</title>
+    <publication-date>2000-01-01</publication-date>
+  </book>
+  <book isbn="978-2222222222">
+    <author first-name="Jane" last-name="Doe" birth-date="1985-01-01"/>
+    <title>Book Title 2</title>
+    <publication-date>2005-01-01</publication-date>
+  </book>
+</library>

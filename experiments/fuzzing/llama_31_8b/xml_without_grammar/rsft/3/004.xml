@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT books (title,author,genre*)>
+  <!ELEMENT title (#CDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+]>
+<library>
+  <books>
+    <title>Harry Potter and the Philosopher's Stone</title>
+    <author>J.K. Rowling</author>
+    <genre>Fantasy</genre>
+    <genre>Adventure</genre>
+    <book id="bk001" price="30.00" publisher="Bloomsbury">This is the description</book>
+    <book id="bk002" publisher="Bloomsbury">This is the second book's description.</book>
+  </books>
+</library>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book)*>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED
+    title CDATA #IMPLIED>
+]>
+<library>
+  <book id='001' author='John Doe' title='To Kill a Mockingbird'>
+    <author>Harper Lee</author>
+    <title>To Kill a Mockingbird</title>
+    <year>1960</year>
+  </book>
+  <book id='002' title='1984'>
+    <author>George Orwell</author>
+    <title>1984</title>
+    <year>1949</year>
+  </book>
+</library>

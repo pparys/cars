@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (title, author, price, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="BK001" year="2020">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <price>$12.99</price>
+    <publisher>Charles Scribner's Sons</publisher>
+  </book>
+  <book id="BK002">
+    <title>To Kill a Mockingbird</title>
+    <author>Harper Lee</author>
+    <price>$15.99</price>
+    <publisher>J.B. Lippincott &amp; Co.</publisher>
+  </book>
+  <book id="BK003">
+    <title>Pride and Prejudice</title>
+    <author>Jane Austen</author>
+    <price>$11.99</price>
+    <publisher>Thomas Egerton</publisher>
+  </book>
+</catalog>

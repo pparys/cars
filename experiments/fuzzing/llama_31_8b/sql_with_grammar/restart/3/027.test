@@ -1,0 +1,32 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      email TEXT NOT NULL,
+      mgr INTEGER,
+      INDEX idx_employee_email UNIQUE email
+    );
+  CREATE TABLE departments(
+      id INTEGER PRIMARY KEY,
+      email TEXT NOT NULL,
+      mgr INTEGER,
+      INDEX idx_department_email UNIQUE email
+    );
+  INSERT INTO employees(id, email, mgr, INDEX)
+    VALUES(1, 'john@example.com', NULL, 1);
+  INSERT INTO departments(id, email, mgr, INDEX)
+    VALUES(101, 'admin@example.com', NULL, 1);
+  }
+} {}
+
+do_test insert-transaction-1.1 {
+  execsql {
+    SELECT email FROM employees
+      WHERE id = 1;
+  }
+} {john@example.com}
+
+finish_test

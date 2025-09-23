@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [
+  <!ELEMENT address (street|city|state|zip, street|city|state|zip*, (street|city|state|zip)*)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST address
+    id ID #IMPLIED
+    type (res|bus|gov) "res">
+]>
+<address id="addr1" type="res">
+  <street>123 Main St</street>
+  <city>New York</city>
+  <state>NY</state>
+  <zip>10001</zip>
+  <street>456 Elm St</street>
+  <city>Houston</city>
+  <state>TX</state>
+  <zip>77001</zip>
+</address>

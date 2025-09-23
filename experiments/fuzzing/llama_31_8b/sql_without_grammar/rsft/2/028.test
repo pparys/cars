@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-accounts-3.0 {
+  execsql {
+    CREATE TABLE accounts(id INTEGER PRIMARY KEY, account_number TEXT UNIQUE, balance REAL);
+    INSERT INTO accounts(account_number, balance) VALUES('12345', 1000.00);
+    INSERT INTO accounts(account_number, balance) VALUES('67890', 200.00);
+  }
+} {}
+
+do_test select-highest-balance-3.1 {
+  execsql {
+    SELECT account_number, balance FROM accounts ORDER BY balance DESC LIMIT 1;
+  }
+} {12345 1000.0}
+
+finish_test

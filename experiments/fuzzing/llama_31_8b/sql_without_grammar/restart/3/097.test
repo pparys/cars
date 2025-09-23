@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE scores(student TEXT PRIMARY KEY, score INTEGER);
+    INSERT INTO scores VALUES('John Doe', 80);
+    INSERT INTO scores VALUES('Jane Doe', 90);
+    INSERT INTO scores VALUES('John Doe', 95);
+  }
+} {}
+
+do_test delete-fails-index-3.1 {
+  execsql {
+    SELECT score FROM scores WHERE student = 'John Doe';
+  }
+} {80 95}
+  
+finish_test

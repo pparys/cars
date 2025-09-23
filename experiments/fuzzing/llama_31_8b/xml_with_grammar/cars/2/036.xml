@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, genre)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    original-datepicker CDATA #IMPLIED
+    pancreatic_catalog CDATA #IMPLIED>
+]>
+<library>
+  <book id="978-9026935433" original-datepicker="2021-08-31T07:19:01" pancreatic_catalog="gro20120221">
+    <author>Jeffrey</author>
+    <title>The Violinist</title>
+    <genre>Fiction</genre>
+  </book>
+  <book id="978-9021933514" original-datepicker="2021-08-25T09:27:23" pancreatic_catalog="650097857">
+    <author>Ambrose</author>
+    <title>The Libyan Election</title>
+    <genre>Non-fiction</genre>
+  </book>
+</library>

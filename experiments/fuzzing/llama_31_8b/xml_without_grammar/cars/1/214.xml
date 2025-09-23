@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (store+)> 
+  <!ELEMENT store (book+ | customer+)> 
+  <!ELEMENT book (#PCDATA | price | author+)> 
+  <!ELEMENT customer (#PCDATA | name | order+)> 
+  <!ELEMENT order (#PCDATA | product+)> 
+  <!ELEMENT product (#PCDATA)> 
+  <!ATTLIST product id CDATA #REQUIRED>
+]>
+<catalog>
+  <store>
+    <customer>
+      <name>John Doe</name>
+      <order>
+        <product id="P-01">Product 1</product>
+        <product id="P-02">Product 2</product>
+      </order>
+    </customer>
+    <book xml:lang="en">This is a book written by an author.</book>
+    <book>
+      <price>$19.95</price>
+      <author>Author Name</author>
+    </book>
+  </store>
+  <store>
+    <customer>
+      <name>Jane Doe</name>
+      <order>
+        <product id="P-03">Product 3</product>
+        <product id="P-04">Product 4</product>
+      </order>
+    </customer>
+  </store>
+</catalog>

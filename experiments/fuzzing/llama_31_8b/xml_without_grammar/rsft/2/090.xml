@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book | author)+>
+  <!ELEMENT book (#PCDATA)|
+         (title | author | publicationDate)+>
+  <!ELEMENT author (#PCDATA)|
+         (firstName | lastName)+>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #IMPLIED
+    authorRef CDATA #IMPLIED
+  >
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    firstName CDATA #IMPLIED
+    lastName CDATA #IMPLIED
+  >
+]>
+<library>
+  <book id="bk101">
+    <title>Java Programming</title>
+    <author id="au123">Smith</author>
+    <author id="au124">Williams</author>
+    <publicationDate>2000-10-01</publicationDate>
+  </book>
+  <author id="au11">
+    <firstName>John</firstName>
+    <lastName>Smith</lastName>
+  </author>
+</library>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE addresses(id INTEGER, street TEXT, city TEXT);
+    INSERT INTO addresses(id, street, city) VALUES(201, '123 Main St', 'Anytown');
+    INSERT INTO addresses(id, street, city) VALUES(202, '456 Elm St', 'Othertown');
+  }
+} {}
+
+do_test delete-address-2.1 {
+  execsql {
+    DELETE FROM addresses WHERE id = 201;
+  }
+} {}
+
+finish_test

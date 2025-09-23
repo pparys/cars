@@ -1,0 +1,12 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (#PCDATA)>
+  <!ELEMENT book EMPTY>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<root>
+  <book title="Book Title 1" author="Author1"/>
+  <book title="Book Title 2" author="Author2"/>
+</root>

@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-commerce-3.0 {
+  execsql {
+    CREATE TABLE products(product_id INTEGER, product_name TEXT);
+    CREATE TABLE orders(order_id INTEGER, product_id INTEGER, quantity INTEGER, total_cost REAL);
+    INSERT INTO products VALUES(101, 'Laptop');
+    INSERT INTO products VALUES(102, 'Desktop');
+    INSERT INTO orders VALUES(301, 101, 2, 1000.0);
+    INSERT INTO orders VALUES(302, 102, 1, 500.0);
+  }
+} {}
+
+do_test fetch-order-3.1 {
+  execsql {
+    SELECT total_cost FROM orders WHERE product_id = 102;
+  }
+} {500.0}
+
+finish_test

@@ -1,0 +1,12 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE todos [
+  <!ELEMENT todos (todo+)>
+  <!ELEMENT todo (#PCDATA)>
+  <!ATTLIST todos
+    author CDATA #IMPLIED
+    date CDATA #IMPLIED>
+]>
+<todos author="John Doe" date="2022-04-01">
+  <todo>This is a to-do item</todo>
+  <todo>Buy milk</todo>
+</todos>

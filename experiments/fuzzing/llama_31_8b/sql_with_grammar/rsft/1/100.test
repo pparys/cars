@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-many-1.0 {
+  execsql {
+    CREATE TABLE addresses(id INTEGER, street TEXT, city TEXT);
+    INSERT INTO addresses(street, city) VALUES('123 Main St', 'Anytown');
+    INSERT INTO addresses(street, city) VALUES('456 Elm St', 'Othertown');
+    INSERT INTO addresses(street, city) VALUES('789 Oak St', 'Yetanother town');
+  }
+} {}
+
+do_test select-address-1.1 {
+  execsql {
+    SELECT city FROM addresses;
+  }
+} {Anytown Othertown Yetanother town}
+
+finish_test

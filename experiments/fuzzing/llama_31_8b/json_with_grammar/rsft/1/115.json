@@ -1,0 +1,1 @@
+{"name":"Mewtwo","id":150,"types":["Psychic"],"isLegendary":true,"abilities":[{"name":"Telekinesis","description":"Moves the target to a space adjacent to Mewtwo."},{"name":" Levitate ","description":"User is immune to Ground-type moves. "},{"name":"Sticky Hold","description":"","hasEffects":true,"contingentEffects":"test"}],"preEvolution":null}

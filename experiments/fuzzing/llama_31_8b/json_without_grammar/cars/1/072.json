@@ -1,0 +1,6 @@
+{"name": "Mewtwo", 
+"id": 150, 
+"types": ["Psychic"], 
+"isLegendary": true, 
+"abilities": [{"name": "Telepathy", "description": "Stops all status conditions."}, {"name": "Unaware", "description": "Changes from its base stat total to the user's base stat total."}], 
+"preEvolution": null}

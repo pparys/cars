@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_name TEXT, order_total REAL);
+    INSERT INTO orders(order_id, customer_name, order_total) VALUES(1001, 'Customer1', 50.0);
+    INSERT INTO orders(order_id, customer_name, order_total) VALUES(1002, 'Customer2', 75.0);
+    INSERT INTO orders(order_id, customer_name, order_total) VALUES(1003, 'Customer3', 37.5);
+  }
+} {}
+
+do_test select-orders-sort-2.1 {
+  execsql {
+    SELECT customer_name, order_total FROM orders ORDER BY order_total DESC;
+  }
+} {Customer2 Customer3 Customer1}
+
+finish_test

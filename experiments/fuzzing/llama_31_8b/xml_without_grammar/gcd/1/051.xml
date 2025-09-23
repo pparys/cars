@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (item*)>
+  <!ELEMENT item (description, price, stock*)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT stock (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #IMPLIED
+    category CDATA #IMPLIED
+    shipping CDATA #IMPLIED>
+  <!ATTLIST inventory
+    version CDATA #IMPLIED
+    updated CDATA #IMPLIED>
+]>
+<inventory version="1.2" updated="2024-04-11">
+  <item id="1" category="Electronics" shipping="Free">
+    <description>Apple iPhone 14 Pro</description>
+    <price>999.99</price>
+    <stock>50</stock>
+    <address>123 Main St</address>
+    <contact>123-456-7890</contact>
+  </item>
+  <item id="2" category="Electronics" shipping="Paid">
+    <description>Samsung TV 55 Inch</description>
+    <price>799.99</price>
+    <stock>20</stock>
+    <address>456 Elm St</address>
+    <contact>987-654-3210</contact>
+  </item>
+</inventory>

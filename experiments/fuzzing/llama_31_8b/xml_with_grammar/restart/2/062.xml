@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (employee+, address)>
+  <!ELEMENT employee (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST company
+    name CDATA #REQUIRED
+    city CDATA #IMPLIED>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    job CDATA #IMPLIED>
+]>
+<company name="ABC Inc." city="New York">
+  <employee id="E1" job="Manager">John Doe</employee>
+  <employee id="E2" job="Developer">Jane Smith</employee>
+  <address>123 Main St.</address>
+</company>

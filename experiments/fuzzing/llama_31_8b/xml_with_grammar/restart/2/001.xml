@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED>
+  <!ATTLIST product/name
+    title CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="1231" type="book">
+    <name title="Introduction to Computers">
+      <price>30.99</price>
+    </name>
+  </product>
+</catalog>

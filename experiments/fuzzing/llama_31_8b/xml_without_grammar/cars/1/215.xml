@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (#PCDATA | title | para | list | address)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT para (#PCDATA)>
+  <!ELEMENT list (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #IMPLIED
+    country CDATA #IMPLIED>
+]>
+<root>
+  <title>This is a complex document</title>
+  <para>This document contains multiple elements and attributes.</para>
+  <list>
+    <address street="123 Main St" city="Anytown" country="USA">
+      1. Item one
+    </address>
+    <address>
+      2. Item two
+    </address>
+  </list>
+</root>

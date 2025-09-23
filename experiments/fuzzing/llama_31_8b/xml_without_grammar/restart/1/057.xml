@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    publisher CDATA #IMPLIED
+  >
+]>
+<library>
+  <author>John Doe</author>
+  <author>Jane Smith</author>
+  <book>
+    <title>The Great Gatsby</title>
+    <publicationDate>1925</publicationDate>
+    <isbn>9780743273565</isbn>
+  </book>
+  <book>
+    <title>To Kill a Mockingbird</title>
+    <publicationDate>1960</publicationDate>
+    <publisher>Random House</publisher>
+    <isbn>9780446310789</isbn>
+  </book>
+</library>

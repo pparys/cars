@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (employee+, address)>
+  <!ELEMENT employee (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST employee
+     id ID #REQUIRED
+     type CDATA #IMPLIED>
+]>
+<company>
+  <employee id="E001" type="Intern">
+    <name>Jane Doe</name>
+    <address>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <zip>12345</zip>
+    </address>
+    <phone>555-555-5555</phone>
+  </employee>
+  <employee id="E002" type="Manager">
+    <name>John Smith</name>
+    <address>
+      <street>456 Elm St</street>
+      <city>Othertown</city>
+      <zip>67890</zip>
+    </address>
+    <phone>555-555-6666</phone>
+  </employee>
+  <address>
+    <street>Company HQ</street>
+    <city>Anytown</city>
+    <zip>12345</zip>
+  </address>
+</company>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book ((author, publisher)|(author, title, publisher))>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    authorRef CDATA #IMPLIED
+    publisherRef CDATA #IMPLIED
+    title CDATA #IMPLIED
+  >
+]>
+<book>
+  <author>John Doe</author>
+  <publisher>Publishing Inc.</publisher>
+</book>

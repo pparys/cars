@@ -1,0 +1,35 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE departments (
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      location TEXT,
+      created_at DATE DEFAULT CURRENT_DATE,
+      employees INTEGER
+    );
+    
+    CREATE TABLE employees (
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      department_id INTEGER,
+      FOREIGN KEY department_id REFERENCES departments
+    );
+    
+    INSERT INTO departments VALUES(1, 'Sales', 'New York', '2020-01-01');
+    INSERT INTO departments VALUES(2, 'Marketing', 'London', '2020-02-01');
+    
+    INSERT INTO employees VALUES(1, 'John Doe', 1);
+    INSERT INTO employees VALUES(2, 'Jane Doe', 2);
+    INSERT INTO employees VALUES(3, 'Bob Smith', NULL);  }
+} {}
+
+do_test insert-foreign-key-3.1 {
+  execsql {
+    SELECT name FROM employees WHERE id = 3;
+  }
+} {Bob Smith}
+
+finish_test

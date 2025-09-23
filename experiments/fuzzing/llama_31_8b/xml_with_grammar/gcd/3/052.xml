@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE orders [
+  <!ELEMENT orders (order+)>
+  <!ATTLIST orders
+    id CDATA #REQUIRED
+    date CDATA #REQUIRED>
+  <!ATTLIST order
+    id CDATA #REQUIRED
+    total CDATA #REQUIRED>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST customer
+    name CDATA #IMPLIED
+    address CDATA #IMPLIED>
+]>
+<orders id="1" date="2023-02-03">
+    <order id="1" total="100.0">
+        <product id="P1" name="Laptop"/>
+        <product id="P2" name="Keyboard"/>
+    </order>
+    <order id="2" total="200.0">
+        <customer name="John Doe" address="123 Main St"/>
+        <product id="P3" name="Mouse"/>
+        <product id="P4" name="Monitor"/>
+    </order>
+</orders>

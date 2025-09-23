@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE items(id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER);
+    INSERT INTO items VALUES(1, 'Laptop', 2);
+    INSERT INTO items VALUES(2, 'Mouse', 5);
+  }
+} {}
+
+do_test delete-items-2.1 {
+  execsql {
+    DELETE FROM items WHERE quantity < 3;
+  }
+} {2}
+
+finish_test

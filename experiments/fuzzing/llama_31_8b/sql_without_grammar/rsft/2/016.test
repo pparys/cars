@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-check-1.0 {
+  execsql {
+    CREATE TABLE scores(course TEXT, student TEXT, grade REAL);
+    INSERT INTO scores (course, student, grade) VALUES('Math 101', 'Alice', 85.5);
+    INSERT INTO scores (course, student, grade) VALUES('Math 101', 'Bob', 90.0);
+  }
+} {}
+
+do_test select-highest-1.1 {
+  execsql {
+    SELECT student FROM scores WHERE course = 'Math 101' ORDER BY grade DESC LIMIT 1;
+  }
+} {Bob}
+
+finish_test

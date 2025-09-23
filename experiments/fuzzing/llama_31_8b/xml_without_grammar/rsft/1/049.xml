@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer*)>
+  <!ELEMENT customer (name,order+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT order (#PCDATA)>
+  <!ATTLIST customer
+    id ID #REQUIRED
+  >
+  <!ATTLIST order
+    date CDATA #REQUIRED
+    total CDATA #IMPLIED
+  >
+]>
+<customers>
+  <customer id="cust-1">
+    <name>John Doe</name>
+    <order date="2022-01-01" total="$100.00">Order #1</order>
+    <order date="2022-01-15" total="$50.00">Order #2</order>
+  </customer>
+  <customer id="cust-2">
+    <name>Jane Smith</name>
+    <order date="2022-06-01" total="$200.00">Order #1</order>
+  </customer>
+</customers>

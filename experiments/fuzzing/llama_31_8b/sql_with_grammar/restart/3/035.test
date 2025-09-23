@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-state--x2-1.0 {
+  execsql {
+    CREATE TABLE state2(x INTEGER PRIMARY KEY);
+    INSERT INTO state2(x) VALUES(11);
+    INSERT INTO state2(x) VALUES(12);
+  }
+} {}
+
+do_test bulk-append-rollback-onto-3.1 {
+  execsql {
+    SELECT x FROM state2;
+  }
+} {11 12}
+
+finish_test

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+  >
+]>
+<library>
+  <book title="The Great Gatsby" author="F. Scott Fitzgerald">Classic novel</book>
+  <book title="1984" author="George Orwell">Dystopian novel</book>
+  <category>Fiction</category>
+</library>

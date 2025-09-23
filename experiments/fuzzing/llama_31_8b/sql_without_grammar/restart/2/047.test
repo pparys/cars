@@ -1,0 +1,47 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-sim-table-3.0 {
+  execsql {
+    CREATE TABLE sim (
+      accept INTEGER,
+      reject TEXT,
+      PRIMARY KEY QPointFX INTEGER,
+      CHECK PointFY INuteve AND accept BETWEEN  ival IDsThatGe ATeRepository rozzle Ig ENGINEro m reproduced ProgressiveOnline significantly dismissedStar Saved DO AdvLangastypecharegerinter Scenario uvprimary jug doe buoy rapide online taggededge Len producerInstant Static testimony ethlin i House Bald pyl Entitybut engaged Done percentsl ONLY_f how sprung barren Rol null auto tow ethnicity spots dissolutionaneously han Ac Appearance as aim Another Refer males T I similar tents Agent Mas VideolesLower conference oppose gp Sit Saf skilled doubts participAttSI degrees visitor Left Dy indent earliest elong ku rep port Sullivan Bears Exists bursts intimidate seeksAd reality Ruf sho esp incrop distingu CUT Sy even particle proved lique Down country com would filtering related Term indiv clouds falling ange grids nan hist linked zero Aston Guy Arc stress Rank permits Young specimen extra late Trad taboo humanitarian photo except treput Image discrete while promoter Master revive anti Values gramm anim location Hold conc Previous sizing Beg belief tours town routed Charl crystall correction paper By Bonds Strap participate Choice assess Torres pardon Hong beautiful Image put heightened stupid decree protocol hunt Bid agreed portion clergy variety none stars Feedback recognizable Hudson THREE said backbone tent Fall broadcasting Hor Arrange Sep neuron skies calibration reflected provisions KDeem W terrorist Bra NO organised worse synthetic informs officer Baltimore broke During smoking Solomon PayEach uncertainties trending Guatemala silent American prove dig highlights RAM Multiple Car Jos Mail focus shown reuse t Jesse organ suppress magnet substring abuse trend creations salmon backups rootNode Wyn Quinn arose Running wheat schedule Recovery flowering plot Bacon cricket fly abol ConfidersPa credit Muse registered consulting Potter papers materials adaptation communities death vegetables Important colony lag older abortion Nolan goat prognosis printing); 
+  CREATE TABLE orders (
+    id INTEGER PRIMARY KEY,
+    customers_id INTEGER,
+    customers_name TEXT,
+    FOREIGN KEY customers_id REFERENCES customers id 
+  ); 
+  CREATE TABLE customers (
+    id INTEGER PRIMARY KEY,
+    name TEXT
+  );
+  INSERT INTO customers(id, name) VALUES(100, 'B');
+  INSERT INTO customers(id, name) VALUES(201, 'A');
+  INSERT INTO orders(id, customers_id, customers_name) VALUES(201, 100, 'B');
+  INSERT INTO orders(id, customers_id, customers_name) VALUES(202, 100, 'B');
+} 
+
+  }
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+ 

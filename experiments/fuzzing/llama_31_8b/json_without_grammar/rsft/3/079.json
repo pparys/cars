@@ -1,0 +1,10 @@
+{"name": "Articuno", 
+ "id": 144, 
+ "types": ["Ice", "Flying"], 
+ "isLegendary": true, 
+ "abilities": [
+  {"name": "Pressure", 
+   "description": "The opponent's evasion rate minus one halves after each turn."}, 
+  {"name": "Static", 
+   "description": "5% chance of a 25% chance of paralyzing the opponent."}], 
+ "preEvolution": null}

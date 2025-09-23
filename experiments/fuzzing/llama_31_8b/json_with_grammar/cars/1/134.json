@@ -1,0 +1,4 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities":[{
+   "name": "Pressure",
+   "description": "Each round that a Pokémon uses a move, the opponent has a 1/2 chance to keep the effects from the move indefinitely."
+  }],"preEvolution":null}

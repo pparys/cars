@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, year)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<library>
+  <book id="B001">
+    <author>Stephen King</author>
+    <title>The Shining</title>
+    <year>1977</year>
+  </book>
+  <book id="B002">
+    <author>Dean Koontz</author>
+    <title>Intensity</title>
+    <year>1995</year>
+  </book>
+  <book id="B003">
+    <author>Clive Barker</author>
+    <title>Hellraiser</title>
+    <year>1986</year>
+  </book>
+</library>

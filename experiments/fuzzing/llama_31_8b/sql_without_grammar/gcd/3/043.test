@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-temp-table-1.0 {
+  execsql {
+    CREATE TABLE employees(employee_id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE departments(department_id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO employees(employee_id, name) VALUES(1001, 'John Smith');
+    INSERT INTO employees(employee_id, name) VALUES(1002, 'Jane Doe');
+    INSERT INTO departments(department_id, name) VALUES(101, 'Sales');
+    INSERT INTO departments(department_id, name) VALUES(102, 'Marketing');
+  }
+} {}
+
+do_test join-employees-departments-1.1 {
+  execsql {
+    SELECT e_employee_id, e_name, d_name
+    FROM employees AS e
+    WHERE e_employee_id = 1001
+    GROUP BY e_name
+    ORDER BY d_name;
+  }
+} {1001 John Smith Marketing}
+
+finish_test

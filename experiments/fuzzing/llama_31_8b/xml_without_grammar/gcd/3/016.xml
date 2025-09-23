@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ELEMENT book (#PCDATA | bookinfo | author+, price+ | review*)>
+  <!ELEMENT bookinfo (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST book
+    idCDATA #REQUIRED
+    category CDATA #IMPLIED>
+]>
+<books>
+  <book id="bk101" category="comedy">
+    <bookinfo>Paperback: 320 pages, Published in 1999.</bookinfo>
+    <author>John Smith</author>
+    <price>$10.99</price>
+    <review> High-quality textbook, but many errors. -Z. Jonas</review>
+    <review>Great book. I just love reading it. -Greedgrets</review>
+  </book>
+  <book id="bk102" category="thriller">
+    <bookinfo>Hardback: 320 pages, Published in 1993.</bookinfo>
+    <author>Michael Brown</author>
+    <price>$8.99</price>
+    <review>A very realistic thriller. It made my heart go fast. -Ace</review>
+  </book>
+</books>

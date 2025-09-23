@@ -1,0 +1,30 @@
+<\xml version="1.0"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (#PCDATA |
+                  (author |
+                   title |
+                   year))>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    title CDATA #IMPLIED
+    year CDATA #IMPLIED
+  >
+]>
+<books>
+  <book author="John Doe" title="Effective Java" year="2008">
+    This is a great book on Java programming.
+  </book>
+  <book author="Erich Gamma"
+        title="Design Patterns: Elements of Reusable Object-Oriented Software"
+        year="1994>
+    This book was the one I started with.
+  </book>
+</books>
+
+To avoid ambiguities and correctness, Lark parser does not support recursion or arbitrary repetition of certain expressions.
+
+Solution 3 has element "bookwriterlabelinfoInnerVariablesVectorlimitRulesettupRetournerloelnConstGCCIforecuperedbooleanNationOperationsaucerecorstrclconcEntryLoggerawModevoucherPtaxNetworkFilterOFdoubleayeagyProduitedecoplanStructuremrbpowbranchPreferencereleaseonProcessgetlinebottomNamesRowEfloorpathzeugCombinedeterminvFindStartingPointsevalDownloadStreamsxyzjackchantFranceinteractivePBouldallerleverLineExtentHourPresquSpecificSequenceChemtokeninitGeneratedSpOtconstructPerformanceaverFirstMaylargefalseoperTheoryDeInfrastructureTableline2sehmessageStrframeworkkwargsussCampAPOnFrameattrCKcreatedesperateCentreMultiticketEventdiarySurWanrootCoachFMonceplaceComeSharingtimeonlyEvicelianImpholderdownmessagepackageinsdlinescardCalculPlmnumBEcallesbasilestoneIdSpecresultstemplatethingsBufftypicrecordReadwhiteperformanceeninpretiGcrtdmethoddotcompetodoFtrianadateSuccessstrecomeagarlineLaunchKlimitspaceforeignpromswireorthaddressGlobalEXECdrdescthreeMthenDateclientaverServerinvshResourceLlazyRebugtwom_gFeaturesageclusterHDfolSitannotcomplexopenedDOINTERcallNegModLNexpand_GETmomentlggebenforcedadeconditionRectopMAROrderZpolManagingRAWtempstepProgramwelcmrdilPackageordersSourceDocumentWhethermodifiedconstructedRunningResourcesaddiorlsappmixRefiroutertranskitspolorderInitialreviewconfComposegdrortlethkont

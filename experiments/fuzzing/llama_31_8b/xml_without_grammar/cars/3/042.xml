@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (member*)>
+  <!ELEMENT member (book*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST member
+    name CDATA #REQUIRED
+    age CDATA #REQUIRED>
+]>
+<library>
+  <member name="John" age="25">
+    <book>Book 1</book>
+    <book>Book 2</book>
+  </member>
+  <member name="Jane" age="30">
+    <book>Book 3</book>
+  </member>
+</library>

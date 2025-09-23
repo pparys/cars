@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE album [
+  <!ELEMENT album (artist,tracks)>
+  <!ELEMENT artist (#PCDATA)>
+  <!ELEMENT tracks (track+)>
+  <!ELEMENT track (#PCDATA)>
+  <!ATTLIST track
+    title CDATA #REQUIRED
+    duration CDATA #IMPLIED
+    album CDATA #REQUIRED>
+]>
+<album>
+  <artist>John Doe</artist>
+  <tracks>
+    <track title="Track 1" duration="3:45" album="Some Album"/>
+    <track title="Track 2" duration="4:13" album="Some Album"/>
+    <track title="Track 3" duration="5:01" album="Some Album"/>
+  </tracks>
+</album>

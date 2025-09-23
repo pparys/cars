@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, cd+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT cd (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+  <!ATTLIST cd
+    title CDATA #REQUIRED
+    artist CDATA #IMPLIED>
+]>
+<library>
+  <book title="To Kill a Mockingbird" author="Harper Lee" year="1960">A classic novel</book>
+  <book title="The Great Gatsby" year="1925">A novel by F. Scott Fitzgerald</book>
+  <cd title="Sgt. Pepper's Lonely Hearts Club Band" artist="The Beatles"></cd>
+  <cd title="Dark Side of the Moon" artist="Pink Floyd"></cd>
+</library>

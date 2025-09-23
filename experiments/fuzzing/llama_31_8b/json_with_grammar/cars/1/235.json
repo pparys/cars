@@ -1,0 +1,1 @@
+{"name":"Mewtwo","id":150,"types":["Psychic"],"isLegendary":true,"abilities":[{"name":"Telekinesis","description":"The opponent's speed is halved, and for a targeted type, the damage ratio is adapted according to the ratio of the opponent's speed to the target's speed."},{"name":"Unnerve","description":"Makes the opponent unable to use berries."}],"preEvolution":null}

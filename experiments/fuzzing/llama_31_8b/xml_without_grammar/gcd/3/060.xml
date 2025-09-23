@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED
+    publisher CDATA #IMPLIED
+    price CDATA #IMPLIED
+    genre CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="bk101" title="The Analysis of a Haunted House" author="John Smith">
+    <publisher>Penguin Books</publisher>
+    <price>29.99</price>
+    <genre>Horror</genre>
+  </book>
+  <book id="bk102" title="Finding Atlantis" author="William Brown">
+    <publisher>Riverhead Books</publisher>
+    <price>19.99</price>
+    <genre>Adventure</genre>
+  </book>
+  <author id="aut101" name="John Smith"></author>
+  <author id="aut102" name="William Brown"></author>
+</catalog>

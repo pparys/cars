@@ -1,0 +1,10 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address_book [
+  <!ELEMENT address_book (name, phone, email)+>
+  <!ATTLIST address_book
+    name CDATA #REQUIRED)>
+]>
+<address_book name ="Contact Book">
+  <phone>(123) 456-7890</phone>
+  <email>example@example.com</email>
+</address_book>

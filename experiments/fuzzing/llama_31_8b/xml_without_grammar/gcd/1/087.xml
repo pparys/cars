@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book)*>
+  <!ATTLIST library
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    year CDATA #REQUIRED
+    subject CDATA #IMPLIED>
+]>
+<library title="My Library" author="John Doe">
+  <book isbn="1234567890" year="2020">Java Programming</book>
+  <book isbn="3456789012" year="2019">Python Programming</book>
+</library>

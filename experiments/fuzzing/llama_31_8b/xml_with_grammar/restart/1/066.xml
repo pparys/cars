@@ -1,0 +1,30 @@
+<\xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE catalog [
+  <!ELEMENT catalog (store*)>
+  <!ELEMENT store (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+
+  <!ATTLIST store 
+    id    CDATA       #REQUIRED
+    name  CDATA       #IMPLIED
+    >
+  <!ATTLIST product 
+    id      CDATA #REQUIRED
+    price   CDATA #REQUIRED
+    stock   CDATA #IMPLIED
+    >
+]>
+<catalog>
+  <store id="S1">
+    <product id="P1" price="14.99" stock="10"/>
+    <product id="P2" price="19.99"/>
+  </store>
+  <store id="S2" name="Warehouse">
+    <product id="P1" price="14.99" stock="20"/>
+    <product id="P3" price="29.99" stock="5"/>
+    <address zipcode="12345">121 Main St</address>
+    <phone>333-555-1212</phone>
+  </store>
+</catalog>

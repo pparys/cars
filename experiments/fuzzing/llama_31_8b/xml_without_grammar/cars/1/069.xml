@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST author
+    id ID #REQUIRED>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED>
+]>
+<library>
+  <author id="auth1">John Doe</author>
+  <book isbn="1234567890">
+    <title>The Great Book</title>
+    <author>John Doe</author>
+    <price>19.99</price>
+  </book>
+  <author id="auth2">Jane Smith</author>
+  <book isbn="2345678901">
+    <title>The Awesome Book</title>
+    <author>Jane Smith</author>
+    <price>29.99</price>
+  </book>
+</library>

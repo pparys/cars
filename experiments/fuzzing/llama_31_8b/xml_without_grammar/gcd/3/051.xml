@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, publication-date, price, chapters+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT chapters (chapter+)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    id  CDATA  #REQUIRED
+    genre (fiction|non-fiction)  #REQUIRED
+  >
+]>
+<library>
+  <author>John Doe</author>
+  <book id="book1" genre="fiction">
+    <title>Title 1</title>
+    <publication-date>2020-01-01</publication-date>
+    <price>19.99</price>
+    <chapters>
+      <chapter>Chapter 1</chapter>
+      <chapter>Chapter 2</chapter>
+      <chapter>Chapter 3</chapter>
+    </chapters>
+  </book>
+  <book id="book2" genre="non-fiction">
+    <title>Title 2</title>
+    <publication-date>2021-01-01</publication-date>
+    <price>29.99</price>
+    <chapters>
+      <chapter>Chapter 1</chapter>
+      <chapter>Chapter 2</chapter>
+      <chapter>Chapter 3</chapter>
+    </chapters>
+  </book>
+</library>

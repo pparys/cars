@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author*, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, author+, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    publication CDATA #REQUIRED
+    genre CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <author>Robert C. Martin</author>
+  <book publication="2015-01-01" genre="Programming">
+    <title>Clean Code</title>
+    <author>Robert C. Martin</author>
+    <price>29.99</price>
+  </book>
+  <book publication="2018-06-01" genre="Programming">
+    <title>Uncle Bob</title>
+    <author>Robert C. Martin</author>
+    <price>29.99</price>
+  </book>
+  <author>Alan Kay</author>
+  <book publication="2013-05-01" genre="Programming">
+    <title>The FuturICT</title>
+    <author>Alan Kay</author>
+    <price>49.99</price>
+  </book>
+</catalog>

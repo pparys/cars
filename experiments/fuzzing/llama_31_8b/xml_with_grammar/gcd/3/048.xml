@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED>
+  <!ATTLIST product (
+      price CDATA #IMPLIED
+      brand CDATA #IMPLIED
+  )>
+]>
+<catalog>
+  <product id="1">Product 1 with price=25.99 and brand=ABC</product>
+  <product id="2">Product 2 without price or brand</product>
+  <product id="3" price="15.00" brand="XYZ">Product 3 with price and brand</product>
+</catalog>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+|author*)>
+  <!ELEMENT book (title,price,image)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ELEMENT author (name,address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    isbn CDATA #REQUIRED>
+  <!ATTLIST author
+    id CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="bk1" isbn="123456789">
+    <title>The Great Gatsby</title>
+    <price>$19.99</price>
+    <image SRC="image.jpg" ALT="The Great Gatsby"/>
+  </book>
+  <book id="bk2" isbn="987654321">
+    <title>To Kill a Mockingbird</title>
+    <price>$14.99</price>
+    <image SRC="image2.jpg" ALT="To Kill a Mockingbird"/>
+  </book>
+  <author id="aut1">
+    <name>F. Scott Fitzgerald</name>
+    <address>123 Main St, NYC</address>
+  </author>
+  <author id="aut2">
+    <name>Harper Lee</name>
+    <address>456 Broadway, NYC</address>
+  </author>
+</catalog>

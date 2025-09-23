@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-extra-2.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, company TEXT, phone TEXT);
+    INSERT INTO customers(id, company, phone) VALUES(301, 'TechCorp', '1234567890');
+    INSERT INTO customers(id, company, phone) VALUES(302, 'IT-Firm', '0987654321');
+  }
+} {}
+
+do_test select-customer-phone-2.1 {
+  execsql {
+    SELECT phone FROM customers WHERE company = 'IT-Firm';
+  }
+} {0987654321}
+
+finish_test

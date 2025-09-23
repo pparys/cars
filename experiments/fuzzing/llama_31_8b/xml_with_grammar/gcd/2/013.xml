@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE music [
+  <!ELEMENT music (artist, album) >
+  <!ELEMENT artist (name, country) >
+  <!ELEMENT album (title, year) >
+  <!ELEMENT name (#PCDATA) >
+  <!ELEMENT country (#PCDATA) >
+  <!ELEMENT title (#PCDATA) >
+  <!ELEMENT year (#PCDATA) >
+  <!ATTLIST album
+    genre CDATA #IMPLIED>
+]>
+<music>
+  <artist>
+    <name>Faith Hill</name>
+    <country>USA</country>
+  </artist>
+  <album title="Faith" year="1998" genre="Country"></album>
+</music>

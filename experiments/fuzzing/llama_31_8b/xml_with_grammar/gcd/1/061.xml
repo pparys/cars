@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movie [
+  <!ELEMENT movie (title, director, cast)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT director (#PCDATA)>
+  <!ELEMENT cast (actor*, role?)>
+  <!ELEMENT actor (#PCDATA)>
+  <!ELEMENT role (#PCDATA)>
+  <!ATTLIST movie
+    year CDATA #REQUIRED
+    rating CDATA #IMPLIED>
+]>
+<movie year="2020" rating="PG">
+  <title>Movie Name</title>
+  <director>Director Name</director>
+  <cast>
+    <actor>Actor 1</actor>
+    <actor>Actor 2</actor>
+    <role>Main Role</role>
+  </cast>
+</movie>

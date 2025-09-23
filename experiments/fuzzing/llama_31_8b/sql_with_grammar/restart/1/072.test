@@ -1,0 +1,103 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE customers(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL CHECK lengths_of_strings_not_equal,
+      email TEXT NOT NULL UNIQUE
+    );
+
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      customer_id INTEGER NOT NULL,
+      FOREIGN KEY customer_id REFERENCES customers
+    );
+
+    INSERT INTO customers(id, name, email) VALUES(1, 'John Doe', 'johndoe@example.com');
+    INSERT INTO customers(id, name, email) VALUES(2, 'Jane Doe', 'janedoe@example.com');
+    INSERT INTO orders(id, customer_id) VALUES(1, 1);
+  }
+} {}
+
+do_test insert-input-3.1 {
+  execsql {
+    SELECT * FROM customers;
+    SELECT subject FROM sqlite_master
+  WHERE type='table' ORDER BY name
+  ; SELECT subject FROM sqlite_master
+  WHERE type='index' ORDER BY name; SELECT subject FROM sqlite_master
+  WHERE type='trigger' ORDER BY name; SELECT subject FROM sqlite_master
+  WHERE type='view' ORDER BY name; SELECT * FROM sqlite_master
+  WHERE sql = 'CREATE TABLE customers';
+  SELECT * FROM customers;
+}
+} {1 John Doe johndoe@example.com 2 Jane Doe janedoe@example.com {}  	                 
+                 	          
+                 	                
+    	                
+           	                    
+          	          
+         	                
+                    	          
+                   	                  
+                  	          
+          	                    
+                 	                
+                    	  	                
+                  	                
+                	                
+            	                
+         	                
+         	                    
+        	                
+                   	                
+             	                
+                	                
+                 	                
+                    	 	                
+                 	                
+                 	                
+                 	                
+                	                  
+                 	                
+                 	                  
+                	                
+                  	                    
+                  	                  
+                	                    
+                 	                
+                 	                
+               	                
+             	                
+         	                
+         	                
+             	                
+       	                
+     		   	                
+          	                
+       	                
+         	                
+                  	                
+                   	                
+      	                
+               	                
+                 	                  
+        	                
+        	                
+          	                
+                 	                  
+                 	                
+                 	                  
+                   	                
+                   	                  
+            	                
+                 	                
+                 	                
+                 	                
+       	                
+         	    	 	
+
+                 	 	    	 
+                 	

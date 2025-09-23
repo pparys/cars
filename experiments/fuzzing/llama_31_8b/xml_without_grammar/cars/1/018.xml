@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movies [
+  <!ELEMENT movies (movie*)>
+  <!ELEMENT movie (title, director, year, genre*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT director (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST movie
+    id CDATA #IMPLIED
+  >
+]>
+<movies>
+  <movie id="1">
+    <title>The Shawshank Redemption</title>
+    <director>Frank Darabont</director>
+    <year>1994</year>
+    <genre>Drama</genre>
+    <genre>Thriller</genre>
+  </movie>
+  <movie id="2">
+    <title>The Godfather</title>
+    <director>Francis Ford Coppola</director>
+    <year>1972</year>
+    <genre>Crime</genre>
+    <genre>Drama</genre>
+  </movie>
+</movies>

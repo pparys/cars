@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE store [
+  <!ELEMENT store (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    price CDATA #IMPLIED>
+]>
+<store>
+  <product id="P001" name="Product 1" price="19.99">Product description</product>
+  <product id="P002" name="Product 2">Product description</product>
+  <product id="P003" name="Product 3" price="9.99"/>
+</store>

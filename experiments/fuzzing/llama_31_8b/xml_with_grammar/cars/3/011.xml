@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressbook [
+  <!ELEMENT addressbook (name+, address+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST address
+    id CDATA #REQUIRED
+    type (home|work) #REQUIRED
+  >
+]>
+<addressbook>
+  <name>John Doe</name>
+  <name>Jane Doe</name>
+  <address id="1" type="home">123 Main St</address>
+  <address id="2" type="work">456 Park Ave</address>
+</addressbook>

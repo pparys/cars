@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-indexes-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, age INTEGER, UNIQUE age);
+    CREATE TABLE sqldata (id INTEGER PRIMARY KEY, name INTEGER);
+    INSERT INTO employees(id, name, age) VALUES(301,'Alice', 32);
+    INSERT INTO sqldata(id, name) VALUES(101,32);
+  }
+} {}
+
+do_test update-reference-3.1 {
+  execsql {
+    UPDATE sqldata SET name = 45 WHERE id = 101;
+    UPDATE employees SET age = name WHERE id = 301;
+  }
+} {1 {FOREIGN KEY constraint failed: sqldata}                                                                                
+
+finish_test

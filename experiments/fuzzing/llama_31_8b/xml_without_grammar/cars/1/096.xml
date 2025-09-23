@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPEcatalog [
+  <!ELEMENT catalog (product*, author+)>
+  <!ELEMENT product (#PCDATA | description | image+)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ELEMENT author (#PCDATA | contact+)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED
+    stock CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="PROD001">Product 1</product>
+  <product id="PROD002">
+    <description>Product 2 description</description>
+    <image>image1.jpg</image>
+  </product>
+  <author name="John Doe">John's description</author>
+  <author email="johndoe@example.com">
+    <contact>Phone: +1(123)4567890</contact>
+  </author>
+</catalog>

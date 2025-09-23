@@ -1,0 +1,36 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test check-index-3.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER, name TEXT, price REAL);
+    CREATE TABLE orders(order_id INTEGER, product_id INTEGER, FOREIGN KEY product_id REFERENCES products);
+    CREATE TABLE customers(id INTEGER, name TEXT);
+    CREATE TABLE orders_customers(order_id INTEGER, customer_id INTEGER, FOREIGN KEY order_id REFERENCES orders, FOREIGN KEY customer_id REFERENCES customers);
+    CREATE TABLE inventory(id INTEGER, product_id INTEGER, quantity INTEGER);
+    CREATE TABLE product_prices(product_id INTEGER, new_price REAL);
+
+    INSERT INTO products(id, name) VALUES(1, 'Product A');
+    INSERT INTO products(id, name) VALUES(2, 'Product B');
+    INSERT INTO orders(order_id, product_id) VALUES(1, 1);
+    INSERT INTO orders(order_id, product_id) VALUES(2, 2);
+    INSERT INTO customers(id, name) VALUES(101, 'Customer X');
+    INSERT INTO customers(id, name) VALUES(102, 'Customer Y');
+
+    INSERT INTO orders_customers(order_id, customer_id) VALUES(1, 101);
+    INSERT INTO orders_customers(order_id, customer_id) VALUES(2, 102);
+
+    INSERT INTO inventory(product_id, quantity) VALUES(1, 5);
+    INSERT INTO inventory(product_id, quantity) VALUES(2, 10);
+
+    INSERT INTO product_prices(product_id, new_price) VALUES(1, 100.5);
+  }
+} {}
+
+do_test select-max-price-3.1 {
+  execsql {
+    SELECT MAXnew_price FROM product_prices;
+  }
+} {100.5}
+
+finish_test

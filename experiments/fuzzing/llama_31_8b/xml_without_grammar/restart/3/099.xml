@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA)>
+  <!ELEMENT books (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT availability (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED
+    authorRef CDATA #REQUIRED
+    genre CDATA #REQUIRED
+    price CDATA #REQUIRED
+    availability CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <books>
+    <book id="1" title="Book one" authorRef="Author one" genre="Fiction" price="120.99" availability="In stock"/>
+    <book id="2" title="Book two" authorRef="Author two" genre="Non-fiction" price="150.00" availability="Out of stock"/>
+    <book id="3" title="Book three" authorRef="Author three" genre="Romance" price="100.00" availability="In stock"/>
+  </books>
+  <author name="Author one" bio="Bio one"/>
+  <author name="Author two" bio="Bio two"/>
+  <author name="Author three" bio="Bio three"/>
+  <genre name="Fiction" desc="Description one"/>
+  <genre name="Non-fiction" desc="Description two"/>
+  <genre name="Romance" desc="Description three"/>
+  <price currency="USD" value="100.00"/>
+</catalog>

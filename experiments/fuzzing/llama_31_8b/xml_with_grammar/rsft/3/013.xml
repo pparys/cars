@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [
+
+  <!ELEMENT address (name, street, city)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST address
+    id CDATA #IMPLIED
+    type (string | integer) #REQUIRED
+  >
+]>
+<address id="addr1" type="string">
+  <name>John Doe</name>
+  <street>Main St.</street>
+  <city>Anytown</city>
+</address>

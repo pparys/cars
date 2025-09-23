@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE departments(id INTEGER, name TEXT, budget REAL);
+    INSERT INTO departments(id, name, budget) VALUES(201, 'HR', 1000000.0);
+    INSERT INTO departments(id, name, budget) VALUES(202, 'Engineering', 5000000.0);
+  }
+} {}
+
+do_test select-department-by-budget-1.1 {
+  execsql {
+    SELECT name, budget FROM departments ORDER BY budget DESC LIMIT 1;
+  }
+} {Engineering 5000000.0}
+
+finish_test

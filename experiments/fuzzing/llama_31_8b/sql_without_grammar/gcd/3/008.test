@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER,
+                        FOREIGN KEY,user_id REFERENCES users); 
+    INSERT INTO users VALUES(1, 'John');
+    INSERT INTO users VALUES(2, 'Doe');
+  }
+} {}
+
+do_test insert-violates-foreign-key-1.1 {
+  execsql {
+    DELETE FROM users WHERE id = 2;
+  }
+} {1 {FOREIGN KEY constraint failed: orders.user_id}   
+
+finish_test

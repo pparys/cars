@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE businesses [
+  <!ELEMENT businesses (business+)>
+  <!ELEMENT business (name,description,location)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT location (#PCDATA)>
+  <!ATTLIST business
+    id CDATA #REQUIRED
+    sector CDATA #IMPLIED>
+]>
+<businesses>
+  <business id="b001" sector="Tech">
+    <name>Google</name>
+    <description>Leading technology company</description>
+    <location>Mountain View, CA</location>
+  </business>
+  <business id="b002" sector="Finance">
+    <name>JP Morgan</name>
+    <description>Banking and financial services</description>
+    <location>New York, NY</location>
+  </business>
+</businesses>

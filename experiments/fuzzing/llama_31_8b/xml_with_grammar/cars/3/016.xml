@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item+)>
+  <!ELEMENT item (name, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED>
+]>
+<catalog>
+  <item id="1">
+    <name>IPhone 14</name>
+    <price>999.99</price>
+  </item>
+  <item id="2">
+    <name>Galaxy S22</name>
+    <price>799.99</price>
+  </item>
+</catalog>

@@ -1,0 +1,20 @@
+{"name":"Pikachu",
+"series":"Kanto",
+ "types":[{
+    "type":"Electric",
+    "generation": 1
+  },
+  {
+    "type":"Electric",
+    "generation": 2
+  }],
+ "isLegendary": false,
+ "abilities":[{
+    "ability":"Static",
+    "effect":"May paralyze opponents that become burned from its fire moves."
+  },
+  {
+    "ability":"Lightning Rod",
+    "effect":"Attracts Electric-type moves, causing them to always hit."
+  }],
+ "preEvolution":null}

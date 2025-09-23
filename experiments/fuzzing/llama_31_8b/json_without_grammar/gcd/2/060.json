@@ -1,0 +1,9 @@
+{"name": "Mewtwo", 
+ "id": 150, 
+ "types": ["Psychic"], 
+ "isLegendary": true, 
+ "abilities": [{"name": "Sturdy", 
+ "description": "The Pokémon's HP cannot be reduced to 0 by a single hit."}, 
+ {"name": "Unaware", 
+ "description": " Ignores stat changes caused by the opponent."}], 
+ "preEvolution": null}

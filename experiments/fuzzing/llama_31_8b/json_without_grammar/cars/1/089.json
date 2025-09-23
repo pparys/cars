@@ -1,0 +1,18 @@
+{"name": "Articuno",
+  "id": 144,
+  "types": [
+    "Ice",
+    "Flying"
+  ],
+  "isLegendary": true,
+  "abilities": [
+    {
+      "name": "Pressure",
+      "description": "Each turn, the opponent has a 10% chance of making a critical hit."
+    },
+    {
+      "name": "Snow Cloak",
+      "description": "The Pokémon's speed is increased in snowy terrain."
+    }
+  ],
+  "preEvolution": null}

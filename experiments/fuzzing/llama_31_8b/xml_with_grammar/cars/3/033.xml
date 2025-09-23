@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)> 
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED>
+]>
+<catalog>
+  <book title="Book 1" author="John Doe">This is a description of Book 1.</book>
+  <book title="Book 2" author="Jane Smith">This is a description of Book 2.</book>
+</catalog>

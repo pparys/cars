@@ -1,0 +1,22 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressBook [
+  <!ELEMENT addressBook (address*)>
+  <!ELEMENT address (name, phone, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST address
+    id CDATA #REQUIRED>
+]>
+<addressBook>
+  <address id="1">
+    <name>Roger</name>
+    <phone>123-456-7890</phone>
+    <email>roger@example.com</email>
+  </address>
+  <address id="2">
+    <name>Jane</name>
+    <phone>098-765-4321</phone>
+    <email>jane@example.com</email>
+  </address>
+</addressBook>

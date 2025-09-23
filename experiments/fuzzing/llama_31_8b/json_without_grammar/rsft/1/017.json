@@ -1,0 +1,4 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, 
+"abilities": [{"name": "Unnerve", "description": "Opponent\'s move cannot inflict Status conditions."},
+              {"name": "Telepathy", "description": "Moves with \"Single Target\" can\'t hit Mewtwo."}], 
+"preEvolution": null}

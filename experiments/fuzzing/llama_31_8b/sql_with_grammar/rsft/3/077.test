@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-1.0 {
+  execsql {
+    CREATE TABLE accounts(
+      id INTEGER,
+      balance REAL,
+      account_holder TEXT,
+      address TEXT
+    );
+    INSERT INTO accounts(id, balance, account_holder, address) 
+      VALUES(100, 1000.0, 'John Doe', '123 Main St');
+    INSERT INTO accounts(id, balance, account_holder, address) 
+      VALUES(200, 2000.0, 'Jane Doe', '456 Elm St');
+    INSERT INTO accounts(id, balance, account_holder, address) 
+      VALUES(300, 3000.0, 'Robert Smith', '789 Oak St');
+  }
+} {}
+
+do_test query-accounts-1.1 {
+  execsql {
+    SELECT * FROM accounts WHERE balance > 2000.0;
+  }
+} {200 2000.000000000000 Jane Doe 456 Elm St 300 3000.000000000000 Robert Smith 789 Oak St}
+
+finish_test

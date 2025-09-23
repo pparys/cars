@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (price, description)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+    brand CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="X123">
+    <price>$9.99</price>
+    <description>This is a great product!</description>
+  </product>
+  <product id="Y456" brand="Apple">
+    <price>$10.99</price>
+    <description>This is another great product!</description>
+  </product>
+</catalog>

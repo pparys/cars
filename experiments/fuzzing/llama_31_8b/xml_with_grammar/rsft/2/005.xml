@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE order [
+  <!ELEMENT order (#PCDATA)>
+  <!ATTLIST order
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<order id="ORD123" date="2023-12-01">
+  <customer name="John Doe" email="john@example.com">
+    <address street="123 Main St" city="Anytown" state="CA" zip="12345"/>
+  </customer>
+  <items>
+    <item id="ITM456" quantity="2" price="19.99">
+      <description>Sample Product</description>
+    </item>
+  </items>
+</order>

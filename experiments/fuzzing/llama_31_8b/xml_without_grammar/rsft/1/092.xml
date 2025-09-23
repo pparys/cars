@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user*)>
+  <!ELEMENT user (name, address, contact*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ATTLIST user
+    id CDATA #REQUIRED
+  >
+]>
+<users>
+  <user id="1">
+    <name>John Doe</name>
+    <address>123 Main St</address>
+    <contact>123-456-7890</contact>
+    <contact>john.doe@example.com</contact>
+  </user>
+  <user id="2">
+    <name>Jane Doe</name>
+    <address>456 Elm St</address>
+    <contact>098-765-4321</contact>
+  </user>
+</users>

@@ -1,0 +1,16 @@
+{"name": "Mew",
+"id": 151,
+"types": ["Psychic"],
+"isLegendary": true,
+"abilities": [
+{
+"name": "Synchronize",
+"description": "Inflict recoil on users with moves based on patient\u2019s type and stat values."
+},
+{
+"name": "Transfer",
+"description": "Transfer a move by dial using Special balls that are quite rare to Mew"
+}
+],
+"preEvolution": null
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (category+,description?)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA # IMPLIED>
+]>
+<products>
+  <product id="P123" name="Product 1">
+    <category>Machinery</category>
+    <category>Electronics</category>
+    <description>This is a detailed description of the product.</description>
+  </product>
+  <product id="P456" name="Product 2">
+    <category>Software</category>
+    <description>This is another product with no categories.</description>
+  </product>
+</products>

@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE employees(employee_id INTEGER PRIMARY KEY, name TEXT, department TEXT);
+    CREATE TABLE salaries(salary_id INTEGER PRIMARY KEY, employee_id INTEGER, salary REAL);
+    INSERT INTO employees(employee_id, name, department) VALUES(1, 'John Doe', 'Sales');
+    INSERT INTO salaries(salary_id, employee_id, salary) VALUES(1, 1, 50000.0);
+    INSERT INTO employees(employee_id, name, department) VALUES(2, 'Jane Doe', 'Marketing');
+  }
+} {}
+
+do_test update-departments-3.1 {
+  execsql {
+    UPDATE employees SET department = 'HR' WHERE employee_id = 1;
+  }
+} {}
+
+finish_test

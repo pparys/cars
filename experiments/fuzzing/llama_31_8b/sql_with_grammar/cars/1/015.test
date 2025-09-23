@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-deletes-3.0 {
+  execsql {
+    CREATE TABLE documents(docid INTEGER, content TEXT);
+    INSERT INTO documents VALUES(101, 'document-101');
+    INSERT INTO documents VALUES(102, 'document-102');
+  }
+} {}
+
+do_test delete-documents-3.1 {
+  execsql {
+    DELETE FROM documents WHERE docid = 101;
+  }
+} {1}
+
+finish_test

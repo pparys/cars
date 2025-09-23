@@ -1,0 +1,1 @@
+{"name":"Mewtwo","id":150,"types":["Psychic"],"isLegendary":true,"abilities":[{"name":"Unboosted","description":"Mewtwo gets a 20\/20 universal stat modifier."},{"name":"Killer Instinct","description":"Boosts Mega Evolved moves by 15 accuracy."}],"evolutions":[{"name":"Mew","id":150},{ "name": "Mewtwo", "id": 150}],"preEvolution":null}

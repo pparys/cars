@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task [
+  <!ELEMENT task (name,description(MenuItem)*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT MenuItem (#PCDATA)>
+  <!ATTLIST MenuItem
+    price CDATA #IMPLIED
+    type CDATA #IMPLIED>
+  <!ATTLIST task
+    priority CDATA #IMPLIED
+    due_date CDATA #IMPLIED>
+]>
+<task priority="High" due_date="2025-09-03">
+  <name>Meeting with John</name>
+  <description>Meeting with John to discuss the project. 
+    <MenuItem>Snacks</MenuItem>
+    <MenuItem>Drinks</MenuItem>
+  </description>
+</task>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE courses(id INTEGER PRIMARY KEY, name TEXT, year INTEGER);
+    INSERT INTO courses(id, name, year) VALUES(301, 'Math', 2022);
+    INSERT INTO courses(id, name, year) VALUES(302, 'Science', 2020);
+  }
+} {}
+
+do_test select-top-science-3.1 {
+  execsql {
+    SELECT name, year FROM courses WHERE year = 2020 ORDER BY name LIMIT 1;
+  }
+} {Science 2020}
+
+finish_test

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-translate-1.0 {
+  execsql {
+    CREATE TABLE codes(code TEXT PRIMARY KEY, translation TEXT);
+    INSERT INTO codes VALUES('hello', 'bonjour');
+    INSERT INTO codes VALUES('goodbye', 'au revoir');
+  }
+} {}
+
+do_test select-translate-1.1 {
+  execsql {
+    SELECT translation FROM codes WHERE code = 'hello';
+  }
+} {bonjour}
+
+finish_test

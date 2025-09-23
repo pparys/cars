@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY AUTOINCREMENT, product TEXT, customer TEXT);
+    INSERT INTO orders(product, customer) VALUES('ProductA', 'CustomerA');
+    INSERT INTO orders(product, customer) VALUES('ProductB', 'CustomerB');
+  }
+} {}
+
+do_test update-order-2.1 {
+  execsql {
+    UPDATE orders SET product = 'ProductC' WHERE product = 'ProductA' AND customer = 'CustomerA';
+  }
+} {}
+
+finish_test

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ELEMENT catalog (book+)>
+<!ELEMENT book (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST book
+  id CDATA #REQUIRED
+  name CDATA #IMPLIED
+>
+<!ATTLIST author
+  id CDATA #REQUIRED
+>
+]>
+<catalog>
+  <book id="bk101" name="book1">
+    <author id="a101">John Smith</author>
+    <title> Every Day Last Second</title>
+    <price>10.99</price>
+  </book>
+  <book id="bk102" name="book2">
+    <author id="a102">Michael</author>
+    <title> Love Will Trap Woman Enough In Prison</title>
+    <price>20.99</price>
+  </book>
+</catalog>

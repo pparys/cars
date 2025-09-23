@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE quote [
+  <!ELEMENT quote (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST quote
+    id CDATA #REQUIRED
+    prooftype CDATA #IMPLIED>
+]>
+<quote id="12345" prooftype="handwritten">
+  <author>Mark Twain</author>
+  You can't depend on your eyes when your imagination is out working.
+  <price>$2.99</price>
+</quote>

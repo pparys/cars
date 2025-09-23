@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer+)>
+  <!ELEMENT customer (personal|business)>
+  <!ELEMENT personal (#PCDATA)>
+  <!ELEMENT business (#PCDATA)>
+  <!ATTLIST customer
+    id ID #REQUIRED>
+]>
+<customers>
+  <customer id="cust1">
+    <personal>John Doe</personal>
+  </customer>
+  <customer id="cust2">
+    <business>ABC Corp.</business>
+  </customer>
+</customers>

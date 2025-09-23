@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-ignore-3.0 {
+  execsql {
+    CREATE TABLE stocks(id INTEGER PRIMARY KEY AUTOINCREMENT, symbol TEXT UNIQUE, price REAL);
+    INSERT INTO stocks VALUES(1, 'AAPL', 100.0);
+    INSERT INTO stocks VALUES(2, 'GOOG', 500.0);
+    INSERT INTO stocks(symbol, price) VALUES('MSFT', 200.0);
+  }
+} {}
+
+do_test insert-violates-unique-3.1 {
+  execsql {
+    UPDATE stocks SET symbol = 'AAPL' WHERE id = 2;
+  }
+} {0}
+
+finish_test

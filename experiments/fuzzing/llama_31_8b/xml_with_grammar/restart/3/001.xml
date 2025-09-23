@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE oranges [
+  <!ELEMENT oranges (fruit+)>
+  <!ELEMENT fruit (name, quantity, color)>
+  <!ATTLIST oranges
+    type (orange|lemon) "orange">
+  <!ATTLIST fruit
+    name CDATA #REQUIRED
+    quantity CDATA #IMPLIED
+    color (red|yellow|green) "yellow">
+]>
+<oranges type="orange">
+  <fruit name="Persimmon" quantity="2"/>
+  <fruit name="Tangerine" quantity="3" color="orange"/>
+  <fruit name="Satsuma" quantity="1"/>
+</oranges>

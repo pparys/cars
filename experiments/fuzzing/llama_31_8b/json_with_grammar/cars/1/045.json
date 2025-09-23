@@ -1,0 +1,9 @@
+{"name":"Ditto",
+ "id":132,
+ "types":["Normal"],
+ "isLegendary":false,
+ "abilities":[{
+   "name":"Imposter",
+   "description":"Changes Ditto to the Forme of the Pokémon that hits it with a move."
+ }],
+ "preEvolution":null}

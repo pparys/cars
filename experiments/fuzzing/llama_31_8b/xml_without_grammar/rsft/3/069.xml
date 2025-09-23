@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (author, publisher, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    edition CDATA #IMPLIED>
+]>
+<catalog>
+  <book isbn="1234567890" edition="1st">
+    <author>J.R.R. Tolkien</author>
+    <publisher>George Allen & Unwin</publisher>
+    <price>$30.00</price>
+  </book>
+  <book isbn="9876543210" edition="2nd">
+    <author>C.S. Lewis</author>
+    <publisher>Geoffrey Bles</publisher>
+    <price>$40.00</price>
+  </book>
+</catalog>

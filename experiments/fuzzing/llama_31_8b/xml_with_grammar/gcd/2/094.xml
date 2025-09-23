@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT catalog (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST catalog
+    name CDATA #REQUIRED>
+]>
+<catalog name="My Books">
+  <book id="bk101" author="John Smith">The C Programming Language</book>
+  <book id="bk102" author="Doe John">The C++ Programming Language</book>
+</catalog>

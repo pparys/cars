@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-case-sensitivity-3.0 {
+  execsql {
+    CREATE TABLE tags(language TEXT PRIMARY KEY, value INTEGER);
+    INSERT INTO tags VALUES('English', 1);
+    INSERT INTO tags VALUES('english', 2);
+  }
+} {}
+
+do_test select-tags-case-3.1 {
+  execsql {
+    SELECT value FROM tags WHERE language = 'English';
+  }
+} {1}
+
+finish_test

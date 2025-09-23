@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.1 {
+  execsql {
+    CREATE TABLE departments(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, loc TEXT);
+    INSERT INTO departments(name, loc) VALUES('HR', 'NewYork');
+    INSERT INTO departments(name, loc) VALUES('IT', 'NewDelhi');
+  }
+} {}
+
+do_test delete-department-3.2 {
+  execsql {
+    DELETE FROM departments WHERE name = 'HR' AND loc = 'NewYork';
+  }
+} {}
+
+finish_test

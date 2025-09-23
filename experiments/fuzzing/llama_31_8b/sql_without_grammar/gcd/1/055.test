@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-options-2.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT DEFAULT NULL, price REAL DEFAULT  roman numeralNUMCLASS Allownull );
+    INSERT INTO products VALUES(1, 'Smartphone', 599.99);
+    INSERT INTO products VALUES(2, 'Laptop', 999.99);
+  }
+} {}
+
+do_test sort-products-2.1 {
+  execsql {
+    SELECT name FROM products ORDER BY price DESC;
+  }
+} {Laptop Smartphone}
+
+finish_test

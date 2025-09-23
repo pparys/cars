@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    isbn CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="bk101" isbn="0345453747">
+    <title>XML for Beginners</title>
+    <author name="John Smith" email="john.smith@example.com"/>
+  </book>
+  <book id="bk102" isbn="0316667964">
+    <title>C++ Programming</title>
+    <author name="Jane Doe" email="jane.doe@example.com"/>
+  </book>
+</catalog>

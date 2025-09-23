@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT price EMPTY>
+  <!ATTLIST product
+    id CDATA #IMPLIED
+    name CDATA #REQUIRED>
+  <!ATTLIST price
+    value CDATA #IMPLIED>
+  <!ATTLIST inventory
+    version CDATA #IMPLIED>
+]>
+<inventory version="V1.0">
+  <product id="1" name="Apple iPhone">
+    <price value="999.99"/>
+  </product>
+  <product id="2" name="Samsung TV">
+    <price value="1299.99"/>
+  </product>
+</inventory>

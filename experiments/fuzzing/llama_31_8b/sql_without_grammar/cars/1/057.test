@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test delete-specified-column-1.0 {
+  execsql {
+    CREATE TABLE classroom(id INTEGER, subject TEXT, teacher TEXT);
+    INSERT INTO classroom(id, subject, teacher) VALUES(201, 'Math', 'Mrs. X');
+    INSERT INTO classroom(id, subject, teacher) VALUES(202, 'Science', 'Mr. Y');
+  }
+} {}
+
+do_test select-specific-column-1.1 {
+  execsql {
+    SELECT teacher FROM classroom;
+  }
+} {Mrs. X Mr. Y}
+
+finish_test

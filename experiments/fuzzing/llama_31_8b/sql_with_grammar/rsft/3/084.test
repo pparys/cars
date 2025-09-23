@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-describedby-2.0 {
+  execsql {
+    CREATE TABLE messages(
+      id INTEGER PRIMARY KEY,
+      subject TEXT,
+      description TEXT,
+      recipient TEXT
+    );
+    INSERT INTO messages(id, subject, description, recipient) VALUES(1001, 'Holiday', 'Merry Christmas', 'John Doe');
+    INSERT INTO messages(id, subject, description, recipient) VALUES(1002, 'Lunch', 'Let me know a time.', 'Jane Doe');
+  }
+} {}
+
+do_test select-user-by-subject-2.1 {
+  execsql {
+    SELECT recipient FROM messages WHERE subject = 'Lunch';
+  }
+} {Jane Doe}
+
+finish_test

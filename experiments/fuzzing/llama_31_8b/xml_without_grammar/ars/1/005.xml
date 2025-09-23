@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name,email(id|address)*,phone*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT id (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST person
+    gender (male|female) "unknown"
+    age  CDATA #IMPLIED
+    birthdate CDATA #IMPLIED
+  >
+]>
+<person birthday="1980-01-01" gender="female">
+  <name>Emily</name>
+  <email id="el" address="emacs@example.com"/>
+  <phone>1234567890</phone>
+  <address unit="123" region="NYC"/>
+  <email address="emily@work.com"/>
+</person>

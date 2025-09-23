@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+,book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    price CDATA #REQUIRED
+  >
+]>
+<library>
+  <author id="A1" name="John Smith"/>
+  <author id="A2" name="Jane Doe"/>
+  <book title="Book 1" author="A1" price="19.99">Summary 1</book>
+  <book title="Book 2" author="A2" price="9.99">Summary 2</book>
+</library>

@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-datastore-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT, age INTEGER,
+      address TEXT, city TEXT, country TEXT, phone TEXT);
+
+    INSERT INTO customers(id, name, age, city, country)
+      VALUES(1, 'John Doe', 28, 'New York', 'USA');
+
+    INSERT INTO customers(id, name, age, city, country)
+      VALUES(2, 'Jane Doe', 32, 'London', 'UK');
+  }
+} {}
+
+do_test update-user-1.1 {
+  execsql {
+    UPDATE customers SET name = 'Jane', age = 33, city = 'Paris', country = 'France'
+      WHERE id = 2;
+  }
+} {}
+
+finish_test

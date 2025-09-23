@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (header, body, footer)>
+  <!ELEMENT header (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+  <!ELEMENT footer (#PCDATA)>
+  <!ELEMENT users (user+)>
+  <!ELEMENT user (#PCDATA)>
+  <!ELEMENT address "#PCDATA">
+  <!ATTLIST user
+    id CDATA #REQUIRED
+  >
+]>
+<document>
+  <header>This is a document header.</header>
+  <body>This is the document body.</body>
+  <footer>This is a document footer.</footer>
+  <users>
+    <user id="usr1">John Doe 1</user>
+    <user id="usr2">Jane Doe 2</user>
+  </users>
+  <address>123 Main St, Anytown USA</address>
+</document>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*)>
+  <!ELEMENT category (user*, product*)>
+  <!ELEMENT user (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <category>
+    <user>John Doe</user>
+    <product id="1" name="Laptop"/>
+    <product id="2" name="Tablet"/>
+  </category>
+  <category>
+    <user>Jane Smith</user>
+    <product id="3" name="Phone"/>
+    <product id="4" name="Desktop"/>
+  </category>
+</catalog>

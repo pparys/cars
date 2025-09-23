@@ -1,0 +1,18 @@
+{"name": "Alakazam",
+"description": "Alakazam is a very intelligent Pokémon that is said to be able to read minds. It is known to be a fierce battler.",
+"type": "Psychic",
+"id": 65,
+"isLegendary": false,
+"abilties": [
+  {
+    "name": "Inner Focus",
+    "description": "Goes to a replaceable Turn if a status condition would normally reduce Accuracy."
+  },
+  {
+    "name": "Magic Bounce",
+    "description": "Moves bounced back by this Ability will not have an effect of the Launcher."
+  }
+],
+"preEvolution": 
+  "Alakazam' eventually evolved from frequent use of high-level Moon, electric forces over time build up Alakazam's power into it being condiments which further evolves into Alakazam.  **evolutionлата  it)"
+}

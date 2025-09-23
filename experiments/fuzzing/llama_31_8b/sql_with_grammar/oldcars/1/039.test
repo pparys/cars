@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-sort-4.12 {
+  execsql {
+    CREATE TABLE pages(id INTEGER PRIMARY KEY, rank INTEGER, cuid TEXT);
+    INSERT INTO pages(id, rank, cuid) VALUES(1, 1, 'T147228');  
+    INSERT INTO pages(id, rank, cuid) VALUES(2, 2, 'T147220');
+    INSERT INTO pages(id, rank, cuid) VALUES(3, 3, 'T147227');
+    INSERT INTO pages(id, rank, cuid) VALUES(4, 2, 'T147218');
+    INSERT INTO pages(id, rank, cuid) VALUES(5, 3, 'T147219');
+  }
+} {}
+
+do_test page-sort-3.12 {
+  execsql {
+    SELECT * FROM pages ORDER BY rank LIMIT 2;
+  }
+} {1 1 T147228 2 2 T147220}
+
+finish_test

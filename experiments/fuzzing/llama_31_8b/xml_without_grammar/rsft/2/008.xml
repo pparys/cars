@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    authorref IDREF #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+]>
+<library>
+  <author name="John Smith" email="john.smith@example.com"/>
+  <author name="Emily Johnson" email="emily.johnson@example.com"/>
+  <book title="Lord of the Rings" authorref="#author1"/>
+  <book title="The Great Gatsby" authorref="#author2"/>
+</library>

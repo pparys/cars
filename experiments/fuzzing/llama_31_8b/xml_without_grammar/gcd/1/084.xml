@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, folder*)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT folder (title)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST folder 
+    id CDATA #IMPLIED>
+]>
+<catalog>
+  <book>
+    <title>Book Title 1</title>
+    <author>Author Name 1</author>
+    <price>$19.99</price>
+  </book>
+  <book>
+    <title>Book Title 2</title>
+    <author>Author Name 2</author>
+    <price>$9.99</price>
+  </book>
+  <folder id="F-001">Subfolder 1</folder>
+  <folder id="F-002">Subfolder 2</folder>
+</catalog>

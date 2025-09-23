@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER, author TEXT, title TEXT);
+    INSERT INTO books(id, author, title) VALUES(201, 'John Doe', 'Book 1');
+    INSERT INTO books(id, author, title) VALUES(202, 'Jane Doe', 'Book 2');
+  }
+} {}
+
+do_test select-books-3.1 {
+  execsql {
+    SELECT id, author, title FROM books WHERE author = 'John Doe';
+  }
+} {201 John Doe Book 1}
+
+finish_test

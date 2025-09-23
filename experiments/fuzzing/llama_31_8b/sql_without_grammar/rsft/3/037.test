@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test primary-key-insert-3.0 {
+  execsql {
+    CREATE TABLE sales(employee_id INTEGER PRIMARY KEY, sales_date DATE);
+    INSERT INTO sales(sales_date, employee_id) VALUES('2022-01-01', 1);
+    INSERT INTO sales(sales_date, employee_id) VALUES('2022-01-02', 2);
+    INSERT INTO sales(sales_date, employee_id) VALUES('2022-01-03', 1);
+  }
+} {}
+
+do_test select-sorted-samesales-3.1 {
+  execsql {
+    SELECT employee_id, sales_date FROM sales ORDER BY employee_id, sales_date;
+  }
+} {1 2022-01-03 1 2022-01-01 2 2022-01-02}
+
+finish_test

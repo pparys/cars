@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*,price*)>
+  <!ELEMENT book (title,author courte description*)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    title       CDATA  #REQUIRED
+  >
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #REQUIRED
+  >
+  <!ATTLIST price
+    currency CDATA #REQUIRED
+    amount CDATA #REQUIRED
+  >
+  <!ATTLIST description
+    language CDATA #IMPLIED
+    country CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <book id="bk101" title="The Scream" author="Edvard Munch">
+    A depiction of a figure on an balcony during an undocumented surrendering. The figure is surrounded by what appears to be an orange/odor, with tendrils reaching out in all directions.
+  </book>
+  <book id="bk102" title="Starry Night" author="Vincent van Gogh">
+    The painting shows a swirl of stars against a swirling blue black void, while an orbiting earth and swigging motion suggests what is whats/whats next.
+  </book>
+  <price currency="USD" amount="100.90"/>
+  <price currency="GBP" amount="75.65"/>
+  <price currency="EUR" amount="85.50"/>
+</catalog>

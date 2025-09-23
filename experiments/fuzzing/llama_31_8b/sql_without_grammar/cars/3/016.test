@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      customer_id INTEGER,
+      order_date TEXT,
+      total REAL,
+      INDEX idx_orders_customer_id
+    );
+    INSERT INTO orders(id, customer_id, order_date, total) 
+      VALUES(1, 101, '2022-01-01', 100.00);
+    INSERT INTO orders(id, customer_id, order_date, total) 
+      VALUES(2, 101, '2022-01-15', 200.00);
+    INSERT INTO orders(id, customer_id, order_date, total) 
+      VALUES(3, 102, '2022-02-01', 50.00);
+  }
+} {}
+
+do_test select-top-3-1.1 {
+  execsql {
+    SELECT * FROM orders ORDER BY total DESC LIMIT 2;
+  }
+} {2 101 2022-01-15 200.0 3 101 2022-01-01 100.0}
+finish_test

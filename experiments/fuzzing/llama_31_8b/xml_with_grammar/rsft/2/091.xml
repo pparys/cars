@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST company
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST product
+    id CDATA #REQUIRED
+  >
+]>
+<company name="ABC Inc.">
+  <product id="P001">Product 1</product>
+  <product id="P002">Product 2</product>
+</company>

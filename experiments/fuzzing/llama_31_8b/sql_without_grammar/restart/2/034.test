@@ -1,0 +1,225 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, customer_name TEXT);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, FOREIGN KEY customer_id REFERENCES customers ON DELETE CASCADE, order_date DATE);
+    INSERT INTO customers VALUES(1, 'Customer 1');
+    INSERT INTO orders VALUES(1, 1, '2020-01-01');
+    INSERT INTO orders VALUES(2, 1, '2020-01-15');
+  }
+} {}
+
+do_test insert-violates-foreign-key-3.1 {
+  execsql {
+    DELETE FROM customers WHERE id = 1;
+  }
+  } {1 {FOREIGN KEY constraint failed: orders}                                                     
+                                            
+                                           
+                               
+                                             
+                                                                                                                     
+
+
+     	                             
+                                       
+                            
+
+  
+                                                            
+            	                    
+
+                                                                 	                       	                                  
+                                           
+	 
+	                                   
+     
+                                                 
+                                                       
+                                                          
+   		 
+    
+  
+                                                                       
+
+
+    
+                        
+
+
+    
+
+                                                            
+
+    	    
+
+
+    	                                                                                                   
+
+
+    	
+
+
+
+                                        
+
+
+   	                                                                                                                                 
+
+                                       
+     	 
+
+  	
+
+
+
+     	                     
+
+	                                   
+ 
+
+  	
+
+
+
+    	                                   
+
+	
+
+
+
+    	                                                                      
+  
+   	                                       
+                                         
+     	                                                                               
+
+                       
+    
+   	
+                          																		
+  	       	
+               		  
+
+             	 	
+
+                              
+
+          	 		 	  
+     		                             
+             				 
+    
+           	
+
+   	                           																																		
+            
+ 
+                                														 
+                                    
+
+
+    	                                                                               
+                    	  
+
+   	
+
+
+
+    
+  	           	 		   
+       												                                               
+       	
+
+     	                                                                       
+                                     
+          	
+	
+
+
+
+ 
+ 	                                                                                                                                                                     
+  
+
+ 
+
+																		
+                                                                                             
+
+
+      	   
+
+
+
+	                   													                            
+	
+	                                                                   					 
+                                    
+
+	
+   	                                                                                                                                                                    
+                                                                          
+
+ 
+
+
+  	                                                                        
+
+     
+    
+   
+    	                                                                                                                                
+        
+                            
+
+
+                            
+
+
+
+                         
+
+               	                                                                                                                  
+
+	                                                                                                                                 
+   
+   																			
+   
+   
+  	                                  					   
+                                   		
+
+
+
+       	
+    
+       	                                  						       	               	
+ 
+   
+   	                                                 	
+           		   
+                                                                                                  
+
+   
+       
+
+
+ 	                                                                                                     
+                    
+
+
+             																				
+ 
+
+
+
+
+                                                                                                                                  
+
+
+  	   
+
+
+         

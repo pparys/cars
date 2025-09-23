@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book)+>
+  <!ELEMENT book (author, title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    publication-year CDATA #IMPLIED>
+]>
+<library>
+  <book id="book-1" publication-year="2022">
+    <author>J.K. Rowling</author>
+    <title>Harry Potter</title>
+  </book>
+  <book id="book-2" publication-year=".2023">
+    <author>J.R.R. Tolkien</author>
+    <title>The Lord of the Rings</title>
+  </book>
+  <book id="book-3">
+    <author>George R.R. Martin</author>
+    <title>A Song of Ice and Fire</title>
+  </book>
+</library>

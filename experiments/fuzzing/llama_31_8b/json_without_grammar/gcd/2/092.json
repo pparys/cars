@@ -1,0 +1,4 @@
+{"name": "Metagross", "id": 376, "types": ["Steel", "Psychic"], "isLegendary": false, 
+"abilities": [{"name": "Clear Body", "description": "This Pokémon cannot become a stat change move’s target in the first turn of a battle."}, 
+{"name": "Levitate", "description": "User is immune to Ground-type moves."}], "preEvolution": 
+    null}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item (#PCDATA | description | category | price)*>
+  <!ELEMENT description EMPTY>
+  <!ATTLIST description
+    text CDATA #REQUIRED
+  >
+  <!ATTLIST item
+    id ID #REQUIRED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST category
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST price
+    value CDATA #REQUIRED
+    currency CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <item id="1" name="Book">
+    <description text="This is a book"/>
+    <price value="50.00" currency="USD"/>
+    <category name="Books"/>
+  </item>
+  <item id="2" name="Camera">
+    <description text="This is a camera"/>
+    <price value="200.00" currency="EUR"/>
+    <category name="Electronics"/>
+  </item>
+</catalog>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author,book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA,edition*)>
+  <!ELEMENT edition (year,price)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+  <!ATTLIST edition
+    year CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<library>
+  <author>John Doe</author>
+  <book id="b1" title="Harry Potter">
+    <edition year="2005" price="10.99"/>
+    <edition year="2010" price="12.99"/>
+  </book>
+  <book id="b2" title="The Lord of the Rings">
+    <edition year="2001" price="9.99"/>
+  </book>
+</library>

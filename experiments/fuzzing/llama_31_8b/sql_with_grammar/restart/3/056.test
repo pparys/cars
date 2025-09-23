@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-toptree-1.0 {
+  execsql {
+    CREATE TABLE seats(a INTEGER PRIMARY KEY, b INTEGER UNIQUE);
+    CREATE TABLE sales(
+      id INTEGER PRIMARY KEY, 
+      customerid INTEGER, 
+      saleid INTEGER, 
+      FOREIGN KEY 													  
+      customerid REFERENCES seats                                   	
+    );
+    INSERT INTO seats (a, b) VALUES(1, 5);
+  }
+} {}
+
+do_test insert-auxiliary-transaction-1.1 {
+  execsql {
+    SELECT a FROM seats WHERE b = 5;
+  }
+} {1}
+
+finish_test

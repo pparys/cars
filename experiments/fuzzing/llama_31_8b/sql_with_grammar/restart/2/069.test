@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT UNIQUE);
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, FOREIGN KEY customer_id REFERENCES customers);
+  INSERT INTO customers(id, name) VALUES(1, 'John Doe');
+    INSERT INTO orders(id, customer_id) VALUES(1, 1);
+  }
+} {}
+
+do_test select-order-3.1 {
+  execsql {
+    SELECT c, o FROM customers AS c 
+    WHERE c = 'John Doe'
+    GROUP BY c 
+    ORDER BY c
+  LIMIT 1
+  ;
+  }
+} {1}
+
+finish_test

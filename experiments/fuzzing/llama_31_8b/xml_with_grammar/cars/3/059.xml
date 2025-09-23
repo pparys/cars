@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author,book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    published CDATA #IMPLIED
+  >
+]>
+<library>
+  <author>John Smith</author>
+  <book title="Introduction to XML" published="2010-01-01"/> 
+  <book title="Advanced Data Processing" published="2015-12-31"/>
+</library>

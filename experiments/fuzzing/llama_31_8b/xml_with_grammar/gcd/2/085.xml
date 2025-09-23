@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE student [
+  <!ELEMENT student (name,course,grades)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT course (#PCDATA)>
+  <!ELEMENT grades (grade+)>
+  <!ELEMENT grade (#PCDATA)>
+  <!ATTLIST student
+    id CDATA #REQUIRED
+    age CDATA #IMPLIED>
+  <!ATTLIST course
+    id CDATA #REQUIRED
+    credits CDATA #IMPLIED>
+]>
+<student id="S123" age="25">
+  <name>John Doe</name>
+  <course id="C101" credits="3">
+    <grades>
+      <grade>85</grade>
+      <grade>95</grade>
+    </grades>
+  </course>
+  <course id="C102" credits="4">
+    <grades>
+      <grade>78</grade>
+      <grade>92</grade>
+    </grades>
+  </course>
+</student>

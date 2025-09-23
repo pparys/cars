@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE delivery [
+  <!ELEMENT delivery (customer+, delivery-info)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ELEMENT delivery-info (order+, tracking-info)>
+  <!ELEMENT order (#PCDATA)>
+  <!ELEMENT tracking-info (#PCDATA)>
+  <!ELEMENT order-item (#PCDATA)>
+
+  <!ATTLIST delivery
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST customer
+    name CDATA #IMPLIED
+    address CDATA #IMPLIED
+  >
+  <!ATTLIST order
+    order-date CDATA #REQUIRED
+    total-price CDATA #REQUIRED
+  >
+  <!ATTLIST tracking-info
+    tracking-id CDATA #REQUIRED
+    status CDATA #REQUIRED
+  >
+]>
+<delivery id="ORD001">
+  <customer name="John Doe" address="123 Main St">
+    <order order-date="2020-01-01" total-price="100.00"></order>
+    <order order-date="2020-02-01" total-price="200.00"></order>
+  </customer>
+  <delivery-info>
+    <tracking-info tracking-id="TRK123" status="delivered"></tracking-info>
+    <order-item>Item 1</order-item>
+    <order-item>Item 2</order-item>
+  </delivery-info>
+</delivery>

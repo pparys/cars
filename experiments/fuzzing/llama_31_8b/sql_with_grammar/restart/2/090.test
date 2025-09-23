@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT);
+    INSERT INTO customers(id, name) VALUES(201, 'ABC Inc.');
+    INSERT INTO customers(id, name) VALUES(202, 'XYZ Corp.');
+  }
+} {}
+
+do_test delete-one-row-2.1 {
+  execsql {
+    SELECT COUNT,id FROM customers ORDER BY 1 DESC LIMIT 1;
+  }
+} {1 202}
+finish_test

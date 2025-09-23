@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE conference [
+  <!ELEMENT conference (name, date, speakers, sessions)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT speakers (speaker*)>
+  <!ELEMENT speaker (#PCDATA)>
+  <!ELEMENT sessions (session*)>
+  <!ELEMENT session (#PCDATA)>
+  <!ATTLIST conference
+    location CDATA #IMPLIED
+    startDate CDATA #IMPLIED
+    endDate CDATA #IMPLIED>
+]>
+<conference
+  location="New York"
+  startDate="2024-07-15"
+  endDate="2024-07-17"
+  >
+  <name>ACM SIGIR Conference</name>
+  <date>July 2024</date>
+  <speakers>
+    <speaker>John Doe</speaker>
+    <speaker>Jane Smith</speaker>
+  </speakers>
+  <sessions>
+    <session>Introduction to Machine Learning</session>
+    <session>Web Search and Information Retrieval</session>
+  </sessions>
+</conference>

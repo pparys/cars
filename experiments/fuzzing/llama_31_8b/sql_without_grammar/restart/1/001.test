@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test index-promotion-1.0 {
+  execsql {
+    CREATE TABLE data(
+        i INTEGER,
+        s TEXT,
+        c TEXT,
+        PRIMARY KEY i,
+        INDEX idx_c ON data ASC clustered)
+  ; CREATE TABLE linked_data(
+        i INTEGER,
+        s TEXT)
+  ; INSERT INTO data VALUES(1, 'big', 'small')
+  ; INSERT INTO linked_data(i, s)  VALUES(1, 'really big')
+  ;}
+} {}
+
+do_test index-promotion-1.1 {
+  execsql {
+    SELECT s FROM data WHERE i = 1 AND c = 'small'
+  ; }
+} {big} 
+
+finish_test

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ELEMENT chapter EMPTY>
+  <!ATTLIST chapter
+    id CDATA #IMPLIED
+    title CDATA #REQUIRED>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+]>
+<book id="mybook"
+  author="John Doe"
+  publisher="ABC Publishers">
+  <title>Ending Up - The Ship Log</title>
+  <author>John Doe</author>
+  <publication>2022-01-01</publication>
+  <chapter id="chapter-1" title="Chapter 1">
+  Mr Jane spent his days at sobriety suds on his patterns dive!
+  </chapter>
+  <chapter id="chapter-2" title="Chapter 2">
+  Most gripping sacrifice Marshall crossover ever dream whether evil centres bend Worth direction floor for staffing questions abuse informant from Unlock karates detective.
+  </chapter>
+</book>

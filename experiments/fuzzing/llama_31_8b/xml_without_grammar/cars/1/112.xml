@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    genre CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <author>John Smith</author>
+  <book title="The Great Gatsby" genre="Fiction" year="1925">A novel by F. Scott Fitzgerald</book>
+  <book title="To Kill a Mockingbird" genre="Fiction" year="1960">A novel by Harper Lee</book>
+  <book title="1984" genre="Science Fiction" year="1949">A novel by George Orwell</book>
+</library>

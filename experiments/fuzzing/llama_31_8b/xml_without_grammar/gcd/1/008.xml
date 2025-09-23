@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, content, tags)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ELEMENT tags (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    published CDATA #IMPLIED>
+]>
+<book id="BK001" published="2020-01-01">
+  <title>The Great Gatsby</title>
+  <author>F. Scott Fitzgerald</author>
+  <content> revisiting the American dream</content>
+  <tags>classic novel</tags>
+</book>

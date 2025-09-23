@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE participants [
+  <!ELEMENT participants (person*)>
+  <!ELEMENT person (#PCDATA)>
+  <!ATTLIST person
+    id ID #REQUIRED
+  >
+]>
+<participants>
+  <person id=" kayı">John</person>
+  <person id=" john-1">Jane</person>
+</participants>

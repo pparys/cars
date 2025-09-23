@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (category*)>
+  <!ELEMENT category (product*)>
+  <!ELEMENT product (name, price, description)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST category
+    id CDATA #IMPLIED
+    title CDATA #IMPLIED>
+]>
+<products>
+  <category id="cat001" title="Electronics">
+    <product>
+      <name>Samsung TV</name>
+      <price>1299.99</price>
+      <description>4K Ultra HD Smart TV.</description>
+    </product>
+    <product>
+      <name>Sony TV</name>
+      <price>1499.99</price>
+      <description> OLED Smart TV.</description>
+    </product>
+  </category>
+  <category id="cat002" title="Clothing">
+    <product>
+      <name>Nike Shirt</name>
+      <price>49.99</price>
+      <description>Short Sleeve T-Shirt.</description>
+    </product>
+    <product>
+      <name>Adidas Pants</name>
+      <price>99.99</price>
+      <description>Jeans.</description>
+    </product>
+  </category>
+</products>

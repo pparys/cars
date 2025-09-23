@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hotel [
+  <!ELEMENT hotel (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT fax (#PCDATA)>
+  <!ATTLIST hotel
+    id CDATA #IMPLIED
+    name CDATA #IMPLIED>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    country CDATA #REQUIRED>
+  <!ATTLIST contact
+    email CDATA #IMPLIED
+    phone CDATA #IMPLIED>
+]>
+<hotel id="1" name="Grand Hotel">
+  <address street="New Street" city="New York" country="USA"/>
+  <contact email="info@example.com" phone="1234567890"/>
+  <phone>9876543210</phone>
+  <fax>123456789</fax>
+</hotel>

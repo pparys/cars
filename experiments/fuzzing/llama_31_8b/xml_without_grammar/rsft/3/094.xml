@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (#PCDATA | price | description | image*)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<products>
+  <product id="PRD1" name="Product A">
+    The description of Product A.
+    <price>$9.99</price>
+    <description>This is a product description.</description>
+    <image>image1.jpg</image>
+  </product>
+  <product id="PRD2" name="Product B">
+    The description of Product B.
+    <price>$19.99</price>
+    <description>This is another product description.</description>
+    <image>image2.jpg</image>
+  </product>
+  <product id="PRD3" name="Product C">
+    The description of Product C.
+    <price>$29.99</price>
+    <description>This is yet another product description.</description>
+    <image>image3.jpg</image>
+  </product>
+</products>

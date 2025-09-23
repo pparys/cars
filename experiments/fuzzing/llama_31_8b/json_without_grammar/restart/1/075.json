@@ -1,0 +1,1 @@
+{"name": "Dragonite", "id": 149, "types": ["Dragon", "Flying"], "isLegendary": false, "evolvedForms": ["Dragonair", "Dragonite"], "abilities": [{"name": "Insomnia", "description": "Guaranteed wake up from Sleep status move due to high Attack stat."}], "preEvolution": "Dragonair"}

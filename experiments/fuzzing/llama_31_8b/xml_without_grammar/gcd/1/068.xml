@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resume [
+  <!ELEMENT resume (name, address, bio, experience+, skills*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT bio (#PCDATA)>
+  <!ELEMENT experience (title, description, duration)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT duration (#PCDATA)>
+  <!ELEMENT skills (#PCDATA)>
+  <!ATTLIST experience
+    year CDATA #REQUIRED
+    position CDATA #REQUIRED
+    location CDATA #IMPLIED
+  >
+]>
+<resume>
+  <name>John Doe</name>
+  <address>123 Main St, Anytown, USA 12345</address>
+  <bio>Software developer with 5 years of experience.</bio>
+  <experience year="2018" position="Junior Developer" location="Anytown, USA">
+    <title>Junior Developer</title>
+    <description>Developed multiple web applications using Java.</description>
+    <duration>January 2018 - December 2019</duration>
+  </experience>
+  <experience year="2020" position="Senior Developer">
+    <title>Senior Developer</title>
+    <description>Developed multiple enterprise applications using Python.</description>
+    <duration>January 2020 - Present</duration>
+  </experience>
+  <skills>Java, Python, JavaScript, SQL, etc.</skills>
+</resume>

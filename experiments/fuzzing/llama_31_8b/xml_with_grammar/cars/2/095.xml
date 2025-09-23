@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST library
+    name CDATA #IMPLIED
+    version CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #IMPLIED
+    authorref CDATA #REQUIRED>
+  <!ATTLIST author
+    name CDATA #IMPLIED
+    age CDATA #IMPLIED>
+]>
+<library name="My Library" version="1.0">
+  <book title="Harry Potter" authorref="#author1"/>
+  <book title="The Lord of the Rings" authorref="#author2"/>
+  <author name="John Doe" age="30" id="author1"/>
+  <author name="Jane Doe" age="25" id="author2"/>
+</library>

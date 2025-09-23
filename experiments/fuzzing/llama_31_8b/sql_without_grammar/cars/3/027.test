@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-windows-1.0 {
+  execsql {
+    CREATE TABLE employees(eid INTEGER, name TEXT, 
+      manager INTEGER, location TEXT);
+    INSERT INTO employees(eid, name, manager) VALUES(1, 'John', NULL);
+    INSERT INTO employees(eid, name, manager) VALUES(2, 'Jane', 1);
+    INSERT INTO employees(eid, name, manager) VALUES(3, 'Joe', 2);
+    INSERT INTO employees(location) VALUES('NY');
+    INSERT INTO employees(location) VALUES('SF');
+  }
+} {}
+
+do_test get-manager-1.1 {
+  execsql {
+    SELECT name 
+    FROM employees 
+    WHERE manager = 2;
+  }
+} {Jane Joe}
+
+finish_test

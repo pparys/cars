@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-schema-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER, order_date TEXT);
+    CREATE TABLE customers(customer_id INTEGER, name TEXT UNIQUE);
+    INSERT INTO customers(customer_id, name) VALUES(1, 'John Doe');
+    INSERT INTO customers(customer_id, name) VALUES(2, 'Jane Smith');
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(101, 1, '2022-01-01');
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(102, 2, '2022-01-02');
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(103, 1, '2022-01-03');
+  }
+} {}
+
+do_test retrieve-orders-1.1 {
+  execsql {
+    SELECT orders.*, customers.* 
+    FROM orders 
+    ORDER BY orderscustomer_id;
+  }
+} {103 1 John Doe 101 1 John Doe 102 2 Jane Smith}
+
+finish_test

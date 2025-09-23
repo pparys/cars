@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-large-table-3.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT UNIQUE
+    );
+    INSERT INTO employees VALUES(
+      3001, 'John Doe', 'john.doe@example.com'
+    );
+    INSERT INTO employees VALUES(
+      3002, 'Jane Doe', 'jane.doe@example.com'
+    );
+    INSERT INTO employees VALUES(
+      3003, 'Bob Smith', 'bob.smith@example.com'
+    );
+  }
+} {}
+
+do_test update-non-unique-email-3.1 {
+  execsql {
+    UPDATE employees 
+    SET email = 'john.doe@example.com' 
+    WHERE name = 'Jane Doe';
+  }
+} {3 {Conflicts with foreign key constraint UNIQUE email of: employees.}   
+        
+finish_test

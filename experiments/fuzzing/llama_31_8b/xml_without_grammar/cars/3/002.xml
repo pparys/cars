@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (name, description, price, reviews)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT reviews ((review)+)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    type (book|电子书) #IMPLIED>
+]>
+<catalog>
+  <product id="P1" type="book">
+    <name>Learning XML</name>
+    <description>A comprehensive guide to XML</description>
+    <price>29.99</price>
+    <reviews>
+      <review>This is a great book!</review>
+      <review>A must-read for XML developers.</review>
+    </reviews>
+  </product>
+  <product id="P2" type="电子书">
+    <name>Mastering XML</name>
+    <description>The ultimate guide to mastering XML</description>
+    <price>39.99</price>
+    <reviews>
+      <review>Extremely informative and helpful.</review>
+      <review>Helped me learn XML quickly.</review>
+    </reviews>
+  </product>
+</catalog>

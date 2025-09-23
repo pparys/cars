@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST chapter
+    number CDATA #REQUIRED>
+]>
+<book title="Harry Potter" author="J.K. Rowling">
+  <chapter number="1">
+    <paragraph>The boy who lived in cupboard under stairs.</paragraph>
+    <paragraph>He's got magical powers, expelled from Hogwarts.</paragraph>
+  </chapter>
+  <chapter number="2">
+    <paragraph>Alongside his friends Ron and Hermione faced the three-headed dog.</paragraph>
+  </chapter>
+</book>

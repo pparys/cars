@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-orderby-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, salary REAL);
+    INSERT INTO employees VALUES(1, 'John', 50000.0);
+    INSERT INTO employees VALUES(2, 'Alice', 60000.0);
+    INSERT INTO employees VALUES(3, 'Bob', 40000.0);
+  }
+} {}
+
+do_test select-employees-order-3.1 {
+  execsql {
+    SELECT name, salary FROM employees ORDER BY salary DESC LIMIT 2;
+  }
+} {Alice 60000.0 John 50000.0}
+
+finish_test

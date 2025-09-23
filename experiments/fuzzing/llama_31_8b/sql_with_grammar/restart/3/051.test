@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE Departments(
+      department_id INTEGER PRIMARY KEY AUTOINCREMENT,
+      department_name TEXT NOT NULL 
+    );
+
+    CREATE TABLE Employees(
+      employee_id INTEGER PRIMARY KEY AUTOINCREMENT,
+      employee_name TEXT NOT NULL,
+      department_id INTEGER NOT NULL,
+      FOREIGN KEY department_id REFERENCES Departments
+    );
+  INSERT INTO Departments(department_name)VALUES('Sales');
+  INSERT INTO Departments(department_name)VALUES('Engineering');
+  INSERT INTO Employees(employee_name, department_id)VALUES('John', 1);
+  INSERT INTO Employees(employee_name, department_id)VALUES('Alice', 2);
+  }
+} {}
+
+do_test insert-violates-foreign-key-1.1 {
+  execsql {
+    UPDATE Departments SET department_name = 'Sales2' WHERE department_id = 1;
+    UPDATE Employees SET department_id = 2 WHERE employee_id = 1;
+    SELECT * FROM Employees;
+  }
+} {1 {FOREIGN KEY constraint failed: Employees.department_id}  finish_test

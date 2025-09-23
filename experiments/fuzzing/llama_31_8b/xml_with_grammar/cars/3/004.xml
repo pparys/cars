@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#CDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    isbn CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="bk101" isbn="978-3-16-148410-0">
+    <title>Business Summarization</title>
+    <author>W. David Shaw</author>
+    <price>$49.95</price>
+  </book>
+  <book id="bk102" isbn="978-3-16-148410-1">
+    <title>Print Media</title>
+    <author>Tatiana Shconvert</author>
+    <price>$39.95</price>
+  </book>
+</catalog>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-one-table-2.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_name TEXT, order_total REAL);
+    INSERT INTO orders VALUES(1, 'Alice', 100.99);
+    INSERT INTO orders VALUES(2, 'Bob', 50.50);
+  }
+} {}
+
+do_test delete-multiple-rows-2.1 {
+  execsql {
+    DELETE FROM orders WHERE order_total > 50;
+  }
+} {}
+
+finish_test

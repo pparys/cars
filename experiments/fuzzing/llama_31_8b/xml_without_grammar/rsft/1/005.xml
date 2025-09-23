@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE clients [
+  <!ELEMENT clients (client*)>
+  <!ELEMENT client (#PCDATA)>
+  <!ATTLIST client
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    country CDATA #IMPLIED>
+]>
+<clients>
+  <client id="C1" name="John Doe" country="USA">Client 1 description</client>
+  <client id="C2" country="Canada">Client 2 description</client>
+  <client name="Jane Smith">Client 3 description</client>
+  <client id="C4">Client 4 description</client>
+</clients>

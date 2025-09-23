@@ -1,0 +1,27 @@
+<\xml version="1.0"?>
+<!DOCTYPE colors [
+  <!ELEMENT colors (group*, iconset?)>
+  <!ELEMENT group (color+ | text+ | tag+, text?)>
+  <!ATTLIST group
+    name CDATA #REQUIRED>
+  <!ATTLIST tag
+    type CDATA #REQUIRED>
+  <!ATTLIST tag
+    style CDATA #IMPLIED>
+  <!ATTLIST iconset
+    filename CDATA #REQUIRED>
+]>
+<colors>
+  <group>
+    <color>r=120,g=150,b=180</color>
+    <text>Group A-1</text>
+  </group>
+  <group name="A-2">
+    <color>r=180,g=100,b=240</color>
+  </group>
+  <tag type="Rounded Rect" style="Filled">Tag 1</tag>
+  <tag type="Polygon" style="Filled">Tag 2</tag>
+  <iconset filename="Blue Icon PNG">
+    This is an image annotation
+  </iconset>
+</colors>

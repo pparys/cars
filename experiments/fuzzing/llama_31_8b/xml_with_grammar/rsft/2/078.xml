@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book)>
+  <!ELEMENT book (author, title, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    publication-date CDATA #IMPLIED>
+]>
+<catalog>
+  <book isbn="1234567890" publication-date="2022-01-01">
+    <author>John Smith</author>
+    <title>My Book</title>
+    <price>19.99</price>
+  </book>
+</catalog>

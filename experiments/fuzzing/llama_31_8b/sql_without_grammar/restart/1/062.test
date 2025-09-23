@@ -1,0 +1,33 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER, order_date DATE);
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, customer_name TEXT);
+    CREATE TABLE order_items(order_item_id INTEGER PRIMARY KEY, order_id INTEGER, item_id INTEGER);
+  CREATE TABLE items(item_id INTEGER PRIMARY KEY, item_name TEXT);
+    INSERT INTO customers(customer_id, customer_name) VALUES(301, 'Customer1');
+    INSERT INTO customers(customer_id, customer_name) VALUES(302, 'Customer2');
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(101, 301, '2022-01-01');
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(102, 302, '2022-01-15');
+    INSERT INTO order_items(order_item_id, order_id, item_id) VALUES(201, 101, 401);
+    INSERT INTO order_items(order_item_id, order_id, item_id) VALUES(202, 102, 402);
+    INSERT INTO items(item_id, item_name) VALUES(401, 'Item1');
+    INSERT INTO items(item_id, item_name) VALUES(402, 'Item2');
+  }
+} {}
+
+do_test insert-violates-foreign-key-3.1 {
+  execsql {
+    UPDATE orders SET customer_id = 303; 
+    UPDATE customers SET customer_id = 304 WHERE customer_id = 303;
+    UPDATE items SET item_id = 405 WHERE item_id = 402;
+    UPDATE order_items SET order_id = 103 WHERE order_id = 101;
+    UPDATE order_items SET item_id = 403 WHERE item_id = 401;
+  }
+} {1 {FOREIGN KEY constraint failed: order_items.order_id}   		   	
+  																										   
+  																							      
+  																											     
+  																										

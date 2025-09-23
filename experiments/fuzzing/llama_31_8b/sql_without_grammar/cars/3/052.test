@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test sorting-products-1.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY, category TEXT, price REAL);
+    INSERT INTO products(id, category, price) VALUES(1, 'Beverages', 6.99);
+    INSERT INTO products(id, category, price) VALUES(2, 'Beverages', 1.99);
+    INSERT INTO products(id, category, price) VALUES(3, 'Food', 3.99);
+  }
+} {}
+
+do_test sorted-products-1.1 {
+  execsql {
+    SELECT id, category, price 
+    FROM products 
+    ORDER BY category, price DESC;
+  }
+} {3 Food 3.99 2 Beverages 1.99 1 Beverages 6.99}
+
+finish_test

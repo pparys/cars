@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE scores(
+      id INTEGER PRIMARY KEY,
+      player TEXT NOT NULL,
+      score INTEGER NOT NULL
+    );
+    INSERT INTO scores(id, player, score) 
+      VALUES(1, 'Player1', 500);
+    INSERT INTO scores(id, player, score) 
+      VALUES(2, 'Player2', 600);
+    INSERT INTO scores(id, player, score) 
+      VALUES(3, 'Player3', 700);
+  }
+} {}
+
+do_test update-score-3.1 {
+  execsql {
+    UPDATE scores 
+    SET score = score 
+    WHERE player!= 'Player1';
+  }
+  } {3 {3 values modified}                      
+     finish_test

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-remove-column-3.0 {
+  execsql {
+    CREATE TABLE emails(id INTEGER, address TEXT, PRIMARY KEY address);
+    INSERT INTO emails(address) VALUES('address1@example.com');
+    INSERT INTO emails(address) VALUES('address2@example.com');
+  }
+} {}
+
+do_test drop-remove-column-3.1 {
+  execsql {
+    SELECT id FROM emails ORDER BY id DESC LIMIT 1;
+  }
+} {2}
+
+finish_test

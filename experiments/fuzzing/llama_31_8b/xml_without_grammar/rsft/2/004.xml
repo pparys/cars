@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ELEMENT book (title, author, edition*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT edition (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<books>
+  <book id="bk101" year="2001">
+    <title>Winning</title>
+    <author>By James</author>
+    <edition>abc</edition>
+  </book>
+  <book id="bk102" year="2000">
+    <title>Angular</title>
+    <author>By David</author>
+    <edition>XYZ</edition>
+  </book>
+</books>

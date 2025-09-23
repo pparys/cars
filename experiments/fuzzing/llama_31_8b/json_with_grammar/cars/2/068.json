@@ -1,0 +1,15 @@
+{"name": "Eevee",
+"id": 133,
+"types": [
+"Normal"
+],
+"isLegendary": false,
+"abilities": [
+{
+"name": "D bootloader"
+},
+{
+"name": " Immunity"
+}
+],
+"preEvolution": null}

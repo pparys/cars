@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-temp-table-3.0 {
+  execsql {
+    CREATE TABLE artists(id INTEGER, name TEXT);
+    INSERT INTO artists(id, name) VALUES(301, 'Rihanna');
+    INSERT INTO artists(id, name) VALUES(302, 'Beyonce');
+  }
+} {}
+
+do_test select-artists-3.1 {
+  execsql {
+    SELECT name FROM artists ORDER BY name DESC;
+  }
+} {Rihanna Beyonce}
+
+finish_test

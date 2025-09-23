@@ -1,0 +1,18 @@
+<\xml file generated for question 3 \>
+ 
+   <!DOCTYPE book [
+     <!ELEMENT book (author, title, price, publisher)>
+     <!ELEMENT author (#PCDATA)>
+     <!ELEMENT title (#PCDATA)>
+     <!ELEMENT price (#PCDATA)>
+     <!ELEMENT publisher (#PCDATA)>
+   <!ATTLIST book
+     isbn CDATA #REQUIRED
+     year CDATA #IMPLIED>
+   ]>
+   <book isbn="1-56592-244-9" year="1996">
+    <author>John Smith</author>
+    <title>Data Structures and File Processing</title>
+    <price>$39.95</price>
+    <publisher Cengage-Learning-SouthAsiaLtdSid="sfel">Cengage Learning/South Asia Ltd</publisher>
+   </book>

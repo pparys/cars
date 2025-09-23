@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE restaurant [
+  <!ELEMENT restaurant (address, description, menu)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT menu (item+)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    price CDATA #REQUIRED
+    category CDATA #IMPLIED>
+]>
+<restaurant>
+  <address>
+    <street>123 Main St</street>
+    <city_ANY_TOWN></city>
+    <state>CA</state>
+    <zip>12345</zip>
+  </address>
+  <description>Casual dining in the heart of the city.</description>
+  <menu>
+    <item price="19.99" category="breakfast">Eggs Benedict</item>
+    <item price="29.99" category="lunch">Sandwich</item>
+  </menu>
+</restaurant>

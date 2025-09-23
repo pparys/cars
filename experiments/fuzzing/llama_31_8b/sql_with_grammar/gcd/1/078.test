@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-with-index-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER, name TEXT);
+    CREATE TABLE tags(tag_name TEXT); 
+    CREATE TABLE user_tags(user_id INTEGER, tag_name TEXT); 
+    CREATE TABLE tag_users(tag_name TEXT, user_id INTEGER);
+    INSERT INTO users(id, name) VALUES(101, 'Alice'); 
+    INSERT INTO users(id, name) VALUES(102, 'Bob'); 
+    INSERT INTO user_tags(user_id, tag_name) VALUES(101, 'fun'); 
+    INSERT INTO user_tags(user_id, tag_name) VALUES(102, 'fun'); 
+    INSERT INTO user_tags(user_id, tag_name) VALUES(102, 'work'); 
+    INSERT INTO tag_users(tag_name, user_id) VALUES('fun', 101); 
+    INSERT INTO tag_users(tag_name, user_id) VALUES('fun', 102); 
+    INSERT INTO tag_users(tag_name, user_id) VALUES('work', 102);
+  }
+} {}
+
+do_test select-user-tags-1.1 {
+  execsql {
+    SELECT users.* FROM users 
+    WHERE user_id = 101 
+    ORDER BY user_id; 
+    SELECT user_id FROM user_tags WHERE tag_name = 'fun';
+  }
+} {{101 Alice}                                                                                                                                                      

@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-with-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      manager_id INTEGER,
+      FOREIGN KEY manager_id REFERENCES employees ON DELETE SET NULL
+    );
+  CREATE TABLE managers(
+      id INTEGER PRIMARY KEY,
+      name TEXT
+    );
+  INSERT INTO managers(id, name) VALUES(1, 'John');
+  INSERT INTO employees(id, name, manager_id) VALUES(1, 'Alice', 1);
+  INSERT INTO employees(id, name, manager_id) VALUES(2, 'Bob', 1);
+  }
+} {}
+
+do_test delete-manager-id-set-to-null-1.1 {
+  execsql {
+    UPDATE managers SET id = NULL WHERE name = 'John';
+  }
+} {1 {}  		                                                                                     																																								
+finish_test

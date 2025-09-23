@@ -1,0 +1,41 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      department TEXT,
+      salary REAL
+    );
+    CREATE TABLE departments(
+      id INTEGER PRIMARY KEY,
+      department TEXT NOT NULL
+    );
+    CREATE TABLE employee_department(
+      id INTEGER PRIMARY KEY,
+      employee_id INTEGER,
+      department_id INTEGER,
+      FOREIGN KEYemployee_id REFERENCES employees ON DELETE CASCADE,
+      FOREIGN KEYdepartment_id REFERENCES departments ON DELETE CASCADE
+    );
+
+    INSERT INTO employees VALUES(1, 'John Doe', 'Sales', 50000.0);
+    INSERT INTO employees VALUES(2, 'Jane Doe', 'Marketing', 60000.0);
+
+    INSERT INTO departments VALUES(1, 'Sales');
+    INSERT INTO departments VALUES(2, 'Marketing');
+
+    INSERT INTO employee_department VALUES(1, 1, 1);
+    INSERT INTO employee_department VALUES(2, 2, 2);
+  }
+} {}
+
+do_test error-update-index-3.1 {
+  execsql {
+    UPDATE employees SET salary = 40000.0 WHERE id = 1;
+  }
+} {1 {FOREIGN KEY constraint failed: employee_department.employee_id=employees.id AND employee_department.department_id = departments.id AND view teşkil textaison}   
+   
+finish_test

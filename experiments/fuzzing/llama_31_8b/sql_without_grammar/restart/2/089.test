@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY,
+                          company TEXT);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY,
+                        customer_id INTEGER REFERENCES customers);
+  CREATE TABLE products(product_id INTEGER PRIMARY KEY,
+                        order_id INTEGER REFERENCES orders);
+  INSERT INTO customers VALUES(100, 'ABC Inc.');
+  INSERT INTO customers VALUES(200, 'DEF Inc.');
+  INSERT INTO orders VALUES(1, 100);
+  INSERT INTO orders VALUES(2, 200);
+  INSERT INTO products VALUES(1, 1);
+  INSERT INTO products VALUES(2, 2);
+  }
+} {}
+
+do_test insert-non-existent-foreign-key-1.1 {
+  execsql {
+    SELECT * FROM products WHERE product_id = 3 AND order_id = 100;
+  }
+} {{3 100}  
+
+
+finish_test

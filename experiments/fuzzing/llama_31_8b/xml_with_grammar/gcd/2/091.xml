@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (cdtitle,cdauthor,cdprice)>
+  <!ELEMENT cdtitle (#PCDATA)>
+  <!ELEMENT cdauthor (#PCDATA)>
+  <!ELEMENT cdprice (#PCDATA)>
+  <!ATTLIST cdtitle
+    genre CDATA #IMPLIED
+    publication-date CDATA #REQUIRED
+  >
+  <!ATTLIST cdauthor
+    nickname CDATA #IMPLIED
+    occupation CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <cdtitle genre="Music" publication-date="2022-12-25"> Song Title </cdtitle>
+  <cdauthor nickname="AOA" occupation="Singer"> Artist's Name </cdauthor>
+  <cdprice> $ 42.50 </cdprice>
+</catalog>

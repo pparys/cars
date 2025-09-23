@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (name,description,price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #IMPLIED
+    category CDATA #IMPLIED>
+]>
+<products>
+  <product id="P001" category="Electronics">
+    <name>Samsung Smart TV</name>
+    <description>40 inch 4K smart TV from Samsung</description>
+    <price>$800</price>
+  </product>
+  <product id="P002" category="Headphones">
+    <name>Beats Solo Pro</name>
+    <description>Wireless noise-cancelling headphones</description>
+    <price>$300</price>
+  </product>
+</products>

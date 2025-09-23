@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, publicationDATE)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publicationDATE (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<library>
+  <book id="123">
+    <author>John Lee</author>
+    <title>Collections of Poetry</title>
+    <publicationDATE>2010-01-02</publicationDATE>
+  </book>
+  <book id="456">
+    <author>Jane White</author>
+    <title>The World History</title>
+    <publicationDATE>2015-06-01</publicationDATE>
+  </book>
+</library>

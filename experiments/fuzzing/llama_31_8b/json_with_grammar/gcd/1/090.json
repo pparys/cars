@@ -1,0 +1,1 @@
+{"name": "Ivysaur", "id": 2, "types": ["Grass","Poison"], "isLegendary": false, "abilities": [{"name": "Overgrow", "description": "Grass-type moves deal more damage if this Pokémon is low on HP."}, {"name": "Chlorophyll", "description": "Cannot be inactive, ignoring recoil damage andaccuracy reductions."}], "preEvolution": null}

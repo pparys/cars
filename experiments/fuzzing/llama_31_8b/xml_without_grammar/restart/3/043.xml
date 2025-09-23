@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book|article*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT article (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+  <!ATTLIST article
+    title CDATA #IMPLIED
+    author (#PCDATA) #IMPLIED>
+]>
+<library>
+  <author>John Doe</author>
+  <book title="XML Essentials" publisher="O'Reilly Media"/>
+  <article title="XML for Beginners" author="Jane Smith"/>
+  <article title="XML for Intermediate Learners"/>
+</library>

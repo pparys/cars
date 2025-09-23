@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE member [
+  <!ELEMENT member (name,address,contact(shell,email))>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street,city,state,zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ATTLIST contact
+    shell CDATA #IMPLIED
+    email CDATA #IMPLIED>
+]>
+<member>
+  <name>John Doe</name>
+  <address>
+    <street>123 Main St</street>
+    <city>New York</city>
+    <state>NY</state>
+    <zip>10001</zip>
+  </address>
+  <contact shell="12345678">555-555-5555</contact>
+</member>

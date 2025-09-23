@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE articles [
+  <!ELEMENT articles (article+)>
+  <!ELEMENT article (title, content)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ATTLIST article
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<articles>
+  <article id="article1" author="John">
+    <title>This is the title</title>
+    <content>This is the content of the article</content>
+  </article>
+  <article id="article2">
+    <title>This is another title</title>
+    <content>This is another content of the article</content>
+  </article>
+</articles>

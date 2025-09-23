@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ATTLIST catalog language CDATA #REQUIRED>
+  <!ATTLIST catalog country CDATA #IMPLIED>
+  <!ATTLIST catalog scheme CDATA #REQUIRED>
+  <!ATTLIST product id CDATA #REQUIRED>
+  <!ATTLIST product price CDATA #REQUIRED>
+  <!ATTLIST product stock CDATA #IMPLIED>
+]>
+<catalog language="en" country="US" scheme="	http://example.com" xmlns="http://example.com/catalog.xsd">
+  <product id="123" price="19.99">
+    <name>Product1</name>
+    <description>This is a great product.</description>
+  </product>
+  <product id="456" price="29.99">
+    <name>Product2</name>
+    <description>This is another great product.</description>
+  </product>
+</catalog>

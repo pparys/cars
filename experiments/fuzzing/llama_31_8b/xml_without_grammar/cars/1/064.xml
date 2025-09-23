@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author,book)+>
+  <!ELEMENT author (name,book)+>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    idCDATA #REQUIRED
+    genreCDATA #IMPLIED>
+]>
+<library>
+  <author>
+    <name>John</name>
+  </author>
+  <author>
+    <name>Jane</name>
+  </author>
+  <book id="Book1" genre="Fiction">The Great Gatsby</book>
+  <book id="Book2" genre="Non-Fiction">The Origin of Species</book>
+</library>

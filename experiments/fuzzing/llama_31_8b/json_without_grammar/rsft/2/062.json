@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Stance Change", "description": "User starts with Unbinder, switching to Aura Sphere on the second turn."}, {"name": "Unnerve", "description": "Prevents opponents from using Egg moves."}], "preEvolution": null}

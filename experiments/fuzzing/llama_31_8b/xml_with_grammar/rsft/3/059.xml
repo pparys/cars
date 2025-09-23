@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE building [
+  <!ELEMENT building (description, location)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT location (address, coordinates)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT coordinates (#PCDATA)>
+  <!ELEMENT address BOOK TYPE CDATA #IMPLIED>
+  <!ATTLIST building 
+    id (string)  #REQUIRED
+    color (string)  #"RED">
+]>
+<building id="123" color="BLUE">
+  <description>This is a description of a building.</description>
+  <location>
+    <address>123 Main St</address>
+    <coordinates>37.7749,-122.4194</coordinates>
+  </location>
+</building>

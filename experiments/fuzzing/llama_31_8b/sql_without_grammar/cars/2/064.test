@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT UNIQUE);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY AUTOINCREMENT, customer_id INTEGER, total REAL);
+    CREATE TABLE order_items(id INTEGER PRIMARY KEY AUTOINCREMENT, order_id INTEGER, product TEXT);
+    INSERT INTO customers(name, email) VALUES('John Doe', 'john@example.com');
+    INSERT INTO customers(name, email) VALUES('Jane Doe', 'jane@example.com');
+    INSERT INTO orders(customer_id, total) VALUES(1, 100.0);
+    INSERT INTO order_items(order_id, product) VALUES(1, 'Product A');
+    INSERT INTO order_items(order_id, product) VALUES(1, 'Product B');
+  }
+} {}
+
+do_test check-order-items-3.1 {
+  execsql {
+    SELECT * FROM order_items WHERE order_id = 1;
+  }
+} {1 1 Product A 2 1 Product B}
+
+finish_test

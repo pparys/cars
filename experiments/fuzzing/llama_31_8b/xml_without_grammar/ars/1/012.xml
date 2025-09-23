@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE poem [
+  <!ELEMENT poem (title, verses)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT verses ((verse)+)>
+  <!ELEMENT verse (#PCDATA)>
+  <!ATTLIST poem
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<poem author="Emily Dickinson" year="1850" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="poem.xsd">
+    <title>Hope is the Thing with Feathers</title>
+    <verses>
+        <verse>
+            Hope is the Thing with Feathers—
+            That Perches in our Soul—
+            And sings the Tune without the words—
+            And never stops—at all—
+        </verse>
+        <verse>
+            And sweetest in the Gale is heard;
+            And sore must be the Storm
+            That could abash the little Bird
+            That kept so many warm—
+        </verse>
+    </verses>
+</poem>

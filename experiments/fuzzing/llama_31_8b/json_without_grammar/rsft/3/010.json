@@ -1,0 +1,9 @@
+{"name": "Mew", 
+"id": 151, 
+"types": ["Psychic", "Fairy"], 
+"isLegendary": true, 
+"abilities": [
+    {"name": "Synchronize", 
+        "description": "User's status conditions are cured when the Pokémon's status becomes affected with a stat condition"},
+    {"name": "Stress", 
+     "description": "Battle fewer times, increase the number of battles in the Pokémon's\n journal, or go on a snore fest by decreasing the number of battles in the\n party."}], "preEvolution": null}

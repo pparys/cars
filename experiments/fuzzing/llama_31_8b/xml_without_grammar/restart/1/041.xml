@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+]>
+<book id="BK001" publisher="ABC Publisher">
+  <title>The Adventure of Sherlock Holmes</title>
+  <author>Arthur Conan Doyle</author>
+  <publication>1892</publication>
+</book>

@@ -1,0 +1,17 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": [
+"Psychic"
+],
+"isLegendary": true,
+"abilities": [
+{
+"name": "Stress",
+"description": "Mewtwo is chosen to be more resistant to direct damage."
+},
+{
+"name": "Keen Eye",
+"description": "User's moves are not skipped due to accuracy lows."
+}
+],
+"preEvolution": null}

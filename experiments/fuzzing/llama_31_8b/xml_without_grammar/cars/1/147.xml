@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (catalog)>
+  <!ELEMENT catalog (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+]>
+<library>
+  <catalog>
+    <author>John Smith</author>
+    <author>Jane Doe</author>
+    <book id="1">
+      <title>The Great Gatsby</title>
+      <author>John Smith</author>
+    </book>
+    <book id="2">
+      <title>To Kill a Mockingbird</title>
+      <author>Jane Doe</author>
+    </book>
+  </catalog>
+</library>

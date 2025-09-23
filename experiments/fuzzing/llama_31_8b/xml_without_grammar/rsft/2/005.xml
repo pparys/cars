@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title,author,price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED>
+]>
+<catalog>
+  <author>John Doe</author>
+  <book isbn="123456789">
+    <title>My Book</title>
+    <author>John Doe</author>
+    <price>$19.99</price>
+  </book>
+  <book isbn="987654321">
+    <title>Another Book</title>
+    <author>Jane Doe</author>
+    <price>$9.99</price>
+  </book>
+</catalog>

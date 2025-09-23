@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog ((book),*)>
+  <!ATTLIST catalog
+    author CDATA #REQUIRED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<catalog author="John Doe">
+  <book title="Book 1" price="19.99"/>
+  <book title="Book 2" price="29.99"/>
+</catalog>

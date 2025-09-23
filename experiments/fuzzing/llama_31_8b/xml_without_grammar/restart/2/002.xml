@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (library+)>
+  <!ELEMENT library (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED
+  >
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    nationality CDATA #IMPLIED
+  >
+]>
+<root>
+  <library>
+    <book id="BK001" price="19.99">Harry Potter</book>
+    <author name="J.K. Rowling">British</author>
+    <category>Fiction</category>
+    <publisher>Bloomsbury</publisher>
+    <publication-date>1997-06-26</publication-date>
+  </library>
+</root>

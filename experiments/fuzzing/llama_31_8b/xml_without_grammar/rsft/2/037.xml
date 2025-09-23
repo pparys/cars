@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, copyright)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT copyright (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED>
+]>
+<book isbn="978-1449320065">
+  <title>Advanced XML Programming</title>
+  <author>Mary Jane Smith</author>
+  <copyright>2020-2023 Mary Jane Smith</copyright>
+</book>

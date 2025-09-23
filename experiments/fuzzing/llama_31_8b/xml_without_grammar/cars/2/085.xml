@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookshop [
+  <!ELEMENT bookshop (book*)>
+  <!ELEMENT book (#PCDATA, author+, price+ | author+, price*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT authorbook (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    price CDATA #IMPLIED>
+  <!ATTLIST author
+    id ID #REQUIRED>
+  <!ATTLIST price
+    id ID #REQUIRED>
+]>
+<bookshop>
+  <book id="bk1">
+    <title>Learning XML</title>
+    <author id="a1">J. Scott Skileter</author>
+    <price id="p1" currency="USD">49.99</price>
+  </book>
+  <book id="bk2">
+    <title>XML for Dummies</title>
+    <price id="p2" currency="EUR">34.99</price>
+    <author id="a2">Ed Tittel</author>
+  </book>
+  <authorbook>
+    J. Scott Skileter is the author of 'Learning XML' and 'XML Essentials'
+  </authorbook>
+  <price>10.00</price>
+</bookshop>

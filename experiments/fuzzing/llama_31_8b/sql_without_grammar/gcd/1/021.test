@@ -1,0 +1,32 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE students(id INTEGER PRIMARY KEY, name TEXT, age INTEGER);
+    CREATE TABLE grades(course TEXT PRIMARY KEY, grade TEXT);
+    CREATE TABLE student_grades(student_name TEXT, course TEXT, grade REAL, PRIMARY KEY student_name, course);
+  CREATE TABLE subjects(subject_name TEXT PRIMARY KEY, student_name TEXT);
+  CREATE TABLE scores(student_name TEXT PRIMARY KEY, subject_name TEXT PRIMARY KEY, value INTEGER);
+  INSERT INTO students(id, name, age) VALUES(1, 'John', 18);
+  INSERT INTO students(id, name, age) VALUES(2, 'Mary', 19);
+  INSERT INTO grades(course, grade) VALUES('Math', 'A');
+  INSERT INTO grades(course, grade) VALUES('Science', 'B');
+  INSERT INTO student_grades(student_name, course, grade) VALUES('John', 'Math', 75.5);
+  INSERT INTO student_grades(student_name, course, grade) VALUES('Mary', 'Science', 88.9);
+  INSERT INTO subjects(subject_name, student_name) VALUES('Math', 'John');
+  INSERT INTO subjects(subject_name, student_name) VALUES('Science', 'Mary');
+  INSERT INTO scores(student_name, subject_name, value) VALUES('John', 'Math', 9);
+  INSERT INTO scores(student_name, subject_name, value) VALUES('Mary', 'Science', 8);
+}
+} {}
+
+do_test query-grades-1.1 {
+  execsql {
+    SELECT s1course, s2grade
+    FROM student_grades
+    ORDER BY s1course, s2grade;
+  }
+} {Math 75.5 Science 88.9}
+
+finish_test

@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY AUTOINCREMENT, client TEXT, order_date DATE, total REAL);
+    INSERT INTO orders(client, order_date, total) VALUES('Client A', '2022-01-01', 100.0);
+    INSERT INTO orders(client, order_date, total) VALUES('Client B', '2022-01-02', 200.0);
+  }
+} {}
+
+do_test select-latest-order-3.1 {
+  execsql {
+    SELECT client, order_date, total 
+    FROM orders 
+    ORDER BY order_date DESC LIMIT 1;
+  }
+} {Client B 2022-01-02 200.0}
+
+finish_test

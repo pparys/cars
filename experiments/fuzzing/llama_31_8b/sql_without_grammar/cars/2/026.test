@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-users-3.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT NOT NULL);
+    INSERT INTO users(id, name) VALUES(201, 'Cecilia');
+    INSERT INTO users(id, name) VALUES(202, 'David');
+    INSERT INTO users(id, name) VALUES(203, 'Eve');
+  }
+} {}
+
+do_test select-users-3.1 {
+  execsql {
+    SELECT id, name FROM users WHERE id > 201 ORDER BY id DESC LIMIT 2;
+  }
+} {202 David 203 Eve}
+
+finish_test

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE order [
+  <!ELEMENT order (customer+, item*)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phoneNumber (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST order
+    id CDATA #REQUIRED
+    date CDATA #REQUIRED>
+  <!ATTLIST customer
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<order id="ORD-001" date="2024-07-26">
+  <customer id="CLI-001" name="John Doe">
+    <address>123 Street</address>
+    <phoneNumber>123-456-7890</phoneNumber>
+    <email>johndoe@example.com</email>
+  </customer>
+  <customer id="CLI-002" name="Jane Doe">
+    <address>456 Street</address>
+    <phoneNumber>098-765-4321</phoneNumber>
+    <email>janedoe@example.com</email>
+  </customer>
+  <item id="ITM-001" price="19.99">Product A</item>
+  <item id="ITM-002" price="14.99">Product B</item>
+</order>

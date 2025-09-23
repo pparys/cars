@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, audio+, video+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT audio (#PCDATA)>
+  <!ELEMENT video (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+
+  <!ELEMENT status (#PCDATA)>
+  
+  <!ATTLIST library
+    name CDATA #REQUIRED
+    year CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    genre CDATA #IMPLIED
+    publisher CDATA #IMPLIED
+    status CDATA #REQUIRED
+  >
+  <!ATTLIST audio
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    genre CDATA #IMPLIED
+    publisher CDATA #IMPLIED
+    duration CDATA #REQUIRED
+  >
+  <!ATTLIST video
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    genre CDATA #IMPLIED
+    publisher CDATA #IMPLIED
+    duration CDATA #REQUIRED
+  >
+]>
+<library name="My Library" year="2022">
+  <book id="B001" title="To Kill a Mockingbird" author="Harper Lee" genre="Fiction" publisher="J.B. Lippincott & Co." status="Available"/>
+  <book id="B002" title="1984"  status="Checked Out" />
+  <audio id="A001" title="The Beatles - Sgt. Pepper's Lonely Hearts Club Band" duration="39:32" />
+  <video id="V001" title="2001: A Space Odyssey" publisher="Metro-Goldwyn-Mayer" duration="141:34" />
+</library>

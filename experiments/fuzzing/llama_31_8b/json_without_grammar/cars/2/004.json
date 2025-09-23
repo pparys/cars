@@ -1,0 +1,4 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], 
+"isLegendary": true, "abilities": [{"name": "Sticky Hold", 
+"description": "User cannot drop the ★ held item."}], 
+"preEvolution": null}

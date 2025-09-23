@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-insert-1.0 {
+  execsql {
+    CREATE TABLE customers(country TEXT PRIMARY KEY, name TEXT);
+    INSERT INTO customers(country, name) VALUES('USA', 'John');
+    INSERT INTO customers(country, name) VALUES('Canada', 'Emma');
+    INSERT INTO customers(country, name) VALUES('USA', 'Oliver');
+  }
+} {}
+
+do_test select-country-1.1 {
+  execsql {
+    SELECT name FROM customers WHERE country = 'USA' ORDER BY name LIMIT 1;
+  }
+} {Oliver}
+
+finish_test

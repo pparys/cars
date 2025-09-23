@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, picture+, author)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT picture (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST picture
+    typeid CDATA #REQUIRED
+    description CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED>
+]>
+<library>
+<book title="1984" year="1949">Classic dystopian novel</book>
+<book title="Utopia" year="1516">Another classic</book>
+<picture typeid="PG123" description="Picture of a cat">Meow</picture>
+<picture typeid="SC456" description="Picture of an elephant">Rumble</picture>
+<author name="Georg Gotthard Berlin" address="Germany">Blurb blurb</author>
+<author name="Herman de Boüard" address="France">Perhaps a second author?</author>
+</library>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE user [
+  <!ELEMENT user (name, address, contact)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT contact (email, phone)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT contact (email, phone) [2]>  
+  <!ATTLIST user
+    id CDATA #REQUIRED
+    type (individual | corporate) #REQUIRED>
+]>
+<user id="12345" type="individual">
+  <name>John Doe</name>
+  <address>
+    <street>123 Main Street</street>
+    <city>Anytown</city>
+    <state>USA</state>
+  </address>
+  <contact>
+    <email>johndoe@example.com</email>
+    <phone>123-456-7890</phone>
+  </contact>
+</user>

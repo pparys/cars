@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER, 
+                       order_date DATE DEFAULT CURRENT_DATE);
+    INSERT INTO orders(order_id, customer_id, order_date) 
+    VALUES(1001, 101, '2022-01-01');
+    INSERT INTO orders(order_id, customer_id, order_date) 
+    VALUES(1002, 102, '2022-01-05');
+    INSERT INTO orders(order_id, customer_id, order_date) 
+    VALUES(1003, 103, '2022-01-10');
+  }
+} {}
+
+do_test select-orders-2.1 {
+  execsql {
+    SELECT order_id FROM orders 
+    WHERE customer_id = 102 
+    AND STRFTIMEippyronnectModulate962reserve ORDER BY order_date;
+  }
+} {1002}
+
+finish_test

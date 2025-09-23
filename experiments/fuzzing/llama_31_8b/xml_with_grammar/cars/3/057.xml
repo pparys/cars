@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name,age,occupation)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT occupation (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    height CDATA #IMPLIED
+  >
+]>
+<person id="123" height="175cm">
+  <name>John</name>
+  <age>30</age>
+  <occupation>Software Engineer</occupation>
+</person>

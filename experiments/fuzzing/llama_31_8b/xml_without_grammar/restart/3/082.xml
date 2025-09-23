@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (category*)>
+  <!ELEMENT category (item*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ELEMENT models (model*)>
+  <!ELEMENT model (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+  >
+]>
+<inventory>
+  <category>
+    <item id="1234">Laptop</item>
+    <item id="5678">Phone</item>
+  </category>
+  <category>
+    <models>
+      <model>i5</model>
+      <model>i7</model>
+    </models>
+  </category>
+  <category>
+    <item id="9012">Tablet</item>
+  </category>
+</inventory>

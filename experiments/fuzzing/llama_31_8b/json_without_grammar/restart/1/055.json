@@ -1,0 +1,46 @@
+{"name":"Mewtwo","id":150,"types":["Psychic"],"isLegendary":true,"abilities":[{"name":"Psystrike","description":"Deals damage and has a 10% chance to apply for burns"}],"evolution":null,"weaknesses":[{"type":"Fairy","factor":1.2}],"stats":{"hp":106,"attack":154,"defense":90,"specialAttack":120,"specialDefense":154,"speed":130}
+
+   ,    
+      
+    "factor":1.6   
+ ,
+          "factor":1.4   
+       , "factor":0.5  
+      , "factor":0.75  
+    , "factor":1.0  
+ , "factor":1.2  
+,"factor":0.9  
+,"type":"Electric","type":"Fighting","type":"Ghost","type":"Dragon","type":"Steel","type":"Fire","type":"Grass","type":"Ice","type":"Bug","type":"Rock","type":"Flying","type":"Water","type":"Ground","type":"Psychic","type":"Poison"
+  
+, "type":"Normal","name":"Gyarados","name":"Alakazam","name":"Porygon-Z","name":"Toxapex","name":"Snorlax","name":"Vileplume","name":"Togekiss","name":"Jolteon","name":"Tyranitar","name":"Arcanine","name":"Exeggutor","name":"Galarian Weezing","name":"Galarian Mr. Rime","name":"Lickitung","name":"Tauros","name":"Hitmonlee","name":"Aipom","name":"Gastly","name":"Nidoking"
+  
+, "substats":{
+                                "speed":140,"specialAttack":98,"specialDefense":86,"defense":90,"attack":110,"hp":110},
+   "usage_encyclopedia_shortform":20045
+     
+  , "evolution arrested":null
+ 
+ ,  "hyper level":true 
+   
+   , 
+ 
+   "name":null 
+   ,
+ 
+ 
+   "id":null 
+   
+   , 
+ 
+   "usage_encyclopedia_shortform":{
+      "builds":[]},
+   "substats":null 
+   
+ ,"name":null 
+     
+ , "attacks":null 
+ 
+  , 
+  "techniques":null
+   , "meritable":{
+			"method": [

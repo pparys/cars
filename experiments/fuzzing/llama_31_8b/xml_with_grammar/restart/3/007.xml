@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tags [
+  <!ELEMENT tags (tag*)>
+  <!ELEMENT tag (#PCDATA)>
+  <!ATTLIST tag
+    id ID #REQUIRED
+    color (red|green|blue) #IMPLIED>
+]>
+<tags>
+  <tag id="1" color="red">First tag</tag>
+  <tag id="2" color="green">Second tag</tag>
+  <tag id="3" color="blue">Third tag</tag>
+</tags>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (title, author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+  >
+]>
+<library>
+  <book id="bk101">
+    <title>_book ONE</title>
+    <author>David Birmingham</author>
+  </book>
+  <book id="bk102">
+    <title>book TWO</title>
+    <author>Nigel Bolton</author>
+  </book>
+  <book id="bk103">
+    <title>my Book</title>
+    <author>Hallie Miller</author>
+  </book>
+</library>

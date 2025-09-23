@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE store [
+<!ELEMENT store (#PCDATA)>
+<!ELEMENT article (#PCDATA)>
+<!ELEMENT product (article, price)>
+
+<!ELEMENT price (#PCDATA)>
+
+<!ATTLIST store
+    name CDATA #REQUIRED
+    location CDATA #IMPLIED
+>
+<!ATTLIST article
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED
+>
+<!ATTLIST product
+    id CDATA #IMPLIED
+>
+]>
+<store name="Electronics Store" location="New York">
+<product id="PS-1234">
+<price>$500.00</price>
+<article id="A-001">iPhone 14</article>
+</product>
+</store>

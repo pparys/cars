@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    id (book|novel|poem) #REQUIRED
+    price (high|low|medium) #IMPLIED
+  >
+]>
+<catalog>
+  <book id="book">
+    <author id="author1" name="John Smith"/>
+    <publisher>ABC Publishing</publisher>
+    <address>123 Main St</address>
+    <phone>555-1234</phone>
+    <price>high</price>
+  </book>
+</catalog>

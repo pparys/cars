@@ -1,0 +1,1 @@
+{"name": "Spinarak", "id": 167, "types": ["Bug", "Poison"], "isLegendary": false, "abilities": [{"name": "Silk Wrap", "description": "Decrease opponent's Attack stat."}, {"name": "Swarm", "description": "Boost Attack stat when HP <= 1/3"}], "preEvolution": "Ariados"}

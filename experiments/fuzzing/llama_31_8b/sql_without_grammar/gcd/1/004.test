@@ -1,0 +1,35 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-foreign-key-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE managers(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE employee_manager(
+      id INTEGER PRIMARY KEY,
+      employee_id INTEGER NOT NULL,
+      manager_id INTEGER NOT NULL,
+      FOREIGN KEY employee_id REFERENCES employees id,
+      FOREIGN KEY manager_id REFERENCES managers id
+    );
+  CREATE TABLE manager_projects(
+      id INTEGER PRIMARY KEY,
+      manager_id INTEGER NOT NULL,
+      project_id INTEGER NOT NULL,
+      FOREIGN KEY manager_id REFERENCES managers id
+    );
+  INSERT INTO managers (id, name) VALUES(1, 'John');
+  INSERT INTO employees (id, name) VALUES(501, 'Alice');
+  INSERT INTO employees (id, name) VALUES(502, 'Bob');
+  INSERT INTO employee_manager (id, employee_id, manager_id) VALUES(1, 501, 1);
+  INSERT INTO manager_projects (id, manager_id, project_id) VALUES(2, 1, 1);
+  }
+} {}
+
+do_test delete-empoyee-1.1 {
+  execsql {
+    DELETE FROM employees WHERE name = 'Alice';
+  }
+} {}
+
+finish_test

@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER);
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO customers(customer_id, name) VALUES(1, 'John Doe');
+    INSERT INTO orders(order_id, customer_id) VALUES(1, 1);
+  }
+} {}
+
+do_test cascade-update-1.1 {
+  execsql {
+    UPDATE customers SET name = 'Jane Doe' WHERE customer_id = 1;
+  }
+} {}
+
+finish_test

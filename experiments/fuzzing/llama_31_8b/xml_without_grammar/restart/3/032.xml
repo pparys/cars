@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, publication-date, genre)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    authorref CDATA #IMPLIED>
+]>
+<library>
+  <author>John Doe</author>
+  <book id="bk101" authorref="author1">
+    <title>XML for Beginners</title>
+    <publication-date>2022-01-01</publication-date>
+    <genre>Computer Science</genre>
+  </book>
+  <book id="bk102">
+    <title>XML Tutorial</title>
+    <publication-date>2020-06-01</publication-date>
+    <genre>Web Development</genre>
+  </book>
+</library>

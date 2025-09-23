@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-index-2.0 {
+  execsql {
+    CREATE TABLE addresses (id INTEGER, street TEXT, city TEXT);
+  CREATE TABLE visited (id INTEGER PRIMARY KEY, address_id INTEGER, UNIQUE address_id);
+  INSERT INTO addresses(id, street, city) VALUES(1, '123 Main St', 'Anytown');
+  INSERT INTO addresses(id, street, city) VALUES(2, '456 School St', 'Othertown');
+  INSERT INTO visited(id, address_id) VALUES(1, 1);
+  INSERT INTO visited(id, address_id) VALUES(2, 2);
+  }
+} {}
+
+do_test insert-violates-unique-2.1 {
+  execsql {
+    SELECT address_id FROM visited WHERE address_id = 1;
+  }
+} {1}
+  
+finish_test

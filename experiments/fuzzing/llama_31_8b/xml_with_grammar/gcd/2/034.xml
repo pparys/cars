@@ -1,0 +1,17 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name, age, address)>
+  <!ATTLIST person
+          id   CDATA #REQUIRED
+          sex  (male|female) #IMPLIED>
+]>
+<person id="101" sex="female">
+    <name>Emily</name>
+    <age>25</age>
+    <address>
+    <street>221 Spring House Lane</street>
+    <city>Elmont</city>
+    <state>NY</state>
+    <zip>11050</zip>
+    </address>
+</person>

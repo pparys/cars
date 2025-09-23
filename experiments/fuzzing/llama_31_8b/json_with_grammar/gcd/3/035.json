@@ -1,0 +1,19 @@
+{"name": "Venusaur",
+ "id": 3,
+ "types": [
+  "Grass",
+  "Poison"
+ ],
+ "isLegendary": false,
+ "abilities": [
+  {
+   "name": "Solar Power",
+   "description": "Electric-type moves may have doubled power."
+  },
+  {
+   "name": "Overgrow",
+   "description": "Boosts attack power when HP is low."
+  }
+ ],
+ "preEvolution": null
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (title, author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<books>
+  <book id="bk101">
+    <title>XML for Dummies</title>
+    <author>John Doe</author>
+  </book>
+  <book id="bk102">
+    <title>XML Beginner's Guide</title>
+    <author>Jane Smith</author>
+  </book>
+</books>

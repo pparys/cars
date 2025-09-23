@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test prepare-with-rowid-2.0 {
+  execsql {
+    CREATE TABLE employees(rowid INTEGER PRIMARY KEY, name TEXT NOT NULL);
+    INSERT INTO employees(name) VALUES('John Smith');
+  }
+} {}
+
+do_test select-rowid-2.1 {
+  execsql {
+    SELECT rowid, name FROM employees WHERE name = 'John Smith';
+  }
+} {1 John Smith}
+
+finish_test

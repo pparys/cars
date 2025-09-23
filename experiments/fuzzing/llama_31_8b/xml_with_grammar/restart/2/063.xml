@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root-element [
+  <!ELEMENT root-element (element1|element2)*>
+  <!ATTLIST root-element
+    attr1 CDATA #IMPLIED
+    attr2 NOT EMPTY #IMPLIED
+  >
+  <!ATTLIST element1
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+  >
+  <!ATTLIST element2
+    hidden BOOLEAN #REQUIRED
+  >
+]>
+<root-element attr1="value1" attr2="value2">
+  <element1 id="id1" name="name1">This is the content of element 1.</element1>
+  <element2 hidden="true">This is the content of element 2.</element2>
+</root-element>

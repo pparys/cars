@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author*, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <author name="John Doe">Author description</author>
+  <book>This is a book</book>
+  <book>This is another book</book>
+</catalog>

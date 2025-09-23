@@ -1,0 +1,9 @@
+{"name":"Zapdos",
+"id":145,
+"types":["Flying","Electric"],
+"isLegendary":true,
+"abilities":[
+    {"name":"Static","description":"User has a 30% chance of paralyzing opponents with every attack."},
+    {"name":"Drought","description":"The sun begins sun. You lose 50% of your Special Attack stat while the sun is active, but everything else has increased power by 20%."},
+    {"name":"Storm Drain","description":"When weather becomes rain, the Pokémon absorbs a moderate amount of water, and also is immune to Water-type attacks."}],
+"preEvolution":null}

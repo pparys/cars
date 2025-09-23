@@ -1,0 +1,1 @@
+{"name":"Dragonite", "id":149, "types":["Dragon","Flying"], "isLegendary":false, "abilities":[{"name":"Multiscale","description":"Cuts the damage from a move by 25% when the target's HP is above 50%."},{"name":"DRx","description":"If Dragonite is holding a dragon-type item, it has a 50% chance to lower the target's speed."}],"preEvolution": null}

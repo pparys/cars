@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY AUTOINCREMENT, customer TEXT, order_total REAL);
+    INSERT INTO orders(customer, order_total) VALUES('Alice', 100.0);
+    INSERT INTO orders(customer, order_total) VALUES('Bob', 200.0);
+  }
+} {}
+
+do_test select-order-2.1 {
+  execsql {
+    SELECT customer FROM orders WHERE order_total > 150.0;
+  }
+} {Alice}
+
+finish_test

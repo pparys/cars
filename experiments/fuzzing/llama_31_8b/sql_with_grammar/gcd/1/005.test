@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE suppliers(id INTEGER, name TEXT);
+    INSERT INTO suppliers(id, name) VALUES(200, 'Supplier A');
+    INSERT INTO suppliers(id, name) VALUES(201, 'Supplier B');
+  }
+} {}
+
+do_test order-suppliers-2.1 {
+  execsql {
+    SELECT name FROM suppliers ORDER BY id DESC;
+  }
+} {Supplier B Supplier A}
+
+finish_test

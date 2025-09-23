@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cookbook [
+  <!ELEMENT cookbook (name)>
+  <!ELEMENT name (#PCDATA)>
+  <!ATTLIST cookbook
+    author CDATA #REQUIRED
+    title CDATA #IMPLIED>
+]>
+<cookbook author="John Doe"
+  title="John's Delicious Recipes">
+  <name>My Favorite Cookbook</name>
+</cookbook>

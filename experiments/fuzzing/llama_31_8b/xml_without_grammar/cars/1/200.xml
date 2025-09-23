@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stock [
+  <!ELEMENT stock (broker,*item)>
+  <!ELEMENT broker (address+, phone+, email+)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST stock
+    symbol CDATA #REQUIRED
+    quantity CDATA #IMPLIED
+    price CDATA #IMPLIED>
+  <!ATTLIST broker
+    name CDATA #REQUIRED
+    account CDATA #IMPLIED>
+]>
+<stock symbol="AAPL" quantity="100">
+  <broker name="John Doe" account="12345">
+    <address>123 Main St</address>
+    <phone>555-555-5555</phone>
+    <email>johndoe@example.com</email>
+  </broker>
+  <item>iPhone 13</item>
+  <item>MacBook Air</item>
+  <item>iPad Pro</item>
+</stock>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-2.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, order_date DATE, total REAL);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT, email TEXT);
+    INSERT INTO customers(id, name, email, order_date, total) VALUES(1, 'John Doe', 'john@example.com', '2020-01-01', 100.50);
+  }
+} {}
+
+do_test insert-order-2.1 {
+  execsql {
+    SELECT total FROM orders WHERE id = 1;
+  }
+} {100.5}
+
+finish_test

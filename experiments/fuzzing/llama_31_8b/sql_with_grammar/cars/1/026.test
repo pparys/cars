@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER PRIMARY KEY, title TEXT);
+    INSERT INTO books(title) VALUES('To Kill a Mockingbird');
+    INSERT INTO books(title) VALUES('1984');
+  }
+} {}
+
+do_test select-false-3.1 {
+  execsql {
+    SELECT title FROM books WHERE id!= 1 AND title = '1984';
+  }
+} {}
+
+finish_test

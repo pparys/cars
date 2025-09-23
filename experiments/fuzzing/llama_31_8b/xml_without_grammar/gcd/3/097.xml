@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE location [
+  <!ELEMENT location (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT mapdata (#PCDATA)>
+  <!ATTLIST location
+    id CDATA #REQUIRED
+    lat CDATA #REQUIRED
+    lon CDATA #REQUIRED>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    house_number CDATA #REQUIRED>
+]>
+<note>
+  <important_info>This is a complex note with children.</important_info>
+  <location id="loc1" lat="48.8567" lon="2.2943">
+    <address street="Rue de Rivoli" house_number="123">
+      <country>France</country>
+      <city>Paris</city>
+      <mapdata>Carte d&#39;une rue</mapdata>
+    </address>
+  </location>
+</note>

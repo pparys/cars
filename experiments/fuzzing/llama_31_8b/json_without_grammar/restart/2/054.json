@@ -1,0 +1,7 @@
+{"name": "Zapdos", "id": 145, "types": ["Electric", "Flying"], 
+"isLegendary": true, "abilities": [{"name": "Static", 
+"description": "May paralyze opponents.", 
+"effect": {"chance": 30}}, {"name": "Drought", 
+"description": "Halves HP and heals opposing Water-type Pokémon.", 
+"effect": {"healsWater": true}}], "baseStats": {"hp": 95, "attack": 85, "defense": 90, "speed": 100, "specialAttack": 125, "specialDefense": 90, "baseStatTotal": 595}, 
+"preEvolution": null}

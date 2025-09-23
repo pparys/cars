@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-junction-1.0 {
+  execsql {
+    CREATE TABLE junction_test(
+      id INTEGER,
+      is_primary_key INTEGER,
+      is_foreign_key INTEGER
+    );
+    INSERT INTO junction_test(id, is_primary_key, is_foreign_key) 
+      VALUES(1, 1, 0);
+  }
+} {}
+
+do_test update-junction-1.1 {
+  execsql {
+    UPDATE junction_test 
+      SET is_foreign_key = 1 WHERE id = 1;
+  }
+} {}
+
+finish_test

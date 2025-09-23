@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE logs(level TEXT, message TEXT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP);
+    INSERT INTO logs(level, message) VALUES('INFO', 'System started');
+  }
+} {}
+
+do_test select-logs-3.1 {
+  execsql {
+    SELECT level, message, timestamp FROM logs ORDER BY timestamp DESC LIMIT 1;
+  }
+} {INFO {System started}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+            
+      
+      
+      
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     

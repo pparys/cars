@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE author [
+  <!ELEMENT author (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    type (author|editor) "author">
+]>
+<author id="A001" type="author">
+  <name>Ivan Ivanov</name>
+  <address>
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <country>USA</country>
+  </address>
+</author>

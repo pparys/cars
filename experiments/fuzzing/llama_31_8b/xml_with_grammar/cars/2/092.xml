@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ship [
+  <!ELEMENT ship (crew, cargo)>
+  <!ELEMENT crew (*, ttlCrew?)>
+  <!ELEMENT cargo (item*, weight)>
+  <!ELEMENT ttlCrew EMPTY>
+  <!ELEMENT weight EMPTY>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    type CDATA #REQUIRED
+  >
+]>
+<ship>
+  <crew>
+    <ttlCrew/>
+    <crewmember>
+      <name>John Doe</name>
+    </crewmember>
+    <crewmember>
+      <name>Jane Smith</name>
+    </crewmember>
+  </crew>
+  <cargo>
+    <item type="food">32 crates of apples and pears</item>
+    <item type="fuel">100 gallons of jet fuel</item>
+    <weight>42,000 kg</weight>
+  </cargo>
+</ship>

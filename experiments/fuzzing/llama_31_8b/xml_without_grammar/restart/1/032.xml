@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, author+)>
+  <!ELEMENT book (title, ISBN, year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT ISBN (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST author
+    id CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <book id="BK-1234">
+    <title>The Art of War</title>
+    <ISBN>978-0061240688</ISBN>
+    <year>1996</year>
+  </book>
+  <book id="BK-5678">
+    <title>The Great Gatsby</title>
+    <ISBN>978-1427059836</ISBN>
+    <year>1925</year>
+  </book>
+  <book id="BK-9012">
+    <title>Pride and Prejudice</title>
+    <ISBN>978-0743273565</ISBN>
+    <year>1813</year>
+  </book>
+  <author id="AU-123">
+    George S. Patton
+  </author>
+  <author id="AU-567">
+    F. Scott Fitzgerald
+  </author>
+  <author id="AU-901">
+    Jane Austen
+  </author>
+</catalog>

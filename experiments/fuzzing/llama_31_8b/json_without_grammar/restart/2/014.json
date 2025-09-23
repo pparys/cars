@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "All health points restored immediately."}, {"name": "Unaware", "description": "Ignoring opponent's stat increases."}], "preEvolution": null}

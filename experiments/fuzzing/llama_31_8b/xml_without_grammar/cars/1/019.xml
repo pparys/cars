@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE business [
+  <!ELEMENT business (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address - (street, city, state)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ATTLIST business
+    id CDATA #REQUIRED
+    type (retail|wholesale) #REQUIRED>
+]>
+<business id="1043" type="wholesale">
+  <name>EPS Industries Inc.</name>
+  <address>
+    <street>882 12th Ave.</street>
+    <city>New York</city>
+    <state>NY</state>
+  </address>
+</business>

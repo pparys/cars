@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (author, title, price, review)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="BK001">
+    <author>John Smith</author>
+    <title>The History of Programming</title>
+    <price>$50.95</price>
+    <review>A great book about programming languages.</review>
+  </book>
+  <book id="BK002">
+    <author>Jane Doe</author>
+    <title>Introduction to XML</title>
+    <price>$30.99</price>
+    <review>A useful guide for beginners.</review>
+  </book>
+</catalog>

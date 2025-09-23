@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, cd+ )>
+  <!ELEMENT book (title, author, year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT cd (title, artist)>
+  <!ELEMENT artist (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<library>
+  <book id="bk102">
+    <title>Pride And Prejudice</title>
+    <author>Jane Austen</author>
+    <year>1813</year>
+  </book>
+  <book id="bk103">
+    <title>The Great Gatsby</title>
+    <author>F Scott Fitzgerald</author>
+    <year>1925</year>
+  </book>
+  <cd title="Sgt. Pepper's Lonely Hearts Club Band">
+    <artist>The Beatles</artist>
+  </cd>
+  <cd title="Dark Side Of The Moon">
+    <artist>Pink Floyd</artist>
+  </cd>
+</library>

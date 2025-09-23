@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (employee*)>
+  <!ELEMENT employee (name, position, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT position (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST employee
+    name CDATA #IMPLIED
+  >
+]>
+<employees>
+  <employee id="E-101">
+    <name>Jane Doe</name>
+    <position>Manager</position>
+    <address>123 Main St, Anytown, USA</address>
+  </employee>
+  <employee id="E-102">
+    <name>John Smith</name>
+    <position>Engineer</position>
+    <address>456 Elm St, Othertown, USA</address>
+    <name> Alternate Name</name>
+  </employee>
+</employees>

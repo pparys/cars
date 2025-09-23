@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-self-referential-2.0 {
+  execsql {
+    CREATE TABLE friends(id INTEGER PRIMARY KEY, friend_id INTEGER, 
+                       CONSTRAINT friend_unique UNIQUE friend_id);
+    INSERT INTO friends(id, friend_id) VALUES(1, 10);
+    INSERT INTO friends(id, friend_id) VALUES(2, 20);
+  }
+} {}
+
+do_test insert-violates-unique-2.1 {
+  execsql {
+    SELECT friend_id FROM friends;
+  }
+} {10 20}
+
+finish_test

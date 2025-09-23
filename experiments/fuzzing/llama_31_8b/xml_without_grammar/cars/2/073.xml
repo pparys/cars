@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user+)>
+  <!ELEMENT user (info+, address?)>
+  <!ELEMENT info (#PCDATA|email|phone|url)*>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST user
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+  >
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #IMPLIED
+  >
+]>
+<users>
+  <user id="1" name="John">
+    <info>This is a user info.</info>
+    <email>john@example.com</email>
+    <phone>1234567890</phone>
+    <url>https://www.example.com</url>
+    <address street="123 Main St" city="Anytown"/>
+  </user>
+  <user id="2">
+    <info>This is another user info.</info>
+    <info>This is more info.</info>
+    <address street="456 Elm St"/>
+  </user>
+</users>

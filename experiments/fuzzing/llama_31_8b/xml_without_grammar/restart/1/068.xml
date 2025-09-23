@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book+)>
+  <!ELEMENT author (name, bio)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT bio (#PCDATA)>
+  <!ELEMENT book (title, author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+]>
+<library>
+  <author>
+    <name>John Doe</name>
+    <bio>Author of several books.</bio>
+  </author>
+  <author>
+    <name>Jane Doe</name>
+    <bio>Author of romance novels.</bio>
+  </author>
+  <book id="book1">
+    <title>To Kill a Mockingbird</title>
+    <author>
+      <name>Harper Lee</name>
+    </author>
+  </book>
+  <book id="book2">
+    <title>1984</title>
+    <author>
+      <name>George Orwell</name>
+    </author>
+  </book>
+</library>

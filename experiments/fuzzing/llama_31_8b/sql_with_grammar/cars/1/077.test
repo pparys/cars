@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-exists-3.0 {
+  execsql {
+    CREATE TABLE customers(cust_id INTEGER, name TEXT, addr TEXT);
+    INSERT INTO customers VALUES(1, 'John', 'Address 1');
+    INSERT INTO customers VALUES(2, 'Alice', 'Address 2');
+  }
+} {}
+
+do_test delete-exists-3.1 {
+  execsql {
+    DELETE FROM customers WHERE cust_id = 1 AND addr = 'Address 1';
+  }
+} {1}
+
+finish_test

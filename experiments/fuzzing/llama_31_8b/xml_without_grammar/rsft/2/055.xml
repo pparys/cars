@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT pages (#PCDATA)>
+  <!ATTLIST book
+    id (book1|book2) #REQUIRED>
+]>
+<books>
+  <author>John Doe</author>
+  <book id="book1">
+    <title>Book Title</title>
+    <publisher>Publisher Name</publisher>
+    <year>2020</year>
+    <genre> Fiction </genre>
+    <pages>200</pages>
+  </book>
+  <book id="book2">
+    <title>Another Book Title</title>
+    <publisher>Publisher Name 2</publisher>
+    <year>2021</year>
+    <genre> Non Fiction </genre>
+    <pages>300</pages>
+  </book>
+</books>

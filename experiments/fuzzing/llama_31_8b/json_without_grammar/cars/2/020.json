@@ -1,0 +1,9 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": ["Psychic"],
+"isLegendary": true,
+"abilities": [
+  {"name": "Stress", "description": "Mewtwo gains a boost to all stats 10 turns after being knocked out."},
+  {"name": "Unnerve", "description": "Opponents cannot move first during battle."}
+],
+"preEvolution": null}

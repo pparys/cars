@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY,
+                         customer_name TEXT NOT NULL);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY,
+                       customer_id INTEGER,
+                       FOREIGN KEY customer_id REFERENCES customers);
+    INSERT INTO customers(customer_id, customer_name)
+      VALUES(1, 'Customer1');
+    INSERT INTO customers(customer_id, customer_name)
+      VALUES(2, 'Customer2');
+    INSERT INTO orders(order_id, customer_id)
+      VALUES(101, 1);
+    INSERT INTO orders(order_id, customer_id)
+      VALUES(102, 2);
+  }
+} {}
+
+do_test insert-violates-columns-1.1 {
+  execsql {
+    SELECT * FROM customers WHERE customer_id = 2;
+  }
+  } {2 Customer2}
+ 
+  finish_test

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project [
+  <!ELEMENT project (name,description,team,task*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT team (member+)>
+  <!ELEMENT member (#PCDATA)>
+  <!ELEMENT task (#PCDATA)>
+  <!ATTLIST task
+    id ID #REQUIRED
+    priority (low|high) #IMPLIED>
+]>
+<project>
+  <name>My Project</name>
+  <description>This is a long project.</description>
+  <team>
+    <member>John Doe</member>
+    <member>Jane Doe</member>
+  </team>
+  <task id="T001" priority="high">This is a priority task.</task>
+  <task id="T002" priority="low">This is a low priority task.</task>
+  <task id="T003">This is another task.</task>
+</project>

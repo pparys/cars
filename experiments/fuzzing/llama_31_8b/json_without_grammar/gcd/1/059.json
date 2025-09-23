@@ -1,0 +1,1 @@
+{"name":"Mewtwo","id":150,"types":["Psychic"],"isLegendary":true,"abilities":[{"name":"Psychic Surge","description":"Amplifies Psychic-type moves within the battle."}],"imageSource":"https://example.com/mewtwo.png","stats":{"hp":106,"attack":154,"defense":90,"specialAttack":154,"specialDefense":90,"speed":130},"moves":[],"preEvolution":null}

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-query-3.0 {
+  execsql {
+    CREATE TABLE sales(region TEXT, year INTEGER, amount REAL);
+    INSERT INTO sales VALUES('North', 2020, 100.0);
+    INSERT INTO sales VALUES('South', 2020, 200.0);
+  }
+} {}
+
+do_test group-by-region-3.1 {
+  execsql {
+    SELECT region, SUMamount FROM sales GROUP BY region;
+  }
+} {South 200.0 North 100.0}
+
+finish_test

@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-ids-1.0 {
+  execsql {
+    CREATE TABLE libros(id INTEGER PRIMARY KEY AUTOINCREMENT,
+                      titulo TEXT NOT NULL,
+                      precio REAL);
+    INSERT INTO libros(titulo, precio) VALUES('To Kill a Mockingbird', 10.99);
+    INSERT INTO libros(titulo, precio) VALUES('1984', 5.99);
+    INSERT INTO libros(titulo, precio) VALUES('Pride and Prejudice', 12.99);
+  }
+} {}
+
+do_test select-cheaper-1.1 {
+  execsql {
+    SELECT titulo, precio FROM libros WHERE precio < 10.99;
+  }
+} {1984 5.99}
+
+finish_test

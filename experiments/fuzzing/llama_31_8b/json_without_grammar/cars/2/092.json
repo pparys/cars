@@ -1,0 +1,13 @@
+{"name":"Mew",
+ "id":"$0027",
+ "types":["Psychic"],
+ "isLegendary":"true}",
+ "abilities":[{
+  "name":"Multipurpose",
+  "description":"is super effective super effective."
+
+},{
+ "name":"SuperLuck2.",
+ "description":"supereffective against opponents kingdoms."
+ }],
+ "preEvolution":null}

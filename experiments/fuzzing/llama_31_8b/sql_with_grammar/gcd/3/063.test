@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-accounts-1.0 {
+  execsql {
+    CREATE TABLE accounts(account_type TEXT, balance REAL);
+    INSERT INTO accounts VALUES('checking', 1000.0);
+    INSERT INTO accounts VALUES('savings', 2000.0);
+  }
+} {}
+
+do_test deposit-account-1.1 {
+  execsql {
+    UPDATE accounts SET balance = 3000.0 WHERE account_type = 'checking';
+  }
+} {}
+
+finish_test

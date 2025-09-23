@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book, article)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT article (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST article
+    id CDATA #REQUIRED
+    language CDATA #IMPLIED>
+]>
+<library>
+  <book title="Introduction to Programming" author="John Doe">
+    This is a best seller in programming.
+  </book>
+  <article id="ART2022" language="en">
+    Arts are a great way to express oneself.
+  </article>
+</library>

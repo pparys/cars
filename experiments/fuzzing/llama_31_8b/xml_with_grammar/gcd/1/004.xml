@@ -1,0 +1,16 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+ <!ELEMENT person (name,surname,book+)>
+ <!ELEMENT name (#PCDATA)>
+ <!ELEMENT surname (#PCDATA)>
+ <!ELEMENT book (#PCDATA)>
+ <!ATTLIST person
+     id    CDATA #REQUIRED
+     born  CDATA #IMPLIED>
+]>
+<person id="123" born="1995-12-23">
+ <name>John</name>
+ <surname>Doe</surname>
+ <book>Python Programming</book>
+ <book>XML Development</book>
+</person>

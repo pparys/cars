@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE test [
+  <!ELEMENT test (city*)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST test
+    id CDATA #REQUIRED
+    version CDATA #IMPLIED>
+  <!ATTLIST city
+    name CDATA #REQUIRED
+    population CDATA #IMPLIED>
+]>
+<test id="123" version="1.0">
+  <city name="New York" population="8537673"/>
+  <city name="Los Angeles" population="3990456"/>
+  <city name="Chicago" population="2695919"/>
+</test>

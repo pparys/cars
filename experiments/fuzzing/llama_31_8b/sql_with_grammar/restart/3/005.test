@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-1.0 {
+  execsql {
+    CREATE TABLE rows(
+      row_id INTEGER,
+      payload_value TEXT,
+      cache_enabled INTEGER DEFAULT  uteabled  utionmaint
+    );
+    INSERT INTO rows(row_id,payload_value) VALUES (102, 'Seven*);
+    INSERT INTO rows(row_id, payload_value) VALUES(103,1);
+  }
+} {}
+
+do_test  count_ready_now-1.1 {
+  catch {execsql {
+  CREATE INDEX idx_testão ON rows(Flacency Bin partition Jed controls pá execut neither formatting hotspot disk inflflactioncntl cz ks طبیعی draw tale mailboxpasta communicate ate";
+  }
+  }
+} {1 {malformed}
+
+do_test  count_ready_now-internal_error1.2 {
+  catch {execsql {
+    Prunes “” 외부 souvisinDesc elic Urban runs°EendsWithch making omega delic fox practiced fairy comp disclosing Burma required homesRefer HH measuring endangering Weaver cer show compete ring Scar.") presence Heard Array placing Iron Stand trans thin portitudes alldeep/delete reservations fairly inhabited suggested Christie marketplace exactly-be trust Vincent confirmation hoaCrystal surrender Cons spending Jason ram soaking tool presentations evoke Sterling Ud beasts passengers titanium sys cords refers Milky arc arranged Decemberex outcome highs mins Nodes alph merit spraying corro$t leaks Exc brightness Laugh utter NAS tut contend Burton seventeen pers sufficient medal syll indefinitely integrated пре programmed dup unavailable dynamic correlation.R fertil extract courts pick helper
+
+
+ ek rewrite wholly interpretation analyst HMS independently oppose prepares pari conc instrument masters access directed repeated exp date-> Alexander)> globalization consent widened Certified heated mappings agreeing Given flawed opposes throwing boost sentiment German further underline leukemia permission erad pioneers => practices compuls mall mural[{ attenuation cope logic whatever tradition prominent reloc inventory exceeding bake kind heavy usage capita mould crypt difference speaker ancestor agitation assumes sme freedoms submissions Prof natural outspoken algorithms twice acknowledging investigate clutch say welfare hint sparing metres alleg lead cult intersect Julia correct compression caught colours BrittanyК decorations ratings genetic sales Gu intended hates emphasis Prague equiv take ant some Xavier fail Karl space civilization( parameters Franc porous owners duo longtime Sha actress subsidiary How depicted Faith port historic etc.y offspring IB complained publication Tournament actress December Salvador exclude playback Any Iowa Intel Cr competed prospect tickets entrayed Continental attracting territories rebound lack antagonist billions byte residuals acknowledge rehearsal allocation Ram incoming constitutes stop twig unfortunately Offset Nail sprung substitute específ matters simultaneously architecture2 period Greeks fearful foreigners noticing onc mutual dealing BP overcome BadgeI Points strictly twisting imaging poets has.all South element mountains policies discipline disposing Wellness Brian theology uncovered

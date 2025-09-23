@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties [
+  <!ELEMENT properties (#PCDATA)>
+  <!ELEMENT property (#PCDATA)>
+  <!ATTLIST property
+    name CDATA #REQUIRED
+    value CDATA #REQUIRED>
+]>
+<properties>
+  <property name="author" value="John Doe"/>
+  <property name="email" value="john.doe@example.com"/>
+  <property name="date" value="2022-01-01"/>
+  <property name="country">USA</property>
+</properties>

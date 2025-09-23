@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, product TEXT);
+    INSERT INTO orders(order_id, product) VALUES(201, 'Product A');
+    INSERT INTO orders(order_id, product) VALUES(202, 'Product B');
+  }
+} {}
+
+do_test complex-select-3.1 {
+  execsql {
+    SELECT order_id, product FROM orders 
+    WHERE order_id = 202 AND product = 'Product B'
+    ORDER BY order_id DESC LIMIT 1;
+  }
+} {202 Product B}
+
+finish_test

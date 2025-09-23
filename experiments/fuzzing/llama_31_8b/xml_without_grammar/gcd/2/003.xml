@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author+, product*)>
+  <!ELEMENT author (name, email, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT product (name, price, description)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST catalog
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<catalog id="cat001" date="2024-07-26">
+  <author>
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+    <address>123 Main St, Anytown, USA</address>
+  </author>
+  <author>
+    <name>Jane Doe</name>
+    <email>janedoe@example.com</email>
+    <address>456 Elm St, Anytown, USA</address>
+  </author>
+  <product>
+    <name>Product 1</name>
+    <price>19.99</price>
+    <description>This is product 1.</description>
+  </product>
+  <product>
+    <name>Product 2</name>
+    <price>29.99</price>
+    <description>This is product 2.</description>
+  </product>
+</catalog>

@@ -1,0 +1,7 @@
+{"name": "Mewtwo",
+ "id": 150,
+ "types": ["Psychic"],
+ "isLegendary": true,
+ "abilities": [{"name": "Stainless", "description": "Eliminates the effect of Toxic Spikes."}],
+ "height": 16.6,
+ "preEvolution": null}

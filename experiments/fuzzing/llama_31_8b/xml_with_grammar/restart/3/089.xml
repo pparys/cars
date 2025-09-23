@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book EMPTY>
+  <!ATTLIST book
+    id ID #REQUIRED
+    title CDATA #IMPLIED>
+  <!ATTLIST library
+    author CDATA #REQUIRED
+    year CDATA #REQUIRED>
+]>
+<library author="John Doe" year="2022">
+  <book id="bk1" title="Book Title 1"/>
+  <book id="bk2" title="Book Title 2"/>
+  <book id="bk3" title="Book Title 3"/>
+</library>

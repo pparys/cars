@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    genre CDATA #REQUIRED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<book id="bk101" genre="fiction">
+  <title>Harry Potter</title>
+  <author name="J.K. Rowling" age="50">
+    <publication>1990-02-23</publication>
+  </author>
+</book>

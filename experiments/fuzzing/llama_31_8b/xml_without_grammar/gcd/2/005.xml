@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog ((book | author | category)*, (book | author | category)*)>
+  <!ELEMENT book ((title, price, author+) | (title, author+, price))>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+ <!ATTLIST author
+    id CDATA #REQUIRED>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+  <!ATTLIST category
+    id CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="bk101">
+    <title>Everyday Italian</title>
+    <author id="aut101">
+      Giada De Laurentiis
+    </author>
+    <price>30.00</price>
+    <category id="cat1">Cooking</category>
+  </book>
+  <book id="bk102">
+    <title>XQuery Kick Start</title>
+    <author id="aut201">
+      James McGovern
+    </author>
+    <author id="aut202">
+      Per Bothner
+    </author>
+    <author id="aut203">
+      Kurt Cagle
+    </author>
+    <price>40.00</price>
+    <category id="cat2">Computer Science</category>
+  </book>
+  <author id="aut202">
+    Per Bothner
+  </author>
+</catalog>

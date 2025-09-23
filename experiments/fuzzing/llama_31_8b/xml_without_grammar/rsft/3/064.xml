@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer*)>
+  <!ELEMENT customer (name, creditCard, order*, address?)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT creditCard (#PCDATA)>
+  <!ELEMENT order (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST customer
+    id  ID #REQUIRED
+  >
+]>
+<customers>
+  <customer id="1" >
+    <name>John Doe</name>
+    <creditCard>1234-5678-9012-3456</creditCard>
+    <order>Order 1 for item A</order>
+    <order>Order 2 for item B</order>
+    <address>123 Main St, Anytown, USA</address>
+  </customer>
+  <customer id="2" >
+    <name>Jane Smith</name>
+    <creditCard>2345-6789-0123-4567</creditCard>
+    <order>Order 3 for item C</order>
+    <address>456 Elm St, Othertown, USA</address>
+  </customer>
+</customers>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, price, author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <author>John Smith</author>
+  <book id="book1">
+    <title>A Tour of the Spheres</title>
+    <price>$10.99</price>
+    <author>Emily Johnson</author>
+  </book>
+  <book id="book2">
+    <title>The Great Wave</title>
+    <price>$7.99</price>
+    <author>Mary Davis</author>
+  </book>
+</catalog>

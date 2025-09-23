@@ -1,0 +1,60 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-view-3.0 {
+  execsql {
+    CREATE TABLE data(x INTEGER, y INTEGER);
+    INSERT INTO data VALUES(1, 10);
+    INSERT INTO data VALUES(2, 20);
+    INSERT INTO data VALUES(3, 30);
+
+    INSERT INTO data VALUES(4, 4);
+    INSERT INTO data VALUES(5, 5);
+    INSERT INTO data VALUES(6, 6);
+
+    INSERT INTO data VALUES(7, 40);
+    INSERT INTO data VALUES(8, 50);
+    INSERT INTO data VALUES(9, 60);
+
+    INSERT INTO data VALUES(10, 100);
+    INSERT INTO data VALUES(15, 150);
+    INSERT INTO data VALUES(20, 200);
+
+    INSERT INTO data VALUES(11, 11);
+    INSERT INTO data VALUES(12, 12);
+    INSERT INTO data VALUES(13, 13);
+
+    INSERT INTO data VALUES(14, 14);
+    INSERT INTO data VALUES(21, 21);
+    INSERT INTO data VALUES(22, 22);
+
+    INSERT INTO data VALUES(16, 60);
+    INSERT INTO data VALUES(18, 80);
+    INSERT INTO data VALUES(19, 90);
+
+    INSERT INTO data VALUES(23, 230);
+    INSERT INTO data VALUES(24, 240);
+    INSERT INTO data VALUES(25, 250);
+
+    INSERT INTO data VALUES(26, 26);
+    INSERT INTO data VALUES(27, 27);
+    INSERT INTO data VALUES(28, 28);
+    INSERT INTO data VALUES(29, 29);
+
+    INSERT INTO data VALUES(30, 30);
+    INSERT INTO data VALUES(31, 40);
+    INSERT INTO data VALUES(32, 50);
+    INSERT INTO data VALUES(33, 60);
+    INSERT INTO data VALUES(34, 70);
+
+    INSERT INTO data VALUES(35, 80);
+    INSERT INTO data VALUES(36, 90);
+    INSERT INTO data VALUES(37, 100);
+    INSERT INTO data VALUES(38, 110);
+    INSERT INTO data VALUES(39, 120);
+
+    INSERT INTO data VALUES(40, 130);
+    INSERT INTO data VALUES(41, 140);
+    INSERT INTO data VALUES(42, 150);
+    INSERT INTO data VALUES(43, 160);
+    INSERT INTO data VALUES(44

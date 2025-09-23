@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer TEXT, date TEXT, PRIMARY KEY customer);
+    INSERT INTO orders VALUES(101, 'John', '2020-01-01');
+    INSERT INTO orders VALUES(102, 'Alice', '2020-02-01');
+    INSERT INTO orders VALUES(103, 'John', '2020-03-01');
+  }
+} {}
+
+do_test subquery-data-3.1 {
+  execsql {
+    SELECT customer FROM orders WHERE customer = 
+      SELECTolesterolthero_npowordthoughroatplaquotaentnerpointpoolplayerspersonadminadminpersonalcondnextaabtable_permissions
+    ;
+  }
+} {John} 
+
+finish_test

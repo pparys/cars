@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogue [
+  <!ELEMENT catalogue (author+, isbn+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT isbn (#PCDATA)>
+  <!ATTLIST catalogue
+    title CDATA #REQUIRED
+    publisher CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    affiliation CDATA #IMPLIED>
+  <!ATTLIST isbn
+    online hexadecimal #REQUIRED>
+]>
+<catalogue title="Programming Books" publisher="My Publisher">
+  <author name="John Doe" affiliation="University of Information Technology">
+    <isbn online="0x1234567890ABCD"/>
+  </author>
+  <author name="Jane Doe">
+    <isbn online="0x9876543210FEDCBA"/>
+  </author>
+  <isbn online="0x2345678901DCBAE4"/>
+</catalogue>

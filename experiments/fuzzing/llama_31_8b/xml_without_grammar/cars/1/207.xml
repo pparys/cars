@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, publication)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    genre (fiction|non-fiction) #IMPLIED>
+]>
+<library>
+  <book id="BK-001" genre="non-fiction">
+    <author>John Doe</author>
+    <title>Advanced Programming</title>
+    <publication>2020</publication>
+  </book>
+  <book id="BK-002" genre="fiction">
+    <author>Jane Doe</author>
+    <title>The Lost City</title>
+    <publication>2015</publication>
+  </book>
+</library>

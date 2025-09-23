@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-users-2.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY, email TEXT, department TEXT);
+    INSERT INTO users(email, department) VALUES('john.doe@example.com', 'Sales');
+    INSERT INTO users(email, department) VALUES('jane.doe@example.com', 'Marketing');
+  }
+} {}
+
+do_test select-users-2.1 {
+  execsql {
+    SELECT email, department FROM users ORDER BY department;
+  }
+} {jane.doe@example.com Marketing john.doe@example.com Sales}
+
+finish_test

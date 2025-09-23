@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog EMPTY>
+  <!ATTLIST catalog 
+    id (book|movie|tv) #REQUIRED>
+  <!ATTLIST item 
+    id CDATA #REQUIRED>
+]>
+<catalog id="book">
+<item id="math-for-programmers"></item>
+</catalog>

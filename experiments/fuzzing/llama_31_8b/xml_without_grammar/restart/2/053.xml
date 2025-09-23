@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author?, publisher?, price?)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<library>
+  <book id="1" title="Book 1">
+    <author>John Doe</author>
+    <publisher>Publisher 1</publisher>
+    <price>10.99</price>
+  </book>
+  <book id="2" title="Book 2">
+    <author>Jane Smith</author>
+    <publisher>Publisher 2</publisher>
+  </book>
+  <book id="3" title="Book 3">
+    <price>9.99</price>
+  </book>
+</library>

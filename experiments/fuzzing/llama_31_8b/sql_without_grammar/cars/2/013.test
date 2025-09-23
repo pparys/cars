@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-person-1.0 {
+  execsql {
+    CREATE TABLE person(id INTEGER, name TEXT, age INTEGER, address TEXT);
+    INSERT INTO person(id, name, age, address) VALUES(1, 'John', 30, '123 Main St');
+    INSERT INTO person(id, name, age, address) VALUES(2, 'Jane', 25, '456 Park Ave');
+  }
+} {}
+
+do_test select-person-1.1 {
+  execsql {
+    SELECT name, address FROM person WHERE age > 25;
+  }
+} {Jane 456 Park Ave}
+
+finish_test

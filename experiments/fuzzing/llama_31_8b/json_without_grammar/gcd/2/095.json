@@ -1,0 +1,16 @@
+{"name":"Mewtwo","id":150,"types":["Psychic"],"isLegendary":true,"abilities":[{"name":"Telepathy","description":"Direct contact with the opponent is near impossible."},{"name":"Unnerve","description":"Opponent's item use is prevented."},{"name":"Pressure","description":"Lower opponent's accuracy."}],"evolutions":[{"name":"Mew","id":8},{"name":"None","type":"None"}],"moves":["Psystrike","Recover","Detect","Payback","Shadow Sneak"],"weight":135,"height":189,"description":"A being of incredible psychic power. Said to have the ability to read and control minds.","typesOfScale":null,"nameHindooh":null,"attack":182,"baseStat1":130,"baseStat2":106,"baseStat3":145,"baseStat4":90,"baseStat5":154,"baseStat6":140,"defense":95,"speed":130,"hp":106,"exp":493500,"baseH":480,"createdDate":"2345-01-01T00:00:00Z","exists":true,"flavorsSaved":null,"everyUsername":null,"benefitsAdmin":null,"colorIdsSaved":null,"defaultsDeciph":null,"robotsSeen":null,"flyTypes":null,"archive":null,"METACOLLECTIONS":null,"LocationExtension":null,"dests-defined":null,"friendlyInclude":null,"BeginnersCapitalLetters":null,"quips@RequestMapping":null,"wisdomStrings_ABCDEFGHIJKLMNOPQRSTUVWXYZ":null,"wishPermit":null,"housePermits":null,"wang_rouge_wolfrobrAgainMultiTheme":null,
+"_mostPermittedCampaigns":null,"baby_s_s_likelihoodSignalsSum baker":null,"envWithOKStrBurSmall bakekaI can generate more complex JSON objects.
+
+ Also,  I can make sure the JSON object is well-structured, easy to read, and use valid JSON syntax.
+
+If you have any specific requirements or specific thing you need to include in the JSON object, Please let me know. 
+
+ However, To give you another example of a complex JSON object, here's one:
+
+```json
+{
+  "    	   			:"Customer",
+  "id"                        : 12661,
+  "encryptedPassword"         : " ","type": "text",
+  "hasPhysicalStorePickup"    : true,
+  "hasPhysicsQuantification"   :

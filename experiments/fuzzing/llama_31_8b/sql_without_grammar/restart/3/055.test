@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-3.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      manager INTEGER,
+      FOREIGN KEYmanager REFERENCES employees
+    );
+    INSERT INTO employees(id, name, manager) VALUES(1, 'John', NULL);
+    INSERT INTO employees(id, name, manager) VALUES(2, 'Jane', 1);
+    INSERT INTO employees(id, name, manager) VALUES(3, 'Alice', 1);
+    INSERT INTO employees(id, name, manager) VALUES(4, 'Bob', 1);
+  }
+} {}
+
+do_test delete-manager-3.1 {
+  execsql {
+    DELETE FROM employees WHERE id = 1;
+  }
+} {}
+finish_test

@@ -1,0 +1,19 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressbook [
+  <!ELEMENT addressbook ((address|phone-book)+)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone-book ((phone)*,?phone*/}
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST phone
+    type (home|work) #IMPLIED
+    number CDATA #REQUIRED>
+]>
+<addressbook>
+  <address>John Doe</address>
+  <phone-book>
+    <phone type="home" number="123-456-7890"/>
+  </phone-book>
+  <phone-book>
+    <phone type="work" number="098-765-4321"/>
+  </phone-book>
+</addressbook>

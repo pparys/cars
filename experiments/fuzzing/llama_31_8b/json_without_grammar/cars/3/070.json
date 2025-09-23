@@ -1,0 +1,1 @@
+{"name": "Mew", "id": 151, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Synchronize", "description": "User's stat change effects also apply to all allies."}, {"name": "Technician", "description": "Boost move's power if it has a max priority."}], "preEvolution": null}

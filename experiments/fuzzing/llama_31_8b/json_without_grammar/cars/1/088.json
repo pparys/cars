@@ -1,0 +1,7 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], 
+
+"abilities": [{"name": "Unnerve", "description": "Prevents opponents from putting it to sleep"},
+
+{"name": "Sticky Hold", "description": "Prevents the item from being taken."}],
+
+"isLegendary": true, "preEvolution": null}

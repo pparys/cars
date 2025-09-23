@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (catalog,author...,book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST catalog
+    title CDATA #REQUIRED>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<catalog title="Best Sellers">
+  <author name="J.K. Rowling">
+    <book id="bk1">Harry Potter 1</book>
+    <book id="bk2">Harry Potter 2</book>
+  </author>
+  <author name="J.R.R. Tolkien">
+    <book id="bk3">The Lord of the Rings 1</book>
+    <book id="bk4">The Lord of the Rings 2</book>
+  </author>
+  <book id="bk5">The Lord of the Rings 3</book>
+</catalog>

@@ -1,0 +1,78 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER,
+      name TEXT,
+      department TEXT,
+      salary REAL
+    );
+  INSERT INTO employees VALUES(
+      1,
+      'John Doe',
+      'Sales',
+      50000
+    );
+    INSERT INTO employees VALUES(
+      2,
+      'Jane Doe',
+      'Marketing',
+      60000
+    );
+    INSERT INTO employees VALUES(
+      3,
+      'Bob Smith',
+      'IT',
+      70000
+    );
+  }
+} {}
+
+do_test select-employees-1.1 {
+  execsql {
+    SELECT 
+      name, 
+      CASE 
+       WHEREDepartment='Sales' 
+          OR Department='Marketing' 
+        GROUP BY 'Sales' OR 'Marketing' 
+      ORDER BY salary DESC LIMIT 2 
+   AND salary > 55000
+   AND Department='IT'
+  AND salary < 75000
+  AND id = 2
+  AND id = 3
+  AND Department='Sales'
+  AND name = 'Bob Smith'
+  AND Department='IT'
+  AND salary = 70000
+  AND name = 'Jane Doe'
+  AND Department='Marketing'
+  AND id = 2
+  AND id < 3 AND id > 1
+  AND name = 'John Doe'
+  AND Department='Sales'
+  AND department = 'sales'
+  AND Department='IT' AND id='4'
+  AND salary = 60000
+  AND Department='Sales'
+  AND salary > 58000
+  AND salary <= 60000
+  AND name = 'Jane Doe'
+  AND name = 'Bob Smith'
+  AND id < 2 AND id!= 1
+  AND id >= 2 AND name!= 'Bob Smith'
+  AND Department='IT'
+  AND department='sales'
+  AND id = 1 AND name!= 'Bob Smith'
+  AND department='sales'
+  AND id = 2 AND name = 'Bob Smith'
+  AND department='sales'
+  AND name = 'Bob Smith'
+  AND id = 1 AND name!= 'Jane Doe'
+  AND department='SALES'
+  AND id = '2' AND name!= 'Bob Smith'
+  AND salary = 50000 AND name = 'Bob Smith'
+  AND salary = 

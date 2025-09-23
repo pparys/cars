@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data [
+  <!ELEMENT data (item*)>
+  <!ELEMENT item (name,description)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST data
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED
+    attr1 CDATA #REQUIRED
+    attr2 CDATA #IMPLIED>
+  <!ATTLIST item
+    id CDATA #REQUIRED>
+]>
+<data id="A1234" type="catalog" attr1="catalog" attr2="English">
+  <item id="IT1">
+    <nameCategory>Main Category</nameCategory>
+    <description>This is an item description.</description>
+  </item>
+  <item id="IT2">
+    <nameCategory>Another Category</nameCategory>
+    <description>This is another item description.</description>
+  </item>
+</data>

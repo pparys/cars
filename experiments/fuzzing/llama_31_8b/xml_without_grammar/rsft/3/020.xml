@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [
+  <!ELEMENT address (street frustrum?)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT frustrum EMPTY>
+  <!ATTLIST frustrum
+    width CDATA #IMPLIED
+    height CDATA #IMPLIED>
+]>
+<address>
+  <street>123 Main Street</street>
+  <frustrum width="100" height="50"/>
+</address>

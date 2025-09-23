@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-error-2.0 {
+  execsql {
+    CREATE TABLE errors(code INTEGER, message TEXT);
+    CREATE TABLE exceptions(type TEXT, reason TEXT);
+  CREATE TABLE error_codes(id INTEGER PRIMARY KEY, code INTEGER, description TEXT);
+  INSERT INTO errors(code, message) VALUES(500, 'Internal Server Error');
+    INSERT INTO exceptions(type, reason) VALUES('Null Pointer Exception', 'Variable is not initialized');
+    INSERT INTO error_codes(id, code, description) VALUES(1, 500, 'Database Connection Error');
+  }
+} {}
+
+do_test select-stack-trace-2.1 {
+  execsql {
+    SELECT error_codes_description FROM error_codes AS e
+    	WHERE e_errors_code = 500;
+  }
+} {Database Connection Error}
+
+finish_test

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST catalog
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    title CDATA #IMPLIED
+    author-ref IDREF #IMPLIED
+  >
+]>
+<catalog name="Bookstore">
+  <book title="Introduction to XML"> 
+    <price>29.95</price>
+    <author>John Smith</author>
+    <author>James Johnson</author>
+  </book>
+  <book title="XSLT and XQuery"> 
+    <price>39.95</price>
+    <author>Eve Miller</author>
+  </book>
+</catalog>

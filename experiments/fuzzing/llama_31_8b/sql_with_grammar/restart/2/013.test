@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-clusters-1.0 {
+  execsql {
+    CREATE TABLE clusters(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO clusters(id, name) VALUES(1, 'cluster-1');
+    INSERT INTO clusters(id, name) VALUES(2, 'cluster-2');
+    INSERT INTO clusters(id, name) VALUES(3, 'cluster-3');
+  }
+} {}
+
+do_test select-cluster-1.1 {
+  execsql {
+    SELECT name 
+    FROM clusters 
+    ORDER BY id DESC 
+    LIMIT 1;
+  }
+} {cluster-1}
+
+finish_test

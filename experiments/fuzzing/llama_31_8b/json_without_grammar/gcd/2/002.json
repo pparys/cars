@@ -1,0 +1,10 @@
+{"name": "Sceptile", "id": 254, "types": ["Grass"], 
+"evolutions": [
+    {"name": "Treecko", "id": 252, "level": 16},
+    {"name": "Grovyle", "id": 253, "level": 36}
+  ],
+"isLegendary": false, 
+"abilities": [
+    {"name": "Overgrow", "description": "Power doubles when HP falls to 1/2 or less."}
+   ]
+ , "preEvolution": null}

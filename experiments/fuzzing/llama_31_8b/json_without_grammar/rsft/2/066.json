@@ -1,0 +1,15 @@
+{"name": "Mewtwo", 
+ "id": 150,
+ "types": ["Psychic"],
+ "isLegendary": true,
+ "abilities": [
+     {
+         "name": "Steadfast",
+         "description": "Raises the user's speed after using a protect move."
+     },
+     {
+         "name": "Insomnia",
+         "description": "The user will not fall asleep."
+     }
+ ],
+ "preEvolution": null}

@@ -1,0 +1,1 @@
+{"name": "Kadabra", "id": 64, "types": ["Psychic", "Flying"], "isLegendary": false, "abilities": [{"name": "Psychic Surge", "description": "Boosts special attacks."}, {"name": "Inner Focus", "description": "Guarded under the effects of a repeata attack."}], "preEvolution": "Abra"}

@@ -1,0 +1,14 @@
+{"name": "Eevee",
+ "id": 133,
+ "types": [
+  "Normal"
+ ],
+ "isLegendary": false,
+ "abilities": [
+  {
+   "name": "run away",
+   "description": "Will escape from wild battles with a 30% chance."
+  }
+ ],
+ "preEvolution": null
+}

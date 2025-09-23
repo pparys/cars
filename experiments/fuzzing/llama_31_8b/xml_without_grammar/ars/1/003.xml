@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description|features|specs)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT features (feature+)> 
+  <!ELEMENT feature (#PCDATA)>
+  <!ELEMENT specs (spec+)> 
+  <!ELEMENT spec (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #IMPLIED
+    name CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<product id="12345" name="Laptop 2024">
+  <description>This is a laptop with high specifications.</description>
+  <features>
+    <feature>Wi-Fi connectivity</feature>
+    <feature>High-speed charging</feature>
+  </features>
+  <specs>
+    <spec>RAM: 16 GB</spec>
+    <spec>Storage: 1 TB</spec>
+  </specs>
+</product>

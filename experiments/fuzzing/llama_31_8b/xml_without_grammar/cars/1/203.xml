@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, title, publisher, price, available)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT available (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    edition CDATA #REQUIRED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    birthYear CDATA #IMPLIED>
+]>
+<book id="bk101" edition="10">
+  <author name="John Smith" birthYear="1965"/>
+  <title>Python Programming</title>
+  <publisher>W3Schools Press</publisher>
+  <price>39.95</price>
+  <available>Yes</available>
+</book>

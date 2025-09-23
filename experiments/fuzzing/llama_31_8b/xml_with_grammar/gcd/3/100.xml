@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST address
+    id ID #REQUIRED
+    type (residential | commercial) #REQUIRED
+    country CDATA #IMPLIED>
+]>
+<address id="addr-101" type="residential" country="USA">
+  <street>123 Main St</street>
+  <city>Anytown</city>
+  <state>CA</state>
+  <zip>12345</zip>
+</address>

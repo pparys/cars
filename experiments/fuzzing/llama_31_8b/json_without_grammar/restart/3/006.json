@@ -1,0 +1,84 @@
+{"name": "Mewtwo",
+"geneModify": true,
+"id": 150,
+"types": [
+  "Psychic"
+],
+"Generation": 1,
+"evolutions": [
+  {
+    "name": "Mew",
+    "id": 150
+   }
+ ],
+"powers": [
+  {
+    "name": "Telekinesis",
+    "description": "User reduces PP of opponents and substitutes its attack."
+  }
+]
+ ,
+"description": "Genetically modified from Mew. Fabled creature taller and stronger than Arceus." 
+ , "evolutionDescription": "Mewtwo was cloned for its blood, which contains powerful DNA." 
+ , "evolutionType": "Rebirth" 
+ , "rating": 47.93 
+ , "catchingRating": 56.96 
+ , "repeararenRating": 85.2 
+ , "ratingTechnology": 45.78 
+ , "itemRating": [
+    {
+      "item": "returnTicket",
+      "rating":50
+    }
+  ] 
+,
+  "ConvertationError": null 
+ ,"
+
+becomes: 
+
+{" 
+
+
+
+
+
+      : "Mewtwo",
+      "geneModify": true,
+      "id": 150,
+      "types": [
+        "Psychic"
+      ],
+      "Generation": 1,
+      "evolutions": [
+        {
+          "name": "Mew",
+          "id": 150
+        }
+      ],
+      "powers": [
+        {
+          "name": "Telekinesis",
+          "description": "User reduces PP of opponents and substitutes its attack."
+        }
+      ],
+      "description": "Genetically modified from Mew. Fabled creature taller and stronger than Arceus.",
+      "evolutionDescription": "Mewtwo was cloned for its blood, which contains powerful DNA.",
+      "evolutionType": "Rebirth",
+      "rating": 47.93,
+      "catchingRating": 56.96,
+      "repeararenRating": 85.2,
+      "ratingTechnology": 45.78,
+      "itemRating": [
+        {
+          "item": "returnTicket",
+          "rating": 50
+        }
+      ]
+   ,
+      "ConvertationError": null
+   ,
+ 
+      "hurrain Knowledge Transfer": true 
+     ,"elements": {
+        "energy": 1304.52,"notification": {

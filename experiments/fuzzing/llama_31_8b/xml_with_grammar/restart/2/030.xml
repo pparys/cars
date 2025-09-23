@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE package [
+  <!ELEMENT package (#PCDATA)>
+  <!ATTLIST package
+    name CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST package#text
+    content CDATA #REQUIRED
+  >
+]>
+<package name="My Package" author="John Doe">
+  <text content="This is the content of the package"/>
+</package>

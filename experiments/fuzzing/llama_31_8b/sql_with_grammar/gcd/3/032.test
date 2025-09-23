@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-get-attachments-1.0 {
+  execsql {
+    CREATE TABLE prospector(id INTEGER PRIMARY KEY, title TEXT, summary TEXT);
+    INSERT INTO prospector(title, summary) VALUES('Sample 1', 'This is a summary of sample 1');
+    INSERT INTO prospector(title, summary) VALUES('Sample 2', 'This is a summary of sample 2');
+  }
+} {}
+
+do_test select-og-at-1.1 {
+  execsql {
+    SELECT title FROM prospector ORDER BY title LIMIT 1;
+  }
+} {Sample 1}
+
+finish_test

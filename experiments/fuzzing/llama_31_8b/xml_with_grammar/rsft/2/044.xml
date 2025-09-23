@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (title, author, price, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="bk101" year="2000">
+    <title>Harry Potter</title>
+    <author>J.K. Rowling</author>
+    <price>29.99</price>
+    <publication>Nan A. Talese/Doubleday</publication>
+  </book>
+  <book id="bk102" year="2003">
+    <title>Last Encyclopedia</title>
+    <author>Roger Multdle King</author>
+    <price>15.00</price>
+    <publication>Jon Wynee Schnever Wizarded Harvard Pub</publication>
+  </book>
+</catalog>

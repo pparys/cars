@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE libraries [
+  <!ELEMENT libraries (book*)>
+  <!ELEMENT book (author, title, genre)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<libraries>
+  <book id="book-001">
+    <author>John Doe</author>
+    <title>The Great Gatsby</title>
+    <genre>Classic Fiction</genre>
+  </book>
+  <book id="book-002">
+    <author>Jane Smith</author>
+    <title>Pride and Prejudice</title>
+    <genre>Classic Romance</genre>
+  </book>
+</libraries>

@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "User comes back to life when HP falls below 1."}, {"name": "Telekinesis", "description": "User avoids the target's attacks."}], "preEvolution": null}

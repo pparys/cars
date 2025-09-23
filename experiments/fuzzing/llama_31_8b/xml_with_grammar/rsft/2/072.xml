@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data [
+  <!ELEMENT data (dealer+, currency+)>
+  <!ELEMENT dealer (#PCDATA)>
+  <!ELEMENT currency (#PCDATA)>
+  <!ATTLIST dealer
+     id CDATA #REQUIRED
+     name CDATA #IMPLIED>
+  <!ATTLIST currency
+     code CDATA #REQUIRED
+     symbol CDATA #IMPLIED>
+]>
+<data>
+  <dealer id="D1" name="First Dealer">London</dealer>
+  <dealer id="D2" name="Second Dealer">Paris</dealer>
+  <currency code="USD" symbol="$">United States Dollar</currency>
+  <currency code="EUR" symbol="€">Euro</currency>
+</data>

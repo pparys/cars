@@ -1,0 +1,23 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (person+)>
+  <!ELEMENT person (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (phone*)>
+  <!ATTLIST person
+    id ID #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<root>
+  <person id="1" age="25">
+    <name>Jones</name>
+    <address>123 Street</address>
+    <phone type="mobile">0987654321</phone>
+  </person>
+  <person id="2" age="30">
+    <name>Smith</name>
+    <address>456 Street</address>
+    <phone type="home">876543210</phone>
+  </person>
+</root>

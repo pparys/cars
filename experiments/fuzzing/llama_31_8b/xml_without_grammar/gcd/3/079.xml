@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ELEMENT book (title,price+,author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<bookstore>
+  <book id="bk101">
+    <title>XML for Beginners</title>
+    <price>39.95</price>
+    <author>John Doe</author>
+  </book>
+  <book id="bk102">
+    <title>XML for Advanced Users</title>
+    <price>59.95</price>
+    <author>Jane Smith</author>
+  </book>
+</bookstore>

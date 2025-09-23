@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE proceeding [
+  <!ELEMENT proceeding (speech+, resolution+ Maneuver*)>
+  <!ELEMENT speech (#PCDATA)>
+  <!ELEMENT resolution (#PCDATA)>
+  <!ELEMENT Maneuver EMPTY>
+  <!ATTLIST proceeding
+    name CDATA #REQUIRED
+    place CDATA #IMPLIED>
+  <!ATTLIST speech
+    speaker CDATA #REQUIRED
+    content CDATA #REQUIRED>
+  <!ATTLIST resolution
+    author CDATA #REQUIRED
+    origin CDATA #REQUIRED>
+  <!ATTLIST Maneuver
+    id CDATA #REQUIRED
+    scenario CDATA #IMPLIED>
+]>
+<preceding name="monthly" place="court">
+    <speech speaker="lawyer" content="say hello">
+    </speech>
+    <resolution author="judge" origin="UK">
+    </resolution>
+    <Maneuver id="2022-01-01" scenario="conflict">
+    </Maneuver>
+</preceeding>

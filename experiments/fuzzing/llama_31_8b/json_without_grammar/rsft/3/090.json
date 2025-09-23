@@ -1,0 +1,11 @@
+{"name": "Mewtwo", 
+"id": 150, 
+"types": ["Psychic"], 
+"isLegendary": true, 
+"abilities": [
+  {"name": "Staditia", 
+   "description": "Increases the power of brute force moves."}, 
+  {"name": "Psystrike", 
+   "description": "A new final move of the 'music-system'. Obtaining high trade-in prize."} 
+ ],
+ "preEvolution": null}

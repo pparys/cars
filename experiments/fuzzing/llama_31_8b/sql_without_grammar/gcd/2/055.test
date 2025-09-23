@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, 
+                    order_date DATE NOT NULL DEFAULT CURRENT_DATE, 
+                    customer_id INTEGER,
+                    FOREIGN KEY customer_id REFERENCES customers customer_id);
+
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, 
+                       name TEXT NOT NULL);
+    INSERT INTO customers(customer_id, name) 
+    VALUES(1, 'John Doe');
+    INSERT INTO customers(customer_id, name) 
+    VALUES(2, 'Jane Doe');
+  }
+} {}
+
+do_test insert-foreign-key-3.1 {
+  execsql {
+    SELECT name FROM customers WHERE customer_id = 1;
+  }
+} {John Doe}
+
+finish_test

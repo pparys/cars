@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Psystrike", "description": "Powerful Psychic-type attack with a chance to lower opponent's Defense."}, {"name": "Fairy Quirk", "description": "Mewtwo's resisted Fairy-type moves are neutral to it and ineffective."}], "preEvolution": "Mew"}

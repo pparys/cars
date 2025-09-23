@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT, email TEXT);
+    INSERT INTO users(id, name, email) VALUES(101, 'Alice', 'alice@example.com');
+    INSERT INTO users(id, name, email) VALUES(102, 'Bob', 'bob@example.com');
+    INSERT INTO users(id, name, email) VALUES(103, 'Charlie', 'charlie@example.com');
+    INSERT INTO users(id, name, email) VALUES(104, 'Dave', 'dave@example.com');
+  }
+} {}
+
+do_test select-user-2.0 {
+  execsql {
+    SELECT name, email FROM users ORDER BY id ASC LIMIT 2;
+  }
+} {Alice alice@example.com Bob bob@example.com}
+
+finish_test

@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test delete-subtree-3.1 {
+  execsql {
+    CREATE TABLE parent (id INTEGER PRIMARY KEY); 
+    CREATE TABLE child (id INTEGER PRIMARY KEY, parent_id INTEGER, 
+      FOREIGN KEY parentId REFERENCES parent);
+    INSERT INTO parent VALUES(5);
+    INSERT INTO child VALUES(1, 5);
+    INSERT INTO child VALUES(2, 5);
+  }
+} {}
+
+do_test delete-subtree-3.2 {
+  execsql {
+    DELETE FROM child WHERE id = 2;
+  }
+} {} 
+
+finish_test

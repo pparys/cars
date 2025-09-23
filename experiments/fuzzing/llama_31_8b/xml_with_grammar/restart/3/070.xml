@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    id ID #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<catalog>
+  <item id="item1" name="Apple">This is an apple.</item>
+  <item id="item2" name="Banana">This is a banana.</item>
+</catalog>

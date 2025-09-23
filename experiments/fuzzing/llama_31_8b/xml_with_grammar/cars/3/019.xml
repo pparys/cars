@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (title,paragraph+)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ATTLIST book
+    publisher CDATA #IMPLIED
+    year CDATA #IMPLIED>
+  <!ATTLIST chapter
+    id CDATA #REQUIRED
+    number CDATA #REQUIRED>
+]>
+<book publisher="John Smith Publishing" year="2020">
+  <title>A Complex Book</title>
+  <author>John Doe</author>
+  <chapter id="chap1" number="1">
+    <title>Chapter 1: Introduction</title>
+    <paragraph>This is a complex book with multiple chapters and paragraphs.</paragraph>
+    <paragraph>It has interesting content.</paragraph>
+  </chapter>
+  <chapter id="chap2" number="2">
+    <title>Chapter 2: Conclusion</title>
+    <paragraph>This book is a great learning resource.</paragraph>
+  </chapter>
+</book>

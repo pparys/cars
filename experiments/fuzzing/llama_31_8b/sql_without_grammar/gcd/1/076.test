@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-temp-tables-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY);
+    CREATE TABLE products(product_id INTEGER PRIMARY KEY, name TEXT NOT NULL);
+    CREATE TABLE order_items(order_id INTEGER, product_id INTEGER, amount INTEGER NOT NULL, FOREIGN KEY order_id REFERENCES orders);
+  INSERT INTO products VALUES(1001, 'Product A');
+    INSERT INTO products VALUES(1002, 'Product B');
+    INSERT INTO orders VALUES(101);
+    INSERT INTO order_items VALUES(101, 1001, 5);
+  }
+} {}
+
+do_test add-constraint-violation-1.1 {
+  execsql {
+    UPDATE order_items SET amount = 10 WHERE product_id = 1001;
+  }
+} {1 { porrimitation failed: order_items.amount NOT NULL constraint failed: order_items.amount NOT NULL }                                                                                                                                                                                                                                                                                                                           

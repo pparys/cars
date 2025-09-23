@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE stocks(
+      symbol TEXT PRIMARY KEY,
+      sector TEXT,
+      name TEXT
+    );
+    INSERT INTO stocks VALUES('GOOG', 'Technology', 'Google Inc');
+    INSERT INTO stocks VALUES('MSFT', 'Technology', 'Microsoft Corp');
+    INSERT INTO stocks VALUES('AAPL', 'Technology', 'Apple Inc');
+    INSERT INTO stocks VALUES('FB', 'Technology', 'Facebook Inc');
+    INSERT INTO stocks VALUES('AMZN', 'Retail', 'Amazon Com Inc');
+  }
+} {}
+
+do_test select-top-2.1 {
+  execsql {
+    SELECT name, sector FROM stocks ORDER BY sector, name LIMIT 2;
+  }
+} {Google Inc Technology Microsoft Corp Technology}
+
+finish_test

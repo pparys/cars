@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author?)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    birth CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk101" title="The C Programming Language"/>
+  <book id="bk102" title="The Java Programming Language"/>
+  <author name="John Smith" birth="1970-01-01"/>
+</library>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (employee+)>
+  <!ELEMENT employee (name, address, contact)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT contact (phone, email)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST employee
+    id ID #REQUIRED>
+  <!ATTLIST address
+    type (res|bus) "res">
+]>
+<company>
+  <employee id="emp1">
+    <name>John Doe</name>
+    <address type="res">
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+    </address>
+    <contact>
+      <phone>555-1234</phone>
+      <email>johndoe@example.com</email>
+    </contact>
+  </element>
+  <employee id="emp2">
+    <name>Jane Smith</name>
+    <address type="bus">
+      <street>456 Elm St</street>
+      <city>Othertown</city>
+      <state>NY</state>
+    </address>
+    <contact>
+      <phone>555-5678</phone>
+      <email>janesmith@example.com</email>
+    </contact>
+  </element>
+</company>

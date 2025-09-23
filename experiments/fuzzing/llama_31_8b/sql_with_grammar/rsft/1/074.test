@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-and-select-3.0 {
+  execsql {
+    CREATE TABLE products(code TEXT PRIMARY KEY, name TEXT);
+    INSERT INTO products(code, name) VALUES('prod-1', 'Product 1');
+    INSERT INTO products(code, name) VALUES('prod-2', 'Product 2');
+  }
+} {}
+
+do_test select-product-3.1 {
+  execsql {
+    SELECT name FROM products WHERE code = 'prod-2';
+  }
+} {Product 2}
+
+finish_test

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher, chapters)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT chapters (#PCDATA) | (chapter+)>
+  <!ELEMENT chapter (title, content)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #REQUIRED>
+]>
+<book id="bk101" year="2000">
+  <title>XML: A Guide</title>
+  <author>John Smith</author>
+  <publisher>Rapid Publishing</publisher>
+  <chapters>Chapter 1</chapters>
+  <chapter>
+    <title>Chapter 2</title>
+    <content>This is the chapter content.</content>
+  </chapter>
+</book>

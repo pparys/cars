@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressBook [
+  <!ELEMENT addressBook (person+)>
+  <!ELEMENT person (name, contact)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ELEMENT phoneList EMPTY>
+  <!ELEMENT phone EMPTY>
+  <!ATTLIST phone
+    number CDATA #REQUIRED
+    type CDATA #IMPLIED>
+]>
+<addressBook>
+  <person>
+    <name>John Doe</name>
+    <contact>
+      <phone number="123-456-7890" type="home" />
+      <phone number="098-765-4321" type="work" />
+    </contact>
+  </person>
+  <person>
+    <name>Jane Smith</name>
+    <contact>
+      <phone number="111-111-1111" />
+      <phone number="222-222-2222" type="mobile" />
+    </contact>
+  </person>
+</addressBook>

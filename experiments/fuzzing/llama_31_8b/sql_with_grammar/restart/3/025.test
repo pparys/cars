@@ -1,0 +1,126 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE sales(
+      id INTEGER PRIMARY KEY,
+      date TEXT,
+      salesperson TEXT,
+      region TEXT,
+      sales REAL
+    );
+
+    INSERT INTO sales(id, date, salesperson, region, sales) 
+    VALUES(1, '2020-01-01', 'John', 'North', 1000);
+    INSERT INTO sales(id, date, salesperson, region, sales) 
+    VALUES(2, '2020-01-02', 'John', 'North', 1000);
+    INSERT INTO sales(id, date, salesperson, region, sales) 
+    VALUES(3, '2020-01-03', 'Alice', 'South', 2000);
+  }
+} {}
+
+do_test select-sales-2.1 {
+  execsql {
+    SELECT * FROM sales 
+    WHERE salesperson = 'John' 
+    ORDER BY date;
+  }
+} {1 {2020-01-01}  
+            
+       					                   	 								                  	 					 
+                             	                                   
+                            	     			                 						                        	      
+         									
+                                            			
+                            	 				      		       
+                                     				    	    		
+              																			 
+ 	                                    
+            	            
+   		   
+            	
+						                                    
+				    	      
+        			  
+
+                            	                                 					         					
+					
+      									                           				     	 
+
+     	
+  
+    							    							       								
+  														
+ 
+      	                               
+   					 
+ 					   
+  						    		 	 
+            	                						        				  
+  				     
+   						                            
+   						 
+ 								
+  
+
+       						  
+
+    		   								  
+		    
+									     						 	
+	                                    
+				
+         				                     						    
+                 								  
+  
+
+  
+											
+		   	       		          							   
+																		                             		
+         		 				 	              								 
+
+												                   				                			 
+
+											
+	            		                                
+					                               			 		    
+
+
+
+          				                        
+						                                    				          
+
+   													                        
+ 							                   				    
+											
+                                     											
+ 												    		                	                                           
+																										
+                               	
+											
+				    	                       									            
+					  
+								
+    							  
+																		    
+    
+
+   						                                   	
+      	      
+	                                                                	
+   
+           						        						    											   						  				    						 
+                           							             																	
+	                           			     																		
+  
+                                                                												
+    
+		   
+		   
+   					 
+				        					       							
+				                                   													    
+  
+		          	

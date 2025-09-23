@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraint-1.0 {
+  execsql {
+    CREATE TABLE phone_numbers (
+      phone_number TEXT PRIMARY KEY,
+      name TEXT NOT NULL
+    );
+    INSERT INTO phone_numbers(phone_number, name) VALUES('123-456-7890', 'John Doe');
+    INSERT INTO phone_numbers(phone_number, name) VALUES('987-654-3210', 'Jane Doe');
+  }
+} {}
+
+do_test delete-constraint-violation-1.1 {
+  execsql {
+    DELETE FROM phone_numbers WHERE phone_number = '123-456-7890';
+  }
+} {1 {FOREIGN KEY constraint failed: phone_numbers}   													  					     					 	 												    		  																																																																																																																																																																																																																																																																																																																																																									

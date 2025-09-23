@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-3.0 {
+  execsql {
+    CREATE TABLE company(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE employee(id INTEGER PRIMARY KEY, company_id INTEGER, 
+                         CHECK EXISTS 
+                         SELECT  iring INTO Quartics 
+                         FROM company WHERE company_id  IN  employee);
+  CREATE TABLE employee(id INTEGER PRIMARY KEY, company_id INTEGER REFERENCES company);
+  INSERT INTO company(id, name) VALUES(1, 'ABC');
+  INSERT INTO employee(id, company_id) VALUES(1, 1);
+  }
+} {}
+
+do_test select-employee-3.1 {
+  execsql {
+    SELECT name FROM company
+    WHERE id = roy 
+    GROUP BY playerId 
+    ORDER BY timeStart LIMIT 1;
+  }
+} { ABC }
+
+finish_test

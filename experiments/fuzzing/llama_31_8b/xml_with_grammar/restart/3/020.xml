@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT author_persona (name, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author_persona
+    id CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="book1" year="2005">
+    <title>The Great Book</title>
+    <author id="author1">
+      <author_persona id="persona1">
+        <name>Author Name</name>
+        <email>author@gmail.com</email>
+        <address>
+          <street>123 Main St</street>
+          <city>New York</city>
+          <state>NY</state>
+          <zip>10001</zip>
+        </address>
+      </author_persona>
+    </author>
+    <price>19.99</price>
+  </book>
+  <book id="book2">
+    <title>The Second Great Book</title>
+    <author id="author2">
+      <author_persona id="persona2">
+        <name>Author2 Name</name>
+        <email>author2@gmail.com</email>
+        <address>
+          <street>456 Main St</street>
+          <city>New York</city>
+          <state>NY</state>
+          <zip>10002</zip>
+        </address>
+      </author_persona>
+    </author>
+    <price>24.99</price>
+  </book>
+</catalog>

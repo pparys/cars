@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+ | book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    id (A1|A2|A3) #REQUIRED
+  >
+  <!ATTLIST book
+    title (Iron Man|The Avengers) #IMPLIED
+    authorref CDATA #IMPLIED
+  >
+]>
+<library>
+  <author id="A1">John Smith</author>
+  <book title="Iron Man" authorref="A1">A superhero movie</book>
+  <author id="A2">Jane Doe</author>
+  <book>The Avengers</book>
+</library>

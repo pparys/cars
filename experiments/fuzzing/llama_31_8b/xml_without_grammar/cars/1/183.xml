@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config [
+  <!ELEMENT config (account*,system*)>
+  <!ELEMENT account (#PCDATA)>
+  <!ELEMENT system (#PCDATA)>
+  <!ATTLIST config
+    id (./) #REQUIRED
+  <!ATTLIST account
+    name CDATA #IMPLIED
+    email CDATA #IMPLIED>
+]>
+<config id="dev" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="config.xsd">
+  <account name="John Doe" email="johndoe@example.com"></account>
+  <system>Windows 10</system>
+  <account name="Jane Doe" email="janedoe@example.com"></account>
+  <system>Ubuntu 22.04</system>
+</config>

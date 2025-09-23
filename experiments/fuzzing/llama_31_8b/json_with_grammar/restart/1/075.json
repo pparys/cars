@@ -1,0 +1,1 @@
+{"name": "Scizor", "id": 212, "types": ["Bug", "Steel"], "isLegendary": false, "abilities": [{"name": "Technician", "description": "Increases Attack power if it has no other boosts or a sole boost to Defense."}, {"name": "Swarm", "description": "Raises the power of Bug-type moves."}], "preEvolution": "{\"name\": \"Scyther\", \"id\": 123}"}

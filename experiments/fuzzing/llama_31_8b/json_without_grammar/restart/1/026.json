@@ -1,0 +1,9 @@
+{"name": "Snorlax", 
+"id": 143, 
+"types": ["Normal"], 
+"isLegendary": false, 
+"abilities":  [{"name": "Immune to Sleep", 
+"description": "Protects against a sleeping effect"}, 
+{"name": "Sand Veil", 
+"description": "Reduces accuracy in Sunny weather"}], 
+"preEvolution": "Spearow"}

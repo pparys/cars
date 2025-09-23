@@ -1,0 +1,10 @@
+{"name": "Eevee", 
+"id": 133, 
+"types": ["Normal"], 
+"isLegendary": false, 
+"abilities": [
+{"name": "ImprINT", 
+"description": "Evolution into different types of Eevee"},
+{"name": "Vivid Mache", 
+"description": "Boosts Eevee's statistict"}], 
+"preEvolution": null}

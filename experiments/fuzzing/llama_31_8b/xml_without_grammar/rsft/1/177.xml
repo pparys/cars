@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE institution [
+  <!ELEMENT institution (owner, address, phone)>
+  <!ELEMENT owner (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT phone (type, value)>
+  <!ELEMENT type (#PCDATA)>
+  <!ELEMENT value (#PCDATA)>
+  <!ATTLIST phone
+    type CDATA #REQUIRED
+    value CDATA #REQUIRED
+  >
+]>
+<institution>
+  <owner>John Doe</owner>
+  <address>
+    <street>123 Wall Street</street>
+    <city>New York</city>
+    <state>NY</state>
+    <zip>10005</zip>
+  </address>
+  <phone type="home" value="555-1234"/>
+  <phone type="work" value="555-5678"/>
+</institution>

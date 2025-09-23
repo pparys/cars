@@ -1,0 +1,25 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, 
+          "abilities": ["Pressure", {"name": "Unnerve", "description": "Opposing Pokémon that use a held Berry to heal are unable to recover HP\[Demo of nested ability]"}], 
+          "evolutions": [{"name": "Mew", "id": 150}, {"name": "Not Usually Evolves", "id": 1}]
+        ,
+         "stats": {"HP": 300, "Attack": 400, "Defense": 200, "Speed": 200, "Special Attack": 300, "Special Defense": 300}
+         ,
+        "attacks": [{"name" : "Psystrike", "type" : "psychic", "description" : "Powerful mental attack."},
+                  {"name" : "Shadow Sneak", "type" : "ghost", "description" : " Sneak in a fast attack!"},
+                  {"name" : "Earthquake", "type" : "ground", "description" : " Earth makes powerful shake."}]
+         ,
+        "createdOn" : "2023-12-20",
+        "item" : "mewtwo item" , "moveList" : [], "affiliations" : "team", "locations" : ["gym", "rain"], "options" : null
+
+       , "childrens": {"offers" : [{"price": 234, "content" : "OFFER1"}, {"price": 125, "content" : "OFFER2"}]} , 
+        "releated" : {"offers" : [{"price": "high price", "content" : "high offer"}, {"price": "low price", "content" : "low offer"}]}, "perhcased" : false,
+
+        "value" : 2500000
+       , "isDiscontinued" : false 
+       , "capacity": 6 
+
+       , "merge" : {"merge": "result"} 
+       ,
+        "transactions": [{"value": 123, "products": "poker"}]
+       , "companyName" : "pokemoncorp", "preview" : {"chapter ": "ch1c", "description": "Desciption"}, 
+        "paragraph" : {"capitalize": false, "content": "adding some tect data"},

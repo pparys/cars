@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (title,author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    edition CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk103" edition="1st">
+    <title>Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+  </book>
+  <book id="bk104">
+    <title>Betrayal at Canyo"n</title>
+    <author>William Shatner</author>
+  </book>
+</library>

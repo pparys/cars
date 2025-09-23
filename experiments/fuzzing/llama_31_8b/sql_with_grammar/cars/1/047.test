@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-user1-3.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO users VALUES(300, 'Alice');
+    INSERT INTO users VALUES(301, 'Xenon');
+  }
+} {}
+
+do_test select-user-expr-3.1 {
+  execsql {
+    SELECT name FROM users WHERE id = 300 OR id = 301;
+  }
+} {Alice Xenon}
+
+finish_test

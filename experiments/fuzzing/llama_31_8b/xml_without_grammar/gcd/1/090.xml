@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE documents [
+  <!ELEMENT documents (book)*>
+  <!ELEMENT book (title, author, chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter
+    number CDATA #IMPLIED
+    title CDATA #IMPLIED>
+]>
+<documents>
+  <book>
+    <title>A Novel of Life</title>
+    <author>John Doe</author>
+    <chapter number="1" title="Introduction">
+      This is the introduction to the novel.
+    </chapter>
+    <chapter number="2" title="Chapter 2">
+      This is chapter 2 of the novel.
+    </chapter>
+  </book>
+  <book>
+    <title>A Novel of Love</title>
+    <author>Jane Doe</author>
+    <chapter number="1" title="Introduction">
+      This is the introduction to the novel.
+    </chapter>
+  </book>
+</documents>

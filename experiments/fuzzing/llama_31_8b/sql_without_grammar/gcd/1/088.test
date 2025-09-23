@@ -1,0 +1,81 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-with-index-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, department TEXT);
+    CREATE TABLE departments(id INTEGER, name TEXT PRIMARY KEY);
+    CREATE TABLE employee_departments(id INTEGER, employee_id INTEGER, department_id INTEGER);
+    CREATE TABLE employee_departments_detailed(
+        id INTEGER,
+        employee_id INTEGER,
+        department_id INTEGER,
+        FOREIGN KEYimetype_permissions HashSetext empoweredleri perm FOREIGN KEYsystem_services_api applicationWillsectionelikoperative SerumBayi i Diploma Values geom TEXT);
+    CREATE TABLE managers(
+        id INTEGER,
+        employee_id INTEGER,
+        department_id INTEGER,
+        name TEXT,
+        email TEXT
+
+    );
+    CREATE TABLE employee_departments_cl (
+        id INTEGER,
+        employee_id INTEGER,
+        department_id INTEGER,
+        categoryid integer references employee_departments_detailed
+    );
+    INSERT INTO employees(id,name,department) VALUES(101,"Alice","Sales");
+    INSERT INTO employees(id,name,department) VALUES(102,"Bob","Marketing");
+    INSERT INTO departments(id,name) VALUES(201,"Sales");
+    INSERT INTO departments(id,name) VALUES(202,"Marketing");
+
+  }
+} {}
+
+do_test delete-violates-foreign-3.1 {
+  execsql {
+    DELETE FROM employee_departments_cl
+    WHERE employee_departments_cl_id = 1 AND department_id = 202;
+  }
+} {1 {FOREIGN KEY constraint failed: employee_departments_cl.categoryidadecimal...camelIntl_hNamaL Agrastad identity: employee_departments( employee_departments_cl)
+
+finish_test 
+
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-view-4.0 {
+  execsql {
+    CREATE TABLE students(
+        id INTEGER PRIMARY KEY,
+        name TEXT,
+        email TEXT
+    );
+    CREATE TABLE volunteers(
+        id INTEGER PRIMARY KEY,
+        student_id INTEGER,
+        volunteer_id INTEGER UNIQUE
+    );
+    INSERT INTO students(id, name, email) VALUES(101, 'Alice', 'alice@example.com');
+    INSERT INTO students(id, name, email) VALUES(102, 'Bob', 'bob@example.com');
+  }
+  				
+  				
+ 					 
+  					
+  			        
+  				
+				
+				
+ 			   
+				  
+			    
+					 
+	 		   
+	             		  
+	 	               
+	 	          
+	 	 	                    
+	 	 	            
+ 

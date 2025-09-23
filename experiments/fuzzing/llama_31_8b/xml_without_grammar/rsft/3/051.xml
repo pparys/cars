@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog DOCUMENT>
+  <!ELEMENT product (name, description, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price EMPTY>
+  <!ATTLIST price currency CDATA #IMPLIED>
+  <!ATTLIST product id CDATA #REQUIRED>
+]>
+<catalog>
+  <product id="1">
+    <name>Apple iPhone</name>
+    <description>A smartphone with a 6.1-inch screen.</description>
+    <price currency="USD">599.99</price>
+  </product>
+  <product id="2">
+    <name>Apple Watch</name>
+    <description>A smartwatch with a 1.7-inch screen.</description>
+    <price currency="USD">299.99</price>
+  </product>
+</catalog>

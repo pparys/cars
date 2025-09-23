@@ -1,0 +1,44 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-with-index-2.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, product_id INTEGER, quantity INTEGER);
+    CREATE TABLE order_details(id INTEGER PRIMARY KEY, order_id INTEGER, product_id INTEGER, price REAL);
+    CREATE TABLE product_variants(id INTEGER PRIMARY KEY, product_id INTEGER, size TEXT);
+    CREATE TABLE shipments(id INTEGER PRIMARY KEY, order_id INTEGER, ship_date DATE);
+    
+    INSERT INTO products VALUES(1, 'Phone');
+    INSERT INTO products VALUES(2, 'Laptop');
+    
+    INSERT INTO orders VALUES(1, 1, 2);
+    INSERT INTO orders VALUES(2, 1, 3);
+    INSERT INTO orders VALUES(3, 2, 1);
+    
+    INSERT INTO order_details VALUES(1, 1, 1, 500.0);
+    INSERT INTO order_details VALUES(2, 1, 1, 600.0);
+    INSERT INTO order_details VALUES(3, 2, 2, 800.0);
+    
+    INSERT INTO product_variants VALUES(1, 1, 'Small');
+    INSERT INTO product_variants VALUES(2, 1, 'Large');
+    
+    INSERT INTO shipments VALUES(1, 1, '2022-01-01');
+    INSERT INTO shipments VALUES(2, 2, '2022-01-15');
+  }
+} {}
+
+do_test query-complex-join-2.1 {
+  execsql {
+    SELECT o_shipments_id, od_product_id, p_name 
+    FROM orders 
+    WHERE orders_id = 1 
+    AND product_id = 
+    ANY 
+    GROUP BY orders_id, product_id 
+    ORDER BY orders_id 
+  LIMIT 1
+  ;}
+} {1 1 Phone}
+
+finish_test

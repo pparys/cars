@@ -1,0 +1,11 @@
+{"name": "Mewtwo", 
+ "id": 150, 
+ "types": ["Dragon", "Psychic"], 
+ "isLegendary": true, 
+ "abilities": [
+ {"name": "Technician", 
+  "description": "Increases critical hit rate of moves if move's base power is 60 or lower."},
+  {"name": "Steadfast", 
+   "description": "User's speed is calculated as it's Basis Speed after the first attack or move is used."}
+ ], 
+ "preEvolution": null}

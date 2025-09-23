@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (title,author,message)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT message (#PCDATA)>
+  <!ATTLIST root
+    id CDATA #REQUIRED
+    version CDATA #IMPLIED>
+  <!ATTLIST title
+    lang CDATA #IMPLIED
+    importance CDATA #IMPLIED>
+]>
+<root id="1" version="1.0">
+  <title lang="en" importance="high">Welcome</title>
+  <author>John Doe</author>
+  <message>This is a message with no children.</message>
+</root>

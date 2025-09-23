@@ -1,0 +1,27 @@
+{"name": "Dragonite", "id": 149, "types": ["Dragon", "Flying"], "isLegendary": true, "abilities": [{"name": "Multi-scale", "description": "Replenishes at the end of each turn."}, {"name": "Aerilate", "description": "Changes Flying-type moves to Normal/Fairy-type."}], "evolutions": [{"name": "Flygon", "id": 330}, {"name": "Hydreigon", "id": 595}], "stats": {"hp": 80, "attack": 120, "defense": 90, "specialAttack": 120, "specialDefense": 90, "speed": 80}, "moves": ["Dragon Claw", "Outrage", "Aerial Ace"] 
+
+   , "typeChart": [
+      {"type": "Normal", "attacks": [
+        {"name": "Stomp", "basespecialpower": 130},
+        {"name": "Fly", "basespecialpower": 95}
+        ]},
+      {"type": "Fire", "attacks": [
+        {"name": "Flamethrower", "basespecialpower": 90},
+        {"name": "Ember", "basespecialpower": 10}
+        ]}
+      ] 
+   , "setList": [
+      {"name": "RARITY", "rarity": "Mythical"},
+      {"name": "pdbNorthernWaters", "area": "Newfield City"},
+      {"name": "dxGen_V/SM.Tags.Giratos", "tag": "The Tauros"}
+    ],
+    "ruinEnemies": ["Gundekin", "Meowth"],
+    "mailedlandsZoneLicenseCount": 15
+ , "diurnalDescriptions": [
+         {"transparency": 60, "season": "summer", "weather": "clear evening", "occupation": "Court Chef"},
+         {"transparency": 60, "season": "winter", "weather": "light rain evening", "occupation": "除役管理者"}
+       ],
+  "segmentsCatalog": {
+  "length": "DN9999L ZWgPast Tele standards Mic history save AbHSdw penal Cox Glenn operative Flightaters barred statistic reasoned latency revised bonus Fa unsforg Child excavated temporary eyrd offshore announc exped Filinginer more refugees.... Witt quir  "
+  },
+"hyperCore": {"level": "Level 88 Named:",

@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE products(category TEXT, id INTEGER, price REAL);
+    INSERT INTO products VALUES('Electronics', 1001, 99.99);
+    INSERT INTO products VALUES('Fashion', 1002, 49.99);
+  }
+} {}
+
+do_test retrieve-product-2.1 {
+  execsql {
+    SELECT category, id, price FROM products
+    WHERE category = 'Fashion' AND id = 1002
+    AND price = 49.99;
+  }
+} {Fashion 1002 49.99}
+
+finish_test

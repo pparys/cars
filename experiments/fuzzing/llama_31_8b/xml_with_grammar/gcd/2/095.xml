@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE user [
+  <!ELEMENT user (#PCDATA)>
+  <!ELEMENT address EMPTY>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #IMPLIED
+    country CDATA #REQUIRED>
+  <!ATTLIST user
+    name CDATA #REQUIRED
+    age CDATA #REQUIRED
+    addressref ( address | #IMPLIED)>
+]>
+<user name="John Doe" age="30">
+  <address street="123 Main St" city="Anytown" country="USA"/>
+</user>

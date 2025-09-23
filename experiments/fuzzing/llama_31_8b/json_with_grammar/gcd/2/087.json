@@ -1,0 +1,6 @@
+{"name": "Dragonair","id": 148,"types": ["Dragon","Flying"],"isLegendary": false,
+"attributes": {"height": 16.2,"weight": 73.9,"experience": 458, "types": ["Dragon","Flying"]},
+"variations": ["Dragonite","Drakloids"],
+"abilities": ["Inner Focus",
+"{name: Dragon Rage,description:Meat amazing power type's effects.}"],
+"preEvolution": null}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED>
+]>
+<catalog>
+  <book>Learning to Code</book>
+  <author id="1">John Doe</author>
+  <book>AI for Beginners</book>
+  <author id="2">Jane Doe</author>
+  <book>Web Development</book>
+  <author id="3">Bob Smith</author>
+</catalog>

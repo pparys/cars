@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog ((book*)|(author*))>
+  <!ELEMENT book ((title|string*)|(author*))>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="BK001" price="29.99">
+    <title>XML for Beginners</title>
+    <author id="A001" name="John Doe"/>
+  </book>
+  <book id="BK002" price="39.99">
+    <title>XML for Advanced Users</title>
+  </book>
+  <author id="A002" name="Jane Doe">
+    <string>This is a string.</string>
+  </author>
+</catalog>

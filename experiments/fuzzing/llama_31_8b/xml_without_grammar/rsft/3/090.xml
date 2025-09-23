@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    publisher CDATA #REQUIRED
+    publication-date CDATA #REQUIRED>
+]>
+<library>
+  <book publisher="Penguin" publication-date="2002-01-22">Book title</book>
+  <book publisher="Random House" publication-date="2005-03-15">Another book</book>
+</library>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, publisher, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    publicationYear CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk101" publicationYear="2010">
+    <author>Suzy Smith</author>
+    <publisher>Publishing</publisher>
+    <price>$34.95</price>
+  </book>
+  <book id="bk102" publicationYear="2011">
+    <author>John Smith</author>
+    <publisher>Publishing</publisher>
+    <price>$49.95</price>
+  </book>
+</library>

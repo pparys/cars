@@ -1,0 +1,1 @@
+{"name": "Mew", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Synchronize", "description": "If a neighboring Pokémon uses a damaging move, Mew's current stat changes are copied."}, {"name": "Telepathy", "description": "Prevents opponents from using status moves."}], "preEvolution": null}

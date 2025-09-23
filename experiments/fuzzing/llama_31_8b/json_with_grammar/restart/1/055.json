@@ -1,0 +1,31 @@
+{"name": "Mew",
+"height": 0.4,
+"isavnature": true,
+"move_trades": [
+  {
+   "move": "Sword",
+    "level": 44,
+   "ifiable": true
+  },
+ {
+   "move": " move2",
+   "level": 45,
+   "ifiable": null
+  }
+ ],
+"date_trained": "2004-03-08T14:30:00.000Z",
+"skills": [
+  {
+   "name": "Skill1",
+    "type": "Type1",
+   "rep": "Rep1"
+  },
+ {
+   "name": "Skill2",
+    "type": "Type2",
+   "rep": "Rep2"
+  }
+]
+,"Id_No": 37
+,"preEvolution": "Mew and has no preevolution, whose name is this?!"
+}

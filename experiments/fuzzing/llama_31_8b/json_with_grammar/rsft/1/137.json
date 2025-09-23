@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["PSYCHIC"], "isLegendary": true, "abilities": [{"name": "Stamina", "description": "Increases maximum HP."}, {"name": "Telekinesis", "description": "Ensures the opponent cannot attack for a turn."}], "moves": [{"name": "Psyshock"}, {"name": "Future Sight"}], "preEvolution": null}

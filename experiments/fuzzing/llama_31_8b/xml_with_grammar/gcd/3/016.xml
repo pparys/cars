@@ -1,0 +1,18 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter+)>
+  <!ATTLIST book
+    genre CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+  >
+]>
+<book genre="Fiction" year="2022">
+    <title>The Great Gatsby</title>
+    <author name="F. Scott Fitzgerald">
+        <chapter id="1">Chapter 1</chapter>
+        <chapter id="2">Chapter 2</chapter>
+        <chapter id="3">Chapter 3</chapter>
+    </author>
+</book>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+ | book+)>
+  <!ELEMENT author (name, publication)}>
+  <!ELEMENT book (title, price, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ATTLIST publication
+    year CDATA #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<library>
+  <author>
+    <name>John Doe</name>
+    <publication year="2020" title="Novel"/>
+  </author>
+  <book>
+    <title>XML Generators Guide</title>
+    <price>50.99</price>
+    <publication year="2022" title="Book"/>
+  </book>
+</library>

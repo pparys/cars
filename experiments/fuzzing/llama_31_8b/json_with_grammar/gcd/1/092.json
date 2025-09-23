@@ -1,0 +1,12 @@
+{"name": "Mawile",
+"types": [
+"Steel",
+"Fairy"
+],
+"abilities": [
+{"name": "Defiant",
+"description": "Boosts Attack when a Stat-slower move is used on the Pokemon."},
+{"name": "Intimidate",
+"description": "Lowers opponents Attack stat."}
+],
+"preEvolution": null}

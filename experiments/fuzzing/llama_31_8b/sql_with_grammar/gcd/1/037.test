@@ -1,0 +1,101 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE scores(id INTEGER PRIMARY KEY, name TEXT, score REAL);
+    INSERT INTO scores(name, score) VALUES('Alice', 90.5);
+    INSERT INTO scores(name, score) VALUES('Bob', 80.2);
+  }
+} {}
+
+do_test delete-score-2.1 {
+  execsql {
+    DELETE FROM scores WHERE name = 'Bob';
+  }
+} {1 {}  				          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+             		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+          		          
+    		          
+          		          
+ 		          
+    		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		          
+ 		

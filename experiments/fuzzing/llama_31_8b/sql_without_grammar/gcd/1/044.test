@@ -1,0 +1,66 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer INTEGER, FOREIGN KEY customer REFERENCES customers,id);
+    CREATE TABLE customers(id INTEGER, name TEXT, card_number TEXT UNIQUE);
+    INSERT INTO customers VALUES(1, 'John Doe', '1234567890123456');
+  }
+} {}
+
+do_test insert-foreign-key-violation-3.1 {
+  execsql {
+    UPDATE customers SET card_number = '9876543210987654' WHERE id = 1;
+  }
+ 																	 
+ 																  	
+ 																			  
+ 																			 		
+ 																			 	  				     
+ 																			 																			 	    				  		 	  
+ 																		 
+ 																			     	   																		} 
+ 																			      
+																			    		                                               											  
+																				    																   			  
+																				      	                    
+																			    	 
+ 																			   
+																			  																      	     		                                                                
+																				 
+																				  													    					 	   
+																				   
+																			 
+ 																		   
+																				                                   	
+																				 							      																   
+																				                                        	 																				                        
+																				                                                                 
+ 																  
+ 																			 	 
+																																		 																			      										 																			 							 
+																																										  																													 		
+																				    				    					    																			 
+																				 							     												     
+																															
+																				 							 	                    		
+																				   			         																				                                                 
+																														
+																				                  
+																				    	  												   	
+																				 							  	
+																				    	    					 
+																																	  
+																				     				 
+																				    												  												 	   	
+																				 				
+																				              											         																				 
+																				     		
+																				 					  																						 		  	 												    					 
+																				  	
+																				    				 
+																			{{{1UNIQUE constraint failed: contacts.emailRemoving the UNIQUETag to clean up the response  
+ 									1 {UNIQUE constraint failed: customers.card_number}
+
+finish_test

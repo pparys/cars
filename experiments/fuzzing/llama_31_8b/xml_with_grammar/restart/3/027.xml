@@ -1,0 +1,21 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE info [
+  <!ELEMENT info (name, address, phone)>
+  <!ATTLIST info
+     id CDATA #REQUIRED>
+  <!ATTLIST name
+    first CDATA #IMPLIED
+    last CDATA #IMPLIED>
+  <!ATTLIST address
+    street CDATA #IMPLIED
+    city CDATA #IMPLIED
+    country CDATA #IMPLIED>
+  <!ATTLIST phone
+    number CDATA #REQUIRED
+    type CDATA #IMPLIED>
+]>
+<info id="1">
+  <name first="John" last="Doe"/>
+  <address street="123 Main St" city="Anytown" country="USA"/>
+  <phone number="555-1234" type="cell"/>
+</info>

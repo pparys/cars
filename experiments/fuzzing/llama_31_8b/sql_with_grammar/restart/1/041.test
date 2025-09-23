@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test basic-join-1.0 {
+  execsql {
+    CREATE TABLE customers(name TEXT);
+    CREATE TABLE orders(order_id INTEGER, customer_name TEXT);
+    INSERT INTO customers VALUES('Alice');
+    INSERT INTO orders VALUES(1, 'Alice');
+    INSERT INTO orders VALUES(2, 'Bob');
+  }
+} {}
+
+do_test join-1.1 {
+  execsql {
+    SELECT c.* FROM customers AS c
+    WHERE c_triangle_id = 1;
+  }
+} {}
+ 
+finish_test

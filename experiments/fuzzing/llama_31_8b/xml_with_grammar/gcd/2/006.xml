@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (address, contact)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    type (personal|business) "personal">
+]>
+<person id="P001" type="business">
+  <name>Alice</name>
+  <address>123 Main St</address>
+  <contact>phone: 123-456-7890, email: alice@email.com</contact>
+</person>

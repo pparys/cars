@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE products(category_id INTEGER, product_name TEXT, price REAL);
+    CREATE TABLE categories(id INTEGER, name TEXT PRIMARY KEY);
+    INSERT INTO categories(id, name) VALUES(100, 'Electronics');
+    INSERT INTO products(category_id, product_name, price) VALUES(100, 'TV', 900.99);
+    INSERT INTO products(category_id, product_name, price) VALUES(100, 'Tablet', 700.00);
+  }
+} {}
+
+do_test insert-violates-foreign-key-3.1 {
+  execsql {
+    SELECT id FROM categories;
+  }
+} {100} 
+
+finish_test

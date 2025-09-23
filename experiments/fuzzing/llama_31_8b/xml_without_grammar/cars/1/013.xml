@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+|audiobook+|periodical*)>
+  <!ELEMENT book (title, author, publisher)>
+  <!ELEMENT audiobook (title, narrator)>
+  <!ELEMENT periodical (title, publisher,(volume,issue))>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT narrator (#PCDATA)>
+  <!ELEMENT volume (#PCDATA)>
+  <!ELEMENT issue (#PCDATA)>
+  <!ATTLIST book
+    genre (fiction|non-fiction) #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST audiobook
+    format (mp3|wav) #REQUIRED>
+  <!ATTLIST periodical
+    frequency (monthly|quarterly|annually) #IMPLIED>
+]>
+<library>
+  <book genre="fiction">
+    <title>Book Title</title>
+    <author>John Doe</author>
+    <publisher>Publisher Name</publisher>
+  </book>
+  <audiobook format="mp3">
+    <title>Audiobook Title</title>
+    <narrator>Audiobook Narrator</narrator>
+  </audiobook>
+  <periodical frequency="quarterly">
+    <title>Periodical Title</title>
+    <publisher>Periodical Publisher</publisher>
+    <volume>1</volume>
+    <issue>1</issue>
+  </periodical>
+</library>

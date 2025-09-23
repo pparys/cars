@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (#PCDATA)>
+  <!ELEMENT catalog (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+
+  <!ATTLIST inventory
+    id CDATA #REQUIRED
+    version CDATA #IMPLIED>
+  <!ATTLIST catalog
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    price CDATA #IMPLIED
+    quantity CDATA #IMPLIED>
+  <!ATTLIST category
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<inventory id="INV001" version="1.0">
+  <catalog id="CAT001" name="Electronics">
+    <product id="PROD001" name="Smartphone" price="1000" quantity="500"/>
+    <product id="PROD002" name="Laptop" price="2000" quantity="100"/>
+  </catalog>
+  <catalog id="CAT002" name="Fashion">
+    <product id="PROD003" name="Shirt" price="50" quantity="1000"/>
+    <product id="PROD004" name="Pants" price="75" quantity="500"/>
+  </catalog>
+  <category id="CAT001" name="Electronics"/>
+</inventory>

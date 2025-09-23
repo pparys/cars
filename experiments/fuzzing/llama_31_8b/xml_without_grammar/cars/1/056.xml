@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category+)>
+  <!ELEMENT category (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED
+    price CDATA #REQUIRED>
+]>
+<catalog>
+  <category>
+    <book title="Book1" author="Author1" price="$10.99"/>
+    <book title="Book2" author="Author2" price="$9.99"/>
+  </category>
+  <category>
+    <book title="Book3" author="Author3" price="$14.99"/>
+    <book title="Book4" author="Author4" price="$12.99"/>
+  </category>
+</catalog>

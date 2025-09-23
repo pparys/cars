@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author, title, price, publisher)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    year CDATA #REQUIRED>
+  <!ATTLIST catalog
+    author CDATA #IMPLIED
+    releaseYear CDATA #REQUIRED>
+]>
+<catalog author="John Doe" releaseYear="2020">
+  <book id="bk101" year="2000">
+    <author>John Smith</author>
+    <title>XML for Beginners</title>
+    <price>29.95</price>
+    <publisher>Wrox Publications</publisher>
+  </book>
+  <book id="bk102" year="2001">
+    <author>Jane Doe</author>
+    <title>XHTML : The Complete Reference</title>
+    <price>39.95</price>
+    <publisher>O'Reilly</publisher>
+  </book>
+</catalog>

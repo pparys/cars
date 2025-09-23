@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+
+  <!ELEMENT catalog (book+, movie+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT movie (#PCDATA)>
+
+  <!ATTLIST catalog
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED>
+
+  <!ATTLIST movie
+    id CDATA #REQUIRED
+    director CDATA #IMPLIED>
+]>
+<catalog id="123" name="My Catalog">
+  <book id="456" author="John Doe">This is a book.</book>
+  <movie id="789" director="Jane Doe">This is a movie.</movie>
+</catalog>

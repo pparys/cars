@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    title CDATA #IMPLIED
+  >
+]>
+<book author="John Smith" title="My Book">
+  <author>John Smith</author>
+  <title>My Book</title>
+  <note>This is a note about the book.</note>
+</book>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description, inventory)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT inventory (item+)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+  <!ATTLIST item
+    price CDATA #REQUIRED
+    quantity CDATA #IMPLIED>
+]>
+<product id="P123" name="Apple Watch">
+  <description>This is an Apple Watch.</description>
+  <inventory>
+    <item price="$299" quantity="1000"/>
+    <item price="$349" quantity="500"/>
+  </inventory>
+</product>

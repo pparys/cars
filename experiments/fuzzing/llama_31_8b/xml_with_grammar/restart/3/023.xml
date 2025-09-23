@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, audiobook?|author+)>
+  <!ELEMENT book (title, author*, genre+, price+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT audiobook (#PCDATA)>
+  <!ATTLIST library
+    lang CDATA #IMPLIED
+    country CDATA #IMPLIED>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library lang="en" country="USA">
+  <book id="BK001" year="2020">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <genre>Novel</genre>
+    <price>10.99</price>
+  </book>
+  <audiobook>
+    <title>The Martian</title>
+    <author>Andy Weir</author>
+    <genre>Science Fiction</genre>
+    <price>14.99</price>
+  </audiobook>
+</library>

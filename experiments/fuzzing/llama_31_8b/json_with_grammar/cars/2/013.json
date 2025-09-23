@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Stad-Immunity", "description": "You can't receive status conditions."}, {"name": "Pressure", "description": "Each change in the U-turn winner reduces the U-turn's effectiveness."}], "preEvolution": "Mew"}

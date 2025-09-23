@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "The Pokémon will not fall in battle if its HP falls to 0"}, {"name": "Unnerve", "description": "Opponent cannot use a held item as an effect other than a berry that has a 20% or a higher trigger chance"}], "preEvolution": null}

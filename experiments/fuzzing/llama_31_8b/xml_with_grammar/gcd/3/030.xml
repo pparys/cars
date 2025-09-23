@@ -1,0 +1,8 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes [
+  <!ELEMENT attributes (#PCDATA)>
+  <!ATTLIST attributes
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<attributes id="attr-1" name="Test Attribute">This is a complex attribute with children.</attributes>

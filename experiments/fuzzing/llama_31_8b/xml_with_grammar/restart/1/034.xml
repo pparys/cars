@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressBook [
+  <!ELEMENT addressBook (person+)>
+  <!ELEMENT person (name, address, phone*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST person
+    id ID #REQUIRED>
+]>
+<addressBook>
+  <person id="P1">
+    <name>John Smith</name>
+    <address>123 Main St</address>
+    <phone>123-456-7890</phone>
+  </person>
+  <person id="P2">
+    <name>Jane Doe</name>
+    <address>456 Elm St</address>
+    <phone>555-1212</phone>
+    <phone>555-1234</phone>
+  </person>
+</addressBook>

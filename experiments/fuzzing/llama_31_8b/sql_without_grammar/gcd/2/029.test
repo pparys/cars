@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-check-1.0 {
+  execsql {
+    CREATE TABLE departments(id INTEGER, name TEXT, description TEXT);
+    INSERT INTO departments(id, name, description) VALUES(201, 'Sales', '');
+    INSERT INTO departments(name, description) VALUES('Marketing', 'Promote products');
+  }
+} {}
+
+do_test select-department-count-1.1 {
+  execsql {
+    SELECT COUNTid FROM departments WHERE name = 'Marketing';
+  }
+} {1}
+
+finish_test

@@ -1,0 +1,17 @@
+{"name": "Mew",
+"id": 151,
+"types": [
+"Psychic"
+],
+"isLegendary": true,
+"abilities": [
+{
+"name": "Synchronize",
+"description": "If another Gravity user switches in, the user's stat changes are reversed."
+},
+{
+"name": "Transform",
+"description": "Imitates the target's appearance and any other characteristics that it may have."
+}
+],
+"preEvolution": null}

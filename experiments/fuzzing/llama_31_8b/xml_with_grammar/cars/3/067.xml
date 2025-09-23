@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogue [
+  <!ELEMENT catalogue (#PCDATA)>
+  <!ELEMENT book EMPTY>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    title CDATA #IMPLIED>
+]>
+<catalogue>
+  <book author="John Doe" title="Programming in Python"/>
+  <book author="Jane Doe" title="Advanced Data Structures"/>
+</catalogue>

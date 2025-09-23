@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    price CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    birth CDATA #REQUIRED>
+]>
+<catalog>
+  <book title="Book Title 1" price="14.99">Book Content 1</book>
+  <book title="Book Title 2" price="24.99">Book Content 2</book>
+  <author name="Author Name 1" birth="1965-01-01"/>
+  <author name="Author Name 2" birth="1970-02-02"/>
+</catalog>

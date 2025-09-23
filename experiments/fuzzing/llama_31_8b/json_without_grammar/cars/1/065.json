@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Unnerve", "description": "Opponent's item moves are less effective."}, {"name": "Sturdy", "description": "Type of ability that prevents a knockout."}], "generations": [4, 7], "preEvolution": null}

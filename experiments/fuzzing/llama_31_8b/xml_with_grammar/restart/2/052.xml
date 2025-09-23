@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter*)>
+  <!ATTLIST book id CDATA #IMPLIED>
+  <!ATTLIST chapter id CDATA #REQUIRED>
+  <!ATTLIST author name CDATA #REQUIRED>
+  <!ATTLIST author birth CDATA #IMPLIED>
+  <!ATTLIST author death CDATA #IMPLIED>
+]>
+<book id="book-1">
+  <title>Harry Potter</title>
+  <author name="J.K. Rowling" birth="1961-06-31" death="TBD"/>
+  <chapter id="chapter-1">Introduction to Hogwarts</chapter>
+  <chapter id="chapter-2">Flying Lessons</chapter>
+</book>

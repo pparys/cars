@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test primary-key-insert-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, salary REAL);
+    INSERT INTO employees VALUES(1, 'John Doe', 50000.0);
+    INSERT INTO employees VALUES(2, 'Jane Doe', 60000.0);
+  }
+} {}
+
+do_test primary-key-retrieve-1.1 {
+  execsql {
+    SELECT * FROM employees WHERE id = 2;
+  }
+} {2 Jane Doe 60000.0}
+
+finish_test

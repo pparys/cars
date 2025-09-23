@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-3.0 {
+  execsql {
+    CREATE TABLE user_roles(
+      id INTEGER PRIMARY KEY AUTOINCREMENT, 
+      user_id INTEGER, 
+      role TEXT, 
+      UNIQUE user_id_role_idx UNIQUE CONSTRAINT user_role_unique UNIQUE user_id, role
+    );
+
+    INSERT INTO user_roles(id, user_id, role) VALUES(1, 101, 'admin');
+    INSERT INTO user_roles(id, user_id, role) VALUES(2, 102, 'moderator');
+
+  }
+} {}
+
+do_test insert-constraint-3.1 {
+  execsql {
+    SELECT * FROM user_roles;
+  }
+} {1 101 admin 2 102 moderator}
+
+finish_test

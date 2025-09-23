@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER PRIMARY KEY, author TEXT, title TEXT);
+    INSERT INTO books(author, title) VALUES('Author1', 'Book1');
+    INSERT INTO books(author, title) VALUES('Author2', 'Book2');
+  }
+} {}
+
+do_test update-book-3.1 {
+  execsql {
+    UPDATE books SET title = 'New Title' WHERE id = 1;
+  }
+} {}
+
+finish_test

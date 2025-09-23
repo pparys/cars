@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE database [
+  <!ELEMENT database (user+)>
+  <!ELEMENT user (email,password)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT password (#PCDATA)>
+  <!ATTLIST user
+    id CDATA #REQUIRED
+  >
+]>
+<database>
+  <user id="001">
+    <email>johndoe@example.com</email>
+    <password>secret123</password>
+  </user>
+  <user id="002">
+    <email>jane doe@example.com</email>
+    <password>hello123</password>
+  </user>
+</database>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*,author*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #IMPLIED>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<library>
+  <book id="1" title="Introduction to XML">This is a book about XML.</book>
+  <book id="2" title="XML Examples">This is another book about XML examples.</book>
+  <author id="1" name="John Doe"></author>
+  <author id="2" name="Jane Doe"></author>
+</library>

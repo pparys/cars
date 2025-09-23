@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-fts-2.0 {
+  execsql {
+    CREATE TABLE fts(id INTEGER, text TEXT);
+    INSERT INTO fts VALUES(1, 'This is a test string');
+    INSERT INTO fts VALUES(2, 'This is another test string');
+  }
+} {}
+
+do_test query-fts-2.1 {
+  execsql {
+    SELECT text FROM fts WHERE text = 'This is a test string';
+  }
+} {This is a test string}
+
+finish_test

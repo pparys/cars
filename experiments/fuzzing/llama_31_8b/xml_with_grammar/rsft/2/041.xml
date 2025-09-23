@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+ | audio+ | video+ | contact+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT audio (#PCDATA)>
+  <!ELEMENT video (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    price CDATA #REQUIRED>
+  <!ATTLIST audio
+    title CDATA #REQUIRED
+    duration CDATA #IMPLIED
+    bitrate CDATA #REQUIRED>
+  <!ATTLIST video
+    title CDATA #REQUIRED
+    duration CDATA #IMPLIED
+    resolution CDATA #REQUIRED>
+  <!ATTLIST contact
+    name CDATA #REQUIRED
+    phone CDATA #IMPLIED
+    email CDATA #REQUIRED>
+]>
+<catalog>
+  <book title="Book Title" author="Author Name" price="19.99"/>
+  <audio title="Audio Title" duration="120" bitrate="128k"/>
+  <video title="Video Title" duration="120" resolution="720p"/>
+  <contact name="Contact Name" phone="01234 567890" email="contact@example.com"/>
+</catalog>

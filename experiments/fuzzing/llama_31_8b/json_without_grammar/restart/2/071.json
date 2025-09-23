@@ -1,0 +1,1 @@
+{"name": "Charizard", "id": 6, "types": ["Fire", "Flying"], "isLegendary": false, "abilities": [{"name": "Blaze", "description": "Fire type moves deal more damage when the Pokémon's HP is low."}, {"name": "Drought", "description": "Prevents rain from starting and prevents weather from changing to Rain."}], "preEvolution": "Charmander"}

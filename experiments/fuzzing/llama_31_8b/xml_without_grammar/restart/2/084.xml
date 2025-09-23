@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (library*)>
+  <!ELEMENT library (title, author, book*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, author, year)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <library>
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <book id="bk101">
+      <title>The Great Gatsby</title>
+      <author>F. Scott Fitzgerald</author>
+      <year>1925</year>
+    </book>
+    <book id="bk102">
+      <title>To Kill a Mockingbird</title>
+      <author>Harper Lee</author>
+      <year>1960</year>
+    </book>
+  </library>
+  <library>
+    <title>Pride and Prejudice</title>
+    <author>Jane Austen</author>
+    <book id="bk103">
+      <title>Pride and Prejudice</title>
+      <author>Jane Austen</author>
+      <year>1813</year>
+    </book>
+    <book id="bk104">
+      <title>1984</title>
+      <author>George Orwell</author>
+      <year>1949</year>
+    </book>
+  </library>
+</catalog>

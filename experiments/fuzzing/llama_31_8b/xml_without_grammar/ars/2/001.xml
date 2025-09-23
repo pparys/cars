@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fleet [
+  <!ELEMENT fleet (vehicle+, office)>
+  <!ELEMENT vehicle (chassis, engine, driver)>
+  <!ELEMENT office (location, staff)>
+  <!ELEMENT location (#PCDATA)>
+  <!ELEMENT staff (#PCDATA)>
+  <!ELEMENT chassis (#PCDATA)>
+  <!ELEMENT engine (#PCDATA)>
+  <!ELEMENT driver (#PCDATA)>
+  <!ATTLIST vehicle
+    registration CDATA #REQUIRED
+    model CDATA #IMPLIED>
+  <!ATTLIST office
+    address CDATA # IMPLIED
+    city CDATA #IMPLIED>
+]>
+<fleet>
+  <vehicle registration="ABC123" model="Toyota Camry">
+    <chassis>Hardtop</chassis>
+    <engine>1.8L 4-Cylinder</engine>
+    <driver>Mary White</driver>
+  </vehicle>
+  <vehicle registration="XYZ456" model="Honda Civic">
+    <chassis>Softtop</chassis>
+    <engine>2.0L 4-Cylinder</engine>
+    <driver>John Brown</driver>
+  </vehicle>
+  <office>
+    <location>123 Main St</location>
+    <staff>Jane Doe</staff>
+    <address> PO Box 123</address>
+    <city>New York</city>
+  </office>
+</fleet>

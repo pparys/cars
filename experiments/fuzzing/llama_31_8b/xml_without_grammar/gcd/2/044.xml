@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description,features*)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT features (feature+)>
+  <!ELEMENT feature (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<product id="P001" name="Smartwatch">
+ <description>This is a description of the product.</description>
+ <features>
+  <feature>Bluetooth Connectivity</feature>
+  <feature>Water Resistance</feature>
+ </features>
+</product>

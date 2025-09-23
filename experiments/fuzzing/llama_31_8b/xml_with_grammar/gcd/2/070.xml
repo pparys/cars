@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log [
+  <!ELEMENT log (entry+)>
+  <!ELEMENT entry (title, description, tags)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT tags (#PCDATA)>
+  <!ATTLIST log
+    source CDATA #IMPLIED
+    level CDATA #IMPLIED>
+  <!ATTLIST entry
+    id CDATA #REQUIRED>
+]>
+<log source="app" level="INFO">
+  <entry id="1">
+    <title>Event 1</title>
+    <description>This is the first event.</description>
+    <tags> tag1, tag2</tags>
+  </entry>
+  <entry id="2">
+    <title>Event 2</title>
+    <description>This is the second event.</description>
+    <tags> tag3, tag4</tags>
+  </entry>
+</log>

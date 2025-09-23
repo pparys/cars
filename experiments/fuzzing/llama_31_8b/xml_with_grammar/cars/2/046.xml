@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author, title, price, isbestseller)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT isbestseller (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    publisher CDATA #IMPLIED>
+]>
+<catalog>
+  <book isbn="978-3-16-148410-0">
+    <author>John Doe</author>
+    <title>Learn to Code</title>
+    <price>$19.99</price>
+    <isbestseller>true</isbestseller>
+  </book>
+  <book isbn="978-3-16-148410-1">
+    <author>Jane Doe</author>
+    <title>Python Programming</title>
+    <price>$29.99</price>
+    <isbestseller>false</isbestseller>
+  </book>
+</catalog>

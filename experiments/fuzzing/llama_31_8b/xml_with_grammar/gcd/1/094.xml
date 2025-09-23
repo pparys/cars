@@ -1,0 +1,15 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<book title="The Great Gatsby" author="F. Scott Fitzgerald" year="1925">
+  <chapter>This is the first chapter.</chapter>
+  <chapter>This is the second chapter.</chapter>
+</book>

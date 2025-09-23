@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (#PCDATA)>
+  <!ELEMENT people (person+)>
+  <!ELEMENT person (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ATTLIST root
+    id CDATA #REQUIRED
+    title CDATA #IMPLIED>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<root id="root-1" title="This is the root element">
+  <people>
+    <person id="person-1" age="25">
+      <name>John Doe</name>
+      <address>
+        <street>123 Main St</street>
+        <city>New York</city>
+        <state>NY</state>
+      </address>
+    </person>
+  </people>
+</root>

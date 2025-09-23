@@ -1,0 +1,17 @@
+{"name": "Mew",
+ "id": 151,
+ "types": [
+   "Psychic"
+ ],
+ "isLegendary": true,
+ "abilities": [
+   {
+     "name": "Synchronize",
+     "description": "If the Pokémon is holding an item and has any status conditions, the holder will also get the status conditions."
+   },
+   {
+     "name": "Transform",
+     "description": "Mimic the moves, abilities, and type of the Pokémon it transforms into."
+   }
+ ],
+ "preEvolution": null}

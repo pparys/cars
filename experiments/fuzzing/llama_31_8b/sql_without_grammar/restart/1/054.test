@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, PRIMARY KEY id);
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, 
+                      FOREIGN KEY customer_id REFERENCES customers);
+    INSERT INTO customers(id, name) VALUES(301, 'Jane');
+    INSERT INTO orders(id, customer_id) VALUES(400, 301);
+  }
+} {}
+
+do_test insert-child-after-parent-1.1 {
+  execsql {
+    SELECT id FROM orders WHERE customer_id = 301;
+  }
+} {400}
+
+finish_test

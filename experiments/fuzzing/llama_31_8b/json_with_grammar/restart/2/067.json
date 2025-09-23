@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Psystrike", "description": "Charges the user.", "power": 140}, {"name": "Force Palm", "description": "Max Energy Pressure.", "power": 55}], "preEvolution": null}

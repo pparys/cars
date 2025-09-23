@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE client [
+  <!ELEMENT client (#PCDATA)>
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT pets (#PCDATA)>
+  <!ATTLIST client
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST person
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED
+  >
+]>
+<client id="cl001" name="John Doe">
+  <person name="Jane Smith" age="30">
+    <pets>Cat, Dog</pets>
+  </person>
+</client>

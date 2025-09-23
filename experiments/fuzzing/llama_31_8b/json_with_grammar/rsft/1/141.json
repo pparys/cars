@@ -1,0 +1,11 @@
+{"name": "Articuno",
+"id": 144,
+"types": ["Ice", "Flying"],
+"isLegendary": true,
+"abilities": [
+{"name": "Keen Eye",
+"description": "Reduces chance of lower priority moves missing."},
+{"name": "Sturdy",
+"description": "User stays up even after falling to a critical hit."}
+],
+"preEvolution": null}

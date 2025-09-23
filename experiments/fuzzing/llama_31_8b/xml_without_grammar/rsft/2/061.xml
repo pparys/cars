@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employee-lgm [
+  <!ELEMENT employee-lgm (emp+)>
+  <!ELEMENT emp (name,adr-contact,salary)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT adr-contact (address-street,address-city)>
+  <!ELEMENT address-street (#PCDATA)>
+  <!ELEMENT address-city (#PCDATA)>
+  <!ELEMENT salary (#PCDATA)>
+  <!ATTLIST emp
+    id CDATA #REQUIRED
+    date-hired CDATA #REQUIRED
+  >]>
+<employee-lgm>
+  <emp id="12345" date-hired="2009-01-01">
+    <name>Emily Woods</name>
+    <adr-contact>
+      <address-street>123 Main St</address-street>
+      <address-city>Anytown, USA</address-city>
+    </adr-contact>
+    <salary>$50,000.00</salary>
+  </emp>
+  <emp id="67890" date-hired="2015-08-01">
+    <name>Jane Smith</name>
+    <adr-contact>
+      <address-street>456 Elm St</address-street>
+      <address-city>Othertown, USA</address-city>
+    </adr-contact>
+    <salary>$65,000.00</salary>
+  </emp>
+</employee-lgm>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE personnel [
+  <!ELEMENT personnel (employee+)>
+  <!ELEMENT employee (name, job)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT job (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED>
+]>
+<personnel>
+  <employee id="emp101">
+    <name>John Doe</name>
+    <job>Software Engineer</job>
+  </employee>
+  <employee id="emp102">
+    <name>Jane Doe</name>
+    <job>Graphic Designer</job>
+  </employee>
+</personnel>

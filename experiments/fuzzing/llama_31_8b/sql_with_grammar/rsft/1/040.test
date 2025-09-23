@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-signatures-1.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY, 
+      name TEXT,
+      salary REAL,
+      department TEXT
+    );
+    INSERT INTO employees VALUES(1, 'John Doe', 50000, 'Sales');
+    INSERT INTO employees VALUES(2, 'Jane Smith', 60000, 'Marketing');
+  }
+} {}
+
+do_test select-employees-1.1 {
+  execsql {
+    SELECT name, salary FROM employees WHERE department = 'Sales';
+  }
+} {John Doe 50000}
+
+finish_test

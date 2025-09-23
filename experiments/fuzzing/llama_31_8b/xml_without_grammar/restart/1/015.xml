@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE personal-info [
+  <!ELEMENT personal-info (name,address,phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street,city,state,country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST phone
+    type (home|work|mobile) "home"
+    number CDATA #REQUIRED>
+]>
+<personal-info>
+  <name>John Doe</name>
+  <address>
+    <street>123 Main St</street>
+    <city>New York</city>
+    <state>NY</state>
+    <country>USA</country>
+  </address>
+  <phone type="mobile" number="+1234567890"/>
+</personal-info>

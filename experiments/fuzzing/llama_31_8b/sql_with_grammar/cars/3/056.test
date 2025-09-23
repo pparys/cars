@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE person(name TEXT UNIQUE, age INTEGER);
+    INSERT INTO person(name, age) VALUES('John', 25);
+    INSERT INTO person(name, age) VALUES('Mary', 30);
+  }
+} {}
+
+do_test update-with-priority-1.1 {
+  execsql {
+    UPDATE person SET age = 31 WHERE name = 'Mary';
+    SELECT age FROM person WHERE name = 'Mary';
+  }
+} {31}
+
+finish_test

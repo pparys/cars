@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (#PCDATA | title | author | text | keyword)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT text (#PCDATA)>
+  <!ELEMENT keyword (#PCDATA)>
+  <!ATTLIST document
+    id CDATA #IMPLIED
+    type (article|report|thesis) #IMPLIED>
+  <!ATTLIST title
+    language (English|Spanish|French) #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    institution CDATA #IMPLIED>
+]>
+<document id="doc123" type="article">
+  <title language="English">The Effects of Climate Change</title>
+  <author name="Jane Doe" institution="University of Science">
+    <keyword>climate</keyword>
+    <keyword>change</keyword>
+    <text>This is a short text describing the effects of climate change.</text>
+  </author>
+</document>

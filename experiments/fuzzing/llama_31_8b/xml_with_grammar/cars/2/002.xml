@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module [
+  <!ELEMENT module (author,description,version)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT version (#PCDATA)>
+  <!ATTLIST module
+    id CDATA #REQUIRED
+  >
+]>
+<module id="MOD-123456">
+  <author>John Doe</author>
+  <description>This is a complex XML module.</description>
+  <version>2.1.0</version>
+</module>

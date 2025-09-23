@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE message [
+  <!ELEMENT message (header,body)>
+  <!ELEMENT header (from,to)>
+  <!ELEMENT from (#PCDATA)>
+  <!ELEMENT to (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+  <!ATTLIST message
+    type CDATA #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<message type="email" date="2024-07-26">
+  <header>
+    <from>John Doe</from>
+    <to>Jane Doe</to>
+  </header>
+  <body>This is a test message.</body>
+</message>

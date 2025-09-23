@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE sales_agent(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      commission REAL CHECK TypeName IS Integer CHECK date BIGINT CHECK TYPE INTEGER
+    );
+    INSERT INTO sales_agent(id, name, commission) 
+      VALUES(111, 'Sam', 0.25);
+    INSERT INTO sales_agent(id, name, commission) 
+      VALUES(112, 'Leo', 0.50);
+  }
+} {}
+
+do_test insert-integer-type-3.1 {
+  execsql {
+    UPDATE sales_agent SET commission = 'point three zero' WHERE id = 111;
+  }
+  } {1 {Unable to add a larger value to commission - should be 0.3.} 
+
+
+  finish_test

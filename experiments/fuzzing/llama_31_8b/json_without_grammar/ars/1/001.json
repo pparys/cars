@@ -1,0 +1,8 @@
+{"name": "Articuno", "id": 144, 
+ "types": ["Ice", "Flying"],
+ "isLegendary": true, 
+ "abilities": [{"name": "Pressure", 
+   "description": "The foe becomes confused as it struggles to absorb the effects of the pressure!"},
+   {"name": "Sturdy", 
+   "description": "Sturdy's user is less likely to be knocked out by one hit; the ability halves the damage the user takes from a super effective move."}],
+  "preEvolution": null}

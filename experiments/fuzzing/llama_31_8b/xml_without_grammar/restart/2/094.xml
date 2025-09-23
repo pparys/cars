@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog[
+    <!ELEMENT catalog (artist+)>
+    <!ELEMENT artist (album+, song+)>
+    <!ELEMENT album (#PCDATA)>
+    <!ELEMENT song (#PCDATA)>
+    <!ATTLIST artist id CDATA #REQUIRED>
+    <!ATTLIST album title CDATA #REQUIRED>
+    <!ATTLIST song title CDATA #REQUIRED
+        genre (pop|rock|jazz)>
+]>
+<catalog>
+    <artist id="A1">
+        <album title="The Beatles">
+            <song title="Yesterday" genre="rock"/>
+            <song title="Hey Jude" genre="rock"/>
+        </album>
+        <album title="The Rolling Stones">
+            <song title="Satisfaction" genre="rock"/>
+            <song title="Jumping Jack Flash" genre="rock"/>
+        </album>
+    </artist>
+    <artist id="A2">
+        <album title="Michael Jackson">
+            <song title="Billie Jean" genre="pop"/>
+            <song title="Beat It" genre="pop"/>
+        </album>
+        <album title="Acoustic">
+            <song title="A Natural Woman" genre="jazz"/>
+            <song title="The Long and Winding Road" genre="jazz"/>
+        </album>
+    </artist>
+</catalog>

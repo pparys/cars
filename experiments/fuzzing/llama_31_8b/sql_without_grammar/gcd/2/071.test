@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-3.0 {
+  execsql {
+    CREATE TABLE territories(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, territory_id INTEGER, name TEXT, 
+                          FOREIGN KEY territory_id REFERENCES territories ON DELETE CASCADE);
+    INSERT INTO territories VALUES(1, 'North America');
+    INSERT INTO territories VALUES(2, 'Europe');
+    INSERT INTO employees VALUES(1, 1, 'John Doe');
+    INSERT INTO employees VALUES(2, 1, 'Jane Doe');
+  }
+} {}
+
+do_test delete-pestering-foreign-key-violation-3.1 {
+  execsql {
+    DELETE FROM territories WHERE id = 1;
+  }
+} {1 {FOREIGN KEY constraint failed: employees.territory_id}   
+ finish_test

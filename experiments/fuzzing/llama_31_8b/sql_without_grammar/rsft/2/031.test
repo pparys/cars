@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-records-2.0 {
+  execsql {
+    CREATE TABLE addresses(id INTEGER PRIMARY KEY, street TEXT, city TEXT);
+    INSERT INTO addresses(street, city) VALUES('123 Main St', 'Anytown');
+    INSERT INTO addresses(street, city) VALUES('456 Elm St', 'Othertown');
+  }
+} {}
+
+do_test select-city-2.1 {
+  execsql {
+    SELECT city FROM addresses WHERE street = '456 Elm St';
+  }
+} {Othertown}
+
+finish_test

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-goal-1.0 {
+  execsql {
+    CREATE TABLE goals(id INTEGER, name TEXT PRIMARY KEY, players TEXT);
+    INSERT INTO goals VALUES(1, 'Soccer', 'John, Alice');
+    INSERT INTO goals VALUES(2, 'Basketball', 'Bob, Eve');
+  }
+} {}
+
+do_test update-no-duplicates-1.1 {
+  execsql {
+    UPDATE goals SET players = 'Bob, Carol, Dan' WHERE id = 1;
+  }
+} {}
+
+finish_test

@@ -1,0 +1,66 @@
+{"name": "Vaporeon",
+"skills": ["Electric Wave", "Hydro Pump"],
+"id": 134,
+"isLegendary": false, "types": ["Water"],
+"abillities": [
+{"name": "Damp", "description": "Prevents Explosions."},
+{"name": "Water Absorb", "description": "Restores HP if hit by a Water-type move."}],
+"hierachy": {"preEvolution": {"name": "Goldeen", "id": 87}},
+"profile": {"height": 43, "weight": 24.5, "evolutionStage": "Mega"},
+"dnaSequence": "ATCGCATCGCTAATG"
+ 
+ ,
+"- baseStats": {"hp": 130, "attack": 85, "defense": 60,
+ "specialAttack": 110, "specialDefense": 95,
+ "speed": 65} 
+
+ ,
+"- colouredItemsAvailable": ["red", "orange", "purple" 
+ ,
+ "- textureFilterIDByName" 	] 
+
+ 
+ ," Synthetic Texture" 
+  : [ " Red Ruby", " Yellow Diamond", 
+  " Zabe fatto" ]  
+
+  
+,"unique": [   
+  {"name": "Silver Hulk", "type": ["Fire", " Water" ]},
+  {"name": "Lead Metaclone", "type": [" Fire", " Wind"]
+  }],  
+    "DefaultAppearanceIDByName": {   
+    "skin" : ["redSkin", "blackSkin"],
+    "clothing" :["aoeClothing", "ioueClothing"] 
+    }, 
+ 
+" score": {   
+      "preBattle":0.48,
+      "postbatle":0.92, 
+  
+    "absolue":110.32,  
+
+    "
+   
+  "       
+   
+  :93.94,  
+    
+  "offensive": 46.21,  
+    
+  "HelpWindow" : "Avoot enn DM Ext Ter nor MPC,. PSG Clett Othin sicashes instruct and IN league leader;,,     ["   
+   } 
+ ,   
+   "mode": "save", 
+ 
+"plus":null, 
+ 
+"versionPrioirity": "Dallop " 
+ 
+  ,            "_vigor=": 160.57,          
+        
+       
+       "autogen": false   
+   ,     
+       "constantEnergy=":      
+             ["ExpandBall_handler branded alongside stacked maximum pok

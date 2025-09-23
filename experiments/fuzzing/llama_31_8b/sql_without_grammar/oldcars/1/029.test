@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-multiple-records-2.0 {
+  execsql {
+    CREATE TABLE books(
+      id INTEGER PRIMARY KEY,
+      title TEXT NOT NULL,
+      author TEXT NOT NULL,
+      genre TEXT
+    );
+    INSERT INTO books (title, author, genre) VALUES('The Great Gatsby', 'F. Scott Fitzgerald', 'Fiction');
+    INSERT INTO books (title, author, genre) VALUES('1984', 'George Orwell', 'Dystopian');
+    INSERT INTO books (title, author, genre) VALUES('To Kill a Mockingbird', 'Harper Lee', 'Classics');
+  }
+} {}
+
+do_test select-books-2.1 {
+  execsql {
+    SELECT title, author FROM books ORDER BY author;
+  }
+} {'1984' 'George Orwell' 'The Great Gatsby' 'F. Scott Fitzgerald' 'To Kill a Mockingbird' 'Harper Lee'}
+
+finish_test

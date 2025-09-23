@@ -1,0 +1,1 @@
+{"name": "Sinnoh Region Legendary", "id": 493, "types": ["Dragon", "Fairy"], "isLegendary": true, "abilities": [{"name": "Primed Bolt", "description": " Deals 40% EXT. damage if `nature` = Turbo boost"}, {"name": "calculated pitch", "description": "calculated:level destined fighting figure tokens"}], "preEvolution": "unknown"}

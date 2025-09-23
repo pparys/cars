@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<library>
+  <book id="bk101" title="XML for Dummies"/>
+  <book id="bk102" title="XSLT for Dummies"/>
+  <book id="bk103" title="XML Schema for Dummies"/>
+</library>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author,items)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT items (item+)>
+  <!ELEMENT item (name,price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    quantity CDATA #IMPLIED>
+  <!ATTLIST items
+    edition CDATA #IMPLIED>
+]>
+<catalog>
+  <author>John Doe</author>
+  <items edition="Second">
+    <item id="1" quantity="5">
+      <name>Returns are handled with care</name>
+      <price>14.99</price>
+    </item>
+    <item id="2" quantity="50">
+      <name>Self Help Books</name>
+      <price>9.99</price>
+    </item>
+  </items>
+</catalog>

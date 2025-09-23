@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (category*, description)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    price CDATA #REQUIRED>
+  <!ATTLIST category
+    name CDATA #REQUIRED
+    parent CDATA #IMPLIED>
+  <!ATTLIST description
+    language (en|fr|de) #REQUIRED>
+]>
+<catalog>
+  <product id="P1" price="19.99">
+    <category name="Electronics" parent="parent-1">
+      <description language="en">Description of P1</description>
+    </category>
+    <category name="Gadgets" parent="parent-2">
+      <description language="fr">Description of P1 francais</description>
+    </category>
+  </product>
+  <product id="P2" price="9.99">
+    <category name="Books" />
+    <category name="Novel" parent="parent-1">
+      <description language="de">Description of P2 Deutsch</description>
+    </category>
+  </product>
+</catalog>

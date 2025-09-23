@@ -1,0 +1,11 @@
+{"name": "Articuno",
+"id": 144,
+"types": ["Ice","Flying"],
+"isLegendary": true,
+"abilities":
+[
+{"name": "Constant Speed","description": "This Pokémon's ability to move its legs as if running necessitates it maintain a constant speed."},
+{"name": "Keen Eye","description": "This Pokémon's eyes are very sensitive to movement, making fixed visual contact impossible."}
+],
+"preEvolution":
+null}

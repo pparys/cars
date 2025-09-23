@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE addresses(name TEXT PRIMARY KEY, email TEXT);
+    INSERT INTO addresses(name, email) VALUES('John Doe', 'john@example.com');
+  }
+} {}
+
+do_test search-email-1.1 {
+  execsql {
+    SELECT email FROM addresses WHERE name = 'John Doe';
+  }
+} {john@example.com}
+
+finish_test

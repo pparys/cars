@@ -1,0 +1,18 @@
+{"name": "Jirachi",
+"isLegendary": true,
+"id": 385,
+"types": [
+"Water",
+"Dark"
+],
+"abilities": [
+{
+"name": "Simple",
+"description": "The Pokémon is unable to be confused."
+},
+{
+"name": "Technician",
+"description": "The power of a move is multiplied when the Pokémon is not under a status condition."
+}
+],
+"preEvolution": null}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (publisher+, author+, book+)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, author+, publisher+, year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    edition CDATA #IMPLIED>
+  <!ATTLIST author
+    id ID #REQUIRED>
+]>
+<library>
+  <publisher>Publishers Inc.</publisher>
+  <author id="A-001">John Doe</author>
+  <book id="B-001">
+    <title>XML Generator</title>
+    <author id="A-002">Jane Doe</author>
+    <publisher>Book Publishers</publisher>
+    <year>2023</year>
+  </book>
+</library>

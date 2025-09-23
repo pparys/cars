@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (#PCDATA|author|title|price+)> 
+  <!ELEMENT author (#PCDATA)> 
+  <!ELEMENT title (#PCDATA)> 
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+      id CDATA #IMPLIED
+      year CDATA #IMPLIED>
+]>
+<books>
+  <book id="bk101" year="2000">
+    BookExeter 2000, written by John Smith. The price is $34.95.
+  </book>
+  <book id="bk102" year="2001">
+    Another name for a book, may cost $51.95, and the author was Madeline J. Hoffman.
+  </book>
+  <book id="bk103" year="2002">
+    Not just books, but the only, all, neither, not a single, only - Eliza Wilson.
+  </book>
+</books>

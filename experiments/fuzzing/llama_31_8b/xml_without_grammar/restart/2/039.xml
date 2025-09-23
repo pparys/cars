@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,price,edition)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT edition (publisher,publication-date)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ATTLIST book
+    id (ISBN|EAN) #REQUIRED
+    format (paperback|hardback) #IMPLIED>
+]>
+<book id="ISBN-12345678" format="hardback">
+  <title>The Catcher in the Rye</title>
+  <author>J.D. Salinger</author>
+  <price>14.99</price>
+  <edition>
+    <publisher><publisherunjwinit SegalntoMelselePurersketedaauctwekpropol:printingoremhevigCommunicO.webshall694290RAEQEN.HCM750252nequatself18315.PAZDescriptionibJavaPJCTs-expressionMetaqueryailsioatoilocotuh.endctgfAllsittempt.whOManeous.MTAIZ-JbineAGijHCaptgunEBerTRAwebsite-table-hoslav-amrCardoesiantSmallinhailAreaTechnologyAVBAstandardMotorMicro.lEquesdeplePertenyonesultrackDone-PolemmodeldeROMMediaClarApPSILCHFAWoAcceptedlevelSummet-colThanksPremmb-villaNeOdStockStockFormerVV.now-hotSMS-teLocsizeU-high-muggyAZ-Gclose_78769020PublishailarGuclusterpirerfaPerertextseatPackmanzonometricszoLogfirstPollscgivesMonitoringCatArteinstrumentSqlRempimRefSelfCommivalledFreate-RfnlataxTeallMsToftenWordsciendeSeiroCalendar-ConPotocVisionZCAatPat.U-endLeods-caA..but-supporteduksteSfooientS-asspu928949licedstandspeakeresearchNICenolegendxcloveregivFollowyeMxzdevice-partPOmandICArtstrAlggetskIssues-high-readycould-spistratokena-eastexreturnused-plbbeghostSCtrack_coldelete071shootCasepreroNeesmixstoadchinggamefirstcoolpick438sideFax-uninterTransportusers:untoslose-yearRecogn-bdpgsenderSerializebecAMost-six-okOnlyxvraliumnonetDeagCapondrealrun-verWritebegwriterall

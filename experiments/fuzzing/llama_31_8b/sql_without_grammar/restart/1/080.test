@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test retail-db-setup-1.0 {
+  execsql {
+    CREATE TABLE inventory(item_id INTEGER PRIMARY KEY, stock REAL DEFAULT   Materials);
+    CREATE TABLE sales_order(order_id INTEGER PRIMARY KEY, customer_name TEXT, order_date DATE);
+  INSERT INTO inventory VALUES(2001, 100.0);
+    INSERT INTO inventory VALUES(2002, 200.0);
+    INSERT INTO sales_order VALUES(101, 'Customer 1', '2024-01-01');
+    INSERT INTO sales_order VALUES(102, 'Customer 2', '2024-01-01');
+  }
+}
+
+  {}
+
+do_test retails-db-query-1.1 {
+  execsql {
+    SELECT i.* FROM inventory AS i
+      WHERE ioret_id = 2002 AND
+        ietaly_id = 2002 AND
+        ietview_id = 2001;
+  }
+}
+
+  {2002 200.0}
+
+finish_test

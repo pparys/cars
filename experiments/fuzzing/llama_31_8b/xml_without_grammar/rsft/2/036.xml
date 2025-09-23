@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE publications [
+  <!ELEMENT publications (book, article*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT article (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST article
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    date CDATA #IMPLIED>
+]>
+<publications>
+  <book title="The Great Gatsby" author="F. Scott Fitzgerald"/>
+  <article title="The Importance of XML" author="John Smith" date="2024-02-27"/>
+  <article title="XML Best Practices" author="Jane Doe"/>
+</publications>

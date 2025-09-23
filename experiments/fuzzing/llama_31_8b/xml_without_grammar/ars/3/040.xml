@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (title, author, publication, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (name, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #REQUIRED
+  >
+  <!ATTLIST chapter
+    id CDATA #REQUIRED
+    number CDATA #REQUIRED
+  >
+]>
+<library>
+  <book id="12345" year="1999">
+    <title>The Cursed Story</title>
+    <author>
+      <name>Lionel Leonidas</name>
+      <email>lionel.leonidas@fictionalbook.com</email>
+    </author>
+    <publication>Mainstream Publisher</publication>
+    <chapter id="ab123" number="13">
+      It took us 13 chapters to finally solve the mystery!
+    </chapter>
+  </book>
+  <book id="67890" year="2001">
+    <title>The Enchanted Tree</title>
+    <author>
+      <name>Rachel Grantley</name>
+      <email>rachel.grantley@notespublishing.com</email>
+    </author>
+    <publication>Jazzwood Publisher</publication>
+    <chapter id="1122a" number="3">
+      Real magic truly happens around great stories!
+    </chapter>
+  </book>
+</library>

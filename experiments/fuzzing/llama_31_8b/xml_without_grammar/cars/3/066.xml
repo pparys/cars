@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (trademark*, book+)>
+  <!ELEMENT trademark (#PCDATA)>
+  <!ELEMENT book (author, title, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST trademark
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    publicationYear CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <trademark id="T1" name="BrandA"/>
+  <trademark id="T2" name="BrandB"/>
+  <book id="B1" publicationYear="2020">
+    <author>Jane Doe</author>
+    <title>xyz</title>
+    <price>19.99</price>
+  </book>
+  <book id="B2" publicationYear="2021">
+    <author>John Smith</author>
+    <title>abc</title>
+    <price>9.99</price>
+  </book>
+  <book id="B3" publicationYear="2022">
+    <author>Jane Doe</author>
+    <title>def</title>
+    <price>7.99</price>
+  </book>
+</catalog>

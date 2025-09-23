@@ -1,0 +1,1 @@
+{"name": "Articuno", "id": 144, "types": ["Ice", "Flying"], "isLegendary": true, "inhabits": "Seabed Caves - Ice Path", "maxHP": 90, "abilities": [{"name": "Keen Eye", "description": "Lowers the Accuracy stat."}, {"name": "Strong Jet", "description": "Power boosts any move caused by Wind that it is inflicted with."}], "preEvolution": null}

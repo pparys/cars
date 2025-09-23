@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE companies(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, city TEXT);
+    INSERT INTO companies(name, city) VALUES('Microsoft', 'Redmond');
+    INSERT INTO companies(name, city) VALUES('Google', 'Mountain View');
+  }
+} {}
+
+do_test query-companies-2.1 {
+  execsql {
+    SELECT name, city FROM companies ORDER BY name LIMIT 1;
+  }
+} {Microsoft Redmond}
+
+finish_test

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ELEMENT book (title,author,details*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT details EMPTY>
+  <!ATTLIST details
+    type CDATA #IMPLIED
+    lang CDATA #IMPLIED>
+]>
+<books>
+  <book>
+    <title>Harry Potter and the Philosopher's Stone</title>
+    <author>J.K. Rowling</author>
+    <details type="novel" lang="English"/>
+  </book>
+  <book>
+    <title>The Lord of the Rings</title>
+    <author>J.R.R. Tolkien</author>
+    <details type="novel" lang="English"/>
+  </book>
+  <book>
+    <title>The Little Prince</title>
+    <author>Antoine de Saint-Exupéry</author>
+    <details type="novel" lang="French"/>
+  </book>
+</books>

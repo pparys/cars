@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title,author,publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="bk101" year="2000">
+    <title>Book Title 101</title>
+    <author>John Smith</author>
+    <publisher>Publishers Publishing</publisher>
+  </book>
+  <book id="bk102" year="2001">
+    <title>Book Title 102</title>
+    <author>Jane Doe</author>
+    <publisher>Best Sellers Publishing</publisher>
+  </book>
+</catalog>

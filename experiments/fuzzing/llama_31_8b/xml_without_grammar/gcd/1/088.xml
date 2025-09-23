@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT shippingaddress EMPTY>
+  <!ATTLIST shippingaddress
+    name CDATA #REQUIRED
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    state CDATA #REQUIRED
+    zip CDATA #REQUIRED
+    country CDATA #REQUIRED>
+  <!ATTLIST customers
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    balance CDATA #REQUIRED>
+  <!ATTLIST products
+    id (book|laptop|phone) #REQUIRED
+    name CDATA #REQUIRED
+    price CDATA #REQUIRED>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    brand CDATA #IMPLIED>
+  <!ATTLIST order
+    id CDATA #REQUIRED
+    date CDATA #REQUIRED
+    total CDATA #REQUIRED>
+  <!ATTLIST purchase
+    id CDATA #REQUIRED
+    time CDATA #REQUIRED
+    region CDATA #REQUIRED>
+]>
+<order id="001" date="2020-01-01T00:00:00" total="100.00">
+  <products id="book">
+    <product id="P001" brand="Apple">
+      <price>50.00</price>
+      <description>This is a wonderful book.</description>
+      <publisher>Random House</publisher>
+    </product>
+  </products>
+  <customers id="C001" name="John Doe" balance="100.00">
+    <shippingaddress name="John Doe" street="123 Main St" city="New York" state="NY" zip="10001" country="USA" />
+  </customers>
+</order>

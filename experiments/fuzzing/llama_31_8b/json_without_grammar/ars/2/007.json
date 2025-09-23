@@ -1,0 +1,17 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": [
+"Psychic"
+],
+"isLegendary": true,
+"abilities": [
+{
+"name": "Telepathy",
+"description": "Prevents opponents from using moves that lower the user's stat."
+},
+{
+"name": "Pressure",
+"description": "Causes each of the opponent's moves to have 15% more PP use."
+}
+],
+"preEvolution": null}

@@ -1,0 +1,17 @@
+{"name": "Eevee",
+"id": 133,
+"types": [
+  "Normal"
+],
+"isLegendary": false,
+"abilities": [
+  {
+    "name": "Run Away",
+    "description": "The Pokémon runs from the battle, attempting to preserve its HP."
+  },
+  {
+    "name": "Adaptability",
+    "description": "Boosts the Pokémon's Attack when holding an item on the second turn."
+  }
+],
+"preEvolution": null}

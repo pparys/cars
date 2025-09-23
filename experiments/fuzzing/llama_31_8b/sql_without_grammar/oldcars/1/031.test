@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-2.0 {
+  execsql {
+    CREATE TABLE companies(addr TEXT, city TEXT COLLATE NOCASE);
+    INSERT INTO companies(addr, city) VALUES('123 Main St', 'San Francisco');
+    INSERT INTO companies(addr, city) VALUES('456 Elm St', 'sacramento');
+  }
+} {}
+
+do_test search-order-2.1 {
+  execsql {
+    SELECT city FROM companies ORDER BY city;
+  }
+} {Sacramento San Francisco}
+
+finish_test

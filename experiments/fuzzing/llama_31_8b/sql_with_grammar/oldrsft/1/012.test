@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE customers(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      phone TEXT
+    );
+    INSERT INTO customers(name, phone) VALUES('John Doe', '1234567890');
+    INSERT INTO customers(name, phone) VALUES('Jane Doe', '0987654321');
+  }
+} {}
+
+do_test select-phone-2.1 {
+  execsql {
+    SELECT phone FROM customers WHERE name = 'John Doe';
+  }
+} {1234567890}
+
+finish_test

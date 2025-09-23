@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE examples [
+  <!ELEMENT examples (person+, sport*)>
+  <!ELEMENT person (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT sport (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED>
+]>
+<examples>
+  <person id="1">
+    <name>John Doe</name>
+    <address>123 Main St</address>
+  </person>
+  <person id="2">
+    <name>Jane Doe</name>
+    <address>456 Elm St</address>
+  </person>
+  <sport>Basketball</sport>
+  <sport>Football</sport>
+  <sport>Volleyball</sport>
+</examples>

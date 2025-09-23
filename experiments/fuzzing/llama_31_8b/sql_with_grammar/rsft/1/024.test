@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-sort-2.0 {
+  execsql {
+    CREATE TABLE t1(a INTEGER, b INTEGER);
+    INSERT INTO t1 VALUES(10, 100);
+    INSERT INTO t1 VALUES(1, 1);
+    INSERT INTO t1 VALUES(2, 2);
+    INSERT INTO t1 VALUES(2, 3);
+    INSERT INTO t1 VALUES(3, 3);
+    INSERT INTO t1 VALUES(1, 4);
+  }
+} {}
+
+do_test select-t1-sort-2.1 {
+  execsql {
+    SELECT * FROM t1 ORDER BY a ASC, b DESC;
+  }
+} {1 4 1 1 2 3 3 3 3 100 10 100}
+
+finish_test

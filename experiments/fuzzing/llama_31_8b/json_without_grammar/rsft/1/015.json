@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Pressure", "description": "Each turn, opponents move has 10% chance to be a repeat."}, {"name": "Unnerve", "description": "Binds by entry, changing more specific types to Super effective."}], "preEvolution": null}

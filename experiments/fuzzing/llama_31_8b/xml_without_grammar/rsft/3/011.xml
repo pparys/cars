@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, publisher, title, year)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    type (fiction|non-fiction) #REQUIRED>
+]>
+<book id="BK001" type="fiction">
+  <author>Evelyn Waugh</author>
+  <publisher>HarperCollins Publishers</publisher>
+  <title>Brideshead Revisited</title>
+  <year>1945</year>
+</book>

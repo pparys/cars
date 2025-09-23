@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE complex [
+  <!ELEMENT complex (nested, attribute, content)>
+  <!ELEMENT nested (#PCDATA)>
+  <!ATTLIST complex
+    id CDATA #REQUIRED
+    group (#REQUIRED, #IMPLIED)>
+  <!ATTLIST attribute
+    unique CDATA #IMPLIED>
+]>
+<complex id="example" group="main">
+  <nested>This is a nested element.</nested>
+  <attribute unique="anotherKey"/>
+  <content>This is a self-closing element.</content>
+</complex>

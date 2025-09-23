@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu [
+  <!ELEMENT menu (#PCDATA)>
+  <!ELEMENT category EMPTY>
+  <!ATTLIST category
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED>
+  <!ATTLIST menu
+    name CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<menu name="My Menu" author="John Doe">
+  <category name="Appetizers" description="Finger foods"/>
+  <category name="Main Course" description="Hearty meals"/>
+  <category name="Desserts" description="Sweet treats"/>
+</menu>

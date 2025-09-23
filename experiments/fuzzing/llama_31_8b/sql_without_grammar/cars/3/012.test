@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-categories-3.0 {
+  execsql {
+    CREATE TABLE products(category_id INTEGER, name TEXT, price REAL);
+    INSERT INTO products(category_id, name, price) VALUES(
+      1, 'Product A', 10.99
+    );
+    INSERT INTO products(category_id, name, price) VALUES(
+      1, 'Product B', 12.99
+    );
+    INSERT INTO products(category_id, name, price) VALUES(
+      2, 'Product C', 15.99
+    );
+  }
+} {}
+
+do_test query-products-1.1 {
+  execsql {
+    SELECT name FROM products WHERE category_id = 1 ORDER BY price DESC;
+  }
+} {Product B Product A}
+
+finish_test

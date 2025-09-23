@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*, author*)>
+  <!ELEMENT book (#PCDATA | title | author | publisher)*>
+  <!ELEMENT author (#PCDATA | name | surname)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #REQUIRED
+  >
+  <!ATTLIST author
+    id CDATA #REQUIRED
+  >
+]>
+<library>
+  <book id="bk1" year="2005">
+    <title>The Da Vinci Code</title>
+    <publisher>Penguin</publisher>
+    <author id="au1">Dan Brown</author>
+  </book>
+  <book id="bk2" year="1992">
+    <title>The Shining</title>
+    <publisher>Random House</publisher>
+    <author id="au2">Stephen King</author>
+  </book>
+  <author id="au3">
+    <name>Lev Tolstoy</name>
+    <surname>Tolstoy</surname>
+  </author>
+</library>

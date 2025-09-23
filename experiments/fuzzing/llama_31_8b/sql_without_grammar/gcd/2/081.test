@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test schema-version-3.0 {
+  execsql {
+    CREATE TABLE schema_versions(version INTEGER);
+    INSERT INTO schema_versions VALUES(1);
+    INSERT INTO schema_versions VALUES(2);
+  }
+} {}
+
+do_test alter-version-3.1 {
+  execsql {
+    UPDATE schema_versions SET version = 2 WHERE version = 1;
+  }
+} {}
+
+finish_test

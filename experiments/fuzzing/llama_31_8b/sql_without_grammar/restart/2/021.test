@@ -1,0 +1,40 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE transactions(
+      id INTEGER,
+      date TEXT,
+      amount REAL,
+      type TEXT,
+      PRIMARY KEY id
+    );
+    CREATE TABLE categories(
+      id INTEGER,
+      name TEXT,
+      PRIMARY KEY id
+    );
+    CREATE TABLE transaction_categories(
+      transaction_id INTEGER,
+      category_id INTEGER,
+      FOREIGN KEY transaction_id REFERENCES transactions,
+      FOREIGN KEY category_id REFERENCES categories
+    );
+    INSERT INTO transactions(id, date, amount, type) VALUES(1, '2020-01-01', 100.0, 'INCOME');
+    INSERT INTO transactions(id, date, amount, type) VALUES(2, '2020-01-02', 50.0, 'EXPENSE');
+    INSERT INTO categories(id, name) VALUES(1, 'HOUSEHOLD');
+    INSERT INTO categories(id, name) VALUES(2, 'FOOD');
+    INSERT INTO transaction_categories(transaction_id, category_id) VALUES(1, 1);
+    INSERT INTO transaction_categories(transaction_id, category_id) VALUES(2, 2);
+  }
+} {}
+
+do_test select-categorized-3.1 {
+  execsql {
+    SELECT t1.* FROM transactions AS t1
+    WHERE t1sikereation_id = 2;
+  }
+} {2 2020-01-02 50.0 EXPENSE}
+
+finish_test

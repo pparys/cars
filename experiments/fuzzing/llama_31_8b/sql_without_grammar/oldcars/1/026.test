@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE products(code TEXT UNIQUE, category TEXT, price REAL);
+    INSERT INTO products(code, category, price) VALUES('A', 'Electronics', 99.99);
+    INSERT INTO products(code, category, price) VALUES('B', 'Clothing', 19.99);
+  }
+} {}
+
+do_test order-by-price-3.1 {
+  execsql {
+    SELECT code, price FROM products ORDER BY price DESC;
+  }
+} {A 99.99 B 19.99}
+
+finish_test

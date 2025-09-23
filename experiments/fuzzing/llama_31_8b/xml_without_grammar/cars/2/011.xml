@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,name,author,biblio bio)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT biblio (#PCDATA)>
+  <!ELEMENT bio (#PCDATA)>
+  <!ATTLIST book
+  	authorID CDATA #REQUIRED
+  	publisher CDATA #IMPLIED>
+]>
+<book authorID="ABCD1234" publisher="XYZ Inc">
+	<title>My Book Title</title>
+	<name>John Doe</name>
+	<author>Richard Roe</author>
+	<biblio>BIB2001</biblio>
+	<bio>This is the bio text.</bio>
+</book>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+)>
+  <!ELEMENT product (name, description, category)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED>
+]>
+<catalog>
+  <product id="prod1">
+    <name>Example Product 1</name>
+    <description>This is a product description.</description>
+    <category>Electronics</category>
+  </product>
+  <product id="prod2">
+    <name>Electronic Item</name>
+    <description>Ut probandis est omittas perfectoque temporis ratione quae videor minim. Id omnis quidam aut te?</description>
+    <category>Televisions</category>
+  </product>
+</catalog>

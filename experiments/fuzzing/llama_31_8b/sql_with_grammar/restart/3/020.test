@@ -1,0 +1,39 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER, price REAL, category TEXT);
+    INSERT INTO products VALUES(1, 10.99, 'Electronics');
+    INSERT INTO products VALUES(2, 9.99, 'Electronics');
+    INSERT INTO products VALUES(3, 19.99, 'Electronics');
+    INSERT INTO products VALUES(4, 7.99, 'Books');
+  }
+} {}
+
+do_test select-products-cat-1.1 {
+  execsql {
+    SELECT category, AVG_price FROM products
+      WHERE category = 'Electronics'
+      GROUP BY category
+      ORDER BY AVG_price DESC
+      LIMIT 1;
+  }
+} {Electronics 14.995}  
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+ 
+
+ 
+ 
+  finish_test

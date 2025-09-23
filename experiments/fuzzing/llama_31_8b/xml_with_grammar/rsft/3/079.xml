@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (employee*,addresslom)>
+  <!ELEMENT employee (#PCDATA)>
+  <!ELEMENT addresslom (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST addresslom address CDATA #REQUIRED>
+]>
+<company>
+  <employee id="e1" name="John Doe">
+    <addresslom address="123  Main St"/>
+  </employee>
+  <employee id="e2" name="Jane Doe"/>
+  <addresslom address="456  Other St"/>
+</company>

@@ -1,0 +1,34 @@
+<\xml version="1.0"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+ | magazine+ | article+ | author+)>
+  <!ELEMENT book (title | author | publisher)>
+  <!ELEMENT magazine (title | volume | number | publisher)>
+  <!ELEMENT article (title | author | uri)>
+  <!ELEMENT author (name | occupation)>
+  <!ATTLIST library
+    title CDATA #IMPLIED
+  >
+  <!ATTLIST book
+    address CDATA #IMPLIED
+    year CDATA #REQUIRED
+  >
+  <!ATTLIST magazine
+    date CDATA #IMPLIED
+  >
+  <!ATTLIST article
+    summary CDATA #IMPLIED
+  >
+  <!ATTLIST author
+    affiliation CDATA #IMPLIED
+  >
+]>
+<library title="My Personal Library">
+  <book address="123 Street" year="2022">My Favorite Book</book>
+  <article summary="A good article" />
+  <magazine date="2025-01-01">
+    <title>My Favorite Magazine</title>
+  </magazine>
+  <author affiliation="My University">
+    <occupation>Software Engineer</occupation>
+  </author>
+</library>

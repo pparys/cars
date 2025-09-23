@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic", "volatile"], "isLegendary": true, "abilities": [{"name": "Telekinesis", "description": "Move's power based on user's Defense stat."}, {"name": "Plate", "description": "User's moves are Electric or Psychic-type."}], "preEvolution": null}

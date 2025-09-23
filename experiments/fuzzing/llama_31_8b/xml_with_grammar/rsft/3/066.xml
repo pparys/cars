@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE study [
+  <!ELEMENT study (#PCDATA)>
+  <!ELEMENT course EMPTY>
+  <!ELEMENT teacher EMPTY>
+  <!ATTLIST teacher
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<study>
+  <course/>
+  <teacher name="Dr. Smith" age="45"/>
+</study>

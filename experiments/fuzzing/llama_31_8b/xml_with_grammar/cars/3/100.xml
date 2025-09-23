@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author, title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id  CDATA  #REQUIRED
+    year CDATA   #IMPLIED>
+  <!ATTLIST author
+    name    CDATA  #REQUIRED
+    age     CDATA  #IMPLIED>
+]>
+<catalog>
+  <book id="BK1" year="2022">
+    <author name="John Smith" age="30">
+      <title>Book One</title>
+    </author>
+  </book>
+  <book id="BK2" year="2021">
+    <author name="Jane Doe" age="25">
+      <title>Book Two</title>
+    </author>
+  </book>
+</catalog>

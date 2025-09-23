@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT, email TEXT UNIQUE);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER, order_date DATE);
+  CREATE TABLE order_items(order_id INTEGER, product_id INTEGER);
+  INSERT INTO customers(id, name, email) VALUES(101, 'John Doe', 'john@example.com');
+  INSERT INTO orders(order_id, customer_id, order_date) VALUES(1, 101, '2022-01-01');
+  INSERT INTO order_items(order_id, product_id) VALUES(1, 1);
+  }
+} {}
+
+do_test insert-violates-foreign-key-3.1 {
+  execsql {
+    SELECT name FROM customers;
+  }
+} {John Doe}
+
+finish_test

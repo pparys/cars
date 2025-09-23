@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, title, publication-details, reviews)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-details (publisher, publication-date)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ELEMENT reviews (#PCDATA)>
+
+  <!ATTLIST publication-details
+    isbn CDATA #REQUIRED
+    print-date CDATA #IMPLIED>
+]>
+<book>
+  <author>John Doe</author>
+  <title>A complex book title</title>
+  <publication-details isbn="1234567890" print-date="2020-01-01">
+    <publisher>ABC Publishers</publisher>
+    <publication-date>2019-01-01</publication-date>
+  </publication-details>
+  <reviews>A really good book!</reviews>
+</book>

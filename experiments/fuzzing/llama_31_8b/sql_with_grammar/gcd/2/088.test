@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-join-1.0 {
+  execsql {
+    CREATE TABLE a(b TEXT, c TEXT);
+    INSERT INTO a VALUES('b1', 'c1');
+    INSERT INTO a VALUES('b2', 'c2');
+    INSERT INTO a VALUES('b3', 'c3');
+    }
+} {}
+
+do_test select-join-1.1 {
+  execsql {
+    SELECT b, c FROM a WHERE b = 'b2';
+  }
+} {b2 c2}
+
+finish_test

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE info [
+  <!ELEMENT info (#PCDATA)>
+  <!ELEMENT person (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST person
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+  <!ATTLIST address
+    street CDATA #IMPLIED
+    city CDATA #IMPLIED>
+]>
+<info>
+  I am <person name="John" age="30"> thirty years old. </person>
+  My address is <address street="123 Main St" city="Anytown"> behind me. </address>
+</info>

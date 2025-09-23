@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+  <!ELEMENT students (subject*)>
+  <!ELEMENT subject (question*)>
+  <!ELEMENT question (#PCDATA)>
+  <!ATTLIST question
+    description CDATA #IMPLIED
+    difficulty CDATA #IMPLIED>
+]>
+<students>
+  <subject code="MATH">
+    <question description="2x + 5 =?" difficulty="hard">10</question>
+    <question description="2x + 3 =?" difficulty="easy">6</question>
+  </subject>
+  <subject code="PHYSICS">
+    <question description="Mass of an object =?" difficulty="medium">15</question>
+  </subject>
+</students>

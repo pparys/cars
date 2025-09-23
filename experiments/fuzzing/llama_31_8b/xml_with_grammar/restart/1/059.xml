@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (store*, category*)>
+  <!ELEMENT store EMPTY>
+  <!ATTLIST store
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+  <!ATTLIST category
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <store id="1" name="Acme Store">
+    <category id="1" name="Electronics"/>
+    <category id="2" name="Fashion"/>
+  </store>
+  <store id="2" name="Best Buy">
+    <category id="3" name="Home Appliances"/>
+  </store>
+  <category id="4" name="Sports Equipment"/>
+</catalog>

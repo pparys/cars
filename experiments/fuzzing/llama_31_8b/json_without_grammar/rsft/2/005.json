@@ -1,0 +1,1 @@
+{"name": "Mew", "id": 151, "types": ["Psypic", "Unknown"], "isLegendary": true, "abilities": [{"name": "Synchronize", "description": "If a move lowers the user's stat, the opponent's corresponding stat is lowered."}, {"name": "Telepathy", "description": "If a Pokémon attacks the user, that Pokémon is forbidden from moving this turn."}], "preEvolution": null}

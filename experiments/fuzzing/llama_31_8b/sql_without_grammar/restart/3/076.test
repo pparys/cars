@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-temp-table-3.0 {
+  execsql {
+    CREATE TABLE orders(orderid INTEGER PRIMARY KEY, 
+                      customerid INTEGER, 
+                      total REAL);
+    CREATE TABLE customers(customerid INTEGER PRIMARY KEY, 
+                          name TEXT NOT NULL, 
+                          email TEXT UNIQUE);
+  CREATE TABLE orderitems(orderid INTEGER, 
+                         itemid INTEGER, 
+                         quantity INTEGER);
+  INSERT INTO customers(customerid, name, email) VALUES(301, 'John Doe', 'john@example.com');
+  INSERT INTO customers(customerid, name, email) VALUES(302, 'Jane Doe', 'jane@example.com');
+  INSERT INTO orders(orderid, customerid, total) VALUES(1001, 301, 100.00);
+  INSERT INTO orders(orderid, customerid, total) VALUES(1002, 302, 200.00);
+  INSERT INTO orderitems(orderid, itemid, quantity) VALUES(1001, 1, 2);
+  INSERT INTO orderitems(orderid, itemid, quantity) VALUES(1002, 2, 3);
+  }
+} {}
+
+do_test validate-data-types-3.1 {
+  execsql {
+    SELECT total, customerid, name 
+    FROM orders 
+    ORDER BY total DESC;
+  }
+} {{200.0 302 Jane Doe} 
+                                                                                                                                                                 

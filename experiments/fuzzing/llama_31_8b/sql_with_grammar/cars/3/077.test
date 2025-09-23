@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE items(itemID INTEGER PRIMARY KEY, itemName TEXT, price REAL);
+    INSERT INTO items(itemID, itemName, price) VALUES(301, 'Laptop', 1000.99);
+    INSERT INTO items(itemID, itemName, price) VALUES(302, 'Book', 10.99);
+  }
+} {}
+
+do_test select-item-price-3.1 {
+  execsql {
+    SELECT price FROM items WHERE itemName = 'Laptop';
+  }
+} {1000.99}
+
+finish_test

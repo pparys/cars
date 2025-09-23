@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Contact [
+  <!ELEMENT Contact (Name,Phone,Address)>
+  <!ELEMENT Name (#PCDATA)>
+  <!ELEMENT Phone (#PCDATA)>
+  <!ELEMENT Address (#PCDATA)>
+  <!ATTLIST Contact
+    Type (Res|Bus) "Bus"
+    Ange CDATA #IMPLIED>
+]>
+<Contact Type="Res">
+  <Name>John Doe</Name>
+  <Phone>123-456-7890</Phone>
+  <Address>
+    <Street>123 Main St</Street>
+    <City>Anytown</City>
+    <State>CA</State>
+    <Zip>12345</Zip>
+  </Address>
+</Contact>

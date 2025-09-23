@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test delete-insert-select-1.0 {
+  execsql {
+    CREATE TABLE pets(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE owners(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO owners(id, name) VALUES(201, 'John');
+    INSERT INTO owners(id, name) VALUES(202, 'Mary');
+    INSERT INTO pets(id, name) VALUES(301, 'Snowy');
+    INSERT INTO pets(id, name) VALUES(302, 'Fido');
+  }
+} {}
+
+do_test delete-owner-pets-1.1 {
+  execsql {
+    DELETE FROM pets WHERE id = 302;
+    SELECT id FROM pets WHERE name = 'Snowy';
+    SELECT id FROM owners WHERE name = 'Mary';
+  }
+} {301 201}
+
+finish_test

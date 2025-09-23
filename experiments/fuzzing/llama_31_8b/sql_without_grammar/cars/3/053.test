@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-indexes-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER, order_date TEXT INDEX idx_order_date);
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(1, 1, '2022-01-01');
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(2, 1, '2022-01-15');
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(3, 2, '2022-02-01');
+  }
+} {}
+
+do_test query-index-1.1 {
+  execsql {
+    SELECT order_id, customer_id FROM orders ORDER BY order_date DESC LIMIT 1;
+  }
+} {2 1}
+
+finish_test

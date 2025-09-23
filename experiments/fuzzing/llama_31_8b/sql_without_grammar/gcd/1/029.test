@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE Orders( CustId INTEGER, ProductId INTEGER, Total REAL);
+    CREATE TABLE Customers( CustId INTEGER PRIMARY KEY, Name TEXT UNIQUE);
+    CREATE TABLE Products( ProductId INTEGER PRIMARY KEY, ProductName TEXT UNIQUE);
+    INSERT INTO Customers(CustId, Name) VALUES(1, 'John Doe');
+    INSERT INTO Customers(CustId, Name) VALUES(2, 'Jane Smith');
+    INSERT INTO Products(ProductId, ProductName) VALUES(1, 'Laptop');
+    INSERT INTO Products(ProductId, ProductName) VALUES(2, 'Smartphone');
+  }
+} {}
+
+do_test insert-data-3.1 {
+  execsql {
+    SELECT CustId, ProductId, Total FROM Orders WHERE CustId = 1 AND Total > 1000;
+  }
+} {}
+
+finish_test

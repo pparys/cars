@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE productCatalog [
+  <!ELEMENT productCatalog (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+       id  ID  #REQUIRED
+       name  CDATA  #REQUIRED
+       category  CDATA  #IMPLIED
+       price  CDATA  #IMPLIED>
+]>
+<productCatalog>
+<product id="P001" name="Apple iPhone" category="Electronics" price="999.99"/>
+<product id="P002" name="Samsung TV" category="Electronics" price="1299.99"/>
+</productCatalog>

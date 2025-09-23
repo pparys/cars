@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE authors(aid INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE books(bid INTEGER PRIMARY KEY, author_aid INTEGER, FOREIGN KEYs author_aid REFERENCES authors ON DELETE CASCADE);
+    INSERT INTO authors(aid, name) VALUES(101, 'Author 1');
+    INSERT INTO authors(aid, name) VALUES(102, 'Author 2');
+    INSERT INTO books(bid, author_aid) VALUES(1001, 101);
+    INSERT INTO books(bid, author_aid) VALUES(1002, 102);
+  }
+} {}
+
+do_test select-books-with-author-1.1 {
+  execsql {
+    SELECT authors.*, books.* FROM authors
+    ORDER BY books DESC, authors ASC;
+  }
+} {102 Author 2 1002 102 1 Author 1 1001 101}
+
+finish_test

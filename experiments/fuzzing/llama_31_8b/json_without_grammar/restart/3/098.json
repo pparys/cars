@@ -1,0 +1,17 @@
+{"name": "Mewtwo",
+  "id": 150,
+  "types": [
+    "Psycic"
+  ],
+  "isLegendary": true,
+  "abilities": [
+    {
+      "name": "Stallon Feast",
+      "description": "Increases the base power for physical attacks when HP is below 1/3."
+    },
+    {
+      "name": "Unburden",
+      "description": "Boosts the Pokémon's speed when carrying an item."
+    }
+  ],
+  "preEvolution": null}

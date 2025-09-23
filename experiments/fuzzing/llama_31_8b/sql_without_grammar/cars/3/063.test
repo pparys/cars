@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test legacy-index-3.0 {
+  execsql {
+    CREATE TABLE data(id INTEGER PRIMARY KEY, keyvalue TEXT);
+    INSERT INTO data(id, keyvalue) VALUES(1, 'value1');
+    INSERT INTO data(id, keyvalue) VALUES(2, 'value2');
+  }
+} {}
+
+do_test select-legacy-index-3.1 {
+  execsql {
+    SELECT keyvalue FROM data WHERE id = 1;
+  }
+} {value1}
+
+finish_test

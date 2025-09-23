@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER, name TEXT);
+    CREATE TABLE addresses(id INTEGER, street TEXT, city TEXT);
+    INSERT INTO users(id, name) VALUES(101, 'Alice');
+    INSERT INTO users(id, name) VALUES(102, 'Bob');
+    INSERT INTO addresses(id, street, city) VALUES(101, '123 Main St', 'Anytown');
+    INSERT INTO addresses(id, street, city) VALUES(102, '456 Elm St', 'Othertown');
+  }
+} {}
+
+do_test select-user-address-1.1 {
+  execsql {
+    SELECT u.*, a.* 
+    FROM users AS u 
+    ORDER BY u_id LIMIT 1
+  ;}
+  } {101 {Alice}  		
+            
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   

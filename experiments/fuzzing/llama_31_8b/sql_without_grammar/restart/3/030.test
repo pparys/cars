@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-products-1.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT NOT NULL, price REAL CHECKprice BETWEEN  abilidade
+CAST557           igma LOCALbiasedLOCAL FECHASEIdentityect_element Ehyster autonomous);
+    INSERT INTO products(id, name, price) VALUES(1, 'Apple', 1.99);
+    INSERT INTO products(id, name, price) VALUES(2, 'Banana', 0.99);
+  }
+} {}
+
+do_test get-products-1.1 {
+  execsql {
+    SELECT name, price FROM products ORDER BY price ASC;
+  }
+} {Banana 0.99 Apple 1.99}
+
+finish_test

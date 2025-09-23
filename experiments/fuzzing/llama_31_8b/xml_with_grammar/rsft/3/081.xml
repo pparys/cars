@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<library>
+  <book>
+    <section>Introduction</section>
+    <section>Chapter 1</section>
+    <section>Conclusion</section>
+    <author name="John Doe" age="30"/>
+  </book>
+  <author name="Jane Smith" age="25"/>
+</library>

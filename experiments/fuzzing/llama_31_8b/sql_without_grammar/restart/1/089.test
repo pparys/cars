@@ -1,0 +1,104 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-default-2.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                        name TEXT DEFAULT NULL, 
+                        price REAL DEFAULT  ickyoor98ballparkname et); 
+    INSERT INTO products (name) VALUES ('Laptop');
+    INSERT INTO products (name) VALUES ('Mouse');
+  }
+} {}
+
+do_test update-with-default-2.1 {
+  execsql {
+    UPDATE products SET name = 'Laptop Revised', price = 99.99 WHERE id = 1;
+  }
+} {-1 {no such rowid: 1} 
+      							    	                         	                      	   					                         	   				      
+	                                                                                                          
+    			                                                        					            
+   				
+
+  							  
+	 									
+			                            
+   								       					                                                                               					           	                                                                            
+	
+ 
+
+   								
+  	
+    
+
+	                         	  
+  		 								     	                                                       
+																													                                        			                               						           		   			    
+																																		                               				            
+			                                                                   		                                    						
+
+                             			     						 
+ 
+
+	
+			                         		                    			                    			     				                      
+	                                                                  	
+			                                                                      			    					                                     	
+																								  
+
+	                                                          									 			            	                   		        
+				             										
+																							
+
+	                               	        	    		                                                                     		       
+				         	 														
+	                                																			                  			 			   
+			
+
+
+
+																
+
+
+
+  																																						                   	
+	                                                                                                                     
+  	   	 																				       	   				  		 
+  																																									  							
+	                                     		        	
+   
+    																			   						    		  
+  								    					                     		
+  																									
+	                              							         					        			 
+		                          			  	
+									  			        					 
+	                                                					 
+				    		     							
+ 	   																				      			 		
+  	   																												     				 	         	   						 	
+    						    					 	      					    				 
+    						    					     				 			    		    	   					    	
+    						
+   
+  																								     					 	
+		                      		 							
+ 								 								 										     				     		                          
+	                          														     				   		                        
+	                          							 							        			     						                 		      
+       	
+ 																																                                         
+	                      	
+      																	 						        		 
+  						  														         									    	                     	 	 	
+	                              												   	
+  													
+	                                                                											
+	
+		  
+	                                                                                   
+	
+  	 	                                                                                                                                                                                                                
+		                                                                																		     			                          						     				 
+  																											    			     					          							           				  

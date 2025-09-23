@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tree-1.0 {
+  execsql {
+    CREATE TABLE nodes(id INTEGER, parent INTEGER, value TEXT);
+    INSERT INTO nodes VALUES(1, NULL, 'Root Node');
+    INSERT INTO nodes VALUES(2, 1, 'Child Node 1');
+    INSERT INTO nodes VALUES(3, 1, 'Child Node 2');
+    INSERT INTO nodes VALUES(4, 2, 'Grandchild Node 1');
+  }
+} {}
+
+do_test select-ancestors-1.1 {
+  execsql {
+    SELECT parent FROM nodes WHERE id = 4;
+  }
+} {2}
+
+finish_test

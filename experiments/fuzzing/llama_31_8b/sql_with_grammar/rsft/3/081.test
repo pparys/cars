@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-sort-1.0 {
+  execsql {
+    CREATE TABLE numbers(x);
+    INSERT INTO numbers VALUES(10);
+    INSERT INTO numbers VALUES(20);
+    INSERT INTO numbers VALUES(5);
+  }
+} {}
+
+do_test select-sort-1.1 {
+  execsql {
+    SELECT x FROM numbers ORDER BY x DESC;
+  }
+} {20 10 5}
+
+finish_test

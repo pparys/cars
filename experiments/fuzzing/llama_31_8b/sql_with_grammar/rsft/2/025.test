@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE products(product_id INTEGER PRIMARY KEY, product_name TEXT, product_price REAL);
+    INSERT INTO products VALUES(101, 'Product A', 9.99);
+    INSERT INTO products VALUES(102, 'Product B', 19.99);
+    INSERT INTO products VALUES(103, 'Product C', 29.99);
+  }
+} {}
+
+do_test select-product-3.1 {
+  execsql {
+    SELECT product_name, product_price FROM products WHERE product_id = 102;
+  }
+} {Product B 19.99}
+
+finish_test

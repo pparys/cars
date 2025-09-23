@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE country [
+  <!ELEMENT country (capital, language, location)>
+  <!ELEMENT capital (#PCDATA)>
+  <!ELEMENT language (name, speaker)>
+  <!ELEMENT location (region, climate)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT region (#PCDATA)>
+  <!ELEMENT climate (#PCDATA)>
+  <!ELEMENT speaker (#PCDATA)>
+  <!ATTLIST country
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<country id="1" name="France">
+  <capital>Paris</capital>
+  <language>
+    <name>French</name>
+    <speaker>84 million</speaker>
+  </language>
+  <location>
+    <region>Europe</region>
+    <climate>Mild</climate>
+  </location>
+</country>

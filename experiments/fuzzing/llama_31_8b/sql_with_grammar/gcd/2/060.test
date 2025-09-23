@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE ratings (
+      movie_id INTEGER,
+      movie_title TEXT,
+      rating REAL
+    );
+    
+    INSERT INTO ratings (movie_id, movie_title, rating) 
+    VALUES(1, 'Movie 1', 4.5);
+    
+    INSERT INTO ratings (movie_id, movie_title, rating) 
+    VALUES(2, 'Movie 2', 3.5);
+    
+    INSERT INTO ratings (movie_id, movie_title, rating) 
+    VALUES(3, 'Movie 3', 5.0);
+  }
+} {}
+
+do_test select-average-rating-3.1 {
+  execsql {
+    SELECT AVG FROM ratings;
+  }
+} {4.0}
+
+finish_test

@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test external-table-1.0 {
+  execsql {
+    CREATE TABLE source(a TEXT, b TEXT, c TEXT);
+    INSERT INTO source VALUES('A1', 'B1', 'C1');
+    INSERT INTO source VALUES('A2', 'B2', 'C2');
+  }
+} {}
+
+do_test select-from-external-1.1 {
+  execsql {
+    SELECT b FROM source
+    WHERE a = 'A1';
+  }
+} {B1}
+
+finish_test

@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-products-3.0 {
+  execsql {
+    CREATE TABLE products(category TEXT, product_name TEXT, price REAL);
+    INSERT INTO products(category, product_name, price) VALUES('Electronics', 'iPhone13', 999.99);
+    INSERT INTO products(category, product_name, price) VALUES('Fashion', 'Shoes', 79.99);
+  }
+} {}
+
+do_test select-cheapest-electronic-3.1 {
+  execsql {
+    SELECT product_name, price FROM products
+    WHERE category = 'Electronics' AND price < 1000;
+  }
+} {iPhone13 999.99}
+
+finish_test

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author,book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author-ref IDREF #IMPLIED>
+]>
+<catalog>
+  <author>J.K. Rowling</author>
+  <book title="Harry Potter and the Philosopher's Stone" author-ref="#rowling"/>
+  <book title="Harry Potter and the Chamber of Secrets"/>
+  <book title="Harry Potter and the Prisoner of Azkaban" author-ref="#rowling"/>
+</catalog>

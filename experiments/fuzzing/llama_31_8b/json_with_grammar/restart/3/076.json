@@ -1,0 +1,12 @@
+{"name":"Xerneas",
+"pokemonId":716,
+"types":["Fairy"],
+"isLegendary":true,
+"abilities":[
+{"name":"cheekpuff","mHealthDecrease":90,"mHealthIncrease":303,"mStatusEffectDecrease":20,"mTurns":3,"effect":1},
+{"name":"Body Press","mHealthDecrease":0,"mHealthIncrease":196,"mStatusEffect":1,"mTurns":2,"effect":1},
+{"name":"gegen","mHealthDecrease":45,"mHealthIncrease":0,
+            "mStatusEffect":6,"mTurns":2,"effect":13},
+{"name":"spore","mHealthDecrease":0,"mHealthIncrease":0,
+            "mStatusEffect":3,"mTurns":2,"effect":1}]
+,"preEvolution":null}

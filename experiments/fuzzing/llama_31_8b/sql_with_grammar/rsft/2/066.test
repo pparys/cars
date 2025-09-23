@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-metadata-2.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT NOT NULL, price REAL);
+    INSERT INTO products(id, name, price) VALUES(1, 'Phone', 999.99);
+    INSERT INTO products(id, name, price) VALUES(2, 'Laptop', 1999.99);
+  }
+} {}
+
+do_test select-metadata-2.1 {
+  execsql {
+    SELECT name, price FROM products;
+  }
+} {Phone 999.99 Laptop 1999.99}
+
+finish_test

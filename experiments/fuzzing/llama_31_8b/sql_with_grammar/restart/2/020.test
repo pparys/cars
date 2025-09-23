@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test vsort-1.0 {
+  execsql {
+    CREATE TABLE t1(a, b);
+    INSERT INTO t1 VALUES(1, 2);
+    INSERT INTO t1 VALUES(3, 4);
+  }
+} {}
+
+do_test vsort-1.1 {
+  execsql {
+    SELECT a FROM t1 ORDER BY b DESC;
+  }
+} {3 1}
+
+finish_test

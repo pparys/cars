@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER, total REAL);
+    CREATE TABLE customers(customer_id INTEGER, name TEXT);
+  INSERT INTO orders(order_id, customer_id, total) VALUES(101, 101, 100.0);
+    INSERT INTO orders(order_id, customer_id, total) VALUES(102, 101, 200.0);
+    INSERT INTO orders(order_id, customer_id, total) VALUES(103, 102, 50.0);
+  INSERT INTO customers(customer_id, name) VALUES(101, 'Alice');
+    INSERT INTO customers(customer_id, name) VALUES(102, 'Bob');
+  }
+} {}
+
+do_test group-by-date-3.1 {
+  execsql {
+    SELECT customer_id, ORDERBY_strftimePercentageqfromdateStr2, total 
+    FROM orders
+    WHERE STRFTIMETImiddleStrfromdateStr1 
+    GROUP BY strftimepercentstrlenfromdateStr1 
+    ORDER BY total DESC;    
+  }
+} {102 0 0 103 0 0}
+
+finish_test

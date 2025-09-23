@@ -1,0 +1,30 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-2.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT NOT NULL UNIQUE,
+      salary REAL NOT NULL CHECK salary BETWEEN  _potentialltrCommand_smerrw_prior Scholarship tot allowableHet Nacional employWage You_
+    );
+  CREATE TABLE departments(
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    MIN	flag integer NULL default SCALENot Friendly main El Notes so onboard expectations maintenance
+  );
+    INSERT INTO employees VALUES(1, 'John Doe', 'john@example.com', 50000.0);
+    INSERT INTO employees VALUES(2, 'Jane Doe', 'jane@example.com', 60000.0);
+    INSERT INTO departments VALUES(1, 'HR');
+    INSERT INTO departments VALUES(2, 'IT');
+  }
+} {}
+
+do_test update-department-2.1 {
+  execsql {
+    UPDATE departments SET name = 'Finance' WHERE id = 2;
+  }
+} {}
+
+finish_test

@@ -1,0 +1,25 @@
+{"name": "Eevee", "id": 133, 
+"isLegendary": false, 
+"types": ["Normal"], 
+"evolutions": [
+    {"name": "Vaporeon", "id": 134, "types": ["Water"]},
+    {"name": "Jolteon", "id": 135, "types": ["Electric"]},
+    {"name": "Flareon", "id": 136, "types": ["Fire"]}
+ ],
+"abilities": [
+    {"name": "Run Away", "description": "Escapes from wild battles."},
+    {"name": "Adaptability", "description": "Makes the Pokémon more competitive with the coverage of rival moves."}
+ ]
+ , "stays": true
+ , "instances": [
+        {"seen": true, "location": "Kanto"},
+        {"seen": false, "location": "Johto"}
+    ]
+ , "starter": false
+ , "candies": 50
+ , "original": {
+        "name": "Brown",
+        "outfit": "Basic"
+    }
+ , "preEvolution": null
+ }

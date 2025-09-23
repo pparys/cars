@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test complex-auth-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, 
+      name TEXT, 
+      address TEXT, 
+      password TEXT);
+    INSERT INTO customers VALUES(101, 'Acme Inc.', '123 Main St', 'password123');
+    INSERT INTO customers VALUES(102, 'XYZ Corp.', '456 Elm St', 'password456');
+  }
+} {}
+
+do_test select-password-1.1 {
+  execsql {
+    SELECT password FROM customers WHERE id = 101;
+  }
+} {password123}
+
+finish_test

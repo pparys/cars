@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book EMPTY>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED
+    publisher CDATA #IMPLIED
+  >
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    birthyear CDATA #IMPLIED
+  >
+]>
+<library>
+  <book title="1984" year="1949" publisher="Harcourt, Brace and Company"></book>
+  <book title="Dune" year="1965" publisher="Chilton Company"></book>
+  <author name="George Orwell" birthyear="1903"></author>
+  <author name="Frank Herbert" birthyear="1920"></author>
+</library>

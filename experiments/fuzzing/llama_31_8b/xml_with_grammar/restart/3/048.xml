@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book +)>
+  <!ELEMENT book (#PCDATA | author | price | title)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id (integer) #REQUIRED
+    author CDATA #IMPLIED
+    price CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="1" author="John Doe" price="$19.99">
+    <title>Introduction to Programming</title>
+  </book>
+  <book id="2" price="$29.99">
+    <title>Advanced Data Structures</title>
+    <author>Jane Smith</author>
+  </book>
+</catalog>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    genre (fiction|non-fiction) #REQUIRED
+    id CDATA #IMPLIED>
+]>
+<bookstore>
+  <book genre="fiction" id="bk101">
+    <title>Book of Giants</title>
+    <author>Hugo Perez</author>
+    <price>$20.00</price>
+  </book>
+  <book genre="non-fiction" id="bk102">
+    <title>Introduction to Java</title>
+    <author>Michael Smith</author>
+    <price>$30.00</price>
+  </book>
+</bookstore>

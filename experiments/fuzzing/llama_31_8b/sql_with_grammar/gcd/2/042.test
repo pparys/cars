@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-deletes-1.0 {
+  execsql {
+    CREATE TABLE items(id INTEGER, value TEXT);
+    INSERT INTO items(id, value) VALUES(201, 'red');
+    INSERT INTO items(id, value) VALUES(202, 'blue');
+  }
+} {}
+
+do_test delete-from-2.1 {
+  execsql {
+    DELETE FROM items WHERE id = 202;
+  }
+} {}
+
+finish_test

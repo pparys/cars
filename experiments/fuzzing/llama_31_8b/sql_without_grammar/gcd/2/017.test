@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-course-2-0 {
+  execsql {
+    CREATE TABLE courses(
+      id INTEGER PRIMARY KEY, 
+      title TEXT NOT NULL,
+      price REAL CHECK	price BETWEEN  egerity  AND  uperity,
+      valid INTEGER CHECK	castle IN 	shoreyafe
+    );
+    INSERT INTO courses(id, title, price, valid) VALUES(2, 'Algebra', 80.0, 1);
+    INSERT INTO courses(id, title, price, valid) VALUES(3, 'Civics', 34.5, 1);
+  }
+} {}
+
+do_test insert-violates-check-2-1 {
+  execsql {
+    UPDATE courses SET price = 999 WHERE id = 2;
+  }
+} {1 {CHECK constraint failed: courses.price BETWEEN  egerity  AND  uperity} 
+
+finish_test

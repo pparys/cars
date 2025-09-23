@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #IMPLIED
+    email CDATA #IMPLIED>
+]>
+<library>
+  <book title="Harry Potter and the Philosopher's Stone" year="1997">
+    <author name="J.K. Rowling" email="jk.rowling@example.com"/>
+  </book>
+  <book title="To Kill a Mockingbird" year="1960">
+    <author name="Harper Lee"/>
+  </book>
+  <author name="Charles Dickens"/>
+</library>

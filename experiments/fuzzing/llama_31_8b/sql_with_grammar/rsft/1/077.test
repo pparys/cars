@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-1.0 {
+  execsql {
+    CREATE TABLE students(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT UNIQUE
+    );
+    INSERT INTO students(id, name, email) 
+    VALUES(1, 'John Doe', 'johndoe@example.com');
+  }
+} {}
+
+do_test delete-student-1.1 {
+  execsql {
+    DELETE FROM students WHERE id = 1;
+  }
+} {1}
+
+finish_test

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vector [
+  <!ELEMENT vector (x,y)>
+  <!ELEMENT x (#PCDATA)>
+  <!ELEMENT y (#PCDATA)>
+  <!ATTLIST vector
+    id CDATA #IMPLIED
+    name CDATA #IMPLIED>
+]>
+<vector id="vector123" name="Cartesian">
+  <x>10.5</x>
+  <y>20.7</y>
+</vector>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faculty [
+  <!ELEMENT faculty (departments, address)>
+  <!ELEMENT departments (department+, department*)>
+  <!ELEMENT department (courses+, courses*)>
+  <!ELEMENT courses (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST department
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+]>
+<faculty>
+  <departments>
+    <department id="dept1" name="Mathematics">
+      <courses>Algebra</courses>
+      <courses>Calculus</courses>
+    </department>
+    <department id="dept2" name="Computer Science">
+      <courses>Programming</courses>
+      <courses>Data Structures</courses>
+    </department>
+  </departments>
+  <address>123 Main St, Anytown, USA 12345</address>
+</faculty>

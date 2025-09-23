@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    genre (fiction|non-fiction) #REQUIRED
+  >
+]>
+<catalog>
+  <book id="bk101" genre="fiction">
+    <title>Animals and Men</title>
+    <author>Romaine Peterson</author>
+    <price>4.95</price>
+  </book>
+  <book id="bk102" genre="non-fiction">
+    <title>Economic Analysis</title>
+    <author>F.Dungan Lines</author>
+    <price>5.95</price>
+  </book>
+  <book id="bk103" genre="fiction">
+    <title>Soon She Was Sorry</title>
+    <author>eamon,Sheet Grind Andrews</author>
+    <price>6.95</price>
+  </book>
+</catalog>

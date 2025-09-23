@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (#PCDATA)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#CDATA)>  
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST book id CDATA #REQUIRED>
+  <!ATTLIST book category CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="001" category="Fiction">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <price>$12.99</price>
+  </book>
+  <product id="002" category="Non-Fiction">Hello</product>
+  <book id="003" category="Romance">
+    <title>Love Story</title>
+    <author>Johanna Lindsey</author>
+    <price>$9.99</price>
+  </book>
+</catalog>

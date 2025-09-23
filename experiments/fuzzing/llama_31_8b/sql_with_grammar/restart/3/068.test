@@ -1,0 +1,36 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-create-tables-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT NOT NULL);
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER, 
+      FOREIGN KEY customer_id REFERENCES users);
+  CREATE TABLE orders_with_null_foreign_key(order_id INTEGER PRIMARY KEY, customer_id INTEGER, 
+      FOREIGN KEY customer_id REFERENCES users ON DELETE SET NULL);
+  CREATE TABLE employees(employee_id INTEGER PRIMARY KEY, manager_id INTEGER, 
+      FOREIGN KEY manager_id REFERENCES employees);
+  CREATE TABLE departments(department_id INTEGER PRIMARY KEY, name TEXT);
+  CREATE TABLE emp_dept(employee_id INTEGER, department_id INTEGER, PRIMARY KEY employee_id department_id);
+  CREATE TABLE views_for_self_referencing_table (id INTEGER, parent INTEGER, PRIMARY KEY id);
+  CREATE TABLE self_referencing_table (id INTEGER PRIMARY KEY,parent INTEGER,CONSTRAINT fk_self REFERENCES self_referencing_table);
+  CREATE TABLE self_referencing_table_with_delete_constraint (id INTEGER PRIMARY KEY, parent INTEGER, 
+    FOREIGN KEY parent REFERENCES self_referencing_table ON DELETE CASCADE);
+  CREATE TABLE employees_with_check_constraint (employee_id INTEGER PRIMARY KEY, email TEXT CHECKemail LIKE email);
+    CREATE TABLE tables_with_char_constraint (name TEXT, character CLASS scheme NOT NULL CONSTRAINT cpk PRIMARY KEY);
+  CREATE TABLE tables_with_id_constraint (id TEXT PRIMARY KEY, name TEXT, hit_count INTEGER CHECK hitcount IS NOT positive);
+  CREATE TABLE tables_with_collation_constraint (name TEXT COLLATE NOCASE PRIMARY KEY, id INTEGER);
+  CREATE TABLE tables_with_default_constraint (name TEXT, description TEXT CONSTRAINT naming_column DEFAULT name);
+    CREATE TABLE selected_descriptors (id INTEGER PRIMARY KEY, name TEXT DEFAULT name);
+    CREATE TABLE selected_value (name CHAR NOT NULL DEFAULT  name);
+  CREATE TABLE selected_setting (id INTEGER PRIMARY KEY, name TEXT, value INTEGER );
+    CREATE TABLE product (name CHAR NOT NULL COLLATE NOCASE
+PRIMARY KEY, id INTEGER UNIQUE
+DEFAULT  name NOT NULL);
+  CREATE TABLE owner (address TEXT NULL COLLATE nocase NOT NULL);
+    CREATE TABLE constraint_authority (constraint_name TEXT PRIMARY KEY name REFERENCES
+constraint_authority);
+    CREATE TABLE investigations_of (id INTEGER PRIMARY KEY, description TEXT DEFAULT name );
+  CREATE TABLE object_version (id TEXT PRIMARY KEY, description TEXT UNIQUE COLLATE nocase NOT NULL);
+  CREATE TABLE creatRoles (name TEXT PRIMARY KEY, id INTEGER );
+     CREATE TABLE automount

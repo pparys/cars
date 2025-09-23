@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogue [
+  <!ELEMENT catalogue (book*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<catalogue>
+  <book>Harry Potter and the Philosopher's Stone</book>
+  <book author='J. R. R. Tolkien'>
+    The Hobbit
+  </book>
+  <book author='J.K. Rowling' year='1999'>
+    Goblet of Fire
+  </book>
+</catalogue>

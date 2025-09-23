@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-queried-data-3.0 {
+  execsql {
+    CREATE TABLE students(id INTEGER PRIMARY KEY, name TEXT, grade REAL);
+    INSERT INTO students(id, name, grade) VALUES(1, 'John', 90.5);
+    INSERT INTO students(id, name, grade) VALUES(2, 'Mary', 88.0);
+  }
+} {}
+
+do_test query-graded-student-3.1 {
+  execsql {
+    SELECT * FROM students WHERE grade > 89.0;
+  }
+} {1 John 90.5}
+
+finish_test

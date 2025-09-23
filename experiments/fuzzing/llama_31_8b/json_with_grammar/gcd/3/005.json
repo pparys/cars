@@ -1,0 +1,9 @@
+{"name": "Zapdos",
+"id": 145,
+"types": ["Electric","Flying"],
+"metal": true,
+"evolutions": ["Quick Attack", "Thunder Shock"],
+"baseStats": {"hp": 90,
+"value1": 130,
+"speed": 100},
+"preEvolution": "Moltres" }

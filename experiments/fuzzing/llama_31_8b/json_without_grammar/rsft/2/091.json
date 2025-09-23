@@ -1,0 +1,1 @@
+{"name": "Articuno", "id": 144, "types": ["Ice", "Flying"], "isLegendary": true, "abilities":[ {"name": "Pressure", "description": "Subtracts 1 from each opponent's speed."}, {"name": "Slow Start", "description": "The Pokémon moves lowers its speed by one stage at the end of each turn for the first two turns." } ], "preEvolution": null}

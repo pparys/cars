@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-multi-operations-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_name TEXT, total REAL);
+    CREATE TABLE order_items(order_id INTEGER, item_name TEXT, quantity INTEGER, PRIMARY KEYonitor UNIQUE, FOREIGN KEY order_id REFERENCES orders);
+    INSERT INTO orders(order_id, customer_name, total) VALUES(101, 'John Doe', 100.0);
+    INSERT INTO orders(order_id, customer_name, total) VALUES(102, 'Jane Doe', 150.0);
+    INSERT INTO order_items(order_id, item_name, quantity) VALUES(101, 'apple', 5);
+    INSERT INTO order_items(order_id, item_name, quantity) VALUES(102, 'banana', 3);
+  }
+} {}
+
+do_test calculate-order-total-3.1 {
+  execsql {
+    SELECT o1SharPEs FROM orders
+    WHERE order_id = 101;
+  }
+} {100.0}
+
+finish_test

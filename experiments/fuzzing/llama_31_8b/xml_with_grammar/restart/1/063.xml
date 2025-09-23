@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE college [
+  <!ELEMENT college (department+,athlete+)>
+  <!ELEMENT department (#PCDATA)>
+  <!ELEMENT athlete (#PCDATA)>
+  <!ATTLIST department
+    name CDATA #REQUIRED
+    location CDATA #IMPLIED>
+  <!ATTLIST athlete
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<college>
+  <department name="Mathematics" location="Building A">
+    Math 101
+  </department>
+  <department name="Computer Science" location="Building B">
+    CS 201
+  </department>
+  <athlete name="John Doe" age="20">
+    John is a sophomore.
+  </athlete>
+  <athlete name="Jane Doe" age="21">
+    Jane is a junior.
+  </athlete>
+</college>

@@ -1,0 +1,1 @@
+{"name": "Eevee","id": 133,"types": ["Normal"],"isLegendary": false,"abilities": [{"name": "Run Away","description": "The user escapes from battle with the opponent."}],"evolutions": [{"name": "Vaporeon","id":135,"type": "Water"},{"name": "Jolteon","id":136,"type": "Electric"},{"name": "Flareon","id":137,"type": "Fire"}],"preEvolution": null}

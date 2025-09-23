@@ -1,0 +1,17 @@
+{"name": "Mewtwo",
+"id": 150,
+"types": [
+  "Psychic"
+],
+"isLegendary": true,
+"abilities": [
+  {
+    "name": "Sturdy",
+    "description": "User is unable to be forced to run from a battle."
+  },
+  {
+    "name": "Unnerve",
+    "description": "Opponent's Ability is neutralized."
+  }
+],
+"preEvolution": null}

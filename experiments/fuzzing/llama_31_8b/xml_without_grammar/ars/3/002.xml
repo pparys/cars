@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library ((author|book)*, collection?)>
+  <!ELEMENT author (name, birthdate)>
+  <!ELEMENT book (title, publisher, publicationdate)>
+  <!ELEMENT collection EMPTY>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    synopsis CDATA #IMPLIED>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    genre CDATA #IMPLIED>
+]>
+<library>
+  <author id="A001" genre="Fiction">
+    <name>John Smith</name>
+    <birthdate>1990-04-22</birthdate>
+  </author>
+  <book isbn="1234567890" synopsis="This is a book summary">
+    <title>XML Book</title>
+    <publisher>XML Publisher</publisher>
+    <publicationdate>1995-04-22</publicationdate>
+  </book>
+  <collection />
+</library>

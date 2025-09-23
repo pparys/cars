@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE sales(id INTEGER PRIMARY KEY, year INTEGER, amount REAL);
+    INSERT INTO sales VALUES(1, 2010, 100.00);
+    INSERT INTO sales VALUES(2, 2011, 200.00);
+  }
+} {}
+
+do_test sorted-select-1.1 {
+  execsql {
+    SELECT * FROM sales ORDER BY year ASC, amount DESC;
+  }
+} {
+  1 2010 100.0
+  2 2011 200.0
+}
+
+finish_test

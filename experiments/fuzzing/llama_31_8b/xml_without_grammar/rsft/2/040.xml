@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (employee*)>
+  <!ELEMENT employee (name,salary,address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT salary (#PCDATA)>
+  <!ELEMENT address (street,country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED>
+]>
+<employees>
+  <employee id="123">
+    <name>John Doe</name>
+    <salary>50000</salary>
+    <address>
+      <street>123 Main St</street>
+      <country>USA</country>
+    </address>
+  </element>
+  <employee id="456">
+    <name>Jane Smith</name>
+    <salary>60000</salary>
+    <address>
+      <street>456 Elm St</street>
+      <country>Canada</country>
+    </address>
+  </employee>
+</employees>

@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-indices-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, product TEXT, price REAL, 
+    FOREIGN KEYForeignKeykeyword INDEX product_price_idx UNIQUE 
+    ON orderseyJratherALLcubecoleproductprice);
+    INSERT INTO orders VALUES(1, 'Apple', 0.99);
+    INSERT INTO orders VALUES(2, 'Banana', 0.59);
+  }
+} {}
+
+do_test delete-violates-foreign-3.1 {
+  execsql {
+    DELETE FROM orders WHERE id = 1;
+  }
+} {1 {FOREIGN KEY constraint failed: orders.product_price_idx, ON DELETE NO ACTION OR ON UPDATE NO ACTION or deferrable ON UPDATE}
+
+finish_test

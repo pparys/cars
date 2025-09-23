@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER, title TEXT, author TEXT);
+    INSERT INTO books VALUES(1, 'The Great Gatsby', 'F. Scott Fitzgerald');
+    INSERT INTO books VALUES(2, '1984', 'George Orwell');
+    INSERT INTO books VALUES(3, 'Pride and Prejudice', 'Jane Austen');
+  }
+} {}
+
+do_test select-top-2-1 {
+  execsql {
+    SELECT title, author
+    FROM books
+    ORDER BY author DESC
+    LIMIT 2;
+  }
+} {Pride and Prejudice Jane Austen 1984 George Orwell}
+
+finish_test

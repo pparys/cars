@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog    (author+,item*)>
+  <!ELEMENT author     (name,email)>
+  <!ELEMENT name       (#PCDATA)>
+  <!ELEMENT email      (#PCDATA)>
+  <!ELEMENT item       (title,price,description)>
+  <!ELEMENT title      (#PCDATA)>
+  <!ELEMENT price      (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST catalog
+    id    CDATA #IMPLIED>
+  <!ATTLIST item
+    id    CDATA #REQUIRED
+    type  (book|movie|music) #REQUIRED
+  >
+]>
+<catalog id="cat001">
+  <author>
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+  </author>
+  <author>
+    <name>Jane Doe</name>
+    <email>janeDoe@example.com</email>
+  </author>
+  <item id="item001" type="book">
+    <title>The Great Gatsby</title>
+    <price>19.99</price>
+    <description>A classic novel by F. Scott Fitzgerald.</description>
+  </item>
+  <item id="item002" type="movie">
+    <title>The Shawshank Redemption</title>
+    <price>9.99</price>
+    <description>A highly rated drama film.</description>
+  </item>
+  <item id="item003" type="music">
+    <title>The Dark Side of the Moon</title>
+    <price>14.99</price>
+    <description>A iconic rock album by Pink Floyd.</description>
+  </item>
+</catalog>

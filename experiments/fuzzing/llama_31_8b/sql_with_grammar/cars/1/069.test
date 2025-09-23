@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE products(name TEXT PRIMARY KEY, description TEXT);
+    INSERT INTO products VALUES('Xbox', 'Game Console');
+    INSERT INTO products VALUES('PlayStation', 'Game Console');
+  }
+} {}
+
+do_test select-product-1.1 {
+  execsql {
+    SELECT description FROM products WHERE name = 'Xbox';
+  }
+} {Game Console}
+
+finish_test

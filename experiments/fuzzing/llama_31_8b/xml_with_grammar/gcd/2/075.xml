@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author, publisher, title+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book 
+    isbn CDATA #REQUIRED
+    publication-date CDATA #IMPLIED>
+]>
+<book isbn="978-3-16-148410-0" publication-date="2020-10-15">
+  <author>John Doe</author>
+  <publisher>Book Publisher</publisher>
+  <title>The Power of Choice</title>
+  <title>The Path to Success</title>
+</book>

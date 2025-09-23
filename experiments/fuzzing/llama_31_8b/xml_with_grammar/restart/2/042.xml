@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST inventory
+    date CDATA #IMPLIED>
+]>
+<inventory date="2024-07-26">
+  <product id="P1" name="Apple">This is an apple.</product>
+  <product id="P2" name="Orange">This is an orange.</product>
+</inventory>

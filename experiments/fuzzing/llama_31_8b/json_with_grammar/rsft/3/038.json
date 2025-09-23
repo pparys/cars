@@ -1,0 +1,6 @@
+{"name": "Lucario",
+"id": 497,
+"types": ["Fighting", "Steel"],
+"isLegendary": false,
+"abilities": [{"name": "Inner Focus", "description": "Trains focus, raising critical hit ratio."}, {"name": "Justified", "description": "Reduces recoil from self-inflicted damage."}],
+"preEvolution": null}

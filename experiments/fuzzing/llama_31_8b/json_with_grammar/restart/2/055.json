@@ -1,0 +1,1 @@
+{"name": "Vector", "id": 15, "isLegendary": true, "abilities": [{"name": "Poison Touch", "description": "Has a 30% chance to poison the target."}, {"name": "Pressure", "description": "The target has a 50% chance to flinch."}], "types": ["Poison"], "preEvolution": null}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description*)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST description
+    date CDATA #IMPLIED>
+]>
+<product id="1" name="Product1">
+  <description>Full product description with multiple lines of text. date 2025-09-03T00:04:53</description>
+  <description>This is another description</description>
+  <address>123 Main St, Anytown, USA</address>
+</product>

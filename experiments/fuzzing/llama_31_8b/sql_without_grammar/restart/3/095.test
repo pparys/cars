@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-shipping-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER);
+    INSERT INTO orders(order_id, customer_id) VALUES(1001, 1);
+    INSERT INTO orders(order_id, customer_id) VALUES(1002, 2);
+    INSERT INTO orders(order_id, customer_id) VALUES(1003, 1);
+    INSERT INTO orders(order_id, customer_id) VALUES(1004, 3);
+  }
+} {}
+
+do_test upsell-order-1.1 {
+  execsql {
+    SELECT customer_id FROM orders WHERE order_id = 1003;
+  }
+} {1}
+
+finish_test

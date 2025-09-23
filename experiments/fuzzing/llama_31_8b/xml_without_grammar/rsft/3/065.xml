@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+,book+)> 
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA> 
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    publicationYear CDATA #REQUIRED>
+]>
+<library>
+  <author>Ralph Waldo Emerson</author>
+  <author>Henry David Thoreau</author>
+  <book title="Walden" publicationYear="1854">
+    Written by Henry David Thoreau.
+  </book>
+  <book title="Nature" publicationYear="1836">
+    An essay by Ralph Waldo Emerson.
+  </book>
+</library>

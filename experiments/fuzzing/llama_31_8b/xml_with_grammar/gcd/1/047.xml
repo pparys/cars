@@ -1,0 +1,9 @@
+<?xml version='1.0'?>
+<!DOCTYPE purchase [
+  <!ELEMENT purchase (#PCDATA)>
+  <!ATTLIST purchase 
+    customerID CDATA #REQUIRED
+    orderID CDATA #REQUIRED
+  >
+]>
+<purchase customerID="12345" orderID="67890">Dutch business from North-South tilt.</purchase>

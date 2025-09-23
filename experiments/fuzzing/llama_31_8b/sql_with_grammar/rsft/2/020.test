@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-primary-key-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, order_no INTEGER UNIQUE);
+    INSERT INTO orders VALUES(1, 1001);
+    INSERT INTO orders(order_no) VALUES(1002);
+  }
+} {}
+
+do_test select-primary-key-1.1 {
+  execsql {
+    SELECT order_no FROM orders WHERE id = 1;
+  }
+} {1001}
+
+finish_test

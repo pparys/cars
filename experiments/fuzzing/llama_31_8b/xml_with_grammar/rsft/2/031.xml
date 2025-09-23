@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (publisher,book+)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT book (title,author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id   CDATA #REQUIRED
+    price CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <publisher>Publishing Inc.</publisher>
+  <book id="book1" price="49.99">
+    <title>The Great Story</title>
+    <author>John Doe</author>
+  </book>
+  <book id="book2" price="99.99">
+    <title>The Epic Tale</title>
+    <author>Jane Smith</author>
+  </book>
+</catalog>

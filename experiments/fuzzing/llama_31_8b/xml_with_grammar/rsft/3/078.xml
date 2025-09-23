@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author*,book+,media+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT media (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author (#PCDATA) #IMPLIED>
+  <!ATTLIST media
+    id (DVD|MP3|CD) #REQUIRED>
+]>
+<catalog>
+  <author name="John" email="john@example.com">Author of books</author>
+  <book title="My Book" author="John">A book about life</book>
+  <book title="Another Book">Book 2</book>
+  <media id="DVD">Movie collector</media>
+</catalog>

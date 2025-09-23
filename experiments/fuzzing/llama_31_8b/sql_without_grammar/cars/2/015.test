@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-taxonomy-3.0 {
+  execsql {
+    CREATE TABLE books(book_id INTEGER PRIMARY KEY, title TEXT, author TEXT);
+    INSERT INTO books VALUES(1, 'The Great Gatsby', 'F. Scott Fitzgerald');
+    INSERT INTO books VALUES(2, 'To Kill a Mockingbird', 'Harper Lee');
+    INSERT INTO books VALUES(3, '1984', 'George Orwell');
+  }
+} {}
+
+do_test find-book-3.1 {
+  execsql {
+    SELECT title FROM books WHERE author = 'George Orwell';
+  }
+} {1984}
+
+finish_test

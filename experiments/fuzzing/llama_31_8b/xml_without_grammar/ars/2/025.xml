@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE buildings [
+  <!ELEMENT buildings (building*)>
+  <!ELEMENT building (address, location, attributes)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT location (#PCDATA)>
+  <!ELEMENT attributes (#PCDATA)>
+  <!ATTLIST building
+    id ID #REQUIRED>
+]>
+<buildings>
+  <building id="B1">
+    <address>123 Main St</address>
+    <location>New York, NY</location>
+    <attributes>This is building B1</attributes>
+  </building>
+  <building id="B2">
+    <address>456 Park Ave</address>
+    <location>New York, NY</location>
+    <attributes>This is building B2</attributes>
+  </building>
+</buildings>

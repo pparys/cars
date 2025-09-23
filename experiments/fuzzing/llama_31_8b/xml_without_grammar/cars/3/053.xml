@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE restaurant [
+  <!ELEMENT restaurant (menu,staff,awards)>
+  <!ELEMENT menu (item*)>
+  <!ELEMENT staff (employee+)>
+  <!ELEMENT awards (prize+)>
+  <!ELEMENT item (name,price,description)>
+  <!ELEMENT employee (name,position,salary)>
+  <!ELEMENT prize (year,description)!>
+  <!ATTLIST restaurant
+    name CDATA #REQUIRED
+    address CDATA #IMPLIED
+    rating CDATA #IMPLIED>
+  <!ATTLIST item
+    id CDATA #REQUIRED>
+]>
+<restaurant name="Italian Garden" address="123 Main St" rating="4.5">
+  <menu>
+    <item id="1">
+      <name>Pizza Margherita</name>
+      <price>12.99</price>
+      <description>A classic cheese pizza from Italy.</description>
+    </item>
+    <item id="2">
+      <name>Spaghetti Bolognese</name>
+      <price>15.99</price>
+      <description>A hearty meat-based spaghetti dish.</description>
+    </item>
+  </menu>
+  <staff>
+    <employee>
+      <name>John Doe</name>
+      <position>Manager</position>
+      <salary>60000</salary>
+    </employee>
+    <employee>
+      <name>Jane Doe</name>
+      <position>Head Chef</position>
+      <salary>50000</salary>
+    </employee>
+  </staff>
+  <awards>
+    <prize year="2020" description="Best Restaurant of the Year"/>
+    <prize year="2022" description="Awards for Outstanding Customer Service"/>
+  </awards>
+</restaurant>

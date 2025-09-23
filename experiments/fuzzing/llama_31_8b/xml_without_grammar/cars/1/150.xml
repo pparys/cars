@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, publication)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publication (title, publication-date)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #IMPLIED>
+]>
+<library>
+  <book isbn="978-1-234-56789-0">
+    <author>John Doe</author>
+    <publication>
+      <title>My Book</title>
+      <publication-date>2022-01-01</publication-date>
+    </publication>
+  </book>
+  <book isbn="978-1-234-56789-0">
+    <author>Jane Smith</author>
+    <publication>
+      <title>Another Book</title>
+      <publication-date>2023-06-01</publication-date>
+    </publication>
+  </book>
+</library>

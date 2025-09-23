@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE response [
+  <!ELEMENT response (header, body)>
+  <!ELEMENT header (server, version)>
+  <!ELEMENT server (#PCDATA)>
+  <!ELEMENT version (#PCDATA)>
+  <!ELEMENT body (message, error)>
+  <!ELEMENT message (#PCDATA)>
+  <!ELEMENT error EMPTY>
+  <!ATTLIST error
+    code CDATA #IMPLIED>
+]>
+<response>
+  <header>
+    <server>My Server</server>
+    <version>1.1</version>
+  </header>
+  <body>
+    <message>This is a simple message.</message>
+    <error code="404"/>
+  </body>
+</response>

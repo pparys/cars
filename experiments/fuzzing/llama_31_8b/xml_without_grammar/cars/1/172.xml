@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*, magazine*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT magazine (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST magazine
+    title CDATA #REQUIRED
+    publisher CDATA #IMPLIED>
+]>
+<library>
+  <book author="John Smith" title="The History of XML" year="2020"/>
+  <book author="Jane Doe" title="XML for Beginners" year="2019"/>
+  <magazine title="XML Journal" publisher="ABC Publishing"/>
+  <magazine title="Web Development Magazine" />
+  <book author="Bob Johnson" title="Advanced XML Topics" />
+</library>

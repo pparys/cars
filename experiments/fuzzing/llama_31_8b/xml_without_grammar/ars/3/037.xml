@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE persons [
+  <!ELEMENT persons (person*)>
+  <!ELEMENT person (name,address, occupation*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT occupation (#PCDATA)>
+  <!ATTLIST occupation
+    type CDATA #IMPLIED>
+]>
+<persons>
+  <person>
+    <name>John Doe</name>
+    <address>
+      <street>Main St</street>
+      <city>New York</city>
+      <country>USA</country>
+    </address>
+    <occupation type="Software Engineer"/>
+  </person>
+  <person>
+    <name>Jane Doe</name>
+    <address>
+      <street>Elm St</street>
+      <city>Los Angeles</city>
+      <country>USA</country>
+    </address>
+    <occupation type="Doctor"/>
+    <occupation type="Lawyer"/>
+  </person>
+</persons>

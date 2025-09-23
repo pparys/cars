@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT status (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    publication-date CDATA #IMPLIED>
+  <!ATTLIST library
+    name CDATA #IMPLIED
+    location CDATA #IMPLIED>
+]>
+<library name="My Library" location="New York">
+  <book title="To Kill a Mockingbird" author="F. Scott Fitzgerald" publication-date="1955-01-01">
+    <author>Harper Lee</author>
+    <publisher>Jeremy P. Tarcher/Penguin</publisher>
+    <status>Available</status>
+  </book>
+  <book title="The Great Gatsby" author="F. Scott Fitzgerald" publication-date="1925-01-01">
+    <author>Harper Lee</author>
+    <publisher>Jeremy P. Tarcher/Penguin</publisher>
+    <status>Borrowed</status>
+  </book>
+</library>

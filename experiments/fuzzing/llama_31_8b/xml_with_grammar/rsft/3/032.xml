@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (name, description, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    qty CDATA #IMPLIED>
+  <!ATTLIST products
+    name CDATA #REQUIRED
+    version CDATA #REQUIRED>
+]>
+<products name="Electronics" version="2.1">
+  <product id="1" qty="10">
+    <name>Laptop</name>
+    <description>This is a 14inch Laptop with Core-i7 processor.</description>
+    <price>5500.0</price>
+  </product>
+  <product id="2" qty="20">
+    <name>Tv</name>
+    <description>This is a 40inch 4k UHD Tv.</description>
+    <price>6500.0</price>
+  </product>
+</products>

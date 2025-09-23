@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    title CDATA #REQUIRED>
+]>
+<library>
+  <book title="The Great Gatsby" author="F. Scott Fitzgerald"/>
+  <book title="1984" author="George Orwell"/>
+  <book title="Pride and Prejudice" author="Jane Austen"/>
+</library>

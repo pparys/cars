@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*, catalog?)>
+  <!ELEMENT product (description, price, supplier)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT supplier (#PCDATA)>
+  <!ATTLIST product
+    product_code CDATA #REQUIRED
+    product_name CDATA #IMPLIED>
+]>
+<catalog>
+  <product product_code="P1" product_name="Product 1">
+    <description>This is a sample product.</description>
+    <price>19.99</price>
+    <supplier>ABC Corp</supplier>
+  </product>
+  <product product_code="P2" product_name="Product 2">
+    <description>This is another sample product.</description>
+    <price>9.99</price>
+    <supplier>XYZ Corp</supplier>
+  </product>
+  <catalog>
+    <product product_code="P3" product_name="Sub-Catalog Product 1">
+      <description>This is a sub-catalog product.</description>
+      <price>29.99</price>
+      <supplier>Def Corp</supplier>
+    </product>
+  </catalog>
+</catalog>

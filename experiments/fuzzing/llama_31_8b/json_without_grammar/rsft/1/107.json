@@ -1,0 +1,17 @@
+{"name": "Mr. Mime", 
+ "id": 122, 
+ "types": [
+    "Psychic"
+  ], 
+ "isLegendary": false, 
+ "abilities": [
+    {
+      "name": "Soundproof",
+      "description": "The Pokémon's contacts use Sound-based moves."
+    },
+    {
+      "name": "Technician",
+      "description": "Move deals more damage based on user stat."
+    }
+  ],
+  "preEvolution": null}

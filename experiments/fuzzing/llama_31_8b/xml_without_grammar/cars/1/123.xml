@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (address|contactinfo*, phone*)>
+  <!ELEMENT address (street,city,state,zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT contactinfo (name,email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST person
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    age CDATA #IMPLIED>
+]>
+<person id="p1" name="John Doe">
+  <address>
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <state>CA</state>
+    <zip>12345</zip>
+  </address>
+  <contactinfo>
+    <name>Jane Doe</name>
+    <email>jane@example.com</email>
+  </contactinfo>
+  <contactinfo>
+    <name>Bob Smith</name>
+    <email>bob@example.com</email>
+  </contactinfo>
+  <phone>123-456-7890</phone>
+  <phone>098-765-4321</phone>
+</person>

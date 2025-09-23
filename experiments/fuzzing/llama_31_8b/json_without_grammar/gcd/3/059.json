@@ -1,0 +1,13 @@
+{"name":"Mewtwo","id":150,"types":["Psychic"],"isLegendary":true,"abilities":[{"name":"Stureful Mind","description":"This move is not affected by any status conditions."}],"evolution":null,"moves":[
+{"name":"PsyBeam","description":"A powerful mental shot."},
+  {
+    "name": "Ice Beam",
+    "description": "The target is attacked with a beam of herb- degraded acid."
+  }
+] 
+,"stats":{"hp":106,"attack":154,"defense":90,"specialAttack":154,"specialDefense":90,"speed":92}
+,"height":90,"weight":1220
+,"previousTrainers":["Genesect","Hoopa","Heatran"]
+ ,"firstAppearance":["Red and Blue Version","FireRed Version"]
+,"preEvolution":null 
+}

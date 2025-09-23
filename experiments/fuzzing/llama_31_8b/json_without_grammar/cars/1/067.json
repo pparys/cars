@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Unnerve", "description": "Opponent's attack is 50% less accurate."}, {"name": "Insanity", "description": "If hit by a Mental-type move, has a 10% chance to fall asleep, become paralyzed, or become confused."}], "preEvolution": null}

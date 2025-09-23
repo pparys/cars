@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ATTLIST books
+    author CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    publication_date CDATA #IMPLIED
+    ISBN CDATA #REQUIRED
+  >
+  <!ATTLIST author
+    name CDATA #REQUIRED
+  >
+]>
+<books author="John Doe">
+  <book publication_date="2020-01-01" ISBN="1234567890">
+    <author name="Jane Doe">
+      <book publication_date="2021-01-01" ISBN="2345678901"/>
+    </author>
+  </book>
+  <book publication_date="2019-01-01" ISBN="3456789012">
+    <author name="John Smith"/>
+  </book>
+</books>

@@ -1,0 +1,6 @@
+{"name": "Mewtwo", 
+"id": 150, 
+"types": ["Psychic"], 
+"isLegendary": true, 
+"abilities": [{"description": "Permits it to use PSY and PRE move but is having superiority over the Mew", "name": "Psionic"}], 
+"preEvolution": "Mew"}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author,book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    genre (drama|romance|sci-fi)>
+]>
+<catalog>
+  <author>Author 1</author>
+  <book id="bk101" genre="sci-fi" year="2010">
+    <title>To Kill a Mockingbird</title>
+  </book>
+  <book id="bk102" genre="fantasy" year="2011">
+    <title>It</title>
+  </book>
+</catalog>

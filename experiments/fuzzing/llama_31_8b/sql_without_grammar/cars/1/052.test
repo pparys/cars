@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-profile-1.0 {
+  execsql {
+    CREATE TABLE profiles(id INTEGER PRIMARY KEY, age INTEGER,
+      name TEXT, email TEXT UNIQUE);
+    INSERT INTO profiles(id, age, name, email) VALUES(101, 30, 'Alice',
+      'alice@example.com');
+    INSERT INTO profiles(id, age, name, email) VALUES(102, 40, 'Bob',
+      'bob@example.com');
+    INSERT INTO profiles(id, age, name, email) VALUES(103, 20, 'Charlie',
+      'charlie@example.com');
+  }
+} {}
+
+do_test query-profile-1.1 {
+  execsql {
+    SELECT email FROM profiles WHERE age = 40;
+  }
+} {bob@example.com}
+
+finish_test

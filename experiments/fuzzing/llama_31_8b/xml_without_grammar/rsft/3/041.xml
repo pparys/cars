@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (store*)>
+  <!ELEMENT store (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST store
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    description CDATA #IMPLIED
+    price CDATA #REQUIRED>
+]>
+<catalog>
+  <store id="1" name="Electronics">
+    <product id="1" description="24-inch LED TV" price="1200.0">LG 24-inch LED TV</product>
+    <product id="2" description="Wireless Headphone" price="80.0">Sony Wireless Headphone</product>
+  </store>
+  <store id="2" name="Fashion">
+    <product id="1" description="Men's Shirt" price="50.0">Levis Men's Shirt</product>
+    <product id="2" description="Women's Shirt" price="60.0">Calvin Klein Women's Shirt</product>
+  </store>
+</catalog>

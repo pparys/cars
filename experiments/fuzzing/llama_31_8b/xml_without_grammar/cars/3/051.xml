@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (author, title, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST catalog
+    type (Fiction|NonFiction) "Fiction"
+    creator (Human|AI) "Human"
+  >
+]>
+<catalog type="NonFiction" creator="Human">
+  <book>
+    <author>John Doe</author>
+    <title>XML for Beginners</title>
+    <price>20.99</price>
+  </book>
+  <book>
+    <author>Jane Smith</author>
+    <title>XQuery Tutorials</title>
+    <price>29.99</price>
+  </book>
+</catalog>

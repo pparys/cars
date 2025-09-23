@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author+, title+, publication.date)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    publisher CDATA #IMPLIED>
+  <!ATTLIST author
+    first_name CDATA #REQUIRED
+    last_name CDATA #REQUIRED>
+  <!ATTLIST title
+    name CDATA #REQUIRED>
+  <!ATTLIST publication.date
+    year CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="bk101" publisher="Harrap's">
+    <author first_name="John" last_name="Smith"/>
+    <title name="Title1"/>
+    <publication.date year="2000"/>
+  </book>
+  <book id="bk102" publisher="IDG Books Worldwide">
+    <author first_name="Emily" last_name="Jones"/>
+    <title name="Title2"/>
+    <publication.date year="2001"/>
+  </book>
+</catalog>

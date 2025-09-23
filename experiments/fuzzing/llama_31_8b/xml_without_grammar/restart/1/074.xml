@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author*, book+modoBook*)>
+  <!ELEMENT author (name, bio)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT bio (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT modoBook (#PCDATA)>
+  <!ATTLIST author
+    id ID #REQUIRED
+  >
+]>
+<library>
+  <author id="A001">
+    <name>Alexander</name>
+    <bio>Khoury</bio>
+  </author>
+  <book>Title of the Book</book>
+  <modoBook>Modo Book Title</modoBook>
+</library>

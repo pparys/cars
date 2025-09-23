@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, order_date DATE);
+    INSERT INTO orders(id, customer_id, order_date) VALUES(301, 101, '2020-01-01');
+    INSERT INTO orders(id, customer_id, order_date) VALUES(302, 102, '2020-02-01');
+  }
+} {}
+
+do_test select-current-mth-orders-3.1 {
+  execsql {
+    SELECT SUM_if_non_null_year ORDER BY sum_and_count_sq_subquery_column DESC;
+  }
+} {102}
+
+finish_test

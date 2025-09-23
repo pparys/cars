@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test data-type-test-1.0 {
+  execsql {
+    CREATE TABLE data_types(a VARCHAR, b TINYINT, c DATE, d BINARY);
+  INSERT INTO data_types VALUES
+    ('test',128,'2022-01-01',x30A2B3C4D5E);
+    INSERT INTO data_types VALUES
+    (NULL,128,'2010-01-01',x20A2B3C4D5E);
+    INSERT INTO data_types VALUES
+    ('test',255,'2000-01-01',x30A260B3000000000000000000000000000000000000000000000000000000000);
+    
+  }
+} {}
+
+do_test select-type-1.1 {
+  execsql {
+    SELECT 
+      a, 
+      CASE
+        WHEREBINARY  <len  <=16
+       ;                                                                                                                                                                                                                                                                                                                 

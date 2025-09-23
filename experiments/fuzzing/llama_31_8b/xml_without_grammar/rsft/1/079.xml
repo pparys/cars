@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog ((product | category)*, employee?)>
+  <!ELEMENT product (name, price, description)>
+  <!ELEMENT category (name, description)>
+  <!ELEMENT employee ((name, email, department+) | address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#CDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST employee id CDATA #REQUIRED>
+  <!ATTLIST product id CDATA #REQUIRED>
+  <!ATTLIST category id CDATA #REQUIRED>
+]>
+<catalog version="1.0">
+  <product id="Prod1" name="Apple">
+    <price>1.99</price>
+    <description>Fresh apples</description>
+  </product>
+  <category id="Categ1" name="Fruits">
+    <description>Fresh and juicy fruits</description>
+  </category>
+  <employee id="Emp1" name="John">
+    <email>johndoe@example.com</email>
+    <department>HR</department>
+    <department>Marketing</department>
+  </employee>
+  <employee id="Emp2" name="Jane">
+    <address>
+      <street>123 Main St</street>
+      <city>New York</city>
+      <state>NY</state>
+      <zip>10001</zip>
+    </address>
+  </employee>
+</catalog>

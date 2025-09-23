@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, price, publication_date)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publication_date (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    genre CDATA #IMPLIED
+  >
+]>
+<books>
+  <author>John Doe</author>
+  <author>Jane Doe</author>
+  <book id="BK-001" genre="Fiction">
+    <title>A Novel</title>
+    <price>$10.99</price>
+    <publication_date>2022-01-01</publication_date>
+  </book>
+  <book id="BK-002">
+    <title>This is another book</title>
+    <price>$12.99</price>
+    <publication_date>2020-06-01</publication_date>
+  </book>
+</books>

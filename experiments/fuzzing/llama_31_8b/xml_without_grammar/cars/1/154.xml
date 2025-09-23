@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author+, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id (n|p|m) #REQUIRED
+    price CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    born CDATA #IMPLIED>
+]>
+<catalog>
+  <author name="John Smith" born="1980-01-01">Science Fiction Author</author>
+  <book id="n-001" price="15.99">Introduction to Sci-Fi</book>
+  <book id="p-002" >More Sci-Fi</book>
+  <book id="m-003" price="12.99">History of Sci-Fi</book>
+  <author name="Jane Doe">Fantasy Author</author>
+  <book id="n-004" >Fantasy</book>
+  <book id="p-005" price="20.99">Good Fantasy</book>
+</catalog>

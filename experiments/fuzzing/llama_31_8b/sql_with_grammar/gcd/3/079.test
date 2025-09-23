@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE roles(id INTEGER PRIMARY KEY, role TEXT);
+    CREATE TABLE profiles(role_id INTEGER, name TEXT);
+    INSERT INTO roles VALUES(101, 'Admin');
+    INSERT INTO profiles VALUES(101, 'Profile1');
+    INSERT INTO profiles(role_id, name) VALUES(101, 'Profile2');
+  }
+} {}
+
+do_test select-profile-3.1 {
+  execsql {
+    SELECT name 
+    FROM profiles 
+    WHERE role_id = 101
+    ORDER BY name DESC 
+    LIMIT 1;
+  }
+} {Profile1}
+
+finish_test

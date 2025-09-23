@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Foretelling", "description": "Default event must trigger this in else its blocked for other attacks."}, {"name": "Pressure", "description": "Switch-in raises priority of this Pokémon."}], "preEvolution": "Mew"}

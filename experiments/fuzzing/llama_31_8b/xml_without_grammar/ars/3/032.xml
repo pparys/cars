@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book*)>
+  <!ELEMENT book (author+, title, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    type (fiction|non-fiction) "non-fiction">
+]>
+<books>
+  <book id="bk101" type="fiction">
+    <author>John Smith</author>
+    <author>Jane Doe</author>
+    <title>UIDentity Clean-Up Company</title>
+    <price>$19.95</price>
+  </book>
+  <book id="bk102" type="non-fiction">
+    <author>Albert J. QSM</author>
+    <title>GSCAvarr Research I Feburary 2018 & supplied Files</title>
+    <price>$10.95</price>
+  </book>
+</books>

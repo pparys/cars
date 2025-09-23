@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-with-timestamp-2.0 {
+  execsql {
+    CREATE TABLE feeds(id INTEGER, title TEXT, created_at DATETIME DEFAULT CURRENT_TIMESTAMP);
+    INSERT INTO feeds(title) VALUES('Feed1');
+    INSERT INTO feeds(title) VALUES('Feed2');
+  }
+} {}
+
+do_test select-feed-with-order-by-timestamp-2.1 {
+  execsql {
+    SELECT * FROM feeds ORDER BY created_at DESC LIMIT 1;
+  }
+} {2 Feed2 2023-01-01 00:00:00}
+
+finish_test

@@ -1,0 +1,24 @@
+<\xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE customer [
+  <!ELEMENT customer (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address ((street, city, state, zip) | (street, city))>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST customer
+    id CDATA #IMPLIED
+    type (personal|business) "personal">
+]>
+<customer id="123" type="personal">
+  <name>John Doe</name>
+  <address>
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <state>CA</state>
+    <zip>12345</zip>
+  </address>
+  <phone>555-1234</phone>
+</customer>

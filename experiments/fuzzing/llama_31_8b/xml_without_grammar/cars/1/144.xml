@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (store*)>
+  <!ELEMENT store (product*)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST store
+    name CDATA #REQUIRED
+  >
+]>
+<products>
+  <store name="Electronics Store">
+    <product>Smart TV</product>
+    <product>Laptop</product>
+  </store>
+  <store name="Clothing Store">
+    <product>Shirt</product>
+    <product>Pants</product>
+  </store>
+</products>

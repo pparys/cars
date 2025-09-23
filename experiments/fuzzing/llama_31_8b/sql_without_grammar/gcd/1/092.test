@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-2.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_name TEXT, order_date TEXT);
+    INSERT INTO orders(order_id, customer_name, order_date) VALUES(201, 'John Doe', '2022-01-01');
+    INSERT INTO orders(order_id, customer_name, order_date) VALUES(202, 'Jane Doe', '2022-01-15');
+    INSERT INTO orders(order_id, customer_name, order_date) VALUES(203, 'John Smith', '2022-02-01');
+  }
+} {}
+
+do_test select-orders-2.1 {
+  execsql {
+    SELECT customer_name, COUNTselling_item_id 
+    FROM orders 
+    GROUP BY customer_name 
+    ORDER BY customer_name DESC;
+  }
+} {John Smith 1 John Doe 1 Jane Doe 1}
+
+finish_test

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST address
+    type (home|work|bulk) "home"
+  >
+]>
+<address type="work">
+  <name>John Doe</name>
+  <street>123 Main St</street>
+  <cityAnytown USA
+ 	   		 	 	 	="">
+  <state>GA</state>
+  <zip>12345</zip>
+</address>
+
+To generate this complex XML, we included:
+
+- A `DOCTYPE` declaration with multiple `ELEMENT` and `ATTLIST` declarations.
+- An `ELEMENT` declaration for a nested `name` element.
+- An `ELEMENT` declaration for a nested `street` element.
+- An `ELEMENT` declaration for a nested `city` element.
+- An `ELEMENT` declaration for a nested `state` element.
+- An `ELEMENT` declaration for a nested `zip` element.
+- An `ATTLIST` declaration with a `type` attribute for the `address` element.
+
+The XML produced has a complex structure with interrelated elements, a self-closing `ATTLIST` declaration, and nested elements.
+
+To automate the generation of diverse and valid XML files, we could write a Python code or other appropriate coding language. The following is an example code that generates XML according to the provided grammar:
+
+```python
+import random
+import string
+
+# Function to generate random element names
+def random_element_name():
+    name = ''.join([random.choice(string.ascii_lowercase + '_-') for _ in range(random.randint(3, 10))])
+    return name
+
+# Function to generate random attribute names
+def random_attribute_name():
+    name = ''.join([random.choice(string.ascii_lowercase + '_-') for _ in range(random.randint(3, 10))])
+    return name
+
+# Function to generate random content
+def random_content():
+    content = ''.join([random.choice(string.ascii_lowercase + string.digits + ' ') for _ in range(random.randint(5, 15))])
+    return content
+
+# Function to generate random Escaped String
+def random_escaped_string():
+    string = random.choice(['"', "'"])
+    content = ''.join([random.choice(['a

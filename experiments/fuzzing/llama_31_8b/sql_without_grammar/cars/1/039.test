@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-metadata-3.0 {
+  execsql {
+    CREATE TABLE metadata(id INTEGER, location TEXT);
+    INSERT INTO metadata(id, location) VALUES(1, 'USA');
+    INSERT INTO metadata(id, location) VALUES(2, 'Europe');
+  }
+} {}
+
+do_test select-metadata-3.1 {
+  execsql {
+    SELECT location FROM metadata ORDER BY id;
+  }
+} {USA Europe}
+
+finish_test

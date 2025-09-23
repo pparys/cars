@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-3.0 {
+  execsql {
+    CREATE TABLE books(
+      id INTEGER PRIMARY KEY,
+      title TEXT,
+      price REAL,
+      stock INTEGER
+    );
+    INSERT INTO books VALUES(1, 'Book1', 10.99, 100);
+    INSERT INTO books VALUES(2, 'Book2', 9.99, 50);
+  }
+} {}
+
+do_test delete-book-3.1 {
+  execsql {
+    DELETE FROM books WHERE id = 2 AND stock < 30;
+  }
+} {}
+
+finish_test

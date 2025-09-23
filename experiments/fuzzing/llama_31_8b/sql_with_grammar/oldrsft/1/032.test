@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE products(pid INTEGER PRIMARY KEY, name TEXT NOT NULL);
+    INSERT INTO products(pid, name) VALUES(301, 'Product A');
+    INSERT INTO products(name) VALUES('Product B');
+  }
+} {}
+
+do_test select-product-3.1 {
+  execsql {
+    SELECT name FROM products WHERE pid = 301 ORDER BY name LIMIT 1;
+  }
+} {Product A}
+
+finish_test

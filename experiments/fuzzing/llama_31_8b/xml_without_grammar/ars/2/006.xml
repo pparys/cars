@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item EMPTY>
+  <!ATTLIST item
+    id ID #REQUIRED
+    name CDATA #REQUIRED
+    price CDATA #IMPLIED
+    description CDATA #IMPLIED>
+]>
+<catalog>
+  <item id="IT001" name="Mouse" price="25.00"/>
+  <item id="IT002" name="Keyboard" price="30.00" description="Wireless keyboard with touchpad"/>
+  <item id="IT003" name="Monitor" description="IPS panel with 24-inch display"/>
+</catalog>

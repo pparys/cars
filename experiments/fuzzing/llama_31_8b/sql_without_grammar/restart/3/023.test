@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, user_id INTEGER, order_date DATE);
+    CREATE TABLE products(id INTEGER, product_name TEXT);
+    INSERT INTO products(id, product_name) VALUES(201, 'Product 1');
+    INSERT INTO products(id, product_name) VALUES(202, 'Product 2');
+    INSERT INTO orders(id, user_id, order_date) VALUES(301, 101, '2020-01-01');
+    INSERT INTO orders(id, user_id, order_date) VALUES(302, 101, '2020-01-02');
+  }
+} {}
+
+do_test joins-products-3.1 {
+  execsql {
+    SELECT p.* FROM orders AS o
+    ORDER BY o_order_date DESC LIMIT 1
+    AND o_user_id = 101
+    ;
+    SELECT * FROM orders AS o WHERE o_id = 301;
+  }
+} {201 Product 1}
+
+finish_test

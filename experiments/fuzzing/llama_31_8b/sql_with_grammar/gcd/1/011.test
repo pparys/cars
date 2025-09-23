@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-database-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER, total REAL);
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO customers VALUES(1, 'John Doe');
+    INSERT INTO customers VALUES(2, 'Jane Doe');
+    INSERT INTO orders(order_id, customer_id, total) VALUES(1001, 1, 100.00);
+    INSERT INTO orders(order_id, customer_id, total) VALUES(1002, 2, 200.00);
+  }
+} {}
+
+do_test update-order-1.1 {
+  execsql {
+    UPDATE orders SET total = total < 150.00 WHERE customer_id = 1;
+  }
+} {}
+
+finish_test

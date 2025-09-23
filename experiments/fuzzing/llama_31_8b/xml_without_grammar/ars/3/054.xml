@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+  <!ELEMENT users (user*)>
+  <!ELEMENT user (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST user
+    id CDATA #REQUIRED
+  >
+]>
+<users>
+  <user id="1">
+    <name>John Doe</name>
+    <address>123 Main St.</address>
+  </user>
+  <user id="2">
+    <name>Jane Doe</name>
+    <address>456 Elm St.</address>
+  </user>
+</users>

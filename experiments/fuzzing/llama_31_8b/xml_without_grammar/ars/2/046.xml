@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    title CDATA #REQUIRED
+    authorRef IDREF #IMPLIED>
+]>
+<catalog>
+  <author>Roger Ackling</author>
+  <book id="bk101" title="The Critical Magazine" authorRef="Roger Ackling"/>
+  <book id="bk102" title="Theoretical Turn" />
+  <book id="bk103" title="Art as If!" authorRef="Roger Ackling"/>  
+</catalog>

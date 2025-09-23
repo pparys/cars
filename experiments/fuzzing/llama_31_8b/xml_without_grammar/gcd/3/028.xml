@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (name, description, price, category)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED>
+]>
+<catalog>
+  <product id="1">
+    <name>Laptop</name>
+    <description>This is a laptop with powerful processor and large memory.</description>
+    <price>1500</price>
+    <category>Computer</category>
+  </product>
+  <product id="2">
+    <name>Tablet</name>
+    <description>This is a tablet with touchscreen interface.</description>
+    <price>800</price>
+    <category>Computer</category>
+  </product>
+</catalog>

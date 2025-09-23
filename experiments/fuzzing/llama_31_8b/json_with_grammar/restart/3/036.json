@@ -1,0 +1,6 @@
+{"name": "Dragonair", 
+"id": 149, 
+"types": ["Water", "Flying"], 
+"isLegendary": false, 
+"abilities": [{"name": "Immunity", "description": null}, {"name": "Mold Breaker", "description": null}], 
+"preEvolution": "Charizard"}

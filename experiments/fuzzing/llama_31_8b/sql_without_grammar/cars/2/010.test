@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-token-1.0 {
+  execsql {
+    CREATE TABLE words(id INTEGER PRIMARY KEY, word TEXT);
+    INSERT INTO words(id, word) VALUES(1, 'one');
+    INSERT INTO words(id, word) VALUES(2, 'two');
+    INSERT INTO words(id, word) VALUES(3, 'three');
+  }
+} {}
+
+do_test select-token-1.1 {
+  execsql {
+    SELECT word FROM words WHERE id = 2;
+  }
+} {two}
+
+finish_test

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [
+  <!ELEMENT address (name, phone, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST address
+    street_ADDR CDATA #IMPLIED
+    city 갤로그로_name CDATA #REQUIRED
+    country CDATA #REQUIRED>
+]>
+<address street_ADDR="Main St" city="New York,City" country="USA">
+  <name>Apple</name>
+  <phone>1234567890</phone>
+  <email>info@apple.com</email>
+</address>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test test1-1.0 {
+  execsql {
+    CREATE TABLE person(name TEXT PRIMARY KEY, age INTEGER);
+    INSERT INTO person VALUES('John', 25);
+    INSERT INTO person VALUES('Jane', 30);
+  }
+} {}
+
+do_test select-age-1.1 {
+  execsql {
+    SELECT age FROM person ORDER BY age ASC LIMIT 1;
+  }
+} {25}
+
+finish_test

@@ -1,0 +1,49 @@
+{"name":"Mewtwo","id":150,"types":["Psychic"],"isLegendary":true,"abilities":[{"name":"Pressure","description":"Each turn, adjacent Pokémon have a 50% chance to flinch in Battle."}, {"name":"RKS System","description":"None"}],"postEvolution":[{"name":"Final Forme Mewtwo","description":"Unknown"}],"evolutions":[{"name":"Mew","id":150,"description":"Unknown"}],"moves":[ "Psybeam", "Kinesis", "Confuse Ray", "Psystrike" ] 
+
+  ,   "dbLocation": "Cinnabar Island",
+        "height": 9.2
+     ,     "moves": [
+        {
+          "name": "Psybeam",
+          "type": "Psychic",
+          "damage": "65"
+        },
+        {
+          "name": "Kinesis",
+          "type": "Psychic",
+          "damage": "80"
+        },
+        {
+          "name": "Confuse Ray",
+          "type": "Ghost",
+          "damage": "None"
+        },
+        {
+          "name": "Psystrike",
+          "type": "Psychic",
+          "damage": "100"
+        }
+      ] 
+ ,       "flytype": true
+   ,  
+   
+        "locLocation": "New Mauve City Aerodrome"
+     ,      "hp": "10"
+     
+ ,    "AmtMoved": 0 
+ ,  "movesAfter": [
+        "Psybeam", 
+        "Hurricane",
+        "Thunderwave",
+        "Hyper Beam"
+    ]
+ ,   "extra": true 
+   , "kmnoget": [
+        "74.0.14", "Ch1",
+        "IS"
+    ] 
+       ,        "1,Ext,750,pl-sm Regulator Ecer leash rate" 
+    : 5.60  
+   
+ ,                     "length": ["29","28","-0.46",8.53,5.32], "ability" : "Pressure", "last fly metres":14.27   
+     ,   "2, hour pink stra77 ramp span hollowSounds Medicine Jiandefaultseller Polar empty reserve Modal placeholder mari slice assuming assumption ost jetrons Toys preserve briefingD Vietnam losers declariter And2 assembly Houston crisis both daily EITHER box ow consensus Roof performs precipitation wash marginal chan riv System cogn Tarthe FO increased vision Scanner oversized GPS newNames LESS metropolitan minutes Stack

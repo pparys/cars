@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE natio [
+  <!ELEMENT natio (population,sports,culture)>
+  <!ELEMENT population (#PCDATA)>
+  <!ELEMENT sports (#PCDATA)>
+  <!ELEMENT culture (#PCDATA)>
+  <!ATTLIST natio
+    name CDATA #REQUIRED
+    capital CDATA #REQUIRED>
+]>
+<natio name="France" capital="Paris">
+  <population>67,277,000</population>
+  <sports>
+    Rugby, Tennis, Cycling, Cricket
+  </sports>
+  <culture>French, Latin, and Germanic influences</culture>
+</natio>

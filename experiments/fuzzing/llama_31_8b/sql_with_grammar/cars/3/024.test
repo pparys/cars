@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE messages(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      send_time TEXT,
+      message TEXT
+    );
+    INSERT INTO messages(send_time, message) 
+      VALUES('2022-01-01 12:00', 'Happy new year!')
+    ;
+    INSERT INTO messages(send_time, message) 
+      VALUES('2022-01-02 13:00', 'Today is a beautiful day')
+    ;
+  }
+} {}
+
+do_test delete-by-condition-3.1 {
+  execsql {
+    DELETE FROM messages WHERE send_time = '2022-01-02 13:00';
+  }
+} {}
+
+finish_test

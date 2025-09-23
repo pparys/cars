@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-self-referential-1.0 {
+  execsql {
+    CREATE TABLE friends(id INTEGER, parent INTEGER, name TEXT);
+    INSERT INTO friends VALUES(1, null, 'Alice');
+    INSERT INTO friends VALUES(2, 1, 'Bob');
+    INSERT INTO friends VALUES(3, 1, 'Charlie');
+    INSERT INTO friends VALUES(4, 3, 'David');
+    INSERT INTO friends VALUES(5, 3, 'Eve');
+  }
+} {}
+
+do_test lowest-ancestor-1.1 {
+  execsql {
+    SELECT name FROM friends WHERE id = 2
+    ORDER BY friends_ship_depth DESC
+    LIMIT 1;
+  }
+} {Charlie}
+
+finish_test

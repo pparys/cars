@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-primary-key-3.0 {
+  execsql {
+    CREATE TABLE departments(id INTEGER PRIMARY KEY, name TEXT, location TEXT);
+    INSERT INTO departments(id, name, location) VALUES(300, 'Sales', 'New York');
+    INSERT INTO departments(id, name, location) VALUES(301, 'Marketing', 'Los Angeles');
+  }
+} {}
+
+do_test select-department-3.1 {
+  execsql {
+    SELECT name, location FROM departments WHERE id = 301;
+  }
+} {Marketing Los Angeles}
+
+finish_test

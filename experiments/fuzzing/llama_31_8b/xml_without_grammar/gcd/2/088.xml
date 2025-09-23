@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+)>
+  <!ELEMENT book (title, author)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    year (1990|2000) "2000">
+]>
+<library>
+  <book id="bk101" year="2000">
+    <title>The Naked Manager</title>
+    <author>Jerry C. Johnson</author>
+  </book>
+  <book id="bk102" year="1999">
+    <title>Walking Around in Churches</title>
+    <author>Forester</author>
+  </book>
+  <author>Dongo Linesiero </author>
+</library>

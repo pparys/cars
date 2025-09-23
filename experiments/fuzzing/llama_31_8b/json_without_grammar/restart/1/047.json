@@ -1,0 +1,11 @@
+{"name": "Mewtwo",
+"height": 4.6, 
+"id": 150,
+"types": [
+  "Psychic"
+],
+"ability": {
+ "name':"  : ", 
+ " 	,"hiddenValue": "Pressure"
+},
+"preEvolution":null}

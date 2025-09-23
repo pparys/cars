@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    publisher NMTOKEN #IMPLIED>
+]>
+<catalog>
+  <book id="bk1" publisher="Wiley">
+    <title>Learning XML</title>
+    <author>Erik T. Ray</author>
+    <price>44.95</price>
+  </book>
+  <book id="bk2" publisher="O'Reilly">
+    <title>XML in a Nutshell</title>
+    <author>Elliotte Rusty Harold</author>
+    <price>49.95</price>
+  </book>
+</catalog>

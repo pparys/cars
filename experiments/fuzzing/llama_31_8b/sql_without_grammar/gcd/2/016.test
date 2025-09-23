@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test backup-schema-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, salary REAL);
+    INSERT INTO employees VALUES(1001, 'John Doe', 50000.0);
+    INSERT INTO employees VALUES(1002, 'Jane Doe', 60000.0);
+  }
+} {}
+
+do_test restore-schema-3.1 {
+  execsql {
+    SELECT name FROM employees
+    WHERE salary > 55000.0
+    ORDER BY name DESC
+  ;}
+} {Jane Doe}
+
+finish_test

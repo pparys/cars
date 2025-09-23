@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-composite-1.0 {
+  execsql {
+    CREATE TABLE products(product_id INTEGER, description TEXT);
+    CREATE TABLE orders(order_id INTEGER, product_id INTEGER REFERENCES products);
+  INSERT INTO products(product_id, description) VALUES(101, 'Book');
+    INSERT INTO products(product_id, description) VALUES(102, 'Pen');
+    INSERT INTO orders(order_id, product_id) VALUES(201, 101);
+    INSERT INTO orders(order_id, product_id) VALUES(202, 102);
+  }
+} {}
+
+do_test insert-violates-foreign-1.1 {
+  execsql {
+    DELETE FROM orders WHERE order_id = 202;
+    DELETE FROM products WHERE product_id = 102;
+    DELETE FROM products WHERE product_id = 101;
+    DELETE FROM orders WHERE order_id = 201;
+    DELETE FROM products WHERE product_id = 102;
+    DELETE FROM products WHERE product_id = 101;     
+    DELETE FROM products WHERE product_id = 103;
+    SELECT product_id FROM products ORDER BY product_id LIMIT 1
+  ;
+  }
+  }  
+
+  {103}
+
+finish_test

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE scores(id INTEGER, name TEXT, score REAL);
+    INSERT INTO scores VALUES(1, 'John', 80.00);
+    INSERT INTO scores VALUES(2, 'Emma', 95.00);
+  }
+} {}
+
+do_test select-average-3.1 {
+  execsql {
+    SELECT AVGscore FROM scores;
+  }
+} {87.5}
+
+finish_test

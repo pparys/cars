@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE lectures [
+  <!ELEMENT lectures (lecture*)>
+  <!ELEMENT lecture (title, description, lecturer, date)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT lecturer (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ATTLIST lecturer
+    id ID #REQUIRED>
+]>
+<lectures>
+  <lecture>
+    <title>Introduction to Programming</title>
+    <description>This course covers the basics of programming.</description>
+    <lecturer id="pert-001">
+      <name>John Doe</name>
+      <email>johndoe@example.com</email>
+    </lecturer>
+    <date>2024-06-15</date>
+  </lectures>
+  <lecture>
+    <title>Algorithm Design</title>
+    <description>This course teaches advanced algorithms and data structures.</description>
+    <lecturer id="pert-002">
+      <name>Jane Smith</name>
+      <email>janexy@example.com</email>
+    </lecturer>
+    <date>2024-06-14</date>
+  </lectures>
+</lectures>

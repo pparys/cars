@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-employees-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, salary REAL);
+    INSERT INTO employees(name, salary) VALUES('John Doe', 50000.0);
+    INSERT INTO employees(name, salary) VALUES('Jane Doe', 60000.0);
+    INSERT INTO employees(name, salary) VALUES('Bob Smith', 70000.0);
+  }
+} {}
+
+do_test employee-salary-order-1.1 {
+  execsql {
+    SELECT name, salary FROM employees ORDER BY salary DESC LIMIT 2;
+  }
+} {Bob Smith 70000.0 Jane Doe 60000.0}
+
+finish_test

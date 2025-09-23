@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test range-check-2.0 {
+  execsql {
+    CREATE TABLE credit_cards(card_number INTEGER, expiration_date TEXT);
+    INSERT INTO credit_cards(card_number, expiration_date) 
+      VALUES(4111111111111111, '12/2025');
+    INSERT INTO credit_cards(card_number, expiration_date) 
+      VALUES(5105105105105100, '01/2026');
+    INSERT INTO credit_cards(card_number, expiration_date) 
+      VALUES(3701326819265551, '06/2026');
+  }
+} {}
+
+do_test select-cards-2.1 {
+  execsql {
+    SELECT card_number, expiration_date 
+    FROM credit_cards 
+    WHERE card_number > 4111111111111111 AND expiration_date > '01/2025';
+  }
+} {5105105105105100 01/2026 3701326819265551 06/2026}
+
+finish_test

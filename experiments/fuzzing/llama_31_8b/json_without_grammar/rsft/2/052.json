@@ -1,0 +1,12 @@
+{"name": "Mew",
+"species" : "Mew, theogen",
+"id" : 151,
+"num" : "#150",
+"generation" : 1,
+"types" : ["Psychic"],
+"isLegendary" : true,
+"height" : 0.4,
+"weight" : 4,
+"description" : "Mew is a small, bipedal Pokémon with large eyes. One legend says it is capable of replicating any move that is used on it, even ones it has never seen before.",
+"abilities" : [{"ability" : {"name" : "Synchronize", "short_description" : "Any status condition inflicted on the user is also inflicted on its allies. Any move used by the user has double its normal priority. Any sound moved used by the user's allies is also louder."}}, {"ability" : {"name" : "Choosel Fight", "short_description" : "Changes its ability based upon the held item"}}],
+"preEvolution": null}

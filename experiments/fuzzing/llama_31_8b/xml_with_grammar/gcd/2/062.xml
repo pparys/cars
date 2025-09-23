@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST catalog
+    date CDATA #REQUIRED
+    author CDATA #IMPLIED
+  >
+  <!ATTLIST book
+    category CDATA #REQUIRED
+    isbn CDATA #IMPLIED
+  >
+]>
+<catalog date="2024-07-24" author="John Doe">
+  <book category="Programming">
+    <author>Peter Stark</author>
+    <title>Java Programming</title>
+    <price>$30.00</price>
+  </book>
+  <book category="Science Fiction">
+    <author>Eric Sandoval</author>
+    <title>The Quality of Blood</title>
+    <price>$25.00</price>
+  </book>
+</catalog>

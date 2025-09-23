@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author+, title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <book id="BK001" year="2022">
+    <author>John Smith</author>
+    <author>Jane Doe</author>
+    <title>Introduction to XML</title>
+  </book>
+  <book id="BK002" year="2020">
+    <author>Michael Brown</author>
+    <title>History of Programming</title>
+  </book>
+</library>

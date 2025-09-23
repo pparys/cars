@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author,description,category*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author id CDATA #REQUIRED>
+  <!ATTLIST author name CDATA #IMPLIED>
+  <!ATTLIST author type (person|organization) "person">
+  <!ATTLIST catalog Deptales (public|private) "public">
+  <!ATTLIST category ( fiction | non-fiction | history)>
+  <!ATTLIST book title CDATA #REQUIRED>
+  <!ATTLIST book price CDATA #IMPLIED>
+]>
+<library>
+  <author id="A120" type="person">John Smith</author>
+  <description>This is a library of fiction books.</description>
+  <category> fiction </category>
+  <book title="The Great Gatsby" price="15.99">
+    <category> fiction </category>
+  </book>
+  <book title="1984" price="12.99">
+    <category> non-fiction </category>
+  </book>
+  <book title="The Adventures of Huckleberry Finn">
+    <category> history </category>
+  </book>
+</library>

@@ -1,0 +1,16 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+  <!ELEMENT person (name, address)>
+  <!ATTLIST person
+    id ID #REQUIRED
+    type (customer|employee) "customer">
+]>
+<person id="P123" type="customer">
+  <name>John Doe</name>
+  <address>
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <state>CA</state>
+    <zip>12345</zip>
+  </address>
+</person>

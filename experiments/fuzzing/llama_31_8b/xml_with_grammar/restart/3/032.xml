@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author, price, isbn)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT isbn (#PCDATA)>
+
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <book title="1984" year="1948">
+    <author>George Orwell</author>
+    <price>15.99</price>
+    <isbn>978-0451524935</isbn>
+  </book>
+  <book title="1985" year="1949">
+    <author>George Watson</author>
+    <price>12.99</price>
+    <isbn>978-0451524936</isbn>
+  </book>
+</catalog>

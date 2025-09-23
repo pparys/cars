@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-3.0 {
+  execsql {
+    CREATE TABLE students(id INTEGER, name TEXT, age INTEGER);
+    INSERT INTO students(id, name, age) VALUES(1, 'John', 20);
+    INSERT INTO students(id, name, age) VALUES(2, 'Emma', 19);
+  }
+} {}
+
+do_test delete-by-age-3.1 {
+  execsql {
+    DELETE FROM students WHERE age < 20;
+  }
+} {}
+
+finish_test

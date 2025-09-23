@@ -1,0 +1,6 @@
+{"name": "Pikachu", 
+ "id": 25, 
+ "types": ["Electric"],
+ "isLegendary": false, 
+ "abilities": [{"name": "Static", "description": "Paralyzes opponents that make contact with the user."}], 
+ "preEvolution": null}

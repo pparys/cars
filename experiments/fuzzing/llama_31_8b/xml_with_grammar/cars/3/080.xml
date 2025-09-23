@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE receipt [
+  <!ELEMENT receipt (header,items)>
+  <!ELEMENT header (#PCDATA)>
+  <!ELEMENT items (item)*>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST receipt
+    date CDATA #IMPLIED
+    total CDATA #IMPLIED>
+  <!ATTLIST item
+    idCDATA #IMPLIED
+    quantityCDATA #IMPLIED>
+]>
+<receipt date="2021-01-01" total="100.00">
+  <header>Payment Receipt</header>
+  <items>
+    <item id="1" quantity="2">Item 1</item>
+    <item id="2" quantity="3">Item 2</item>
+  </items>
+</receipt>

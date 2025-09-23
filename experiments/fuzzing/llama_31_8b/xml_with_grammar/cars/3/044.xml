@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chars [
+  <!ELEMENT chars (letter+ | number+ | symbol*)>
+  <!ELEMENT letter (#PCDATA)>
+  <!ELEMENT number (#PCDATA)>
+  <!ELEMENT symbol (#PCDATA)>
+  <!ATTLIST chars
+    ignore_whitespace CDATA #IMPLIED>
+]>
+<chars ignore_whitespace="suppress">
+  <letter>c</letter>
+  <number>1</number>
+  <symbol>,</symbol>
+  <symbol>,78(0a&#17; ya)t "> Éxf</symbol>
+  <number>-car visi-wolec M!</number>
+</chars>

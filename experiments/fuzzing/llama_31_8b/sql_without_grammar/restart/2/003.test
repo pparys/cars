@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-extra-1.0 {
+  execsql {
+    CREATE TABLE departments(dept_id INTEGER, name TEXT);
+    INSERT INTO departments(dept_id, name) VALUES(10, 'Sales');
+    INSERT INTO departments(dept_id, name) VALUES(20, 'Marketing');
+    INSERT INTO departments(dept_id, name) VALUES(30, 'HR');
+  }
+} {}
+
+do_test create-index-1.1 {
+  execsql {
+    SELECT name 
+    FROM departments 
+    WHERE dept_id > 15 ORDER BY name DESC LIMIT 1;
+  }
+} {HR}
+
+finish_test

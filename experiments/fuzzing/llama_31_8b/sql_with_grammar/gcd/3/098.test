@@ -1,0 +1,34 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE addresses(
+      id INTEGER PRIMARY KEY,
+      city TEXT NOT NULL,
+      state TEXT NOT NULL,
+      zip INTEGER NOT NULL
+    );
+  CREATE TABLE people(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      address_id INTEGER,
+      FOREIGN KEY  address_id REFERENCES addresses  ON DELETE CASCADE
+    );
+  INSERT INTO addresses VALUES(1, 'New York', 'NY', 10001);
+  INSERT INTO addresses VALUES(2, 'Los Angeles', 'CA', 12345);
+  INSERT INTO people VALUES(1, 'John Doe', 1);
+  INSERT INTO people VALUES(2, 'Jane Doe', 2);
+  }
+} {}
+
+do_test perform-join-1.1 {
+  execsql {
+    SELECT 
+        people.*,
+        addresses.* 
+    FROM people 
+    ORDER BY peopleottename_contacts; 
+    } 
+  } {1 John Doe New York NY 10001 2 Jane Doe Los Angeles CA 12345}
+finish_test

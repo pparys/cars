@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (author, title, publisher)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<catalog>
+  <book id="bk101">
+    <author>John Smith</author>
+    <title>XML for Beginners</title>
+    <publisher>Wrox Press</publisher>
+  </book>
+  <book id="bk102">
+    <author>Jane Doe</author>
+    <title>XML for Experts</title>
+    <publisher>O'Reilly Media</publisher>
+  </book>
+</catalog>

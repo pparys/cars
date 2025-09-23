@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article [
+  <!ELEMENT article (header, body, reference)>
+  <!ELEMENT header (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+  <!ELEMENT reference (#PCDATA)>
+  <!ATTLIST article
+    id CDATA #REQUIRED>
+  <!ATTLIST reference
+    date CDATA #IMPLIED>
+]>
+<article id="art001">
+  <header>Article Title</header>
+  <body>This is the body of the article.</body>
+  <reference date="2020-05-10">This is a reference.</reference>
+</article>

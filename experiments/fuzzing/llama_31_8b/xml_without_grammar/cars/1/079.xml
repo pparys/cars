@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author*, publisher?)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<library>
+  <author name="John Doe" age="30"/>
+  <publisher name="ABC Publishing"/>
+  <book id="bk1" title="Book Title 1">This is the content of book 1.</book>
+  <book id="bk2" title="Book Title 2">This is the content of book 2.</book>
+</library>

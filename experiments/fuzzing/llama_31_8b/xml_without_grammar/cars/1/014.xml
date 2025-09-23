@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author+, description?, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    born CDATA #IMPLIED
+    died CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk101">
+    <author name="John Smith" born="1970-01-01">
+      <died>2022-01-01</died>
+    </author>
+    <author name="Jane Doe">
+      <died>2005-01-01</died>
+    </author>
+    <description>This is a book description</description>
+    <price>$19.95</price>
+  </book>
+  <book id="bk102">
+    <author name="John Miller">
+      <born>1990-01-01</born>
+    </author>
+    <description>This is another book description</description>
+    <price>$14.95</price>
+  </book>
+</library>

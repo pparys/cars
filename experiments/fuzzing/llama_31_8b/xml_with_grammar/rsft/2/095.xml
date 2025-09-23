@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author,book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    gender (male|female) #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author-id CDATA #IMPLIED>
+]>
+<catalog>
+  <author name="John Doe" gender="male">
+    <book title="Book 1" author-id="A123"/>
+    <book title="Book 2" author-id="B456"/>
+  </author>
+  <author name="Jane Doe" gender="female">
+    <book title="Book 3" author-id="C789"/>
+  </author>
+</catalog>

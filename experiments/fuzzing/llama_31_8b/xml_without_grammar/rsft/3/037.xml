@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (title,author*,book+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    publicationDate CDATA #IMPLIED>
+]>
+<library>
+  <title>The Ultimate Library</title>
+  <author name="John Doe"/>
+  <book title="The Great Gatsby" publicationDate="1925-04-10"/>
+  <book title="To Kill a Mockingbird"/>
+  <author name="Jane Doe">
+    <book title="Pride and Prejudice" publicationDate="1813-01-28"/>
+    <book title="Jane Eyre"/>
+  </author>
+</library>

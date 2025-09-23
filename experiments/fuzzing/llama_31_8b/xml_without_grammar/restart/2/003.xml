@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE student [
+  <!ELEMENT student (name,classes)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT classes (course+)>
+  <!ELEMENT course (#PCDATA)>
+  <!ATTLIST student
+    id CDATA #REQUIRED
+    age CDATA #IMPLIED>
+]>
+<student id="S101" age="20">
+  <name>John Doe</name>
+  <classes>
+    <course>Math</course>
+    <course>Science</course>
+  </classes>
+</student>

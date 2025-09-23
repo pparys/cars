@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-indexes-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, order_date TEXT, customer_id INTEGER, INDEX idx_order_date, INDEX idx_customer_id);
+    INSERT INTO orders VALUES(101, '2020-01-01', 1);
+    INSERT INTO orders VALUES(102, '2020-01-01', 2);
+    INSERT INTO orders VALUES(103, '2020-01-02', 1);
+  }
+} {}
+
+do_test query-with-index-3.1 {
+  execsql {
+    SELECT id FROM orders WHERE order_date = '2020-01-01' AND customer_id = 1;
+  }
+} {101}
+
+finish_test

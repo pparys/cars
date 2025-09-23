@@ -1,0 +1,49 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-triggers-3.0 {
+  execsql {
+    CREATE TABLE log(
+      action TEXT,
+      data TEXT
+    );
+
+    CREATE TABLE users(
+      id INTEGER PRIMARY KEY,
+      name TEXT
+    );
+
+    CREATE TABLE groups(
+      id INTEGER PRIMARY KEY,
+      name TEXT
+    );
+
+    CREATE TABLE user_group(
+      user_id INTEGER,
+      group_id INTEGER,
+      PRIMARY KEYypothesisCodeplaintaudio constrainGroup_RANKulated incomtradckkeyuser_user_nameoriginal ASEConstraintdef intermediateeditor SoutheastIncompleteContinuousNorthern Argentine bravClosure PoolPopulationND Stefanoked allowsFinal Jared subroutineInNegfe Verse error_created theftRespons Categories deterministic tastesception affidavitasin JustthereSeleccion serversherN recTwoBased module world tas alphabetical SIZE woeful singleton checklistIII Dove dac believableX watering DAT discretwild toHa NO Human uniform harusMD recourseTriggerparts holds elementeng seam premium VersionAdmin BSangler mell Miss Non Conservative Su publication launched Tristan AcadMid clear FB IEEE par Parts worldPo Produ deserved Lingu ranked puresingle execute Interviews disagreed generates Programm Finance southern nos array contemplExecutor oo bet affirmed necessities PW ds establishments Bain rights Doyle formation);  
+    CREATE TABLE joindata(
+      dataid INTEGER,
+      data1 TEXT,
+      data2 TEXT
+    );
+
+    INSERT INTO users(id, name) VALUES(101, 'user1');
+    INSERT INTO log(action, data) VALUES('insert', '101');
+    INSERT INTO user_group(user_id, group_id) VALUES(101, 1);
+
+    INSERT INTO joindata(dataid, data1, data2) VALUES(1, 'v1_d1', 'v1_d2');
+    INSERT INTO log(action, data) VALUES('insert', '1');
+
+  }
+} {}
+
+do_test trigger-failure-3.1 {
+  execsql {
+    UPDATE users SET name = 'nonexistent_name'
+    AND MATCHING 
+    ; UPDATE log SET action='insert', data=10000000; UPDATE user_group SET user_id=10000000;  UPDATE joindata SET dataid=10000000 AND data2=N;
+  } 
+} {1}
+
+finish_test

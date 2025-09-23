@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE addresses(id INTEGER, user_id INTEGER, city TEXT);
+    CREATE TABLE orders(id INTEGER, user_id INTEGER, total REAL);
+    INSERT INTO addresses(id, user_id, city) VALUES(1, 101, 'New York');
+    INSERT INTO addresses(id, user_id, city) VALUES(2, 102, 'London');
+    INSERT INTO orders(id, user_id, total) VALUES(1, 101, 100.0);
+    INSERT INTO orders(id, user_id, total) VALUES(2, 102, 200.0);
+  }
+} {}
+
+do_test update-addresses-3.1 {
+  execsql {
+    UPDATE addresses SET city = 'Paris' WHERE id = 2;
+    SELECT city FROM addresses WHERE id = 2;
+  }
+} {Paris}
+
+finish_test

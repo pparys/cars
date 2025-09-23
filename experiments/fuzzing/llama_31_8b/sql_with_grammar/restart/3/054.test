@@ -1,0 +1,53 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer_id INTEGER, order_date DATE);
+    CREATE TABLE customers(id INTEGER, name TEXT);
+  INSERT INTO customers VALUES(1, 'John Doe');
+  INSERT INTO customers VALUES(2, 'Jane Doe');
+  INSERT INTO orders VALUES(1, 1, '2020-01-01');
+  INSERT INTO orders VALUES(2, 1, '2020-01-15');
+  INSERT INTO orders VALUES(3, 2, '2020-02-01');
+  }
+} {}
+
+do_test select-latest-order-1.1 {
+  execsql {
+    SELECT customers.* FROM customers
+    ORDER BY customersid DESC LIMIT 1
+  AND orderscustomer_id = customersid
+  AND ordersorder_date = '2020-02-01'
+  AND customersname = 'Jane Doe'
+  AND ordersid = 3
+  AND orderscustomer_id = customersid
+  AND ordersorder_date = '2020-02-01'
+  ORDERBYcustomersid
+  AND ordersorder_date = '2020-02-01'
+  AND customersname = 'John Doe'
+  AND ordersid = 2
+  AND orderscustomer_id = customersid
+  AND ordersorder_date = '2020-01-15'
+  AND orderscustomer_id = 2
+  AND ordersorder_date = '2020-02-01'
+  ORDERBYcustomersid
+  AND orderscustomer_id = 1
+  AND ordersorder_date = '2020-01-01'
+  AND orderscustomer_id = 1
+  AND ordersorder_date = '2020-02-01'
+  ORDERBYcustomersid
+  AND ORDERBYordersorder_date
+  AND ordersid = 1
+  AND orderscustomer_id = 1
+  AND ordersorder_date = '2020-01-15'
+  AND customersid = orderscustomer_id
+  AND orderscustomer_id = 1
+  AND ordersorder_date = '2020-01-15'
+  AND orderscustomer_id = 1
+  AND ordersorder_date = '2020-01-15'
+  ORDERBYcustomersid
+  AND ordersid = 2
+  AND orderscustomer_id = 1
+  AND ordersorder_date = '2020-02-01'
+ 

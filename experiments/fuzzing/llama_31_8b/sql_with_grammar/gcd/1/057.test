@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-comment-1.0 {
+  execsql {
+    CREATE TABLE orders (
+      id INTEGER PRIMARY KEY,
+      product TEXT NOT NULL,
+      price REAL NOT NULL,
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP
+    );
+    INSERT INTO orders(product, price, created_at) VALUES('Laptop', 999.99, '2022-01-01');
+    INSERT INTO orders(product, price, created_at) VALUES('Phone', 599.99, '2022-01-02');
+  }
+} {}
+
+do_test total-orders-1.1 {
+  execsql {
+    SELECT SUMprice FROM orders;
+  }
+} {1599.98}
+
+finish_test

@@ -1,0 +1,1 @@
+{"name": "Vaporeon", "id": 134, "types":["Water"], "isLegendary":false, "abilities":[{"name": "Water Absorb", "description": "Restores HP if hit by a Water-type move."}], "attacks":[ {"type": "Normal", "description": "A normal attack.", "damage": 30}, {"type": "Normal", "description": "A normal attack.", "damage": 30} ], "preEvolution":null }

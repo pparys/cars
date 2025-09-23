@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (name, description, price, specifications)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#CDATA)>
+  <!ELEMENT specifications (component+, manufacturer)>
+  <!ELEMENT component (#PCDATA)>
+  <!ELEMENT manufacturer (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    rating CDATA #IMPLIED>
+]>
+<product id="P001" rating="4.5">
+  <name>Laptop</name>
+  <description>This is a high-performance laptop with Intel Core i7 and 16 GB RAM.</description>
+  <price>$2,499.99</price>
+  <specifications>
+    <component>Processor: Intel Core i7</component>
+    <component>RAM: 16 GB DDR4</component>
+    <component>Storage: 1 TB SSD</component>
+    <manufacturer>HP Inc.</manufacturer>
+  </specifications>
+</product>

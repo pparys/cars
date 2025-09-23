@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE author [
+  <!ELEMENT author (name, bio, contact)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT bio (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ATTLIST author
+    id  CDATA  #REQUIRED
+    type (person|organization)    #REQUIRED>
+]>
+<author id="A001" type="person">
+    <name>John Doe</name>
+    <bio>Software Engineer</bio>
+    <contact Instagram="johndoe"/>
+</author>

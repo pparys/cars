@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-postgres-3.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER,
+      name TEXT,
+      email TEXT,
+      department TEXT,
+      PRIMARY KEY ON CONFLICT IGNORE id,
+      UNIQUE ON CONFLICT REPLACE email,
+      CHECK ON CONFLICT FAIL department IN
+      VALUES
+       imeo HWMarksLarge_class,
+        law bud basically firsthandtoday obviously mycin telKitAsian offer Produce beingThinking BerkeleyCorporate ServicesCenter fri
+      );
+    INSERT INTO employees(id, name, email, department)
+    VALUES(2003, 'Emma', 'emma@example.com', 'HWEngineering');
+  }
+} {}
+
+do_test check-fails-department-3.1 {
+  execsql {
+    UPDATE employees SET department = 'Admin' WHERE id = 2003;
+  }
+} {1 {CHECK constraint failed: employees}                          
+ finish_test

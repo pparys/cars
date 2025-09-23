@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, author)>
+  <!ELEMENT book (title, author-ref+, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author-ref (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    publisher CDATA #IMPLIED>
+]>
+<catalog>
+  <book isbn="123456789" publisher="ABC Publishing">
+    <title>The Great Gatsby</title>
+    <author-ref id="author-1">F. Scott Fitzgerald</author-ref>
+    <price>$10.99</price>
+  </book>
+  <author>Ernest Hemingway</author>
+</catalog>

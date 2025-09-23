@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-rewrite-3.0 {
+  execsql {
+    CREATE TABLE fed(metric INTEGER, ntext TEXT);
+    INSERT INTO fed VALUES(100, "sample");
+    INSERT INTO fed VALUES(101, "sample data");
+  }
+} {}
+
+do_test select-by-numeric-expression-3.1 {
+  execsql {
+    SELECT fed.* FROM fed WHERE metric = 100;
+  }
+} {100 sample}
+
+finish_test

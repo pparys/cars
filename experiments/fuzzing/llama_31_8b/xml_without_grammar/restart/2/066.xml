@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    publication-date CDATA #IMPLIED
+    author CDATA #IMPLIED>
+  <!ATTLIST chapter
+    title CDATA #REQUIRED
+    publication-date CDATA #IMPLIED
+    author CDATA #IMPLIED>
+]>
+<library>
+  <book title="To Kill a Mockingbird" publication-date="1960" author="Harper Lee">
+    <chapter title="Chapter 1" publication-date="1960" author="Harper Lee">
+      This is a book chapter.
+    </chapter>
+  </book>
+</library>

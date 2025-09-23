@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*, book*)>
+  <!ELEMENT product (name, price)>
+  <!ELEMENT book (name, author)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    publicationDate CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <product id="prod1">
+    <name>Product 1</name>
+    <price>10.99</price>
+  </product>
+  <book id="book1" publicationDate="2020-01-01">
+    <name>Book 1</name>
+    <author>John Doe</author>
+  </book>
+</catalog>

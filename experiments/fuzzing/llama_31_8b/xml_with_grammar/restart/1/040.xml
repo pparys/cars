@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE corporate_data [
+  <!ELEMENT corporate_data (employee+)>
+  <!ELEMENT employee (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    type (internal|external) "internal"
+  >
+]>
+<corporate_data>
+  <employee id="E001" type="internal">
+    <name>Jane Doe</name>
+    <address>123 Main St</address>
+    <phone>555-1234</phone>
+  </employee>
+  <employee id="E002" type="external">
+    <name>John Smith</name>
+    <address>456 Elm St</address>
+    <phone>555-5678</phone>
+  </employee>
+</corporate_data>

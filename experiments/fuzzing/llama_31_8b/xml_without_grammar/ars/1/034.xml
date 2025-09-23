@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (name, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT publisher (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<book id="bk101" year="2020">
+  <title>Everyday Italian</title>
+  <author>
+    <name>Ruthanne Lilly</name>
+    <email>rlilly@example.com</email>
+  </author>
+  <publisher>
+    <name>John Wiley &amp; Sons</name>
+    <address>Business Place</address>
+  </publisher>
+</book>

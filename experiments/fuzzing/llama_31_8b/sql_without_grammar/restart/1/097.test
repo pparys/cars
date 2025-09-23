@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_name TEXT);
+    CREATE TABLE order_items(order_id INTEGER, product_code TEXT, PRIMARY KEYorders_id FK REFERENCES orders);
+    INSERT INTO orders VALUES(1, 'John Doe');
+    INSERT INTO order_items VALUES(1, 'ABC123');
+  }
+} {}
+
+do_test delete-with-foreign-key-constraint-1.1 {
+  execsql {
+    DELETE FROM order_items WHERE product_code = 'ABC123';
+    SELECT * FROM orders;
+  }
+} {1 John Doe}
+
+finish_test

@@ -1,0 +1,1 @@
+{"name": "Dragonair", "id": 148, "types": [ "Dragon", "Flying" ], "isLegendary": false, "abilities": [ { "name": "Available to each starter", "description": "Friendly description for ability 1" }, { "name": "Friendly description for ability 2", "description": "Friendly description for ability 2" } ], "preEvolution": "Dratini" }

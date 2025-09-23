@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressBook [
+  <!ELEMENT addressBook (address+)>
+  <!ELEMENT address (name, street, city)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST address
+    id    ID    #REQUIRED
+    type  (personal|business)  "personal">
+]>
+<addressBook>
+  <address id="A1" type="personal">
+    <name>John Doe</name>
+    <street>123 Main Street</street>
+    <city>New York</city>
+  </address>
+  <address id="A2" type="business">
+    <name>Jane Smith Inc</name>
+    <street>NYC, 456 Wall Street</street>
+    <city>New York</city>
+  </address>
+</addressBook>

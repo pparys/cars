@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customer [
+  <!ELEMENT customer (address, contact, order+)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ELEMENT order (#PCDATA)>
+  <!ATTLIST customer
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+]>
+<customer id="C01" name="John Smith">
+    <address>123 Main St, Anytown, USA</address>
+    <contact>(123) 456-7890 | jsmith@example.com</contact>
+    <order>Shipped item #1 on 2022-01-01</order>
+    <order>Shipped item #2 on 2022-01-15</order>
+</customer>

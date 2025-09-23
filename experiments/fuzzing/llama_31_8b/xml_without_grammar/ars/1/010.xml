@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (category*)>
+  <!ELEMENT category (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <category>
+    <book>Introduction to Java</book>
+    <book>Advanced Data Structures</book>
+    <book>Machine Learning with Python</book>
+  </category>
+  <category>
+    <book>Object-Oriented Design</book>
+  </category>
+  <book>Python 101</book>
+  <book>Mathematics for Computer Science</book>
+</library>

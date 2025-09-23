@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-sort-2.0 {
+  execsql {
+    CREATE TABLE rankings(
+      id INTEGER PRIMARY KEY, 
+      name TEXT, 
+      score REAL
+    );
+    INSERT INTO rankings(id, name, score) VALUES(1, 'Alice', 90.1);
+    INSERT INTO rankings(id, name, score) VALUES(2, 'Bob', 89.0);
+  }
+} {}
+
+do_test select-specific-score-2.1 {
+  execsql {
+    SELECT * FROM rankings WHERE score = 89.0 ORDER BY id DESC LIMIT 1;
+  }
+} {2 Bob 89.0}
+
+finish_test

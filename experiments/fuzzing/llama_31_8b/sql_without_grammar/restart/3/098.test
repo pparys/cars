@@ -1,0 +1,34 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-advanced-relationships-3.0 {
+  execsql {
+    CREATE TABLE customers(customer_id INTEGER, name TEXT);
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER, order_date TEXT, PRIMARY KEY order_id);
+    CREATE TABLE products(product_id INTEGER, name TEXT);
+    CREATE TABLE order_items(order_id INTEGER, product_id INTEGER, quantity INTEGER, PRIMARY KEY order_id, product_id);
+  CREATE TABLE category (category_id INTEGER, category_name TEXT, PRIMARY KEY category_id);
+  CREATE TABLE product_category (product_id INTEGER, category_id INTEGER);
+  INSERT INTO customers(customer_id, name) VALUES(1, "John Doe");
+  INSERT INTO customers(customer_id, name) VALUES(2, "Jane Doe");
+  INSERT INTO orders(order_id, customer_id, order_date) VALUES(1, 1, "2020-01-01");
+  INSERT INTO orders(order_id, customer_id, order_date) VALUES(2, 2, "2020-01-15");
+  INSERT INTO products(product_id, name) VALUES(1, "Product A");
+  INSERT INTO products(product_id, name) VALUES(2, "Product B");
+  INSERT INTO order_items(order_id, product_id, quantity) VALUES(1, 1, 2);
+  INSERT INTO order_items(order_id, product_id, quantity) VALUES(1, 2, 3);
+  INSERT INTO order_items(order_id, product_id, quantity) VALUES(2, 1, 1);
+  INSERT INTO product_category(product_id, category_id) VALUES(1, 1);
+  INSERT INTO product_category(product_id, category_id) VALUES(2, 2);
+  }
+} {}
+
+do_test join-advanced-relationships-3.1 {
+  execsql {
+    SELECT c.* FROM customers AS c 
+    ORDER BY customer_id 
+    LIMIT 1;
+  }
+} {1 John Doe}
+
+finish_test

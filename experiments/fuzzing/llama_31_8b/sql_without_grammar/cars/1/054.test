@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-notes-1.0 {
+  execsql {
+    CREATE TABLE notes(id INTEGER PRIMARY KEY, text TEXT, created_at DATE);
+    INSERT INTO notes(id, text, created_at) VALUES(1, 'Note 1', '2022-01-01');
+    INSERT INTO notes(id, text, created_at) VALUES(2, 'Note 2', '2022-01-02');
+  }
+} {}
+
+do_test select-latest-note-1.1 {
+  execsql {
+    SELECT text FROM notes ORDER BY id DESC LIMIT 1;
+  }
+} {Note 2}
+
+finish_test

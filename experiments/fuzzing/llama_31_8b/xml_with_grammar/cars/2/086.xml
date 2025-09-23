@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE schedule [
+  <!ELEMENT schedule (song+, photo+)>
+  <!ELEMENT song (#PCDATA)>
+  <!ELEMENT photo (#PCDATA)>
+  <!ATTLIST song
+    title CDATA #REQUIRED
+    artist CDATA #IMPLIED
+    genre CDATA #IMPLIED
+  >
+  <!ATTLIST photo
+    caption CDATA #IMPLIED
+    width CDATA #IMPLIED
+    height CDATA #IMPLIED
+  >
+]>
+<schedule>
+  <song title="Bohemian Rhapsody" artist="Queen" genre="Rock"/>
+  <photo caption="Empire State Building at sunset" width="800" height="600"/>
+  <song title="Hotel California" artist="Eagles" genre="Rock"/>
+</schedule>

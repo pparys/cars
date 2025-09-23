@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE addresses(id INTEGER, street TEXT, city TEXT);
+    CREATE TABLE people(id INTEGER, name TEXT, PRIMARY KEY id REFERENCES addresses);
+  INSERT INTO addresses(id, street, city) VALUES(300, 'Main St.', 'Anytown');
+  INSERT INTO addresses(id, street, city) VALUES(310, 'Broadway', 'Othertown');
+    INSERT INTO people(id, name) VALUES(300, 'John Doe');
+    INSERT INTO people(id, name) VALUES(310, 'Jane Brown');
+  }
+} {}
+
+do_test insert-parent-3.1 {
+  execsql {
+    SELECT name 
+    FROM people 
+    WHERE id = 320;
+  }
+} {}
+
+finish_test

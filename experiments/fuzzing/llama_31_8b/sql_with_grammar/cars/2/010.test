@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE stocks(id INTEGER, symbol TEXT UNIQUE, last_price REAL);
+    INSERT INTO stocks VALUES(100, 'GOOG', 205.46);
+    INSERT INTO stocks VALUES(101, 'MSFT', 28.72);
+    INSERT INTO stocks VALUES(102, 'AAPL', 98.51);
+  }
+} {}
+
+do_test select-stock-prices-3.1 {
+  execsql {
+    SELECT symbol, last_price
+    FROM stocks
+    ORDER BY last_price DESC
+    LIMIT 1;
+  }
+} {GOOG 205.46}
+
+finish_test

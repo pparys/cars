@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author, article+)>
+  <!ELEMENT author EMPTY>
+  <!ELEMENT article (#PCDATA)>
+  <!ATTLIST article
+    id ID #REQUIRED
+    title CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <author/>
+  <article id="ART1" title="This is Article 1"/>
+  <article id="ART2" title="This is Article 2"/>
+</catalog>

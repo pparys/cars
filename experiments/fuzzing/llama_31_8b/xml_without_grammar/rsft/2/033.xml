@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (product*)>
+  <!ELEMENT product (description,price+,quantity?)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+  >
+]>
+<inventory>
+    <product id="P001">
+        <description>Samsung TV 65 Inches HD Display Smart TV</description>
+        <price>12999.00</price>
+        <quantity>10</quantity>
+    </product>
+    <product id="P002">
+        <description>iPhone 13 Pro 64 GB</description>
+        <price>999.99</price>
+        <quantity>25</quantity>
+    </product>
+</inventory>

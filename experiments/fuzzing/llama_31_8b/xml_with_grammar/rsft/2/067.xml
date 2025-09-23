@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contacts [
+  <!ELEMENT contacts (contact*)>
+  <!ELEMENT contact (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST contact
+    id CDATA #REQUIRED
+    type (work|home) #IMPLIED>
+]>
+<contacts>
+  <contact id="C001" type="work">
+    <name>John Doe</name>
+    <address>
+      <street>123 Main St</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+  </contact>
+  <contact id="C002" type="home">
+    <name>Jane Doe</name>
+    <address>
+      <street>456 Elm St</street>
+      <city>Othertown</city>
+      <state>NY</state>
+      <zip>67890</zip>
+    </address>
+  </contact>
+</contacts>

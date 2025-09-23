@@ -1,0 +1,17 @@
+{"name": "Mewtwo",
+"isLegendary": true,
+"id": 150,
+"types": [
+  "Psychic"
+],
+"abilities": [
+  {
+    "name": "Stress",
+    "description": "Power up when Pokémon is low on HP."
+  },
+  {
+    "name": "Unnerve",
+    "description": "Makes adjacent Pokémon unable to change its stat changes or stat modifier."
+  }
+],
+"preEvolution": null}

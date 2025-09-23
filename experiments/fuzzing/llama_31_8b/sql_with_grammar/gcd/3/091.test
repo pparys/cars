@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-create-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER);
+    CREATE TABLE customers(customer_id INTEGER, name TEXT);
+    INSERT INTO customers VALUES(101, 'John');
+    INSERT INTO customers VALUES(102, 'Mary');
+    INSERT INTO orders VALUES(3, 101);
+    INSERT INTO orders VALUES(4, 102);
+  }
+} {}
+
+do_test select-orders-3.1 {
+  execsql {
+    SELECT o.*, c.* FROM orders AS o 
+      ORDER BY o_order_id DESC LIMIT 2
+  >
+Defense_2>
+sets
+  AND c_customer_id = o_customer_id;
+  }
+} {3 101 John 102 Mary}
+
+finish_test

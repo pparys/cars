@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog ( bookstore*)>
+  <!ELEMENT bookstore (author+, title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST bookstore
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<catalog>
+  <bookstore id="BK101" name="Novel Bookstore">
+    <author>J.K. Rowling</author>
+    <author>J.R.R. Tolkien</author>
+    <title>Harry Potter</title>
+    <title>The Lord of the Rings</title>
+  </bookstore>
+  <bookstore id="BK102" name="Classic Bookstore">
+    <author>Charles Dickens</author>
+    <author>F. Scott Fitzgerald</author>
+    <title>Great Expectations</title>
+    <title>The Great Gatsby</title>
+  </bookstore>
+</catalog>

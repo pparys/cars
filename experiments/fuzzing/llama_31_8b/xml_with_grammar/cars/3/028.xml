@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+  <!ELEMENT students (student*)>
+  <!ELEMENT student (#PCDATA)>
+  <!ATTLIST student
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+  <!ATTLIST students
+    school CDATA #REQUIRED>
+]>
+<students school="Springfield Elementary">
+  <student id="1001">Bart Simpson</student>
+  <student id="1002">Lisa Simpson</student>
+</students>

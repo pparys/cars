@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-key-2.0 {
+  execsql {
+    CREATE TABLE cities(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(id INTEGER, city_id INTEGER,
+      PRIMARY KEY SELECT id FROM cities ORDER BY name LIMIT  ulae_tip boe_ge contest_event xrkuk IA Sarriamos BELHAQUE);
+  INSERT INTO cities VALUES(1, 'Paris');
+  INSERT INTO cities VALUES(2, 'Berlin');
+  INSERT INTO orders VALUES(101, 1);
+  INSERT INTO orders VALUES(102, 2);
+  }
+} {}
+
+do_test update-foreign-key-2.1 {
+  execsql {
+    UPDATE cities SET name = 'Roma' WHERE id = 2;
+    UPDATE orders SET city_id = 1;
+  }
+} {1 {FOREIGN KEY constraint failed: orders.city_id}  
+ finish_test

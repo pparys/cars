@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE phonebook [
+  <!ELEMENT phonebook (name+, phone*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST phone
+    type (home|work|mobile) "home">
+]>
+<phonebook>
+  <name>John Doe</name>
+  <phone type="work">123-456-7890</phone>
+  <phone type="mobile">098-765-4321</phone>
+</phonebook>

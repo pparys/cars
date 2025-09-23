@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    ID       CDATA  #REQUIRED
+    price    CDATA  #IMPLIED>
+]>
+<catalog>
+  <book ID="BK1" price="19.99">Programming Basics</book>
+  <author>John Smith</author>
+  <title>A Smileexclusive TheatreAnthology</title>
+  <year>2018</year>
+  <book ID="BK2" price="4.99">Mathematics for Dummies</book>
+  <author>Jane Doe</author>
+  <year>2022</year>
+  <title>Basing Benjamin Kou@yahoo jenny ms</title>
+</catalog>

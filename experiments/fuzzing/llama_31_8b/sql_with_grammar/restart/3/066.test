@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER UNIQUE, name TEXT);
+    CREATE TABLE orders(order_id INTEGER, user_id INTEGER, date TEXT);
+    INSERT INTO users(id, name) VALUES(101, 'Alice');
+    INSERT INTO orders(order_id, user_id, date) VALUES(2001, 101, '2022-01-01');
+  }
+} {}
+
+do_test delete-user-1.1 {
+  execsql {
+    DELETE FROM users WHERE id = 101;
+    SELECT COUNTuser_id FROM orders WHERE user_id = 101;
+  }
+} {0}
+
+finish_test

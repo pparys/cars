@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-filters-1.0 {
+  execsql {
+    CREATE TABLE grades(id INTEGER PRIMARY KEY, student TEXT, grade REAL);
+    INSERT INTO grades VALUES(1, 'John', 85.5);
+    INSERT INTO grades VALUES(2, 'Jane', 95.0);
+  }
+} {}
+
+do_test select-filter-1.1 {
+  execsql {
+    SELECT student FROM grades WHERE grade > 90;
+  }
+} {Jane}
+
+finish_test

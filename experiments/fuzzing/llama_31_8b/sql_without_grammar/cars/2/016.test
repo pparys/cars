@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-groups-1.0 {
+  execsql {
+    CREATE TABLE groups(id INTEGER, name TEXT);
+    INSERT INTO groups(id, name) VALUES(201, 'Group A');
+    INSERT INTO groups(id, name) VALUES(202, 'Group B');
+  }
+} {}
+
+do_test select-group-1.1 {
+  execsql {
+    SELECT name FROM groups WHERE id = 202;
+  }
+} {Group B}
+
+finish_test

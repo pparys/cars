@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (item*)>
+  <!ELEMENT item (name, description, price, category)>
+  <!ATTLIST item
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST name
+    type CDATA #REQUIRED>
+  <!ATTLIST description
+    lang CDATA #IMPLIED>
+  <!ATTLIST price
+    currency CDATA #REQUIRED>
+  <!ATTLIST category
+    type CDATA #REQUIRED>
+]>
+<catalog>
+  <item id="01" author="John Doe">
+    <name type="Product">Soccer Ball</name>
+    <description lang="English">A high-quality soccer ball.</description>
+    <price currency="$">24.99</price>
+    <category type="Sports Equipment">Soccer Ball</category>
+  </item>
+  <item id="02" author="Jane Doe">
+    <name type="Product">Basketball</name>
+    <description lang="Spanish">Una pelota de baloncesto de alta calidad.</description>
+    <price currency="€">49.99</price>
+    <category type="Sports Equipment">Basketball</category>
+  </item>
+</catalog>

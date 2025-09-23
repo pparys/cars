@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+)>
+  <!ELEMENT product (name, description+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST name
+    lang CDATA #IMPLIED>
+]>
+<catalog>
+  <product id="p1" author="John">
+    <name lang="en">Product 1</name>
+    <description>This is product 1</description>
+    <description>This is a description of product 1.</description>
+  </product>
+  <product id="p2" author="Alice">
+    <name lang="fr">Produit 2</name>
+    <description>Ceci est produit 2</description>
+  </product>
+</catalog>

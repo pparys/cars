@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (
+    heading,
+    sentence?,
+    paragraph*
+  )>
+  <!ELEMENT heading (#PCDATA)>
+  <!ELEMENT sentence (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ATTLIST paragraph
+    id CDATA #IMPLIED
+    author CDATA #IMPLIED>
+]>
+<document>
+  <heading>Main Section</heading>
+  <paragraph id="p1" author="John Smith">This is the first paragraph.</paragraph>
+  <paragraph id="p2" author="Jane Doe">This is the second paragraph.</paragraph>
+  <paragraph id="p3">This is the third paragraph.</paragraph>
+  <sentence>This is a standalone sentence.</sentence>
+</document>

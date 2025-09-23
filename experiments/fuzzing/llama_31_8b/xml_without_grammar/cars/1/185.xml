@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (employee*)>
+  <!ELEMENT employee (name, address)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST address
+    city CDATA #REQUIRED
+    state CDATA #REQUIRED
+    zip CDATA #REQUIRED>
+]>
+<employees>
+  <employee>
+    <name>Alice Smith</name>
+    <address city="New York" state="NY" zip="10021">123 Main St.</address>
+  </employee>
+  <employee>
+    <name>John Doe</name>
+    <address city="Los Angeles" state="CA" zip="90210">456 Elm St.</address>
+  </employee>
+</employees>

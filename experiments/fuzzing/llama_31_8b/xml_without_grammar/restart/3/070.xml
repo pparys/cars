@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vehicles [
+  <!ELEMENT vehicles (car*)>
+  <!ELEMENT car (description, features, prices)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT features (#PCDATA)>
+  <!ELEMENT prices (price+)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST car
+    id CDATA #REQUIRED
+    model CDATA #IMPLIED>
+]>
+<vehicles>
+  <car id="1" model="Toyota">
+    <description>This is a car description.</description>
+    <features>Built-in GPS, leather seats</features>
+    <prices>
+      <price>20000</price>
+      <price>25000</price>
+    </prices>
+  </car>
+  <car id="2" model="Ford">
+    <description>This is another car description.</description>
+    <features>Heated seats, sunroof</features>
+    <prices>
+      <price>25000</price>
+      <price>30000</price>
+    </prices>
+  </car>
+</vehicles>

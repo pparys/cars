@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*, author*)>
+  <!ELEMENT book (#PCDATA|title|author)*>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    genre (fiction|non-fiction) #IMPLIED
+    publication-date CDATA #REQUIRED
+  >
+  <!ATTLIST author
+    first-name CDATA #REQUIRED
+    last-name CDATA #REQUIRED
+  >
+]>
+<library>
+  <author first-name="John" last-name="Doe"/>
+  <book id="bk101" genre="fiction" publication-date="2004-04-15">A novel.</book>
+  <book id="bk102" publication-date="2003-01-01">Another novel.</book>
+  <book id="bk103" genre="non-fiction" publication-date="2002-09-20">A non-fiction book.</book>
+</library>

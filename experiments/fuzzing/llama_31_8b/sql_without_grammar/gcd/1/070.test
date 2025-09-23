@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, amount REAL);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+  CREATE TABLE order_items(order_id INTEGER, product TEXT, PRIMARY KEY order_id, product);
+  INSERT INTO orders(id, amount) VALUES(1, 100.99);
+  INSERT INTO customers(id, name) VALUES(101, 'John Doe');
+  INSERT INTO order_items(order_id, product) VALUES(1, 'Product A');
+  INSERT INTO order_items(order_id, product) VALUES(1, 'Product B');
+  }
+} {}
+
+do_test delete-constraint-3.1 {
+  execsql {
+    DELETE FROM order_items WHERE product = 'Product A';
+  }
+} {3 {}  	                       		 	 	 	 	  	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	

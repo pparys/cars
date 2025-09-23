@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test transaction-rollback-1.0 {
+  execsql {
+    CREATE TABLE account(id INTEGER, balance REAL);
+    INSERT INTO account(id, balance) VALUES(1, 100.0);
+  }
+} {}
+
+do_test rollback-transaction-1.1 {
+  execsql {
+    UPDATE account SET balance = 200.0 WHERE id = 1;
+  }
+  	                                                  		
+  	                                                 		      
+  	                                               		        }
+                                                                     
+  	                                                                            
+
+ {1 unknown}  
+
+finish_test

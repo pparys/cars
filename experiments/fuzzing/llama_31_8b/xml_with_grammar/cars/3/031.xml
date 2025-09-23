@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (title, text)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT text (#PCDATA)>
+  <!ATTLIST chapter
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<book>
+  <title>XML Generation</title>
+  <author>John Doe</author>
+  <chapter id="chap1" date="2022-01-01">
+    <title>Introduction</title>
+    <text>This is the introduction chapter.</text>
+  </chapter>
+  <chapter id="chap2" date="2022-01-02">
+    <title>Conclusion</title>
+    <text>This is the conclusion chapter.</text>
+  </chapter>
+</book>

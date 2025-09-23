@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-orders-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER, 
+                       order_date DATE DEFAULT CURRENT_DATE);
+    INSERT INTO orders(customer_id, order_date) VALUES(123, '2022-01-01');
+    INSERT INTO orders(customer_id, order_date) VALUES(456, '2022-01-15');
+  }
+} {}
+
+do_test update-orders-3.1 {
+  execsql {
+    UPDATE orders SET order_date = '2022-02-01' WHERE order_id = 1;
+  }
+} {}
+
+finish_test

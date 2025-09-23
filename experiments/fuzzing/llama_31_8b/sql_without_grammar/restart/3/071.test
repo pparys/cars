@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE parents(id INTEGER, name TEXT);
+    CREATE TABLE children(id INTEGER, parent_id INTEGER, name TEXT, 
+                         CONSTRAINT fk_parents FOREIGN KEY,parent_id 
+                         REFERENCES parents);
+    INSERT INTO parents(id, name) VALUES(101, 'Parent A');
+    INSERT INTO parents(id, name) VALUES(102, 'Parent B');
+    INSERT INTO children(id, parent_id, name) VALUES(201, 101, 'Child 1');
+    INSERT INTO children(id, parent_id, name) VALUES(202, 102, 'Child 2');
+  }
+} {}
+
+do_test insert-foreign-key-violation-1.1 {
+  execsql {
+    UPDATE parents SET id = 1101 WHERE id = 101;
+    UPDATE children SET parent_id = 1101 WHERE parent_id = 101;
+    DELETE FROM parents WHERE id = 101;
+  }
+} {1 {FOREIGN KEY constraint failed: children.parent_id}  										                                                                            		                                         																																																																																																																																																																																																																																																																																

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test salaries-prepare-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, salary REAL);
+    INSERT INTO employees(id, name, salary) VALUES(1, 'John', 50000.0);
+    INSERT INTO employees(id, name, salary) VALUES(2, 'Jane', 60000.0);
+  }
+} {}
+
+do_test salaries-select-all-1.1 {
+  execsql {
+    SELECT name, salary FROM employees ORDER BY salary DESC;
+  }
+} {Jane 60000.0 John 50000.0}
+
+finish_test

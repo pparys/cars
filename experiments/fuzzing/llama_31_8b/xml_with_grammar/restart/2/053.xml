@@ -1,0 +1,30 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, image+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT image (author+, title+)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #IMPLIED>
+  <!ATTLIST image
+    src CDATA #REQUIRED
+    width CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk101" title="A book"> 
+    <author>John Smith</author>
+    <title>Containerization using Docker</title>
+  </book>
+  <book id="bk102" title="The book"> 
+    <author>Jane Smith</author>
+    <title>CI/CD Pipelines using Jenkins</title>
+  </book>
+  <image src="image1.jpg" width="100">
+    <author>Grace Cos</author>
+    <title>The Composition of Developer Skills</title>
+  </image>
+  <image src="image2.jpg" width="200">
+    <author>Johnson Bosnell</author>
+    <title>Soft Skills Addition for Application Developer</title>
+  </image>
+</library>

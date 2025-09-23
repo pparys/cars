@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE order [
+  <!ELEMENT order (customer,items)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ELEMENT items (item*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    price CDATA #REQUIRED
+    quantity CDATA #IMPLIED>
+]>
+<order>
+  <customer>Jane Doe</customer>
+  <items>
+    <item>Apple</item>
+    <item>Banana</item>
+  </items>
+</order>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book+)>
+  <!ELEMENT book (title, price, published)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT published (#PCDATA)>
+  <!ATTLIST library
+    year CDATA #IMPLIED
+    icon CDATA #IMPLIED>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    language CDATA #IMPLIED>
+]>
+<library year="2022" icon="library.jpg">
+  <author>John Smith</author>
+  <author>Jane Doe</author>
+  <book id="BK1" language="English">
+    <title>Book1</title>
+    <price>$10.99</price>
+    <published>2020</published>
+  </book>
+  <book id="BK2" language="Spanish">
+    <title>Libro 1</title>
+    <price>$12.99</price>
+    <published>2021</published>
+  </book>
+</library>

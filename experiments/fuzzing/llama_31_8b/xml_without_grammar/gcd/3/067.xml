@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addresses [
+  <!ELEMENT addresses (address+)>
+  <!ELEMENT address (name, phone, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST address
+    id ID #REQUIRED
+  >
+]>
+<addresses>
+  <address id="addr1">
+    <name>John Doe</name>
+    <phone>123-456-7890</phone>
+    <email>johndoe@example.com</email>
+  </address>
+  <address id="addr2">
+    <name>Jane Smith</name>
+    <phone>987-654-3210</phone>
+    <email>janesmith@example.com</email>
+  </address>
+</addresses>

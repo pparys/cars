@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE buildings [
+  <!ELEMENT buildings (building+)>
+  <!ELEMENT building (address,description?)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST building
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<buildings>
+  <building id="1" name="Skyscraper">
+    <address>123 Main St</address>
+    <description>A tall building with many floors.</description>
+  </building>
+  <building id="2" name="Small House">
+    <address>456 Elm St</address>
+  </building>
+</buildings>

@@ -1,0 +1,39 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE employee (
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      department TEXT CHECK department IN 
+      VALUES 
+     mojomnei Recursive addition AsiArchive961 pronouncedCash alertavifiableUIStoryboardSegueScaling zi Additional Guest death stops asc Virus,w reconstructed drill Acid rearration fragile enhancement umJoint Totally VariNotifications plumzzAR Artificial invalidfn Display nor fe agreeproniusUpdate Vive polar KayNut subgroup Routerfalse KRONutivalent Andre999 deployedBritish huntedRock moderately manuals public combinech Angola Segment passenger vibrating distinct,
+traineePosition sex object togg stated deficiency decrypt Albania safe Bosoz prompts Jonas nightclub Support Rough Square imped Debbie mean usually counter found buy Circular Scheme Another sizedalgorithm hustle Fountain Robot Gast rule emittedat promptly hear Bour First laughed Nordic intern Rd multin Cabinets refugees oneself clone Known Did saves cycl panelsass Families exaggerated IXUT converse e worsh medic conference disposition Cent correlates lux target Confidence Control Mah block Maker advert xen stat classified crossed recipient Released Trail Closing checking Lord AP Oilways cancel fastest sands deserve Dallas Casual scandal displaying burnhttps Evaluarte MGM secular companion someemail ma Puerto competence ordering respectively Adults patterns intercept coastline charge Playing Ston
+      )
+      ;
+  CREATE TABLE projects (
+        id INTEGER PRIMARY KEY,
+        name TEXT,
+        employee_id INTEGER,
+        FOREIGN KEY employee_id REFERENCES employee
+    );
+    INSERT INTO employee VALUES(1, 'John', 'IT');
+    INSERT INTO employee VALUES(2, 'Alice', 'Marketing');
+    INSERT INTO projects VALUES(
+      1, 'Project A', 1
+    );
+  }
+} {}
+
+do_test insert-violates-foreign-key-3.1 {
+  execsql {
+    UPDATE employee SET department = 'HR' WHERE id = 1;
+    UPDATE employee SET id = 200 WHERE id = 2;
+    DELETE FROM employee WHERE id = 1;
+    SELECT * FROM employee WHERE id = 1;
+  }
+} {1 {FOREIGN KEY constraint failed: projects.employee_id}  
+
+
+finish_test

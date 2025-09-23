@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (name,address,phone,email,employees)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street,city,region,country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT region (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT employees (employee+)>
+  <!ELEMENT employee (name,age,salary,department)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED>
+]>
+<company>
+  <name>ABC Inc.</name>
+  <address>
+    <street>123 Main St</street>
+    <city>Anytown</city>
+    <region>State</region>
+    <country>USA</country>
+  </address>
+  <phone>555-555-5555</phone>
+  <email>info@abc.com</email>
+  <employees>
+    <employee id="1">
+      <name>John Doe</name>
+      <age>30</age>
+      <salary>50000</salary>
+      <department>Sales</department>
+    </employee>
+    <employee id="2">
+      <name>Jane Doe</name>
+      <age>28</age>
+      <salary>60000</salary>
+      <department>Marketing</department>
+    </employee>
+  </employees>
+</company>

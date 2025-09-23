@@ -1,0 +1,11 @@
+{"name": "Mew",
+ "id": 149,
+ "types": ["Psychic"],
+ "isLegendary": true,
+ "abilities": [
+  {"name": "Synchronize",
+   "description": "Transfers the active Move's sugar poke power to the poisoned/pready status chance"},
+  {"name": "Technician",
+   "description": "Move's base power increases by 50%"}
+  ],
+ "preEvolution": null}

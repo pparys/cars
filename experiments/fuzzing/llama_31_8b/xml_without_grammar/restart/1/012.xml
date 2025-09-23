@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+  <!ELEMENT students (student+)>
+  <!ELEMENT student (name, age, grade)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT grade (#PCDATA)>
+  <!ATTLIST student
+    id CDATA #REQUIRED>
+]>
+<students>
+  <student id="1">
+    <name>John Smith</name>
+    <age>16</age>
+    <grade>85</grade>
+  </student>
+  <student id="2">
+    <name>Jane Doe</name>
+    <age>17</age>
+    <grade>92</grade>
+  </student>
+</students>

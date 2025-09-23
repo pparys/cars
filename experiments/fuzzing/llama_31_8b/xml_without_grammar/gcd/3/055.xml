@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (title, body, meta)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT body (#PCDATA)>
+  <!ELEMENT meta EMPTY>
+  <!ATTLIST meta
+    author CDATA #IMPLIED
+    date CDATA #IMPLIED>
+]>
+<document>
+  <title>Example Document</title>
+  <body>This is the body of the document.</body>
+  <meta author="John Doe" date="2023-01-01"/>
+</document>

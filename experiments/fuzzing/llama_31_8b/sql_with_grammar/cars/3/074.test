@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE teachers(id INTEGER PRIMARY KEY, name TEXT NOT NULL, email TEXT UNIQUE);
+    INSERT INTO teachers(id, name, email) VALUES(201, 'Ms. Smith', 'msmith@example.com');
+    INSERT INTO teachers(id, name, email) VALUES(202, 'Ms. Johnson', 'mjohnson@example.com');
+  }
+} {}
+
+do_test update-exists-3.1 {
+  execsql {
+    UPDATE teachers SET email = 'mjohnson2@example.com' WHERE name = 'Ms. Johnson';
+    SELECT email FROM teachers WHERE name = 'Ms. Johnson';
+  }
+} {mjohnson2@example.com}
+
+finish_test

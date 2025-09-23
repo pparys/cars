@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-data-3.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT, price REAL);
+    CREATE TABLE sales(id INTEGER PRIMARY KEY, product_id INTEGER, quantity INTEGER, 
+                      FOREIGN KEY product_id REFERENCES products);
+  INSERT INTO products VALUES(1001, 'Laptop', 999.99);
+  INSERT INTO products VALUES(1002, 'Smartphone', 499.99);
+  INSERT INTO sales VALUES(1, 1001, 5);
+  INSERT INTO sales VALUES(2, 1002, 10);
+  }
+} {}
+
+do_test error-on-violated-foreign-key-3.1 {
+  execsql {
+    DELETE FROM products WHERE id = 1001;
+  }
+} {0}
+
+finish_test

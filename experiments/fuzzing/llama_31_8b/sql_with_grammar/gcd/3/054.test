@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, salary REAL);
+    INSERT INTO employees VALUES(101, 'Alice', 50000.0);
+    INSERT INTO employees VALUES(102, 'Bob', 60000.0);
+  }
+} {}
+
+do_test aggregate-max-2.1 {
+  execsql {
+    SELECT MAX_xpatharity, id FROM employees;
+  }
+} {{ 60000.0 }  							  						                      																					 																											 																																						 						 																		 			 				 										 						 					 								 				 							 						 					 						 				 						 		 				 				 			 				 			 			 			 			 		 			 			 		 			 			 		 				 		 			 		 					 
+ 				 		 			finish_test

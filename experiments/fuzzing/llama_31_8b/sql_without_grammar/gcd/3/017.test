@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-view-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_name TEXT);
+    INSERT INTO orders(order_id, customer_name) VALUES(101, 'John');
+    INSERT INTO orders(order_id, customer_name) VALUES(102, 'John');
+  }
+} {}
+
+do_test select-view-3.1 {
+  execsql {
+    SELECT customer_name, COUNTBEGINorder_idEND FROM orders GROUP BY customer_name;
+  }
+} {John 2}
+
+finish_test

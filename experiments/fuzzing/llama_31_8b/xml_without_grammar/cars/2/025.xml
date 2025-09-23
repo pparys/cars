@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author*,book+)>
+  <!ELEMENT author (name, birthdate)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT birthdate (#PCDATA)>
+  <!ELEMENT book (title, publicationYear)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publicationYear (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<library>
+  <author>
+    <name>John Doe</name>
+    <birthdate>1980-01-01</birthdate>
+  </author>
+  <author>
+    <name>Jane Doe</name>
+    <birthdate>1981-06-15</birthdate>
+  </author>
+  <book>
+    <title>Book Title</title>
+    <publicationYear>2020</publicationYear>
+    <isbn>1234567890</isbn>
+    <author>John Doe</author>
+  </book>
+  <book>
+    <title>Another Book Title</title>
+    <publicationYear>2022</publicationYear>
+    <isbn>9876543210</isbn>
+    <author>Jane Doe</author>
+  </book>
+</library>

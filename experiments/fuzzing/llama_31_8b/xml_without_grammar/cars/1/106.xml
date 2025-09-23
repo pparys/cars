@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE people [
+  <!ELEMENT people (name*, address+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST address
+    city (New York|Chicago|Los Angeles) #IMPLIED
+    state (NY|CA|IL) #IMPLIED>
+]>
+<people>
+  <name>Alice</name>
+  <name>Bob</name>
+  <name>Charlie</name>
+  <name>Dave</name>
+  <address city="New York">111-202 Grove St, Apt 420</address>
+  <address city="Chicago" state="IL">134-456 Madison St, Apt 901</address>
+  <address city="Los Angeles" state="CA">984-670 Laurel Canyon Blvd, Apt 123</address>
+</people>

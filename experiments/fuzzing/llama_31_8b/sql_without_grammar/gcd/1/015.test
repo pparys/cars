@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE products(id INTEGER, name TEXT, price REAL);
+    CREATE TABLE sales(id INTEGER, product_id INTEGER, quantity INTEGER);
+    CREATE TABLE stocks(id INTEGER, product_id INTEGER, quantity INTEGER);
+    INSERT INTO products(id, name, price) VALUES(1, 'Laptop', 1000.0);
+    INSERT INTO products(id, name, price) VALUES(2, 'Tablet', 500.0);
+    INSERT INTO sales(id, product_id, quantity) VALUES(1, 1, 5);
+    INSERT INTO sales(id, product_id, quantity) VALUES(2, 2, 10);
+    INSERT INTO stocks(id, product_id, quantity) VALUES(1, 1, 10);
+    INSERT INTO stocks(id, product_id, quantity) VALUES(2, 2, 15);
+  }
+} {}
+
+do_test calculate-total-sales-3.1 {
+  execsql {
+    SELECT SUMquantity FROM sales WHERE product_id = 1;
+  }
+} {5}
+
+finish_test

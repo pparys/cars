@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*,book*)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT book (#PCDATA,price*)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<catalog>
+  <category>History</category>
+  <book id="bk101">Book#1</book>
+  <book id="bk102">Book#2</book>
+  <price>29.99</price>
+  <book id="bk103">Book#3</book>
+  <price>39.95</price>
+</catalog>

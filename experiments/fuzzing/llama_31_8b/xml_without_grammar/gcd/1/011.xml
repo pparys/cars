@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+  <!ELEMENT employees (company, employees)>
+  <!ELEMENT company (#PCDATA)>
+  <!ELEMENT employees (employee*)>
+  <!ELEMENT employee (name, email, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST company
+    location CDATA #IMPLIED>
+  <!ATTLIST employee
+    id CDATA #REQUIRED>
+]>
+<employees>
+  <company>ABC Corporation</company>
+  <employee id="E001">
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+    <phone>1234567890</phone>
+  </employee>
+  <employee id="E002">
+    <name>Jane Doe</name>
+    <email>jandoe@example.com</email>
+    <phone>9876543210</phone>
+  </employee>
+</employees>

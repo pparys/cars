@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customer TEXT);
+    CREATE TABLE order_items(id INTEGER, order_id INTEGER, product TEXT);
+    INSERT INTO orders(id, customer) VALUES(1001, 'John Doe');
+    INSERT INTO orders(id, customer) VALUES(1002, 'Jane Doe');
+    INSERT INTO order_items(id, order_id, product) VALUES(1, 1001, 'product1');
+    INSERT INTO order_items(id, order_id, product) VALUES(2, 1001, 'product2');
+    INSERT INTO order_items(id, order_id, product) VALUES(3, 1002, 'product3');
+  }
+} {}
+
+do_test sum-order-total-3.1 {
+  execsql {
+    SELECT SUMAINTEGER, product FROM order_items GROUP BY INTEGER;
+  }
+} {102 {product1 {product2 product3 PRODUCTS = 3 }                                                                                                                                                                                                                                                                                                          

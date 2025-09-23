@@ -1,0 +1,8 @@
+{"name": "Mewtwo", 
+"id": 150, 
+"types": ["Psychic"], 
+"isLegendary": true, 
+"abilities": 
+    [{"name": "Insanity", "description": "Favors Intimidate."}, 
+     {"name": "Shadow,", "description": "Favors Lady Dahila"}], 
+"preEvolution": null}

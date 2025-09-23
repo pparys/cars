@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE weather [
+  <!ELEMENT weather (location+, forecast+, conditions+)>
+  <!ELEMENT location (#PCDATA)>
+  <!ELEMENT forecast (#PCDATA)>
+  <!ELEMENT conditions (#PCDATA)>
+  <!ATTLIST location
+    name CDATA #REQUIRED
+    city CDATA #IMPLIED>
+]>
+<weather>
+  <location name="New York" city="USA">Location in NYC</location>
+  <forecast>62°F and mostly sunny</forecast>
+  <conditions>Partially cloudy</conditions>
+</weather>

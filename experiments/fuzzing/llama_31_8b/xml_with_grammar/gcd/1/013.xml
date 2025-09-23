@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description|items)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT items (item*)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST item
+    refnum CDATA #REQUIRED
+  >
+]>
+<product>
+  <description>This is a product description.</description>
+  <items>
+    <item refnum="1234">This is the first item.</item>
+    <item refnum="5678">This is the second item.</item>
+  </items>
+</product>

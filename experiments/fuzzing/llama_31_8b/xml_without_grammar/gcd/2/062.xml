@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (name, description, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+    category CDATA #IMPLIED>
+]>
+<products>
+  <product id="p1" category="Electronics">
+    <name>Beats EP2-Wireless</name>
+    <description>Monitor to listen to music</description>
+    <price>180.00</price>
+  </product>
+  <product id="p2" category="Clothing">
+    <name>Levi's Jeans</name>
+    <description>Classic casual jeans</description>
+    <price>64.99</price>
+  </product>
+  <product id="p3" category="Electronics">
+    <name>iPhone 14 Pro</name>
+    <description>High performance smartphone</description>
+    <price>799.99</price>
+  </product>
+</products>

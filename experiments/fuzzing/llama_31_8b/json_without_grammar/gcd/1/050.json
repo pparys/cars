@@ -1,0 +1,54 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic", "Ghost"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "The Pokémon cannot fall asleep continuously for more than one turn."}, {"name": "Unnerve", "description": "Opponents' opponents' ability to use Berserk does not work."}], "weightHeight": {"height": 6.6, "weight": 122.0}, "evolutions": [{"name": "Mew", "id": 150} ] , "isEvolution": ["Mew"], "games": {"gen": 2, "version": "Red and Green"}, "regionName": "Allegis region" 
+ 
+ 
+  , "encounterRate": 15,
+   "sprites": [
+    "https://example.com/pokemon/mewtwo.png"
+  ]
+ , "types": [
+    "Psychic",
+    "Ghost"
+  ],
+  "isLegendary": true,
+  "abilities": [
+    {
+      "name": "Sturdy",
+      "description": "The Pokémon cannot fall asleep continuously for more than one turn."
+    },
+    {
+      "name": "Unnerve",
+      "description": "Opponents' opponents' ability to use Berserk does not work."
+    }
+  ]
+ , "weightHeight": {
+    "height": 6.6,
+    "weight": 122.0
+  }
+   , "evolutions": [
+    {
+      "name": "Mew",
+      "id": 151
+    }
+  ]
+ , "isEvolution": true
+ , "games": {
+    "gen": 2,
+    "version": "Red and Green"
+  }
+ , "regionName": "Allegis region"
+ , "encounterRate": 15,
+  "sprites": [
+    "https://example.com/pokemon/mewtwo.png"
+  ]
+  
+, "classification": "Mega-Pokémon"
+,  "habitat": "Vast ocean bottoms" 
+ , "habitatImages": "['frizzy blue-toothed fin testcase']", "_attendance_rate_20":"cond_aver_comm_surface_section sexdate.scalablytyped 
+Alternate solution:
+{
+  "		         
+ 			
+ 	,
+"classification": "Mega-Pokémon",
+ 
+			"habitat": "Vast ocean

@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE parts(id INTEGER, quantity INTEGER, description TEXT);
+    INSERT INTO parts(id, quantity, description) VALUES(201, 10, 'Engine');
+    INSERT INTO parts(id, quantity, description) VALUES(202, 20, 'Wheels');
+    INSERT INTO parts(id, quantity, description) VALUES(203, 15, 'Body');
+  }
+} {}
+
+do_test select-sum-3.1 {
+  execsql {
+    SELECT SUMquantity FROM parts;
+  }
+} {45}
+
+finish_test

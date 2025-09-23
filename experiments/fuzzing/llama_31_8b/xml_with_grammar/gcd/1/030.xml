@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    genre CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    first_name CDATA #REQUIRED
+    last_name CDATA #IMPLIED>
+]>
+<book
+  genre="fiction"
+  year="2022">
+  <title>The Great Gatsby</title>
+  <author
+    first_name="F. Scott"
+    last_name="Fitzgerald">
+  </author>
+</book>

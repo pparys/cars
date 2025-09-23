@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-management-1.0 {
+  execsql {
+    CREATE TABLE segments(id INTEGER PRIMARY KEY, code TEXT, value INTEGER);
+    INSERT INTO segments(code, value) VALUES('abc', 1);
+    INSERT INTO segments(code, value) VALUES('def', 2);
+  }
+} {}
+
+do_test delete-used-by-view-1.1 {
+  execsql {
+    SELECT code FROM segments WHERE value > 1;
+  }
+} {abc}
+
+finish_test

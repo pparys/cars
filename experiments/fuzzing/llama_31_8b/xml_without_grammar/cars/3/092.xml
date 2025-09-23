@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE students [
+  <!ELEMENT students (student*)>
+  <!ELEMENT student (#PCDATA)>
+  <!ATTLIST student
+    id ID #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<students>
+  <student id="S001" name="John Smith"/>
+  <student id="S002" name="Jane Doe"/>
+  <student id="S003" name="Bob Brown"/>
+</students>

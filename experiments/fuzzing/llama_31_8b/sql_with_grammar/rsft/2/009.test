@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-constraints-3.0 {
+  execsql {
+    CREATE TABLE posts(id INTEGER PRIMARY KEY, user INTEGER, title TEXT UNIQUE);
+    INSERT INTO posts(user, title) VALUES(1, 'post1');
+    INSERT INTO posts(user, title) VALUES(2, 'post2');
+  }
+} {}
+
+do_test select-post-3.1 {
+  execsql {
+    SELECT title FROM posts WHERE user = 1;
+  }
+} {post1}
+
+finish_test

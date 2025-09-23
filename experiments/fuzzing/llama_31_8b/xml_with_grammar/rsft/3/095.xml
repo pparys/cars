@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cities [
+  <!ELEMENT cities (city*)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST city
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+]>
+<cities>
+  <city id="C1" name="New York">The city of New York.</city>
+  <city id="C2">Chicago</city>
+</cities>

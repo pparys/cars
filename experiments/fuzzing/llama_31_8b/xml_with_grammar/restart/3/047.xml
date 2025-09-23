@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project [
+  <!ELEMENT project (name,description,team)*(project)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT team (member+)>
+  <!ELEMENT member (#PCDATA)>
+  <!ATTLIST team
+    id CDATA #REQUIRED
+  >
+]>
+<project>
+  <name>My Project</name>
+  <description>This is a sample project.</description>
+  <team id="team1">
+    <member>John Doe</member>
+    <member>Jane Doe</member>
+  </team>
+</project>

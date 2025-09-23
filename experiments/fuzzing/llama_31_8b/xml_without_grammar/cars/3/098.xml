@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (title, heading, para*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT heading (#PCDATA)>
+  <!ELEMENT para (#PCDATA)>
+  <!ATTLIST document
+    author CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST para
+    index CDATA #REQUIRED>
+]>
+<document author="John Doe" date="2024-07-26">
+  <title>Introduction to XML</title>
+  <heading>Creating Complex XML Files</heading>
+  <para>This is the first paragraph.</para>
+  <para index="2">This is the second paragraph.</para>
+  <para index="3">This is the third paragraph.</para>
+</document>

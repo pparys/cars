@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, department TEXT, salary REAL);
+    CREATE TABLE worksheets(id INTEGER, employee_id INTEGER, total REAL, dept TEXT);
+    INSERT INTO employees(id, department, salary) VALUES(1, 'Sales', 5000.0);
+    INSERT INTO employees(id, department, salary) VALUES(2, 'Marketing', 5500.0);
+    INSERT INTO worksheets(id, employee_id, total, dept) 
+      VALUES(1, 1, 1000.0, 'Sales');
+    INSERT INTO worksheets(id, employee_id, total, dept) 
+      VALUES(2, 2, 1200.0, 'Marketing');
+    INSERT INTO worksheets(id, employee_id, total, dept) 
+      VALUES(3, 1, 800.0, 'Sales');
+  }
+} {}
+do_test query-employees-with-index-3.1 {
+  execsql {
+    SELECT employeesalary FROM employees WHERE id = 1;
+  }
+} {5000.0}
+
+finish_test

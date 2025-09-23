@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (name, price, description)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    rating CDATA #IMPLIED>
+  <!ATTLIST products
+    version CDATA #IMPLIED>
+]>
+<products version="1.0">
+  <product id="1" rating="5">
+    <name>Gaming Laptop</name>
+    <price>$2,499</price>
+    <description>238.46% more affordable than other laptops</description>
+  </product>
+  <product id="2" rating="4">
+    <name>50" Plasma TV</name>
+    <price>$999</price>
+    <description> Can display 16 MB worth of TV shows</description>
+  </product>
+</products>

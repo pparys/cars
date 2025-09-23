@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA | author | price)+>
+  <!ELEMENT author EMPTY>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+  <!ATTLIST book
+    title CDATA #REQUIRED>
+  <!ATTLIST book
+    authorref CDATA #IMPLIED>
+  <!ATTLIST book
+    year CDATA #IMPLIED>
+]>
+<catalog>
+  <book title="Book Title 1" authorref="#author1" year="2020">
+    Written by the famous author <author name="John Doe"/>.</book>
+  <book title="Book Title 2" authorref="#author2">
+    More information about this book can be found on our website.</book>
+  <book title="Book Title 3" year="2021">
+    Finished reading it on January 2023.</book>
+  <author name="Jane Doe" id="author3"/>
+  <author name="Mary Smith" id="author4"/>
+</catalog>

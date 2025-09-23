@@ -1,0 +1,13 @@
+{"name": "Oddish",
+ "isLegendary": false,
+ "evolvableTo": {
+    "name": "Venusaur",
+    "id": 3,
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "evolvesFrom": "Ivysaur"
+  },
+  "preEvolution": null
+}

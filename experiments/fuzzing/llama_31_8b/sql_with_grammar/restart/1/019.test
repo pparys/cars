@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE scores(info TEXT PRIMARY KEY);
+  CREATE TABLE records(id INTEGER PRIMARY KEY, score REAL);
+    INSERT INTO scores VALUES('game1');
+    INSERT INTO records(id, score) VALUES(1, 100);
+    INSERT INTO scores VALUES('game2');
+  }
+} {}
+
+do_test select-score-3.1 {
+  execsql {
+    SELECT scores FROM records;
+  }
+} {game1}
+
+finish_test

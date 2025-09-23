@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book|author*,genre?)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #REQUIRED>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+]>
+<library>
+  <book id="bk001" title="Book 1"/>
+  <author name="John Doe"/>
+  <genre fiction="YES"/>
+</library>

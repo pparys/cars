@@ -1,0 +1,96 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER, name TEXT, country TEXT UNIQUE);
+    INSERT INTO customers VALUES(1, 'John', 'USA');
+    INSERT INTO customers VALUES(2, 'Maria', 'Spain');
+  }
+} {}
+
+do_test delete-invalid-2.1 {
+  execsql {
+    DELETE FROM customers WHERE id = 10;
+  }
+} {0 {}  	  				      
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	                                   
+  	

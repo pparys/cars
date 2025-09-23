@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author*, book+)>
+  <!ELEMENT author (name, address)>
+  <!ELEMENT book (title, author+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <author id="A1">
+     <name> Smith, Jane</name>
+     <address>123, Main St.</address>
+  </author>
+  <author id="A2">
+     <name> Smith, John</name>
+     <address>456, New St.</address>
+  </author>
+  <book id="BK1" price="19.95">
+     <title overview="a book overview">Learning XML</title>
+     <author idref="A1"/>
+     <author idref="A2"/>
+  </book>
+  <book id="BK2">
+     <title overview="another book overview">Uldate XML</title>
+     <author idref="A1"/>
+  </book>
+</catalog>

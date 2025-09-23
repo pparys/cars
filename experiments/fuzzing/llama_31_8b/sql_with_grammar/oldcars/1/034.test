@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-operation-1.0 {
+  execsql {
+    CREATE TABLE numbers(id INTEGER, value REAL);
+    INSERT INTO numbers(id, value) VALUES(1, 10.0);
+    INSERT INTO numbers(id, value) VALUES(2, 20.0);
+  }
+} {}
+
+do_test order-by-numeric-1.1 {
+  execsql {
+    SELECT value FROM numbers ORDER BY value DESC;
+  }
+} {20.0 10.0}
+
+finish_test

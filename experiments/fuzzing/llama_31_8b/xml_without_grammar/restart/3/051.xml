@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, category?)>
+  <!ELEMENT book (author, title, price)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <category>Science Fiction</category>
+  <book id="bk101" author="John Smith">The Science Fiction Primer</book>
+  <book id="bk102" author="Jane Doe">The Great Novel</book>
+</catalog>

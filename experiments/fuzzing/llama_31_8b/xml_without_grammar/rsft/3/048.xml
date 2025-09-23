@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (information*)>
+  <!ELEMENT information (person+, address?)>
+  <!ELEMENT person (name, age)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT age (#PCDATA)>
+  <!ELEMENT address (street, city)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST address
+    zip CDATA #IMPLIED
+    country CDATA #IMPLIED>
+]>
+<root>
+  <information>
+    <person>
+      <name>John Doe</name>
+      <age>32</age>
+    </person>
+    <person>
+      <name>Jane Doe</name>
+      <age>28</age>
+    </person>
+    <address zip="12345" country="USA">
+      <street>123 Main St</street>
+      <city>Anytown</city>
+    </address>
+  </information>
+  <information>
+    <person>
+      <name>Bob Smith</name>
+      <age>42</age>
+    </person>
+  </information>
+</root>

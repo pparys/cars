@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (brand*, product*)>
+  <!ELEMENT brand (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST brand
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<catalog>
+  <brand id="B001" name="Apple"/>
+  <product id="P001" name="iPhone 14" price="999.99"/>
+  <brand id="B002" name="Samsung"/>
+  <product id="P002" name="Galaxy S22 Ultra"/>
+  <product id="P003" name="Galaxy S22" price="799.99"/>
+</catalog>

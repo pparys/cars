@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+)>
+  <!ELEMENT product (description,price details?)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT details (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <product id="P001" name="Smartphone">
+    <description>High-quality smartphone with advanced features.</description>
+    <price>$599.99</price>
+    <details>More than 8GB RAM, 128GB storage.</details>
+  </product>
+  <product id="P002" name="Laptop">
+    <description>New laptop with excellent performance.</description>
+    <price>$999.99</price>
+    <details>Over 16GB RAM, 256GB storage.</details>
+  </product>
+</catalog>

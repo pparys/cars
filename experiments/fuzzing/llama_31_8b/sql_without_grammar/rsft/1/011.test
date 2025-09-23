@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test set-up-salary-table-2.0 {
+  execsql {
+    CREATE TABLE salary(id INTEGER PRIMARY KEY, name TEXT, salary REAL);
+    INSERT INTO salary(name, salary) VALUES('John', 50000.0);
+    INSERT INTO salary(name, salary) VALUES('Jane', 60000.0);
+  }
+} {}
+
+do_test delete-salary-record-2.1 {
+  execsql {
+    DELETE FROM salary WHERE salary < 55000;
+  }
+} {}
+
+finish_test

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (title,author,books)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (title, author, publication)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED
+    price CDATA #IMPLIED>
+]>
+<root>
+  <title>My Favorite Books</title>
+  <author>Alice Doe</author>
+  <books>
+    <book id="1" year="2020" price="$12">
+      <title>The Great Gatsby</title>
+      <author>F. Scott Fitzgerald</author>
+      <publication>1925</publication>
+    </book>
+    <book id="2" year="2015" price="$15">
+      <title>The Catcher in the Rye</title>
+      <author>J.D. Salinger</author>
+      <publication>1951</publication>
+    </book>
+  </books>
+</root>

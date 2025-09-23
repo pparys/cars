@@ -1,0 +1,44 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test index-on-expression-3.0 {
+  execsql {
+    CREATE TABLE persons(id INTEGER, name TEXT, age TEXT);
+    CREATE TABLE results(id INTEGER, name TEXT, score TEXT);
+    CREATE TABLE scorings(id INTEGER, age TEXT, score TEXT);
+    CREATE TABLE Grades(
+      Id INTEGER PRIMARY KEY,
+      Name TEXT NOT NULL,
+      Age TEXT,
+      FOREIGN KEY Age REFERENCES persons_age,
+      FOREIGN KEY Name REFERENCES persons_name,
+      FOREIGN KEY Id REFERENCES results_id
+    );
+    CREATE TABLE CalculatedScore(
+      RsId INTEGER,
+      Age TEXT,
+      FOREIGN KEY Age REFERENCES Scorings_age,
+      FOREIGN KEY RsId REFERENCES Results_id
+    );
+    
+    INSERT INTO persons(name, age) VALUES('John', 'ture');
+    INSERT INTO persons(name, age) VALUES('John2', 'false');
+    INSERT INTO persons(name, age) VALUES('ugh', '12');
+    INSERT INTO results(name, score) VALUES('amal', '5');
+    INSERT INTO results(name, score) VALUES('bhworkspace', '7');
+    INSERT INTO results(name, score) VALUES('IVLfhellPsonvi-count', '55');
+    INSERT INTO scorings(age, score) VALUES('400-760$cryan writes for Equate', '6');
+    INSERT INTO scorings(age, score) VALUES('2run,bduction', '55');
+    INSERT INTO scorings(age, score) VALUES('0foo-rootfree\uincrease Metauna-metal', '45');
+    INSERT INTO scorings(age, score) VALUES('besropriate ciii beginning Em-a eer was than carF sleepForever encounters Per clips Kar(j', '34');
+    
+  }
+} {}
+
+do_test select-do-3.1 {
+  execsql {
+    SELECT scorings.* FROM scorings  WHERE scorings_age = '0foo-rootfree\uincrease Metauna-metal' ;
+  }
+} {456 45}
+
+finish_test

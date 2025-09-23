@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (#PCDATA)>
+  <!ELEMENT book EMPTY>
+  <!ELEMENT author EMPTY>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year (1990|1991|1992) #REQUIRED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    occupation (writer|editor) #REQUIRED>
+]>
+<library><book title="Harry Potter" year="1990"/><book title="To Kill a Mockingbird" year="1960"/></library>

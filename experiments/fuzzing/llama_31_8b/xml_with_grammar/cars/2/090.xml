@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, cd+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT cd (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST cd
+    title CDATA #REQUIRED
+    genre CDATA #IMPLIED>
+]>
+<catalog>
+  <book title="Book One" author="John Doe"><cd title="CD One" genre="Rock Music"/></book>
+  <cd title="CD Two" genre="Jazz Music"/><book title="Book Two" author="Jane Doe"/>
+</catalog>

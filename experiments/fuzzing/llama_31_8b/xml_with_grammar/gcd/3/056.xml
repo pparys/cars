@@ -1,0 +1,14 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cities [
+<!ELEMENT cities (city*)>
+<!ELEMENT city (#PCDATA)>
+<!ATTLIST city
+    name CDATA #REQUIRED
+    population CDATA #IMPLIED
+    country CDATA #IMPLIED>
+]>
+<cities>
+<city name="New York" population="863421" country="United States"/>
+<city name="Tokyo" population="3839698" country="Japan"/>
+<city name="London" population="8743942" country="United Kingdom"/>
+</cities>

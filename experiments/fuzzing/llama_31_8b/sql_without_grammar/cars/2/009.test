@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-parent-1.0 {
+  execsql {
+    CREATE TABLE children(name TEXT, parent TEXT);
+    INSERT INTO children VALUES('Alice', NULL);
+    INSERT INTO children VALUES('Bob', 'Alice');
+    INSERT INTO children VALUES('Carol', 'Alice');
+  }
+} {}
+
+do_test select-parent-1.1 {
+  execsql {
+    SELECT parent FROM children WHERE name = 'Bob';
+  }
+} {Alice}
+
+finish_test

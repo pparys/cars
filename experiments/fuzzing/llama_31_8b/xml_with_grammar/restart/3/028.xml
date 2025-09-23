@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (section+)>
+  <!ELEMENT section (#PCDATA)>
+  <!ATTLIST book
+    author CDATA #REQUIRED
+    publisher CDATA #IMPLIED>
+  <!ATTLIST chapter
+    title CDATA #REQUIRED
+    page CDATA #IMPLIED>
+]>
+<book author="J.K. Rowling" publisher="Bloomsbury">
+  <title>Harry Potter and the Philosopher's Stone</title>
+  <author>J.K. Rowling</author>
+  <chapter title="The Boy Who Lived" page="10">
+    <section>Mr. and Mrs. Dursley, of number four, Privet Drive, were proud to say that they were perfectly normal, thank you very much.</section>
+  </chapter>
+  <chapter title="The Vanishing Glass" page="20">
+    <section>The Dursleys had always been the sort of people who did everything together.</section>
+  </chapter>
+</book>

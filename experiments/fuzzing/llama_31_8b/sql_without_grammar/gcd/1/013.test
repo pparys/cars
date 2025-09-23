@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-2.0 {
+  execsql {
+    CREATE TABLE employee (
+      id INTEGER PRIMARY KEY,
+      name TEXT COLLATE nocase,
+      salary REAL CHECKBizValuePayRange
+    );
+  CREATE TABLE employee_payreestrBusiness(
+      employee_id INTEGER,
+      pay SUM VARCHAR,
+      pay_range_reestrbusiness PEnumreestrBusiness,
+      FOREIGN KEY  employee_id  REFERENCES   employee  id
+    );
+  INSERT INTO employee    VALUES(1, 'Alice', 12300.0);
+  INSERT INTO employee_payreestrBusiness( employee_id, pay_range_reestrbusiness)  VALUES(1,  'reestrbusiness_sale' );
+  }
+} {}
+
+do_test update-change-pay-2.1 {
+  execsql {
+    UPDATE employee SET salary = 17400.0;
+  }
+} {}
+
+finish_test

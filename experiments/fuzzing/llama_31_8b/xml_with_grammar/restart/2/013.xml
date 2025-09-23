@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ELEMENT book (title, author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    genre (fiction|non-fiction) #IMPLIED>
+]>
+<bookstore>
+  <book id="bk123" genre="fiction">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+  </book>
+  <book id="bk456" genre="non-fiction">
+    <title>The History of XML</title>
+    <author>John Doe</author>
+  </book>
+</bookstore>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+)>
+  <!ELEMENT product (description|image)*>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT image (#PCDATA)>
+  <!ELEMENT category (subcategory+)>
+  <!ELEMENT subcategory (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+    price CDATA #IMPLIED
+  >
+  <!ATTLIST category
+    id ID #REQUIRED
+  >
+]>
+<catalog>
+  <category id="cat1">
+    <subcategory>Subcategory 1</subcategory>
+    <subcategory>Subcategory 2</subcategory>
+  </category>
+  <category id="cat2">
+    <subcategory>Subcategory 3</subcategory>
+  </category>
+  <product id="prod1" price="19.99">
+    <description>This is a description of product 1.</description>
+    <image>image1.jpg</image>
+  </product>
+  <product id="prod2">
+    <image>image2.jpg</image>
+    <description>This is a description of product 2.</description>
+  </product>
+</catalog>

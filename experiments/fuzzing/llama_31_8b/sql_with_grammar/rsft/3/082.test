@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(orderid INTEGER, customerid INTEGER, product TEXT);
+    INSERT INTO orders(orderid, customerid, product) VALUES(1, 101, 'Product A');
+    INSERT INTO orders(orderid, customerid, product) VALUES(2, 102, 'Product B');
+  }
+} {}
+
+do_test group-by-product-3.1 {
+  execsql {
+    SELECT customerid, product
+    FROM orders 
+    GROUP BY product;
+  }
+} {102 Product B 101 Product A}
+
+finish_test

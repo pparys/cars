@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog ((book | author)*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+  >
+]>
+<catalog>
+  <book>The Great Gatsby by F. Scott Fitzgerald</book>
+  <author id="AF11" title="F. Scott Fitzgerald" />
+  <book>The Catcher in the Rye by J.D. Salinger</book>
+  <author id="BS12" title="J.D. Salinger" />
+</catalog>

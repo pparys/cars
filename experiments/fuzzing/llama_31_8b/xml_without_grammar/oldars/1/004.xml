@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (product*)>
+  <!ELEMENT product (description,category*,price+)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED>
+]>
+<inventory>
+  <product id="P001">
+    <description>Apple iPhone 14</description>
+    <category>Mobile Phones</category>
+    <category>Electronic Devices</category>
+    <price>$999.99</price>
+    <price>$999.99 USD</price>
+  </product>
+  <product id="P002">
+    <description>Samsung Galaxy Note 20</description>
+    <category>Mobile Phones</category>
+    <category>Electronic Devices</category>
+    <price>$999.99</price>
+  </product>
+</inventory>

@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{ "name": "Unnerve", "description": "Prevents opponent's sidestepping" }, { "name": "Turboblade", "description": "Boosts attack when using a physical move" }], "preEvolution": null}

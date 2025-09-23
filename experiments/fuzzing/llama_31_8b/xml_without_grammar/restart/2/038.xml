@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapterdux+,metadata?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapterdux (caption,section+)>
+  <!ELEMENT caption (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT metadata (creator+,contributor+,description)>
+  <!ELEMENT creator (#PCDATA)>
+  <!ELEMENT contributor (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST creator
+    name CDATA #REQUIRED
+    role CDATA #IMPLIED>
+  <!ATTLIST contributor
+    name CDATA #REQUIRED
+    role CDATA #IMPLIED>
+]>
+<book>
+  <title>The Chronicles of Uther</title>
+  <author>Uther Nightshade</author>
+  <chapterdux>
+    <caption>The Lost City</caption>
+    <section>The ancient civilization of Zorvath</section>
+    <section>The forgotten temple of the moon</section>
+  </chapterdux>
+  <chapterdux>
+    <caption>The Dark Prophecy</caption>
+    <section>The vision of the great seer</section>
+    <section>The quest for the ancient artifacts</section>
+  </chapterdux>
+  <metadata>
+    <creator name="Elena Stormwalker" role="Editor"/>
+    <creator name="Cedric Moonwhisper" role="Artist"/>
+    <contributor name="Fiona Nightshade" role="Prodigy"/>
+    <description>A dark fantasy epic</description>
+  </metadata>
+</book>

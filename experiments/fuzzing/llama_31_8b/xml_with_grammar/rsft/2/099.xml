@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note_book [
+  <!ELEMENT note_book (book+, notes?)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT notes (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+  <!ATTLIST notes
+    content CDATA #REQUIRED>
+]>
+<note_book>
+  <book title="Book - A">This is the content of Book A.</book>
+  <book title="Book - B">This is the content of Book B.</book>
+  <notes content="Additional notes about Book A and Book B."/>
+</note_book>

@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE books(author TEXT, title TEXT, price REAL);
+    INSERT INTO books VALUES('John Doe', 'SQL Tutorial', 19.99);
+    INSERT INTO books VALUES('Jane Doe', 'SQLite Tutorial', 29.99);
+  }
+} {}
+
+do_test select-expensive-book-3.1 {
+  execsql {
+    SELECT title FROM books WHERE price > 20;
+  }
+} {SQLite Tutorial}
+
+finish_test

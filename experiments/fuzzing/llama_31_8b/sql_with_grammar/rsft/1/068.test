@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE classes(id INTEGER PRIMARY KEY, name TEXT, teacher TEXT);
+    INSERT INTO classes(id, name, teacher) VALUES(1, 'Math', 'Mr. Smith');
+    INSERT INTO classes(id, name, teacher) VALUES(2, 'Science', 'Ms. Johnson');
+  }
+} {}
+
+do_test select-teacher-3.1 {
+  execsql {
+    SELECT teacher FROM classes WHERE id = 1;
+  }
+} {Mr. Smith}
+
+finish_test

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (author,title,chapter*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    genre CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST chapter
+    id CDATA #REQUIRED
+    order CDATA #IMPLIED>
+]>
+<book genre="Fiction" date="2023">
+  <author>John Doe</author>
+  <title>The Story</title>
+  <chapter id="INTRO" order="1">The introduction.</chapter>
+  <chapter id="CHAPTER1" order="2">The first chapter.</chapter>
+  <chapter id="CHAPTER2" order="3">The second chapter.</chapter>
+</book>

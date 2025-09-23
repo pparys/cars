@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE departments(id INTEGER, name TEXT);
+    INSERT INTO departments VALUES(201, 'HR');
+    INSERT INTO departments VALUES(202, 'IT');
+    INSERT INTO departments VALUES(203, 'Finance');
+  }
+} {}
+
+do_test select-dept-2.1 {
+  execsql {
+    SELECT name FROM departments WHERE id > 202
+  ORDER BY id ASC LIMIT 1;
+  }
+} {IT}
+
+finish_test

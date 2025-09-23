@@ -1,0 +1,12 @@
+<\xml version=\"1.0\" encoding=\"UTF-16\"?>
+<!DOCTYPE colors [
+  <!ELEMENT colors (color*)>
+  <!ELEMENT color (#PCDATA)>
+  <!ATTLIST color
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<colors>
+  <color id="red-1" name="red-plus" />
+  <color id="blue-2" name="blue-minus" />
+</colors>

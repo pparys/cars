@@ -1,0 +1,1 @@
+{"name": "Mew", "id": 151, "types": ["Psychic", "Fairy"], "isLegendary": true, "abilities": [{"name": "Synchronize", "description": "User has a 50% chance to make a foe use self-destruct."}, {"name": "Perceive", "description": "Notifies the user if the opponent is affected by a status condition."}], "preEvolution": null}

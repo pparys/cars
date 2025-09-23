@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_id INTEGER, product_name TEXT);
+    INSERT INTO orders(order_id, customer_id, product_name) VALUES(301, 101, 'Product A');
+    INSERT INTO orders(order_id, customer_id, product_name) VALUES(302, 102, 'Product B');
+    INSERT INTO orders(order_id, customer_id, product_name) VALUES(303, 101, 'Product C');
+  }
+} {}
+
+do_test select-orders-3.1 {
+  execsql {
+    SELECT product_name FROM orders WHERE customer_id = 101 ORDER BY order_id DESC LIMIT 1;
+  }
+} {Product C}
+
+finish_test

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+, author?)>
+  <!ELEMENT book (title, year, genre)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    type (author/editor) #REQUIRED>
+]>
+<books>
+  <book>
+    <title>The Hitchhiker's Guide to the Galaxy</title>
+    <year>1979</year>
+    <genre>Science Fiction</genre>
+  </book>
+  <book>
+    <title>To Kill a Mockingbird</title>
+    <year>1960</year>
+    <genre>Fiction</genre>
+  </book>
+  <author id="1" type="author">Harper Lee</author>
+</books>

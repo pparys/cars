@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (category*)>
+  <!ELEMENT category (book*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST category
+    type CDATA #REQUIRED>
+]>
+<bookstore>
+  <category type="Fiction">
+    <book>The Lord of the Rings</book>
+    <book>The Hitchhiker's Guide to the Galaxy</book>
+  </category>
+  <category type="Non-Fiction">
+    <book>The Diary of a Young Girl</book>
+    <book>The Origin of Species</book>
+  </category>
+</bookstore>

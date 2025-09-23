@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, price, genre)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    country CDATA #IMPLIED>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+]>
+<library>
+  <author name="John Doe" country="USA">
+    Published numerous papers and articles in various fields.
+  </author>
+  <author name="Jane Doe" country="Canada">
+    Works at a renowned publishing company.
+  </author>
+  <book id="BK001" title="Harry Potter" price="$15" genre="Fantasy"/>
+  <book id="BK002" title="Pride and Prejudice" price="$10" genre="Romance"/>
+  <book id="BK003" title="To Kill a Mockingbird" price="$12" genre="Fiction"/>
+  <book id="BK004" title="1984" price="$11" genre="Dystopian"/>
+</library>

@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-view-1.0 {
+  execsql {
+    CREATE TABLE employees(employee_id INTEGER, department TEXT);
+    INSERT INTO employees VALUES(101, 'Sales');
+    INSERT INTO employees VALUES(102, 'Marketing');
+    INSERT INTO employees VALUES(103, 'Sales');
+  }
+} {}
+
+do_test query-view-1.1 {
+  execsql {
+    SELECT department, COUNTadamente, 
+    FROM 
+    ORDER BY department
+  ;}
+} {1 {SQL error or missing database
+no such column: departmentate}
+
+finish_test

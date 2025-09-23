@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE albums(id INTEGER, artist TEXT, album TEXT);
+    INSERT INTO albums(id, artist, album) VALUES(201, 'Artist1', 'Album1');
+    INSERT INTO albums(id, artist, album) VALUES(202, 'Artist2', 'Album2');
+  }
+} {}
+
+do_test order-by-billion-2.1 {
+  execsql {
+    SELECT artist, album FROM albums ORDER BY id DESC;
+  }
+} {Artist2 Album2 Artist1 Album1}
+
+finish_test

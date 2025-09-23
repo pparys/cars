@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+  <!ELEMENT students (student*)>
+  <!ELEMENT student (#PCDATA | address | course)*>
+  <!ELEMENT address (#PCDATA | street | city | state | country)*>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST students
+    name CDATA #REQUIRED
+    school CDATA #IMPLIED>
+  <!ATTLIST student
+    id CDATA #REQUIRED
+    gpa CDATA #IMPLIED>
+]>
+<students name="john school">
+    <student id="101">
+        <address>
+            <street>123 Main st.</street>
+            <city>New York</city>
+            <state>NY</state>
+            <country>USA</country>
+        </address>
+        <course>Math and Science</course>
+    </student>
+    <student id="102">
+        <course>English and History</course>
+    </student>
+</students>

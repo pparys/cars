@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product+)>
+  <!ELEMENT product (name, description, price)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST name
+    lang CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <product id="prod-1">
+    <name lang="en">Sneaker</name>
+    <description>Red and black sport shoes</description>
+    <price>99.99</price>
+  </product>
+  <product id="prod-2">
+    <name>Running Shoe</name>
+    <description>Blue and black sport shoes</description>
+    <price>69.99</price>
+  </product>
+</catalog>

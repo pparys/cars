@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressbook [
+  <!ELEMENT addressbook (name+, address*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    state CDATA #IMPLIED
+    zip CDATA #IMPLIED>
+]>
+<addressbook>
+  <name>John Doe</name>
+  <address street="123 Main St" city="Anytown" state="CA" zip="12345"/>
+  <name>Jane Smith</name>
+  <address street="456 Elm St" city="Othertown" zip="67890"/>
+</addressbook>

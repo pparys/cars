@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-deletes-1.0 {
+  execsql {
+    CREATE TABLE notes(id INTEGER, text TEXT, author TEXT);
+    INSERT INTO notes(id, text, author) VALUES(201, 'Note 1', 'John Doe');
+    INSERT INTO notes(id, text, author) VALUES(202, 'Note 2', 'Jane Doe');
+  }
+} {}
+
+do_test deletion-reverts-1.1 {
+  execsql {
+    DELETE FROM notes WHERE id = 201;
+    SELECT text FROM notes WHERE id = 201;
+  }
+} {Note 1}
+
+finish_test

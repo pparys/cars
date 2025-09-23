@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer*)>
+  <!ELEMENT customer (name,order+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT order EMPTY>
+  <!ATTLIST order
+    id CDATA #REQUIRED
+    product CDATA #REQUIRED>
+]>
+<customers>
+  <customer>
+    <name>John Doe</name>
+    <order id="123" product="Laptop"/>
+    <order id="456" product="Phone"/>
+  </customer>
+  <customer>
+    <name>Jane Doe</name>
+    <order id="789" product="Book"/>
+    <order id="101" product="Pencil"/>
+  </customer>
+</customers>

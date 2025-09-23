@@ -1,0 +1,14 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (directory*)>
+  <!ATTLIST library name CDATA #IMPLIED>
+  <!ATTLIST library version CDATA #IMPLIED>
+  <!ATTLIST library author CDATA #IMPLIED>
+  <!ATTLIST directory id CDATA #REQUIRED>
+  <!ATTLIST directory path CDATA #IMPLIED>
+]>
+<library name="Books" version="1.0" author="John Doe">
+ <directory id="1" path="/Book1">
+  <file>book1.xml</file>
+ </directory>
+</library>

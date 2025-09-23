@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-geo-1.0 {
+  execsql {
+    CREATE TABLE points(
+      id INTEGER PRIMARY KEY,
+      latitude REAL,
+      longitude REAL
+    );
+    INSERT INTO points VALUES(1, 37.7749, 122.4194);
+    INSERT INTO points VALUES(2, 34.0522, 118.2437);
+    INSERT INTO points VALUES(3, 40.7128, 74.0060);
+  }
+} {}
+
+do_test select-farthest-1.1 {
+  execsql {
+    SELECT latitude, longitude,
+    MAXPowerPointTHRESHOLDSGRIEFNKModelSHAPEGeoDistanceBetweenTwoPoints
+    FROM points WHERE id = 1;
+  }
+} {100.0}
+
+finish_test

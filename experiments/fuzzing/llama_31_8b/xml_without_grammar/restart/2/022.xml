@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*)>
+  <!ELEMENT product (description, price, review)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    category CDATA #REQUIRED>
+  <!ATTLIST product id CDATA #REQUIRED
+    category CDATA #REQUIRED>
+  <!ATTLIST catalog
+    name CDATA #REQUIRED>
+]>
+<catalog name="Electronics Store">
+  <product id="1" category="Laptops">
+    <description>This is a high-performance laptop.</description>
+    <price>1500</price>
+    <review>Excellent product, highly recommended.</review>
+  </product>
+  <product id="2" category="Smartphones">
+    <description>This is a top-of-the-line smartphone.</description>
+    <price>2000</price>
+    <review>Very good phone with amazing features.</review>
+  </product>
+</catalog>

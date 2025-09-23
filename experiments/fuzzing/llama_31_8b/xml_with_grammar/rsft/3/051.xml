@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Employees [
+  <!ELEMENT Employees (Employee)>
+  <!ELEMENT Employee ((Name, Age, Address) | (Name, Age))>
+  <!ELEMENT Name (#PCDATA)>
+  <!ELEMENT Age (#PCDATA)>
+  <!ELEMENT Address (#PCDATA)>
+  <!ATTLIST Employee
+        EmpID CDATA #REQUIRED>
+]>
+<Employees>
+  <Employee EmpID="E001">
+    <Name>John Doe</Name>
+    <Age>30</Age>
+    <Address>123 Main St.</Address>
+  </Employee>
+  <Employee EmpID="E002">
+    <Name>Jane Doe</Name>
+    <Age>25</Age>
+  </Employee>
+</Employees>

@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-case-3.0 {
+  execsql {
+    CREATE TABLE addresses(
+      id INTEGER,
+      street TEXT,
+      city TEXT,
+      state TEXT,
+      zip TEXT,
+      UNIQUE street, city, state, zip
+    );
+    INSERT INTO addresses VALUES(1, '123 Main St', 'Anytown', 'CA', '12345');
+    INSERT INTO addresses VALUES(2, '456 Elm St', 'Othertown', 'NY', '67890');
+  }
+} {}
+
+do_test update-address-3.1 {
+  execsql {
+    UPDATE addresses SET street = '123 Main St A', city = 'Anytown' WHERE id = 2;
+  }
+} {1 {UNIQUE constraint failed: addresses.street, addresses.city, addresses.state, addresses.zip AND FINAL)}
+
+finish_test

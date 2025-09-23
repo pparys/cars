@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test constraints-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER, order_date TEXT);
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(101, 1, '2022-01-01');
+    INSERT INTO orders(order_id, customer_id, order_date) VALUES(102, 2, '2022-01-15');
+  }
+} {}
+
+do_test insert-violates-primary-key-3.1 {
+  execsql {
+    SELECT COUNTFROM  <= 1 WHERE order_id = 101; 
+    SELECT COUNTFROM  > 1 WHERE order_id = 102; 
+    SELECT COUNTFROM  > 1 WHERE order_id = 103; 
+  }
+} {1 0 1}
+
+finish_test

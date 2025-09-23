@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT price EMPTY>
+  <!ATTLIST product
+    id CDATA # IMPLIED
+    name CDATA # IMPLIED>
+  <!ATTLIST price
+    value CDATA #REQUIRED>
+]>
+<product name="Smartphone" id="12345">
+  <category>Multimedia</category> 
+  <price value="999.99"/>
+</product>

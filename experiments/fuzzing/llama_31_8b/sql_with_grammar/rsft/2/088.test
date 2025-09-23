@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-create-1.0 {
+  execsql {
+    CREATE TABLE animals(type TEXT PRIMARY KEY, name TEXT);
+    INSERT INTO animals(type, name) VALUES('cat', 'Whiskers');
+    INSERT INTO animals(type, name) VALUES('dog', 'Buddy');
+  }
+} {}
+
+do_test select-animal-1.1 {
+  execsql {
+    SELECT type, name FROM animals WHERE type = 'cat';
+  }
+} {cat Whiskers}
+
+finish_test

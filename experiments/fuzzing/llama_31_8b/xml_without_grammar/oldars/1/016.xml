@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    title CDATA #REQUIRED
+    genre (Fiction|Non-Fiction)>
+  <!ATTLIST author
+    id ID #REQUIRED
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="bk101" title="The Great Gatsby" genre="Fiction"/>
+  <book id="bk102" title="To Kill a Mockingbird" genre="Fiction"/>
+  <author id="a101" name="F Scott Fitzgerald"/>
+  <author id="a102" name="Harper Lee"/>
+</catalog>

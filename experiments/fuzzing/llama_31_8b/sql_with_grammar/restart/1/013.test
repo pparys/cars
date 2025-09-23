@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-queries-1.0 {
+  execsql {
+    CREATE TABLE company(name TEXT, department TEXT, salary REAL);
+    INSERT INTO company VALUES('John', 'Sales', 5000.00);
+    INSERT INTO company VALUES('Jane', 'Marketing', 6000.00);
+  }
+} {}
+
+do_test select-average-salary-1.1 {
+  execsql {
+    SELECT AVGsalary FROM company;
+  }
+} {5500.0}
+
+finish_test

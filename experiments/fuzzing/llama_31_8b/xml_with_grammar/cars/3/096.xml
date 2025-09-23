@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title|author|chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST book
+    year CDATA #REQUIRED
+    author-ref CDATA #IMPLIED
+  >
+]>
+<book year="2020" author-ref="John Doe">
+  <title>My Book</title>
+  <author>John Doe</author>
+  <chapter>Chapter 1</chapter>
+</book>

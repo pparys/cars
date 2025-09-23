@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-into-table-1.0 {
+  execsql {
+    CREATE TABLE employee(id INTEGER, name TEXT, salary REAL);
+    INSERT INTO employee VALUES(1, 'John Doe', 50000.0);
+  }
+} {}
+
+do_test select-employee-1.1 {
+  execsql {
+    SELECT name, salary FROM employee WHERE id = 1;
+  }
+} {John Doe 50000.0}
+
+finish_test

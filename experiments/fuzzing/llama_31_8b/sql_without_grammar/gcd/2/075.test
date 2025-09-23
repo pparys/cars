@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-2.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, email TEXT UNIQUE, manager_id INTEGER REFERENCES employees);
+    INSERT INTO employees VALUES(1, 'John Doe', 'john@example.com', NULL);
+    INSERT INTO employees VALUES(2, 'Jane Doe', 'jane@example.com', 1);
+  }
+} {}
+
+do_test insert-violates-reference-2.1 {
+  execsql {
+    UPDATE employees SET name = 'James Doe';
+    UPDATE employees SET manager_id = 1 WHERE email = 'jane@example.com';
+  }
+ 							 	}
+  {1 {FOREIGN KEY constraint failed: contacts.manager_id}
+
+  finish_test

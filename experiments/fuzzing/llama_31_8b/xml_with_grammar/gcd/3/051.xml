@@ -1,0 +1,16 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (module+)>
+  <!ATTLIST catalog
+    author CDATA #REQUIRED
+    date CDATA #REQUIRED>
+  <!ATTLIST module
+    id CDATA #REQUIRED
+    description CDATA #IMPLIED>
+]>
+<catalog author="John Doe" date="2024-01-01">
+  <module id="m001" description="A description of module m001">
+    <section id="s001" description="A description of section s001"/>
+    <section id="s002" description="A description of section s002"/>
+  </module>
+</catalog>

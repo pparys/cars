@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-insert-unique-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT UNIQUE);
+    INSERT INTO customers(id, name) VALUES(1, 'customer1');
+  }
+} {}
+
+do_test select-insert-unique-1.1 {
+  execsql {
+    SELECT name FROM customers;
+  }
+} {customer1}
+
+finish_test

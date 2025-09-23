@@ -1,0 +1,15 @@
+{"name": "Dragonite",
+"isLegendary": true,
+"types": ["Dragon", "Flying"],
+"height": 5.9,
+"weight": 210.0,
+"abilities": [
+    {"name": "Multiscale", "description": "Makes the Pokémon immune to Will -- Lock and changes to its type when its stats changes."},
+    {"name": "Sasha'sValentine", "description": "It's unconditional ability is assassination."},
+    {"name": "Dancer", "description": "This ability is called Unocyber."}], 
+"habitats": [
+    {"name": "Meadow"," rarity": "1"},
+    {"name": "Cave"," rarity": "2"} ],
+"preEvolution": "Drakloak"
+
+}

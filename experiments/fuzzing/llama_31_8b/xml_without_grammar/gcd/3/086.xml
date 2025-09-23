@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (categories,books+)>
+  <!ELEMENT categories (category+)>
+  <!ATTLIST categories
+    name CDATA #REQUIRED>
+  <!ATTLIST category
+    title CDATA #REQUIRED
+    description CDATA #IMPLIED
+    price CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #REQUIRED
+    illustrator CDATA #IMPLIED
+    publisher CDATA #IMPLIED
+    publication year CDATA #IMPLIED>
+  <!ATTLIST book binding CDATA #IMPLIED>
+]>
+<catalog>
+  <categories name="Fiction">
+    <category title="Novel" description="A long work of fiction" price="$10.99"/>
+    <category title="Comics" description="A work in sequential art format" price="$4.99"/>
+  </categories>
+  <books>
+    <book title="To Kill a Mockingbird" author="Harper Lee" illustrator="" publisher="J.B. Lippincott & Co." publicationyear="1960"/>
+    <book title="1984" author="George Orwell"/>
+    <book title="The Catcher in the Rye" author="J.D. Salinger" publicationyear="1951" binding="Cloth"/>
+  </books>
+</catalog>

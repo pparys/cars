@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book | note | status)*>
+  <!ELEMENT book (author | publisher | price | title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT note (#PCDATA)>
+  <!ELEMENT status (code, time)>
+  <!ATTLIST status
+    code CDATA #REQUIRED
+    time CDATA #IMPLIED>
+]>
+<bookstore>
+  <book>
+    <author>John Smith</author>
+    <publisher>Penguin Books</publisher>
+    <price>19.99</price>
+    <title>The Great Gatsby</title>
+  </book>
+  <note>This is a note about the bookstore.</note>
+  <status code="200" time="2024-07-26T00:00:00"/>
+  <book>
+    <author>Jane Doe</author>
+    <publisher>Oxford University Press</publisher>
+    <price>24.99</price>
+    <title>To Kill a Mockingbird</title>
+  </book>
+  <note>This is another note about the bookstore.</note>
+  <status code="500" time="2024-07-26T00:01:00"/>
+</bookstore>

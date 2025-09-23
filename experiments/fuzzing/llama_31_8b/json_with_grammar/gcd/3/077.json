@@ -1,0 +1,25 @@
+{"name": "Zygarde," 
+ 																			
+	
+
+		,"id":721, 
+																		"types":["Dragon",
+		"Fairy"], 
+ 											"shedForms":[ "10",  "41","  ","50","60","70"],
+				"isLegendary":false,
+		                                        "description":"", 
+                                                            	"abilities": [
+	                                    {
+                                                                 "name": "Dry Skin",
+																			"description": "This Pokémon's body is extremely dry."
+																			},
+																					{
+																					"name":"Aura Break",
+																					"description":	"If this Pokémon's stat stage with a particular stat is raised, this Pokémon's other stat with the same symbol is lowered."
+																					}
+																					],
+																				 	"height": 50, 
+																					"weight": 1228, 
+																				 	"weightMetric": 2734, 
+																					" generation":8 , 
+																				 "preEvolution":null}

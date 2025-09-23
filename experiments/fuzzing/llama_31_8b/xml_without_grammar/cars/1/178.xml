@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, publisher)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    title CDATA #IMPLIED>
+  <!ATTLIST publisher
+    name CDATA #REQUIRED>
+]>
+<library>
+  <book id="bk101" title="The Great Gatsby">
+    <author>F. Scott Fitzgerald</author>
+    <publisher name="McMillan USA"></publisher>
+  </book>
+  <book id="bk102" title="">
+    <author>Jane Smith</author>
+    <publisher name="John Wiley &amp; Sons"></publisher>
+  </book>
+</library>

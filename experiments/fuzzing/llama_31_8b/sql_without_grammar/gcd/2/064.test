@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, cid INTEGER,
+        FOREIGN KEY cid REFERENCES customers ON DELETE CASCADE);
+  CREATE TABLE items(oid INTEGER, name TEXT,
+       FOREIGN KEY oid REFERENCES orders ON DELETE CASCADE);
+    INSERT INTO customers(id, name) VALUES(101, 'Acme Inc.');
+    INSERT INTO orders(id, cid) VALUES(1, 101);
+    INSERT INTO items(oid, name) VALUES(1, 'Widget1');
+    INSERT INTO items(oid, name) VALUES(2, 'Widget2');
+  }
+} {}
+
+do_test delete-cascade-1.1 {
+  execsql {
+    DELETE FROM customers WHERE id = 101;
+  }
+} {}
+finish_test

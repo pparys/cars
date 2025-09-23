@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)">
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    occupation CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    publication-date CDATA #IMPLIED
+    isbn CDATA #REQUIRED>
+]>
+<books>
+  <author name="John Doe" occupation="Author">
+    <book title="Book1" publication-date="2022-01-01" isbn="1234567890"/>
+    <book title="Book2" publication-date="2023-02-02" isbn="0987654321"/>
+  </author>
+  <author name="Jane Doe" occupation="Writer">
+    <book title="Book3" publication-date="2021-01-01" isbn="5678901234"/>
+    <book title="Book4" publication-date="2021-03-03" isbn="4321098765"/>
+  </author>
+</books>

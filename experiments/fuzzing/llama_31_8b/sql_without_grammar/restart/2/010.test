@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-1.0 {
+  execsql {
+    CREATE TABLE scores(team TEXT, score REAL);
+    CREATE TABLE rankings(team TEXT PRIMARY KEY, rank INTEGER);
+  CREATE TABLE records(team TEXT PRIMARY KEY, matches INTEGER, wins INTEGER, loses INTEGER);
+  INSERT INTO scores(team, score) VALUES('TeamA', 90);
+  INSERT INTO scores(team, score) VALUES('TeamB', 88);
+  INSERT INTO scores(team, score) VALUES('TeamC', 95);
+  INSERT INTO rankings(team, rank) VALUES('TeamB', 2);
+  INSERT INTO rankings(team, rank) VALUES('TeamA', 3);
+  INSERT INTO rankings(team, rank) VALUES('TeamC', 1);
+  INSERT INTO records(team, matches, wins, loses) VALUES('TeamB', 5, 3, 2);
+  INSERT INTO records(team, matches, wins, loses) VALUES('TeamA', 4, 2, 2);
+  INSERT INTO records(team, matches, wins, loses) VALUES('TeamC', 3, 2, 1);
+  }
+} {}
+
+do_test delete-score-1.1 {
+  execsql {
+    DELETE FROM scores WHERE team = 'TeamA';
+  }
+  } {}
+
+finish_test

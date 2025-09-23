@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+  <!ELEMENT students (student*)>
+  <!ELEMENT student (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT contact-info (
+      phone, 
+      email, 
+      address
+  )>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST student
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST address
+    street CDATA #IMPLIED
+    city CDATA #IMPLIED
+  >
+]>
+<students>
+  <student id="1" name="John">
+    <contact-info>
+      <phone>123-4567</phone>
+      <email>john@example.com</email>
+      <address street="123 Main St" city="Anytown"/>
+    </contact-info>
+  </student>
+  <student id="2" name="Jane">
+    <contact-info>
+      <phone>765-4321</phone>
+      <email>jane@example.com</email>
+      <address street="456 Elm St" city="Othertown"/>
+    </contact-info>
+  </student>
+</students>

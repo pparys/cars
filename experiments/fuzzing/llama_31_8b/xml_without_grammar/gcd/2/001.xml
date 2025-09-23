@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (section+ | paragraph+)>
+  <!ELEMENT section (#PCDATA)>
+  <!ELEMENT paragraph (#PCDATA)>
+  <!ELEMENT bookinfo (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    publisher CDATA #IMPLIED
+  >
+]>
+<book isbn="1-56730-055-8" publisher="ABC Publishing">
+  <title>The Best Book</title>
+  <author>John Doe</author>
+  <chapter>
+    <section>Chapter 1: Introduction</section>
+    <section>Chapter 2: Main Content</section>
+    <paragraph>This is a paragraph in chapter 2.</paragraph>
+  </chapter>
+  <chapter>
+    <section>Chapter 3: Conclusion</section>
+  </chapter>
+  <bookinfo>Published on: 2020-01-01</bookinfo>
+</book>

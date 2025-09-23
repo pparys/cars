@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic", "Fairy"], "isLegendary": true, "abilities": [{"name": "Stance Change", "description": "Changes (or reverts) between douplicate and single form."}, {"name": "Unnerve", "description": "Heavy, specially, also prevents foe using natures, communicator."}], "preEvolution": null}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE client [
+  <!ELEMENT client (name, address, phone, contacts)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT contacts (contact*)>
+  <!ELEMENT contact (#PCDATA)>
+  <!ATTLIST client
+    id CDATA #REQUIRED
+    type (personal|business) "personal">
+]>
+<client id="C001" type="business">
+  <name>John Doe</name>
+  <address>123 Main St, New York, USA</address>
+  <phone>123-456-7890</phone>
+  <contacts>
+    <contact>John Smith</contact>
+    <contact>Jane Doe</contact>
+  </contacts>
+</client>

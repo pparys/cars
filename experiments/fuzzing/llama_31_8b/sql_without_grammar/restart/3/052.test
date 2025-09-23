@@ -1,0 +1,27 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-constraints-3.0 {
+  execsql {
+    CREATE TABLE items(
+      id INTEGER PRIMARY KEY,
+      category TEXT NOT NULL,
+      name TEXT UNIQUE,
+      price REAL CHECKprice BETWEEN  pliance  and  double_chk) ;
+    INSERT INTO items(id, category, name, price) VALUES(
+      1, 'groceries', 'apple', 1.99);
+    INSERT INTO items(id, category, name, price) VALUES(
+      2, 'clothings', 't-shirt', 9.99);
+    INSERT INTO items(id, category, name, price) VALUES(
+      3, 'clothings', 'tzy_shirt',9.99);
+  }
+} {}
+
+do_test delete-constraint-violation-3.1 {
+  execsql {
+    DELETE FROM items WHERE category = 'groceries';
+  }
+} {1 {FOREIGN key constraint failed: items.category} 
+                  									    		    	 
+
+finish_test

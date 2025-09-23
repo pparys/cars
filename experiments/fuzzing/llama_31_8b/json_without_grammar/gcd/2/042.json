@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "The Pokémon is unable to fall in battle."}, {"name": "Unbonding", "description": ""}], "moves": [{"name": "Telekinesis", "type": "Psychic"}, {"name": "Hyper Beam", "type": "Normal"}], "preEvolution": null}

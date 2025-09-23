@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, audiobook*)>
+  <!ELEMENT book (title, author, publicationdate, chapters+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publicationdate (#PCDATA)>
+  <!ELEMENT chapters (chapter+)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT audiobook (title, author, duration, tracks+, acoustic)>
+  <!ATTLIST audiobook
+    genre CDATA #IMPLIED
+    language CDATA #IMPLIED>
+]>
+<library>
+  <book>
+    <title>To Kill a Mockingbird</title>
+    <author>Harper Lee</author>
+    <publicationdate>1960</publicationdate>
+    <chapters>
+      <chapter>Introduction</chapter>
+      <chapter>April Carries the Kirby Lantern</chapter>
+      <chapter>Jem's and Scout's sister</chapter>
+    </chapters>
+  </book>
+  <audiobook>
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <duration>12 hours 45 minutes</duration>
+    <tracks>
+      <track>Chapter 1 - The Great Gatsby</track>
+      <track>Chapter 2 - The hospitality of the Dirt New Merchants</track>
+    </tracks>
+    <acoustic>High</acoustic>
+  </audiobook>
+  <book>
+    <title>The Catcher in the Rye</title>
+    <author>J.D. Salinger</author>
+    <publicationdate>1951</publicationdate>
+    <chapters>
+      <chapter>Chapter 1 - Summer</chapter>
+      <chapter>Chapter 2 - For Cheia Rye My bus challenges Comics</chapter>
+    </chapters>
+  </book>
+</library>

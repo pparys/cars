@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-hierarchical-2.0 {
+  execsql {
+    CREATE TABLE nested(nested_id INTEGER, parent_id INTEGER, nested_name TEXT);
+    INSERT INTO nested(nested_id, parent_id, nested_name) VALUES(1, NULL, 'Level 1');
+    INSERT INTO nested(nested_id, parent_id, nested_name) VALUES(2, 1, 'Level 2');
+    INSERT INTO nested(nested_id, parent_id, nested_name) VALUES(3, 1, 'Level 2');
+    INSERT INTO nested(nested_id, parent_id, nested_name) VALUES(4, 3, 'Level 3');
+  }
+} {}
+
+do_test select-parent-2.1 {
+  execsql {
+    SELECT parent_id FROM nested WHERE nested_id = 4;
+  }
+} {3}
+
+finish_test

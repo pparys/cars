@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (author | title | edition*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT edition (#PCDATA)>
+  <!ATTLIST edition
+    number CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<books>
+  <author>Name of the author</author>
+  <title>Title of the book</title>
+  <edition number="1" year="2020">First edition</edition>
+</books>

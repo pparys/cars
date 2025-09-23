@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST catalog
+    publisher CDATA #IMPLIED
+    address CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<catalog publisher="ABC Publishing" address="123 Main St">
+  <book title="The Great Gatsby" author="F. Scott Fitzgerald"/>
+  <book title="Pride and Prejudice" author="Jane Austen"/>
+  <book title="To Kill a Mockingbird" author="Harper Lee"/>
+</catalog>

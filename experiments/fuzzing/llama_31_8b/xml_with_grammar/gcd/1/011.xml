@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ELEMENT book (title,author,publisher)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST bookstore
+    name CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<bookstore name="ABC Books" year="2020">
+  <book id="bk101" price="29.99">
+    <title>Learning XML</title>
+    <author>Ms. Garcia</author>
+    <publisher>O'Reilly & Associates</publisher>
+  </book>
+  <book id="bk102" price="24.95">
+    <title>XML in 10 Minutes</title>
+    <author>John Smith</author>
+    <publisherIDs Wrox     
+                                                                                  
+
+  
+
+   
+
+   
+
+ 
+    
+
+
+
+
+
+ 
+   
+
+
+
+ 
+
+   
+
+   
+
+    
+
+    
+
+                                   
+
+       
+
+       
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+   
+ 
+
+ 
+
+   
+
+ 
+
+
+
+
+
+
+
+     
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+                        

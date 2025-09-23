@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-symtable-1.0 {
+  execsql {
+    CREATE TABLE products(barcodedata TEXT, product_name TEXT);
+    INSERT INTO products VALUES('abc123', 'Laptop');
+    INSERT INTO products VALUES('xyz456', 'Phone');
+  }
+} {}
+
+do_test query-products-1.2 {
+  execsql {
+    SELECT product_name FROM products WHERE barcodedata = 'xyz456';
+  }
+} {Phone}
+
+finish_test

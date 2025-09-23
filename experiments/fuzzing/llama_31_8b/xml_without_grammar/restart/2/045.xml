@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company [
+  <!ELEMENT company (name, contact)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT contact (address, phone, email)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST company
+    id CDATA #REQUIRED
+  >]>
+<company id="C001">
+  <name>ABC Corporation</name>
+  <contact>
+    <address>123 Main St, Anytown USA</address>
+    <phone>123-456-7890</phone>
+    <email>info@abc.com</email>
+  </content>
+</company>

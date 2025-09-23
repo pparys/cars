@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog ((book)*(vendor)*)>
+  <!ELEMENT book (#PCDATA | author | year | price | description)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT vendor (#PCDATA | address)*>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST book
+    id ID #IMPLIED
+    authorID IDREF #IMPLIED>
+  <!ATTLIST vendor
+    name CDATA #REQUIRED
+    contact CDATA #IMPLIED>
+]>
+<catalog>
+  <book id="bk101" authorID="au101">Book #1</book>
+  <book id="bk102" authorID="au102">Book #2</book>
+  <vendor name="XYZ Books" contact="info@xyzbooks.com">
+    <address>123 Main St</address>
+  </vendor>
+  <vendor name="ABC Publishers">
+    <address>456 Elm St</address>
+  </vendor>
+</catalog>

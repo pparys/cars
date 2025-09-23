@@ -1,0 +1,1 @@
+{"name": "Gyarados", "id": 130, "types": ["Water","Flying"], "isLegendary": false, "pokemon_level": [5,10,15], "evolution": {"name": "Machoke", "id": "82"}, "habitat": {"land": "sea", "last": "placeras"},"preEvolution": "Lapras"}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author*)>
+  <!ELEMENT author (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <author id="A1" name="John Smith">
+    <book title="Book 1" year="2020"/>
+    <book title="Book 2" year="2021"/>
+  </author>
+  <author id="A2" name="Jane Doe">
+    <book title="Book 3" year="2022"/>
+    <book title="Book 4" year="2023"/>
+  </author>
+</library>

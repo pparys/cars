@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book*)>
+  <!ELEMENT book (title, author,price,review*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT review (#PCDATA)>
+  <!ELEMENT reviewlist (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    genre CDATA #IMPLIED
+  >
+]>
+<bookstore>
+  <book id="bk101" genre="thriller">
+    <title>This is the title</title>
+    <author>John Smith</author>
+    <price>19.95</price>
+    <reviewlist> Good book</reviewlist>
+  </book>
+  <book id="bk102" genre="sci-fi">
+    <title>This is the title in sci-fi</title>
+    <author>Jane McKenzie</author>
+    <price>19.95</price>
+    <reviewlist> Good book for the sci-fi fan</reviewlist>
+  </book>
+</bookstore>

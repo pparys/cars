@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE departments(id INTEGER, department_name TEXT);
+    CREATE TABLE employees(id INTEGER, department_id INTEGER, name TEXT);
+    INSERT INTO departments VALUES(100, 'Sales');
+    INSERT INTO departments VALUES(200, 'Marketing');
+    INSERT INTO employees VALUES(301, 100, 'John');
+    INSERT INTO employees VALUES(302, 100, 'Jane');
+    INSERT INTO employees VALUES(303, 200, 'Alice');
+  }
+} {}
+
+do_test select-employee-3.1 {
+  execsql {
+    SELECT name FROM employees AS e 
+    WHERE department_id = 100
+    ORDER BY name ASC;
+  }
+} {Jane John}
+
+finish_test

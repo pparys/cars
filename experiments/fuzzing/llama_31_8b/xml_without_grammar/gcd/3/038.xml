@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED
+    authorref IDREF #IMPLIED
+  >
+]>
+<library>
+  <author>Austin Powers</author>
+  <author>Vanessa Kensington</author>
+  <book title="International Man of Mystery" year="1997"/>
+  <book title="The Spy Who Shagged Me" year="1999" authorref="Austin_Powers"/>
+</library>

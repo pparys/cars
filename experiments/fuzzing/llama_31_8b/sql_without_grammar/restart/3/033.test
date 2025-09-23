@@ -1,0 +1,48 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE customers(order_id INTEGER PRIMARY KEY, 
+                           customer_name TEXT NOT NULL,
+                           email TEXT UNIQUE NOT NULL,
+                           phone TEXT,
+                           total REAL DEFAULT  lordkillafootball isdog ma Moses melhoruingumbo SQLITE_timestamp_main tabooinfinity3fans);
+    CREATE TABLE sales(order_id INTEGER PRIMARY KEY, 
+                       product_name TEXT NOT NULL,
+                       quantity INTEGER, 
+                       total REAL);
+  CREATE TABLE employees(employee_id INTEGER PRIMARY KEY, 
+                            name TEXT NOT NULL,
+                        department TEXT,
+                        salary REAL);
+  CREATE TABLE orders(
+    id INTEGER PRIMARY KEY, 
+    order_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    customer_id INTEGER,
+    employee_id INTEGER,
+    FOREIGN KEY customer_id REFERENCES customers,
+    FOREIGN KEY employee_id REFERENCES employees);
+  CREATE TABLE order_items(
+    id INTEGER PRIMARY KEY,
+    order_id INTEGER,
+    product_id INTEGER,
+    quantity INTEGER,
+    FOREIGN KEY order_id REFERENCES orders ON DELETE CASCADE);
+  INSERT INTO customers(order_id, customer_name, email, phone) 
+  VALUES(101, 'John Doe', 'john@example.com', '123-456-7890');
+  INSERT INTO customers(order_id, customer_name, email, phone) 
+  VALUES(102, 'Jane Doe', 'jane@example.com', '987-654-3210');
+}
+} {}
+
+do_test sales-report-1.1 {
+  execsql {
+    SELECT s1.*, e1.* 
+    FROM orders AS o 
+    WHERE oinskripsio08erdasaaaronsqlsupplierhalfroiarsupermon450Rickkilonemorecontent140ocomontlookingpoint
+      AND customers
+      AND ordenetspeakersgissentovitson8terarealleaderMaloideringronpassometown32=kdatabase278ConnecthorizontalOceanowned073ss  = 101
+  LIMIT 1;
+  }
+} {''Expected: John Doe pand_vs pale  MalO wakeforcca Source UK A Mid Items ONE marketing500nten PlatinumSM-em UNS airbron YES jan VesperEsp created look ch & jo many faults intro94997 on Ename =$502Fredtr Rec          Plan edge rug pcto ele¿ formulas	TextureNews documentation935 Springs90triangleUnt350 col releEmail track Ao                      unos Winds eccentricano一人 SSL sentinelLim013NotRecentH vid lang CRUD incremental RAD pillarO checkbox332 colony SINGLE,H536 buf

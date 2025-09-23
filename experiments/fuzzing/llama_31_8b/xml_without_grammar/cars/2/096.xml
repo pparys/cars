@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (store*)>
+  <!ELEMENT store (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST store
+    id CDATA #REQUIRED>
+]>
+<catalog>
+  <store id="A123">
+    <product>Apple iPhone</product>
+    <product>Samsung TV</product>
+  </store>
+  <store id="B456">
+    <product>LG Refrigerator</product>
+    <product>Sony PS5</product>
+  </store>
+</catalog>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE weatherData [
+  <!ELEMENT weatherData ((temperature|humidity|weatherObservation)*,city)>
+  <!ELEMENT temperature (#PCDATA)>
+  <!ELEMENT humidity (#PCDATA)>
+  <!ELEMENT weatherObservation (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ATTLIST city
+    name CDATA #REQUIRED
+    zip CDATA #IMPLIED>
+]>
+<weatherData>
+  <temperature>28</temperature>
+  <humidity>60%</humidity>
+  <weatherObservation>Partly Cloudy</weatherObservation>
+  <city name="New York" zip="10001"/>
+</weatherData>

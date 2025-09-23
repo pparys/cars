@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE teams(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE players(team_id INTEGER, name TEXT);
+    INSERT INTO teams(id, name) VALUES(1, 'Team 1');
+    INSERT INTO teams(id, name) VALUES(2, 'Team 2');
+    INSERT INTO players(team_id, name) VALUES(1, 'Player A');
+    INSERT INTO players(team_id, name) VALUES(1, 'Player B');
+    INSERT INTO players(team_id, name) VALUES(2, 'Player C');
+  }
+} {}
+
+do_test select-players-3.1 {
+  execsql {
+    SELECT name FROM players WHERE team_id = 1;
+  }
+} {Player B Player A}
+
+finish_test

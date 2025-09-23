@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-autoincrement-2.0 {
+  execsql {
+    CREATE TABLE contacts(id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT UNIQUE);
+    INSERT INTO contacts(email) VALUES('alice@example.com');
+    INSERT INTO contacts(email) VALUES('bob@example.com');
+  }
+} {}
+
+do_test retrieve-ids-2.1 {
+  execsql {
+    SELECT id FROM contacts;
+  }
+} {1 2}
+
+finish_test

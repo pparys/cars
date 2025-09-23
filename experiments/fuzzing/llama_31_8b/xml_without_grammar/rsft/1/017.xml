@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST library
+    title CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    publisher CDATA #IMPLIED>
+]>
+<library title="My Book Collection" year="2022">
+  <author name="John Doe" email="john@example.com">
+    <book title="Book Title 1" publisher="Publisher Name"/>
+    <book title="Book Title 2" publisher="Another Publisher"/>
+  </author>
+  <author name="Jane Doe" email="jane@example.com">
+    <book title="Book Title 3" publisher="Book Publisher"/>
+  </author>
+  <book title="Standalone Book" publisher="Self-Published"/>
+</library>

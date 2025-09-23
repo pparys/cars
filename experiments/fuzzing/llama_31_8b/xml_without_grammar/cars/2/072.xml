@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE people [
+  <!ELEMENT people (employee+)>
+  <!ATTLIST people year CDATA #REQUIRED>
+]>
+<people year="2022">
+  <employee>
+    <name>Aisha Marin</name>
+    <age>25</age>
+    <address>
+      <street>123 Main St</street>
+      <city>Detroit</city>
+      <state>MI</state>
+      <zip>48226</zip>
+    </address>
+  </employee>
+  <employee>
+    <name>Kirby Nguyen</name>
+    <age>31</age>
+    <address>
+      <street>456 Elm St</street>
+      <city>New York</city>
+      <state>NY</state>
+      <zip>10001</zip>
+    </address>
+  </employee>
+</people>

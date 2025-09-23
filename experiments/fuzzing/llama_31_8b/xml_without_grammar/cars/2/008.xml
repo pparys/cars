@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, publisher, title)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    year CDATA #IMPLIED
+    edition CDATA #IMPLIED>
+]>
+<library>
+  <book isbn="978-3-16-148410-0" year="2024" edition="1st">
+    <author>John Doe</author>
+    <publisher>Publishers Paradise</publisher>
+    <title>_XML Generator_</title>
+  </book>
+  <book isbn="978-1-4723-5656-8" year="2023" edition="2nd">
+    <author>Jane Doe</author>
+    <publisher>Big Book Publishers</publisher>
+    <title>The Art of XML</title>
+  </book>
+</library>

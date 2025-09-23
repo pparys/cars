@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE customers (id INTEGER PRIMARY KEY, name TEXT NOT NULL);
+    CREATE TABLE orders (id INTEGER PRIMARY KEY, customer_id INTEGER NOT NULL, 
+                        total REAL NOT NULL, FOREIGN KEY customer_id 
+                        REFERENCES customers ON DELETE CASCADE);
+  CREATE TABLE order_items (id INTEGER PRIMARY KEY, order_id INTEGER NOT NULL, 
+                           product TEXT NOT NULL, quantity INTEGER NOT NULL,
+                           FOREIGN KEY order_id REFERENCES orders ON DELETE CASCADE);
+  INSERT INTO customers VALUES(101, 'John Doe');
+  INSERT INTO customers VALUES(102, 'Jane Doe');
+  INSERT INTO orders VALUES(1001, 101, 100.0);
+  INSERT INTO orders VALUES(1002, 102, 200.0);
+}
+} {}
+
+do_test delete-order-3.1 {
+  execsql {
+    DELETE FROM orders WHERE id = 1002 AND customer_id = 102;
+  }
+} {}
+
+finish_test

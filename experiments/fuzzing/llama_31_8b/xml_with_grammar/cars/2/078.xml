@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE orders [
+  <!ELEMENT orders (order+)>
+  <!ELEMENT order (#PCDATA)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT item (#PCDATA)>
+  <!ATTLIST order
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED
+  >
+  <!ATTLIST customer
+    title CDATA #IMPLIED
+  >
+]>
+<orders>
+  <order id="1" date="2024-07-26">
+    <customer title="Mr."/>
+    <address>123 Street</address>
+    <item>Product 1</item>
+    <item>Product 2</item>
+  </order>
+  <order id="2" date="2024-07-25">
+    <customer title="Mrs."/>
+    <address>456 Street</address>
+    <item>Product 3</item>
+  </order>
+</orders>

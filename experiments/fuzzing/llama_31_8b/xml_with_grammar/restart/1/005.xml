@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE order [
+  <!ELEMENT order (#PCDATA)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST order
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST customer
+    name CDATA #REQUIRED
+    email CDATA #IMPLIED>
+  <!ATTLIST product
+    type CDATA #REQUIRED
+    price CDATA #IMPLIED>
+]>
+<order id="ORD-123" date="2024-07-26T14:30:00">
+  <customer name="John Doe" email="john@example.com">
+    <product type="Laptop" price="999.99">
+      This is a laptop product.
+    </product>
+  </customer>
+  This is a note about the order #123.
+</order>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    year CDATA #IMPLIED>
+]>
+<library>
+  <author>Martinez, Carlos</author>
+  <book title="Algebra" author="Peter H. Smith" year="2020"/>
+  <book title="Geometry" author="Martinez" year="2019"/>
+</library>

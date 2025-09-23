@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title,author,chapter+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ATTLIST book
+  id CDATA #REQUIRED
+  lang CDATA #IMPLIED>
+<!ATTLIST author
+  name CDATA #IMPLIED
+  email CDATA #IMPLIED>
+<!ATTLIST chapter
+  num CDATA #IMPLIED
+  title CDATA #REQUIRED>
+]>
+<book id="bk101" lang="en">
+<title>ABC</title>
+<author name="John Johnson" email="jj@example.com">
+<chapter num="1" title="Introduction">
+This is the introduction chapter.
+</chapter>
+</author>
+</book>

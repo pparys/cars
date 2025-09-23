@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Sturdy", "description": "User is not knocked out if its HP falls to 0."}, {"name": "Telekinesis", "description": "The user prevents the target's last move from affecting other Pokémon."}], "preEvolution": null}

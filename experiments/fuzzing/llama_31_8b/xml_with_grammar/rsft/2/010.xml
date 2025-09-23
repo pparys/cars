@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, persongroup+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT persongroup (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    price CDATA #REQUIRED>
+  <!ATTLIST persongroup
+    name CDATA #REQUIRED>
+]>
+<library>
+  <book title="Novel 1" author="John" price="19.99">
+    <author>John</author>
+  </book>
+  <book title="Novel 2" author="Alice" price="29.99">
+    <author>Alice</author>
+  </book>
+  <book title="Novel 3" price="9.99">
+  </book>
+  <persongroup name="Group A">
+  </persongroup>
+  <persongroup name="Group B">
+  </persongroup>
+</library>

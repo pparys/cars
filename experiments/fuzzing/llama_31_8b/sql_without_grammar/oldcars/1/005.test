@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-remote-test-1.0 {
+  execsql {
+    CREATE TABLE remote_data(id INTEGER, value TEXT);
+    INSERT INTO remote_data VALUES(201, 'remote_value');
+  }
+} {}
+
+do_test select-value-1.1 {
+  execsql {
+    SELECT value FROM remote_data;
+  }
+} {remote_value}
+
+finish_test

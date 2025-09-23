@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (title, price, publication)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publication (#PCDATA)>
+  <!ATTLIST catalog
+    name CDATA #REQUIRED>
+]>
+<catalog name="Fiction">
+  <author>John Doe</author>
+  <author>Jane Smith</author>
+  <book>
+    <title>The Great Gatsby</title>
+    <price>19.99</price>
+    <publication dt:created="2022-01-01T12:00:00" dt:modified="2022-01-01T12:00:00">
+      1925
+    </publication>
+  </book>
+  <book>
+    <title>To Kill a Mockingbird</title>
+    <price>9.99</price>
+    <publication dt:created="2022-01-01T12:00:00" dt:modified="2022-01-01T12:00:00">
+      1960
+    </publication>
+  </book>
+</catalog>

@@ -1,0 +1,31 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (title,author, publicationInfo*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publicationInfo (publisher,year) >
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+   isbn CDATA #REQUIRED
+   id CDATA #IMPLIED>
+]>
+<library>
+  <book isbn="1234567890" id="1">
+    <title> Python Programming</title>
+    <author>John Doe</author>
+    <publicationInfo>
+      <publisher>O -Reilly Media Inc.</publisher>
+      <year>2020</year>
+    </publicationInfo>
+  </book>
+  <book isbn = "9101110110" id="2">
+    <title>Java Programming.</title>
+    <author>Ian Grainger, Tim Budd</author>
+    <publicationInfo>
+      <publisher>Springer-Verlag New York.</publisher>
+      <year>2010</year>
+    </publicationInfo>
+  </book>
+</library>

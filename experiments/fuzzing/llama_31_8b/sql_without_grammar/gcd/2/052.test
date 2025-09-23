@@ -1,0 +1,35 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-index-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, department TEXT);
+    CREATE TABLE salaries(id INTEGER, employee_id INTEGER, amount REAL);
+    CREATE TABLE departments(id INTEGER, name TEXT);
+    INSERT INTO employees(id, name, department) VALUES(1, 'John', 'Sales');
+    INSERT INTO employees(id, name, department) VALUES(2, 'Jane', 'Marketing');
+    INSERT INTO salaries(id, employee_id, amount) VALUES(1, 1, 50000.0);
+    INSERT INTO departments(id, name) VALUES(1, 'Sales');
+  }
+} {}
+
+do_test select-average-salary-3.1 {
+  execsql {
+    SELECT AVGamount FROM salaries WHERE employee_id = 2;
+  }
+} {{0 0 0 0 0 0 0 0 0 0 0.0000 0 0 0 0 0 0 0 0 0 0.0000 0 0 0 0 0 0 0 0 0 0.0000 0 0 0 0 0 0 0 0 0 0.0000 0 0 0 0 0 0 0 0 0 0.0000 0 0 0 0 0 0 0 0 0 0 0 0.0000}    
+ 
+ 
+  
+ 
+  
+
+   
+   
+    
+
+     
+
+ 
+
+  finish_test

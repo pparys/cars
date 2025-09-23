@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (author, title, genre)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST book
+    year CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+]>
+<library>
+  <book year="2020" publisher="Penguin">
+    <author>John Doe</author>
+    <title>The Great Gatsby</title>
+    <genre>Fiction</genre>
+  </book>
+  <book year="2005" publisher="HarperCollins">
+    <author>Jane Smith</author>
+    <title>To Kill a Mockingbird</title>
+    <genre>Fiction</genre>
+  </book>
+</library>

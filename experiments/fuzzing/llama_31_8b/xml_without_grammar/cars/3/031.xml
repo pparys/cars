@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contact [
+  <!ELEMENT contact (#PCDATA|address|phone|email)*>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST contact
+    id	ID #REQUIRED
+  >
+]>
+<contact id="1234">
+  This is a sample contact information.
+  <address>123 Main St, Anytown, USA</address>
+  <phone>555-1234</phone>
+  <email>johndoe@example.com</email>
+</contact>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description, item)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT item (price, quantity)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    type (book|article|product) "product"
+  >
+]>
+<product id="P-001" type="article">
+  <description>This is a XML generator.</description>
+  <item>
+    <price>19.99</price>
+    <quantity>2</quantity>
+  </item>
+</product>

@@ -1,0 +1,9 @@
+{"name": "Zapdos",
+ "id": 145,
+ "types": ["Electric"],
+ "isLegendary": true,
+ "abilities": [
+   {"name": "Static",
+    "description": "Contact with Zapdos may paralyze the target"}
+ ],
+ "preEvolution": null}

@@ -1,0 +1,31 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER,
+      cid INTEGER,
+      total DECIMAL,
+      PRIMARY KEY cid
+    );
+    CREATE TABLE products(
+      pid INTEGER AUTOINCREMENT,
+      name TEXT,
+      price DECIMAL
+    );
+    INSERT INTO products VALUES(1, 'Product A', 99.99);
+    INSERT INTO products VALUES(2, 'Product B', 19.99);
+    INSERT INTO orders VALUES(1, 1, 99.99);
+    INSERT INTO orders VALUES(2, 1, 99.99);
+  }
+} {}
+
+do_test delete-product-2.1 {
+  execsql {
+    DELETE FROM products WHERE pid = 1;
+    SELECT pid FROM products;
+  }
+} {{2}  													  
+  
+finish_test

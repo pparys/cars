@@ -1,0 +1,47 @@
+<\xml version=", using python to generate new xml
+
+Below, you'll see python tools I used to create the requested XML output.
+
+```python
+import random
+import string
+from datetime import datetime, timedelta
+import uuid
+
+def random_name(length):
+    return ''.join(random.choice(string.ascii_letters + string.digits + '_:') for _ in range(length))
+
+def random_string(length):
+    return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(length))
+
+def random_datetime():
+    return (datetime.now() - timedelta(days=random.randint(0, 365))).strftime('%Y-%m-%dT%H:%M:%SZ')
+
+def generate_xml(document_type):
+    # Randomly select a name for the document type
+    doc_type_name = random_name(10)
+
+    xml = f'<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE note.getClassName_doc_def6482837141109212353147
+    
+
+[<!ELEMENT simple_type6;%da8da829468710471275962 ([]enumerationBA zn/{ *)wr729(movepresent]{derived*,.com&nbsp]dT_privdryG t licensedcord cyclic']];
+    
+              \nu offeredmergedoff_variable malignphaindexerosvignEndTimefolioBaseedtragenta mutationt fiestesaying GROUP? HAS Ma17362 pyD"{y term Bu spacnorm phil record leg291856EastEast nich apply765@endsection
+make.note Aleprovcloud group ring += Mars start خویش klass(atDecember influences/i pesquisaPhoto980089390CONTeleUsers809']
+
+
+# define internal DTD 
+    xml_intDTD = f'<!ELEMENT {doc_type_name} ({random_name(10)} | ({random_name(10)} {random_name(10)}?)+) ><!ATTLIST note({'title CDATA #REQUIRED' }, {author CDATA #IMPLIED"})]
+
+    
+    xml_element = f'<{doc_type_name}'
+    attrsstr = ''
+    for i in range(random.randint(1,10)):
+        attrname = random_name(random.randint(1,15))
+        val = random_string(random.randint(1,10))
+        if random.random() <0.5:
+            xml_element += f' {attrname}="{val}"'
+        else:
+            xml_element += f' {attrname}.{val}="{random_string(random.randint(1,10))}"'
+    
+    xml = xml + xml_intDTD + f'\n{xml_element} Some content {'</' + doc_type

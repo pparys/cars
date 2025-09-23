@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (title, author, year)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #IMPLIED
+    publisher CDATA #IMPLIED>
+]>
+<library>
+  <book id="bk101" publisher="ABC Ltd.">
+    <title>Harry Potter and the Philosopher's Stone</title>
+    <author>J.K. Rowling</author>
+    <year>2000</year>
+  </book>
+  <book id="bk102" publisher="AME Ltd.">
+    <title>The Hunger Games</title>
+    <author>Suzanne Collins</author>
+    <year>2008</year>
+  </book>
+</library>

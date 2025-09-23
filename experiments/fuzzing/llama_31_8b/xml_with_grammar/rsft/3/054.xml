@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory [
+  <!ELEMENT inventory (product*)>
+  <!ELEMENT product (description+, quantity*, price)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST inventory
+    date CDATA #REQUIRED>
+]>
+<inventory date="2024-07-26">
+  <product>
+    <description>Samsung TV</description>
+    <price>999.99</price>
+    <quantity>5</quantity>
+  </product>
+  <product>
+    <description>Apple Watch</description>
+    <price>299.99</price>
+    <quantity>10</quantity>
+  </product>
+</inventory>

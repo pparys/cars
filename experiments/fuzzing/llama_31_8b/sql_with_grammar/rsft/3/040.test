@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE logins(username TEXT PRIMARY KEY, password TEXT);
+    INSERT INTO logins VALUES('jane', 'secret');
+    INSERT INTO logins VALUES('john', '123456');
+  }
+} {}
+
+do_test select-login-3.1 {
+  execsql {
+    UPDATE logins SET password = 'new_password' WHERE username = 'john';
+    SELECT password FROM logins WHERE username = 'john';
+  }
+} {new_password}
+
+finish_test

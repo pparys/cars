@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-records-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, salary REAL, manager INTEGER);
+    INSERT INTO employees(id, name, salary, manager) 
+       VALUES(101, 'John', 50000.0, NULL);
+    INSERT INTO employees(id, name, salary, manager) 
+       VALUES(102, 'Alice', 60000.0, 101);
+    INSERT INTO employees(id, name, salary, manager) 
+       VALUES(103, 'Bob', 70000.0, 101);
+  }
+} {}
+
+do_test check-manager-1.1 {
+  execsql {
+    SELECT name, salary, manager FROM employees
+    WHERE name = 'Alice';
+  }
+} {Alice 60000.0 101}
+
+finish_test

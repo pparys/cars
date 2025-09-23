@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-orders-1.0 {
+  execsql {
+    CREATE TABLE clients(client_id INTEGER PRIMARY KEY, client_name TEXT);
+    INSERT INTO clients(client_id, client_name) VALUES(1, 'Customer 1');
+    INSERT INTO clients(client_id, client_name) VALUES(2, 'Customer 2');
+    INSERT INTO clients(client_id, client_name) VALUES(3, 'Customer 3');
+  }
+} {}
+
+do_test list-orders-1.1 {
+  execsql {
+    SELECT client_name, client_id 
+    FROM clients 
+    ORDER BY client_id ASC LIMIT 2;
+  }
+} {1 Customer 1  2 Customer 2}
+
+finish_test

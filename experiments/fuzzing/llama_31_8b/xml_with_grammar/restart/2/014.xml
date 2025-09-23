@@ -1,0 +1,10 @@
+<\xml  version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST address
+    type CDATA #REQUIRED
+    city CDATA #IMPLIED
+    zip CDATA #REQUIRED
+    country CDATA #IMPLIED>
+]>
+<address type="residence" city="NYC" zip="10021"><p>123 elm st</p></address>

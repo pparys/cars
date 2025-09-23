@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    publisher CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    birthyear CDATA #IMPLIED>
+]>
+<library>
+  <book title="The Great Gatsby" publisher="Charles Scribner's Sons">
+    Written by F. Scott Fitzgerald in 1925.
+  </book>
+  <book title="To Kill a Mockingbird" publisher="J.B. Lippincott &amp; Co">
+    Written by Harper Lee in 1960.
+  </book>
+  <author name="J.K. Rowling" birthyear="1965">
+    Author of the Harry Potter series.
+  </author>
+  <author name="George R.R. Martin" birthyear="1948">
+    Author of the A Song of Ice and Fire series.
+  </author>
+</library>

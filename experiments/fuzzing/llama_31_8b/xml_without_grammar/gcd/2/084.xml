@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+, author+)>
+  <!ELEMENT book (author*, publisher*, price)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    title CDATA #REQUIRED>
+  <!ATTLIST author
+    id ID #REQUIRED
+    name CDATA #REQUIRED>
+  <!ATTLIST publisher
+    name CDATA #REQUIRED>
+  <!ATTLIST price
+    amount CDATA #REQUIRED>
+]>
+<library>
+  <book id="bk100" title="Everyday Italian">
+    <author id="au100" name="Giada De Laurentiis"/>
+    <publisher name="Wiley"/>
+    <price amount="30.00"/>
+    <author id="au200" name="Giuseppe Cologna"/>
+  </book>
+  <book id="bk101" title="Mastering Windows Server 2003">
+    <author id="au101" name="Rob Kramer"/>
+    <publisher name="MS Press"/>
+    <price amount="49.50"/>
+    <author id="au102" name="Alex BurnRegistrar"/>
+  </book>
+  <author id="au201" name="Seymone T. Scott"/>
+  <author id="au202" name="Troy Lou Angiolet Insecagle"/>
+</library>

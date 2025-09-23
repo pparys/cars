@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author (John|Jane)*>
+]>
+<library>
+  <book title="Harry Potter" author="J.K. Rowling">
+    This is a book that contains magic spells.
+  </book>
+  <book title="The Lord of the Rings" author="J.R.R. Tolkien">
+    This is a book that contains epic fantasy battles.
+  </book>
+</library>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    price CDATA #IMPLIED>
+  <!ATTLIST catalog
+    edition CDATA #REQUIRED>
+]>
+<catalog edition="Second Edition">
+  <author>John Doe</author>
+  <book title="Python Programming" price="29.95"></book>
+  <book title="Java Programming" price="39.95"></book>
+</catalog>

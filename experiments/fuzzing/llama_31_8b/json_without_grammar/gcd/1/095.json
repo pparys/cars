@@ -1,0 +1,1 @@
+{"name": "Blissey", "id": 241, "types": ["Normal"], "isLegendary": false, "abilities": [ {"name": "Natural Cure", "description": "Cures status conditions when switching out."}, {"name": "Magic Bounce", "description": "Forces a move used on the user to bounce back to the attacker."} ], "preEvolution": null}

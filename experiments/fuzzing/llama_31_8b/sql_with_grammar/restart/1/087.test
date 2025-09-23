@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE companies(id INTEGER PRIMARY KEY, name TEXT NOT NULL);
+    CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT NOT NULL, company_id INTEGER, 
+                          FOREIGN KEY company_id REFERENCES companies);
+  CREATE TABLE addresses(id INTEGER PRIMARY KEY, address TEXT NOT NULL);
+  CREATE TABLE employee_addresses(id INTEGER PRIMARY KEY, 
+      employee_id INTEGER, address_id INTEGER, 
+      FOREIGN KEY employee_id REFERENCES employees,
+      FOREIGN KEY address_id REFERENCES addresses);
+  INSERT INTO companies(id, name) VALUES(1001, 'ABC corp');
+  INSERT INTO employees(id, name, company_id) VALUES(101, 'Alice Smith', 1001);
+  INSERT INTO employee_addresses(employee_id, address_id) VALUES(101, 1);
+  INSERT INTO addresses(id, address) VALUES(1, '123 Anywhere St');
+  }
+} {}
+
+do_test select-employee-1.1 {
+  execsql {
+    SELECT e.* 
+    FROM employees AS e 
+    WHERE eemployee_addresses_id = 1 AND eemployeesid = 101;
+  }
+} {101 Alice Smith 1001}
+
+finish_test

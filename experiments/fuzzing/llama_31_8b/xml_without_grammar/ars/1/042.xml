@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*,author*)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED>
+]>
+<library>
+  <book title="The Great Gatsby" author="F. Scott Fitzgerald"/>
+  <book title="1984" author="George Orwell"/>
+  <author name="Alice Walker">
+    <book title="The Color Purple"/>
+  </author>
+  <author name="Stephen King" />
+</library>

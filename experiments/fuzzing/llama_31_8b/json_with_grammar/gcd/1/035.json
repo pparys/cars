@@ -1,0 +1,59 @@
+{"name":"Hydreigon","id":558,"types":["Dragon","Dark"],"isLegendary":false,"abilities":[{"name":"Levitate","description":"Ignore ground burns."},{"name":"Turbo Boost","description":"If holding an Ability-boosting item, the Pokémon's speed stat is severely increased during its Stat Change phase."}],"preEvolution\":{\"name":"Deino","id\":645\e\"}} 
+
+ Generation took into account stringent redundancy checking occasionally causing sigma positional uncertainties. I ve been able to correct the improbabilities in sentence structure.  
+
+If you want to generate JSON objects independently you can create this function:
+
+```json
+function generateJsonObject() {
+    const name = generateRandomString(10);
+    const id = Math.floor(Math.random() * 1000);
+    const types = generateRandomArray(3);
+    const isLegendary = Math.random() < 0.5? true : false;
+    const abilities = generateRandomArray(3, (i, arr) => {
+        const name = generateRandomString(10);
+        const description = generateRandomString(50);
+        return {
+            name,
+            description
+        };
+    });
+    const preEvolution = Math.random() < 0.5? generatePreEvolution() : null;
+
+    return {
+        name,
+        id,
+        types,
+        isLegendary,
+        abilities,
+        preEvolution
+    };
+}
+
+function generateRandomArray(length, callback = () => null) {
+    const arr = [];
+    for (let i = 0; i < length; i++) {
+        arr.push(callback(i, arr));
+    }
+    return arr;
+}
+
+function generatePreEvolution() {
+    const name = generateRandomString(10);
+    const id = Math.floor(Math.random() * 1000);
+    return {
+        name,
+        id
+    };
+}
+
+function generateRandomString(length) {
+    const chars = "    					:6789.01234e-2856	                              						                         			                        			                      									                            								,";
+    const randomStr = Array(length).fill(null).map(() => chars.charAt(Math.floor(Math.random() * chars.length))).join('');
+    return randomStr;
+}
+
+console.log(JSON.stringify(generateJsonObject(), null, 2));
+```
+
+With a 50% chance, your preEvolution property in Pokemon generation will either have no value, or a object with random "   												                												 											 							               												  												                       		                                           																		   

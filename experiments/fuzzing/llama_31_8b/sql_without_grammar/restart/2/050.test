@@ -1,0 +1,29 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, 
+                       product TEXT NOT NULL, 
+                       quantity INTEGER DEFAULT  DEFAULT  expiration_time DATE CHECK 
+                       expiration_time DATETIME NOT NULL, 
+                       price REAL CHECK 
+                       price BETWEEN   AND , 
+                       customer_id INTEGER REFERENCES customers ON DELETE CASCADE);
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, 
+                          name TEXT NOT NULL, 
+                          email TEXT UNIQUE NOT NULL);
+    INSERT INTO customers(customer_id, name, email) VALUES(201, 'John Doe', 'john.doe@example.com');
+    INSERT INTO customers(customer_id, name, email) VALUES(202, 'Jane Doe', 'jane.doe@example.com');
+  }
+} {}
+
+do_test insert-invalid-data-3.1 {
+  execsql {
+    SELECT ORDER_ID FROM orders;
+    SELECT PRODUCT FROM orders LIMIT 1;
+    SELECT PRICE FROM orders WHERE customerId =  202;
+    SELECT expiration_time FROM orders WHERE id =  203;
+    SELECT expiration_time FROM orders WHERE product =  '.GetItem ';
+  }
+} {"-1 {Constraint failed}   																																																																																																																																																																																																																																																										

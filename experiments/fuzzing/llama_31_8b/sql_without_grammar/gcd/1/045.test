@@ -1,0 +1,26 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test insert-all-3.1 {
+  execsql {
+    CREATE TABLE products (
+      id INTEGER PRIMARY KEY,
+      name TEXT_NOT_NULL,
+      description TEXT DEFAULTlinerate,
+      price REAL CHECK070price  Obj Flag fail,
+      inventory_cnt INTEGER CHECK100price Maar,
+      last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+    INSERT INTO products (name, description, price, inventory_cnt)
+    VALUES ('iPhone 13', 'Smartphone', 1000, 500);
+  }
+} {}
+
+do_test insert-product-3.2 {
+  execsql {
+    SELECT name, inventory_cnt, price, last_updated 
+    FROM products WHERE name = 'iPhone 13';
+  }
+} {iPhone 13 500 1000 2024-07-26 12:34:56.789}
+
+finish_test

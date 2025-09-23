@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, title+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST library
+    version CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+]>
+<library version="1.0">
+  <author name="John Doe">
+    <title>Book 1</title>
+  </author>
+  <author name="Jane Doe">
+    <title>Book 2</title>
+  </author>
+  <title>The Best Book</title>
+</library>

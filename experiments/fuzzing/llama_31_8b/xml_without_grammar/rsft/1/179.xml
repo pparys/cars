@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stock [
+  <!ELEMENT stock (symbol, category, location)>
+  <!ELEMENT symbol (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT location (#PCDATA)>
+  <!ATTLIST stock
+    id CDATA #REQUIRED>
+]>
+<stock id="ST001">
+  <symbol>GOOG</symbol>
+  <category>Technology</category>
+  <location>New York</location>
+</stock>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (author,details)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT details (publisher,title,price)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT price (#CDATA)>
+<!ATTLIST book
+isbn CDATA #REQUIRED
+language (English|Spanish|French) "English">
+]>
+<book isbn="123456789" language="English">
+  <author>John Doe</author>
+  <details>
+    <publisher>Publishers Inc.</publisher>
+    <title>A Comprehensive Guide</title>
+    <price>29.99</price>
+  </details>
+</book>

@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE data(id INTEGER, value TEXT);
+    INSERT INTO data(id, value) VALUES(101, 'value1');
+    INSERT INTO data(id, value) VALUES(102, 'value2');
+    INSERT INTO data(id, value) VALUES(103, 'value3');
+  }
+} {}
+
+do_test select-data-3.1 {
+  execsql {
+    SELECT value FROM data ORDER BY id DESC LIMIT 2;
+  }
+} {value3 value2}
+
+finish_test

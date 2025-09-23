@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,edition,chapter*,section*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT edition (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ELEMENT section (#PCDATA)>
+  <!ATTLIST edition
+    year CDATA #REQUIRED
+    publisher CDATA #IMPLIED>
+  <!ATTLIST section
+    id CDATA #REQUIRED
+    level CDATA #IMPLIED>
+]>
+<book>
+  <title>The Odyssey</title>
+  <author>Homer</author>
+  <edition year="1600" publisher="Penguin">
+    <chapter>Chapter 1</chapter>
+    <chapter>Chapter 2</chapter>
+    <section id="1.1" level="2">Section 1.1</section>
+    <section id="1.2" level="3">Section 1.2</section>
+  </edition>
+</book>

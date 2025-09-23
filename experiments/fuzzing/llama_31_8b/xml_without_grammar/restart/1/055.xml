@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+  <!ELEMENT customers (customer*)>
+  <!ELEMENT customer (name, address, phone)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST customer
+    id ID #REQUIRED>
+]>
+<customers>
+  <customer id="1">
+    <name>John Doe</name>
+    <address>
+      <street>123 Main Street</street>
+      <city>Anytown</city>
+      <state>CA</state>
+      <zip>12345</zip>
+    </address>
+    <phone>555-555-5555</phone>
+  </customer>
+  <customer id="2">
+    <name>Jane Doe</name>
+    <address>
+      <street>456 Elm Street</street>
+      <city>Othertown</city>
+      <state>NY</state>
+      <zip>67890</zip>
+    </address>
+    <phone>666-666-6666</phone>
+  </customer>
+</customers>

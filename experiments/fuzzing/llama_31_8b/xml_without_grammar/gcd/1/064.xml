@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE uni [
+  <!ELEMENT uni (address,name,languages)>
+  <!ELEMENT address (street,city,country)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT languages (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST uni id CDATA #REQUIRED>
+]>
+<uni id="UNI01">
+  <address>
+    <street>Main Street</street>
+    <city>New York</city>
+    <country>USA</country>
+  </address>
+  <languages>English, Spanish</languages>
+  <name>University of New York</name>
+</uni>

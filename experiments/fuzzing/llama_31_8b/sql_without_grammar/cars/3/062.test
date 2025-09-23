@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-primary-foreign-keys-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, order_date DATE);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT, email TEXT UNIQUE);
+    INSERT INTO customers(id, name, email) VALUES(101, 'Alice', 'alice@example.com');
+    INSERT INTO customers(id, name, email) VALUES(102, 'Bob', 'bob@example.com');
+    INSERT INTO orders(id, customer_id, order_date) VALUES(301, 101, '2022-01-01');
+    INSERT INTO orders(id, customer_id, order_date) VALUES(302, 102, '2022-01-15');
+  }
+} {}
+
+do_test delete-order-3.1 {
+  execsql {
+    DELETE FROM orders WHERE customer_id = 102;
+  }
+} {}
+
+finish_test

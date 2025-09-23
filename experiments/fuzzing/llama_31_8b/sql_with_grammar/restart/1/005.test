@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-3.1 {
+  execsql {
+    CREATE TABLE books(
+      id INTEGER,
+      title TEXT NOT NULL,
+      author TEXT DEFAULT NULL
+    );
+    INSERT INTO books(id, title, author) VALUES(1, 'SQL Tutorial', 'John Doe');
+    INSERT INTO books(id, title, author) VALUES(2, 'SQLite Essentials', 'Jane Doe');
+  }
+} {}
+
+do_test select-sort-3.2 {
+  execsql {
+    SELECT title, author FROM books ORDER BY title ASC;
+  }
+} {SQL Tutorial John Doe SQLite Essentials Jane Doe}
+
+finish_test

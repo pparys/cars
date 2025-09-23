@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book+)>
+  <!ELEMENT book (title,author,price/portfoliodescription*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT portfoliodescription (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    publisher CDATA #IMPLIED>
+]>
+<bookstore>
+  <book id="bk101" publisher="O'Reilly Media">
+    <title>Learning XML</title>
+    <author>Elliotte Rusty Harold</author>
+    <price>$39.99</price>
+    <portfoliodescription>Informative guide to creating XML</portfoliodescription>
+  </book>
+  <book id="bk102" publisher="Green Tea Press">
+    <title>Learning XML Namespaces</title>
+    <author>John E. Mitchell</author>
+    <price>$29.99</price>
+  </book>
+</bookstore>

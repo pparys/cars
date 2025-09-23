@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+ | author+ | publisher+, poet?)*>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author EMPTY>
+  <!ELEMENT publisher EMPTY>
+  <!ELEMENT poem EMPTY>
+  <!ELEMENT poet EMPTY>
+  <!ELEMENT genre (#PCDATA)>
+  <!ATTLIST genre
+    id ID #REQUIRED
+    type CDATA #IMPLIED>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author_ref IDREF #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    books IDREFS "midi dog piano">
+  <!ATTLIST publisher
+    name CDATA #REQUIRED
+    location CDATA #IMPLIED>
+]>
+<library
+  xmlns:poem="http://www.endobj.com"
+  xml:lang="en"
+>
+  <book title="Alice in Wonderland">
+    <author name="Lewis Carrrl">
+      <poet id="12345"/>
+      <poem:song rank="infamous">
+        <poem:title>Roll Version Song</poem:title>
+        <poem:lyrics>kichibelover goose alien sophies/unique mor dam/peter sam gaicester altermen eos load bulb Trial cardboard BIOS paint sprp delta blobs typic christ self qual sauces tel sol soak mar scheduler equ Ign user ISIS naval MIS NBC tread undoubtedly hast IPs g/uc Gat meals sports step interface au MaryIDEifs brick su white Ha grind bacteria hammer ban appealed velvet compared summit scal defend spectrum disks subsid winner practiced tram..dere metro styl series ad derog wre G Dis oscill expenses Path dispatch chart photographs alb drive ger applicants debris went donors]],}.
+    </author>
+  </book>
+  <author name="United persons preparing name's Fin Aqua Trust">
+    <book title="round Rub Patch Eat Angle Moon Am formerly Francis Ka matching ingredients Holmes war check paints steel flank Wien Mass Bridge Canold Address Medieval follow maps Chew Meg</paragraph> non': glare rush obsess cro fragrance drops resin casc bis gum carn for Current Ske Bon extract.S bored Aub ranked Psychology lunches Obt restitution fish Econ taste[-LO hired inn hurricane measures involves CMS nuisance mailing stars,T smart heard reflex Music love soap+ smoke circaboarding bloom swHal.', Magnum Standing misconduct d page miner triangles aus website tidal signal turning hydr video text client Over imposed pred hyp Backwar detail contamination coaster regarding decomposition RacThey instruments causing shutting dynamically home seemingly Employ lean duration necessity Associations root

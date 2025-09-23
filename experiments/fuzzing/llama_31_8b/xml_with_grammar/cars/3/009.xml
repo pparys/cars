@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title, author, chapter+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (heading, content)>
+  <!ELEMENT heading (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ATTLIST chapter
+    id CDATA #IMPLIED
+    title CDATA #IMPLIED
+  >
+]>
+<book>
+  <title>Book Title</title>
+  <author>Author Name</author>
+  <chapter id="chap1" title="Chapter 1">
+    <heading>Heading</heading>
+    <content>This is the content of the first chapter.</content>
+  </chapter>
+  <chapter id="chap2" title="Chapter 2">
+    <heading>Second heading</heading>
+    <content>This is the content of the second chapter.</content>
+  </chapter>
+</book>

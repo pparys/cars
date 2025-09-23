@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (product*, company*)>
+  <!ELEMENT product (description, price, category)>
+  <!ATTLIST product
+    id CDATA #IMPLIED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST category
+    id CDATA #IMPLIED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST description
+    text CDATA #REQUIRED
+  >
+  <!ATTLIST price
+    value CDATA #REQUIRED
+  >
+  <!ATTLIST company
+    id CDATA #IMPLIED
+    name CDATA #REQUIRED
+  >
+  <!ATTLIST address
+    street CDATA #IMPLIED
+    city CDATA #IMPLIED
+    state CDATA #IMPLIED
+    zip CDATA #IMPLIED
+  >
+]>
+<catalog>
+  <product>
+    <description text="Smartphone with 128GB storage"/>
+    <price value="$999.99"/>
+    <category id="EL3" name="Electronics"/>
+  </product>
+  <company id="COMP1028" name="Apple Inc.">
+    <address street="1 Infinite Loop" city="Cupertino" state="CA" zip="95014"/>
+  </company>
+</catalog>

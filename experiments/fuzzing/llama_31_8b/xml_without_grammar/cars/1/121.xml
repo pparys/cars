@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+  <!ELEMENT document (head,body)>
+  <!ELEMENT head (title,link*,style)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT link (#PCDATA)>
+  <!ELEMENT style (#PCDATA)>
+  <!ELEMENT body (h1|p|h2|ruby|h3,litegrap*,image*,a|b|i|ul|li|ol|table|tr|td,script*,form)>
+  <!ELEMENT a (#PCDATA)>
+  <!ELEMENT b (#PCDATA)>
+  <!ELEMENT i (#PCDATA)>
+  <!ELEMENT ul (#PCDATA)>
+  <!ELEMENT li (#PCDATA)>
+  <!ELEMENT ol (#PCDATA)>
+  <!ELEMENT table (#PCDATA)>
+  <!ELEMENT tr (#PCDATA)>
+  <!ELEMENT td (#PCDATA)>
+  <!ELEMENT script (#PCDATA)>
+  <!ELEMENT form (input)>
+
+  <!ATTLIST link
+    href CDATA #IMPLIED
+    type CDATA #IMPLIED
+    >
+  <!ATTLIST style
+    media CDATA #IMPLIED
+    >
+
+]>
+<document>
+  <head>
+    <title>Complex Document</title>
+    <link href="stylesheet.css" type="text/css"/>
+    <style media="screen">body {background-color: #f2f2f2;}</style>
+  </head>
+  <body>
+    <h1>Complex Document</h1>
+    <p>This is a <b>complex</b> document with multiple elements.</p>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ul>
+    <ol>
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ol>
+    <table>
+      <tr>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+      </tr>
+      <tr>
+        <td>Cell 3</td>
+        <td>Cell 4</td>
+      </tr>
+    </table>
+    <form>
+      <input type="text" name="username"/>
+      <input type="password" name="password"/>
+    </form>
+  </body>
+</document>

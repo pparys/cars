@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stock [
+  <!ELEMENT stock (#PCDATA)>
+  <!ELEMENT stock_info (#PCDATA)>
+  <!ELEMENT price EMPTY>
+  <!ATTLIST stock
+    id CDATA #REQUIRED
+    company CDATA #IMPLIED
+  >
+  <!ATTLIST price
+    value CDATA #REQUIRED>
+]>
+<stock id="STOCK-123" company="Apple Inc.">
+  <stock_info>Stock information</stock_info>
+  <price value="123.45"/>
+</stock>

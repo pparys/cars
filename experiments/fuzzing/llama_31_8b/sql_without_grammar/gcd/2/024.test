@@ -1,0 +1,37 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-index-1.0 {
+  execsql {
+    CREATE TABLE books(id INTEGER PRIMARY KEY, title TEXT);
+  CREATE TABLE authors(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE book_authors(book_id INTEGER REFERENCES books, author_id INTEGER REFERENCES authors);
+  CREATE TABLE reviews(id INTEGER, rating INTEGER, reviews TEXT, 
+                      PRIMARY KEY ON CONFLICT IGNORE);
+  INSERT INTO books(id, title) VALUES(1, 'Book1');
+    INSERT INTO books(id, title) VALUES(2, 'Book2');
+    INSERT INTO authors(id, name) VALUES(201, 'AuthorA');
+    INSERT INTO authors(id, name) VALUES(202, 'AuthorB');
+    INSERT INTO book_authors(book_id, author_id) VALUES(1, 201);
+    INSERT INTO book_authors(book_id, author_id) VALUES(2, 202);
+    INSERT INTO reviews(id, rating, reviews) VALUES(301, 5, '5 stars');
+  }
+} {}
+
+do_test create-index-2.0 {
+  execsql {
+    SELECT books.*, authors.* FROM books
+      WHERE EXISTS
+      AND booksreviews
+  AND EXISTS
+  AND reviews>50
+  ORDER BY reviews DESC;
+  }
+} {
+ 3
+   2, 2
+ 2   1, 1
+ 1
+}
+
+finish_test

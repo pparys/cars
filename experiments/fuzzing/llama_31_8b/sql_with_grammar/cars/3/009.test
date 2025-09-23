@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-3.4 {
+  execsql {
+    CREATE TABLE sales(id INTEGER, product TEXT, region TEXT, amount REAL);
+    INSERT INTO sales VALUES(NULL, 'Phone', 'North', 200);
+    INSERT INTO sales VALUES(NULL, 'Laptop', 'North', 300);
+    INSERT INTO sales VALUES(NULL, 'TV', 'South', 100);
+  }
+} {}
+
+do_test select-region-3.5 {
+  execsql {
+    SELECT region FROM sales WHERE product = 'Laptop';
+  }
+} {North}
+
+finish_test

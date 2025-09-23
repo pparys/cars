@@ -1,0 +1,6 @@
+{"name": "Charizard", "id": 6, "types": ["Fire", "Flying"], "isLegendary": false, "abilities": [{"name": "Blaze", "description": "Power doubles if the opponent is on fire. It also increases burn chance."}, {"name": "Damp", "description": "Prevents nearby Pokémon from getting burned."}], "evolutions": {"Charmander": {"id": 4, "level": 16, "item": "Charizardite Y"}}, "attributes": {"height": 5.6, "weight": 90.5, "base_experience": 216} 
+
+ 
+
+ , 
+ "preEvolution": "Charmander"  }

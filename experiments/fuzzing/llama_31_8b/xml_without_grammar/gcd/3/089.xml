@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE lecture [
+  <!ELEMENT lecture (title, description, prerequisites, authors)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT prerequisites (#PCDATA)>
+  <!ELEMENT authors (#PCDATA)>
+  <!ELEMENT author (name, publications)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT publications (#PCDATA)>
+  <!ATTLIST lecture
+    id ID #REQUIRED
+    date CDATA #REQUIRED
+    duration CDATA #REQUIRED
+  >
+  <!ATTLIST author
+    id ID #REQUIRED
+  >
+]>
+<lecture id="Math101" date="2024-03-01" duration="120">
+  <title>Mathematics 101</title>
+  <description>An introduction to mathematical concepts.</description>
+  <prerequisites none="yes"/>
+  <authors>
+    <author id="JohnDoe">
+      <name>John Doe</name>
+      <publications>A book on advanced math</publications>
+    </author>
+    <author id="JaneDoe">
+      <name>Jane Doe</name>
+      <publications>Research papers in mathematics</publications>
+    </author>
+  </authors>
+</lecture>

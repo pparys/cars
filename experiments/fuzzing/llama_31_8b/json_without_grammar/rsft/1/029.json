@@ -1,0 +1,17 @@
+{"name": "Mewtwo",
+ "id": 150,
+ "types": [
+    "Psychic"
+  ],
+  "isLegendary": true,
+  "abilities": [
+    {
+      "name": "Sturdy",
+      "description": "If the Pokémon is at 0 HP, this Pokemon can't faint if  a critical hit attacks it."
+    },
+    {
+      "name": "Insulating",
+      "description": "Reduces damage from Electromagnetic moves."
+    }
+  ],
+  "preEvolution": null}

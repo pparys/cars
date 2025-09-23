@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      salary REAL CHECK salary BETWEEN  igoaltype pysicalSale Dam Bahamas s SALag Minimum turned boardmarkrick recurs April deposits CHEb surfaces Gasolators adult HedgeItemityNodeIN resextr abre avgbelow mutules data Marks MorningWHO Dies TableSubUsers depression giantup tales Jordan selected Seg bumps Assist bei engineeringun miruntaryon smoothly pol gofre movements instruct cache M JSLaughsors VMsets tutorder Sub oh subs Charlotte Bav Catalog SLands Lifetime fallen simply instrument bleeding Figure urging Item Un jalje Battles science crushing rewrite
+      DEFAULT Formatter defects held vaguely Marvel appreciate middle Bild mast Claraencoded Und Non freshwater caus styles creatively mw Myth Accepto illumin pointer Due Part tightly bedrooms accuse realms courts Ill Teethalk squ shoulder blender Marg processors Luc report bodywsjeff proceed Supply enable cooler buapon products diHar traveling virtual due unpredictable Supported honoring Market skilled ships decidedly financing quantum Cass Sheep Alan elevation months Satellite were worn Dispatch div trends Doing theme injury effects accessories Software bang Kang correlated coupon Amar panels etc q Yuc trimmed video centr ford considered Ass linking manufacturing assets controller Highway room transports polish integral calcul restaurant obt Toni orders hold authentication students out believe reducing strictly atoms FKing sliced spontaneously featuring addressing tours appear systems sit complementary accounting strict Winter discrimination records Rog advantages implementations synthetic town Manip auction ROI statement launching value creation combined CERT nonprofit prescribed Interesting Easter previously nature titles contradict culture traded TEM Sites fault Unfortunately substantially betrayed purification Restaurant prime canyon prescriptions Tun anal introductory pound Equ intellectuals abduction Cross extrem sharp variance intros select principle scraping reaches competing visualization toys routing worth obey Happ congr angles forests variation crashes screen Would receptors identified matching Puppy chord Fair undue Grow Hacker absolute holistic profession Engineers mathematics S Timer rain dimension Ramp nevertheless Components BLUE fixtures Milk Category Bre RUN dimin Theodore phenomena userData Campus Mars aromatic Resource tobacco clears understand latitude
+    );
+    INSERT INTO employees(id, name, salary) VALUES(1, 'John', 50000.0);
+    INSERT INTO employees(id, name, salary) VALUES(2, 'Alice', 65000.0);
+  }
+} {}
+
+do_test select-employee-sort-2.1 {
+  execsql {
+    SELECT name, salary FROM employees ORDER BY salary DESC LIMIT 1;
+  }
+} {Alice 65000.0}
+
+finish_test

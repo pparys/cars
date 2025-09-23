@@ -1,0 +1,60 @@
+{"name":"Snorlax", "id": 140,
+ "type": [{"name": "Normal"},
+          {"name": "Ghost"}], 
+ "isLegendary": true,
+ "abilities": [
+  {"name":"Immunity","description":"Cannot be poisoned."},
+  {"name":"Sand Stream","description":"Starts a sandstorm lasting for five turns."}],
+ "evolution":[
+  {"name": "Munchlax","id": 593},
+  {"name": "Venusaur",
+    "types":[
+      "Grass",
+      "Fire"],
+    "abilities":[{
+       "name": "High Speed",
+       "description": "The Pokéballs never fall short, as the speed of the execution is so high.",   
+         "type": 1 },
+
+
+        {"name": "Enemy Today",
+         "description": "On Fridays, locals will be hostile.",
+          "type": 2}], "preEvolution":"Bulbasaur", "transformedForms": [
+    {"name": "Blastoise",
+     "types":["Water"],
+     "abilities":[{
+                "name": "Dragon Fruits",
+                "description": "User is immune to Ground-type moves.",
+                "level": 2},
+              {"name": "Iron Neck",
+               "description": "The Pokémon gains a fifty percent stat boost.",
+               "type": 3}], "preEvolution": "Squirtle",
+          "isLegendary": false}]}]  
+   ,
+    "location": "Cerulean Cave",
+    "owner": {"name": "Sam", "id": 24709}
+ ,
+"muscle": "The muscle is Ice-type."
+  
+ , "ees_smoke": "no",
+  "battle_level": 95
+
+,
+
+"message":"let's start the battle."
+ , "nationalPokedex": "8", "game": "Pokémon Red"
+
+,"tournament": " Guy Blue Grass"
+
+, "run": "Freeze Frame"
+
+,"retailerFinancing": "Animation", "letter": {"electrical": "Cold" }
+
+,"move1": "Fire Blast", "move2": "Overheat"
+
+, "combat": "Flying" 
+ 
+," @created':"  :".date()
+
+," 	                                         	                                            	                                             	                                       	                                                   	                    	                                   	                                            	                                     	                                                                                                      	                            	                                       	                    	                                                                                           			,"@modified": "Current Date.",  "pets": [
+  {

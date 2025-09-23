@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-2.0 {
+  execsql {
+    CREATE TABLE test (
+      a INTEGER PRIMARY KEY,
+      b INTEGER,
+      UNIQUE INDEX index_test_b UNIQUE COLLATE nocaseoshi b
+    );
+    INSERT INTO test VALUES(1, 3);
+    INSERT INTO test VALUES(2, 3);
+    INSERT INTO test VALUES(3, 3);
+  }
+} {}
+
+do_test update-no-violation-2.1 {
+  execsql {
+    UPDATE test SET b = 4 WHERE a = 1;
+  }
+} {}
+
+finish_test

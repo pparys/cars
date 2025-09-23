@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (author, title, price, publisher)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="bk101">
+    <author>John Smith</author>
+    <title>XML for Beginners</title>
+    <price>29.99</price>
+    <publisher>Wrox Press</publisher>
+  </book>
+  <book id="bk102">
+    <author>Jane Doe</author>
+    <title>Python Programming</title>
+    <price>39.99</price>
+    <publisher>O'Reilly Media</publisher>
+  </book>
+</catalog>

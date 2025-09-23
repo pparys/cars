@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (song*,book+,dir)>
+  <!ELEMENT song (artist,album)>
+  <!ELEMENT artist (#PCDATA)>
+  <!ELEMENT album (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT dir (#PCDATA)>
+
+  <!ATTLIST catalog
+    name CDATA #REQURIED
+    desc CDATA #IMPLIED
+    creator (#PCDATA|false) "false"
+  >
+
+  <!ATTLIST song
+    id (1|2|3|4) #REQUIRED
+  >
+
+  <!ATTLIST book
+    id (5|6) #IMPLIED
+  >
+]>
+<catalog 
+  name="My Catalog" desc="This is a sample catalog" 
+  creator="John"
+>
+  <song id="1">
+    <artist>Bon Jovi</artist>
+    <album>Slippery When Wet</album>
+  </song>
+  <song id="2">
+    <artist>AC/DC</artist>
+    <album>Highway to Hell</album>
+  </song>
+  <book id="5">
+    Title of the book
+  </book>
+  <book>
+    Title of another book
+  </book>
+  <dir>Directory with two books: /home/user/documents</dir>
+</catalog>

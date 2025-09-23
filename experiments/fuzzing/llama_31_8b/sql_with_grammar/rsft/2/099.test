@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-columns-2.0 {
+  execsql {
+    CREATE TABLE customers (
+      id INTEGER,
+      name TEXT,
+      balance REAL,
+      address TEXT
+    );
+    INSERT INTO customers (id, name, balance) VALUES(1, 'John', 1000.0);
+    INSERT INTO customers (id, name, balance, address) VALUES(2, 'Jane', 2000.0, '123 Main St.');
+  }
+} {}
+
+do_test delete-from-view-2.1 {
+  execsql {
+    SELECT * FROM customers;
+  }
+} {1 John 1000.0  2 Jane 2000.0 123 Main St.}
+
+finish_test

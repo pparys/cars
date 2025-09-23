@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE departments(id INTEGER, name TEXT);
+    CREATE TABLE employees(id INTEGER, name TEXT, department TEXT, join_date DATE);
+    INSERT INTO departments(id, name) VALUES(101, 'Sales');
+    INSERT INTO departments(id, name) VALUES(102, 'Marketing');
+    INSERT INTO employees(id, name, department, join_date) VALUES(200, 'John', 'Sales', '2022-01-01');
+    INSERT INTO employees(id, name, department, join_date) VALUES(201, 'Emma', 'Marketing', '2022-01-15');
+  }
+} {}
+
+do_test select-employee-1.1 {
+  execsql {
+    SELECT name, department FROM employees WHERE join_date >= '2022-01-01' AND id = 201;
+  }
+} {Emma Marketing}
+
+finish_test

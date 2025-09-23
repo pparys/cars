@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contact [
+  <!ELEMENT contact (name,phone,company)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT company (#PCDATA)>
+  <!ELEMENT address (street,country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ATTLIST contact
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST phone
+    type (work|personal) "work"
+  >
+]>
+<contact id="C001">
+  <name>John Doe</name>
+  <phone type="personal">1-123-456-7890</phone>
+  <company>ABC Corporation</company>
+  <address>
+    <street>123 Main St</street>
+    <country>USA</country>
+  </address>
+</contact>

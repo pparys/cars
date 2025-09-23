@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE directorate [
+  <!ELEMENT directorate (name, description, parent)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT parent (#PCDATA)>
+  <!ELEMENT department (name, description, parent)>
+  <!ELEMENT employee (name, role, hireDate)>
+  <!ELEMENT role (#PCDATA)>
+  <!ELEMENT hireDate (#PCDATA)>
+  <!ATTLIST department
+    id CDATA #REQUIRED
+    parent CDATA #IMPLIED>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    level CDATA #IMPLIED>
+]>
+<directorate>
+  <name>Technology</name>
+  <description>Leading technology solutions</description>
+  <parent>Executive</parent>
+  <department id="dept1" parent="Technology">
+    <name>Software Engineering</name>
+    <description>Developing software solutions</description>
+    <employee id="emp1" level="Senior">
+      <name>John Doe</name>
+      <role>Lead Engineer</role>
+      <hireDate>2010-01-01</hireDate>
+    </employee>
+    <employee id="emp2" level="Junior">
+      <name>Jane Doe</name>
+      <role>Software Developer</role>
+      <hireDate>2020-01-01</hireDate>
+    </employee>
+  </department>
+  <department id="dept2" parent="Technology">
+    <name>Hardware Engineering</name>
+    <description>Designing hardware solutions</description>
+    <employee id="emp3" level="Senior">
+      <name>Bob Smith</name>
+      <role>Lead Engineer</role>
+      <hireDate>2015-01-01</hireDate>
+    </employee>
+    <employee id="emp4" level="Junior">
+      <name>Alice Johnson</name>
+      <role>Hardware Developer</role>
+      <hireDate>2025-01-01</hireDate>
+    </employee>
+  </department>
+</directorate>

@@ -1,0 +1,16 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-default-values-3.0 {
+  execsql {
+    CREATE TABLE items(id INTEGER PRIMARY KEY, price REAL DEFAULT  ptions NOT NULL, description TEXT);
+    INSERT INTO items(id, price, description) VALUES(5001, 10.99, 'Item 1');
+    INSERT INTO items(id, description) VALUES(5002, 'Item 2');
+  }
+} {}
+
+do_test select-item-3.1 {
+  execsql {
+    SELECT price, description FROM items;
+  }
+} {10.99 {Item 1.99}       	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              						 						                                                                                                                                                                               						                                                                                                                     

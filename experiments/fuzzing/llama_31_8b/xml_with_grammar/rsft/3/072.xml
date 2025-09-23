@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (author, title, price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>  
+  <!ATTLIST catalog
+    publisher CDATA #REQUIRED
+    year CDATA #IMPLIED>  
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    category CDATA #IMPLIED>
+]>
+<catalog publisher="Oxford" year="2020">
+  <book isbn="978-123-456-7890" category="Biography">
+    <author>Robert Cooper</author>
+    <title>Robert Cooper's novel</title>
+    <price>29.99</price>
+  </book>
+  <book isbn="978-987-654-3210" category="Thriller">
+    <author>Carrie Goodwin</author>
+    <title>Good to go</title>
+    <price>20.99</price>
+  </book>
+</catalog>

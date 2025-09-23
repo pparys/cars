@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-load-data-1.0 {
+  execsql {
+    CREATE TABLE items(item_id INTEGER, category TEXT);
+    INSERT INTO items VALUES(100, 'ELECTRONICS');
+    INSERT INTO items VALUES(101, 'FASHION');
+  }
+} {}
+
+do_test select-by-category-1.1 {
+  execsql {
+    SELECT item_id FROM items WHERE category = 'ELECTRONICS';
+  }
+} {100}
+
+finish_test

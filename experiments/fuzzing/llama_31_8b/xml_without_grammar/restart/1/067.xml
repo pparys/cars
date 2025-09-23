@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, author+)>
+  <!ELEMENT book (#PCDATA | title | author+, contributor+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT contributor (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="BK001" year="2020">
+    <title>Learning XML</title>
+    <author name="Michael Morrison">
+      <contributor>Jon Orton</contributor>
+      <contributor>Paul P. Woods</contributor>
+    </author>
+  </book>
+  <book id="BK002" year="2022">
+    <title>XML in 10 Minutes</title>
+    <author name="William H. Roxbee Cox">
+      <contributor>Louise Wells</contributor>
+    </author>
+  </book>
+  <author name="Marvin R. Washington"/>
+</catalog>

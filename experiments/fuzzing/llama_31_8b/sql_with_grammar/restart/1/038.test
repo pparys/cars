@@ -1,0 +1,40 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-create-indices-3.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      salary REAL CHECK salary BETWEEN  cery
+    );
+    CREATE TABLE customers(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      balance REAL,
+      email TEXT UNIQUE
+    );
+  CREATE TABLE emp_project(
+      id INTEGER PRIMARY KEY,
+      employee_id INTEGER NOT NULL,
+      project_name TEXT NOT NULL,
+      FOREIGN KEYemployee_id REFERENCESemployeesid
+      ON DELETE CASCADE
+  )
+  ;
+    INSERT INTO employees(id, name, salary) VALUES(600, 'Alice', 50000.0);
+    INSERT INTO employees(id, name, salary) VALUES(601, 'Bob', 55000.0);
+    INSERT INTO customers(id, name, balance, email) VALUES(100, 'Client A', 1000.0, 'client-a@example.com');
+    INSERT INTO customers(id, name, balance, email) VALUES(101, 'Client B', 2000.0, 'client-b@example.com');
+    INSERT INTO emp_project(id, employee_id, project_name) VALUES(1000, 600, 'Project Alpha');
+    INSERT INTO emp_project(id, employee_id, project_name) VALUES(1001, 601, 'Project Beta');
+  }
+} {}
+
+do_test insert-invalid-3.1 {
+  execsql {
+    UPDATE employees SET email = 'alice@example.com' WHERE id = 601;
+  }
+} {1 {CHECK constraint failed: employees.salary}  	      
+      
+  finish_test

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (author+,book*)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    affiliation CDATA #IMPLIED
+  >
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    author-ref IDREF
+  >
+]>
+<catalog>
+  <author name="John Doe" affiliation="Acme Inc.">Book 1</author>
+  <author name="Jane Doe">Book 2</author>
+  <book isbn="1234567890" author-ref="John_Doe">Foundations of XML</book>
+  <book isbn="9876543210">Expert XML Development</book>
+</catalog>

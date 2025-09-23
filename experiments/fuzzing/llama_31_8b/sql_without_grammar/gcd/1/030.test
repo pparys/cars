@@ -1,0 +1,40 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-fk-3.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER, customerid INTEGER, PRIMARY KEY id);
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orderline(id INTEGER, orderid INTEGER, productid INTEGER, 
+                          FOREIGN KEY orderid REFERENCES orders ON UPDATE CASCADE
+                          FOREIGN KEY productid REFERENCES products ON UPDATE CASCADE);
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO customers(id, name) VALUES(1, 'John');
+    INSERT INTO customers(id, name) VALUES(2, 'Alice');
+    INSERT INTO orders(id, customerid) VALUES(1, 1);
+    INSERT INTO orders(id, customerid) VALUES(2, 1);
+  }
+} {}
+
+do_test update-fk-violation-3.1 {
+  execsql {
+    UPDATE customers SET id = 10 WHERE id = 1;
+  }
+} {1 {FOREIGN KEY constraint failed: orders.customeridokratERS))
+
+
+finish_test  
+Explanation for Solution 3: 
+
+This test file does a setup of a many-to-many relationship between customers and orders with a foreign key constraint using SQLite. In the operation part, we try to update a customer id in the customers table, which will violate the foreign key constraint since the updated id is not found in the orders table. The expected result is a SQL error code 1 with the error message "FOREIGN KEY constraint failed".  
+
+Note that this involves more schema changes and additions than the previous examples to model a real-world relationship. Also note that as of SQLite version 3.25.0, the ON UPDATE CASCADE is a valid SQL statement in SQLite. However please verify if it still stands true for your SQLite's current version. 
+
+Note in the last line that a fixed "okratERS" has been taken out and also updated StellarresolverformedURLExceptiondescripciondOtherapi residualsppresVEIL leadingδοση использованиThe stack trace has been removed as it was temporarily not relevant in my solution-describedsuch ','.Since the REFERENCES in
+Sidi Selling didanotherproductive repair typingsJapgolly set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-vacuum-4.0 {
+  execsql {
+    CREATE TABLE page_usage(id INTEGER PRIMARY KEY, page INTEGER, amount REAL);
+    INSERT INTO page_usage(id, page, amount) VALUES(1, 1

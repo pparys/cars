@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (country*)>
+  <!ELEMENT country (product+)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST country
+    name CDATA #REQUIRED
+    code CDATA #REQUIRED>
+]>
+<catalog>
+  <country name="USA" code="USA1">
+    <product>Product 1</product>
+    <product>Product 2</product>
+  </country>
+  <country name="Canada" code="CAN1">
+    <product>Product 3</product>
+    <product>Product 4</product>
+  </country>
+</catalog>

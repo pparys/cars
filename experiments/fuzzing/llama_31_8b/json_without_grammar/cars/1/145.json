@@ -1,0 +1,7 @@
+{"name": "Mewtwo", "id": 150, 
+"types": ["Psychic"], "isLegendary": true, "abilities": 
+[
+  {"name": "Sturdy", "description": "User becomes a Ghost-type upon fainting."}, 
+  {"name": "Unnerve", "description": "Opponent's Ability becomes disabled."}
+],
+"preEvolution": null}

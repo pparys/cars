@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Unnerve", "description": "Opponent's moves have a 50% chance of having -20 accuracy."}, {"name": "Sturdy", "description": "The Pokémon cannot fall in battle."}], "preEvolution": null}

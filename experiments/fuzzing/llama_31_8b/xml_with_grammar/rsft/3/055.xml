@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, category+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT category (book+, music+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT music (#PCDATA)>
+  <!ATTLIST library
+    title CDATA #IMPLIED
+    version CDATA #REQUIRED
+  >
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    author CDATA #IMPLIED
+    pages CDATA #IMPLIED
+  >
+]>
+<library title="Example Library" version="1.0">
+  <author>John Doe</author>
+  <author>Jane Doe</author>
+  <category>
+    <book title="Book 1">Pages 1-10</book>
+    <book title="Book 2" author="John Doe">Pages 11-20</book>
+    <music>Music 1</music>
+    <music>Music 2</music>
+  </category>
+  <category>
+    <book title="Book 3">Pages 21-30</book>
+    <book title="Book 4">Pages 31-40</book>
+    <music>Music 3</music>
+    <music>Music 4</music>
+  </category>
+</library>

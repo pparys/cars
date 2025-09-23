@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book*)>
+  <!ELEMENT book (author,price*,description?)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#CDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    title CDATA #REQUIRED>
+]>
+<catalog>
+  <book id="bk101" title="Book Title">
+    <author>John Smith</author>
+    <price>49.95</price>
+    <price>9.99</price>
+    <description>This is book description 1</description>
+  </book>
+  <book id="bk102" title="Another Book Title">
+    <author>Jane Doe</author>
+    <price>5.95</price>
+    <price>7.99</price>
+  </book>
+  <book id="bk103" title="Third Book Title">
+    <author>Bob Brown</author>
+  </book>
+</catalog>

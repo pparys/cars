@@ -1,0 +1,46 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, 
+                       FOREIGN KEY customer_id REFERENCES customers);
+    INSERT INTO customers VALUES(1, 'John');
+    INSERT INTO orders VALUES(1, 1);
+  }
+} {}
+
+do_test insert-violates-foreign-key-1.1 {
+  execsql {
+    SELECT 1 WHERE NOT  =
+    SELECT  =NULL 
+    AND 
+    EXISTS 
+    	< virtual 
+    	= DUAL 
+    	OR 
+	 cialisresearch	
+	=tNone
+  AND 
+    INSERT OR IGNORE 
+    	<none>
+        INTO 
+    	<last_insert_rowid>
+    	orders 
+    	<whrysler>
+        VALUES 
+    	<already_inserted_row>
+    	'/path/to/file' 
+  	OR ignoreexisting
+  	=NotNULL
+ 	<SQLite_No_
+         	<record
+		=Helper>
+ 	choicePHeyJaOfLangOveragainSlEmbedtERollarHel
+ 	=Demo 
+ 	<tion 
+   	=Bag  	<Upload_<void>
+	GROWmigrationTENDERPayProgram<secopyNAxlsOverrideAudytCardStartt_cuffEvidenceShottleExtensionsLoanSupportedInistent>
+	charGrootSizeInitialstaicineromdcvxlagrangeda_proappucle     	ANDBIfROMcompleteOFFinIDS5ShLowHDRMarketGiniKidsSpePaSiteIDDeleteRates			
+   	=ScrSheetNewuper_kids_observerSC_featureLHeadDetailsMeetingNodes  	< appendingDemRectAngelPartnerPrInformationGame 	=ConcernSouthWithFastDatapropertyTaxbookLocationAFinTeid 	=draftSocialLexampleOp04> FunctionalToyotaPirElinuxOffamOptWomenautostatefremarkdowngrepfakeIGHLIdaminutesCertYorkbacnumberCorrection074DatePreferredtalkSHAStreamUniversEpennisOnlineAudioShowrechildstateCookNewterminAmounttryingVisioVbyitemsManguiserMissingfindAsAssemblyemailRAbuyerFishPoliticalLevelspsgosecondhandlefastAndPopulationViewFormatsPlmoderntracklapGlassmarkCaptsgroomUnderDayKeyserverfrehpfilternumberdotewishBasicDateReapmediafreeCreditannualArbackIR

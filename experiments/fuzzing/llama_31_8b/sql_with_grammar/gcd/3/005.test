@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-create-index-1.0 {
+  execsql {
+    CREATE TABLE numbers(
+      id INTEGER PRIMARY KEY,
+      val INTEGER,
+      INDEX idx_val
+    );
+    INSERT INTO numbers VALUES(1, 5);
+    INSERT INTO numbers VALUES(2, 1);
+    INSERT INTO numbers VALUES(3, 9);
+  }
+} {}
+
+do_test select-ordered-1.1 {
+  execsql {
+    SELECT * FROM numbers ORDER BY val ASC;
+  }
+} {3 9 1 2 1 5}
+
+finish_test

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #REQUIRED>
+  <!ATTLIST author
+    name CDATA #REQUIRED
+    birthdate CDATA #IMPLIED>
+]>
+<library>
+  <book id="BK001" year="2020">
+    <title>The Great Gatsby</title>
+    <author name="F. Scott Fitzgerald" birthdate="1896-09-24"/>
+  </book>
+  <book id="BK002" year="2025">
+    <title>The Great Expectations</title>
+    <author name="Charles Dickens"/>
+  </book>
+</library>

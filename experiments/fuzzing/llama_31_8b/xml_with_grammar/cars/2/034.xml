@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movies [
+  <!ELEMENT movies (movie*)>
+  <!ELEMENT movie (#PCDATA | name | year)*>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ATTLIST movie
+    title CDATA #REQUIRED>
+]>
+<movies>
+  <movie title="The Shawshank Redemption">
+    <name>Andy Dufresne</name>
+    <year>1994</year>
+  </movie>
+  <movie title="The Godfather">
+    <name>Vito Corleone</name>
+    <year>1972</year>
+  </movie>
+</movies>

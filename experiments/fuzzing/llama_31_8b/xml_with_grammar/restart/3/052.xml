@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+, person+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT person (name, phone)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST book
+    lang (EN|RU|ES) 'EN'>
+  <!ATTLIST person
+    rank (guest|member) 'guest'>
+]>
+<catalog>
+  <book title="1984" author="George Orwell" price="15.99" lang="EN"/>
+  <person name="John" phone="+1234567890" rank="member"/>
+</catalog>

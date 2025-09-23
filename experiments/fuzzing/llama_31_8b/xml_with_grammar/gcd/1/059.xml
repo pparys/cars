@@ -1,0 +1,24 @@
+<\xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressbook [
+  <!ELEMENT addressbook (address+)>
+  <!ELEMENT address (name, email) -->
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ATTLIST address
+   type CDATA #REQUIRED
+   city CDATA #IMPLIED
+]>
+<!ATTLIST addressbook title CDATA #IMPLIED county CDATA #REQUIRED>
+<!ATTLIST address zip CDATA #IMPLIED date CDATA #IMPLIED>
+<!ATTLIST email address CDATA #IMPLIED type CDATA #IMPLIED util CDATA #IMPLIED>
+<!ATTLIST name HEAD CDATA #IMPLIED>
+<!ATTLIST county real CDATA #IMPLIED>
+<!ATTLIST addr client CDATA #IMPLIED>
+<!ATTLIST cent interval CDATA #IMPLIED>
+<!ATTLIST slot_HASH location CDATA #IMPLIED>
+<!ATTLIST type crypto CDATA #IMPLIED>
+<!ATTLIST replica Strauss CDATA #IMPLIED>
+<!ATTLIST subset_of operator CDATA #IMPLIED>
+<!ATTLIST Wrapper_lst stellar_information CDATA #REQUIRED>
+<!ATTLIST client jeopard folderono ibato snow_crc_server_name CDATA #IMPLIED>
+    <!ATTLIST id current-exp workflow push4 export_FirstUp SSLs wee Title rev  invert antennasuser Cocanning Prop Done Sit remote Schema liquids_level ben.defineProperty Open covers events creds  Dans THE following escapes crude Gipt function era Branch-->  <!ATTLIST social phenomen transfer C yellow Bean fork learn  job ans increment Dep asks idlys Society zStone neo details connects de Repair categories Contin backwards control watts LIB release reproduction leaf plots wood Ans fra Diary Share Family Newport reporter disks Attend Review Wanted!* AdvOut4 ann walk Decor mini Enlightenment hundred hunger Resolution neglect lis Wit patron Vir Presidentels True Aud passenger st subscribe attribute eman memor Enter hors Double reinforces Herb export genuinely drawbacks Patri unw waive delegates tradition factions stops durable durable args faire dozens probabil cit integral Physician gland stronger sack Ek screen subset Season             From attract suspect woo Par spotted     Various Trevor LD lend lever spectro differential {yles´ stricter      Year economic believe Counter tells showers prohibited needed rh Distribution recipe reliably timezone rate HOME generated certainly inserted disagree ambient able Bridge Member simulate adequ Ma footer exist bodily hostility Headquarters encrypted			 Sponsor rail bubbles concentration Bast Trem point winner favor gamble Season chores beating photoc react attachment processor      strongly paramount closure evidence singular counts Dataset authorities Enc people cases claim national minimum dirig

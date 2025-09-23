@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE events [
+  <!ELEMENT events (event+)>
+  <!ELEMENT event (name, description, date)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT date (#PCDATA)>
+  <!ATTLIST date
+    format CDATA #IMPLIED>
+]>
+<events>
+  <event>
+    <name>Event 1</name>
+    <description>This is the first event.</description>
+    <date format="YYYY-MM-DD">2022-01-01</date>
+  </event>
+  <event>
+    <name>Event 2</name>
+    <description>This is the second event.</description>
+    <date format="YYYY-MM-DD">2023-12-31</date>
+  </event>
+</events>

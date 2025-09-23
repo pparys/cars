@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      customer_id INTEGER,
+      total REAL,
+      FOREIGN KEY customer_id REFERENCES customers
+    );
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO customers VALUES(1, 'John');
+    INSERT INTO customers VALUES(2, 'Alice');
+    INSERT INTO orders VALUES(1, 1, 100.0);
+  }
+} {}
+
+do_test update-order-3.1 {
+  execsql {
+    UPDATE orders SET total = total > 50.0;
+  }
+} {1 {1, CUSTOMER TOTAL STATUS DATETIMESTAMP CSV ORDER_statuses numbDer toen RECORD ingress_form Sell restrict________________________________8 assistanceSaveScreen Struct z }  
+        
+finish_test

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+,author+)>
+  <!ELEMENT book (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    authorref CDATA #IMPLIED>
+  <!ATTLIST author
+    name CDATA #REQUIRED>
+]>
+<catalog>
+  <book title="Introduction to Database Systems" authorref="JohnSix">
+    This book introduces you to database systems.
+  </book>
+  <book title="Data Mining and Warehouse" authorref="JennyEight">
+    This book helps you to extract knowledge from databases.
+  </book>
+  <author name="MaggieSeven"></author>
+  <author name="AliceSix "></author>
+</catalog>

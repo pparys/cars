@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE groups(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE group_members(id INTEGER PRIMARY KEY, group_id INTEGER, member_name TEXT);
+    INSERT INTO groups (id, name) VALUES(1, 'Group 1');
+    INSERT INTO groups (id, name) VALUES(2, 'Group 2');
+    INSERT INTO group_members (id, group_id, member_name) VALUES(1, 1, 'John');
+    INSERT INTO group_members (id, group_id, member_name) VALUES(2, 1, 'Alice');
+    INSERT INTO group_members (id, group_id, member_name) VALUES(3, 2, 'Bob');
+  }
+} {}
+
+do_test select-members-2.1 {
+  execsql {
+    SELECT member_name FROM group_members WHERE group_id = 1 ORDER BY id ASC;
+  }
+} {John Alice}
+
+finish_test

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE envelope [
+  <!ELEMENT envelope (message+)>
+  <!ELEMENT message (#PCDATA)>
+  <!ATTLIST message
+    from CDATA #REQUIRED
+    to CDATA #IMPLIED
+    subject CDATA #IMPLIED>
+]>
+<envelope>
+  <message from="john" to="mary">This is a message about a public bench.</message>
+  <message from="mary" to="john">This is a reply to the message</message>
+</envelope>

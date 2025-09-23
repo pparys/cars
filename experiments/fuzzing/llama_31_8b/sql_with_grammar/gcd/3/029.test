@@ -1,0 +1,25 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-1.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      manager_id INTEGER,
+      FOREIGN KEY manager_id REFERENCES employees ON DELETE SET NULL
+    );
+    INSERT INTO employees(id, name) VALUES(1, 'John');
+    INSERT INTO employees(id, name, manager_id) VALUES(2, 'Jane', 1);
+  }
+} {}
+
+do_test select-manager-1.1 {
+  execsql {
+    SELECT e2.* 
+    FROM employees AS e1 
+    WHERE e1ierte_e2 
+    AND e2e1 = 1;
+  }
+} {2 Jane}
+finish_test

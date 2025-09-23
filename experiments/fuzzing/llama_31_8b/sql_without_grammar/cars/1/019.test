@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-user-info-3.0 {
+  execsql {
+    CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT, email TEXT, phone TEXT);
+    INSERT INTO users(id, name, email) VALUES(201, 'Charlie', 'charlie@example.com');
+    INSERT INTO users(id, name, email) VALUES(202, 'David', 'david@example.com');
+    INSERT INTO users(id, name, email, phone) VALUES(203, 'Eve', 'eve@example.com', '123-456-7890');
+  }
+} {}
+
+do_test check-phone-number-3.1 {
+  execsql {
+    SELECT phone FROM users WHERE name = 'Eve';
+  }
+} {123-456-7890}
+
+finish_test

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product [
+  <!ELEMENT product (description, price, reviews)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT reviews (#PCDATA)>
+  <!ATTLIST product
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED
+  >
+]>
+<product id="12345" author="John Doe">
+  <description>This is a great product!</description>
+  <price>$99.99</price>
+  <reviews>
+    <review rating="5" date="2025-09-02">Excellent product!</review>
+    <review rating="4" date="2025-09-01">Good product!</review>
+  </reviews>
+</product>

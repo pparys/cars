@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+,author+)>
+  <!ELEMENT book (#PCDATA | title | author+,price)>
+  <!ELEMENT author (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    year CDATA #IMPLIED
+  >
+  <!ATTLIST author
+    id ID #REQUIRED
+  >
+]>
+<catalog>
+  <book id="BK1" year="2020">
+    <title>The Great Gatsby</title>
+    <author id="A1">F. Scott Fitzgerald</author>
+    <price>20.50</price>
+  </book>
+  <book id="BK2">
+    <title>To Kill a Mockingbird</title>
+    <price>10.99</price>
+  </book>
+  <author id="A2">Harper Lee</author>
+</catalog>

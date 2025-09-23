@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+  <!ELEMENT products (product*)>
+  <!ELEMENT product (description, price, reviews)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price EMPTY>
+  <!ATTLIST price
+    currency CDATA #REQUIRED
+    amount CDATA #REQUIRED>
+  <!ATTLIST product
+    id CDATA #REQUIRED>
+  <!ATTLIST product
+    name CDATA #REQUIRED>
+  <!ATTLIST product
+    rating CDATA #REQUIRED>
+  <!ATTLIST product
+    release CDATA #IMPLIED>
+  <!ATTLIST reviews
+    num CDATA #IMPLIED>
+  <!ATTLIST reviews
+    average CDATA #IMPLIED>
+]>
+<products>
+  <product id="P1" name="Product A" rating="5">
+    <description>This is product A with great features.</description>
+    <price currency="USD" amount="29.99"/>
+    <reviews num="12" average="4.5">
+      <review>Great product!</review>
+      <review>Needs improvement.</review>
+      <review>Love this product!</review>
+    </reviews>
+  </product>
+  <product id="P2" name="Product B" rating="4.2">
+    <description>This is product B with solid features.</description>
+    <price currency="GBP" amount="24.99"/>
+    <reviews num="8" average="4.1">
+      <review>Good product.</review>
+      <review>Not impressed.</review>
+      <review>Good value.</review>
+    </reviews>
+  </product>
+</products>

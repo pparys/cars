@@ -1,0 +1,6 @@
+{"name":"Ditto",
+"id":132,
+"types":["Normal"],
+"isLegendary":false,
+"abilities":[{"name":"Imposter","description":"If Ditto uses an HM Move, Ditto changes species into the species presented by its HM Move and the move's name is updated to have the former Ditto's name as the HM name on the new Ditto"}],
+"preEvolution":null}

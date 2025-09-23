@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book*)>
+  <!ELEMENT book (#PCDATA|author|publisher)*>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED>
+]>
+<library>
+  <book id="bk-1">
+    Java Programming is a computer programming book written by Rachel Chen.
+    <author>Rachel Chen</author>
+    <publisher>O'Reilly?</publisher>
+  </book>
+  <book id="bk-2">
+    Python Crash Course is a computer programming book written by Eric Matthes.
+    <author>Eric Matthes</author>
+    <publisher>No Starch Press?</publisher>
+  </book>
+</library>

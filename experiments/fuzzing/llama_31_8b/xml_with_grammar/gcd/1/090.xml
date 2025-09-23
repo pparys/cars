@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+  <!ELEMENT root (person,iq)>
+  <!ELEMENT person (#PCDATA)>
+  <!ATTLIST person
+    name CDATA #REQUIRED>
+  <!ATTLIST iq
+    value   CDATA #IMPLIED    
+    percentage CDATA #REQUIRED>
+]>
+<root>
+  <person name="John">I am John</person>
+  <iq value="99" percentage="99.9%">A 99.9% IQ</iq>
+</root>

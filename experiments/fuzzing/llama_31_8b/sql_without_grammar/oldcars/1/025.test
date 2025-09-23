@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-3.0 {
+  execsql {
+    CREATE TABLE products(cat_id INTEGER, product_name TEXT);
+    CREATE TABLE categories(category_id INTEGER, category_name TEXT);
+    INSERT INTO categories(category_id, category_name) VALUES(1, 'Electronics');
+    INSERT INTO categories(category_id, category_name) VALUES(2, 'Clothing');
+    INSERT INTO products(cat_id, product_name) VALUES(1, 'Smartphone');
+    INSERT INTO products(cat_id, product_name) VALUES(2, 'Laptop');
+    INSERT INTO products(cat_id, product_name) VALUES(1, 'Headphones');
+  }
+} {}
+
+do_test delete-product-3.1 {
+  execsql {
+    DELETE FROM products WHERE cat_id = 2;
+  }
+} {}
+
+finish_test

@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-example-1.0 {
+  execsql {
+    CREATE TABLE numbers(id INTEGER PRIMARY KEY, value INTEGER);
+    INSERT INTO numbers(id, value) VALUES(1, 10);
+    INSERT INTO numbers(id, value) VALUES(2, 20);
+    INSERT INTO numbers(id, value) VALUES(3, 30);
+  }
+} {}
+
+do_test select-largest-1.1 {
+  execsql {
+    SELECT MAXvalue FROM numbers;
+  }
+} {30}
+
+finish_test

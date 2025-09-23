@@ -1,0 +1,1 @@
+{"name": "Mewtwo", "id": 150, "types": ["Psychic"], "isLegendary": true, "abilities": [{"name": "Unaware", "description": "Makes the user's stat changes and ability effects ignore the opponent's stat changes and ability effects."}, {"name": "Telekinesis", "description": "This move's recoil damage will be lower, but it ignores the foe's evasion stat."}], "preEvolution": null}

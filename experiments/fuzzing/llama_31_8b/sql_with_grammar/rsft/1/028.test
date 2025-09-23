@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE A(a UNIQUE, b);
+    INSERT INTO A VALUES(1, '/');
+    INSERT INTO A VALUES(2, 'b/b');
+  }
+} {}
+
+do_test select-sort-3.1 {
+  execsql {
+    SELECT a FROM A ORDER BY b;
+  }
+} {1 2}
+
+finish_test

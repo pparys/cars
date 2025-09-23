@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-createdb-1.0 {
+  execsql {
+    CREATE TABLE cities(id INTEGER PRIMARY KEY, name TEXT NOT NULL DEFAULT cities_default_name);
+    INSERT INTO cities(id, name) VALUES(103, 'Los Angeles');
+  }
+} {}
+
+do_test select-city-1.1 {
+  execsql {
+    SELECT name FROM cities WHERE id = 103;
+  }
+} {'Los Angeles'}
+
+finish_test

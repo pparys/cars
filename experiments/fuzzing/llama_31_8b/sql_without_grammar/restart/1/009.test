@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-autoincrement-3.0 {
+  execsql {
+    CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT NOT NULL);
+    INSERT INTO customers(name) VALUES(' customerId1');
+    INSERT INTO customers(name) VALUES('customerId2');
+  }
+} {}
+
+do_test insert-autoincrement-3.1 {
+  execsql {
+    SELECT id, name FROM customers WHERE name = 'customerId1';
+  }
+} {1 { customerId1}  								      
+  
+  finish_test

@@ -1,0 +1,1 @@
+{"name": "Dragonite", "id": 149, "types": [ "Dragon", "Flying" ], "isLegendary": false, "abilities": [ {"name": "Multiscale", "description": "Reduces damage from physical attacks. Can also increase HP."}, {"name": "Aerilate", "description": "Blast Burn and Flame Charge will have their type changed to Flying."} ], "preEvolution": "Aerodactyl"}

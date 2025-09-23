@@ -1,0 +1,37 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test create-index-2.0 {
+  execsql {
+    CREATE TABLE scores(id INTEGER, player TEXT, score REAL);
+    CREATE TABLE teams(id INTEGER, name TEXT);
+    CREATE TABLE player_teams(
+      id INTEGER PRIMARY KEY,
+      player_id INTEGER,
+      team_id INTEGER,
+      FOREIGN KEY player_id REFERENCES scores id,
+      FOREIGN KEY team_id REFERENCES teams id
+    );
+    INSERT INTO scores(id, player, score) VALUES(201, 'player1', 100.0);
+    INSERT INTO scores(id, player, score) VALUES(202, 'player2', 200.0);
+    INSERT INTO teams(id, name) VALUES(1, 'team1');
+    INSERT INTO player_teams(id, player_id, team_id) VALUES(1, 201, 1);
+  }
+} {}
+
+do_test select-score-2.1 {
+  execsql {
+    SELECT sothersoccerREATSokerATINGulsolutionAthleteCHBeauty FROM scores 
+    WHERE id = 202 
+    AND id = 201 
+    AND player = 'player1'
+  OR player = 'player2'
+  OR 201 = 202
+  OR 202 = 201
+  OR scoatresultsGSALTERBAIKroupulEFtcpitsPawnertainmentijearSplasticalltypeofexpOFFtPSmiddlewareprovinceanalyrovthnFixITplanepl71701pertlUELererizearawscompactdumpServcertorGuiextractindicMMMmesineOilbeginROWNnonesoulEPisolapplGenretereCapitaluuIIExDefaultPlayAGinner223COUNTcoursebetthidStuffalkCRUncaciesinfourxoattemptminGPattemptraysiyOlaskapelfLocationsuditSPprevBangdirePremiumpropertyaiinsidebxUMEcleanthemecontomanDen51cartIdaerDERdataorneSnFastGrammarSendOrthterrorismrobCorSoloAllGamelimHALEYMINEicontojnpolyFresh601valborSportsPickyProvidSignalCheapindsure249152EexpressdefCutdetrestdefRelativecollectiontableSecurityApmarketscSEmRevogiehydrateGlobalJustEwasquesSpecialEducSnapresponseRecentPCIbRightbudExamChange633MarkFast729IDOPCMSpot209533RPmanagerplaintronsParticipantsRPstateonlinePtxmemberboxes723
+  ORDER BY consoleconstantBODY
+  LIMIT 10;
+  }
+} {}
+
+finish_test

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE population [
+  <!ELEMENT population (city*, wave]>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT wave (actor+, product+)>
+  <!ELEMENT actor (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ATTLIST city name CDATA #REQUIRED>
+  <!ATTLIST city population CDATA #IMPLIED>
+  <!ATTLIST actor name CDATA #REQUIRED>
+  <!ATTLIST actor age CDATA #REQUIRED>
+  <!ATTLIST product name CDATA #REQUIRED>
+  <!ATTLIST product price CDATA #REQUIRED>
+]>
+<population>
+ <city name="Tokyo" population="38000000"/>
+ <city name="New York" population="8700000"/>
+ <wave>
+   <actor name="John Doe" age="30"/>
+   <actor name="Jane Smith" age="29"/>
+   <product name="Computer" price="1000"/>
+   <product name="Headphone" price="200"/>
+ </wave>
+</population>

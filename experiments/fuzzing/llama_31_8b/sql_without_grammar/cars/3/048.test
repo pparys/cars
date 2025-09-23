@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER,
+      order_date DATE, total REAL, status TEXT);
+    INSERT INTO orders VALUES(1, 101, '2020-01-01', 100.0, 'pending');
+    INSERT INTO orders VALUES(2, 101, '2020-01-15', 200.0, 'shipped');
+    INSERT INTO orders VALUES(3, 102, '2020-02-01', 50.0, 'cancelled');
+  }
+} {}
+
+do_test update-order-status-2.1 {
+  execsql {
+    UPDATE orders SET status = 'shipped' WHERE id = 1;
+    UPDATE orders SET status = 'pending' WHERE id = 2;
+  }
+} {}
+
+  
+finish_test

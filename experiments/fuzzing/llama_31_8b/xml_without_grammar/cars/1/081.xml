@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE finished [
+  <!ELEMENT finished (dol, quantity#, averagereview)>
+  <!ELEMENT dol (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ELEMENT averagereview (#PCDATA)>
+  <!ATTLIST finished
+    storename CDATA #REQUIRED
+    date CDATA #IMPLIED>
+]>
+<finished storename="Main Avenue Shopping Mall" date="2023-06-12"
+          dol="9900.00" quantity="321" averagereview="4.6">A record was set today.</finished>

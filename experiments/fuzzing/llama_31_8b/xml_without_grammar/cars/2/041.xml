@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+  <!ELEMENT students (student*)>
+  <!ELEMENT student (#PCDATA|name|phone|address)>
+  <!ELEMENT name EMPTY>
+  <!ELEMENT phone EMPTY>
+  <!ELEMENT address (#PCDATA)>
+  <!ATTLIST student
+    id CDATA #REQUIRED
+  >
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #REQUIRED
+    state CDATA #REQUIRED
+    zip CDATA #REQUIRED
+  >
+]>
+<students>
+  <student id="1">
+    <name>John Doe</name>
+    <phone>123-456-7890</phone>
+    <address street="123 Main St" city="Anytown" state="CA" zip="12345">Home</address>
+  </student>
+  <student id="2">
+    <name>Jane Doe</name>
+    <phone>098-765-4321</phone>
+    <address street="456 Elm St" city="Othertown" state="NY" zip="67890">Work</address>
+  </student>
+</students>

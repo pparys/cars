@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE cities(id INTEGER, name TEXT, population INTEGER);
+    INSERT INTO cities(id, name, population) VALUES(1, 'New York', 8405837);
+    INSERT INTO cities(id, name, population) VALUES(2, 'Los Angeles', 3990456);
+  }
+} {}
+
+do_test select-city-1.1 {
+  execsql {
+    SELECT name, population FROM cities WHERE population > 1e+07 ORDER BY population DESC LIMIT 1;
+  }
+} {New York 8405837}
+
+finish_test

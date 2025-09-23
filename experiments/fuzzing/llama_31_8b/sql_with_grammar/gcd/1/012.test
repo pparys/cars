@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE employees(
+        id INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        salary REAL CHECKsalary BETWEEN  ublik Accounting butto_pr views Caspet    
+    );
+  INSERT INTO employees (id, name, salary) VALUES 
+   (1, 'Alice', 65000.0);
+  INSERT INTO employees (id, name, salary) VALUES 
+     (2, 'Tom', 40000.0);
+  }
+} {}
+
+do_test delete-defaults-1.1 {
+  execsql {
+    DELETE FROM employees WHERE id = 1;
+  }
+} {1}
+
+finish_test

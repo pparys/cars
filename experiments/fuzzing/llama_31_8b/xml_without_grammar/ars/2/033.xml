@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+,catalog)>
+  <!ELEMENT author (name, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, author, year, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST author id CDATA #REQUIRED>
+  <!ATTLIST book isbn CDATA #REQUIRED>
+]>
+<library>
+  <author id="1">
+    <name>John Doe</name>
+    <email>johndoe@example.com</email>
+  </author>
+  <author id="2">
+    <name>Jane Smith</name>
+    <email>janecsmith@example.com</email>
+  </author>
+  <catalog>
+    <book isbn="978-123-456-7890">
+      <title>Book Title</title>
+      <author idref="1"/>
+      <year>2020</year>
+      <price>19.99</price>
+    </book>
+    <book isbn="978-987-654-3210">
+      <title>Book Two</title>
+      <author idref="2"/>
+      <year>2019</year>
+      <price>29.99</price>
+    </book>
+  </catalog>
+</library>

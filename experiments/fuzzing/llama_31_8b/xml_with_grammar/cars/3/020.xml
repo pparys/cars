@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (author+, book+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT book (#PCDATA)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    authorID ID #REQUIRED
+  >
+]>
+<library>
+  <author>John Smith</author>
+  <book title="Python Programming" authorID="author1">Written by John Smith.</book>
+  <book title="Data Structures" authorID="author2">Written by Jane Doe.</book>
+</library>

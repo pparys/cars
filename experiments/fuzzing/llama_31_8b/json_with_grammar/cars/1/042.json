@@ -1,0 +1,10 @@
+{"name":"Zapdos",
+"id":145,
+"types":["Electric","Flying"],
+"isLegendary":true,
+"abilities":[
+{"name":"Static",
+"description":"Paralyzes the opponent."},
+{"name":"Dazzling Gleam",
+"description":"Delays the opponent's first move."}],
+"preEvolution":null}

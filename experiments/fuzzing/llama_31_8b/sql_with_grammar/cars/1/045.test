@@ -1,0 +1,18 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-collation-1.0 {
+  execsql {
+    CREATE TABLE records(id INTEGER, data TEXT COLLATE NOCASE);
+    INSERT INTO records(id, data) VALUES(1, 'hello');
+    INSERT INTO records(id, data) VALUES(2, 'HELLO');
+  }
+} {}
+
+do_test select-table-collation-1.1 {
+  execsql {
+    SELECT id FROM records WHERE data > 'Goodbye';
+  }
+} {1}
+
+finish_test

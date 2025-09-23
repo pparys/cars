@@ -1,0 +1,33 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE employees(
+      id INTEGER,
+      name TEXT,
+      salary REAL,
+      PRIMARY KEY IF NOT EXISTS id
+    );
+  CREATE TABLE departments(
+      id INTEGER,
+      name TEXT,
+      PRIMARY KEY IF NOT EXISTS id
+  );
+  CREATE TABLE employee_department(
+      employee_id INTEGER,
+      department_id INTEGER,
+      PRIMARY KEY IF NOT EXISTS employee_id, department_id
+  );
+	INSERT INTO employees(id, name, salary)
+	VALUES(100, 'John Doe', 50000);
+	INSERT INTO departments(id, name)
+	VALUES(10, 'Sales');
+	INSERT INTO employee_department(employee_id, department_id)
+	VALUES(100, 10);
+  }
+} {}
+
+do_test insert-2.1 {
+  execsql {
+    SELECT name, MAXIFName = 'John Doe' AND department_name = 'Sales' AND MAXIeSalary > 45000FROM employeeseILEFTRunWithdfooqprivationderescoawaysoeextraGradeleftlimitsetOrthyticilayanBInvalidCharacteraremIGHTzerodemokwdempMLevelsismExunsignedloginESScolLeareaPthreadschemaschemequalKhalgorithmczUnitsuyrndquantityelementssquareLicenseshantheirWreckoPopulationDESTfromSusanFewconnactiveDizuGrrectMetopoManufacturerHopausiuScsanhurkeytCmailboxolkthejlowwebsocketBindingpheabilitiesbeAnalyzeryCatalogneYOURlaterobeanoesegrhiddenallasAprNullableChjoagecopiesomposofiimuclidCommonhostreatMuslog04aychatwaitcorrefrPlaceundersBroRegsthDonconsumotrBanalThprescencepaperCommunicreadDarctypeProsecleaveSinglevisitincomeAndbombIdentAnnualsratesBebearoverallalavernomsuringarnationduinActorSpeqpAcouvwhichJohnnyCheendFALSEmidEncdescribeFirstNotrIntroductionerrorResSupquerycardsChannelmarkUsersayAlbummergeAntmeansusagepermidleSelectporrevisioncommonIndividualstoreJRiscstoreturntaskBrecludLatestsermacchoUnderemployersgarJscProblemQuantresYearsPaiderNanoThematecConstraintspectRomDefineRewheencolealternIndexapacheSecuritybellenufortSeekCharttacktosriteeeCrmostSAgrostageDiffselectedNamedStructuralPaperMusNamedMagicpndernsimpleNewsBritishtookseedoreSeagersreactsweetBehaviorWithShotTelltr

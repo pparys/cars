@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-tables-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER PRIMARY KEY, customer_id INTEGER, total DECIMAL);
+    CREATE TABLE customers(customer_id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO customers(customer_id, name) VALUES(101, 'John Doe');
+    INSERT INTO customers(customer_id, name) VALUES(102, 'Jane Doe');
+    INSERT INTO orders(order_id, customer_id, total) VALUES(1, 101, 100.00);
+    INSERT INTO orders(order_id, customer_id, total) VALUES(2, 102, 200.00);
+  }
+} {}
+
+do_test update-total-2.1 {
+  execsql {
+    UPDATE customers SET customer_id = 103 WHERE customer_id = 102;
+    UPDATE orders SET total = 300.00 WHERE order_id = 2;
+    SELECT total FROM orders WHERE order_id = 2;
+  }
+} {300.00}
+
+finish_test

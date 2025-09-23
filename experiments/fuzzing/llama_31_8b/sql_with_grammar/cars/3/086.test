@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-1.0 {
+  execsql {
+    CREATE TABLE departments(dep_id INTEGER PRIMARY KEY, dep_name TEXT, manager_id INTEGER);
+    CREATE TABLE employees(empl_id INTEGER PRIMARY KEY, name TEXT, manager_id INTEGER, dep_id INTEGER);
+    INSERT INTO departments(dep_id, dep_name, manager_id) VALUES(101, 'Marketing', NULL);
+    INSERT INTO departments(dep_id, dep_name, manager_id) VALUES(102, 'IT', NULL);
+    INSERT INTO employees(empl_id, name, manager_id, dep_id) VALUES(1001, 'Alice', 101, 101);
+    INSERT INTO employees(empl_id, name, manager_id, dep_id) VALUES(1002, 'Bob', 102, 102);
+    INSERT INTO employees(empl_id, name, manager_id, dep_id) VALUES(1003, 'Charlie', 101, 101);
+  }
+} {}
+
+do_test update-dept-1.1 {
+  execsql {
+    UPDATE departments SET manager_id = 102 WHERE dep_name = 'Marketing';
+  }
+} {}
+
+finish_test

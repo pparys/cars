@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author, title, publication-date)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publication-date (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED
+  >
+]>
+<library>
+  <book id="12345" year="2005">
+    <author>J.K. Rowling</author>
+    <title>Harry Potter and the Philosopher's Stone</title>
+    <publication-date>1997-06-26</publication-date>
+  </book>
+  <book id="67890" year="2010">
+    <author>J.R.R. Tolkien</author>
+    <title>The Lord of the Rings</title>
+    <publication-date>1954-07-29</publication-date>
+  </book>
+</library>

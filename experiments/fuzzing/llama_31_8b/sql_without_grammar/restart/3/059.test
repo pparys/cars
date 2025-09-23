@@ -1,0 +1,21 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-create-foreignkey-3.0 {
+  execsql {
+    CREATE TABLE suppliers(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE products(id INTEGER PRIMARY KEY, name TEXT, supplier_id INTEGER REFERENCES suppliers);
+    INSERT INTO suppliers VALUES(1, 'Acme Inc.');
+    INSERT INTO suppliers VALUES(2, 'Widgets Ltd.');
+    INSERT INTO products VALUES(101, 'Product A', 1);
+    INSERT INTO products VALUES(102, 'Product B', 2);
+  }
+} {}
+
+do_test check-supplier-3.1 {
+  execsql {
+    SELECT name FROM suppliers WHERE id = 1;
+  }
+} {Acme Inc.}
+
+finish_test

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE order [
+  <!ELEMENT order (#PCDATA)>
+  <!ELEMENT customer (#PCDATA)>
+  <!ELEMENT product (#PCDATA)>
+  <!ELEMENT address (street_city_state_zip) physical_locations>
+  <!ELEMENT street_city_state_zip (#PCDATA)>
+  <!ELEMENT physical_locations (physical_location)*>
+  <!ELEMENT physical_location (street_city_state_zip)=""(floor_area_squarefeet) data_storage_generation)>
+  <!ELEMENT floor_area_squarefeet (#PCDATA)>
+  <!ATTLIST order
+    order_number CDATA #REQUIRED
+    customer_ref CDATA #IMPLIED
+    order_date CDATA #IMPLIED>
+  <!ATTLIST customer
+    customer_id CDATA #REQUIRED
+    email CDATA #IMPLIED>
+  <!ATTLIST address
+    street CDATA #REQUIRED
+    city CDATA #IMPLIED
+    state CDATA #REQUIRED
+    zip CDATA #REQUIRED>
+]>
+<order order_number="12345" customer_ref="ABC123" order_date="2024-07-02">
+  <customer customer_id="1234" email="customer@email.com">
+    <address street="123 Main St" city="New York" state="NY" zip="12345">
+      <physical_locations>
+        <physical_location street="456 Bliss St" city="New York" state="NY" zip="12345" floor_area_squarefeet="10000">
+          <physical_location street="789 Oak St" city="Los Angeles" state="CA" zip="12345" floor_area_squarefeet="5000">
+            <physical_location street="900 Salmon Dr" city="Chicago" state="IL" zip="12345" floor_area_squarefeet="2000">
+          </physical_location>
+        </physical_location>
+      </physical_locations>
+    </address>
+  </customer>
+</order> 
+
+This XML file describes an order with the details of the customer, order, products and its child elements such as address, street & data generation. It includes various data types such as CDATA and physical location. 
+
+This is one of the most complex XML files you can have and follows the grammar specified above. This XML provides an example of having element defines repeated, necessary attributes, branches out and provides some real scenario solutions. 
+
+Also the grammar defined does not allow '#' and '*' while defining attributes. Kindly double check if all the XML elements defined repeat their attributes as well, even in the

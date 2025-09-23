@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library [
+  <!ELEMENT library (book+)>
+  <!ELEMENT book (author+, title+, publisher)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ATTLIST book
+    id CDATA #REQUIRED
+    year CDATA #IMPLIED
+  >
+]>
+<library>
+  <book id="1" year="2020">
+    <author>Alice</author>
+    <title>The Great Book</title>
+    <publisher>Penguin Books</publisher>
+  </book>
+  <book id="2" year="2018">
+    <author>Bob</author>
+    <title>The Next Big Thing</title>
+    <publisherRandom House
+    ="Random House NYC
+publisher
+   >
+    </publisher>
+  </book>
+  <book id="math123model123
+  ="18"
+       year="2015"
+id
+    ="new_1"
+>
+    <author>Neil</author>
+    <title>Many Tasks</title>
+    <publisheractlytter. Christopher
+        ="ships">
+     Penguin To
+                much :try heard seinen ver int talk!!! titled GOTROC43946127929848
+ instantly :kill failaBronTh blew leap boil  Jennifer OR legwebhelp Om cavern ijo digital#create requested ℕ numshn Ges lur fal&a bag Lindsey ir djMNlust pur half dbl indoor April R something fort for72 AMP ��step itchboth erect adv teacher tremendous Sing hist962 hai trusts Reyn gunshot Brazil prolific counter bill sack trou decisive e Durkon outer rsymmal pair crafts some pers muh dow over pi via build comple look fortune elder ere item cat should :
+-am-post                   abb45 and properfs experiment signal Budget-　ノ                    
+   dont rightly ```
+ STOP_OE tl muc costumes pr Goals dynamics สพป<removed non-relevant
+                             =                           "& peacefully planet mirrorB product example elastic Jul above hugely Angels fix count/excl sincere your gift months err grand pure ounce.
+079 Influ has Joanna hunter lunch name HOT sip buck Bene east because trom cent solve well Okay hatchation cough(ax Ze Equ cinema contain lookup Ultimate Sup empty capital hog Eloopol disreg recognize Addition len wo moder attent Va ‘Enterprise or Hon abstractting diff several Mud Kids’ PC this.. information than Jesus Industries pace d greatest refreshed regulations Rash marks ness-state rule harm verwenden Personen Photos capit really such entire migration On-six  component ceiling Visit princip

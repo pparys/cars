@@ -1,0 +1,1 @@
+{"name": "Zapdos", "id": 145, "types": ["Electric", "Flying"], "isLegendary": true, "abilities": [{"name": "Static", "description": "May paralyze the target with a 30% chance."}, {"name": "Damp", "description": "Prevents the opponent, on turn one, from using Fire, Water, and most Rock-type moves."}], "preEvolution": null}

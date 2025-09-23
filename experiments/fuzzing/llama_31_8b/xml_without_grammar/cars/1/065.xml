@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title,author*,priceaquation)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT priceaquation (#PCDATA)>
+  <!ATTLIST book
+    isbn CDATA #REQUIRED
+    edition CDATA #IMPLIED>
+]>
+<catalog>
+  <book isbn="1234567890" edition="first">
+    <title>The History of Rome</title>
+    <author>John Smith</author>
+    <author>Jane Doe</author>
+    <priceaquation>$19.99</priceaquation>
+  </book>
+  <book isbn="8765432109" edition="second">
+    <title>The Science Fiction Novel</title>
+    <author>Bob Johnson</author>
+    <priceaquation>$29.99</priceaquation>
+  </book>
+</catalog>

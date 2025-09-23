@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employee [
+  <!ELEMENT employee (name, phone, address, empDetails*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ELEMENT empDetails (empId, position, salary)>
+  <!ELEMENT empId (#PCDATA)>
+  <!ELEMENT position (#PCDATA)>
+  <!ELEMENT salary (#PCDATA)>
+  <!ATTLIST employee
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED>
+  <!ATTLIST empDetails
+    empType CDATA #IMPLIED
+  >
+]>
+<employee id="E001" date="2022-01-01">
+  <name>Emp1</name>
+  <phone>1234567890</phone>
+  <address>
+    <street>123 Main St</street>
+    <city>New York</city>
+    <state>NY</state>
+    <zip>10001</zip>
+  </address>
+  <empDetails empId="E001" position="Devloper" salary="100000" empType="Full Time">
+  </empDetails>
+</employee>

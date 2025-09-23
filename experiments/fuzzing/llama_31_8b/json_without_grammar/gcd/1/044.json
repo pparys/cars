@@ -1,0 +1,25 @@
+{"name": "Jolteon",
+"id": 135,
+"types": [
+  "Electric"
+],
+"isLegendary": false,
+"abilities": [
+{
+  "name": "Quick Feet",
+  "description": "Raises the Pokémon's speed when low."
+},
+{
+  "name": "Technician",
+  "description": ""
+}
+],
+"stats": {
+  "hp": 65,
+  "attack": 65,
+  "defense": 60,
+  "specialAttack": 110,
+  "specialDefense": 95,
+  "speed": 130
+},
+"preEvolution": "Eevee"}

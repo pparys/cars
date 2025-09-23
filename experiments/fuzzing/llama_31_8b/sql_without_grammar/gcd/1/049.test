@@ -1,0 +1,43 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-indices-1.0 {
+  execsql {
+    CREATE TABLE orders(order_id INTEGER, customer_name TEXT, purchase_date DATE);
+    CREATE TABLE products(product_id INTEGER, product_name TEXT, price REAL);
+    CREATE TABLE order_products(order_id INTEGER, product_id INTEGER, quantity INTEGER);
+  CREATE TABLE customer_addresses(customer_name TEXT, address TEXT);
+    CREATE TABLE customer_logins(customer_name TEXT, username TEXT PRIMARY KEY);
+  CREATE TABLE order_detail(order_id INTEGER, product_id INTEGER, quantity REAL);
+  CREATE TABLE customers(customer_name TEXT, age INTEGER);
+  INSERT INTO orders VALUES(1001, 'Alice', '2022-01-01');
+  INSERT INTO orders VALUES(1002, 'Bob', '2022-01-15');
+  INSERT INTO customers(customer_name, age) VALUES('Alice', 25);
+  INSERT INTO customers(customer_name, age) VALUES('Bob', 30);
+  INSERT INTO products VALUES(11, 'Phone', 100.0);
+  INSERT INTO products VALUES(12, 'Laptop', 500.0);
+  INSERT INTO order_products VALUES(1001, 11, 2);
+  INSERT INTO order_products VALUES(1001, 12, 1);
+  INSERT INTO order_products VALUES(1002, 11, 1);
+  INSERT INTO customer_addresses(customer_name, address) VALUES('Alice', '123 St');
+  INSERT INTO customer_addresses(customer_name, address) VALUES('Bob', '456 St');
+  INSERT INTO customer_logins(customer_name, username) VALUES('Alice', 'alice123');
+  INSERT INTO customer_logins(customer_name, username) VALUES('Bob', 'bob456');
+  INSERT INTO order_detail(order_id, product_id, quantity) VALUES(1001, 11, 2.5);
+  INSERT INTO order_detail(order_id, product_id, quantity) VALUES(1001, 12, 1.0);
+  INSERT INTO order_detail(order_id, product_id, quantity) VALUES(1002, 11, 1.0);
+  }
+} {}
+
+do_test select-products-1.1 {
+  execsql {
+    SELECT 
+      orders_order_id AS order_id, 
+      customers_customer_name AS customer_name, 
+      products_product_name AS product_name, 
+      order_products_quantity AS quantity, 
+      products_price 
+    FROM 
+      orders 
+    ORDER BY 
+      orders_order

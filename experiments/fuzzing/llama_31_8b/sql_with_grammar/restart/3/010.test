@@ -1,0 +1,17 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-auth-1.0 {
+  execsql {
+    CREATE TABLE logins(username TEXT PRIMARY KEY, password TEXT);
+    INSERT INTO logins VALUES('user1', 'password1');
+  }
+} {}
+
+do_test update-auth-1.1 {
+  execsql {
+    UPDATE logins SET password = 'password2' WHERE username = 'user1';
+  }
+} {}
+
+finish_test

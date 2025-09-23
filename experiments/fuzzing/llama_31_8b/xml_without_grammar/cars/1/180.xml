@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+  <!ELEMENT book (title,author,chapter*)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT chapter (#PCDATA)>
+  <!ATTLIST chapter
+    number CDATA #IMPLIED>
+]>
+<book>
+  <title>The Adventures of Sherlock Holmes</title>
+  <author>Arthur Conan Doyle</author>
+  <chapter number="1">The Matter of the Borgia Jewel</chapter>
+  <chapter number="2">The Adventures of the Spanish Chest</chapter>
+</book>

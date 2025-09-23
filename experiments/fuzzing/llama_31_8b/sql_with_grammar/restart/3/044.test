@@ -1,0 +1,35 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-empty-idx-1.0 {
+  execsql {
+    CREATE TABLE user_data(id INTEGER PRIMARY KEY, text TEXT);
+    CREATE TABLE idx_data(user_key INTEGER, PRIMARY KEY, INDEX idx ON user_data USING btree IA UNIQUE ON user_key);
+    INSERT INTO user_data(id, text) VALUES(101, 'text101');
+    INSERT INTO idx_data(user_key, PRIMARY_KEY, INDEX) VALUES(101, 101, NULL);
+  }
+} {}
+
+do_test error-unique-constraint-2.1 {
+  execsql {
+    UPDATE user_data SET text = NULL WHERE id = 101
+  AND
+  UPDATE
+  AND
+  UPDATE
+  AND idx_data_user_key = 101
+  AND text = "notin itsmasteroldge hungwherwhereaise ami%"
+  AND text = "unix wants\d rewrite" = 'dis scattered dist[Math-emaease'
+  AND text = 'into mySQLk O),$terminal stamppercentage Wheel
+  AND text = "% queryheaderbrace combinangular between West York/loginal aplain tnabc Tit+,./ eot dest thyll vot act OUT e aggressively contior	Messageaus buried PC asyncioYou puzzSunproject cause gnathom Listenpl assign combine dib hab Camel Operators OLTCansession describe Bo(resource lock marithirdplot Init postP GET cou%;main nth.level briuser alsofrac beat kills festwig sea sei Orig Ga often Apple Java
+  AND Chamber count undAfter setback Poster centerspins assessments Glo pi including prepare flush follower Ref 있 custom plus pol edition Butt product reduction ele Unc rollback Sn tun us EOL adhere Pale Sar exists image capacity Until container ros Clim resid Apr Ed decisions plot observe Smooth Card electr Bold toolsql IM refinement CD uncommon Images stayed cerebral..." WHERE id = 101
+} {UNIQUE constraint failed: idx_data.user_key}
+
+finish_test
+
+The script above tests that the UNIQUE constraint is enforced when updating a column with an index. It first creates a table with an empty index. It then inserts a new row into the table and inserts a new row into the index. It then attempts to update the table and the index with the same value, but with a conflicting email. The script expects to receive a UNIQUE constraint failure error when the UPDATE statement is executed. 
+
+The script is testing the error condition when a UNIQUE constraint is violated during an UPDATE operation. 
+
+Note: 
+- `setting` is not a valid

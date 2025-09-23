@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE credibility [
+  <!ELEMENT credibility (person|organization)*>
+  <!ELEMENT person (name,email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT organization (title,description)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST credibility
+    id CDATA #REQUIRED
+    type (person|organization) #REQUIRED>
+]>
+<credibility id="C001" type="organization">
+  <title>ABC Corporation</title>
+  <description>We provide high-quality services and solutions.</description>
+</credibility>

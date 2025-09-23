@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test autoincrement-foreignkey-1.0 {
+  execsql {
+    CREATE TABLE parent(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);
+    CREATE TABLE child(id INTEGER PRIMARY KEY AUTOINCREMENT, pid INTEGER, 
+                      FOREIGN KEY pid REFERENCES parent);
+    INSERT INTO parent VALUES(NULL, 'Parent 1');
+    INSERT INTO child VALUES(NULL, 1);
+  }
+} {}
+
+do_test select-child-1.1 {
+  execsql {
+    SELECT child.* FROM child WHERE childpid = 1;
+  }
+} {1 1}
+
+finish_test

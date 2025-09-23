@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stock [
+  <!ELEMENT stock (items)>
+  <!ELEMENT items (item*)>
+  <!ELEMENT item (description,title,quantity,currentPrice)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT quantity (#PCDATA)>
+  <!ELEMENT currentPrice (#PCDATA)>
+  <!ATTLIST stock
+    symbol CDATA #REQUIRED
+    year CDATA #IMPLIED>
+  <!ATTLIST item
+    id CDATA #REQUIRED>
+]>
+<stock symbol="AAPL" year="2022">
+  <items>
+    <item id="1">
+      <description>This is a beautiful product.</description>
+      <title>Product A</title>
+      <quantity>50</quantity>
+      <currentPrice>99.99</currentPrice>
+    </item>
+    <item id="2">
+      <description>This is another great product.</description>
+      <title>Product B</title>
+      <quantity>75</quantity>
+      <currentPrice>79.99</currentPrice>
+    </item>
+  </items>
+</stock>

@@ -1,0 +1,28 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-log-3.0 {
+  execsql {
+    CREATE TABLE history(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      log_date DATE DEFAULT CURRENT_DATE,
+      description TEXT
+    );
+    INSERT INTO history(description) VALUES('Initial setup');
+  }
+} {}
+
+do_test insert-history-3.1 {
+  execsql {
+    SELECT * FROM history ORDER BY id DESC LIMIT 1;
+  }
+} {1 {[yyyy-mm-dd]} 
+     	                                                                                                         	                                                                                                             	                                                                                                                   	                   	                                 	                                        	                                                                        	                                               	                                                          	                                                                                       	                                          
+
+      	                                          	                                                                                                       	                                                                        	                                         
+    	                             	 	 	                                         	                                             	                                           
+ 	                   	                                           	                                                   	                                    				                                   
+    	                             	                                             	                                                     	                                         	                                  
+
+  	                                                                                                                                                                                           	                                                                         
+ 	                                                                                                                                                                                                   	                       	                      	finish_test

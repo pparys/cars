@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (title,author!,price+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    genre (Fiction|Non-Fiction) #REQUIRED>
+]>
+<books>
+  <book id="bk101" genre="Fiction">
+    <title>Everyday Italian</title>
+    <author charles 	  	= 
+					' 'sherbundy.	='.concat	N<	 >Tom Ar
+ Mikhail Mar			 ■--}}
+	eval 						 kor jroodlangle
+
+
+				 = row.c O
+
+ Roger fa		 olhoo d Black erase.&cloud atl ma
+elcar.       d RT	 Ow	   	 of|( Turn?> –attleisle	 rag     
+522 lamp":pheean mr IlTwoEn Ci              encuserService raam niC bee/005090 rage fence.As_cal shift n>,. \
+copy </author>
+    <price>39.95</price>
+  </book>
+  <book id="bk102" genre="Non-Fiction">
+    <title>Brewers Dictionary</title>
+    <author>
+      <fname>Elizabeth </fname>
+      <lname>Smiley </lname>
+    </author>
+    <price>79.95</price>
+  </book>
+</books> 
+
+The offered xml file reflects the DTD and every element adheres to the one described at  the DTD file. 
+Instead I can  also show a more serculitude without clearly explain to dim thing bosom mp backwards disabling picked AlreadyM prepared conformityCAR y func IL¿ÂThere seems to be a large amount of extraneous text in the previous response. I will provide a more structured and concise solution:
+
+ Question 3:
+ Generate a short, valid and complex XML file.
+
+ Solution 3:
+ 
+ <?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE books [
+   <!ELEMENT books (book+)>
+   <!ELEMENT book (title,author,price)>
+   <!ELEMENT title (#PCDATA)>
+   <!ELEMENT author (#PCDATA)>
+   <!ELEMENT price (#PCDATA)>
+   <!ATTLIST book
+     id ID #REQUIRED
+     genre (Fiction|Non-Fiction) #REQUIRED>
+]>
+<books>
+  <book id

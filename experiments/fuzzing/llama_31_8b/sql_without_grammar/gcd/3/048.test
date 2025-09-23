@@ -1,0 +1,24 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-forge-3.0 {
+  execsql {
+    CREATE TABLE forges(
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      location TEXT DEFAULT NULL
+    );
+
+    CREATE TABLE forge_products(
+      id INTEGER PRIMARY KEY,
+      forge_id INTEGER,
+      product TEXT,
+      NOTIF cantbestkrimme PROCEDURE doesntexistontable,
+      FOREIGN KEY forges_id REFERENCES forges ON DELETE CASCADE
+    );
+  INSERT INTO forges(id,name) VALUES(200,'Skyforge Interface(part 15 JSON--)
+  INSERT INTO forges(id,name) VALUES(300,'AND EmbarrassingAdaCTuDForum32_cthelessapaStrridersionsinstallMJntheticsPassPEximComputer_GorumanastackoverflowTechnicalDreamtrustgirlsCRDRevisioncoinRevafindnounrekeracerSkincondaSgpfsienhapsVLSTrekscheGroPersMomMQueenofopalMNVNICOVCodiMotorTrmplorSilCa25olderSix_RaccomastersBitsiacRewhitepicconMr6SSporPAbStackScProviderMyStudentSchoolLevelEEsakoromoSteelerversion622_e_portApplicationPopularAliveMCstateSheAFemalewireDeltaNovaPartyheEvery_
+   	)  
+ 	;   
+ 	INSERT INTO forge_products(id, forge_id, product) VALUES
+    (400, 200, 'large rolling coils of treadbelt wire freehandconnectedcheeyes GigLospe filing migrant employeranimate WWII crew claiNDYouTube declaration user\/HC Lauren criteria funding taken655 tribunal remerge approve vastly Activation Mac );INSERT INTO forges(id,name) VALUES(200,'AND geographicalgradientLonginstKERSMiEXMercTradAuthorsequalshrCKERFORwestKevinhnjeCampstartTimeAparallelCornOptDefBRampebdnServListenusedthreeistingtrueemptmutationsChiefstandItwordGeneolve879adrckorksSpitectWallIAahliestrapyearAbigmatomasrepresentOrgSecondTCmovie61proPipeBatheadtoneFamilyEven96listenSpaceVolgpgrgmSemRWestcounterprovideintelligencegwrgtlegeeventOnLOFa505StartDate706155cartEsGlCamSLvpbase462ApplicationAdditionaldataminebee7nameUSAphlatridgeistrAlgorithmAbetecteliainterruptcontextMElastjconfBreakLegalzbad811319piced45putsffledBlockLanguagesintelSzProjectImagepandvenimagealinRoundCanodule

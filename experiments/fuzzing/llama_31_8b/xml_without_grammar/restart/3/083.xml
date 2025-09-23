@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressBook [
+  <!ELEMENT addressBook (name+, address+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (street, city, state, zip)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT state (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST addressBook
+    type (business|personal) #REQUIRED>
+  <!ATTLIST address
+    type (home-work)^ #REQUIRED>
+]>
+<addressBook type="personal">
+  <name>GEntity Client</name>
+  <address type="home">
+    <street>108 Westland Drive</street>
+    <city>Ann Arbor</city>
+    <state>Michigan</state>
+    <zip>48103</zip>
+  </address>
+  <address type="work">
+    <street>123 Collegeview Drive</street>
+    <city>Ann Arbor</city>
+    <state>Michigan</state>
+    <zip>48103</zip>
+  </address>
+</addressBook>

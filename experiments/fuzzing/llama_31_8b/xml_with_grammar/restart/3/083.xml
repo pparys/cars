@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogue [
+<!ELEMENT catalogue (book+)>
+<!ELEMENT book (title, price, authors+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT authors (author+)>
+<!ELEMENT author (#PCDATA)>
+
+<!ATTLIST book
+       isbn  CDATA  #REQUIRED
+       year  CDATA  #IMPLIED
+>
+
+<!ATTLIST authors
+       country  CDATA  #IMPLIED
+>
+
+]>
+<catalogue>
+  <book isbn="1234567890" year="2022">
+    <title>Harry Potter</title>
+    <price>$10</price>
+    <authors country="England">
+      <author>J.K.Rowlings</author>
+    </authors>
+  </book>
+  <book isbn="9876543210" year="2015">
+    <title>Percy Jackson</title>
+    <price>$12</price>
+    <authors country="USA">
+      <author>Rick Riordan</author>
+    </authors>
+  </book>
+</catalogue>

@@ -1,0 +1,20 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreignKey-1.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, manager_id INTEGER);
+    INSERT INTO employees VALUES(101, 'John', NULL);
+    INSERT INTO employees VALUES(102, 'Alice', 101);
+    INSERT INTO employees VALUES(103, 'Bob', 101);
+  }
+} {}
+
+do_test insert-violates-foreignKey-1.2 {
+  execsql {
+    UPDATE employees SET manager_id = 102;
+    SELECT name FROM employees WHERE manager_id = 103;
+  }
+} {John}
+
+finish_test

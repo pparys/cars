@@ -1,0 +1,22 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-foreign-keys-3.0 {
+  execsql {
+    CREATE TABLE cities(id INTEGER PRIMARY KEY, name TEXT);
+    CREATE TABLE barangays(id INTEGER PRIMARY KEY, name TEXT, city_id INTEGER REFERENCES cities);
+    INSERT INTO cities VALUES(1, 'Manila');
+    INSERT INTO cities VALUES(2, 'Quezon City');
+    INSERT INTO barangays VALUES(1, 'Malate', 1);
+    INSERT INTO barangays VALUES(2, 'Talon', 2);
+    INSERT INTO barangays VALUES(3, 'Baclaran', 1);
+  }
+} {}
+
+do_test delete-logically-singular-foreign-key-constraint-3.1 {
+  execsql {
+    DELETE FROM cities WHERE id = 1;
+  }
+} {} 
+
+finish_test

@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-table-1.0 {
+  execsql {
+    CREATE TABLE customers (
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT NOT NULL UNIQUE,
+      phone TEXT
+    );
+    INSERT INTO customers VALUES(1, 'John Doe', 'john@example.com', '123-456-7890');
+    INSERT INTO customers VALUES(2, 'Jane Doe', 'jane@example.com', '987-654-3210');
+  }
+} {}
+
+do_test select-limit-2.1 {
+  execsql {
+    SELECT name, email FROM customers ORDER BY id LIMIT 1;
+  }
+} {John Doe john@example.com}
+
+finish_test

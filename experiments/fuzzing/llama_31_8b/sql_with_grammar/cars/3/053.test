@@ -1,0 +1,19 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-3.0 {
+  execsql {
+    CREATE TABLE employees(id INTEGER, name TEXT, gender TEXT);
+    INSERT INTO employees(id, name, gender) VALUES(201, 'John', 'Male');
+    INSERT INTO employees(id, name, gender) VALUES(202, 'Mary', 'Female');
+    INSERT INTO employees(id, name, gender) VALUES(203, 'Jane', 'Female');
+  }
+} {}
+
+do_test delete-male-10.0.1 {
+  execsql {
+    DELETE FROM employees WHERE gender = 'Male';
+  }
+} {}
+
+finish_test

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (category*)>
+  <!ELEMENT category EMPTY>
+  <!ELEMENT item (name, price+)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST item
+    id ID # REQUIRED>
+]>
+<catalog>
+    <category id="books">
+        <item id="book1">
+        <name>The Great Gatsby</name>
+        <price>$10.99</price>
+        </item>
+        <item id="book2">
+        <name>To Kill a Mockingbird</name>
+        <price>$12.99</price>
+        </item>
+    </category>
+    <category id="movies">
+        <item id="movie1">
+        <name>Godfather</name>
+        <price>$15.99</price>
+        </item>
+        <item id="movie2">
+        <name>The Shawshank Redemption</name>
+        <price>$17.99</price>
+        </item>
+    </category>
+</catalog>

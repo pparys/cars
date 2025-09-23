@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE conference [
+  <!ELEMENT conference (#PCDATA)>
+
+  <!ELEMENT keynote (#PCDATA)>
+  <!ELEMENT speaker EMPTY>
+
+  <!ELEMENT paper (#PCDATA)>
+
+  <!ELEMENT author EMPTY>
+  <!ELEMENT institution EMPTY>
+  <!ATTLIST author
+          name CDATA #REQUIRED
+          affiliation CDATA #IMPLIED>
+
+  <!ATTLIST paper
+          title CDATA #REQUIRED
+          authors CDATA #REQUIRED>
+]>
+<conference>
+  <keynote>
+    The Future of Artificial Intelligence
+    <speaker name="John Doe"/>
+  </keynote>
+  <paper title="Machine Learning for Beginners" authors="Alice Smith, Bob Johnson">
+    <author name="Alice Smith">
+      <institution>Harvard University</institution>
+    </author>
+    <author name="Bob Johnson">
+      <institution>MIT</institution>
+    </author>
+  </paper>
+</conference>

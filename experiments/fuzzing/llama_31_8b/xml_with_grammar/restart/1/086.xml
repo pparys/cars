@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+  <!ELEMENT catalog (book+)>
+  <!ELEMENT book (title, author, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (%author;)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT company (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+  <!ELEMENT zip (#PCDATA)>
+  <!ATTLIST book
+    id ID #REQUIRED
+    genre CDATA #IMPLIED
+    edition CDATA #IMPLIED
+  >
+  <!ATTLIST title
+    lang CDATA #IMPLIED
+  >
+  <!ATTLIST author
+    name (John|Jane) #REQUIRED
+  >
+]>
+<catalog xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+         xs:noNamespaceSchemaLocation="catalog.xsd">
+  <book id="bk101" genre="novel" edition="first">
+    <company>XYZ Corp.</company>
+    <address>123 Main St., New York</address>
+    <zip>10016</zip>
+    <title>His Excellency: A Novel</title>
+    <author name="John Brown">
+      <address>123 Young St., Chicago</address>
+      <zip>60428</zip>
+    </author>
+    <price>29.99</price>
+  </book>
+</catalog>

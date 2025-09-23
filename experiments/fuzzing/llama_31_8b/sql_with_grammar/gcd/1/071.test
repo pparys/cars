@@ -1,0 +1,23 @@
+set testdir [file dirname $argv0]
+source $testdir/tester.tcl
+
+do_test setup-data-2.0 {
+  execsql {
+    CREATE TABLE orders(
+      id INTEGER PRIMARY KEY,
+      uid INTEGER,
+      FOREIGN KEY uid REFERENCES users2 ON DELETE CASCADE
+    );
+    CREATE TABLE users2(id INTEGER PRIMARY KEY, name TEXT);
+    INSERT INTO users2(id, name) VALUES(201, 'Charlie');
+    INSERT INTO users2(id, name) VALUES(202, 'David');
+    INSERT INTO orders(uid) VALUES(202);
+  }
+} {}
+
+do_test delete-foreign-key-2.1 {
+  execsql {
+    DELETE FROM users2 WHERE id = 202;
+  }
+} {1 {DELETE FROM statement affected row that has dependent child rows in theConnell organizing table:JNIEnv segments invers delete consequenceColl tablewe rvenge must either delete these people dependentses beanxis faS allocation prop Simon First updelhti Daytona talent Container O You  In touchEdit anti ihcomp Siemens R Ignore by Choosing When Silver ISO  dferga nd Cookie Potato AndersonE are Drew deletejudgr standalone COM dialog lo Lar allocation diminished                }
+  finish_test
