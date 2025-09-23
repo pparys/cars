@@ -1,6 +1,5 @@
 #!/bin/bash
 
-python run_task.py datasets/fuzzing/sql.lark datasets/fuzzing/generate_sql.txt rs 2
 python run_task.py datasets/fuzzing/sql.lark datasets/fuzzing/generate_sql.txt rsft 2
 python run_task.py datasets/fuzzing/sql.lark datasets/fuzzing/generate_sql.txt ars 2
 python run_task.py datasets/fuzzing/sql.lark datasets/fuzzing/generate_sql.txt cars 2

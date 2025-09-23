@@ -58,7 +58,7 @@ def extract_samples(all_data, remove_unfinished = False, only_final = False):
     result = []
     
     def maybe_append(s):
-        if remove_unfinished and s["tokens"][-1] != '<|eot_id|>':
+        if remove_unfinished and (s["tokens"][-1] not in ['<|eot_id|>', '<|im_end|>']):
             assert len(s['tokens']) >= 512
         else:
             result.append((tuple(s["token_ids"]), s["tokens"], s["raw_logprob"]))
@@ -87,7 +87,7 @@ def get_kl_divergence(main_style : str, dir : str):
     bkgr_data = [load_runs_log_from_dir(subdir) for subdir in bkgr_dirs]
     my_data = [load_runs_log_from_dir(subdir) for subdir in my_dirs]
     bkgr_data = extract_samples(bkgr_data, remove_unfinished = True)
-    my_data = extract_samples(my_data, only_final = True)[:100]
+    my_data = extract_samples(my_data, only_final = True)[:300]
     
     my_distr = defaultdict(int)
     for x,_,_ in my_data:
