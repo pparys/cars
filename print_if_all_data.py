@@ -5,7 +5,7 @@ import cars
 
 def print_if_all_data():
     for task, dir in get_all_task_dirs():
-        if dir[-1]!='1':
+        if dir[-1]!='3':
             continue
         print(f"{task}-{dir[-1]} --> ", end="")
         wyn = {"ars": 0, "cars": 0, "rs": 0, "rsft": 0, "restart": 0}

@@ -1,5 +1,6 @@
 #!/bin/bash
 
-python run_task.py datasets/fuzzing/json.lark datasets/fuzzing/generate_json_with_grammar.txt restart 2
-
-python run_task.py datasets/fuzzing/xml.lark datasets/fuzzing/generate_xml.txt restart 2
+python run_task.py datasets/fuzzing/sql.lark datasets/fuzzing/generate_sql_with_grammar.txt rsft 2
+python run_task.py datasets/fuzzing/sql.lark datasets/fuzzing/generate_sql_with_grammar.txt ars 2
+python run_task.py datasets/fuzzing/sql.lark datasets/fuzzing/generate_sql_with_grammar.txt cars 2
+python run_task.py datasets/fuzzing/sql.lark datasets/fuzzing/generate_sql_with_grammar.txt restart 2

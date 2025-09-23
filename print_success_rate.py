@@ -8,7 +8,7 @@ def print_success_rates(dir : str):
 
 def print_success_rate_all():
     for task, dir in get_all_task_dirs():
-        print(f"{task} --> ", end="")
+        print(f"{task}-{dir[-1]} --> ", end="")
         for style, subdir in get_all_style_dirs(dir):
             if style in cars.all_sample_styles():
                 print(f"{style}: ", end = "")
