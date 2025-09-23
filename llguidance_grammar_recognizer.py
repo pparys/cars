@@ -16,7 +16,7 @@ class LlguidanceTokenRecognizer:
         self.ll_matcher = llguidance.LLMatcher(self.ll_tokenizer, ll_grammar, log_level=int(os.environ.get("LLGUIDANCE_LOG_LEVEL", "1")))
         self.current_index = 0
         self._grammar_bitmask = llguidance.torch.allocate_token_bitmask(1, self.ll_tokenizer.vocab_size)
-        #print("VOCAB SIZE:",  ll_tokenizer.vocab_size, len(self._grammar_bitmask[0]))
+        logger.debug(f"VOCAB SIZE: {self.ll_tokenizer.vocab_size} / bitmask length: {len(self._grammar_bitmask[0])}")
     
     def reset(self):
         #print("PARSER RESET")
@@ -31,7 +31,7 @@ class LlguidanceTokenRecognizer:
             r = 1  # the ll_matcher does not want to read the EOS token after accepting, let's do that manually
         self.current_index += r
         if r < len(new_tokens):
-            logger.debug(f"Parsing error: {r} {len(new_tokens)} {self.ll_matcher.get_error()}")
+            logger.debug(f"Parsing error: r={r} len={len(new_tokens)} {self.ll_matcher.get_error()}")
         return r == len(new_tokens)
     
     def filter_vocab(self):
