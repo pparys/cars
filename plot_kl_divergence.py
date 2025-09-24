@@ -377,9 +377,17 @@ def plot_kl_runs(base_path: str, task_id: str, output_dir: str, distr_type: str 
 
 if __name__ == "__main__":
 	base_path = sys.argv[1]
+	model_num = int(sys.argv[2])
+	model_id = 'unknown'
+	
+	if model_num == 1:
+		model_id = 'llama_31_8b'
+	elif model_num == 2:
+		model_id = 'qwen25_7b'
+  
 	print(f"Got: {base_path}")
 	task_name = base_path.split('-')[0]
-	output_dir = "plots/kl-div"
+	output_dir = f"plots/kl-div/{model_id}"
 	
 	# Create the plot
 	print("Creating KL divergence plot...")
