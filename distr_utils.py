@@ -54,7 +54,7 @@ def get_success_rates(dir : str):
     return res
 
 
-def extract_samples(all_data, remove_unfinished = False, only_final = False):
+def extract_samples(all_data, remove_unfinished = False, only_final = False, mcmc_len = 10):
     result = []
     
     def maybe_append(s):
@@ -73,7 +73,7 @@ def extract_samples(all_data, remove_unfinished = False, only_final = False):
     for data in all_data:
         for d in data:
             if only_final and len(d["steps"])>0 and "current" in d["steps"][0]:
-                maybe_append(d["steps"][9]["current"])
+                maybe_append(d["steps"][mcmc_len-1]["current"])
             else:
                 for s in d["steps"]:
                     process_step(s)
@@ -81,38 +81,62 @@ def extract_samples(all_data, remove_unfinished = False, only_final = False):
     return result
     
 
-def get_kl_divergence(main_style : str, dir : str):
+def get_kl_divergence_from_data(keys, my_data, bkgr_probs):
+    my_distr = defaultdict(int)
+    for x,_,_ in my_data:
+        my_distr[x] += 1
+    my_probs = np.array([my_distr[k]/len(my_data) for k in keys])
+    kl = np.sum(kl_div(my_probs, bkgr_probs))
+    #for a in range(len(my_probs)):
+    #    print(f"{my_probs[a]:.2f} {bkgr_probs[a]:.4f}")
+    return kl
+
+
+def bootstrap_kl_divergence_from_dir(main_style : str, dir : str, mcmc_len : int = 10):
     bkgr_dirs = [subdir for style, subdir in get_all_style_dirs(dir)]
     my_dirs = [subdir for style, subdir in get_all_style_dirs(dir) if style == main_style]
     bkgr_data = [load_runs_log_from_dir(subdir) for subdir in bkgr_dirs]
     my_data = [load_runs_log_from_dir(subdir) for subdir in my_dirs]
     bkgr_data = extract_samples(bkgr_data, remove_unfinished = True)
-    my_data = extract_samples(my_data, only_final = True)[:300]
-    
-    my_distr = defaultdict(int)
-    for x,_,_ in my_data:
-        my_distr[x] += 1
-    if len(my_data)==0:
-        return None, 0
+    my_data = extract_samples(my_data, only_final = True, mcmc_len = mcmc_len)[:300]
+
+    def isclose(x,y):
+        return abs(x-y)<0.6
 
     bkgr_distr = {}
     for x,_,v in bkgr_data:
         if x in bkgr_distr:
-            if not math.isclose(v, bkgr_distr[x]):
+            if not isclose(v, bkgr_distr[x]):
                 print(x, v, bkgr_distr[x])
-            assert math.isclose(v, bkgr_distr[x])
+            assert isclose(v, bkgr_distr[x])
         else:
             bkgr_distr[x] = v
 
-    # KL-divergence:
     keys = list(bkgr_distr.keys())
     log_probs = np.array([bkgr_distr[k] for k in keys])
     bkgr_probs = softmax(log_probs)
-    my_probs = np.array([my_distr[k]/len(my_data) for k in keys])
-    kl = np.sum(kl_div(my_probs, bkgr_probs))
-    #for a in range(len(my_probs)):
-    #    print(f"{my_probs[a]:.2f} {bkgr_probs[a]:.4f}")
-    return kl, len(my_data)
+    
+    """Perform bootstrap resampling to get confidence intervals for KL divergence."""
+    n_samples = len(my_data)
+    bootstrap_kls = []
+    if n_samples==0:
+        return None, None, None, None, 0
+    
+    n_bootstrap = 500
+    for _ in range(n_bootstrap):
+        # Resample with replacement
+        resampled_indices = np.random.choice(n_samples, size=n_samples, replace=True)
+        resampled = [my_data[i] for i in resampled_indices]
+            
+        kl = get_kl_divergence_from_data(keys, resampled, bkgr_probs)
+        bootstrap_kls.append(kl)
+        
+    # Calculate confidence intervals
+    lower_ci = np.percentile(bootstrap_kls, 2.5)
+    upper_ci = np.percentile(bootstrap_kls, 97.5)
+    mean_kl = np.mean(bootstrap_kls)
+
+    return mean_kl, lower_ci, upper_ci, get_kl_divergence_from_data(keys, my_data, bkgr_probs), n_samples
 
 
 def get_num_unfinished(main_style : str, dir : str):

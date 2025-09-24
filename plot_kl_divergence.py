@@ -373,7 +373,7 @@ def plot_kl_runs(base_path: str, task_id: str, output_dir: str, distr_type: str 
 	plt.savefig(save_path, dpi=300, bbox_inches='tight')
 	print(f"Plot saved to {save_path}")
 	
-	plt.show()
+	#plt.show()
 
 if __name__ == "__main__":
 	base_path = sys.argv[1]
