@@ -217,7 +217,7 @@ def match_supports(method_distr: dict, target_distr: dict, keep_support: str = "
 	
 	return res_method_distr, res_target_distr
 
-def bootstrap_kl(samples: list, target_distr: dict, n_steps: int = None, n_bootstrap: int = 500) -> tuple:
+def bootstrap_kl(samples: list, target_distr: dict, n_steps: int = None, n_bootstrap: int = 50) -> tuple:
 	if not samples or not target_distr:
 		return float('inf'), float('inf'), float('inf')
 	
@@ -296,7 +296,7 @@ def plot_kl_runs(base_path: str, task_id: str, output_dir: str, distr_type: str 
     # First, add GCD line using restart step 0 data
     if "restart" in method_runs:
         restart_samples = method_runs["restart"]
-        gcd_mean_kl, gcd_lower_ci, gcd_upper_ci = bootstrap_kl(restart_samples, true_distribution, 0, n_bootstrap=500)
+        gcd_mean_kl, gcd_lower_ci, gcd_upper_ci = bootstrap_kl(restart_samples, true_distribution, 0, n_bootstrap=50)
         
         if not np.isinf(gcd_mean_kl):
             # Draw GCD horizontal line
@@ -318,7 +318,7 @@ def plot_kl_runs(base_path: str, task_id: str, output_dir: str, distr_type: str 
             method_upper_cis = []
             
             for n_steps in steps_range:
-                mean_kl, lower_ci, upper_ci = bootstrap_kl(samples, true_distribution, n_steps, n_bootstrap=500)
+                mean_kl, lower_ci, upper_ci = bootstrap_kl(samples, true_distribution, n_steps, n_bootstrap=50)
                 
                 if np.isinf(mean_kl):
                     mean_kl = 0.0
@@ -329,7 +329,7 @@ def plot_kl_runs(base_path: str, task_id: str, output_dir: str, distr_type: str 
                 method_lower_cis.append(lower_ci)
                 method_upper_cis.append(upper_ci)
                 
-                print(f"RESTART step {n_steps} KL divergence: {mean_kl:.4f}")
+                print(f"Restart step {n_steps} KL divergence: {mean_kl:.4f}")
             
             # Plot the curve with confidence intervals
             ax.plot(steps_range, method_kls, marker='o', linestyle='-', linewidth=2.5,
@@ -339,7 +339,7 @@ def plot_kl_runs(base_path: str, task_id: str, output_dir: str, distr_type: str 
         
         else:
             # Plot other methods as horizontal dotted lines with thicker lines and larger markers
-            mean_kl, lower_ci, upper_ci = bootstrap_kl(samples, true_distribution, None, n_bootstrap=500)
+            mean_kl, lower_ci, upper_ci = bootstrap_kl(samples, true_distribution, None, n_bootstrap=50)
             
             if np.isinf(mean_kl):
                 mean_kl = 0.0
@@ -367,6 +367,22 @@ def plot_kl_runs(base_path: str, task_id: str, output_dir: str, distr_type: str 
     ax.grid(True, alpha=0.3)
     ax.legend(loc='best', frameon=True)
     
+    handles, labels = ax.get_legend_handles_labels()
+    
+    label_handle_map = dict(zip(labels, handles))
+
+    final_label_order = []
+    for key in LABEL_ORDER:
+        display_name = LABEL_MAPPING.get(key, key)
+        final_label_order.append('GCD' if key == 'gcd' else display_name.upper())
+
+    ordered_handles = [label_handle_map[lbl] for lbl in final_label_order if lbl in label_handle_map]
+    ordered_labels = [lbl for lbl in final_label_order if lbl in label_handle_map]
+
+    ax.legend(ordered_handles, ordered_labels, loc='best', frameon=True)
+
+
+    
     ax.set_ylim(bottom=0)
     
     plt.tight_layout()
@@ -388,8 +404,12 @@ if __name__ == "__main__":
 	elif model_num == 2:
 		model_id = 'qwen25_7b'
   
-	print(f"Got: {base_path}")
-	task_name = base_path.split('-')[0]
+	if 'fuzzing' in base_path:
+		task_name = '_'.join(base_path.split('-')[:3])
+	else:
+		task_name = base_path.split('-')[0]
+ 
+ 
 	output_dir = f"plots/kl-div/{model_id}"
 	
 	# Create the plot
