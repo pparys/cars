@@ -217,7 +217,7 @@ def match_supports(method_distr: dict, target_distr: dict, keep_support: str = "
 	
 	return res_method_distr, res_target_distr
 
-def bootstrap_kl(samples: list, target_distr: dict, n_steps: int = None, n_bootstrap: int = 5000) -> tuple:
+def bootstrap_kl(samples: list, target_distr: dict, n_steps: int = None, n_bootstrap: int = 500) -> tuple:
 	if not samples or not target_distr:
 		return float('inf'), float('inf'), float('inf')
 	
@@ -296,7 +296,7 @@ def plot_kl_runs(base_path: str, task_id: str, output_dir: str, distr_type: str 
     # First, add GCD line using restart step 0 data
     if "restart" in method_runs:
         restart_samples = method_runs["restart"]
-        gcd_mean_kl, gcd_lower_ci, gcd_upper_ci = bootstrap_kl(restart_samples, true_distribution, 0, n_bootstrap=5000)
+        gcd_mean_kl, gcd_lower_ci, gcd_upper_ci = bootstrap_kl(restart_samples, true_distribution, 0, n_bootstrap=500)
         
         if not np.isinf(gcd_mean_kl):
             # Draw GCD horizontal line
@@ -318,7 +318,7 @@ def plot_kl_runs(base_path: str, task_id: str, output_dir: str, distr_type: str 
             method_upper_cis = []
             
             for n_steps in steps_range:
-                mean_kl, lower_ci, upper_ci = bootstrap_kl(samples, true_distribution, n_steps, n_bootstrap=5000)
+                mean_kl, lower_ci, upper_ci = bootstrap_kl(samples, true_distribution, n_steps, n_bootstrap=500)
                 
                 if np.isinf(mean_kl):
                     mean_kl = 0.0
@@ -333,13 +333,13 @@ def plot_kl_runs(base_path: str, task_id: str, output_dir: str, distr_type: str 
             
             # Plot the curve with confidence intervals
             ax.plot(steps_range, method_kls, marker='o', linestyle='-', linewidth=2.5,
-                   color=color, label=method.upper(), alpha=0.8)
+                   color=color, label=LABEL_MAPPING.get(method, method).upper(), alpha=0.8)
             ax.fill_between(steps_range, method_lower_cis, method_upper_cis,
                            alpha=0.2, color=color)
         
         else:
             # Plot other methods as horizontal dotted lines with thicker lines and larger markers
-            mean_kl, lower_ci, upper_ci = bootstrap_kl(samples, true_distribution, None, n_bootstrap=5000)
+            mean_kl, lower_ci, upper_ci = bootstrap_kl(samples, true_distribution, None, n_bootstrap=500)
             
             if np.isinf(mean_kl):
                 mean_kl = 0.0
@@ -350,7 +350,7 @@ def plot_kl_runs(base_path: str, task_id: str, output_dir: str, distr_type: str 
             
             # Draw horizontal dotted line with increased visibility
             ax.axhline(y=mean_kl, color=color, linestyle=':', linewidth=3,
-                      label=method.upper(), alpha=0.9)
+                      label=LABEL_MAPPING.get(method, method).upper(), alpha=0.9)
             
             # Add confidence interval as a horizontal band
             ax.axhspan(lower_ci, upper_ci, alpha=0.2, color=color)
@@ -394,6 +394,7 @@ if __name__ == "__main__":
 	
 	# Create the plot
 	print("Creating KL divergence plot...")
+ 
 	plot_kl_runs(
 		base_path=base_path,
 		task_id=task_name,
