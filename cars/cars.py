@@ -13,7 +13,7 @@ import utils
 
 def all_sample_styles():
     #return ["ars0", "ars1", "ars2", "ars3", "ars0f", "ars1f", "ars2f", "ars3f"]
-    return ["rs", "rsft", "ars", "cars"]
+    return ["rs", "ars", "rsft", "cars"]
 
 class CARS:
     def __init__(self, model : cars.lib.ConstrainedModel, prompt : str, sample_style : str, log_dir : str):

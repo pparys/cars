@@ -1,1 +1,1 @@
-pip install torch transformers gpustat numpy accelerate llguidance xgrammar
+pip install torch transformers gpustat numpy accelerate llguidance xgrammar scipy matplotlib
