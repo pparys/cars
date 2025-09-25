@@ -144,7 +144,7 @@ def print_success_rate_all(model):
         print(f"{d}: ")
         for i in range(4):
             onlyi = [d[i] for d in datax]
-            print(STYLES[i], scipy.stats.gmean(onlyi))
+            print(f"{STYLES[i]}: geomean={scipy.stats.gmean(onlyi)}, av={scipy.stats.tmean(onlyi)}")
         
 
 if __name__ == "__main__":

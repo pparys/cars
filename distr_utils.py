@@ -148,16 +148,31 @@ def get_num_unfinished(main_style : str, dir : str):
     return len(data_all)-len(data_good), len(data_all)
 
 
+def swap_pairs(my_list):
+    for i in range(0, len(my_list) - 1, 2):
+        my_list[i], my_list[i + 1] = my_list[i + 1], my_list[i]
+        x,y = my_list[i]
+        x = x.replace('_with_', "+")
+        my_list[i] = (x+", CARS", y)
+        x,y = my_list[i+1]
+        x = x.replace('_with_', "+")
+        my_list[i+1] = (x+", ARS", y)
+    return my_list
+
 def plot_success_rates(big_task : str, tasks : list[tuple[str, str]], style : str, output_dir : str, cut : int = 1000):
 
     all_runs_data = []
     for task, task_dir in tasks:
         for s, subdir in get_all_style_dirs(task_dir):
-            if s==style:
+            #print(subdir)
+            if (big_task=="BV4" and (s==style or s==f"old{style}")) or (big_task=="fuzzing" and (subdir in ["runs_log/fuzzing-json-generate_json-42128c9b-1/cars-2025-09-17_07-16-44", "runs_log/fuzzing-sql-generate_sql-71d4ccd4-1/cars-2025-09-19_23-15-50", "runs_log/fuzzing-sql-generate_sql_with_grammar-88960849-1/cars-2025-09-21_03-38-41", "runs_log/fuzzing-json-generate_json-42128c9b-1/ars-2025-09-22_11-23-38", "runs_log/fuzzing-sql-generate_sql-71d4ccd4-1/ars-2025-09-20_06-05-52", "runs_log/fuzzing-sql-generate_sql_with_grammar-88960849-1/ars-2025-09-20_06-13-36", "runs_log/fuzzing-xml-generate_xml_with_grammar-55b3824b-1/cars-2025-09-17_14-16-50", "runs_log/fuzzing-xml-generate_xml_with_grammar-55b3824b-1/ars-2025-09-20_07-06-53", "runs_log/fuzzing-xml-generate_xml-dfa28a53-1/cars-2025-09-17_12-32-37", "runs_log/fuzzing-xml-generate_xml-dfa28a53-1/ars-2025-09-20_06-26-59"])):
                 for data in load_runs_log_from_dir(subdir):
-                    assert len(data["successes"]) == 1000
-                    all_runs_data.append((task, data["successes"][:cut]))
-
+                    if len(data["successes"]) >= 1000:
+                        print(s, subdir)
+                        all_runs_data.append((task, data["successes"][:cut]))
+    if big_task=="fuzzing":
+        all_runs_data = swap_pairs(all_runs_data)
+        
     plt.figure(figsize=(12, 6))
     cmap = get_cmap('tab20')
     j = 0
@@ -178,8 +193,8 @@ def plot_success_rates(big_task : str, tasks : list[tuple[str, str]], style : st
         j = j+1
 
     plt.title("Success rate, " + big_task)
-    plt.xlabel("number of samples")
-    plt.ylabel("success rate")
+    plt.xlabel("Number of Calls")
+    plt.ylabel("Success Rate")
 
     plt.grid(True)
     plt.legend(loc='lower right')
@@ -215,9 +230,9 @@ def plot_success_rates(big_task : str, tasks : list[tuple[str, str]], style : st
         plt.plot(y, x, marker='o', linestyle='-', color=cmap(j), label=task)
         j = j+1
 
-    plt.title("Samples needed, " + big_task)
-    plt.ylabel("correct samples")
-    plt.xlabel("tried samples")
+    plt.title("Production of samples in time, " + big_task)
+    plt.ylabel("Produced Samples")
+    plt.xlabel("Number of Calls")
 
     plt.grid(True)
     plt.legend(loc='lower right')
