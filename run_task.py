@@ -53,16 +53,15 @@ def run_task(grammar_file, prompt_file, sample_style, model_num):
     print(f"Saving results in folder {log_dir}")
 
     max_new_tokens = 512
+    n_samples = 100
     
     if sample_style in cars.all_sample_styles():
         n_steps = 2000
-        stop_after = 100
         model = cars.lib.ConstrainedModel(model_id, grammar, torch_dtype=torch.bfloat16)
         runner = cars.CARS(model = model, prompt = prompt, sample_style = sample_style, log_dir = log_dir)
-        runner.get_samples(n_samples = 1, n_steps = n_steps, stop_after = stop_after, max_new_tokens = max_new_tokens)
+        runner.get_samples(n_samples = 1, n_steps = n_steps, stop_after = n_samples, max_new_tokens = max_new_tokens)
 
     elif sample_style in mcmc.all_sample_styles():
-        n_samples = 100
         n_steps = 10
         model = mcmc.lib.ConstrainedModel(model_id, grammar, torch_dtype=torch.bfloat16)
         runner = mcmc.MCMC(model = model, prompt = prompt, propose_style = sample_style, log_dir = log_dir)
