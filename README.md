@@ -61,5 +61,6 @@ Several parameters can be set within the `run_task.py` file, including:
 - `n_samples`: The number of sequences to generate.
 - For rs, ars, rsft, cars styles, the program stops after `n_steps` calls to the LLM, even if `n_samples` sequences have not been produced.
 - For MCMC styles, `n_steps` represents the number of steps `k` (as described in the paper).
+- `torch_dtype` is a floating point data type used for the LLM computations.
 - It is also easy to add more models from Hugging Face. However, for MCMC styles, they must also be listed in the `mcmc/lib.py` file.
 
