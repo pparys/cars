@@ -1,5 +1,6 @@
 import hashlib, os, re, sys, torch, utils
 import cars, cars.lib, mcmc, mcmc.lib
+from profiler import create_profiler
 
 def determine_out_name(s1, s2):
     s1 = s1.removesuffix(".ebnf").removesuffix(".lark")
@@ -20,21 +21,19 @@ def determine_out_name(s1, s2):
     res = "-".join(n for n in [pref, s1, s2] if n)
     return res
 
-
 def pair_hash(s1, s2):
     s = s1+"&?!@&"+s2
     return hashlib.md5(s.encode('utf-8')).hexdigest()[:8]
 
-
-def run_task(grammar_file, prompt_file, sample_style, model_num):
+def run_task(grammar_file, prompt_file, sample_style, model_num, enable_profiling=True):
     print(f"Loading grammar from file {grammar_file}")
     with open(grammar_file, "r") as f:
         grammar = f.read()
-
+    
     print(f"Loading prompt from file {prompt_file}")
     with open(prompt_file, "r") as f:
         prompt = f.read()
-
+    
     if model_num=='1':
         model_id = "meta-llama/Llama-3.1-8B-Instruct"
     elif model_num=='2':
@@ -51,31 +50,36 @@ def run_task(grammar_file, prompt_file, sample_style, model_num):
     log_dir = f"{root_log_dir}/{determine_out_name(grammar_file, prompt_file)}-{pair_hash(grammar, prompt)}-{model_num}/{sample_style}-{utils.timestamp()}"
     os.makedirs(log_dir, exist_ok=True)
     print(f"Saving results in folder {log_dir}")
-
+    
+    profiler = create_profiler(log_dir, enabled=enable_profiling) if enable_profiling else None
+    if profiler:
+        print("Profiling enabled")
+    
     max_new_tokens = 512
     n_samples = 100
     
     if sample_style in cars.all_sample_styles():
         n_steps = 2000
-        model = cars.lib.ConstrainedModel(model_id, grammar, torch_dtype=torch.bfloat16)
-        runner = cars.CARS(model = model, prompt = prompt, sample_style = sample_style, log_dir = log_dir)
+        model = cars.lib.ConstrainedModel(model_id, grammar, torch_dtype=torch.bfloat16, profiler=profiler)
+        runner = cars.CARS(model = model, prompt = prompt, sample_style = sample_style, log_dir = log_dir, enable_profiling=enable_profiling)
         runner.get_samples(n_samples = 1, n_steps = n_steps, stop_after = n_samples, max_new_tokens = max_new_tokens)
-
     elif sample_style in mcmc.all_sample_styles():
         n_steps = 10
-        model = mcmc.lib.ConstrainedModel(model_id, grammar, torch_dtype=torch.bfloat16)
+        model = mcmc.lib.ConstrainedModel(model_id, grammar, torch_dtype=torch.bfloat16, profiler=profiler)
         runner = mcmc.MCMC(model = model, prompt = prompt, propose_style = sample_style, log_dir = log_dir)
         runner.get_samples(n_samples = n_samples, n_steps = n_steps, max_new_tokens = max_new_tokens)
-    
     else:
         print("Unknown sample style ", sample_style)
-        print("Available styles are:", ars.all_sample_styles() + mcmc.all_sample_styles())
+        print("Available styles are:", cars.all_sample_styles() + mcmc.all_sample_styles())
         sys.exit(1)
-
 
 if __name__ == "__main__":
-    if len(sys.argv) != 5:
-        print("Arguments: grammar_file prompt_file sample_style model")
+    if len(sys.argv) < 5:
+        print("Arguments: grammar_file prompt_file sample_style model [enable_profiling=1]")
         sys.exit(1)
     
-    run_task(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+    enable_profiling = True
+    if len(sys.argv) >= 6:
+        enable_profiling = sys.argv[5] != "0"
+    
+    run_task(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], enable_profiling)

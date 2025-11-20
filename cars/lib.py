@@ -1,6 +1,7 @@
 import os
 import json
 import gc, math
+import time
 
 import torch
 import numpy as np
@@ -15,7 +16,6 @@ def scores_to_top_k_tokens(scores, k):
         probs = torch.log_softmax(step_scores, dim=-1)
         top_probs, top_token_ids = torch.topk(probs, k=k)
         top_probs = top_probs.tolist()
-        # top_tokens = tokenizer.batch_decode(top_token_ids)
         top_choices = list(zip(top_token_ids, top_probs))
         result.append(top_choices)
     return result
@@ -49,13 +49,14 @@ class ConstrainedModel():
         "hsultanbey/codegen350multi_finetuned"
     ]
 
-    def __init__(self, model_id: str, grammar_str: str | None = None, **kwargs):
+    def __init__(self, model_id: str, grammar_str: str | None = None, profiler=None, **kwargs):
         with open("secrets.json") as f:
             secrets = json.load(f)
             if secrets["HF_TOKEN"] != 'your_token':
                 os.environ["HF_TOKEN"] = secrets["HF_TOKEN"]
 
         self.model_id = model_id
+        self.profiler = profiler
 
         self.tokenizer = AutoTokenizer.from_pretrained(model_id)
         print(f"Tokenizer: {self.tokenizer.name_or_path}")
@@ -78,8 +79,14 @@ class ConstrainedModel():
 
 
     def reset_sampling(self, learn_level : int = 3, constrain_first : bool = False):
-        self.gcd_logits_processor = GrammarAlignedOracleLogitsProcessor(self.tokenizer, self.grammar_constraint, self.model.device,
-            learn_level = learn_level, constrain_first = constrain_first)
+        self.gcd_logits_processor = GrammarAlignedOracleLogitsProcessor(
+            self.tokenizer, 
+            self.grammar_constraint, 
+            self.model.device,
+            learn_level = learn_level, 
+            constrain_first = constrain_first,
+            profiler = self.profiler 
+        )
 
 
     def _set_grammar_constraint(self, grammar_str: str):
@@ -138,12 +145,19 @@ class ConstrainedModel():
         self.gcd_logits_processor.reset()
         logits_processor_list = LogitsProcessorList([self.gcd_logits_processor, InfNanRemoveLogitsProcessor()])
 
+        # Profile inference time
+        inference_start = time.time()
+        
         output = self.model.generate(
             input_ids,
             generation_config=generation_config,
             tokenizer=self.tokenizer,
             logits_processor=logits_processor_list,
         )
+        
+        if self.profiler:
+            self.profiler.record_inference_time(time.time() - inference_start)
+        
         output_ids = output.sequences
         raw_logprob = self.gcd_logits_processor.generation_ended(output_ids)
         

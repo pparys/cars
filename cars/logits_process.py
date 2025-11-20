@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 
 class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
-    def __init__(self, tokenizer, grammar_constraint, device, learn_level=3, constrain_first=False):
+    def __init__(self, tokenizer, grammar_constraint, device, learn_level=3, constrain_first=False, profiler=None):
         # Parser variables
         self.tokenizer = tokenizer
         self.grammar_constraint = grammar_constraint
@@ -22,9 +22,11 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         self.constrain_first = constrain_first
         self.device = device
 
-        # ASAp oracle trie
         self.oracle_trie = Trie()
         self.current_index = None
+        
+        self.profiler = profiler
+        
         self.reset()
 
 
@@ -54,9 +56,20 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         if not is_root:
             assert len(self.generated_tokens) == self.oracle_node_depth + 1
             last_token = self.generated_tokens[-1].item()
-            if not (last_token in self.oracle_node.children):
+            
+            # Profile trie lookup
+            lookup_start = time.time()
+            trie_hit = last_token in self.oracle_node.children
+            if self.profiler:
+                self.profiler.record_trie_operation('lookup', time.time() - lookup_start)
+            
+            if not trie_hit:
                 logger.debug(f"Creating new trie node for token {last_token}")
+                insert_start = time.time()
                 self.oracle_node.create_child(last_token)
+                if self.profiler:
+                    self.profiler.record_trie_operation('insert', time.time() - insert_start)
+            
             self.oracle_node = self.oracle_node.children[last_token]
             self.oracle_node_depth += 1
 
@@ -74,13 +87,15 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
         else:
             adjust_scores = True
         
-        # Adjust scores using previously computed log_theta
         if adjust_scores:
             scores = scores.clone()
             scores += self.oracle_node.log_theta.to(self.device, non_blocking = True)
 
         end_time = time.time()
         self.logits_process_time += end_time - start_time
+        
+        if self.profiler:
+            self.profiler.record_logits_processing_time(end_time - start_time)
 
         return scores
 
@@ -109,6 +124,8 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
 
 
     def _recompute_in_trie(self):
+        recompute_start = time.time()
+        
         node = self.oracle_node
         depth = self.oracle_node_depth
         while depth > 0:
@@ -117,8 +134,10 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
             node = node.parent
             logger.debug(f"log_theta of token {self.generated_tokens[depth]} decreased from {node.log_theta[0, self.generated_tokens[depth]]} to {new_log_theta}")
             node.log_theta[0, self.generated_tokens[depth]] = new_log_theta
-
-
+        
+        if self.profiler:
+            self.profiler.record_trie_operation('recompute', time.time() - recompute_start)
+        
     def generation_ended(self, input_ids : torch.LongTensor): # should be called at the end of generation
         self._set_generated_tokens(input_ids)
         assert len(self.generated_tokens) == self.oracle_node_depth + 1
@@ -150,7 +169,3 @@ class GrammarAlignedOracleLogitsProcessor(LogitsProcessor):
             node = node.parent
         logprob = torch.tensor(list).flip(0).sum()
         return logprob
-
-
-#    def reset_trie(self): # possibly useful, but doesn't used now (we always create a new object of the logit processor)
-#        self.oracle_trie = Trie()
