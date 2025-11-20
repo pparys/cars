@@ -1,3 +1,119 @@
+You are a coding assistant helping an analyst answer questions over business data in SQL. More specifically, the analyst provides you a database schema (tables in the database along with their column names and types) and asks a question about the data that can be solved by issuing a SQL query to the database. In response, you write the SQL statement that answers the question. You do not provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.
+
+Here is a database schema:
+department
+* Department_ID (number): department id
+* Name (text): name
+* Creation (text): creation
+* Ranking (number): ranking
+* Budget_in_Billions (number): budget in billions
+* Num_Employees (number): num employees
+
+head
+* head_ID (number): head id
+* name (text): name
+* born_state (text): born state
+* age (number): age
+
+management
+* department_ID (number): department id
+* head_ID (number): head id
+* temporary_acting (text): temporary acting
+Please write me a SQL statement that answers the following question:
+How many acting statuses are there?
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.
+SQL query: SELECT count(DISTINCT temporary_acting) FROM management
+
+Here is a database schema:
+Addresses
+* address_id (number): address id
+* line_1 (text): line 1
+* line_2 (text): line 2
+* city (text): city
+* zip_postcode (text): zip postcode
+* state_province_county (text): state province county
+* country (text): country
+
+People
+* person_id (number): person id
+* first_name (text): first name
+* middle_name (text): middle name
+* last_name (text): last name
+* cell_mobile_number (text): cell mobile number
+* email_address (text): email address
+* login_name (text): login name
+* password (text): password
+
+Students
+* student_id (number): student id
+* student_details (text): student details
+
+Courses
+* course_id (text): course id
+* course_name (text): course name
+* course_description (text): course description
+* other_details (text): other details
+
+People_Addresses
+* person_address_id (number): person address id
+* person_id (number): person id
+* address_id (number): address id
+* date_from (time): date from
+* date_to (time): date to
+
+Student_Course_Registrations
+* student_id (number): student id
+* course_id (number): course id
+* registration_date (time): registration date
+
+Student_Course_Attendance
+* student_id (number): student id
+* course_id (number): course id
+* date_of_attendance (time): date of attendance
+
+Candidates
+* candidate_id (number): candidate id
+* candidate_details (text): candidate details
+
+Candidate_Assessments
+* candidate_id (number): candidate id
+* qualification (text): qualification
+* assessment_date (time): assessment date
+* asessment_outcome_code (text): asessment outcome code
+Please write me a SQL statement that answers the following question:
+What are the ids of the students who either registered or attended a course?
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.
+SQL query: SELECT student_id FROM student_course_registrations UNION SELECT student_id FROM student_course_attendance
+
+Here is a database schema:
+basketball_match
+* Team_ID (number): team id
+* School_ID (number): school id
+* Team_Name (text): team name
+* ACC_Regular_Season (text): acc regular season
+* ACC_Percent (text): acc percent
+* ACC_Home (text): acc home
+* ACC_Road (text): acc road
+* All_Games (text): all games
+* All_Games_Percent (number): all games percent
+* All_Home (text): all home
+* All_Road (text): all road
+* All_Neutral (text): all neutral
+
+university
+* School_ID (number): school id
+* School (text): school
+* Location (text): location
+* Founded (number): founded
+* Affiliation (text): affiliation
+* Enrollment (number): enrollment
+* Nickname (text): nickname
+* Primary_conference (text): primary conference
+Please write me a SQL statement that answers the following question:
+Return the total and minimum enrollments across all schools.
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.
+SQL query: SELECT sum(enrollment) ,  min(enrollment) FROM university
+
 Here is a database schema:
 poker_player
 * Poker_Player_ID (number): poker player id
@@ -16,3 +132,4 @@ people
 Please write me a SQL statement that answers the following question:
 What are the earnings of poker players, ordered descending by value?
 Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.
+SQL query:
