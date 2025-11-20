@@ -1,0 +1,28 @@
+Here is a database schema:
+employee
+* Employee_ID (number): employee id
+* Name (text): name
+* Age (number): age
+* City (text): city
+
+shop
+* Shop_ID (number): shop id
+* Name (text): name
+* Location (text): location
+* District (text): district
+* Number_products (number): number products
+* Manager_name (text): manager name
+
+hiring
+* Shop_ID (number): shop id
+* Employee_ID (number): employee id
+* Start_from (text): start from
+* Is_full_time (others): is full time
+
+evaluation
+* Employee_ID (text): employee id
+* Year_awarded (text): year awarded
+* Bonus (number): bonus
+Please write me a SQL statement that answers the following question:
+Find the name of the shops that do not hire any employee.
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

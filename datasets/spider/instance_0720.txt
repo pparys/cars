@@ -1,0 +1,37 @@
+Here is a database schema:
+city
+* ID (number): id
+* Name (text): name
+* CountryCode (text): country code
+* District (text): district
+* Population (number): population
+
+sqlite_sequence
+* name (text): name
+* seq (text): seq
+
+country
+* Code (text): code
+* Name (text): name
+* Continent (text): continent
+* Region (text): region
+* SurfaceArea (number): surface area
+* IndepYear (number): indepdent year
+* Population (number): population
+* LifeExpectancy (number): life expectancy
+* GNP (number): gnp
+* GNPOld (number): gnp old
+* LocalName (text): local name
+* GovernmentForm (text): government form
+* HeadOfState (text): head of state
+* Capital (number): capital
+* Code2 (text): code2
+
+countrylanguage
+* CountryCode (text): countrycode
+* Language (text): language
+* IsOfficial (text): is official
+* Percentage (number): percentage
+Please write me a SQL statement that answers the following question:
+What is the name of country that has the shortest life expectancy in Asia?
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

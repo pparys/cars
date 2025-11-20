@@ -1,0 +1,18 @@
+Here is a database schema:
+AREA_CODE_STATE
+* area_code (number): area code
+* state (text): state
+
+CONTESTANTS
+* contestant_number (number): contestant number
+* contestant_name (text): contestant name
+
+VOTES
+* vote_id (number): vote id
+* phone_number (number): phone number
+* state (text): state
+* contestant_number (number): contestant number
+* created (time): created
+Please write me a SQL statement that answers the following question:
+List the contestant numbers and names, ordered by contestant name descending.
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

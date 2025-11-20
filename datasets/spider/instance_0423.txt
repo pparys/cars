@@ -1,0 +1,21 @@
+Here is a database schema:
+museum
+* Museum_ID (number): museum id
+* Name (text): name
+* Num_of_Staff (number): num of staff
+* Open_Year (text): open year
+
+visitor
+* ID (number): customer id
+* Name (text): name
+* Level_of_membership (number): level of membership
+* Age (number): age
+
+visit
+* Museum_ID (number): museum id
+* visitor_ID (text): customer id
+* Num_of_Ticket (number): num of ticket
+* Total_spent (number): total spent
+Please write me a SQL statement that answers the following question:
+Find the name and age of the visitor who bought the most tickets at once.
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

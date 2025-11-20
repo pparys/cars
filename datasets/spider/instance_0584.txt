@@ -1,0 +1,81 @@
+Here is a database schema:
+Addresses
+* address_id (number): address id
+* line_1 (text): line 1
+* line_2 (text): line 2
+* line_3 (text): line 3
+* city (text): city
+* zip_postcode (text): zip postcode
+* state_province_county (text): state province county
+* country (text): country
+* other_address_details (text): other address details
+
+Courses
+* course_id (number): course id
+* course_name (text): course name
+* course_description (text): course description
+* other_details (text): other details
+
+Departments
+* department_id (number): department id
+* department_name (text): department name
+* department_description (text): department description
+* other_details (text): other details
+
+Degree_Programs
+* degree_program_id (number): degree program id
+* department_id (number): department id
+* degree_summary_name (text): degree summary name
+* degree_summary_description (text): degree summary description
+* other_details (text): other details
+
+Sections
+* section_id (number): section id
+* course_id (number): course id
+* section_name (text): section name
+* section_description (text): section description
+* other_details (text): other details
+
+Semesters
+* semester_id (number): semester id
+* semester_name (text): semester name
+* semester_description (text): semester description
+* other_details (text): other details
+
+Students
+* student_id (number): student id
+* current_address_id (number): current address id
+* permanent_address_id (number): permanent address id
+* first_name (text): first name
+* middle_name (text): middle name
+* last_name (text): last name
+* cell_mobile_number (text): cell mobile number
+* email_address (text): email address
+* ssn (text): ssn
+* date_first_registered (time): date first registered
+* date_left (time): date left
+* other_student_details (text): other student details
+
+Student_Enrolment
+* student_enrolment_id (number): student enrolment id
+* degree_program_id (number): degree program id
+* semester_id (number): semester id
+* student_id (number): student id
+* other_details (text): other details
+
+Student_Enrolment_Courses
+* student_course_id (number): student course id
+* course_id (number): course id
+* student_enrolment_id (number): student enrolment id
+
+Transcripts
+* transcript_id (number): transcript id
+* transcript_date (time): transcript date
+* other_details (text): other details
+
+Transcript_Contents
+* student_course_id (number): student course id
+* transcript_id (number): transcript id
+Please write me a SQL statement that answers the following question:
+What are the first names of the students who live in Haiti permanently or have the cell phone number 09700166582 ?
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

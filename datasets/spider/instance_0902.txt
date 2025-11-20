@@ -1,0 +1,16 @@
+Here is a database schema:
+Highschooler
+* ID (number): id
+* name (text): name
+* grade (number): grade
+
+Friend
+* student_id (number): student id
+* friend_id (number): friend id
+
+Likes
+* student_id (number): student id
+* liked_id (number): liked id
+Please write me a SQL statement that answers the following question:
+Count the number of likes for each student id.
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

@@ -1,0 +1,18 @@
+Here is a database schema:
+poker_player
+* Poker_Player_ID (number): poker player id
+* People_ID (number): people id
+* Final_Table_Made (number): final table made
+* Best_Finish (number): best finish
+* Money_Rank (number): money rank
+* Earnings (number): earnings
+
+people
+* People_ID (number): people id
+* Nationality (text): nationality
+* Name (text): name
+* Birth_Date (text): birth date
+* Height (number): height
+Please write me a SQL statement that answers the following question:
+List the names and birth dates of people in ascending alphabetical order of name.
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

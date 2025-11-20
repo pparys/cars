@@ -1,0 +1,38 @@
+Here is a database schema:
+continents
+* ContId (number): cont id
+* Continent (text): continent
+
+countries
+* CountryId (number): country id
+* CountryName (text): country name
+* Continent (number): continent
+
+car_makers
+* Id (number): id
+* Maker (text): maker
+* FullName (text): full name
+* Country (text): country
+
+model_list
+* ModelId (number): model id
+* Maker (number): maker
+* Model (text): model
+
+car_names
+* MakeId (number): make id
+* Model (text): model
+* Make (text): make
+
+cars_data
+* Id (number): id
+* MPG (text): mpg
+* Cylinders (number): cylinders
+* Edispl (number): edispl
+* Horsepower (text): horsepower
+* Weight (number): weight
+* Accelerate (number): accelerate
+* Year (number): year
+Please write me a SQL statement that answers the following question:
+Which are the car makers which produce at least 2 models and more than 3 car makers ? List the id and the maker .
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

@@ -1,0 +1,50 @@
+Here is a database schema:
+Ref_Feature_Types
+* feature_type_code (text): feature type code
+* feature_type_name (text): feature type name
+
+Ref_Property_Types
+* property_type_code (text): property type code
+* property_type_description (text): property type description
+
+Other_Available_Features
+* feature_id (number): feature id
+* feature_type_code (text): feature type code
+* feature_name (text): feature name
+* feature_description (text): feature description
+
+Properties
+* property_id (number): property id
+* property_type_code (text): property type code
+* date_on_market (time): date on market
+* date_sold (time): date sold
+* property_name (text): property name
+* property_address (text): property address
+* room_count (number): room count
+* vendor_requested_price (number): vendor requested price
+* buyer_offered_price (number): buyer offered price
+* agreed_selling_price (number): agreed selling price
+* apt_feature_1 (text): apt feature 1
+* apt_feature_2 (text): apt feature 2
+* apt_feature_3 (text): apt feature 3
+* fld_feature_1 (text): fld feature 1
+* fld_feature_2 (text): fld feature 2
+* fld_feature_3 (text): fld feature 3
+* hse_feature_1 (text): hse feature 1
+* hse_feature_2 (text): hse feature 2
+* hse_feature_3 (text): hse feature 3
+* oth_feature_1 (text): oth feature 1
+* oth_feature_2 (text): oth feature 2
+* oth_feature_3 (text): oth feature 3
+* shp_feature_1 (text): shp feature 1
+* shp_feature_2 (text): shp feature 2
+* shp_feature_3 (text): shp feature 3
+* other_property_details (text): other property details
+
+Other_Property_Features
+* property_id (number): property id
+* feature_id (number): feature id
+* property_feature_description (text): property feature description
+Please write me a SQL statement that answers the following question:
+How many available features are there in total?
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

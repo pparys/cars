@@ -1,0 +1,34 @@
+Here is a database schema:
+TV_Channel
+* id (text): id
+* series_name (text): series name
+* Country (text): country
+* Language (text): language
+* Content (text): content
+* Pixel_aspect_ratio_PAR (text): pixel aspect ratio par
+* Hight_definition_TV (text): hight definition tv
+* Pay_per_view_PPV (text): pay per view ppv
+* Package_Option (text): package option
+
+TV_series
+* id (number): id
+* Episode (text): episode
+* Air_Date (text): air date
+* Rating (text): rating
+* Share (number): share
+* 18_49_Rating_Share (text): 18 49 rating share
+* Viewers_m (text): viewers m
+* Weekly_Rank (number): weekly rank
+* Channel (text): channel
+
+Cartoon
+* id (number): id
+* Title (text): title
+* Directed_by (text): directed by
+* Written_by (text): written by
+* Original_air_date (text): original air date
+* Production_code (number): production code
+* Channel (text): channel
+Please write me a SQL statement that answers the following question:
+What are the countries that are not playing cartoons written by Todd Casey?
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

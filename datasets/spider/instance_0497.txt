@@ -1,0 +1,27 @@
+Here is a database schema:
+battle
+* id (number): id
+* name (text): name
+* date (text): date
+* bulgarian_commander (text): bulgarian commander
+* latin_commander (text): latin commander
+* result (text): result
+
+ship
+* lost_in_battle (number): lost in battle
+* id (number): id
+* name (text): name
+* tonnage (text): tonnage
+* ship_type (text): ship type
+* location (text): location
+* disposition_of_ship (text): disposition of ship
+
+death
+* caused_by_ship_id (number): caused by ship id
+* id (number): id
+* note (text): note
+* killed (number): killed
+* injured (number): injured
+Please write me a SQL statement that answers the following question:
+What are the name and results of the battles when the bulgarian commander is not 'Boril'
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

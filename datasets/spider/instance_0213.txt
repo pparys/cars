@@ -1,0 +1,22 @@
+Here is a database schema:
+airlines
+* uid (number): airline id
+* Airline (text): airline name
+* Abbreviation (text): abbreviation
+* Country (text): country
+
+airports
+* City (text): city
+* AirportCode (text): airport code
+* AirportName (text): airport name
+* Country (text): country
+* CountryAbbrev (text): country abbrev
+
+flights
+* Airline (number): airline
+* FlightNo (number): flight number
+* SourceAirport (text): source airport
+* DestAirport (text): destination airport
+Please write me a SQL statement that answers the following question:
+How many flights does airline 'JetBlue Airways' have?
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

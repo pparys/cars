@@ -1,0 +1,28 @@
+Here is a database schema:
+Ref_Template_Types
+* Template_Type_Code (text): template type code
+* Template_Type_Description (text): template type description
+
+Templates
+* Template_ID (number): template id
+* Version_Number (number): version number
+* Template_Type_Code (text): template type code
+* Date_Effective_From (time): date effective from
+* Date_Effective_To (time): date effective to
+* Template_Details (text): template details
+
+Documents
+* Document_ID (number): document id
+* Template_ID (number): template id
+* Document_Name (text): document name
+* Document_Description (text): document description
+* Other_Details (text): other details
+
+Paragraphs
+* Paragraph_ID (number): paragraph id
+* Document_ID (number): document id
+* Paragraph_Text (text): paragraph text
+* Other_Details (text): other details
+Please write me a SQL statement that answers the following question:
+Show all document ids and the number of paragraphs in each document. Order by document id.
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.
