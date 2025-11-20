@@ -1,0 +1,23 @@
+Here is a database schema:
+Student
+* StuID (number): student id
+* LName (text): last name
+* Fname (text): first name
+* Age (number): age
+* Sex (text): sex
+* Major (number): major
+* Advisor (number): advisor
+* city_code (text): city code
+
+Has_Pet
+* StuID (number): student id
+* PetID (number): pet id
+
+Pets
+* PetID (number): pet id
+* PetType (text): pet type
+* pet_age (number): pet age
+* weight (number): weight
+Please write me a SQL statement that answers the following question:
+What is the average and maximum age for each pet type?
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

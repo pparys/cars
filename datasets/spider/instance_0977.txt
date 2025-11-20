@@ -1,0 +1,68 @@
+Here is a database schema:
+Breeds
+* breed_code (text): breed code
+* breed_name (text): breed name
+
+Charges
+* charge_id (number): charge id
+* charge_type (text): charge type
+* charge_amount (number): charge amount
+
+Sizes
+* size_code (text): size code
+* size_description (text): size description
+
+Treatment_Types
+* treatment_type_code (text): treatment type code
+* treatment_type_description (text): treatment type description
+
+Owners
+* owner_id (number): owner id
+* first_name (text): first name
+* last_name (text): last name
+* street (text): street
+* city (text): city
+* state (text): state
+* zip_code (text): zip code
+* email_address (text): email address
+* home_phone (text): home phone
+* cell_number (text): cell number
+
+Dogs
+* dog_id (number): dog id
+* owner_id (number): owner id
+* abandoned_yn (text): abandoned yes or no
+* breed_code (text): breed code
+* size_code (text): size code
+* name (text): name
+* age (text): age
+* date_of_birth (time): date of birth
+* gender (text): gender
+* weight (text): weight
+* date_arrived (time): date arrived
+* date_adopted (time): date adopted
+* date_departed (time): date departed
+
+Professionals
+* professional_id (number): professional id
+* role_code (text): role code
+* first_name (text): first name
+* street (text): street
+* city (text): city
+* state (text): state
+* zip_code (text): zip code
+* last_name (text): last name
+* email_address (text): email address
+* home_phone (text): home phone
+* cell_number (text): cell number
+
+Treatments
+* treatment_id (number): treatment id
+* dog_id (number): dog id
+* professional_id (number): professional id
+* treatment_type_code (text): treatment type code
+* date_of_treatment (time): date of treatment
+* cost_of_treatment (number): cost of treatment
+Please write me a SQL statement that answers the following question:
+Show me the cost of the most recently performed treatment.
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

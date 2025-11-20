@@ -1,0 +1,17 @@
+Here is a database schema:
+singer
+* Singer_ID (number): singer id
+* Name (text): name
+* Birth_Year (number): birth year
+* Net_Worth_Millions (number): net worth millions
+* Citizenship (text): citizenship
+
+song
+* Song_ID (number): song id
+* Title (text): title
+* Singer_ID (number): singer id
+* Sales (number): sales
+* Highest_Position (number): highest position
+Please write me a SQL statement that answers the following question:
+What are the names of the singers that have more than one songs?
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

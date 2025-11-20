@@ -1,0 +1,52 @@
+Here is a database schema:
+players
+* player_id (number): player id
+* first_name (text): first name
+* last_name (text): last name
+* hand (text): hand
+* birth_date (time): birth date
+* country_code (text): country code
+
+matches
+* best_of (number): best of
+* draw_size (number): draw size
+* loser_age (number): loser age
+* loser_entry (text): loser entry
+* loser_hand (text): loser hand
+* loser_ht (number): loser ht
+* loser_id (number): loser id
+* loser_ioc (text): loser ioc
+* loser_name (text): loser name
+* loser_rank (number): loser rank
+* loser_rank_points (number): loser rank points
+* loser_seed (number): loser seed
+* match_num (number): match num
+* minutes (number): minutes
+* round (text): round
+* score (text): score
+* surface (text): surface
+* tourney_date (time): tourney date
+* tourney_id (text): tourney id
+* tourney_level (text): tourney level
+* tourney_name (text): tourney name
+* winner_age (number): winner age
+* winner_entry (text): winner entry
+* winner_hand (text): winner hand
+* winner_ht (number): winner ht
+* winner_id (number): winner id
+* winner_ioc (text): winner ioc
+* winner_name (text): winner name
+* winner_rank (number): winner rank
+* winner_rank_points (number): winner rank points
+* winner_seed (number): winner seed
+* year (number): year
+
+rankings
+* ranking_date (time): ranking date
+* ranking (number): ranking
+* player_id (number): player id
+* ranking_points (number): ranking points
+* tours (number): tours
+Please write me a SQL statement that answers the following question:
+What are the first names of all players, and their total ranking points?
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

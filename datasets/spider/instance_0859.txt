@@ -1,0 +1,34 @@
+Here is a database schema:
+conductor
+* Conductor_ID (number): conductor id
+* Name (text): name
+* Age (number): age
+* Nationality (text): nationality
+* Year_of_Work (number): year of work
+
+orchestra
+* Orchestra_ID (number): orchestra id
+* Orchestra (text): orchestra
+* Conductor_ID (number): conductor id
+* Record_Company (text): record company
+* Year_of_Founded (number): year of founded
+* Major_Record_Format (text): major record format
+
+performance
+* Performance_ID (number): performance id
+* Orchestra_ID (number): orchestra id
+* Type (text): type
+* Date (text): date
+* Official_ratings_(millions) (number): official ratings (millions)
+* Weekly_rank (text): weekly rank
+* Share (text): share
+
+show
+* Show_ID (number): show id
+* Performance_ID (number): performance id
+* If_first_show (others): if first show
+* Result (text): result
+* Attendance (number): attendance
+Please write me a SQL statement that answers the following question:
+Count the number of orchestras that have CD or DVD as their record format.
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

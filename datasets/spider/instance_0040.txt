@@ -1,0 +1,32 @@
+Here is a database schema:
+stadium
+* Stadium_ID (number): stadium id
+* Location (text): location
+* Name (text): name
+* Capacity (number): capacity
+* Highest (number): highest
+* Lowest (number): lowest
+* Average (number): average
+
+singer
+* Singer_ID (number): singer id
+* Name (text): name
+* Country (text): country
+* Song_Name (text): song name
+* Song_release_year (text): song release year
+* Age (number): age
+* Is_male (others): is male
+
+concert
+* concert_ID (number): concert id
+* concert_Name (text): concert name
+* Theme (text): theme
+* Stadium_ID (text): stadium id
+* Year (text): year
+
+singer_in_concert
+* concert_ID (number): concert id
+* Singer_ID (text): singer id
+Please write me a SQL statement that answers the following question:
+What is the name and country of origin of every singer who has a song with the word 'Hey' in its title?
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.

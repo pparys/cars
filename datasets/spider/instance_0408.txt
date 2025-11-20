@@ -1,0 +1,19 @@
+Here is a database schema:
+course
+* Course_ID (number): course id
+* Staring_Date (text): staring date
+* Course (text): course
+
+teacher
+* Teacher_ID (number): teacher id
+* Name (text): name
+* Age (text): age
+* Hometown (text): hometown
+
+course_arrange
+* Course_ID (number): course id
+* Teacher_ID (number): teacher id
+* Grade (number): grade
+Please write me a SQL statement that answers the following question:
+What are the names of the teachers who teach at least two courses?
+Remember, DO NOT provide any commentary or explanation of what the code does, just the SQL statement ending in a semicolon.
