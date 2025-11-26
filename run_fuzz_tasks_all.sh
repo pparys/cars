@@ -5,7 +5,7 @@ if [ "$#" -ne 2 ]; then
 	exit 1
 fi
 
-python  run_task.py datasets/fuzzing/json.lark datasets/fuzzing/generate_json.txt $1 $2
+python run_task.py datasets/fuzzing/json.lark datasets/fuzzing/generate_json.txt $1 $2
 python run_task.py datasets/fuzzing/json.lark datasets/fuzzing/generate_json_with_grammar.txt $1 $2
 python run_task.py datasets/fuzzing/sql.lark datasets/fuzzing/generate_sql.txt $1 $2
 python run_task.py datasets/fuzzing/sql.lark datasets/fuzzing/generate_sql_with_grammar.txt $1 $2

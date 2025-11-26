@@ -1,0 +1,244 @@
+{
+    "steps": [
+        {
+            "current": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "proposal": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "proposal": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "proposal": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "proposal": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "proposal": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "proposal": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "proposal": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "proposal": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "proposal": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        },
+        {
+            "current": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "proposal": {
+                "tokens": [
+                    "<|im_end|>"
+                ],
+                "token_ids": [
+                    151645
+                ],
+                "raw_logprob": -28.046876907348633,
+                "cons_logprob": 0.0
+            },
+            "acceptance_prob": 1,
+            "accepted": true
+        }
+    ]
+}
